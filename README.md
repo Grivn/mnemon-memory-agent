@@ -30,6 +30,11 @@ whole conversation reach evidence their own searches miss.
 re-evaluated by OmniMemEval all use gpt-4.1-mini to answer. Dashed lines join points of equal effective cost index;
 up and to the left is better.</sub></p>
 
+> [!NOTE]
+> The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon)
+> and [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience. This repository stays a frozen
+> research snapshot of the system the paper evaluates.
+
 ## Highlights
 
 - **Most accurate on LoCoMo, from under 4k tokens of context.** Under OmniMemEval's protocol, with gpt-4.1-mini
@@ -290,11 +295,14 @@ What the snapshot does and does not claim:
 }
 ```
 
-## About the name
+## Relation to mnemon and dsh-mnemon
 
-This is not the `mnemon` CLI ([mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon)), which is a separate
-product, and not Mnemon Agency. The evaluated system does not use the `mnemon` binary. It is also not a release of
-the `dsh-mnemon` package: it is a frozen research snapshot.
+The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon) and
+[dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience.
+
+This repository itself stays a frozen research snapshot:
+- It is not the `mnemon` CLI and not Mnemon Agency, and the evaluated system does not use the `mnemon` binary.
+- It is not a release of the `dsh-mnemon` package.
 
 ## Licenses and data
 

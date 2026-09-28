@@ -28,6 +28,9 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 </p>
 <p align="center"><sub>准确率与每题送给作答模型的上下文长度。Mnemon（星号）和 OmniMemEval 重测的 14 个系统都用 gpt-4.1-mini 作答。虚线连接成本效益指数相同的点，越靠左上越好。</sub></p>
 
+> [!NOTE]
+> 本研究的成果将逐步输送到 [mnemon](https://github.com/mnemon-dev/mnemon) 和 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 两大官方项目，以达到最佳的产品化体验。本仓库保持为论文所评测系统的冻结研究快照。
+
 ## 亮点
 
 - **LoCoMo 准确率第一，上下文不到 4k。** 在 OmniMemEval 的统一协议下（gpt-4.1-mini 作答）：
@@ -255,9 +258,13 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 }
 ```
 
-## 关于名称
+## 与 mnemon、dsh-mnemon 的关系
 
-它不是 `mnemon` CLI（[mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon)，那是另一个独立产品），也不是 Mnemon Agency；评测的系统没有用到 `mnemon` 二进制。它也不是 `dsh-mnemon` 的发布版本，而是冻结的研究快照。
+本研究的成果将逐步输送到两大官方项目 [mnemon](https://github.com/mnemon-dev/mnemon) 和 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon)，以达到最佳的产品化体验。
+
+本仓库本身保持为冻结的研究快照：
+- 它不是 `mnemon` CLI，也不是 Mnemon Agency；评测的系统没有用到 `mnemon` 二进制。
+- 它也不是 `dsh-mnemon` 的发布版本。
 
 ## 许可与数据
 
