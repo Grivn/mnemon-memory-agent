@@ -1,8 +1,8 @@
 {
  "source": {
   "repository": "dsh-mnemon (research branch codex/jev-replica-practice)",
-  "commit": "8843a5ea2e7b22a9ca0be5b647df8e965893734a",
-  "date": "2026-09-29T01:22:34+08:00"
+  "commit": "50a6831d4a0baa303d74a961a99d6d46a512b08e",
+  "date": "2026-09-29T01:28:45+08:00"
  },
  "plugins": [
   "dsh-mnemon-agent-loop-jev",
@@ -225,8 +225,8 @@
    "sha256": "3daa3e6915fa08ff25489894fefc74ae300772dcbe099d1f7424a76edebfbc60"
   },
   "docs/paper/main.pdf": {
-   "blob": "e71af59d9c74ea5644f3fd707bb2ae05fc3aa320",
-   "sha256": "53a3093b6e25504e9ef8ea023483109a57c1a311a93225da7409757ce06eebfb"
+   "blob": "8e0dbd51ae15b85c5e461caad96eff52cb8713fe",
+   "sha256": "4a49adf06352955c3fbef7ac564137602ce01429139aa834588434f5f814a504"
   },
   "docs/paper/main.tex": {
    "blob": "204ab0c8746c8d552964992e91cb6cd741bbd4db",
@@ -281,8 +281,8 @@
    "sha256": "ff3e013e742b150f47b9bb088d08a73512a2f111f610dba1efd594f4ffff7931"
   },
   "docs/paper/sections/conclusion.tex": {
-   "blob": "0ff534925b971786a88bed66011b30b16959db3d",
-   "sha256": "a6d2ca3fbd4f0cb1aa5137f04c01d9810c91902c81bdb5a0eecc0148b8df7d40"
+   "blob": "a899582cc75b1915191d3c3001617318b9aa5bc3",
+   "sha256": "252944c6ea11d670191654aa64d4e1bdbe726f324a9af069d377cfbad3501fc9"
   },
   "docs/paper/sections/evaluation.tex": {
    "blob": "d88b413d5dc811e840960d6954fe075286fcb4f4",
@@ -293,8 +293,8 @@
    "sha256": "46f9e8e6ef0a5fee68b44f4059764958d04a5184d07b2775ba42e3b4ffc22527"
   },
   "docs/paper/sections/introduction.tex": {
-   "blob": "865edf47f9f4e834d993113dd2f4485c69b7fa69",
-   "sha256": "bc6c3d3a056d62fb595116394b1b551e54af8a4271e97f32a1492835b81f9bb1"
+   "blob": "e3a7f000f090d1a27d4ccab5b8a317a4f6719856",
+   "sha256": "897a862f42cbba598a765429e40ae150384667da444a33f47b5bd157b081f2f8"
   },
   "docs/paper/sections/limitations.tex": {
    "blob": "301876d5cbef22dc20bb0d0d7ee274b6fb809fa8",
@@ -317,8 +317,8 @@
    "sha256": "a0918254e28a45824b0f638d309b799da4dc8b995467dc9896748597c4f36ba3"
   },
   "docs/paper/sections/system.tex": {
-   "blob": "817f7618555fa94a9a61017f48cd1672d0eac4fa",
-   "sha256": "6775f67e68f96d069d442ce703d1894026d3a037d9564a4aaf240894ef904949"
+   "blob": "4c2cb302f0c12a92d4b8bd27a3a2a8e9de9d4c5f",
+   "sha256": "1793a603ff2843de44cb56c86230c2502d56b7d9cf41ffeac53b16a27be81232"
   },
   "docs/paper/tables/ablation.tex": {
    "blob": "53fd3554ee14bb68f7d0a1e0319071a35823026a",

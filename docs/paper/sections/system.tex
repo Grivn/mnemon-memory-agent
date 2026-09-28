@@ -72,6 +72,11 @@ Questions about a whole conversation, such as every mention of a topic, the curr
 Gathering it is System~2 work too slow for the read path, so a background job reads the journal once, in order, and a small LLM folds it, batch by batch, into an \emph{index} of three kinds of items, each linked to the records it came from: events on topic timelines; dated histories of values that can change, marked where a value contradicts an earlier one; and standing instructions and preferences.
 Items point to records and never replace them: the index is an overlay on the records, not their schema, and \sys{} reads the records with or without it.
 
+\paragraph{Why raw records.}
+Keeping records as written separates the work that must be fast and complete from the work that can be slow and fallible.
+A record can be searched as soon as it is embedded, so a history of about 100k tokens is written in under a second (\cref{sec:impl}); organizing it runs in the background, can lag or fail without losing evidence, and can be redone from the records.
+Memory kept this way grows in three directions without rewriting what is stored: to longer histories, since only search grows with them (\cref{eq:work}); to stronger models, since a better System~2 reads the same records without re-ingesting the history (\cref{sec:reasoning}); and to changes in reading, since new rules and budgets, or a decision model that orders and decides alike (\cref{prop:calibration}), take effect on the whole history at once, and a new kind of index item needs only another background pass.
+
 \subsection{Reading with Two Systems}
 \label{sec:read}
 

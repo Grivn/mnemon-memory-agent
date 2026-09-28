@@ -77,6 +77,10 @@ from a store only a search route that returns dated records.
 The consolidated index (topic timelines, value histories, standing instructions) sits on top of the records and
 points back to them. It is an overlay on the records, not their schema. Mnemon reads the records with or without it.
 
+Keeping records raw also lets the memory grow without rewriting what is stored. A record can be searched as soon as it
+is embedded; organizing runs in the background and can be redone from the records. Longer histories, stronger
+answering models and new rules apply to everything already stored.
+
 Memory of this kind can be added wherever records can be searched. The paper evaluates conversational memory, the
 setting with public benchmarks; other stores are untested.
 
@@ -195,13 +199,13 @@ judging raw records once the question is known was the more accurate. The adapte
 ## Components and versions
 
 Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
-It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 224 commits
-up to this snapshot, `8843a5ea`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 225 commits
+up to this snapshot, `50a6831d`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
 changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
 
 | Component | Version | Role in Mnemon |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 224 research commits (`8843a5ea`) | memory plugins, the replica and the benchmark harness |
+| dsh-mnemon | v0.5.13 + 225 research commits (`50a6831d`) | memory plugins, the replica and the benchmark harness |
 | DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
 | Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
 | gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); grader, primary in the standard setting |
@@ -268,7 +272,7 @@ The full system adds `--simple`, hybrid search with `--embed-url <local nomic-em
 
 ## About this snapshot
 
-This repository is a frozen, history-free snapshot of the research branch at `8843a5ea` (2026-09-29). Every file can
+This repository is a frozen, history-free snapshot of the research branch at `50a6831d` (2026-09-29). Every file can
 be traced to its source through `PROVENANCE.json`.
 
 <details>
@@ -313,12 +317,12 @@ What has been checked:
 - `tools/audit.py` is clean, over the working tree and over every commit (`--history`).
 
 The install, builds, tests and smoke run were checked on the snapshot of `e5c7954a`. The later refreshes, to
-`f97c5679`, `3bbf7835`, `c461581c`, `7649d8ff`, `65145f69`, `aea19abc`, `44fb4e71` and `8843a5ea`, changed only the paper and its
+`f97c5679`, `3bbf7835`, `c461581c`, `7649d8ff`, `65145f69`, `aea19abc`, `44fb4e71`, `8843a5ea` and `50a6831d`, changed only the paper and its
 run records: its text, bibliography, table and figure scripts, generated tables, figures and PDF, the two scripts that
 measure the work per question with their data, `collect.py`, which keeps the HaluMem entries when their records are
 absent and compares Jev-Mem with the final version, `arxiv.py`, which packages the sources for arXiv, and the Jev-Mem
 adapter with its run records. The system's code is unchanged. The recomputation and the audit were repeated at
-`8843a5ea`.
+`50a6831d`.
 
 What the snapshot does and does not claim:
 - Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified`, which differ only in
