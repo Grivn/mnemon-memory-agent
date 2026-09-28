@@ -289,7 +289,7 @@ be traced to its source through `PROVENANCE.json`.
 | `src/` | The dsh-mnemon kernel at the snapshot commit |
 | `plugins/` | The 18 plugins the scripts and the kernel build need |
 | `scripts/` | The evaluation harness (`scripts/bench`), the replica launcher and their libraries |
-| `assets/` | The figures in this README, rendered from the paper |
+| `assets/` | The figures in this README, rendered from the paper; `announcement/` holds the release post's images, drawn from the paper and its data |
 | `tools/` | How this snapshot is made and checked |
 | `VERSIONS.md` | DSH, dsh-mnemon, model and dataset versions |
 | `DATA-LICENSES.md` | The license of each benchmark's text in the run records, and what is left out |

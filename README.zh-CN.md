@@ -250,7 +250,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 | `src/` | 快照提交时的 dsh-mnemon 内核 |
 | `plugins/` | 脚本和内核构建需要的 18 个插件 |
 | `scripts/` | 评测工具（`scripts/bench`）、副本启动脚本及其依赖 |
-| `assets/` | 本 README 中的图，由论文渲染而来 |
+| `assets/` | 本 README 中的图，由论文渲染而来；`announcement/` 里是发布推文的配图，取自论文及其数据 |
 | `tools/` | 快照的生成与检查工具 |
 | `VERSIONS.md` | DSH、dsh-mnemon、模型和数据集的版本 |
 | `DATA-LICENSES.md` | 运行记录中各基准文本的许可，以及哪些内容没有收录 |
