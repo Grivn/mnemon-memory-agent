@@ -10,7 +10,11 @@ MemMachine keeps raw episodes indexed by sentence~\citep{memmachine2026}, and Sm
 \paragraph{Retrieval and judgment.}
 \sys{} retrieves with BM25~\citep{robertson2009bm25}, dense embeddings~\citep{nussbaum2024nomic}, reciprocal rank fusion~\citep{cormack2009rrf} and hypothetical-document queries~\citep{gao2023hyde}, as in retrieval-augmented generation~\citep{lewis2020rag}.
 \jev{} acts as a reranker~\citep{nogueira2019passage,sun2023rankgpt} whose judgments answer explicit propositions and drive actions, as in ReAct and Self-RAG~\citep{yao2023react,asai2024selfrag}.
-Pairing a cheap decision model with an LLM follows LLM cascades~\citep{chen2023frugalgpt} and the distinction between fast and slow thinking~\citep{kahneman2011thinking}.
+
+\paragraph{Fast and slow thinking.}
+Dual-process accounts separate fast, automatic judgment from slow deliberation~\citep{kahneman2011thinking}, and AI systems have borrowed the division to pair fast and slow components~\citep{booch2021thinking}, for instance a small, fast action model with an LLM planner in interactive agents~\citep{lin2023swiftsage}.
+LLM cascades route easy queries to cheap models and hard ones to expensive models~\citep{chen2023frugalgpt}.
+\sys{} applies the division to memory: it splits the work of reading a memory into the judgments that suit a fast decision model and the planning and answering that need an LLM.
 
 \paragraph{Evaluating memory.}
 LoCoMo~\citep{maharana2024locomo} and \lme~\citep{wu2025longmemeval} are the standard benchmarks for long conversations; BEAM reaches ten million tokens~\citep{beam2026}, and HaluMem measures hallucination~\citep{halumem2025}.

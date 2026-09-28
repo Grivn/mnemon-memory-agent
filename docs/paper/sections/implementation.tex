@@ -16,5 +16,5 @@ For very long memories a fold sees at most 120 topics, 240 values and 60 instruc
 Index items are embedded as they are written, so that no View waits for them.
 
 \paragraph{Models.}
-The planner and the answering model are the same LLM, gpt-4.1-mini or DeepSeek-V4.1-Flash (\cref{sec:setup}).
-\jev{} 1.13 judges up to 40 records per call and answers every question about them in that call; 24 records with two questions each take about 0.34\,s and cost \$0.00044.
+System~2 is an LLM: the planner and the answering model are the same LLM, gpt-4.1-mini or DeepSeek-V4.1-Flash (\cref{sec:setup}), and the background folds use DeepSeek-V4.1-Flash without thinking.
+System~1 is \jev{} 1.13, which judges up to 40 records per call and answers every question about them in that call; 24 records with two questions each take about 0.34\,s and cost \$0.00044.

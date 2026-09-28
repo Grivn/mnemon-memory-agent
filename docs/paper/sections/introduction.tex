@@ -9,6 +9,7 @@ Long-term memory systems therefore decide which parts of the history the assista
 Rewriting a conversation when it is stored pays for understanding before the question is known.
 Every message is processed whether or not it is ever asked about, and what the extractor drops or distorts cannot be recovered when a question finally reveals what mattered.
 It also moves judgment away from the moment with the most information for it: the question, the recent dialogue and the candidate records are known together only when the question is asked.
+And it ties memory to a schema: the extractor decides in advance what counts as a fact, an entity or a preference, so each new kind of data, such as documents, tasks or logs, needs a new design of what to extract.
 
 \paragraph{Remembering fast and slow.}
 Dual-process accounts of thinking separate a fast, automatic System~1 from a slow, deliberate System~2~\citep{kahneman2011thinking}.
@@ -20,13 +21,20 @@ Because the judging is fast, \sys{} can read raw, dated records when a question 
 Slow work that no reply can wait for runs in the background: for evidence that no question points to, such as an instruction given once, every mention of a topic or a value that changed, \sys{} consolidates each record once into an index of topic timelines, value histories and standing instructions that links back to the records.
 The index directs reading, and the records remain the evidence.
 
+\paragraph{Memory without a schema.}
+Reading raw records at question time also frees memory from the structure of its store.
+Nothing about a record is decided when it is written, so \sys{} needs from a store only a search route that returns dated records: a conversation journal, a collection of documents or a task list can feed the same agent without a new extractor.
+The consolidated index sits on top of the records and points back to them, so it never becomes the store's schema.
+Memory of this kind can be added wherever records can be searched, which makes it a general way to give agents a past beyond conversation; we evaluate it on conversational memory, the setting with public benchmarks.
+
 \paragraph{Our contributions.}
 \sys{} runs as a second instance of an open-source agent harness~\citep{dsh2026} and hands the unchanged main agent one View per turn.
 Our contributions are:
 \begin{itemize}
-  \item \textbf{Memory as System~1 and System~2} (\cref{sec:design,sec:impl}): a memory agent that gives judging to a decision model and planning and answering to an LLM, over raw records and a consolidated index that points back to them, with ordinal rules under explicit budgets; it is built entirely from the harness's plugins.
+  \item \textbf{Memory as System~1 and System~2} (\cref{sec:design,sec:impl}): a memory agent that gives judging to a decision model and planning and answering to an LLM, with ordinal rules under explicit budgets.
+  \item \textbf{Memory without a schema} (\cref{sec:setting,sec:memory}): raw records about which nothing is decided until a question arrives, and a consolidated index that points back to them, so that the agent reads any store that returns dated records; it is built entirely from the harness's plugins.
   \item \textbf{Accuracy at small context} (\cref{sec:main}): under the protocol of OmniMemEval, a public re-evaluation of 14 memory systems with gpt-4.1-mini answering~\citep{omnimemeval2026}, \sys{} is the most accurate system on LoCoMo (\finLoCoMo\%) and second on \lme{} (\finLME\%), from under 4k tokens of context per question, with the lowest effective cost index on LoCoMo.
-  \item \textbf{Stronger readers, bounded cost} (\cref{sec:reasoning,sec:scale}): with a reasoning reader, \sys{} reaches \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme, level on \lme{} with the best published results; from BEAM's 100K tier to its 10M tier, with 80 times as many records, its cost per question grows by a factor of \beamTenCostRatioC.
+  \item \textbf{A stronger System~2, bounded cost} (\cref{sec:reasoning,sec:scale}): with a reasoning model as System~2, \sys{} reaches \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme, level on \lme{} with the best published results; from BEAM's 100K tier to its 10M tier, with 80 times as many records, its cost per question grows by a factor of \beamTenCostRatioC.
   \item \textbf{Judging belongs to System~1} (\cref{sec:system1}): on the same records, \jev{} separates gold evidence better than two LLM judges (AUC 0.942 against 0.900 and 0.853) at 3--11 times lower latency.
 \end{itemize}
 \Cref{fig:tradeoff} summarizes the comparison on the two most widely reported benchmarks: \sys{} is the only system above 80\% on both that sends the answering model fewer than 4k tokens per question.

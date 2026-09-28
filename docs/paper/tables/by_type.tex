@@ -1,14 +1,14 @@
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini with gpt-4.1-mini or DeepSeek-V4.1-Flash (thinking) answering; MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
+\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
 \label{tab:by-type}
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{@{}l r cc cc@{}}
 \toprule
 & & \multicolumn{2}{c}{\sys} & & \\
 \cmidrule(lr){3-4}
-question type & questions & gpt-4.1-mini & reasoning reader & MemOS & EverOS \\
+question type & questions & standard & reasoning & MemOS & EverOS \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{LoCoMo}} \\
 \quad single-hop & 841 & 94.6 & \best{96.1} & 92.51 & 86.8 \\

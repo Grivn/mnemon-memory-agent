@@ -7,10 +7,17 @@ At each user turn a \emph{memory agent} may read the history, and it publishes a
 The main agent is otherwise unchanged, and the memory agent never edits its reply.
 In the benchmarks we use, a question is asked in a fresh session after its history has been written, so the answer depends on the View alone.
 
+\paragraph{Two kinds of work.}
+Following dual-process accounts of thinking~\citep{kahneman2011thinking}, we call \emph{System~1 work} any decision about one item against an explicit criterion that can be made independently of the other items: does the reply need this record, is it no longer current, does it give what a need asks for.
+Such decisions come in bulk and lie on the path of every reply, so they suit a decision model that answers dozens of them at once in a fraction of a second.
+\emph{System~2 work} is open-ended: wording searches for records not yet seen, naming what a reply needs, and composing an answer that counts, compares dates or chains facts.
+It suits an LLM, which does it well but slowly, so a memory agent should ask for as little of it on the path of a reply as it can, and move the rest to the background.
+
 \paragraph{Harness.}
 We build the memory agent in DeepSeek Harness (DSH), an open-source agent harness in which every capability is a plugin~\citep{dsh2026}.
 Its dsh-mnemon suite provides memory through \emph{Sources}, which expose stores such as a journal of records through read and search routes, and \emph{Strategies}, which decide what the host publishes into the agent's context as one View per turn~\citep{mnemon2026code}.
-Any plugin that exposes records can feed the same View; in this paper all memory lives in one Source, the journal.
+\sys{} is agnostic to the structure of a store: it needs from a Source only a search route that returns dated records, so a store of documents, tasks or past sessions can feed the same View as the conversation journal.
+In this paper all memory lives in one Source, the journal.
 
 \paragraph{Cost measure.}
 A memory system spends at three points: when it processes the history (write time), when it decides what to show (retrieval time), and when the answering model reads what it was shown (the answer stage).

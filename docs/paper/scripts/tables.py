@@ -1056,14 +1056,14 @@ def by_type_table():
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini with gpt-4.1-mini or DeepSeek-V4.1-Flash (thinking) answering; MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
+\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
 \label{tab:by-type}
 \setlength{\tabcolsep}{5pt}
 \begin{tabular}{@{}l r cc cc@{}}
 \toprule
 & & \multicolumn{2}{c}{\sys} & & \\
 \cmidrule(lr){3-4}
-question type & questions & gpt-4.1-mini & reasoning reader & MemOS & EverOS \\
+question type & questions & standard & reasoning & MemOS & EverOS \\
 \midrule
 ''' + '\n'.join(lines) + r'''
 \bottomrule
@@ -1142,6 +1142,15 @@ def final_numbers(macros):
         macros[f'dsCons{D}Abs'] = PENDING if q is None else f"{abs(q['diff']):.1f}"
         c = get(y, 'final', 'cost_per_question'); macros[f'dsCost{D}'] = PENDING if c is None else f'{c:.4f}'
     macros['dsFinLoCoMoRev'] = one(get(done('reasoning', 'locomo'), 'final', 'labels', 'deepseek', 'revised'))
+    # System 1 reads broadly, System 2 narrowly: Jev's input tokens per question (mean) against the answering model's
+    # context, over the five benchmarks in the standard setting.
+    pairs = [(x['final']['jev_tokens'], x['final']['answer_input_tokens']) for x in (done('standard', k) for k in ('locomo', 'lme', 'halumem', 'beam100k', 'beam10m')) if x]
+    if pairs:
+        jt, ratios = [j for j, _ in pairs], [j / a for j, a in pairs]
+        macros['jevTokRange'] = f'{min(jt) / 1000:.0f}--{max(jt) / 1000:.0f}k'
+        macros['jevRatioRange'] = f'{math.floor(min(ratios))}--{round(max(ratios))}'
+    else:
+        macros['jevTokRange'] = macros['jevRatioRange'] = PENDING
     # What the reasoning reader adds to the final version on LongMemEval-S (same memory, gpt-4.1-mini judge).
     g = get(rsn, 'lme-reader', 'paired', 'mini')
     macros['readerGainLME'] = PENDING if g is None else f"{g['diff']:.1f}"; macros['readerGainLMECI'] = ci(g)

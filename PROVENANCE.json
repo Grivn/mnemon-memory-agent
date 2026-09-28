@@ -1,8 +1,8 @@
 {
  "source": {
   "repository": "dsh-mnemon (research branch codex/jev-replica-practice)",
-  "commit": "e5c7954ac9ce8790befe19b777d605190aeafeae",
-  "date": "2026-09-28T17:08:01+08:00"
+  "commit": "f97c56799bbb1e61af953959ebe1ddc8923839b5",
+  "date": "2026-09-28T17:20:40+08:00"
  },
  "plugins": [
   "dsh-mnemon-agent-loop-jev",
@@ -217,16 +217,16 @@
    "sha256": "c1639ce80a070be839aeee6d5cfd0add21aa484d72f76b78f35f6af10b914e1e"
   },
   "docs/paper/main.pdf": {
-   "blob": "640d31408c7960bbbff71560c53ad3b70bd541f4",
-   "sha256": "ff236be5bfbd4d7478a65c3e8d57c7c88f1c0feac32e3d4430f4561cafe022e3"
+   "blob": "7559fddcb66681a275d0944d39a1ce26537185d4",
+   "sha256": "bb21e2f4c4b5e9474b67342abae5d2a4e1e12ff102349884734d0f314f887e8a"
   },
   "docs/paper/main.tex": {
    "blob": "3c979e0f18d72c091cb954a839771be8c40a840e",
    "sha256": "c98196049042c8d9aad26314ec5d41f92b42773cee2df2c3077ccbbb0d0c635b"
   },
   "docs/paper/references.bib": {
-   "blob": "3ee2a07a1d2ef3ba102090901db807f0bee46cd3",
-   "sha256": "04eeff32c5874fddabd8abe23cca198b44364d4eac8ade5a0ee618f9b3d6af44"
+   "blob": "fc81de0d08cd0dc3c4096cd5c6f5051a7aad938c",
+   "sha256": "eceefab5c1b1d54f02ddba03c6f317e9c995de08a304e2f97bfd0acbd647ad2c"
   },
   "docs/paper/scripts/beam_evidence.py": {
    "blob": "32a94e5c3061109211079fbb54ee4de508ce8227",
@@ -241,60 +241,60 @@
    "sha256": "e42ee236b0a84a2ec92b9f8ce52f304fba3bb81ae2beac99021ca758cc4f4897"
   },
   "docs/paper/scripts/tables.py": {
-   "blob": "7b51617f06e2d1431e7d76e462c93ac60fce34fe",
-   "sha256": "c61c54a49ef9e686e92724fd87152a93540a14f25a045abb55867527fbfb3c8a"
+   "blob": "bfb2846722aff709a6ba9e2af755e622d3073fa9",
+   "sha256": "cd20fc1f277521923669d1ba501ab64b12c97c913c470b511c02a317a266ef38"
   },
   "docs/paper/sections/abstract.tex": {
-   "blob": "33a621ee78df7758732b33991f8085293ef1c6c9",
-   "sha256": "64e7eafb4b694fd293a211e76babb3d83e5997ad82f2502208b00efc94df09de"
+   "blob": "7aa41c70212588fa871db01a58eed0f136128b31",
+   "sha256": "13dee7803db7cf34572dde8bb63f0f12a531ed9d912eba189ef7e24fbdae18b1"
   },
   "docs/paper/sections/analysis.tex": {
-   "blob": "1d50311e8f0609ff18c717597a5d318b8180212c",
-   "sha256": "fbf273b8b4a708b8046552a86ee53e996113340411ad04119bf2e85d2bbed6f0"
+   "blob": "123d25ea387278c2ea33e54e0af990b723b37543",
+   "sha256": "d95365274a05886fe72b09d2ae4c201ee066bed8601a79d2af7989ea84460243"
   },
   "docs/paper/sections/appendix.tex": {
    "blob": "6c1d02c582652e7fd94c2a9e7cc73ae0a6f4ee62",
    "sha256": "ff3e013e742b150f47b9bb088d08a73512a2f111f610dba1efd594f4ffff7931"
   },
   "docs/paper/sections/conclusion.tex": {
-   "blob": "4d342544dc6c856fe811a48d87bdde8c17718f4e",
-   "sha256": "76faa6aed8560ee954bc70ef784f68a488ffecacc5ae2ee983e66c7e78e90946"
+   "blob": "bdbc5c231afd5cc8730d3934e6559d3758ea48f8",
+   "sha256": "75fb69a1a595bc1e55c6b281a4923d06013ac7d26391a2d8acf444a80faf1e53"
   },
   "docs/paper/sections/evaluation.tex": {
-   "blob": "c5c98ce426833292cfa22a3fd8293416b8a18ced",
-   "sha256": "21e9b40110939d557a083f4ccb641275d844ec06ec987f02daf141081fd9132f"
+   "blob": "abc4a523ffbfa57dd9d6864d418ead3608467952",
+   "sha256": "2898ddfae2194725ee5de0cac4b3181760631e23df06d625522dffc474b15d43"
   },
   "docs/paper/sections/implementation.tex": {
-   "blob": "ca71014d269eff0022c54b8a48d91678e2484147",
-   "sha256": "d39724f7d91d38930465ea7e90ed9c9dbd582ca839038cb08caa3261677b22e7"
+   "blob": "bb4ff17cfb59e8dc2682dc3aef02e9d925a2e47d",
+   "sha256": "c1d0bb6cf302b7460df4b4b4bf0a7e877b0e68b65e2f55f382c7cd9144d96a87"
   },
   "docs/paper/sections/introduction.tex": {
-   "blob": "15a2e5db103433f8b48c3c6ca89daa5b2be4a90a",
-   "sha256": "e25b79d039df109ff6c17ecf9257bc12587ce2d71e046ce85c87578ba21965d5"
+   "blob": "08780a94c6dc370534ff5c6436e38abc6bd9df3b",
+   "sha256": "83727b9f1227da5d7f64282cb16b8d00ff6047790aac88f30e5dbf22c9ad0ae3"
   },
   "docs/paper/sections/limitations.tex": {
-   "blob": "f91232f22fcbd5415c6eba8da0ca44c19725dea5",
-   "sha256": "efff03cbe21468fea00a602ffb02280264f7dfe6fb6b1a6ff15533e73dc5c670"
+   "blob": "86dce2f62117f5d2cf163a04ffb1228a9885f7ea",
+   "sha256": "8413b73a79a99cfece7c99a286b33a928366012cfe80b4fd9ff5989a478247f5"
   },
   "docs/paper/sections/protocol.tex": {
    "blob": "6d5b3ea393f0cb444d47deb8869d747302134db7",
    "sha256": "65bcfb81d49d75eb074e0965e4a1e94996ca04df406904b434d719ae7c2ec662"
   },
   "docs/paper/sections/related.tex": {
-   "blob": "95659a87ac5d7154bce64d485ff42f3544418770",
-   "sha256": "afe0c584e46777ea45cc71bd5b7c30b73aaface754a7150d26f8f9f71cb86762"
+   "blob": "5d6a3b09607dfff9f721dc085de8fc6b35a3cc71",
+   "sha256": "5c1fd487d1ca43cfee1eab28c7748aff5dd437b81097eb85e086b1d69a5356c7"
   },
   "docs/paper/sections/results.tex": {
-   "blob": "38625bff5b14834ff5d7a8ac8c2825443062ad6d",
-   "sha256": "0bed077adaeab8765272b81ac894019a18f38fc2bbb031a98c127dc2d3f5272c"
+   "blob": "84a45aa12e69131645adf2dd4d169347153e7f1a",
+   "sha256": "5417175e6ae20feff843d6d18a914cec1f5e447933b35f4af8c50836288608be"
   },
   "docs/paper/sections/setting.tex": {
-   "blob": "0cd293370c0a76c77f042b77dd4e7ee7feb2878f",
-   "sha256": "f89e1f530a34c710a0fb3430edd051aa4bd986fb3224d62e052ef1a11a8db1bb"
+   "blob": "cc202ec0bb012fa4355e0cd6873f0224f700397a",
+   "sha256": "b8ef6d463d288602f12ffeed7fdae915035a1bc43b878e72c1a10075cf5e10e3"
   },
   "docs/paper/sections/system.tex": {
-   "blob": "9ea845180275168cddc883223bb699116db513e6",
-   "sha256": "204bfc1234ecd185011e048b978670f02405c1f02e5eb10e02d27a16f7c788ea"
+   "blob": "2fbc6c5808d638f57b616bec8f6eb74e7344d0fe",
+   "sha256": "83daa067c36c2c2b8bffb1e603b4407e0378a7ae8915de66adc4ead450dcc14c"
   },
   "docs/paper/tables/ablation.tex": {
    "blob": "53fd3554ee14bb68f7d0a1e0319071a35823026a",
@@ -313,8 +313,8 @@
    "sha256": "9857f6c1fb31ae1023af37361f98292b6f2434c3415e3f67e93cc600d533001d"
   },
   "docs/paper/tables/by_type.tex": {
-   "blob": "fd832ff244c72a5bd1c46a4f8e45fdfea5e27284",
-   "sha256": "0f1f26bd54c9e40844c0c268667a62bd7ce2b13879ccf38ed35f49e122b30ee3"
+   "blob": "bad0559be7427dc5941d4d6b7e463c00a4660633",
+   "sha256": "0022f60a48db4a847a30441cbfbdb93688078f6a4e723f4651b5bbe2da9f8999"
   },
   "docs/paper/tables/consolidation.tex": {
    "blob": "3acd22159bb04abcb1478e261c44a3ae807fe09a",
@@ -369,8 +369,8 @@
    "sha256": "29d1e36121a72cae8e83c1cad7ece79c0777e9d73bbbcad1e45dc727cc873fd0"
   },
   "docs/paper/tables/numbers.tex": {
-   "blob": "53229a4723ac74525235c169491b1a09e126d1aa",
-   "sha256": "b2ba6e4e7ec04ec83ba38330d7cbd8a5899a8909d4516b2bb6cc81e28723a2c6"
+   "blob": "f7e9667b8f55ce2f9476ec2a81fce69d473a40f6",
+   "sha256": "7e5c23351699bdbbd6795cf4b3596738171674c042420846ac89cae37f071692"
   },
   "docs/paper/tables/omnimemeval.tex": {
    "blob": "43c8b02cb24e8ba73ee4cd2522124bbf707ac35f",

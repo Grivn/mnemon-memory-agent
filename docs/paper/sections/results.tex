@@ -4,6 +4,7 @@
 \Cref{tab:omnimemeval} places \sys{} among the 14 systems that OmniMemEval re-evaluated with the same answering model.
 On LoCoMo it scores \finLoCoMo\%, against 88.83\% for MemOS and at most 83.48\% for the rest, a margin beyond the one to two points that separate judges; on \lme{} it scores \finLME\%, second to MemOS (89.2\%) and ahead of EverOS (80.4\%) and Zep (79.8\%).
 It sends the answering model about \finCtxLoCoMo{} tokens per question, less than any other system above 80\% on either benchmark (MemOS 4.2--5.4k, EverOS 8.6--12.4k, Hindsight 24.7k, Cognee 32.5k).
+The context is small because System~1 does the broad reading: per question, \jev{} reads \jevTokRange{} tokens of records, \jevRatioRange{} times what the answering model reads, at about a tenth of its price per token, and passes on only what the reply needs.
 With $c_\text{full}$ set to 21,613 gpt-4.1-mini input tokens on LoCoMo and 105,134 on \lme, \sys{} has the lowest effective cost index (\cref{eq:eci}) of the 15 systems on LoCoMo, \finEciLoCoMo{} against \eciOtherLoCoMo{} for \eciOtherNameLoCoMo, and the second lowest on \lme, \finEciLME{} after \eciOtherNameLME{} at \eciOtherLME{} (\cref{fig:tradeoff}).
 
 \input{tables/omnimemeval}
@@ -13,11 +14,12 @@ On \lme{} it leads on knowledge updates, matches MemOS on multi-session question
 
 \input{tables/by_type}
 
-\subsection{A Stronger Reader}
+\subsection{A Stronger System~2}
 \label{sec:reasoning}
 
-With DeepSeek-V4.1-Flash answering with thinking, \sys{} scores \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme{} under the DeepSeek judge (\dsFinLoCoMoMini\% and \dsFinLMEMini\% under gpt-4.1-mini), at \$\dsCostLoCoMo{} and \$\dsCostLME{} per question.
-On \lme{} the reasoning reader adds \readerGainLME{} points to the same memory (95\% interval \readerGainLMECI), most on temporal-reasoning and multi-session questions; with it, \sys{} reaches or passes MemOS on five of the six \lme{} question types (\cref{tab:by-type}). Raw records leave computing and counting to the reader, and a better reader does them.
+System~2 can be replaced without changing the memory.
+With DeepSeek-V4.1-Flash planning and answering, with thinking when it answers, \sys{} scores \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme{} under the DeepSeek judge (\dsFinLoCoMoMini\% and \dsFinLMEMini\% under gpt-4.1-mini), at \$\dsCostLoCoMo{} and \$\dsCostLME{} per question.
+On \lme{} the stronger System~2 adds \readerGainLME{} points on the same memory (95\% interval \readerGainLMECI), most on temporal-reasoning and multi-session questions, whose computing and counting are System~2 work; with it, \sys{} reaches or passes MemOS on five of the six \lme{} question types (\cref{tab:by-type}). Raw records leave computing and counting to the reader, and a better reader does them.
 \Cref{tab:best-reported} lists each open-source project's best published result, whatever its answering model and protocol.
 On \lme{} \sys{} is level with the best claims (Hindsight 94.6\%, Mem0 94.4\% with GPT-5); on LoCoMo, where claims reach 94.7\% (Zep with gpt-5.4), it scores \dsFinLoCoMo\% on the original labels and \dsFinLoCoMoRev\% on the revised ones.
 

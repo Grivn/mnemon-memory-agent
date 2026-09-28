@@ -1,42 +1,154 @@
-# Mnemon memory agent: paper artifact
+# Mnemon: Remembering Fast and Slow in LLM Agents
 
-[中文](README.zh-CN.md)
+[中文](README.zh-CN.md) · [Paper (PDF)](docs/paper/main.pdf) · [Reproduce the numbers](#reproduce-the-numbers) · [Run the system](#run-the-system)
 
-This repository holds the system evaluated in the technical report *Read Raw, Judge Fast: Mnemon* (`docs/paper`),
-the run records its numbers are computed from, and the tools that produced this snapshot.
+Mnemon is a long-term memory agent for LLM assistants. It keeps conversations as raw, dated records and does its
+work when a question arrives, dividing that work the way dual-process accounts divide thinking. A fast decision
+model (**System 1**) answers many small yes/no questions about the records a search returns. An LLM (**System 2**)
+words a few searches and composes the answer. A background pass indexes each record once, so that questions about a
+whole conversation reach evidence their own searches miss.
 
-Mnemon here is a two-system memory agent built on DeepSeek Harness (DSH). A dedicated memory DSH runs beside the
-main DSH. It keeps raw conversation records, plans searches with an LLM, lets the JEV decision model judge what the
-latest message needs (System 1), and consolidates each record once into an index that links back to it. The main
-DSH receives the selection as a View.
+<p align="center">
+  <img src="assets/tradeoff.png" width="920" alt="Accuracy against context per question on LoCoMo and LongMemEval-S: Mnemon and the 14 systems re-evaluated by OmniMemEval">
+</p>
+<p align="center"><sub>Accuracy against the context sent to the answering model per question. Mnemon (star) and the 14 systems
+re-evaluated by OmniMemEval all use gpt-4.1-mini to answer. Dashed lines join points of equal effective cost index;
+up and to the left is better.</sub></p>
 
-**What this is not.** It is not the `mnemon` CLI ([mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon)), which
-is a separate product, and not Mnemon Agency. The evaluated system does not use the `mnemon` binary. It is also not
-a release of the `dsh-mnemon` package: it is a frozen research snapshot.
+## Highlights
 
-**Status.** Snapshot of the research branch at `e5c7954a` (2026-09-28). The paper is still being finalized, and the
-snapshot will be refreshed with `tools/snapshot.py` when its numbers freeze.
+- **Most accurate on LoCoMo, from under 4k tokens of context.** Under OmniMemEval's protocol, with gpt-4.1-mini
+  answering, Mnemon scores **91.7%** on LoCoMo (first of 15 systems) and **83.8%** on LongMemEval-S (second of 13).
+  It sends the answering model about **3.8k tokens** per question. It is the only system above 80% on both benchmarks
+  below 4k tokens.
+- **Lowest effective cost index on LoCoMo:** 0.259, against 0.337 for the next system.
+- **Level with the best published results.** With DeepSeek-V4.1-Flash as System 2, Mnemon reaches **94.4%** on
+  LongMemEval-S and **92.2%** on LoCoMo (95.3% on revised labels).
+- **Bounded cost at ten million tokens.** From BEAM's 100K tier to its 10M tier, with 80 times as many records, the
+  cost per question grows by a factor of **1.11**.
+- **System 1 judges better.** On the same 14,359 records, Jev separates gold evidence with an AUC of **0.942**.
+  DeepSeek reaches 0.900 and gpt-4.1-mini 0.853, at 3–11 times Jev's latency.
 
-## Contents
+## Two ideas
 
-| Path | What |
-|---|---|
-| `docs/paper/` | The paper: LaTeX sources, bibliography, data, generated tables and figures, `main.pdf`, and its scripts |
-| `docs/reports/` | The pre-registrations and study reports the paper cites |
-| `docs/pr-assets/` | Only the report assets those reports link to |
-| `docs/plans/` | The two design notes the reports link to |
-| `runs/` | The run records `collect.py` reads, gzip-compressed, with `MANIFEST.json` |
-| `docs/run-commits.json` | For each run directory, the code commit and models its runs recorded |
-| `src/` | The dsh-mnemon kernel at the snapshot commit |
-| `plugins/` | The 18 plugins the scripts and the kernel build need |
-| `scripts/` | The evaluation harness (`scripts/bench`), the replica launcher and their libraries |
-| `tools/` | How this snapshot is made and checked (see below) |
-| `VERSIONS.md` | DSH, dsh-mnemon, model and dataset versions |
-| `PROVENANCE.json` | Source commit, and each file's git blob id and SHA-256 |
+### Remembering fast and slow
 
-## Reproduce the paper's numbers (no API keys)
+Most of the read-time work of memory is System 1 work: small, independent questions with explicit criteria.
+- Should the reply use this record?
+- Has a later message made it obsolete?
+- Does it give the second of the two dates the question needs?
 
-Every number in the paper comes from `docs/paper/scripts/collect.py`, which reads the run records.
+A System One model such as [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) answers dozens of
+them in a third of a second.
+
+Only a little is System 2 work: wording searches, naming what the reply needs, and computing the answer. An LLM does
+this well but slowly.
+
+Because the judging is fast, Mnemon can afford to read raw records at question time instead of rewriting them in
+advance. The rules between the two systems read only what System 1 gives reliably: its order and its yes/no line.
+They call on System 2 only when System 1 finds a need unmet.
+
+<p align="center">
+  <img src="assets/architecture.png" width="920" alt="Mnemon at one user turn: plan (System 2), retrieve, screen and judge (System 1), loop, compose the View; consolidation in the background">
+</p>
+<p align="center"><sub>Mnemon at one user turn. It runs as a second instance of <a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a>
+beside the main agent, which it leaves unchanged, and publishes one View per turn.</sub></p>
+
+### Memory without a schema
+
+Systems that extract at write time must decide in advance what counts as a fact, an entity or a preference. Each new
+kind of data then needs a new extractor. Mnemon decides nothing about a record when it is written, so it needs from a
+store only a search route that returns dated records.
+
+The consolidated index (topic timelines, value histories, standing instructions) sits on top of the records and
+points back to them. It is a view over the records, not their schema. Mnemon reads the records with or without it.
+
+Memory of this kind can be added wherever records can be searched. The paper evaluates conversational memory, the
+setting with public benchmarks; other stores are untested.
+
+## Results
+
+All numbers come from `docs/paper/data/results.json`, which is computed from the run records in `runs/`. Our runs
+are graded by gpt-4.1-mini; OmniMemEval grades with gpt-4o-mini, a difference of one to two points.
+
+### Under a common protocol (gpt-4.1-mini answering)
+
+Accuracy (%), context sent to the answering model per question, and the effective cost index. The index is
+ECI = (1 − accuracy) + context / full-context tokens: the expected cost of a question when each error is repaired by
+one full-context answer. Lower is better. Other systems' numbers are OmniMemEval's.
+
+| System | LoCoMo | context | ECI | LongMemEval-S | context | ECI |
+|---|---:|---:|---:|---:|---:|---:|
+| **Mnemon** | **91.7** | 3.8k | **0.259** | 83.8 | 3.8k | 0.198 |
+| MemOS | 88.83 | 5.4k | 0.362 | **89.2** | 4.2k | **0.147** |
+| Cognee | 83.48 | 32.5k | 1.670 | 51.8 | 10.3k | 0.580 |
+| EverOS | 82.75 | 8.6k | 0.569 | 80.4 | 12.4k | 0.314 |
+| Hindsight | 81.99 | 24.7k | 1.322 | 72.2 | 29.8k | 0.561 |
+| Mem0 | 77.68 | 17.4k | 1.028 | 56.0 | 0.9k | 0.448 |
+| Letta | 77.12 | 14.2k | 0.885 | 77.67 | 49.4k | 0.693 |
+| MemMachine | 73.9 | 2.6k | 0.380 | 63.6 | 2.8k | 0.391 |
+| mem9 | 73.64 | 1.6k | 0.337 | 78.0 | 3.8k | 0.256 |
+| Supermemory | 73.53 | 15.2k | 0.970 | 66.07 | 6.6k | 0.402 |
+| MemoryLake | 72.49 | 5.2k | 0.516 | – | – | – |
+| Viking Memory | 69.33 | 6.0k | 0.583 | 61.07 | 2.3k | 0.411 |
+| Zep | 63.83 | 1.9k | 0.448 | 79.8 | 117.1k | 1.316 |
+| Memori | 41.34 | 8.1k | 0.963 | 20.8 | 2.8k | 0.818 |
+| Backboard.io | 22.4 | 1.2k | 0.831 | – | – | – |
+
+Only answer-stage context is compared, because it is the one cost every system reports. Mnemon's other costs
+(planner, Jev, consolidation) are listed below and are not folded into the index.
+
+### Against each project's best published result
+
+Each project's best claim, with whatever answering model, judge and protocol it used. The settings differ widely,
+so this ranks claims, not systems. The paper's Table 3 has all 18 entries and their sources.
+
+| Project | LoCoMo | LongMemEval-S | Answering model / judge |
+|---|---:|---:|---|
+| **Mnemon** | **95.3**† | 94.4 | DeepSeek-V4.1-Flash (thinking) / DeepSeek |
+| Zep / Graphiti | 94.7 | 90.2 | gpt-5.4 (medium reasoning) / gpt-5.4 |
+| EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / three judges averaged |
+| Mem0 | 92.5 | 94.4 | GPT-5 / GPT-5 |
+| MemU | 92.09 | – | not stated |
+| Hindsight | 92.0 | **94.6** | undisclosed |
+| MemMachine | 91.69 | 93.0 | gpt-4.1-mini; LongMemEval-S gpt-5-mini / gpt-4o-mini |
+| MemOS | 88.83 | 89.2 | gpt-4.1-mini / gpt-4o-mini (OmniMemEval) |
+
+† On the revised LoCoMo labels, which drop 44 unusable questions and correct 25 answers; 92.2 on the original labels,
+which every other entry uses.
+
+### Five benchmarks, with the full cost
+
+gpt-4.1-mini answering. Score under the gpt-4.1-mini / DeepSeek judges. The rank is among the systems OmniMemEval
+re-evaluated. Cost per question covers the answer, the planner and Jev at list prices. Consolidation is a one-time
+cost per memory.
+
+| Benchmark | Questions | Score | Rank | Context | Cost / question | Median latency | Consolidation / memory |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| LoCoMo | 1,540 | 91.7 / 91.4 | 1/15 | 3.8k | $0.0033 | 9.6 s | $0.013 |
+| LongMemEval-S | 500 | 83.8 / 85.4 | 2/13 | 3.8k | $0.0033 | 13.1 s | $0.017 |
+| HaluMem | 3,467 | 73.3 / 65.8 | 8/13 | 3.4k | $0.0036 | 12.3 s | $0.089 |
+| BEAM-100K | 400 | 64.5 / 60.5 | 10/12 | 3.8k | $0.0048 | 12.1 s | $0.012 |
+| BEAM-10M | 200 | 51.2 / 48.8 | 10/12 | 3.8k | $0.0053 | 15.3 s | $1.62 |
+
+Nothing on the read path grows with the memory except the search index. The planner reads the recent dialogue, Jev
+screens at most 48 records a round, and the View has fixed budgets. System 1 does the broad reading: per question,
+Jev reads 35–73k tokens of records, 9–19 times what the answering model reads, at about a tenth of its price per
+token.
+
+### System 1 against LLM judges
+
+<p align="center">
+  <img src="assets/system1.png" width="860" alt="ROC curves and per-call latency of Jev, DeepSeek and gpt-4.1-mini judging the same records">
+</p>
+
+Jev, DeepSeek and gpt-4.1-mini were asked the same question about the same 14,359 records. Jev separates the gold
+evidence best and answers two questions per record in the time an LLM takes for one.
+
+## Reproduce the numbers
+
+Every number in the paper comes from `docs/paper/scripts/collect.py`, which reads the run records. No API keys are
+needed.
 
 ```sh
 python3 tools/restore_runs.py                     # expands runs/ into runs-expanded/ and checks every file
@@ -65,12 +177,12 @@ the repository:
 
 | Variable | For |
 |---|---|
-| `TYPESAFE_API_KEY` | JEV (System 1) |
+| `TYPESAFE_API_KEY` | Jev (System 1) |
 | `DEEPSEEK_API_KEY` | DeepSeek answering, planning, notes and consolidation |
 | `OPENAI_API_KEY` | gpt-4.1-mini runs and judging |
 | `OPENAI_BASE_URL` | optional; defaults to the OpenAI API |
 
-A two-question smoke run of the final configuration's core (it answered both questions when this snapshot was made):
+A two-question smoke run of the final configuration's core:
 
 ```sh
 node --env-file=.env --experimental-transform-types scripts/bench/run.ts --dataset locomo \
@@ -78,10 +190,30 @@ node --env-file=.env --experimental-transform-types scripts/bench/run.ts --datas
   --arms replica-cuefill:raw-records --no-thinking --concurrency 1 --out out/smoke
 ```
 
-The final version adds `--simple`, hybrid search with `--embed-url <local nomic-embed-text server>`, and
-`--consolidate deepseek-flash`; the header of `scripts/bench/run.ts` documents every option.
+The full system adds `--simple`, hybrid search with `--embed-url <local nomic-embed-text server>`, and
+`--consolidate deepseek-flash`. The header of `scripts/bench/run.ts` documents every option.
 
-## How the snapshot is made and checked
+## Repository layout
+
+| Path | What |
+|---|---|
+| `docs/paper/` | The paper: LaTeX sources, bibliography, data, generated tables and figures, `main.pdf`, and its scripts |
+| `docs/reports/` | The pre-registrations and study reports behind the paper |
+| `docs/pr-assets/` | Only the report assets those reports link to |
+| `docs/plans/` | The two design notes the reports link to |
+| `runs/` | The run records `collect.py` reads, gzip-compressed, with `MANIFEST.json` |
+| `docs/run-commits.json` | For each run directory, the code commit and models its runs recorded |
+| `src/` | The dsh-mnemon kernel at the snapshot commit |
+| `plugins/` | The 18 plugins the scripts and the kernel build need |
+| `scripts/` | The evaluation harness (`scripts/bench`), the replica launcher and their libraries |
+| `assets/` | The figures in this README, rendered from the paper |
+| `tools/` | How this snapshot is made and checked |
+| `VERSIONS.md` | DSH, dsh-mnemon, model and dataset versions |
+| `PROVENANCE.json` | Source commit, and each file's git blob id and SHA-256 |
+
+## How this snapshot is made and checked
+
+This repository is a frozen, history-free snapshot of the research branch at `f97c5679` (2026-09-28).
 
 | Tool | Does |
 |---|---|
@@ -92,18 +224,42 @@ The final version adds `--simple`, hybrid search with `--embed-url <local nomic-
 | `tools/run_commits.py` | Writes `docs/run-commits.json` |
 | `tools/audit.py` | Fails on credentials, local paths, non-loopback endpoints or files over 50 MB |
 
-Checked for this snapshot: the recomputed `results.json` equals the committed one using only `runs/` and the two
-datasets, except the HaluMem entries, whose run records are not included; the frozen-lockfile install, the kernel and plugin builds, and the plugins' 223 tests pass; the smoke run
-above answered both questions; `tools/audit.py` is clean.
+What has been checked:
+- `results.json` recomputed from `runs/` and the two datasets alone equals the committed one, except the HaluMem
+  entries, whose run records are not included.
+- The frozen-lockfile install, the kernel and plugin builds, and the plugins' 223 tests pass.
+- The smoke run above answered both questions.
+- `tools/audit.py` is clean.
 
-## Fidelity
+These checks were made on the snapshot of `e5c7954a`. The refresh to `f97c5679` changed only the paper's text,
+bibliography, table script, generated tables and PDF. The run records, `collect.py` and the system's code are
+unchanged, and `tools/audit.py` is clean again.
 
-- Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified` (path placeholders only).
-- The paper's run directories ran at 25 different commits (`docs/run-commits.json`); the snapshot is the latest of
-  the branch, not each of those commits.
-- Three plugins (Memory Spaces, Runtime, three-tier) are here only because the kernel's client bundles their pages;
-  they ship without their tests, which exercise product components outside this snapshot.
+What the snapshot does and does not claim:
+- Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified`, which differ only in
+  path placeholders.
+- The paper's run directories ran at 25 different commits (`docs/run-commits.json`). The snapshot is the branch's
+  latest commit, not each of those commits.
+- Three plugins (Memory Spaces, Runtime, three-tier) are here only because the kernel's client bundles their pages.
+  They ship without their tests, which exercise product components outside this snapshot.
 - Git history is not included.
+
+## Citation
+
+```bibtex
+@techreport{grivn2026mnemon,
+  title  = {Mnemon: Remembering Fast and Slow in {LLM} Agents},
+  author = {Grivn},
+  year   = {2026},
+  note   = {Technical report}
+}
+```
+
+## About the name
+
+This is not the `mnemon` CLI ([mnemon-dev/mnemon](https://github.com/mnemon-dev/mnemon)), which is a separate
+product, and not Mnemon Agency. The evaluated system does not use the `mnemon` binary. It is also not a release of
+the `dsh-mnemon` package: it is a frozen research snapshot.
 
 ## Licenses and data
 

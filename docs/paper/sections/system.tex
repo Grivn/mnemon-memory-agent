@@ -47,31 +47,33 @@
 \node[draw=rule, dashed, rounded corners=4pt, fit=(plan)(retrieve)(screen)(judge)(loop)(compose)(journal)(consolidate)(index), inner sep=6pt, label={[lab, font=\scriptsize\bfseries]above:{replica DSH instance: \sys}}] {};
 \end{scope}
 % legend
-\node[lab, anchor=north west, align=left] at (2.4,-3.75) {\fcolorbox{ink2}{fillB}{\rule{0pt}{4pt}\rule{4pt}{0pt}} LLM \quad \fcolorbox{ink2}{fillA}{\rule{0pt}{4pt}\rule{4pt}{0pt}} \jev{} decision model \quad \fcolorbox{ink2}{fillC}{\rule{0pt}{4pt}\rule{4pt}{0pt}} storage and search \quad \fcolorbox{ink2}{white}{\rule{0pt}{4pt}\rule{4pt}{0pt}} rules \quad dashed: off the answer path};
+\node[lab, anchor=north west, align=left] at (2.4,-3.75) {\fcolorbox{ink2}{fillB}{\rule{0pt}{4pt}\rule{4pt}{0pt}} System~2 (LLM) \quad \fcolorbox{ink2}{fillA}{\rule{0pt}{4pt}\rule{4pt}{0pt}} System~1 (\jev) \quad \fcolorbox{ink2}{fillC}{\rule{0pt}{4pt}\rule{4pt}{0pt}} storage and search \quad \fcolorbox{ink2}{white}{\rule{0pt}{4pt}\rule{4pt}{0pt}} rules \quad dashed: off the answer path};
 \end{tikzpicture}
-\caption{\sys{} at one user turn. The replica plans with an LLM (System~2), retrieves raw records, has \jev{} (System~1) screen and judge them and the index items they link to, loops on needs that are still open, and publishes a View into the main instance. A background pass consolidates each record once into an index that points back to the records.}
+\caption{\sys{} at one user turn. System~2, an LLM, plans the searches; System~1, \jev, screens and judges the raw records they return and the index items those records link to; rules loop on needs that are still open and publish a View into the main instance, whose LLM answers. Off the answer path, System~2 consolidates each record once into an index that points back to the records.}
 \label{fig:architecture}
 \end{figure}
 
 At every user turn \sys{} decides what the main agent should see before it replies (\cref{fig:architecture}).
-It keeps conversations as raw records indexed once in the background (\cref{sec:memory}), reads them with two systems (\cref{sec:read}), and connects the two with ordinal rules under explicit budgets (\cref{sec:rules}); \cref{alg:turn} summarizes one turn.
+It divides the work as \cref{sec:setting} does: an LLM plans the searches and names what the reply needs (System~2), \jev{} judges every record the searches return (System~1), rules with explicit budgets connect the two, and the System~2 work that no reply can wait for, consolidating the history into an index, runs in the background.
+\Cref{sec:memory,sec:read,sec:rules} describe the memory, the two systems that read it and the rules; \cref{alg:turn} summarizes one turn.
 
 \subsection{Memory: Raw Records and a Consolidated Index}
 \label{sec:memory}
 
 \paragraph{Records.}
 Each session is written as it happened, as short \texttt{speaker: text} chunks, each headed by the session's number and date.
-No LLM is on the write path of a record; the only computation is one embedding.
+No LLM is on the write path of a record, and nothing about it is decided when it is written; the only computation is one embedding, so the write path is the same whatever the records are about.
 
 \paragraph{Consolidation.}
 Questions about a whole conversation, such as every mention of a topic, the current value of something that changed or an instruction given once, need evidence that the question's own searches rarely find.
-A background job therefore reads the journal once, in order, and a small LLM folds it, batch by batch, into an \emph{index} of three kinds of items, each linked to the records it came from: events on topic timelines; dated histories of values that can change, marked where a value contradicts an earlier one; and standing instructions and preferences.
-Items point to records and never replace them.
+Gathering it is System~2 work that no reply can wait for, so a background job reads the journal once, in order, and a small LLM folds it, batch by batch, into an \emph{index} of three kinds of items, each linked to the records it came from: events on topic timelines; dated histories of values that can change, marked where a value contradicts an earlier one; and standing instructions and preferences.
+Items point to records and never replace them: the index is a view over the records, not their schema, and \sys{} reads the records with or without it.
 
 \subsection{Reading with Two Systems}
 \label{sec:read}
 
 \paragraph{Plan (System~2).}
+Planning is System~2 work: it must anticipate how the records that answer a question are worded and what the reply will have to say.
 Two LLM calls read the last six messages in parallel.
 The \emph{cue plan} writes three searches worded as a stored record would word them, plus one invented record that would answer the message~\citep{gao2023hyde}; with the message itself, a turn starts with five searches.
 The \emph{need plan} lists at most three facts the reply needs, marked \texttt{NEED}, or \texttt{ALL} when the reply needs every instance of something (a count, a total, a list).
@@ -82,15 +84,17 @@ Each search ranks the journal's records by BM25 and by embedding similarity, fus
 The pages merge into a \emph{pool}: each search first gets an equal share of its own best results, and the rest go to the highest summed reciprocal rank.
 
 \paragraph{Judge (System~1).}
-\jev{} answers typed yes/no propositions with explicit criteria and returns the probability of yes~\citep{jev2026}.
+Judging is System~1 work: each proposition concerns one record, has an explicit criterion and can be answered independently of the others.
+\jev{} answers typed yes/no propositions and returns the probability of yes~\citep{jev2026}.
 It \emph{screens} each pooled record (should the assistant's next reply use this item?), then \emph{judges} the records that could enter the View, beside each other and the last six messages, as \emph{needed} or \emph{no longer current} (a later message or record explicitly changes, cancels or completes it), and fills a \emph{need table}: does this record give what this need asks for?
 The judged records light up the index items linked to them, and \jev{} judges which of these topics and values, and of the dozen nearest to the question, the reply needs.
-Counting, arithmetic, comparing dates and multi-hop indirection, which \jev{} handles poorly~\citep{jevdocs2026}, are left to the planner and the answering model.
+Counting, arithmetic, comparing dates and multi-hop indirection are System~2 work, which \jev{} handles poorly~\citep{jevdocs2026}; they are left to the planner and the answering model.
 
 \subsection{Rules and Budgets}
 \label{sec:rules}
 
-The rules use only \jev's yes/no line at 0.5, \jev's order, and events observed in the previous step.
+The rules connect the two systems.
+They read only what System~1 reliably gives, its yes/no line at 0.5 and its order, together with events observed in the previous step, and they call on System~2 only when System~1 reports trouble: a need that no judged record gives prompts the planner for a new search, much as System~2 is mobilized when System~1 runs into difficulty~\citep{kahneman2011thinking}.
 Every other number is a budget with a meaning: three needs per turn, pages of 20 records or 12,000 characters, a pool of 48 records, three rounds, and a View of 16 records and 12,000 characters.
 
 \paragraph{The loop.}
@@ -114,7 +118,7 @@ Records judged no longer current are left out.
 \State $P \gets \textsc{Pool}(\{\textsc{Search}(J, q) : q \in Q\})$ \Comment{BM25 and vectors, fused; at most 48 records}
 \For{round $= 1, 2, 3$}
   \State $\textsc{Screen}(P)$;\; $\textsc{Judge}(P, M, N)$ \Comment{System~1: use it? needed? no longer current? which need?}
-  \State $A \gets$ one action per open need: page a search, ask the planner for one, or give the need up
+  \State $A \gets \textsc{Act}(N, P)$ \Comment{rules: page a search, ask System~2 for a new one, or give up}
   \If{$A = \emptyset$} \State \textbf{break} \EndIf
   \State $P \gets P \cup \textsc{Run}(A)$
 \EndFor
