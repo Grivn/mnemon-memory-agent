@@ -7,8 +7,8 @@ Everything the paper's runs used, with where each version is recorded.
 | Component | Version | Recorded in |
 |---|---|---|
 | This snapshot | research branch `codex/jev-replica-practice` of dsh-mnemon at `f97c5679` (2026-09-28) | `PROVENANCE.json` |
-| dsh-mnemon base | v0.5.13 (commit `84d469ff`, 2026-09-22) plus 214 research commits | `package.json` (`"version": "0.5.13"`) |
-| DeepSeek Harness (DSH) | 0.1.5-rc.1, the whole `@deepseek-ai/dsh-*` cohort | `pnpm-lock.yaml`; the cohort is enumerated in `pnpm-workspace.yaml` |
+| dsh-mnemon base | v0.5.13 (commit `84d469ff`, 2026-09-22) plus 215 research commits | `package.json` (`"version": "0.5.13"`) |
+| DeepSeek Harness (DSH) | 0.1.5-rc.1 for the `@deepseek-ai/dsh-*` cohort; `dsh-session-projection`, versioned separately, is 0.1.0-rc.8 | `pnpm-lock.yaml`; the cohort is enumerated in `pnpm-workspace.yaml` |
 | Cordis | `@deepseek-ai/cordis` 4.0.2 | `pnpm-lock.yaml` |
 | JEV client | `@typesafe-ai/sdk` 0.6.0 | `pnpm-lock.yaml` |
 | TypeScript / tsdown | 5.9.3 / 0.22.14 | `pnpm-lock.yaml` |

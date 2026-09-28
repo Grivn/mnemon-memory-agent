@@ -1,5 +1,20 @@
 # Mnemon: Remembering Fast and Slow in LLM Agents
 
+<p>
+  <a href="#under-a-common-protocol-gpt-41-mini-answering"><img src="https://img.shields.io/badge/LoCoMo%20%28gpt--4.1--mini%29-91.7%25%20%C2%B7%20%231%20of%2015-2ea44f" alt="LoCoMo (gpt-4.1-mini): 91.7%, first of 15"></a>
+  <a href="#under-a-common-protocol-gpt-41-mini-answering"><img src="https://img.shields.io/badge/LongMemEval--S%20%28gpt--4.1--mini%29-83.8%25%20%C2%B7%20%232%20of%2013-1f6feb" alt="LongMemEval-S (gpt-4.1-mini): 83.8%, second of 13"></a>
+  <a href="#against-each-projects-best-published-result"><img src="https://img.shields.io/badge/reasoning%20model-LoCoMo%2092.2%25%20%C2%B7%20LongMemEval--S%2094.4%25-8250df" alt="with a reasoning model: LoCoMo 92.2%, LongMemEval-S 94.4%"></a>
+  <a href="#highlights"><img src="https://img.shields.io/badge/context-3.8k%20tokens%20per%20question-57606a" alt="context: 3.8k tokens per question"></a>
+  <a href="docs/paper/main.pdf"><img src="https://img.shields.io/badge/paper-PDF-b31b1b" alt="paper: PDF"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-d4a72c" alt="license: MIT"></a>
+</p>
+<p>
+  <a href="#components-and-versions"><img src="https://img.shields.io/badge/forked%20from-dsh--mnemon%20v0.5.13-0969da" alt="forked from: dsh-mnemon v0.5.13"></a>
+  <a href="#components-and-versions"><img src="https://img.shields.io/badge/DSH-0.1.5--rc.1-57606a" alt="DSH: 0.1.5-rc.1"></a>
+  <a href="#components-and-versions"><img src="https://img.shields.io/badge/Jev-1.13-57606a" alt="Jev: 1.13"></a>
+  <a href="#components-and-versions"><img src="https://img.shields.io/badge/Node.js-25.1.0-57606a" alt="Node.js: 25.1.0"></a>
+</p>
+
 [中文](README.zh-CN.md) · [Paper (PDF)](docs/paper/main.pdf) · [Reproduce the numbers](#reproduce-the-numbers) · [Run the system](#run-the-system)
 
 Mnemon is a long-term memory agent for LLM assistants. It keeps conversations as raw, dated records and does its
@@ -65,6 +80,26 @@ points back to them. It is a view over the records, not their schema. Mnemon rea
 
 Memory of this kind can be added wherever records can be searched. The paper evaluates conversational memory, the
 setting with public benchmarks; other stores are untested.
+
+## Components and versions
+
+Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 215 commits
+up to this snapshot, `f97c5679`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
+
+| Component | Version | Role in Mnemon |
+|---|---|---|
+| dsh-mnemon | v0.5.13 + 215 research commits (`f97c5679`) | memory plugins, the replica and the benchmark harness |
+| DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
+| Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
+| gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); primary judge |
+| DeepSeek-V4.1-Flash | API model `deepseek-flash` | System 2 in the reasoning setting (answers with thinking, plans without); consolidation, without thinking; second judge |
+| nomic-embed-text | served locally | embeddings for hybrid search and index items |
+| Node.js / pnpm | v25.1.0 / 11 | runtime and package manager |
+
+Each run directory records the commit and the models it ran with (`docs/run-commits.json`); [VERSIONS.md](VERSIONS.md)
+lists every version, including the build tools and the datasets.
 
 ## Results
 

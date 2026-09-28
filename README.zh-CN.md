@@ -1,5 +1,20 @@
 # Mnemon：快慢两套系统的智能体记忆
 
+<p>
+  <a href="#结果"><img src="https://img.shields.io/badge/LoCoMo%20%28gpt--4.1--mini%29-91.7%25%20%C2%B7%20%231%20of%2015-2ea44f" alt="LoCoMo (gpt-4.1-mini): 91.7%, first of 15"></a>
+  <a href="#结果"><img src="https://img.shields.io/badge/LongMemEval--S%20%28gpt--4.1--mini%29-83.8%25%20%C2%B7%20%232%20of%2013-1f6feb" alt="LongMemEval-S (gpt-4.1-mini): 83.8%, second of 13"></a>
+  <a href="#与各项目公开的最好成绩对比"><img src="https://img.shields.io/badge/reasoning%20model-LoCoMo%2092.2%25%20%C2%B7%20LongMemEval--S%2094.4%25-8250df" alt="with a reasoning model: LoCoMo 92.2%, LongMemEval-S 94.4%"></a>
+  <a href="#亮点"><img src="https://img.shields.io/badge/context-3.8k%20tokens%20per%20question-57606a" alt="context: 3.8k tokens per question"></a>
+  <a href="docs/paper/main.pdf"><img src="https://img.shields.io/badge/paper-PDF-b31b1b" alt="paper: PDF"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-d4a72c" alt="license: MIT"></a>
+</p>
+<p>
+  <a href="#组件与版本"><img src="https://img.shields.io/badge/forked%20from-dsh--mnemon%20v0.5.13-0969da" alt="forked from: dsh-mnemon v0.5.13"></a>
+  <a href="#组件与版本"><img src="https://img.shields.io/badge/DSH-0.1.5--rc.1-57606a" alt="DSH: 0.1.5-rc.1"></a>
+  <a href="#组件与版本"><img src="https://img.shields.io/badge/Jev-1.13-57606a" alt="Jev: 1.13"></a>
+  <a href="#组件与版本"><img src="https://img.shields.io/badge/Node.js-25.1.0-57606a" alt="Node.js: 25.1.0"></a>
+</p>
+
 [English](README.md) · [论文 PDF](docs/paper/main.pdf) · [复现论文数字](#复现论文数字) · [运行系统](#运行系统)
 
 Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存为带日期的原始记录，等问题到来时才开始工作，并按"双系统"理论的方式分工：
@@ -52,6 +67,25 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 整合出的索引（话题时间线、取值历史、长期指令）叠在原始记录之上，并链接回记录。它只是记录的一层视图，而不是记录的结构；有没有索引，Mnemon 都能读取原始记录。
 
 因此，只要记录能被检索，就能加上这种记忆。论文评测的是对话记忆，因为这是有公开基准的场景；其他类型的存储还没有测过。
+
+## 组件与版本
+
+Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 215 个提交，发展到本快照 `f97c5679`。
+- 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
+- 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
+
+| 组件 | 版本 | 在 Mnemon 中的角色 |
+|---|---|---|
+| dsh-mnemon | v0.5.13 + 215 个研究提交（`f97c5679`） | 记忆插件、副本实例和评测工具 |
+| DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
+| Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
+| gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；主评委 |
+| DeepSeek-V4.1-Flash | API 模型 `deepseek-flash` | 推理设置下的 System 2（作答带思考，规划不带）；整合（不带思考）；第二评委 |
+| nomic-embed-text | 本地部署 | 混合检索和索引条目的向量 |
+| Node.js / pnpm | v25.1.0 / 11 | 运行环境与包管理 |
+
+每个运行目录都记录了当时的代码提交和模型（`docs/run-commits.json`）；[VERSIONS.md](VERSIONS.md) 列出了全部版本，包括构建工具和数据集。
 
 ## 结果
 
