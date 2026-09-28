@@ -43,7 +43,7 @@ up and to the left is better.</sub></p>
   organize memory into a graph as turns are written, scores **84.4%** on LoCoMo against Mnemon's 91.7% (7.3 points,
   95% CI 5.5–9.2).
 
-## Two ideas
+## Approach
 
 ### Fast judgments, slow thoughts
 
