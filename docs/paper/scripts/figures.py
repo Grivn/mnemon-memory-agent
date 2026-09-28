@@ -136,7 +136,7 @@ def ladder():
 def system1():
     curves = R.get('system1_roc', {})
     summary = R['system1_summary']
-    fig, axes = plt.subplots(1, 2, figsize=(W, 2.25), gridspec_kw={"width_ratios": [1, 1.25]})
+    fig, axes = plt.subplots(1, 2, figsize=(W, 2.0), gridspec_kw={"width_ratios": [1, 1.25]})
     ax = axes[0]
     colors = {'JEV': BLUE, 'DeepSeek': ORANGE, 'gpt-4.1-mini': AQUA}
     both = lambda name: summary.get('all', {}).get(name, {})

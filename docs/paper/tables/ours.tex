@@ -1,18 +1,19 @@
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{\sys{} on five benchmarks with gpt-4.1-mini answering: score under the gpt-4.1-mini / DeepSeek judges (accuracy; HaluMem: share of answers judged correct; BEAM: rubric score), rank among the systems OmniMemEval re-evaluated, context per question, cost per question in thousandths of a dollar (answer, planner and \jev{} at list prices), median latency, and consolidation's one-time cost in dollars per memory (a conversation, a \lme{} history, a HaluMem user).}
+\caption{\sys{} on five benchmarks with gpt-4.1-mini answering: score under the gpt-4.1-mini / DeepSeek judges (accuracy; HaluMem: share judged correct; BEAM: rubric score), rank among the systems OmniMemEval re-evaluated, context and cost per question, consolidation's one-time cost per memory, and the median question's \jev{} calls (in waves, one after another) and searches, with the warm time of one search in the largest memory.}
 \label{tab:ours}
 \setlength{\tabcolsep}{4.5pt}
-\begin{tabular}{@{}l r c c c c c c@{}}
+\begin{tabular}{@{}l c c c c c c c r@{}}
 \toprule
-benchmark & questions & score & rank & context & $10^{-3}$\,\$/question & p50 (s) & \$/memory \\
+& & & & $10^{-3}$\,\$ & \$ & \jev{} calls & & search \\
+benchmark & score & rank & context & /question & /memory & (waves) & searches & (ms) \\
 \midrule
-LoCoMo & 1,540 & 91.7 / 91.4 & 1/15 & 3.8k & 3.27 & 9.6 & 0.013 \\
-\lme & 500 & 83.8 / 85.4 & 2/13 & 3.8k & 3.33 & 13.1 & 0.017 \\
-HaluMem & 3,467 & 73.3 / 65.8 & 8/13 & 3.4k & 3.60 & 12.3 & 0.089 \\
-BEAM-100K & 400 & 64.5 / 60.5 & 10/12 & 3.8k & 4.80 & 12.1 & 0.012 \\
-BEAM-10M & 200 & 51.2 / 48.8 & 10/12 & 3.8k & 5.32 & 15.3 & 1.62 \\
+LoCoMo & 91.7 / 91.4 & 1/15 & 3.8k & 3.27 & 0.013 & 5 (4) & 7 & 14 \\
+\lme & 83.8 / 85.4 & 2/13 & 3.8k & 3.33 & 0.017 & 5 (5) & 7 & 14 \\
+HaluMem & 73.3 / 65.8 & 8/13 & 3.4k & 3.60 & 0.089 & 7 (6) & 10 & 18 \\
+BEAM-100K & 64.5 / 60.5 & 10/12 & 3.8k & 4.80 & 0.012 & 9 (7) & 13 & 17 \\
+BEAM-10M & 51.2 / 48.8 & 10/12 & 3.8k & 5.32 & 1.62 & 10 (7) & 14 & 248 \\
 \bottomrule
 \end{tabular}
 \end{gentable}

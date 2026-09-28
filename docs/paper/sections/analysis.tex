@@ -4,13 +4,13 @@
 The division gives judging to System~1.
 To test it, we asked gpt-4.1-mini and DeepSeek the question \jev{} answers, with the same dialogue and records, for 599 LoCoMo and \lme{} questions (14,359 records, 1,004 of them gold evidence).
 \jev{} separates gold evidence best (\cref{fig:system1}): AUC 0.942 against 0.900 for DeepSeek and 0.853 for gpt-4.1-mini, and 0.939 against 0.872 and 0.798 on \lme, whose chat-turn records rarely repeat the question's words.
-A \jev{} call on 24 records takes 0.34\,s and costs \$0.00044 while answering two questions per record; DeepSeek takes 1.05\,s and \$0.00066, and gpt-4.1-mini 3.74\,s and \$0.0017, for one.
-System~1 work is thus done better, and 3--11 times faster, by a System~1 model: with three to five such calls per question, several on the critical path, an LLM judge would add seconds and cost while separating evidence less well.
+A \jev{} call on 24 records takes 0.34\,s while answering two questions per record; the LLMs take 1.05--3.74\,s for one (\cref{fig:system1}b).
+System~1 work is thus done better, and 3--11 times faster, by a System~1 model: over the \workJevWaves{} waves of a question (\cref{tab:ours}), an LLM judge would add seconds and cost while separating evidence less well.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\linewidth]{figures/system1.pdf}
-\caption{\jev{} and two LLM judges on the same 14,359 records: (a) ROC curves for separating gold evidence, pooled over records; (b) median latency and list price of one call judging 24 records, in which \jev{} also answers a second question (no longer current) for every record.}
+\caption{\jev{} and two LLM judges on the same 14,359 records: (a) ROC curves for separating gold evidence, pooled over records; (b) median latency and list price of one call on 24 records, in which \jev{} also answers whether each is no longer current.}
 \label{fig:system1}
 \end{figure}
 

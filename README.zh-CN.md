@@ -31,7 +31,7 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
   - 每题只给作答模型约 **3.8k token**。它是唯一一个在两个基准上都超过 80%、上下文又不到 4k 的系统。
 - **LoCoMo 上成本效益指数最低**：0.259，第二名为 0.337。
 - **达到公开最佳成绩的水平。** 用 DeepSeek-V4.1-Flash 作 System 2 时，LongMemEval-S 得 **94.4%**，LoCoMo 得 **92.2%**（修订标签下 95.3%）。
-- **千万 token 规模下成本有界。** 从 BEAM 的 100K 档到 10M 档，记录多了 80 倍，每题成本只变为原来的 **1.11** 倍。
+- **千万 token 规模下成本有界。** 从 BEAM 的 100K 档到 10M 档，记录多了 80 倍，每题成本只变为原来的 **1.11** 倍，每题需要等待的工作量也保持不变。
 - **System 1 判断得更好。** 在同样的 14,359 条记录上区分关键证据：
   - Jev 的 AUC 为 **0.942**，DeepSeek 为 0.900，gpt-4.1-mini 为 0.853。
   - 两个 LLM 的延迟是 Jev 的 3–11 倍。
@@ -121,13 +121,13 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 - 每题成本：包括作答、规划和 Jev，按标价计算。
 - 整合成本：每份记忆一次性的花费。
 
-| 基准 | 得分 | 名次 | 上下文 | 每题成本 | 延迟中位数 | 每份记忆的整合成本 |
-|---|---:|---:|---:|---:|---:|---:|
-| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | 9.6&nbsp;秒 | $0.013 |
-| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | 13.1&nbsp;秒 | $0.017 |
-| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | 12.3&nbsp;秒 | $0.089 |
-| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | 12.1&nbsp;秒 | $0.012 |
-| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | 15.3&nbsp;秒 | $1.62 |
+| 基准 | 得分 | 名次 | 上下文 | 每题成本 | 每份记忆的整合成本 |
+|---|---:|---:|---:|---:|---:|
+| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | $0.013 |
+| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | $0.017 |
+| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | $0.089 |
+| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | $0.012 |
+| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | $1.62 |
 
 读取路径上，除了检索索引，没有任何东西随记忆增长：
 - 规划只读最近的对话。
@@ -137,6 +137,13 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 System 1 负责广泛地读，System 2 只读一小部分：
 - 每题 Jev 读 3.5 万到 7.3 万 token 的记录，是作答模型所读的 9–19 倍。
 - Jev 每 token 的价格约为作答模型的十分之一。
+
+**每题的工作量。** 我们的实验在一台笔记本上调用公开的模型 API，所以用每题需要等待的工作量（中位数）而不是实测时间来表述延迟：
+- System 2：规划一次（两个调用并行），作答一次。
+- System 1：Jev 调用 5–10 次，分 4–7 波依次进行，每波约 0.34 秒，合计 1.4–2.4 秒。
+- 检索：journal 检索 7–14 次，热索引上每次 14–18 毫秒。
+
+从 BEAM-100K 到 BEAM-10M，这些数量保持不变。只有检索会随记忆增长：它会给每条记录打分，在 108,810 条记录上每次需要 0.25 秒。
 
 ### System 1 与 LLM 判断的对比
 
@@ -149,13 +156,13 @@ System 1 负责广泛地读，System 2 只读一小部分：
 ## 组件与版本
 
 Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
-- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 215 个提交，发展到本快照 `f97c5679`。
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 216 个提交，发展到本快照 `3bbf7835`。
 - 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
 - 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
 
 | 组件 | 版本 | 在 Mnemon 中的角色 |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 215 个研究提交（`f97c5679`） | 记忆插件、副本实例和评测工具 |
+| dsh-mnemon | v0.5.13 + 216 个研究提交（`3bbf7835`） | 记忆插件、副本实例和评测工具 |
 | DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
 | Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
 | gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；主评委 |
@@ -179,7 +186,7 @@ git diff --stat docs/paper/data/results.json      # 只有 HaluMem 的条目会�
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh   # 生成表格、图（matplotlib）和 main.pdf
 ```
 
-`beam_evidence.py` 还需要 `pyarrow` 和 BEAM 的 `100K.parquet`。
+`beam_evidence.py` 还需要 `pyarrow` 和 BEAM 的 `100K.parquet`。统计每题工作量的 `work.py` 和 `retrieval.ts` 需要读取副本的 trace 和 journal，本快照不包含这些文件，它们的结果在 `docs/paper/data/` 中。
 
 ## 运行系统
 
@@ -207,7 +214,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 关于这份快照
 
-本仓库是研究分支在 `f97c5679`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
+本仓库是研究分支在 `3bbf7835`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
 
 <details>
 <summary><b>仓库结构</b></summary>
@@ -239,7 +246,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 - 两题冒烟运行两题都给出了回答。
 - `tools/audit.py` 扫描干净。
 
-以上校验是在 `e5c7954a` 的快照上做的。刷新到 `f97c5679` 时，只改了论文的正文、参考文献、表格脚本、生成的表格和 PDF。运行记录、`collect.py` 和系统代码都没有变，`tools/audit.py` 重新扫描也是干净的。
+以上校验是在 `e5c7954a` 的快照上做的。之后刷新到 `f97c5679` 和 `3bbf7835`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，以及统计每题工作量的两个脚本和它们的数据。运行记录、`collect.py` 和系统代码都没有变，`tools/audit.py` 重新扫描也是干净的。
 
 快照保证什么、不保证什么：
 - `PROVENANCE.json` 列出的文件与源提交逐字节一致；`modified` 下的文件只替换了本机路径。

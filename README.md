@@ -35,7 +35,7 @@ up and to the left is better.</sub></p>
 - **Level with the best published results.** With DeepSeek-V4.1-Flash as System 2, Mnemon reaches **94.4%** on
   LongMemEval-S and **92.2%** on LoCoMo (95.3% on revised labels).
 - **Bounded cost at ten million tokens.** From BEAM's 100K tier to its 10M tier, with 80 times as many records, the
-  cost per question grows by a factor of **1.11**.
+  cost per question grows by a factor of **1.11**, and the work a question waits for stays the same.
 - **System 1 judges better.** On the same 14,359 records, Jev separates gold evidence with an AUC of **0.942**.
   DeepSeek reaches 0.900 and gpt-4.1-mini 0.853, at 3–11 times Jev's latency.
 
@@ -133,18 +133,27 @@ gpt-4.1-mini answering. Score under the gpt-4.1-mini / DeepSeek judges. The rank
 re-evaluated. Cost per question covers the answer, the planner and Jev at list prices. Consolidation is a one-time
 cost per memory.
 
-| Benchmark | Score | Rank | Context | Cost / question | Median latency | Consolidation / memory |
-|---|---:|---:|---:|---:|---:|---:|
-| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | 9.6&nbsp;s | $0.013 |
-| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | 13.1&nbsp;s | $0.017 |
-| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | 12.3&nbsp;s | $0.089 |
-| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | 12.1&nbsp;s | $0.012 |
-| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | 15.3&nbsp;s | $1.62 |
+| Benchmark | Score | Rank | Context | Cost / question | Consolidation / memory |
+|---|---:|---:|---:|---:|---:|
+| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | $0.013 |
+| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | $0.017 |
+| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | $0.089 |
+| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | $0.012 |
+| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | $1.62 |
 
 Nothing on the read path grows with the memory except the search index. The planner reads the recent dialogue, Jev
 screens at most 48 records a round, and the View has fixed budgets. System 1 does the broad reading: per question,
 Jev reads 35–73k tokens of records, 9–19 times what the answering model reads, at about a tenth of its price per
 token.
+
+**Work per question.** Our runs shared one laptop and public model APIs, so we state latency as the work a question
+waits for (medians):
+- System 2 plans once, with two calls in parallel, and answers once.
+- System 1 makes 5–10 Jev calls in 4–7 waves, one after another, of about 0.34 s each: 1.4–2.4 s in all.
+- The journal serves 7–14 searches, each 14–18 ms on a warm index.
+
+These counts stay the same from BEAM-100K to BEAM-10M. Only the search grows with the memory, to 0.25 s over
+108,810 records, because it scores every record.
 
 ### System 1 against LLM judges
 
@@ -158,13 +167,13 @@ evidence best and answers two questions per record in the time an LLM takes for 
 ## Components and versions
 
 Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
-It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 215 commits
-up to this snapshot, `f97c5679`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 216 commits
+up to this snapshot, `3bbf7835`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
 changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
 
 | Component | Version | Role in Mnemon |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 215 research commits (`f97c5679`) | memory plugins, the replica and the benchmark harness |
+| dsh-mnemon | v0.5.13 + 216 research commits (`3bbf7835`) | memory plugins, the replica and the benchmark harness |
 | DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
 | Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
 | gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); primary judge |
@@ -190,7 +199,9 @@ git diff --stat docs/paper/data/results.json      # only the HaluMem entries cha
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh   # tables, figures (matplotlib) and main.pdf
 ```
 
-`beam_evidence.py` additionally needs `pyarrow` and BEAM's `100K.parquet`.
+`beam_evidence.py` additionally needs `pyarrow` and BEAM's `100K.parquet`. `work.py` and `retrieval.ts`, which
+measure the work per question, read the replica traces and journals, which this snapshot does not include; their
+results are in `docs/paper/data/`.
 
 ## Run the system
 
@@ -225,7 +236,7 @@ The full system adds `--simple`, hybrid search with `--embed-url <local nomic-em
 
 ## About this snapshot
 
-This repository is a frozen, history-free snapshot of the research branch at `f97c5679` (2026-09-28). Every file can
+This repository is a frozen, history-free snapshot of the research branch at `3bbf7835` (2026-09-28). Every file can
 be traced to its source through `PROVENANCE.json`.
 
 <details>
@@ -268,9 +279,10 @@ What has been checked:
 - The smoke run above answered both questions.
 - `tools/audit.py` is clean.
 
-These checks were made on the snapshot of `e5c7954a`. The refresh to `f97c5679` changed only the paper's text,
-bibliography, table script, generated tables and PDF. The run records, `collect.py` and the system's code are
-unchanged, and `tools/audit.py` is clean again.
+These checks were made on the snapshot of `e5c7954a`. The later refreshes, to `f97c5679` and `3bbf7835`, changed
+only the paper: its text, bibliography, table and figure scripts, generated tables, figures and PDF, and the two
+scripts that measure the work per question, with their data. The run records, `collect.py` and the system's code
+are unchanged, and `tools/audit.py` is clean again.
 
 What the snapshot does and does not claim:
 - Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified`, which differ only in

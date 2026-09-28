@@ -36,5 +36,9 @@ There \sys{} ranks \finHaluRankWord{} of \haluSystems{} systems on HaluMem and \
 
 Nothing on the read path of \sys{} grows with the memory except the search index: the planner reads the recent dialogue, \jev{} screens at most 48 records a round, and the View has fixed budgets.
 BEAM-10M tests this with conversations of about 90,000 records, 80 times as many as BEAM-100K's.
-From the 100K tier to the 10M tier the cost per question grows by a factor of \beamTenCostRatioC{} and the median latency by \beamTenLatC\,s.
+From the 100K tier to the 10M tier the cost per question grows by a factor of \beamTenCostRatioC{}, and the work a question waits for stays about the same.
 On the 10M tier \sys{} scores \beamTenC, where OmniMemEval reports 43.3--59.8 for eleven systems, and consolidating its ten conversations took \beamTenBatches{} folds without a failure.
+
+We report latency as work (\cref{tab:ours}).
+System~2 plans once, with two calls in parallel, and answers once; System~1 makes \workJevCalls{} calls in \workJevWaves{} waves, \workJevTime\,s at \workWave\,s a wave (\cref{fig:system1}b).
+A warm search takes \workSearchSmall\,ms, mostly to embed the query, and a question's reads \workReadSmall\,s, but \workSearchTen\,s and \workReadTen\,s over BEAM-10M's largest memory (\workTenRecords{} records), as our search scores every record; inverted and approximate nearest-neighbour indexes avoid this.
