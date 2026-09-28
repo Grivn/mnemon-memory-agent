@@ -339,6 +339,8 @@ What the snapshot does and does not claim:
 
 The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon) and
 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience.
+Next, DSH will serve as a micro agent kernel, with Mnemon running on it as a memory agent, the form the replica in this study
+already takes.
 
 This repository itself stays a frozen research snapshot:
 - It is not the `mnemon` CLI and not Mnemon Agency, and the evaluated system does not use the `mnemon` binary.

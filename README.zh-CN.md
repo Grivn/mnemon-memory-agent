@@ -278,7 +278,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 从研究到产品
 
-本研究的成果将逐步输送到两大官方项目 [mnemon](https://github.com/mnemon-dev/mnemon) 和 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon)，以达到最佳的产品化体验。
+本研究的成果将逐步输送到两大官方项目 [mnemon](https://github.com/mnemon-dev/mnemon) 和 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon)，以达到最佳的产品化体验。下一步，DSH 将作为微型 Agent 内核，Mnemon 作为记忆 Agent 运行在它之上；本研究中的副本实例就是这种形态。
 
 本仓库本身保持为冻结的研究快照：
 - 它不是 `mnemon` CLI，也不是 Mnemon Agency；评测的系统没有用到 `mnemon` 二进制。
