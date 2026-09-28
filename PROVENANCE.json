@@ -1,8 +1,8 @@
 {
  "source": {
   "repository": "dsh-mnemon (research branch codex/jev-replica-practice)",
-  "commit": "44fb4e71face92bd8dec67c07421fc6e11fd693a",
-  "date": "2026-09-29T01:06:30+08:00"
+  "commit": "8843a5ea2e7b22a9ca0be5b647df8e965893734a",
+  "date": "2026-09-29T01:22:34+08:00"
  },
  "plugins": [
   "dsh-mnemon-agent-loop-jev",
@@ -225,12 +225,12 @@
    "sha256": "3daa3e6915fa08ff25489894fefc74ae300772dcbe099d1f7424a76edebfbc60"
   },
   "docs/paper/main.pdf": {
-   "blob": "141e6afd7954fb53c663c96c5da8e8d6e5c22df7",
-   "sha256": "99491d4dba8748ed6137eb5c5a79033d48868b29b9750c3c8f0e088290036c65"
+   "blob": "e71af59d9c74ea5644f3fd707bb2ae05fc3aa320",
+   "sha256": "53a3093b6e25504e9ef8ea023483109a57c1a311a93225da7409757ce06eebfb"
   },
   "docs/paper/main.tex": {
-   "blob": "82825ee40d82e923873f8f102aa2e00acf931bfc",
-   "sha256": "6496403a0f158d593561f774cc16de8d92e2945f2d3b3a197c745d8820106e0a"
+   "blob": "204ab0c8746c8d552964992e91cb6cd741bbd4db",
+   "sha256": "a8e290b74bb0577a00ab73d5c2ac4365f76d0648cca7177e7fa6c9391fdab71d"
   },
   "docs/paper/references.bib": {
    "blob": "8954262232b9e7c0d06c955e8b4ebdf3bc410bf1",
@@ -289,8 +289,8 @@
    "sha256": "24cf47a300b62225573a3b6ba8ee373d971fa238928014640753f4a1d13a8666"
   },
   "docs/paper/sections/implementation.tex": {
-   "blob": "d9d390414c082b90bcbff92965736e25a1d868f7",
-   "sha256": "b05e4f2de4892ddeb5c1b760b85c38a2a4f37fdd2222f162b8ac76afe5e96ef2"
+   "blob": "403614779a7c2672f257a5ea498421752472fc59",
+   "sha256": "46f9e8e6ef0a5fee68b44f4059764958d04a5184d07b2775ba42e3b4ffc22527"
   },
   "docs/paper/sections/introduction.tex": {
    "blob": "865edf47f9f4e834d993113dd2f4485c69b7fa69",

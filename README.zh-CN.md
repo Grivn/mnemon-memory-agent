@@ -171,13 +171,13 @@ System 1 负责广泛地读，System 2 只读一小部分：
 ## 组件与版本
 
 Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
-- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 223 个提交，发展到本快照 `44fb4e71`。
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 224 个提交，发展到本快照 `8843a5ea`。
 - 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
 - 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
 
 | 组件 | 版本 | 在 Mnemon 中的角色 |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 223 个研究提交（`44fb4e71`） | 记忆插件、副本实例和评测工具 |
+| dsh-mnemon | v0.5.13 + 224 个研究提交（`8843a5ea`） | 记忆插件、副本实例和评测工具 |
 | DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
 | Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
 | gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；评分模型，标准设置下为主评分模型 |
@@ -232,7 +232,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 关于这份快照
 
-本仓库是研究分支在 `44fb4e71`（2026-09-29）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
+本仓库是研究分支在 `8843a5ea`（2026-09-29）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
 
 <details>
 <summary><b>仓库结构</b></summary>
@@ -265,7 +265,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 - 两题冒烟运行两题都给出了回答。
 - `tools/audit.py` 扫描干净，工作区和全部提交（`--history`）都是如此。
 
-安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835`、`c461581c`、`7649d8ff`、`65145f69`、`aea19abc` 和 `44fb4e71`，只改了论文部分和运行记录：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，`collect.py`（缺少 HaluMem 记录时保留已提交的条目，并比较 Jev-Mem 与最终版本），为 arXiv 打包源码的 `arxiv.py`，以及 Jev-Mem 的适配脚本和运行记录。系统代码没有变。重算和扫描在 `44fb4e71` 上重新做过。
+安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835`、`c461581c`、`7649d8ff`、`65145f69`、`aea19abc`、`44fb4e71` 和 `8843a5ea`，只改了论文部分和运行记录：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，`collect.py`（缺少 HaluMem 记录时保留已提交的条目，并比较 Jev-Mem 与最终版本），为 arXiv 打包源码的 `arxiv.py`，以及 Jev-Mem 的适配脚本和运行记录。系统代码没有变。重算和扫描在 `8843a5ea` 上重新做过。
 
 快照保证什么、不保证什么：
 - `PROVENANCE.json` 列出的文件与源提交逐字节一致；`modified` 下的文件只替换了本机路径。

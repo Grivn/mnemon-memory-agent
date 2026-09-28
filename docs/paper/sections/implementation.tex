@@ -3,7 +3,7 @@
 
 \sys{} runs as a \emph{replica}: a second DSH instance with the same Sources, its own Strategy and a control loop that calls \jev.
 At each user turn the replica runs one job and publishes its View into the main instance.
-Upstream DSH is unmodified, and apart from 115 changed lines of dsh-mnemon the replica consists of new plugins~\citep{mnemon2026code}.
+Upstream DSH is unmodified, and apart from 115 changed lines of dsh-mnemon~\citep{mnemon2026code} the replica consists of new plugins, released with this paper~\citep{mnemon2026artifact}.
 
 \paragraph{Journal.}
 Records are chunks of up to about 600 characters, embedded locally with nomic-embed-text~\citep{nussbaum2024nomic}; a \lme{} history of about 106k tokens becomes roughly 1,000 records, written in under a second.

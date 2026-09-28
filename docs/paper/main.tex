@@ -10,6 +10,12 @@
 \usepackage{libertine}
 \usepackage{amsthm}% before newtxmath, which defines \openbox too
 \usepackage[libertine]{newtxmath}
+\ifXeTeX
+  % Under XeTeX, libertine loads the OpenType fonts through fontspec, which have no OT1 shapes, so the digits,
+  % parentheses and \mathrm of formulas would fall back to Computer Modern; take them from the Type 1 Libertine.
+  \DeclareSymbolFont{operators}{OT1}{LinuxLibertineT-TLF}{m}{n}
+  \SetSymbolFont{operators}{bold}{OT1}{LinuxLibertineT-TLF}{b}{n}
+\fi
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{booktabs}
