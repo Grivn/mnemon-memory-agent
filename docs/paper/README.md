@@ -1,6 +1,6 @@
-# Read Raw, Judge Fast: Mnemon (atlas)
+# Mnemon: Remembering Fast and Slow in LLM Agents
 
-Sources of the technical report on Mnemon (atlas), the two-system memory agent built on DeepSeek Harness. The final version reads raw records with an LLM planner and the Jev decision model, and consolidates each record once into an index that links back to the records; its read-time core is the configuration fixed by the pre-registered steps.
+Sources of the technical report on Mnemon, the two-system memory agent built on DeepSeek Harness. The final version reads raw records with an LLM planner and the Jev decision model, and consolidates each record once into an index that links back to the records; its read-time core is the configuration fixed by the pre-registered steps.
 
 | Path | Contents |
 |---|---|

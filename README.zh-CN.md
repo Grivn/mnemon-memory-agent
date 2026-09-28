@@ -156,13 +156,13 @@ System 1 负责广泛地读，System 2 只读一小部分：
 ## 组件与版本
 
 Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
-- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 216 个提交，发展到本快照 `3bbf7835`。
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 218 个提交，发展到本快照 `c461581c`。
 - 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
 - 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
 
 | 组件 | 版本 | 在 Mnemon 中的角色 |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 216 个研究提交（`3bbf7835`） | 记忆插件、副本实例和评测工具 |
+| dsh-mnemon | v0.5.13 + 218 个研究提交（`c461581c`） | 记忆插件、副本实例和评测工具 |
 | DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
 | Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
 | gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；主评委 |
@@ -182,9 +182,11 @@ python3 tools/restore_runs.py                     # 把 runs/ 展开到 runs-exp
 #   runs-expanded/benchmarks/locomo10.json              LoCoMo（github.com/snap-research/locomo）
 #   runs-expanded/benchmarks/longmemeval_s_cleaned.json LongMemEval-S（cleaned 版）
 MNEMON_RUNS=$PWD/runs-expanded python3 docs/paper/scripts/collect.py   # 重写 docs/paper/data/results.json
-git diff --stat docs/paper/data/results.json      # 只有 HaluMem 的条目会变：它的运行记录不在仓库中
+git diff --stat docs/paper/data/results.json      # 无变化：运行记录重现了论文里的数字
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh   # 生成表格、图（matplotlib）和 main.pdf
 ```
+
+HaluMem 的运行记录不在仓库中（见 [DATA-LICENSES.md](DATA-LICENSES.md)）。缺少这些记录时，`collect.py` 保留已提交的 HaluMem 条目，所以这部分数字无法在本仓库重算，其余数字都可以。
 
 `beam_evidence.py` 还需要 `pyarrow` 和 BEAM 的 `100K.parquet`。统计每题工作量的 `work.py` 和 `retrieval.ts` 需要读取副本的 trace 和 journal，本快照不包含这些文件，它们的结果在 `docs/paper/data/` 中。
 
@@ -214,7 +216,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 关于这份快照
 
-本仓库是研究分支在 `3bbf7835`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
+本仓库是研究分支在 `c461581c`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
 
 <details>
 <summary><b>仓库结构</b></summary>
@@ -233,6 +235,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 | `assets/` | 本 README 中的图，由论文渲染而来 |
 | `tools/` | 快照的生成与检查工具 |
 | `VERSIONS.md` | DSH、dsh-mnemon、模型和数据集的版本 |
+| `DATA-LICENSES.md` | 运行记录中各基准文本的许可，以及哪些内容没有收录 |
 | `PROVENANCE.json` | 源提交号，以及每个文件的 git blob 和 SHA-256 |
 
 </details>
@@ -241,12 +244,12 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 <summary><b>快照的生成与校验</b></summary>
 
 已校验的内容：
-- 只用 `runs/` 和两个公开数据集重算出的 `results.json`，除 HaluMem 的条目外与提交的版本一致（HaluMem 的运行记录不在仓库中）。
+- 只用 `runs/` 和两个公开数据集重算出的 `results.json`，与提交的版本逐字节一致；其中 HaluMem 的条目沿用已提交的值，因为它的运行记录不在仓库中。
 - 按锁文件安装、内核与插件构建、插件的 223 个测试全部通过。
 - 两题冒烟运行两题都给出了回答。
-- `tools/audit.py` 扫描干净。
+- `tools/audit.py` 扫描干净，工作区和全部提交（`--history`）都是如此。
 
-以上校验是在 `e5c7954a` 的快照上做的。之后刷新到 `f97c5679` 和 `3bbf7835`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，以及统计每题工作量的两个脚本和它们的数据。运行记录、`collect.py` 和系统代码都没有变，`tools/audit.py` 重新扫描也是干净的。
+安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835` 和 `c461581c`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，以及 `collect.py`（缺少 HaluMem 记录时保留已提交的条目）。系统代码没有变。重算和扫描在 `c461581c` 上重新做过。
 
 快照保证什么、不保证什么：
 - `PROVENANCE.json` 列出的文件与源提交逐字节一致；`modified` 下的文件只替换了本机路径。
@@ -276,4 +279,4 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 许可与数据
 
-代码来自 dsh-mnemon，采用 MIT 许可（见 `LICENSE`）。运行记录和报告素材中含有来自 LoCoMo、LongMemEval、BEAM 的文本，再分发前请确认各数据集的许可。HaluMem 的运行记录不在仓库中：它的许可（CC BY-NC-ND 4.0）不允许分享改编内容。
+代码来自 dsh-mnemon，采用 MIT 许可（见 `LICENSE`）。这份许可不覆盖运行记录和报告素材中的基准文本，它们遵循各自的许可：LoCoMo 为 CC BY-NC 4.0，LongMemEval 为 MIT，BEAM 为 CC BY-SA 4.0。HaluMem 的运行记录不在仓库中：它的许可（CC BY-NC-ND 4.0）不允许分享改编内容。详见 [DATA-LICENSES.md](DATA-LICENSES.md)，其中也列出了各数据集的署名。

@@ -167,13 +167,13 @@ evidence best and answers two questions per record in the time an LLM takes for 
 ## Components and versions
 
 Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
-It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 216 commits
-up to this snapshot, `3bbf7835`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 218 commits
+up to this snapshot, `c461581c`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
 changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
 
 | Component | Version | Role in Mnemon |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 216 research commits (`3bbf7835`) | memory plugins, the replica and the benchmark harness |
+| dsh-mnemon | v0.5.13 + 218 research commits (`c461581c`) | memory plugins, the replica and the benchmark harness |
 | DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
 | Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
 | gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); primary judge |
@@ -195,9 +195,12 @@ python3 tools/restore_runs.py                     # expands runs/ into runs-expa
 #   runs-expanded/benchmarks/locomo10.json              LoCoMo, from github.com/snap-research/locomo
 #   runs-expanded/benchmarks/longmemeval_s_cleaned.json LongMemEval-S (cleaned), from the LongMemEval release
 MNEMON_RUNS=$PWD/runs-expanded python3 docs/paper/scripts/collect.py   # rewrites docs/paper/data/results.json
-git diff --stat docs/paper/data/results.json      # only the HaluMem entries change: their records are not included
+git diff --stat docs/paper/data/results.json      # no change: the records reproduce the committed numbers
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh   # tables, figures (matplotlib) and main.pdf
 ```
+
+HaluMem's run records are not included (see [DATA-LICENSES.md](DATA-LICENSES.md)). Without them, `collect.py`
+keeps the committed HaluMem entries, so those numbers cannot be recomputed here; every other number can.
 
 `beam_evidence.py` additionally needs `pyarrow` and BEAM's `100K.parquet`. `work.py` and `retrieval.ts`, which
 measure the work per question, read the replica traces and journals, which this snapshot does not include; their
@@ -236,7 +239,7 @@ The full system adds `--simple`, hybrid search with `--embed-url <local nomic-em
 
 ## About this snapshot
 
-This repository is a frozen, history-free snapshot of the research branch at `3bbf7835` (2026-09-28). Every file can
+This repository is a frozen, history-free snapshot of the research branch at `c461581c` (2026-09-28). Every file can
 be traced to its source through `PROVENANCE.json`.
 
 <details>
@@ -256,6 +259,7 @@ be traced to its source through `PROVENANCE.json`.
 | `assets/` | The figures in this README, rendered from the paper |
 | `tools/` | How this snapshot is made and checked |
 | `VERSIONS.md` | DSH, dsh-mnemon, model and dataset versions |
+| `DATA-LICENSES.md` | The license of each benchmark's text in the run records, and what is left out |
 | `PROVENANCE.json` | Source commit, and each file's git blob id and SHA-256 |
 
 </details>
@@ -267,22 +271,23 @@ be traced to its source through `PROVENANCE.json`.
 |---|---|
 | `tools/snapshot.py` | Copies the paper's part of the research branch byte for byte: the kernel, the plugins the scripts import (found by following imports), the scripts, the paper, the reports and what they link to; writes `PROVENANCE.json` |
 | `tools/scrub.py` | Replaces machine-specific absolute paths with `<repo>`, `<tmp>` or `~` and records every rewritten file under `modified` in `PROVENANCE.json` |
-| `tools/collect_runs.py` | Runs `collect.py` on the full records, keeps exactly the files it opens, and checks the recomputed `results.json` against the committed one |
+| `tools/collect_runs.py` | Runs `collect.py` on the full records, keeps exactly the files it opens except HaluMem's, and checks the recomputed `results.json` against the committed one |
 | `tools/restore_runs.py` | Expands `runs/` and verifies each file against `runs/MANIFEST.json` |
 | `tools/run_commits.py` | Writes `docs/run-commits.json` |
-| `tools/audit.py` | Fails on credentials, local paths, non-loopback endpoints or files over 50 MB |
+| `tools/audit.py` | Fails on credentials, local paths, non-loopback endpoints, files over 50 MB, HaluMem run records, and the words of a local, git-ignored `.audit-deny`; `--history` checks every commit |
 
 What has been checked:
-- `results.json` recomputed from `runs/` and the two datasets alone equals the committed one, except the HaluMem
-  entries, whose run records are not included.
+- `results.json` recomputed from `runs/` and the two datasets alone equals the committed one, byte for byte. Its
+  HaluMem entries are kept as committed, since HaluMem's run records are not included.
 - The frozen-lockfile install, the kernel and plugin builds, and the plugins' 223 tests pass.
 - The smoke run above answered both questions.
-- `tools/audit.py` is clean.
+- `tools/audit.py` is clean, over the working tree and over every commit (`--history`).
 
-These checks were made on the snapshot of `e5c7954a`. The later refreshes, to `f97c5679` and `3bbf7835`, changed
-only the paper: its text, bibliography, table and figure scripts, generated tables, figures and PDF, and the two
-scripts that measure the work per question, with their data. The run records, `collect.py` and the system's code
-are unchanged, and `tools/audit.py` is clean again.
+The install, builds, tests and smoke run were checked on the snapshot of `e5c7954a`. The later refreshes, to
+`f97c5679`, `3bbf7835` and `c461581c`, changed only the paper: its text, bibliography, table and figure scripts,
+generated tables, figures and PDF, the two scripts that measure the work per question with their data, and
+`collect.py`, which keeps the HaluMem entries when their records are absent. The system's code is unchanged. The
+recomputation and the audit were repeated at `c461581c`.
 
 What the snapshot does and does not claim:
 - Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified`, which differ only in
@@ -317,6 +322,7 @@ This repository itself stays a frozen research snapshot:
 
 ## Licenses and data
 
-The code is dsh-mnemon's, under the MIT license in `LICENSE`. The run records and report assets contain text derived
-from LoCoMo, LongMemEval and BEAM; check each dataset's license before redistributing them. HaluMem's run records
-are not included: its license (CC BY-NC-ND 4.0) does not allow sharing adapted material.
+The code is dsh-mnemon's, under the MIT license in `LICENSE`. That license does not cover the benchmark text in the
+run records and report assets, which stays under each benchmark's license: LoCoMo CC BY-NC 4.0, LongMemEval MIT,
+BEAM CC BY-SA 4.0. HaluMem's run records are not included: its license (CC BY-NC-ND 4.0) does not allow sharing
+adapted material. [DATA-LICENSES.md](DATA-LICENSES.md) has the details and the attributions.

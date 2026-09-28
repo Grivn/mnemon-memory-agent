@@ -1,5 +1,5 @@
-"""Write the paper's result tables (tables/*.tex) from data/results.json and data/reported.json, so that no number is
-typed by hand. Run after collect.py:
+"""Write the paper's result tables (tables/*.tex) from data/results.json and data/reported.json, and the work per
+question from data/work.json and data/retrieval.json, so that no number is typed by hand. Run after collect.py:
 
     python3 docs/paper/scripts/tables.py
 """

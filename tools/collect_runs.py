@@ -9,13 +9,17 @@ into runs/ with the same relative paths and gzip-compressed (tools/restore_runs.
 absolute paths are replaced by the rules in tools/scrub.py first. runs/MANIFEST.json lists each file's size and
 SHA-256 as packaged, and the source SHA-256 of any file that was rewritten. The script also reports whether the
 recomputed results.json equals the one in docs/paper/data, which shows the packaged records reproduce the paper's numbers.
+
+HaluMem's run records are never packaged: its license (CC BY-NC-ND 4.0) allows no adapted material to be shared
+(DATA-LICENSES.md). Without them, collect.py keeps the committed HaluMem entries of results.json as they are.
 """
-import argparse, gzip, hashlib, json, os, shutil, subprocess, sys, tempfile
+import argparse, gzip, hashlib, json, os, re, shutil, subprocess, sys, tempfile
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from scrub import rewrite  # noqa: E402
 DATASETS = 'benchmarks/'
+WITHHELD = re.compile(r'halumem', re.I)
 TRACER = r'''
 import json, os, runpy, sys
 runs = os.path.realpath(os.environ["MNEMON_RUNS"]) + os.sep
@@ -56,7 +60,8 @@ def main():
         print('results.json differs from docs/paper/data/results.json in:', ', '.join(differing))
 
     opened = json.load(open(opened_list))
-    packaged = [path for path in opened if not path.startswith(DATASETS)]
+    packaged = [path for path in opened if not path.startswith(DATASETS) and not WITHHELD.search(path)]
+    withheld = [path for path in opened if WITHHELD.search(path)]
     target = os.path.join(ROOT, 'runs')
     shutil.rmtree(target, ignore_errors=True)
     manifest = {'datasets': [path for path in opened if path.startswith(DATASETS)], 'files': {}}
@@ -73,7 +78,7 @@ def main():
     raw = sum(entry['bytes'] for entry in manifest['files'].values())
     stored = sum(os.path.getsize(os.path.join(target, path + '.gz')) for path in packaged)
     print(f'{len(packaged)} run files packaged: {raw / 1e6:.1f} MB raw, {stored / 1e6:.1f} MB compressed; '
-          f'datasets left out: {", ".join(manifest["datasets"]) or "none"}')
+          f'datasets left out: {", ".join(manifest["datasets"]) or "none"}; HaluMem run files withheld: {len(withheld)}')
 
 
 if __name__ == '__main__':

@@ -452,6 +452,18 @@ for label, s0, fin, ds_, reader, judge in (('gpt-4.1-mini', P3 / 'full/locomo', 
 final['all_together'] = together
 results['final'] = final
 
+# HaluMem's run records are not redistributed: its license (CC BY-NC-ND 4.0) lets no adapted material be shared. Without
+# them, the HaluMem entries of the existing results.json are kept as they are, in place, and the rest is recomputed.
+def carry_halumem(new, old):
+    merged = {}
+    for key, value in old.items():
+        if 'halumem' in key.lower(): merged[key] = value
+        elif key in new: merged[key] = carry_halumem(new[key], value) if isinstance(value, dict) and isinstance(new[key], dict) else new[key]
+    return {**merged, **{key: value for key, value in new.items() if key not in merged}}
+if not (HELD / 'halumem').exists() and OUT.exists():
+    results = carry_halumem(results, json.load(open(OUT)))
+    print('HaluMem run records absent: kept the HaluMem entries of', OUT)
+
 OUT.parent.mkdir(parents=True, exist_ok=True)
 json.dump(results, open(OUT, 'w'), indent=1)
 print('wrote', OUT)

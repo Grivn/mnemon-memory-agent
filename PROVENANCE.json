@@ -1,8 +1,8 @@
 {
  "source": {
   "repository": "dsh-mnemon (research branch codex/jev-replica-practice)",
-  "commit": "3bbf7835f6ca818e6262526ecc92d77c73455c83",
-  "date": "2026-09-28T19:04:38+08:00"
+  "commit": "c461581c3faa5d4a5b7c7eaef8a7c8ba30f6bb15",
+  "date": "2026-09-28T19:37:27+08:00"
  },
  "plugins": [
   "dsh-mnemon-agent-loop-jev",
@@ -153,8 +153,8 @@
    "sha256": "ac66a4b3dc3b56c024f48221c2fb0ebb40c1f67afbc3b74af54f50679fc6075b"
   },
   "docs/paper/README.md": {
-   "blob": "748673d0ceaaba7ae65222fe66df5e8077dbb9bf",
-   "sha256": "bf9ca707707c7607f044d2b1c02f0a2d57fdacf42da1029b1d7166ecfa0396b9"
+   "blob": "751f23cc46a1f997763e838c870945ce69a1fefe",
+   "sha256": "17e40ca11361ee96a23a6701f2f167f3d66a48f02d008dc5a1f9bf09d5db71bc"
   },
   "docs/paper/build.sh": {
    "blob": "46b4a9fdfaf57daa600d455ad0946acbb019faab",
@@ -241,8 +241,8 @@
    "sha256": "f997ecd342383316e4859a68e24e3bff877599f603d15bd236053e301ea7dec8"
   },
   "docs/paper/scripts/collect.py": {
-   "blob": "ee29da0f59aa68dd7289290813a20badf6b3d100",
-   "sha256": "0c326cb92d7552be7ea8f19a603363d7f043e84fdb2e651173a1736c16cb4d46"
+   "blob": "5dd5f9d5f9009c0e70543ff1cd7549fcbc3cf203",
+   "sha256": "338fe40984929a50e8ff11728735e50bddc74d9db11b7641053544f34012ece5"
   },
   "docs/paper/scripts/figures.py": {
    "blob": "301bfc76aca4f65f6e029bd6ccd96b32b9240d7a",
@@ -253,8 +253,8 @@
    "sha256": "1b9c9027597f060b67f5025f4371190108ea6051efc90901a885d24fcdcd73f5"
   },
   "docs/paper/scripts/tables.py": {
-   "blob": "0f11d5355faa5015527e860cfa80b95994253161",
-   "sha256": "3d5a8353303a7ff96bddaee404d9a4cc99509e02c184f02dbd9f4733100d6edf"
+   "blob": "62b1f173566f94eefd606d773f594ba110f1c51a",
+   "sha256": "e69731cae7242f7c88c13f2beff3571b8cf1eb5bd2f1dc19ef14d8d9ae552e6a"
   },
   "docs/paper/scripts/work.py": {
    "blob": "f61c2351385ceb1cfcc102c0582a950e4d24eed5",
@@ -474,31 +474,31 @@
   },
   "docs/pr-assets/jev-complex-20260923/trace-90-all-candidates.jsonl.gz": {
    "blob": "779da42f245ac62138a328a96e8836c93b147e10",
-   "sha256": "383583330940a1821e753ef48509a1e910aeba2f3480c52f62a1312ce91983ac"
+   "sha256": "038b5503d947a226e69a90961e282376e93f7f7263f128debe64fc29d3b393de"
   },
   "docs/pr-assets/jev-complex-20260923/trace-90-jev.jsonl.gz": {
    "blob": "c868f68735710d8df682836ee5f9df2c5fd1c330",
-   "sha256": "1ad33da365c18cc08ca3139964e4617f99624aea0dc27a58e140366fd70baefc"
+   "sha256": "a91259404224a1eb67c7cb21f88948fe52c86cc7edc56f468313e30a8cb53cc4"
   },
   "docs/pr-assets/jev-complex-20260923/trace-90-none.jsonl.gz": {
    "blob": "248e09c7c766dce88331a9713ae14ba7a20e2ef2",
-   "sha256": "99a0b9ff874e38a396db9eae0b120738a3c00a86f605d3723d0b0116c753ff0c"
+   "sha256": "9d267786324da6895d1953509050dfa373d9a3f09812526254b0bcab4ca1bdc1"
   },
   "docs/pr-assets/jev-complex-20260923/trace-900-all-candidates.jsonl.gz": {
    "blob": "f530b8d6f62bfbd893781842d8ebae5f2428b32f",
-   "sha256": "97a3f03f0d22085b39016a36c33def589f9482fbd4404a36d7a6986c7b7ff697"
+   "sha256": "042a987d60fcb4f7ce8b0ee325c564c1bd93ed101c38af4a6adc723d14b73f03"
   },
   "docs/pr-assets/jev-complex-20260923/trace-900-jev-wide.jsonl.gz": {
    "blob": "ec4b8acbb6e68c6b448344b83ba3e75f93b72425",
-   "sha256": "07d44d63f927a2a75888d55e0273e869fe1a477a39d44ed1d9a4b3e950fbe39d"
+   "sha256": "e96686fc9f722a9e5b7ad9da01672e34ffd45c5698ec38769e062cef937ca808"
   },
   "docs/pr-assets/jev-complex-20260923/trace-900-jev.jsonl.gz": {
    "blob": "acc7246801605a367eda22aa89772fdbe888708a",
-   "sha256": "f3b0ad2c5b6e39869f48073185f06dad844cfce717907b29ab1ad0cfcc7fa6b0"
+   "sha256": "a59a80629e516e81f07204ca9472fb31df021803b48c15afd51193d4634a73aa"
   },
   "docs/pr-assets/jev-complex-20260923/trace-900-none.jsonl.gz": {
    "blob": "8f4231ebeeb39862cf4137a20181da5e068ac535",
-   "sha256": "901a765ecc66160e1ae1e71e86035c47e6a8a383a89f09e07cc957d3f427f3c3"
+   "sha256": "e9a0aa3406f9b098d1a5271092a82a765edfa96f7929909a2e8f0658018c9330"
   },
   "docs/pr-assets/jev-complex-20260923/validation.json": {
    "blob": "375929ee9c5fefa9c384a057acce0b3fb7239d8f",

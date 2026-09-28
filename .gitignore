@@ -15,6 +15,13 @@ coverage/
 /runs-expanded/
 /out/
 
+# HaluMem's run records are never committed: its license (CC BY-NC-ND 4.0) allows no adapted material to be shared
+# (DATA-LICENSES.md)
+/runs/**/*[Hh]alu[Mm]em*
+
+# Local deny list of tools/audit.py: words and hosts that must never be committed, kept out of the repository itself
+/.audit-deny
+
 # Paper build intermediates (main.pdf itself is kept)
 docs/paper/*.aux
 docs/paper/*.log
