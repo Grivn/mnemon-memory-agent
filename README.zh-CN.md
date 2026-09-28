@@ -1,7 +1,7 @@
 <h1 align="center">Mnemon</h1>
 
-<h3 align="center">快慢两套系统的智能体记忆</h3>
-<p align="center"><sub>Remembering Fast and Slow in LLM Agents</sub></p>
+<h3 align="center">原始记录，快速判断，慢速思考</h3>
+<p align="center"><sub>Raw Records, Fast Judgments, Slow Thoughts</sub></p>
 
 <p align="center">
   <a href="docs/paper/main.pdf"><b>论文</b></a> ·
@@ -35,10 +35,11 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 - **System 1 判断得更好。** 在同样的 14,359 条记录上区分关键证据：
   - Jev 的 AUC 为 **0.942**，DeepSeek 为 0.900，gpt-4.1-mini 为 0.853。
   - 两个 LLM 的延迟是 Jev 的 3–11 倍。
+- **同一个模型用在写入时建图，不如直接判断原始记录。** 同一协议下，用 Jev 在写入时把对话组织成关系图的 Jev-Mem 在 LoCoMo 上得 **84.4%**，Mnemon 为 91.7%（高 7.3 分，95% CI 5.5–9.2）。
 
 ## 两个核心思想
 
-### 快慢两套系统
+### 快速判断，慢速思考
 
 记忆在读取阶段的工作，大部分属于 System 1：一个个彼此独立、标准明确的是非判断。例如：
 - 回复该不该用这条记录？
@@ -66,7 +67,7 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 ## 结果
 
-所有数字都来自 `docs/paper/data/results.json`，由 `runs/` 中的运行记录计算得出。我们的运行由 gpt-4.1-mini 和 DeepSeek-V4.1-Flash 评分；OmniMemEval 用 gpt-4o-mini 评分，评委不同约带来 1–2 分的差异。
+所有数字都来自 `docs/paper/data/results.json`，由 `runs/` 中的运行记录计算得出。我们的运行由 gpt-4.1-mini 和 DeepSeek-V4.1-Flash 评分；OmniMemEval 用 gpt-4o-mini 评分，评分模型不同约带来 1–2 分的差异。
 
 ### 同一协议下的比较（gpt-4.1-mini 作答）
 
@@ -97,13 +98,13 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 ### 与各项目公开的最好成绩对比
 
-各项目公布的最好成绩，作答模型、评委和协议各不相同，所以这张表比较的是宣称，不是系统本身。完整的 18 项及出处见论文表 3。
+各项目公布的最好成绩，作答模型、评分模型和协议各不相同，所以这张表比较的是宣称，不是系统本身。完整的 20 项及出处见论文表 3。
 
-| 项目 | LoCoMo | LongMemEval-S | 作答模型 / 评委 |
+| 项目 | LoCoMo | LongMemEval-S | 作答模型 / 评分模型 |
 |---|---:|---:|---|
 | **Mnemon** | 95.3† | 94.4 | DeepSeek-V4.1-Flash（带思考）/ DeepSeek |
 | Zep / Graphiti | 94.7 | 90.2 | gpt-5.4（中等推理）/ gpt-5.4 |
-| EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / 三个评委取平均 |
+| EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / 三个评分模型取平均 |
 | Mem0 | 92.5 | 94.4 | gpt-5 / gpt-5 |
 | memU | 92.09 | – | 未说明（早期版本） |
 | Hindsight | 92.0 | 94.6 | 未说明（论文中：gemini-3-pro 89.6 / 91.4） |
@@ -116,7 +117,7 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 表中设置如下：
 - 作答模型：gpt-4.1-mini。
-- 得分：依次为 gpt-4.1-mini / DeepSeek 评委给出的分数（准确率；HaluMem 为答对比例；BEAM 为评分细则得分）。
+- 得分：依次为 gpt-4.1-mini / DeepSeek 评分模型给出的分数（准确率；HaluMem 为答对比例；BEAM 为评分细则得分）。
 - 名次：在 OmniMemEval 重测过的系统中的排名。
 - 每千题成本：包括作答、规划和 Jev，按标价计算；整合成本是每份历史一次性的花费。
 - Jev 调用（依次进行的波数）和检索次数取中位数题目；最后一列是最大一份历史上单次检索的热索引延迟。
@@ -139,7 +140,7 @@ System 1 负责广泛地读，System 2 只读一小部分：
 - Jev 每 token 的价格约为作答模型的十分之一。
 
 **每题的工作量。** 我们的实验在一台笔记本上调用公开的模型 API，所以用关键路径上的工作量（中位数）而不是实测时间来表述延迟：
-- System 2：规划一次（两个调用并行），作答一次。
+- System 2：规划一次（两个调用并行），作答一次；循环中要求新检索的题目（占 6–31%）再多一次调用。
 - System 1：Jev 调用 5–10 次，分 4–7 波依次进行，每波约 0.34 秒，合计 1.4–2.4 秒。
 - 检索：热索引上每次 14–18 毫秒，主要花在查询的向量化上；每题对 journal 的全部读取合计 0.1–0.2 秒。
 
@@ -153,20 +154,34 @@ System 1 负责广泛地读，System 2 只读一小部分：
 
 我们让 Jev、DeepSeek 和 gpt-4.1-mini 对同样的 14,359 条记录判断同一个命题。Jev 区分关键证据的效果最好，而且每条记录能判断两个命题，所用时间只相当于 LLM 判断一个。
 
+### 同一个 Jev：判断原始记录，还是写入时建图
+
+同期工作 [Jev-Mem](https://arxiv.org/abs/2609.23986) 把 Jev 用在写入时：给每轮对话分类并连进关系图，再在图上引导检索。我们按本文协议运行了它公开的代码：同样的 1,540 道 LoCoMo 题，gpt-4.1-mini 只看问题、每题作答一次，用同样的两个评分模型。（它公开的评测脚本默认拿标准答案从三次作答中挑最好的一次，我们没有这样做。）
+
+| LoCoMo，gpt-4.1-mini 作答 | Mnemon | Jev-Mem |
+|---|---:|---:|
+| 准确率（gpt-4.1-mini 评分） | **91.7** | 84.4 |
+| 准确率（DeepSeek 评分） | **91.4** | 82.1 |
+| 多跳 / 时间（gpt-4.1-mini 评分） | **91.8 / 91.3** | 77.7 / 82.9 |
+| 每题上下文 | 3.8k | 2.6k |
+| 每份历史的写入成本 | $0.013 | $0.12 |
+
+逐题配对差为 7.3 分（95% CI 5.5–9.2）。提供每题的类别后，Jev-Mem 得 84.0%。两个系统的差别不止在 Jev 用在哪里，所以这不是消融实验；但在决策模型相同的前提下，等问题到来再判断原始记录的一方更准。适配脚本是 `docs/paper/scripts/jevmem_locomo.py`，运行记录在 `runs/jevmem-locomo-20260928`。
+
 ## 组件与版本
 
 Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
-- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 222 个提交，发展到本快照 `aea19abc`。
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 223 个提交，发展到本快照 `44fb4e71`。
 - 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
 - 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
 
 | 组件 | 版本 | 在 Mnemon 中的角色 |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 222 个研究提交（`aea19abc`） | 记忆插件、副本实例和评测工具 |
+| dsh-mnemon | v0.5.13 + 223 个研究提交（`44fb4e71`） | 记忆插件、副本实例和评测工具 |
 | DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
 | Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
-| gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；评委，标准设置下为主评委 |
-| DeepSeek-V4.1-Flash | API 模型 `deepseek-flash` | 推理设置下的 System 2（作答带思考，规划不带）；整合（不带思考）；评委，推理设置下为主评委 |
+| gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；评分模型，标准设置下为主评分模型 |
+| DeepSeek-V4.1-Flash | API 模型 `deepseek-flash` | 推理设置下的 System 2（作答带思考，规划不带）；整合（不带思考）；评分模型，推理设置下为主评分模型 |
 | nomic-embed-text | 本地部署 | 混合检索和索引条目的向量 |
 | Node.js / pnpm | v25.1.0 / 11 | 运行环境与包管理 |
 
@@ -217,7 +232,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 关于这份快照
 
-本仓库是研究分支在 `aea19abc`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
+本仓库是研究分支在 `44fb4e71`（2026-09-29）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
 
 <details>
 <summary><b>仓库结构</b></summary>
@@ -250,7 +265,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 - 两题冒烟运行两题都给出了回答。
 - `tools/audit.py` 扫描干净，工作区和全部提交（`--history`）都是如此。
 
-安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835`、`c461581c`、`7649d8ff`、`65145f69` 和 `aea19abc`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，`collect.py`（缺少 HaluMem 记录时保留已提交的条目），以及为 arXiv 打包源码的 `arxiv.py`。系统代码没有变。重算和扫描在 `aea19abc` 上重新做过。
+安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835`、`c461581c`、`7649d8ff`、`65145f69`、`aea19abc` 和 `44fb4e71`，只改了论文部分和运行记录：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，`collect.py`（缺少 HaluMem 记录时保留已提交的条目，并比较 Jev-Mem 与最终版本），为 arXiv 打包源码的 `arxiv.py`，以及 Jev-Mem 的适配脚本和运行记录。系统代码没有变。重算和扫描在 `44fb4e71` 上重新做过。
 
 快照保证什么、不保证什么：
 - `PROVENANCE.json` 列出的文件与源提交逐字节一致；`modified` 下的文件只替换了本机路径。
@@ -271,7 +286,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ```bibtex
 @misc{wang2026mnemon,
-  title  = {Mnemon: Remembering Fast and Slow in {LLM} Agents},
+  title  = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
   author = {Wang, Guangren},
   year   = {2026},
   note   = {Preprint},

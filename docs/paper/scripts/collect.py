@@ -452,6 +452,57 @@ for label, s0, fin, ds_, reader, judge in (('gpt-4.1-mini', P3 / 'full/locomo', 
 final['all_together'] = together
 results['final'] = final
 
+# 7. Jev-Mem (arXiv 2609.23986), concurrent work that also uses Jev as System 1, run from its released code under our
+# protocol by scripts/jevmem_locomo.py: the same 1,540 LoCoMo questions, gpt-4.1-mini answering once per question given
+# only the question ('blind'; 'labels' also passes each question's LoCoMo category, which its own runner uses), and the
+# same two graders; paired with the final version of Mnemon on the questions both graders graded on both sides.
+JEVMEM = RUNS / 'jevmem-locomo-20260928'
+def jevmem_side(variant):
+    arm = {'blind': 'jev-mem', 'labels': 'jev-mem-labels'}[variant]
+    d = JEVMEM / variant
+    rows = {r['id']: r for r in load(d / 'rows.jsonl') if r['arm'] == arm}
+    grades = {judge: {g['id']: bool(g['correct']) for g in load(d / name) if g['arm'] == arm}
+              for judge, name in (('mini', 'grades-gpt-4.1-mini.jsonl'), ('deepseek', 'grades.jsonl'),
+                                  ('mini-refined', 'grades-gpt-4.1-mini-refined.jsonl'), ('deepseek-refined', 'grades-refined.jsonl'))}
+    return dict(ds='locomo', reader='gpt-4.1-mini', rows=rows, grades=grades)
+def jevmem():
+    records = [json.load(open(p)) for p in sorted((JEVMEM / 'construction').glob('*.json'))]
+    if not records: return None
+    mnemon = run(P3 / 'steps/mini-simple-consolidated/locomo', 'locomo', 'gpt-4.1-mini')
+    # Write time: Jev's decisions (typing and relations) for every turn, and any LLM call, per conversation.
+    write = [r['jev']['input'] * JEV / 1e6 + sum(priced(u, MINI) for u in r.get('main', [])) for r in records]
+    out = dict(construction=dict(histories=len(records), turns=sum(r['turns'] for r in records),
+                                 seconds=round(sum(r['seconds'] for r in records)), jev_calls=sum(r['jev']['calls'] for r in records),
+                                 fallbacks=sum(len(r['fallbacks']) for r in records), llm_calls=sum(len(r.get('main', [])) for r in records),
+                                 per_history=round(statistics.mean(write), 4)))
+    acc = lambda g, sel: round(100 * sum(g[i] for i in sel) / len(sel), 1)
+    for variant in ('blind', 'labels'):
+        side = jevmem_side(variant)
+        rows, g = side['rows'], side['grades']
+        if not rows: continue
+        v = dict(answered=len(rows), errors=sum(bool(r.get('error')) for r in rows.values()),
+                 fallback_questions=sum(bool(r.get('fallbacks')) for r in rows.values()),
+                 served=sorted({u.get('served') for r in rows.values() for u in r.get('main', [])}),
+                 jev_models=sorted({m for r in rows.values() for m in r['jev'].get('models', [])}))
+        for judge in ('mini', 'deepseek'):
+            m = mnemon['grades'][judge]
+            ids = sorted(set(rows) & set(mnemon['rows']) & set(g[judge]) & set(m))
+            if len(ids) < 1500: continue
+            diff = lambda sel: (lambda d: {**d, 'p': round(mcnemar(d['up'], d['down']), 6)})(mean_diff([m[i] - g[judge][i] for i in sel]))
+            v[judge] = dict(n=len(ids), mnemon=acc(m, ids), jevmem=acc(g[judge], ids), paired=diff(ids),
+                            by_type={t: dict(n=len(sel), mnemon=acc(m, sel), jevmem=acc(g[judge], sel), paired=diff(sel))
+                                     for t in TYPES['locomo'] if (sel := [i for i in ids if rows[i]['type'] == t])},
+                            revised=dict(mnemon=revised(mnemon, ids, judge)[0], jevmem=revised(side, ids, judge)[0]))
+        rs = list(rows.values())
+        v['process'] = dict(
+            answer_input_tokens=round(statistics.mean(sum(u.get('miss', 0) + u.get('hit', 0) for u in r['main']) for r in rs)),
+            jev_tokens=round(statistics.mean(r['jev']['input'] for r in rs)), jev_calls=round(statistics.mean(r['jev']['calls'] for r in rs), 2),
+            cost_per_question=round(statistics.mean(sum(priced(u, MINI) for u in r['main']) + r['jev']['input'] * JEV / 1e6 for r in rs), 6),
+            latency_p50_s=round(statistics.median(r['elapsedMs'] for r in rs) / 1000, 2))
+        out[variant] = v
+    return out
+results['jevmem'] = jevmem()
+
 # HaluMem's run records are not redistributed: its license (CC BY-NC-ND 4.0) lets no adapted material be shared. Without
 # them, the HaluMem entries of the existing results.json are kept as they are, in place, and the rest is recomputed.
 def carry_halumem(new, old):

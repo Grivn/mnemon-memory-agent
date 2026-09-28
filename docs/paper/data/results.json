@@ -9208,5 +9208,398 @@
     }
    }
   }
+ },
+ "jevmem": {
+  "construction": {
+   "histories": 10,
+   "turns": 5882,
+   "seconds": 3565,
+   "jev_calls": 12041,
+   "fallbacks": 1,
+   "llm_calls": 0,
+   "per_history": 0.1234
+  },
+  "blind": {
+   "answered": 1540,
+   "errors": 0,
+   "fallback_questions": 0,
+   "served": [
+    "gpt-4.1-mini",
+    "gpt-4.1-mini-2025-04-14"
+   ],
+   "jev_models": [
+    "jev-1.13.0"
+   ],
+   "mini": {
+    "n": 1540,
+    "mnemon": 91.7,
+    "jevmem": 84.4,
+    "paired": {
+     "n": 1540,
+     "diff": 7.3,
+     "ci95": [
+      5.5,
+      9.2
+     ],
+     "up": 166,
+     "down": 53,
+     "p": 0.0
+    },
+    "by_type": {
+     "single-hop": {
+      "n": 841,
+      "mnemon": 94.6,
+      "jevmem": 89.4,
+      "paired": {
+       "n": 841,
+       "diff": 5.2,
+       "ci95": [
+        3.0,
+        7.4
+       ],
+       "up": 68,
+       "down": 24,
+       "p": 5e-06
+      }
+     },
+     "multi-hop": {
+      "n": 282,
+      "mnemon": 91.8,
+      "jevmem": 77.7,
+      "paired": {
+       "n": 282,
+       "diff": 14.2,
+       "ci95": [
+        9.3,
+        19.0
+       ],
+       "up": 47,
+       "down": 7,
+       "p": 0.0
+      }
+     },
+     "temporal": {
+      "n": 321,
+      "mnemon": 91.3,
+      "jevmem": 82.9,
+      "paired": {
+       "n": 321,
+       "diff": 8.4,
+       "ci95": [
+        4.1,
+        12.7
+       ],
+       "up": 39,
+       "down": 12,
+       "p": 0.000198
+      }
+     },
+     "open-domain": {
+      "n": 96,
+      "mnemon": 66.7,
+      "jevmem": 64.6,
+      "paired": {
+       "n": 96,
+       "diff": 2.1,
+       "ci95": [
+        -7.5,
+        11.7
+       ],
+       "up": 12,
+       "down": 10,
+       "p": 0.831812
+      }
+     }
+    },
+    "revised": {
+     "mnemon": 94.2,
+     "jevmem": 86.1
+    }
+   },
+   "deepseek": {
+    "n": 1540,
+    "mnemon": 91.4,
+    "jevmem": 82.1,
+    "paired": {
+     "n": 1540,
+     "diff": 9.2,
+     "ci95": [
+      7.3,
+      11.1
+     ],
+     "up": 191,
+     "down": 49,
+     "p": 0.0
+    },
+    "by_type": {
+     "single-hop": {
+      "n": 841,
+      "mnemon": 94.9,
+      "jevmem": 86.9,
+      "paired": {
+       "n": 841,
+       "diff": 8.0,
+       "ci95": [
+        5.7,
+        10.3
+       ],
+       "up": 85,
+       "down": 18,
+       "p": 0.0
+      }
+     },
+     "multi-hop": {
+      "n": 282,
+      "mnemon": 91.8,
+      "jevmem": 77.0,
+      "paired": {
+       "n": 282,
+       "diff": 14.9,
+       "ci95": [
+        10.2,
+        19.6
+       ],
+       "up": 47,
+       "down": 5,
+       "p": 0.0
+      }
+     },
+     "temporal": {
+      "n": 321,
+      "mnemon": 89.4,
+      "jevmem": 81.0,
+      "paired": {
+       "n": 321,
+       "diff": 8.4,
+       "ci95": [
+        3.7,
+        13.1
+       ],
+       "up": 44,
+       "down": 17,
+       "p": 0.00073
+      }
+     },
+     "open-domain": {
+      "n": 96,
+      "mnemon": 65.6,
+      "jevmem": 59.4,
+      "paired": {
+       "n": 96,
+       "diff": 6.2,
+       "ci95": [
+        -3.7,
+        16.2
+       ],
+       "up": 15,
+       "down": 9,
+       "p": 0.307456
+      }
+     }
+    },
+    "revised": {
+     "mnemon": 93.9,
+     "jevmem": 84.2
+    }
+   },
+   "process": {
+    "answer_input_tokens": 2563,
+    "jev_tokens": 44084,
+    "jev_calls": 4.11,
+    "cost_per_question": 0.002888,
+    "latency_p50_s": 4.26
+   }
+  },
+  "labels": {
+   "answered": 1540,
+   "errors": 0,
+   "fallback_questions": 0,
+   "served": [
+    "gpt-4.1-mini",
+    "gpt-4.1-mini-2025-04-14"
+   ],
+   "jev_models": [
+    "jev-1.13.0"
+   ],
+   "mini": {
+    "n": 1540,
+    "mnemon": 91.7,
+    "jevmem": 84.0,
+    "paired": {
+     "n": 1540,
+     "diff": 7.7,
+     "ci95": [
+      5.9,
+      9.6
+     ],
+     "up": 172,
+     "down": 53,
+     "p": 0.0
+    },
+    "by_type": {
+     "single-hop": {
+      "n": 841,
+      "mnemon": 94.6,
+      "jevmem": 91.0,
+      "paired": {
+       "n": 841,
+       "diff": 3.7,
+       "ci95": [
+        1.7,
+        5.7
+       ],
+       "up": 52,
+       "down": 21,
+       "p": 0.000371
+      }
+     },
+     "multi-hop": {
+      "n": 282,
+      "mnemon": 91.8,
+      "jevmem": 78.0,
+      "paired": {
+       "n": 282,
+       "diff": 13.8,
+       "ci95": [
+        8.7,
+        18.9
+       ],
+       "up": 49,
+       "down": 10,
+       "p": 0.0
+      }
+     },
+     "temporal": {
+      "n": 321,
+      "mnemon": 91.3,
+      "jevmem": 74.8,
+      "paired": {
+       "n": 321,
+       "diff": 16.5,
+       "ci95": [
+        11.7,
+        21.3
+       ],
+       "up": 62,
+       "down": 9,
+       "p": 0.0
+      }
+     },
+     "open-domain": {
+      "n": 96,
+      "mnemon": 66.7,
+      "jevmem": 70.8,
+      "paired": {
+       "n": 96,
+       "diff": -4.2,
+       "ci95": [
+        -13.8,
+        5.4
+       ],
+       "up": 9,
+       "down": 13,
+       "p": 0.523467
+      }
+     }
+    },
+    "revised": {
+     "mnemon": 94.2,
+     "jevmem": 85.5
+    }
+   },
+   "deepseek": {
+    "n": 1540,
+    "mnemon": 91.4,
+    "jevmem": 81.9,
+    "paired": {
+     "n": 1540,
+     "diff": 9.4,
+     "ci95": [
+      7.4,
+      11.4
+     ],
+     "up": 200,
+     "down": 55,
+     "p": 0.0
+    },
+    "by_type": {
+     "single-hop": {
+      "n": 841,
+      "mnemon": 94.9,
+      "jevmem": 87.8,
+      "paired": {
+       "n": 841,
+       "diff": 7.1,
+       "ci95": [
+        4.9,
+        9.3
+       ],
+       "up": 77,
+       "down": 17,
+       "p": 0.0
+      }
+     },
+     "multi-hop": {
+      "n": 282,
+      "mnemon": 91.8,
+      "jevmem": 80.9,
+      "paired": {
+       "n": 282,
+       "diff": 11.0,
+       "ci95": [
+        5.9,
+        16.1
+       ],
+       "up": 44,
+       "down": 13,
+       "p": 4.7e-05
+      }
+     },
+     "temporal": {
+      "n": 321,
+      "mnemon": 89.4,
+      "jevmem": 73.5,
+      "paired": {
+       "n": 321,
+       "diff": 15.9,
+       "ci95": [
+        10.7,
+        21.0
+       ],
+       "up": 65,
+       "down": 14,
+       "p": 0.0
+      }
+     },
+     "open-domain": {
+      "n": 96,
+      "mnemon": 65.6,
+      "jevmem": 62.5,
+      "paired": {
+       "n": 96,
+       "diff": 3.1,
+       "ci95": [
+        -7.1,
+        13.4
+       ],
+       "up": 14,
+       "down": 11,
+       "p": 0.690038
+      }
+     }
+    },
+    "revised": {
+     "mnemon": 93.9,
+     "jevmem": 83.8
+    }
+   },
+   "process": {
+    "answer_input_tokens": 2580,
+    "jev_tokens": 44062,
+    "jev_calls": 4.11,
+    "cost_per_question": 0.00286,
+    "latency_p50_s": 4.43
+   }
+  }
  }
 }

@@ -1,4 +1,4 @@
-# Mnemon: Remembering Fast and Slow in LLM Agents
+# Mnemon: Raw Records, Fast Judgments, Slow Thoughts
 
 Sources of the paper on Mnemon, the two-system memory agent built on DeepSeek Harness, by Guangren Wang. The final version reads raw records with an LLM planner and the Jev decision model, and consolidates each record once into an index that links back to the records; its read-time core is the configuration fixed by the pre-registered steps.
 
@@ -6,7 +6,7 @@ Sources of the paper on Mnemon, the two-system memory agent built on DeepSeek Ha
 |---|---|
 | `main.tex`, `sections/` | The paper |
 | `references.bib` | Bibliography (every entry checked against its primary source) |
-| `data/results.json` | Numbers computed from the run records by `scripts/collect.py`, including the final version (`final`) |
+| `data/results.json` | Numbers computed from the run records by `scripts/collect.py`, including the final version (`final`) and Jev-Mem under the same protocol (`jevmem`) |
 | `data/beam_evidence.json` | Where BEAM-100K's gold evidence went (View, judged, not retrieved), by `scripts/beam_evidence.py` |
 | `data/work.json` | The work on the critical path of one question (System 2 calls, Jev calls and waves, Source reads), counted from the final runs' replica traces by `scripts/work.py` |
 | `data/retrieval.json` | Warm-index timing of the journal's search route on each benchmark's largest history, by `scripts/retrieval.ts` |
@@ -20,8 +20,11 @@ python3 docs/paper/scripts/collect.py          # needs the run records; MNEMON_R
 python3 docs/paper/scripts/beam_evidence.py    # needs pyarrow and BEAM's 100K.parquet
 python3 docs/paper/scripts/work.py             # needs the replica traces of the final runs
 node --experimental-transform-types docs/paper/scripts/retrieval.ts   # needs the runs' journals and local embedding servers
+python3 docs/paper/scripts/jevmem_locomo.py build --jevmem <Jev-Mem clone> --out $MNEMON_RUNS/jevmem-locomo-20260928   # then answer, twice
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh
 ```
+
+`jevmem_locomo.py` runs the released code of Jev-Mem (github.com/libingzheren/Jev-Mem at 7ab0c73, Python 3.11 or later with its requirements) under the paper's protocol: `build` constructs each conversation's memory, and `answer --variant blind` (and `labels`) answers the 1,540 LoCoMo questions once each; `scripts/bench/judge.ts` then grades them, with `--judge gpt-4.1-mini` and with `--refine` for the corrected gold answers.
 
 `retrieval.ts` embeds every query with a local OpenAI-compatible embeddings server (`MNEMON_QUERY_EMBED_URL`, nomic-embed-text) and warms the index from an Ollama-compatible one (`MNEMON_EMBED_URL`); reads are timed one at a time on a warm index. The paper reports latency as this work rather than as the end-to-end time of the runs, which shared one laptop and public model APIs.
 

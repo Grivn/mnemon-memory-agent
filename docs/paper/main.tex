@@ -8,6 +8,7 @@
 \fi
 \usepackage[letterpaper,margin=1in]{geometry}
 \usepackage{libertine}
+\usepackage{amsthm}% before newtxmath, which defines \openbox too
 \usepackage[libertine]{newtxmath}
 \usepackage{microtype}
 \usepackage{graphicx}
@@ -33,7 +34,9 @@
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \urlstyle{same}
-\hypersetup{pdftitle={Mnemon: Remembering Fast and Slow in LLM Agents}, pdfauthor={Guangren Wang}}
+\hypersetup{pdftitle={Mnemon: Raw Records, Fast Judgments, Slow Thoughts}, pdfauthor={Guangren Wang}}
+\newtheorem{proposition}{Proposition}
+\crefname{proposition}{Proposition}{Propositions}
 
 \definecolor{ours}{HTML}{2a78d6}
 \definecolor{other}{HTML}{eb6834}
@@ -70,7 +73,7 @@
 % Generated tables float to the top of a page unless they name another placement.
 \newenvironment{gentable}[1][t]{\begin{table}[#1]}{\end{table}}
 
-\title{\sys: Remembering Fast and Slow\\in LLM Agents}
+\title{\sys: Raw Records, Fast Judgments, Slow Thoughts}
 \author{Guangren Wang}
 \date{}
 

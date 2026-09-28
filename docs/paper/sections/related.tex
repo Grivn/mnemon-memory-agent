@@ -12,11 +12,11 @@ MemMachine keeps raw episodes indexed by sentence~\citep{memmachine2026}, and Sm
 \jev{} acts as a reranker~\citep{nogueira2019passage,sun2023rankgpt} whose judgments answer explicit propositions and drive actions, as in ReAct and Self-RAG~\citep{yao2023react,asai2024selfrag}.
 
 \paragraph{Fast and slow thinking.}
-Dual-process accounts separate fast, automatic judgment from slow deliberation~\citep{kahneman2011thinking}, and AI systems have borrowed the division to pair fast and slow components~\citep{booch2021thinking}, for instance a small, fast action model with an LLM planner in interactive agents~\citep{lin2023swiftsage}.
-LLM cascades route easy queries to cheap models and hard ones to expensive models~\citep{chen2023frugalgpt}.
-\sys{} applies the division to memory: it splits the work of reading a memory into the judgments that suit a fast decision model and the planning and answering that need an LLM.
+Dual-process accounts separate fast, automatic judgment from slow deliberation~\citep{kahneman2011thinking}, and AI systems have borrowed the division to pair fast and slow components~\citep{booch2021thinking}, for instance a small, fast action model with an LLM planner in interactive agents~\citep{lin2023swiftsage}; LLM cascades route easy queries to cheap models and hard ones to expensive models~\citep{chen2023frugalgpt}.
+Memory systems have recently adopted the division as well: D-Mem falls back from vector retrieval to exhaustive LLM reading~\citep{you2026dmem}, DCPM and Engram pair a fast write path with slow consolidation into schemas or a bi-temporal knowledge graph~\citep{fei2026dcpm,wang2026engram}, and Jev-Mem uses \jev{} to type and link each turn at write time and to steer retrieval over the resulting graph~\citep{jiang2026jevmem}.
+\sys{} applies the division on the read path instead: System~1 judges raw records once a question is known, System~2 plans the searches and composes the answer, and nothing is decided when a record is written.
 
 \paragraph{Evaluating memory.}
 LoCoMo~\citep{maharana2024locomo} and \lme~\citep{wu2025longmemeval} are the standard benchmarks for long conversations; BEAM reaches 10M tokens~\citep{beam2026}, and HaluMem measures hallucination~\citep{halumem2025}.
-Protocols and LLM judges~\citep{zheng2023judging} vary between papers, and several self-reported scores fell by 10--40 points when OmniMemEval re-evaluated 14 systems under one protocol~\citep{omnimemeval2026}.
+Protocols and LLM graders~\citep{zheng2023judging} vary between papers, and several self-reported scores fell by 10--40 points when OmniMemEval re-evaluated 14 systems under one protocol~\citep{omnimemeval2026}.
 We therefore follow that protocol and list published claims separately.

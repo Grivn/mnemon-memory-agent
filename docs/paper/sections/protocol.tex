@@ -14,8 +14,8 @@ In the \emph{reasoning setting}, DeepSeek-V4.1-Flash~\citep{deepseekflash2026} a
 
 \paragraph{Grading.}
 LoCoMo answers are graded with the lenient prompt of Mem0~\citep{chhikara2025mem0} and later work, \lme{} answers with its per-type prompts, and HaluMem and BEAM answers with their official prompts and rubrics.
-The primary judge is gpt-4.1-mini in the standard setting and DeepSeek-V4.1-Flash (without thinking, temperature 0) in the reasoning setting, and the other grades every answer as well; on LoCoMo and \lme{} the two agree on 96--97\% of answers (Cohen's $\kappa$ 0.85--0.89).
-OmniMemEval grades with gpt-4o-mini, so comparisons with it carry a judge difference of 1--2 points.
+The primary grader is gpt-4.1-mini in the standard setting and DeepSeek-V4.1-Flash (without thinking, temperature 0) in the reasoning setting, and the other grades every answer as well; on LoCoMo and \lme{} the two agree on 96--97\% of answers (Cohen's $\kappa$ 0.85--0.89).
+OmniMemEval grades with gpt-4o-mini, so comparisons with it carry a grader difference of 1--2 points.
 Paired differences between configurations are reported with 95\% confidence intervals (CIs).
 
 \paragraph{Baselines.}

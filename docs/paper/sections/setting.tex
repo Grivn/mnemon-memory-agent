@@ -7,11 +7,29 @@ At each user turn a \emph{memory agent} may read the history, and it publishes a
 The main agent is otherwise unchanged, and the memory agent never edits its reply.
 In the benchmarks we use, a question is asked in a fresh session after its history has been written, so the answer depends on the View alone.
 
+\paragraph{Formal model.}
+We write the history as a sequence of dated records $H = (r_1, \ldots, r_n)$, each a timestamp and a short span of dialogue.
+At a user turn, let $M$ be the recent dialogue, ending with the user's message, and let $Y$ be what the reply should convey; $Y$ depends on the message, which is not known when the history is written.
+A memory agent maps $M$ and $H$ to a View $V = F(M, H)$ within a budget $B$ on its length, and the main agent replies from $M$ and $V$.
+A \emph{write-time} memory first applies a transformation $\phi$ fixed before any question, such as extraction into facts or a graph, and reads only its output: $V = F\bigl(M, \phi(H)\bigr)$.
+Since $\phi(H)$ is a function of $H$, the variables form a Markov chain $Y \to (M, H) \to \bigl(M, \phi(H)\bigr)$, and the data processing inequality~\citep{cover2006elements} gives
+\begin{equation}
+\label{eq:dpi}
+I\bigl(Y;\, M, \phi(H)\bigr) \le I\bigl(Y;\, M, H\bigr),
+\end{equation}
+with equality only if $\phi(H)$ retains all that $H$ says about the answer to every question that may be asked.
+Processing at write time can therefore lose information about questions not yet asked, and it cannot add any.
+\Cref{eq:dpi} does not make raw records sufficient: the View must still fit $B$, and choosing it is the read-time work that \sys{} divides between two systems.
+An index $X = \psi(H)$ kept beside the records, rather than in their place, loses nothing, since $I(Y; M, H, X) = I(Y; M, H)$; it can only make the relevant records easier to find.
+
 \paragraph{Two kinds of work.}
-Following dual-process accounts of thinking~\citep{kahneman2011thinking}, we call \emph{System~1 work} any decision about one item against an explicit criterion that can be made independently of the other items: does the reply need this record, is it no longer current, does it satisfy a need.
-Such decisions come in bulk and lie on the read path, so they suit a decision model that answers dozens of them at once in a fraction of a second.
-\emph{System~2 work} is open-ended: writing queries for records not yet seen, naming what a reply needs and composing an answer that counts, compares dates or chains facts.
+Following dual-process accounts of thinking~\citep{kahneman2011thinking}, we divide the read-time work into two kinds.
+\emph{System~1 work} consists of \emph{judgments}.
+A judgment evaluates a yes/no proposition $\pi$ with an explicit criterion about one item $x$, a record or an index item, in a shared state $c$, such as the recent dialogue and the needs under consideration, and returns the probability $p_\pi(x \mid c) \in [0, 1]$ that $\pi$ holds: does the reply need this record, is it no longer current, does it satisfy this need.
+Judgments on one state that take no other judgment's result as input form a \emph{wave}, which a decision model answers in parallel batches, dozens of judgments in a fraction of a second; the time a turn spends on System~1 work therefore grows with its number of waves, not of judgments.
+\emph{System~2 work} is open-ended generation $g(c)$ that does not decompose into such propositions: writing queries for records not yet seen, naming what a reply needs, and composing an answer that counts, compares dates or chains facts.
 It suits an LLM, which does it well but slowly, so a memory agent should keep as little of it on the read path as it can and move the rest to the background.
+We borrow the division of labor, not the view that fast judgment is error-prone: our judgments have explicit criteria, and a model built for them makes them well (\cref{sec:system1}).
 
 \paragraph{Harness.}
 We build the memory agent in DeepSeek Harness (DSH), an open-source agent harness in which every capability is a plugin~\citep{dsh2026}.

@@ -1,6 +1,6 @@
 <h1 align="center">Mnemon</h1>
 
-<h3 align="center">Remembering Fast and Slow in LLM Agents</h3>
+<h3 align="center">Raw Records, Fast Judgments, Slow Thoughts</h3>
 
 <p align="center">
   <a href="docs/paper/main.pdf"><b>Paper</b></a> ·
@@ -39,10 +39,13 @@ up and to the left is better.</sub></p>
   grows by a factor of **1.11**, and the work on a question's critical path stays about the same.
 - **System 1 judges better.** On the same 14,359 records, Jev separates gold evidence with an AUC of **0.942**.
   DeepSeek reaches 0.900 and gpt-4.1-mini 0.853, at 3–11 times Jev's latency.
+- **Raw records beat a write-time graph built by the same model.** Under one protocol, Jev-Mem, which uses Jev to
+  organize memory into a graph as turns are written, scores **84.4%** on LoCoMo against Mnemon's 91.7% (7.3 points,
+  95% CI 5.5–9.2).
 
 ## Two ideas
 
-### Remembering fast and slow
+### Fast judgments, slow thoughts
 
 Most of the read-time work of memory is System 1 work: small, independent yes/no judgments with explicit criteria.
 - Should the reply use this record?
@@ -80,7 +83,7 @@ setting with public benchmarks; other stores are untested.
 ## Results
 
 All numbers come from `docs/paper/data/results.json`, which is computed from the run records in `runs/`. Our runs
-are graded by gpt-4.1-mini and DeepSeek-V4.1-Flash; OmniMemEval grades with gpt-4o-mini, a judge difference of 1–2
+are graded by gpt-4.1-mini and DeepSeek-V4.1-Flash; OmniMemEval grades with gpt-4o-mini, a grader difference of 1–2
 points.
 
 ### Under one protocol (gpt-4.1-mini answering)
@@ -112,14 +115,14 @@ Mnemon's other costs (planner, Jev, consolidation) are listed below and are not 
 
 ### Against each project's best published result
 
-Each project's best claim, with whatever answering model, judge and protocol it used. The settings differ widely,
-so this ranks claims, not systems. The paper's Table 3 has all 18 entries and their sources.
+Each project's best claim, with whatever answering model, grader and protocol it used. The settings differ widely,
+so this ranks claims, not systems. The paper's Table 3 has all 20 entries and their sources.
 
-| Project | LoCoMo | LongMemEval-S | Answering model / judge |
+| Project | LoCoMo | LongMemEval-S | Answering model / grader |
 |---|---:|---:|---|
 | **Mnemon** | 95.3† | 94.4 | DeepSeek-V4.1-Flash (thinking) / DeepSeek |
 | Zep / Graphiti | 94.7 | 90.2 | gpt-5.4 (medium reasoning) / gpt-5.4 |
-| EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / three judges averaged |
+| EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / three graders averaged |
 | Mem0 | 92.5 | 94.4 | gpt-5 / gpt-5 |
 | memU | 92.09 | – | not stated (early version) |
 | Hindsight | 92.0 | 94.6 | not stated (paper: gemini-3-pro 89.6 / 91.4) |
@@ -131,7 +134,7 @@ which every other entry uses.
 
 ### Every benchmark and tier, with the full cost
 
-gpt-4.1-mini answering. Score under the gpt-4.1-mini / DeepSeek judges (accuracy; HaluMem: share correct; BEAM: rubric
+gpt-4.1-mini answering. Score under the gpt-4.1-mini / DeepSeek graders (accuracy; HaluMem: share correct; BEAM: rubric
 score). The rank is among the systems OmniMemEval re-evaluated. Cost per 1,000 questions covers the answer, the
 planner and Jev at list prices; consolidation is a one-time cost per history. Jev calls (sequential waves) and
 searches are the median question's; the last column is the warm latency of one search on the largest history.
@@ -151,7 +154,8 @@ token.
 
 **Work per question.** Our runs shared one laptop and public model APIs, so we state latency as critical-path work
 (medians):
-- System 2 plans once, with two calls in parallel, and answers once.
+- System 2 plans once, with two calls in parallel, and answers once; a question whose loop asks for a new search
+  (6–31% of them) makes one more call.
 - System 1 makes 5–10 Jev calls in 4–7 sequential waves of about 0.34 s each: 1.4–2.4 s in all.
 - A warm search takes 14–18 ms, mostly to embed the query, and all of a question's reads of the journal 0.1–0.2 s.
 
@@ -168,20 +172,40 @@ inverted and approximate nearest-neighbor indexes would avoid this.
 Jev, DeepSeek and gpt-4.1-mini judged the same proposition about each of the same 14,359 records. Jev separates the
 gold evidence best and answers two propositions per record in the time an LLM takes for one.
 
+### Raw records or a write-time graph, with the same Jev
+
+[Jev-Mem](https://arxiv.org/abs/2609.23986), concurrent work, uses Jev at write time: it types each turn and links it
+into a relation graph, then steers retrieval over that graph. We ran its released code under our protocol: the same
+1,540 LoCoMo questions, gpt-4.1-mini answering once per question from the question alone, and both graders. (Its
+released runner, by default, picks the best of three answers against the gold answer; we did not.)
+
+| LoCoMo, gpt-4.1-mini answering | Mnemon | Jev-Mem |
+|---|---:|---:|
+| accuracy, gpt-4.1-mini grader | **91.7** | 84.4 |
+| accuracy, DeepSeek grader | **91.4** | 82.1 |
+| multi-hop / temporal (gpt-4.1-mini grader) | **91.8 / 91.3** | 77.7 / 82.9 |
+| context per question | 3.8k | 2.6k |
+| write-time cost per history | $0.013 | $0.12 |
+
+The paired difference is 7.3 points (95% CI 5.5–9.2). Given each question's category, Jev-Mem scores 84.0%. The two
+systems differ in more than where Jev works, so this is not an ablation, but with the decision model held fixed,
+judging raw records once the question is known was the more accurate. The adapter is
+`docs/paper/scripts/jevmem_locomo.py`, and the run records are in `runs/jevmem-locomo-20260928`.
+
 ## Components and versions
 
 Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
-It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 222 commits
-up to this snapshot, `aea19abc`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 223 commits
+up to this snapshot, `44fb4e71`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
 changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
 
 | Component | Version | Role in Mnemon |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 222 research commits (`aea19abc`) | memory plugins, the replica and the benchmark harness |
+| dsh-mnemon | v0.5.13 + 223 research commits (`44fb4e71`) | memory plugins, the replica and the benchmark harness |
 | DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
 | Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
-| gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); judge, primary in the standard setting |
-| DeepSeek-V4.1-Flash | API model `deepseek-flash` | System 2 in the reasoning setting (answers with thinking, plans without); consolidation, without thinking; judge, primary in the reasoning setting |
+| gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); grader, primary in the standard setting |
+| DeepSeek-V4.1-Flash | API model `deepseek-flash` | System 2 in the reasoning setting (answers with thinking, plans without); consolidation, without thinking; grader, primary in the reasoning setting |
 | nomic-embed-text | served locally | embeddings for hybrid search and index items |
 | Node.js / pnpm | v25.1.0 / 11 | runtime and package manager |
 
@@ -244,7 +268,7 @@ The full system adds `--simple`, hybrid search with `--embed-url <local nomic-em
 
 ## About this snapshot
 
-This repository is a frozen, history-free snapshot of the research branch at `aea19abc` (2026-09-28). Every file can
+This repository is a frozen, history-free snapshot of the research branch at `44fb4e71` (2026-09-29). Every file can
 be traced to its source through `PROVENANCE.json`.
 
 <details>
@@ -289,10 +313,12 @@ What has been checked:
 - `tools/audit.py` is clean, over the working tree and over every commit (`--history`).
 
 The install, builds, tests and smoke run were checked on the snapshot of `e5c7954a`. The later refreshes, to
-`f97c5679`, `3bbf7835`, `c461581c`, `7649d8ff`, `65145f69` and `aea19abc`, changed only the paper: its text, bibliography, table
-and figure scripts, generated tables, figures and PDF, the two scripts that measure the work per question with their
-data, `collect.py`, which keeps the HaluMem entries when their records are absent, and `arxiv.py`, which packages the
-sources for arXiv. The system's code is unchanged. The recomputation and the audit were repeated at `aea19abc`.
+`f97c5679`, `3bbf7835`, `c461581c`, `7649d8ff`, `65145f69`, `aea19abc` and `44fb4e71`, changed only the paper and its
+run records: its text, bibliography, table and figure scripts, generated tables, figures and PDF, the two scripts that
+measure the work per question with their data, `collect.py`, which keeps the HaluMem entries when their records are
+absent and compares Jev-Mem with the final version, `arxiv.py`, which packages the sources for arXiv, and the Jev-Mem
+adapter with its run records. The system's code is unchanged. The recomputation and the audit were repeated at
+`44fb4e71`.
 
 What the snapshot does and does not claim:
 - Files listed in `PROVENANCE.json` equal the source commit, except the ones under `modified`, which differ only in
@@ -318,7 +344,7 @@ This repository itself stays a frozen research snapshot:
 
 ```bibtex
 @misc{wang2026mnemon,
-  title  = {Mnemon: Remembering Fast and Slow in {LLM} Agents},
+  title  = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
   author = {Wang, Guangren},
   year   = {2026},
   note   = {Preprint},

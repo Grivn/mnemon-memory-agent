@@ -97,8 +97,20 @@ Counting, arithmetic, comparing dates and multi-hop reasoning are System~2 work,
 \label{sec:rules}
 
 The rules connect the two systems.
-They read only what System~1 reliably gives, its yes/no decision at 0.5 and its ranking, together with events observed in the previous round, and they call on System~2 only when System~1 reports trouble: a need that no judged record satisfies prompts the planner for a new search, much as System~2 is mobilized when System~1 runs into difficulty~\citep{kahneman2011thinking}.
+They read only what System~1 reliably gives, its yes/no decision ($p \ge 1/2$) and its ranking, together with events observed in the previous round, and they call on System~2 only when System~1 reports trouble: a need that no judged record satisfies prompts the planner for a new search, much as System~2 is mobilized when System~1 runs into difficulty~\citep{kahneman2011thinking}.
 Every other constant is an interpretable budget: three needs per turn, pages of 20 records or 12,000 characters, a pool of 48 records, three rounds, and a View of 16 records and 12,000 characters.
+Because the rules use judgments only through their order and their decisions, they do not depend on how the decision model is calibrated.
+
+\begin{proposition}[Calibration invariance]
+\label{prop:calibration}
+Let $h$ be a strictly increasing map of $[0, 1]$ onto itself with $h(1/2) = 1/2$.
+Replacing every judgment $p$ by $h(p)$ leaves every action of the loop, and hence the View, unchanged.
+\end{proposition}
+\begin{proof}
+The rules compare judgments only with each other or with $1/2$, and $h$ preserves both comparisons.
+\end{proof}
+
+\noindent A decision model can thus be replaced by another that orders and decides alike, without retuning any rule.
 
 \paragraph{The loop.}
 Each open need gets one action per round.
@@ -110,6 +122,16 @@ A need that no record satisfies yet follows its \emph{lead}, the record the need
 The View leads with the index, each block within a fixed budget: standing instructions, a one-line directory of topics, and the timelines and value histories \jev{} judged needed.
 Records follow: those judged needed, then, when the planner named a need, the rest in \jev's ranking up to the View's budget, trimmed from the end to make room for the index.
 Records judged no longer current are left out.
+
+\paragraph{Work per turn.}
+With these budgets, the work on a turn's critical path does not grow with the history, except in search.
+A turn that makes $R$ sequential System~2 calls (the plan, any new search the loop asks for, and the answer), $W$ waves of judgments and $S$ reads of the journal takes
+\begin{equation}
+\label{eq:work}
+T = \sum_{i=1}^{R} \tau^{(2)}_i + \sum_{w=1}^{W} \tau^{(1)}_w + \sum_{s=1}^{S} \tau^{\mathrm{read}}_s(n),
+\end{equation}
+where $\tau^{(2)}_i$, $\tau^{(1)}_w$ and $\tau^{\mathrm{read}}_s(n)$ are the latencies of the $i$th System~2 call, the $w$th wave and the $s$th read, each read being over the $n$ records of the journal.
+The rounds and the needs bound $R$, $W$ and $S$, and only reads depend on $n$; since reads spend no model tokens, the tokens a turn spends are bounded as well.
 
 \begin{algorithm}[t]
 \caption{One user turn of \sys.}

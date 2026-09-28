@@ -14,10 +14,22 @@ System~1 work is thus done better, and 3--11 times faster, by a decision model: 
 \label{fig:system1}
 \end{figure}
 
+\subsection{Judging Raw Records or Organizing Them}
+\label{sec:jevmem}
+
+The design can also be tested against a system that uses the same System~1 at write time.
+Jev-Mem~\citep{jiang2026jevmem}, concurrent work, gives \jev{} the decisions of memory management: when a turn is written, \jev{} types it and judges its relations to earlier turns, building a graph with semantic, temporal, causal and entity edges; when a question arrives, \jev{} routes it over the graph, allocates the search budget and decides when to stop, and an LLM writes the answer.
+We ran its released code (default profile, \jev{} 1.13 as in our runs) under our protocol: the same 1,540 LoCoMo questions, gpt-4.1-mini answering once per question from the question alone, and both graders.
+Its released runner, by default, chooses among three answers by comparing them with the gold answer and picks its answer prompt by the question's category; we did neither.
+
+Jev-Mem scores \jmAcc\% (\jmAccDS\% under DeepSeek), \jmDiff{} points below \sys{} (95\% CI \jmCI; \jmUp{} questions answered correctly only by \sys, \jmDown{} only by Jev-Mem), with the largest gaps on multi-hop (\jmMultiHop{} points) and temporal (\jmTemporal) questions, which need records connected or dated; given each question's category, it scores \jmLabels\%.
+It sends less context (\jmCtx{} tokens; ECI \jmEci{} against \finEciLoCoMo) and does less work per question, one LLM call and \jmJevCalls{} \jev{} calls on average, but it spends \jmWriteRatio{} times as much per history at write time (\$\jmWrite{} against \$\writeLoCoMo), where \jev{} judges every turn against its candidates.
+The two systems differ in more than where System~1 works, so this is not an ablation; but with the decision model held fixed, judging raw records once the question is known was more accurate than organizing them before it was.
+
 \subsection{What Consolidation Adds}
 \label{sec:consolidation}
 
 Consolidation is the System~2 work that \sys{} moves off the read path, and answering the same questions with the index removed measures what it adds.
-With gpt-4.1-mini answering it adds \consLoCoMoAbs{} points on LoCoMo, \consLMEAbs{} on \lme, \consBeamAbs{} on BEAM-100K and \consBeamTenAbs{} on BEAM-10M, and \dsConsLoCoMoAbs{} on LoCoMo and \dsConsLMEAbs{} on \lme{} with the reasoning model as System~2, each with a 95\% CI above zero; on HaluMem the two judges disagree in sign.
+With gpt-4.1-mini answering it adds \consLoCoMoAbs{} points on LoCoMo, \consLMEAbs{} on \lme, \consBeamAbs{} on BEAM-100K and \consBeamTenAbs{} on BEAM-10M, and \dsConsLoCoMoAbs{} on LoCoMo and \dsConsLMEAbs{} on \lme{} with the reasoning model as System~2, each with a 95\% CI above zero; on HaluMem the two graders disagree in sign.
 The gains fall where a question does not point to its evidence: instruction following, knowledge updates, summarization and abstention on BEAM; knowledge updates and multi-session questions on \lme; and multi-hop and temporal questions on LoCoMo, whose facts the timelines connect and date.
 Consolidation multiplies the cost per question by \consCostRange, mostly for \jev{} to judge the index items.

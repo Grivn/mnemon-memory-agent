@@ -11,9 +11,9 @@ Every message is processed whether or not it is ever asked about, and what the e
 It also moves judgment away from the moment with the most information for it: the question, the recent dialogue and the candidate records are known together only when the question is asked.
 And it ties memory to a schema: the extractor decides in advance what counts as a fact, an entity or a preference, so each new kind of data, such as documents, tasks or logs, needs a new extraction schema.
 
-\paragraph{Remembering fast and slow.}
+\paragraph{Fast judgments, slow thoughts.}
 Dual-process accounts of thinking separate a fast, automatic System~1 from a slow, deliberate System~2~\citep{kahneman2011thinking}.
-We observe that the work of memory divides the same way.
+The work of memory divides the same way.
 Most of it is System~1 work: small, independent yes/no judgments with explicit criteria, such as whether the reply should use this record, whether it is no longer current or whether it gives the second of the two dates the question needs.
 Decision models such as \jev{} make such judgments by the dozen in a third of a second~\citep{jev2026}.
 Only a little is System~2 work: writing a few search queries, naming what the reply needs and composing the answer from what is shown, which an LLM does well but slowly.
@@ -31,8 +31,8 @@ Memory of this kind can be added wherever records can be searched, which makes i
 \sys{} runs as a \emph{replica}, a second instance of an open-source agent harness~\citep{dsh2026}, and hands the unchanged main agent one View per turn.
 Our contributions are:
 \begin{itemize}
-  \item \textbf{Memory as System~1 and System~2} (\cref{sec:design,sec:impl}): a memory agent that gives judging to a decision model and planning and answering to an LLM, with ordinal rules under explicit budgets.
-  \item \textbf{Memory without a write-time schema} (\cref{sec:setting,sec:memory}): raw records about which nothing is decided until a question arrives, and a consolidated index that points back to them, so that the agent reads any store that returns dated records; it is built entirely from the harness's plugins.
+  \item \textbf{Memory as System~1 and System~2} (\cref{sec:setting,sec:design,sec:impl}): a memory agent that gives judging to a decision model and planning and answering to an LLM, connected by rules under explicit budgets that use only the order and the yes/no of judgments.
+  \item \textbf{Memory without a write-time schema} (\cref{sec:setting,sec:memory,sec:jevmem}): raw records about which nothing is decided until a question arrives, which no write-time processing can improve on in information (\cref{eq:dpi}), and a consolidated index that points back to them, so that the agent reads any store that returns dated records. Under one protocol, \sys{} is \jmDiff{} points more accurate than a concurrent system that uses the same decision model to organize memory at write time.
   \item \textbf{Accuracy at small context} (\cref{sec:main}): compared with the 14 memory systems that OmniMemEval re-evaluated with gpt-4.1-mini answering~\citep{omnimemeval2026}, \sys{} is the most accurate on LoCoMo (\finLoCoMo\%) and second on \lme{} (\finLME\%), from under 4k tokens of context per question, with the lowest effective cost index on LoCoMo.
   \item \textbf{A stronger System~2, bounded cost} (\cref{sec:reasoning,sec:scale}): with a reasoning model as System~2, \sys{} reaches \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme, on par with the best published results on \lme; from BEAM-100K to BEAM-10M, with 80 times as many records, its cost per question grows by a factor of \beamTenCostRatioC.
   \item \textbf{Judging belongs to System~1} (\cref{sec:system1}): on the same records, \jev{} separates gold evidence better than two LLMs (AUC 0.942 against 0.900 and 0.853) and is 3--11 times faster.

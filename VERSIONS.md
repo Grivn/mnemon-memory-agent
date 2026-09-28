@@ -6,8 +6,8 @@ Everything the paper's runs used, with where each version is recorded.
 
 | Component | Version | Recorded in |
 |---|---|---|
-| This snapshot | research branch `codex/jev-replica-practice` of dsh-mnemon at `aea19abc` (2026-09-28) | `PROVENANCE.json` |
-| dsh-mnemon base | v0.5.13 (commit `84d469ff`, 2026-09-22) plus 222 research commits | `package.json` (`"version": "0.5.13"`) |
+| This snapshot | research branch `codex/jev-replica-practice` of dsh-mnemon at `44fb4e71` (2026-09-29) | `PROVENANCE.json` |
+| dsh-mnemon base | v0.5.13 (commit `84d469ff`, 2026-09-22) plus 223 research commits | `package.json` (`"version": "0.5.13"`) |
 | DeepSeek Harness (DSH) | 0.1.5-rc.1 for the `@deepseek-ai/dsh-*` cohort; `dsh-session-projection`, versioned separately, is 0.1.0-rc.8 | `pnpm-lock.yaml`; the cohort is enumerated in `pnpm-workspace.yaml` |
 | Cordis | `@deepseek-ai/cordis` 4.0.2 | `pnpm-lock.yaml` |
 | Jev client | `@typesafe-ai/sdk` 0.6.0 | `pnpm-lock.yaml` |
@@ -17,7 +17,7 @@ Everything the paper's runs used, with where each version is recorded.
 
 The code of each paper number ran at the commit listed for its run directory in `docs/run-commits.json`: 39 run
 directories over 25 commits of the research branch, 7 of them from a working tree with uncommitted changes. The
-snapshot is the branch at `aea19abc`; it is not claimed to behave identically to every earlier commit for every
+snapshot is the branch at `44fb4e71`; it is not claimed to behave identically to every earlier commit for every
 configuration.
 
 The warm-index timings in `docs/paper/data/retrieval.json` were measured on one laptop (Apple M4, 24 GB, Node.js
@@ -34,7 +34,8 @@ v25.1.0), with every query embedded by a local llama-server running nomic-embed-
 | Session notes (notes memory mode) | `deepseek-flash`, thinking disabled, temperature 0 | every run config |
 | Consolidation | `deepseek-flash` without thinking | `recallOptions.consolidate` of the consolidated runs |
 | Embeddings (hybrid search, consolidation) | `nomic-embed-text`, served locally | `recallOptions.embedUrl` (a local server) |
-| Judges | `gpt-4.1-mini` and DeepSeek | `grades-gpt-4.1-mini.jsonl` and `grades.jsonl` in each run directory |
+| Graders | `gpt-4.1-mini` and DeepSeek | `grades-gpt-4.1-mini.jsonl` and `grades.jsonl` in each run directory |
+| Jev-Mem (comparison) | github.com/libingzheren/Jev-Mem at `7ab0c73`, profile `config/jev_mem.json`, `jev-latest` (served `jev-1.13.0`), all-MiniLM-L6-v2 embeddings; gpt-4.1-mini answering | `runs/jevmem-locomo-20260928` |
 
 ## Data
 
