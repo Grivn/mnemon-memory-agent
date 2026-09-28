@@ -33,6 +33,35 @@ import sys
 PREVIEW = Path(sys.argv[sys.argv.index('--png') + 1]) if '--png' in sys.argv else None
 ONLY = [a for a in sys.argv[1:] if not a.startswith('--') and (PREVIEW is None or Path(a) != PREVIEW)]
 
+# The main-text figures (1 and 3) print at 100% in the body font, Linux Libertine O, at one type scale: 8 pt text like
+# the \footnotesize boxes of Figure 2, 7 pt ticks and labels like its \scriptsize, nothing smaller. The fonts come from
+# a TeX installation (Tectonic's cache or TeX Live), where the libertine package ships them.
+import matplotlib.patheffects as pe
+from matplotlib import font_manager
+from matplotlib.ticker import FuncFormatter, NullFormatter
+FONT_DIRS = [HERE / 'fonts', *Path.home().glob('Library/Caches/TectonicProject.Tectonic/bundles/data/*'),
+             *Path('/usr/local/texlive').glob('*/texmf-dist/fonts/opentype/public/libertine'),
+             *Path('/usr/share/texlive/texmf-dist/fonts/opentype/public').glob('libertine')]
+LIBERTINE = [f for d in FONT_DIRS if d.is_dir() for f in sorted(d.glob('LinLibertine_R*.otf'))]
+for f in LIBERTINE: font_manager.fontManager.addfont(str(f))
+if not LIBERTINE: print('Linux Libertine O not found; Figures 1 and 3 fall back to another serif')
+ORANGE2 = '#9c3d12'   # a second System 2 (LLM) series: a darker step of the orange family
+PAPER_STYLE = {
+    'font.family': 'serif', 'font.serif': ['Linux Libertine O', 'Libertinus Serif', 'STIX Two Text', 'Times New Roman'],
+    'mathtext.fontset': 'custom', 'mathtext.rm': 'Linux Libertine O', 'mathtext.it': 'Linux Libertine O:italic',
+    'mathtext.bf': 'Linux Libertine O:bold',
+    'font.size': 8, 'axes.titlesize': 8.5, 'axes.labelsize': 8, 'xtick.labelsize': 7, 'ytick.labelsize': 7, 'legend.fontsize': 7.5,
+    'xtick.minor.width': 0.4, 'xtick.major.size': 3, 'ytick.major.size': 3, 'axes.titlelocation': 'left', 'axes.titlepad': 4,
+    # Linux Libertine O is CFF-flavoured OpenType, which Type 42 would embed as a TrueType stream; Type 3 stays searchable.
+    'pdf.fonttype': 3, 'ps.fonttype': 3,
+    # No tight bounding box: the PDF is exactly W wide, and \includegraphics[width=\linewidth] prints it at 100%.
+    'savefig.bbox': None, 'figure.constrained_layout.use': True,
+    'figure.constrained_layout.w_pad': 0.02, 'figure.constrained_layout.h_pad': 0.02, 'figure.constrained_layout.wspace': 0.03,
+}
+HALO = [pe.withStroke(linewidth=2.2, foreground='white')]
+LABEL = dict(fontsize=7, color=INK2, path_effects=HALO)
+ktok = FuncFormatter(lambda v, _: f'{v / 1e3:g}k' if v >= 1e3 else f'{v:g}')
+
 def save(fig, name):
     fig.savefig(OUT / f'{name}.pdf')
     if PREVIEW: PREVIEW.mkdir(parents=True, exist_ok=True); fig.savefig(PREVIEW / f'{name}.png', dpi=220)
@@ -42,62 +71,57 @@ def save(fig, name):
 # Figure: accuracy against the context each question sends to the answering model (OmniMemEval, gpt-4.1-mini), with
 # lines of equal effective cost index ECI = (1 - a) + c / c_full.
 def tradeoff():
-    fig, axes = plt.subplots(1, 2, figsize=(W, 2.9))
+  with plt.rc_context(PAPER_STYLE):
+    fig, axes = plt.subplots(1, 2, figsize=(W, 2.55), sharey=True)
     systems = P['omnimemeval']['systems']
-    # Label offsets (points) chosen per benchmark so that no two labels collide.
+    # Label offsets (points), chosen per benchmark so that no two labels collide.
     offsets = {
-        'locomo': {'MemOS': (4, 0), 'EverOS': (-4, 3), 'Cognee': (4, 0), 'Hindsight': (-4, 0), 'Mem0': (4, 0), 'Letta': (-4, -5),
-                   'Supermemory': (4, -2), 'MemoryLake': (4, -1), 'Viking Memory': (4, -2), 'MemMachine': (0, 5), 'mem9': (-4, 0),
-                   'Zep': (4, 0), 'Memori': (4, 0), 'Backboard.io': (4, 0)},
-        'lme': {'MemOS': (4, 0), 'mem9': (4, -5), 'EverOS': (4, 0), 'Zep': (-3, 5), 'Letta': (0, 5), 'Hindsight': (4, 0),
-                'Supermemory': (4, 0), 'MemMachine': (4, 0), 'Viking Memory': (4, -6), 'Mem0': (4, -6), 'Cognee': (4, 0), 'Memori': (4, 0)},
+        'locomo': {'MemOS': (4, 0), 'EverMemOS': (-4, 3), 'Cognee': (0, 6), 'MemMachine': (0, 6), 'mem9': (-4, 0), 'Zep': (4, 0),
+                   'Memori': (4, 0), 'Backboard.io': (4, 0), 'MemoryLake': (-4, -3), 'Viking Memory': (4, -1)},
+        'lme': {'MemOS': (4, 0), 'mem9': (4, -5), 'EverMemOS': (4, 0), 'Zep': (-3, 6), 'Letta': (0, 6), 'Hindsight': (4, 0),
+                'Supermemory': (4, 0), 'MemMachine': (-4, 5), 'Viking Memory': (4, -6), 'Mem0': (4, -6), 'Cognee': (4, 0), 'Memori': (4, 0)},
     }
-    # Crowded systems get their labels in a column at the right, joined to their points by thin leader lines.
-    callouts = {'locomo': ['Cognee', 'MemOS', 'EverOS', 'Hindsight', 'Mem0', 'Letta', 'Supermemory', 'MemoryLake', 'Viking Memory'], 'lme': []}
-    for ax, ds, title in ((axes[0], 'locomo', 'LoCoMo (1,540 questions)'), (axes[1], 'lme', 'LongMemEval-S (500 questions)')):
+    # Only the tight cluster right of 14k tokens on LoCoMo takes leader lines, into a column in the empty right third.
+    callouts = {'locomo': ['Hindsight', 'Mem0', 'Letta', 'Supermemory'], 'lme': []}
+    for ax, ds, title in ((axes[0], 'locomo', '(a) LoCoMo, 1,540 questions'), (axes[1], 'lme', '(b) LongMemEval-S, 500 questions')):
         full = P['full_context_tokens'][ds]
         lo, hi = 700, 1.6e5
-        bottom = 15 if ds == 'lme' else 18
+        # Lines of equal effective cost index, labelled where they leave the top.
         for e in (0.2, 0.4, 0.6, 1.0):
             cs = [10 ** (math.log10(lo) + i * (math.log10(hi) - math.log10(lo)) / 300) for i in range(301)]
             pts = [(c, 100 * (1 - e + c / full)) for c in cs if 0 <= 100 * (1 - e + c / full) <= 100]
-            if not pts: continue
             ax.plot([p[0] for p in pts], [p[1] for p in pts], color=GRAY, lw=0.6, ls=(0, (3, 2)), zorder=1)
-            # The index's value is written where its line leaves the top of the plot (accuracy 100% at c = ECI x c_full).
             if lo < e * full < hi:
-                ax.annotate(f'{e:g}', (e * full, 100), xytext=(0, 2), textcoords='offset points', fontsize=6.3, color=INK2, ha='center', va='bottom', annotation_clip=False)
-        ax.annotate('ECI', (lo, 100), xytext=(0, 2), textcoords='offset points', fontsize=6.3, color=INK2, ha='left', va='bottom', annotation_clip=False)
+                ax.annotate(('ECI ' if e == 0.2 else '') + f'{e:g}', (e * full, 100), xytext=(0, 1.5), textcoords='offset points',
+                            fontsize=7, color=INK2, ha='right' if e == 0.2 else 'center', va='bottom', annotation_clip=False)
         placed = [n for n in callouts[ds] if systems[n][ds] is not None]
-        slots = {n: 91 - 3.6 * k for k, n in enumerate(sorted(placed, key=lambda n: -systems[n][ds]))}
+        slots = {n: 80.5 - 5.0 * k for k, n in enumerate(sorted(placed, key=lambda n: -systems[n][ds]))}
         for name, s in systems.items():
             if s[ds] is None: continue
             x, y = s['ctx_' + ds], s[ds]
             ax.scatter(x, y, s=14, color=GRAY, edgecolor='white', linewidth=0.5, zorder=3)
             if name in slots:
-                ax.annotate(name, (x, y), xytext=(4.6e4, slots[name]), textcoords='data', fontsize=6.3, color=INK2, ha='left', va='center',
-                            arrowprops=dict(arrowstyle='-', color='#c3c2b7', lw=0.5, shrinkA=0, shrinkB=2))
+                ax.annotate(name, (x, y), xytext=(4.2e4, slots[name]), textcoords='data', ha='left', va='center', **LABEL,
+                            arrowprops=dict(arrowstyle='-', color=GRAY, lw=0.45, shrinkA=0, shrinkB=2.5))
                 continue
             off = offsets[ds].get(name, (4, 0))
             ha = 'right' if off[0] < 0 else 'center' if off[0] == 0 else 'left'
-            ax.annotate(name, (x, y), xytext=off, textcoords='offset points', fontsize=6.3, color=INK2, ha=ha, va='center')
-        # Which way is better: less context, more accuracy.
-        ax.annotate('better', xy=(1.5e4 if ds == 'locomo' else 2.2e4, 38 if ds == 'locomo' else 33), xytext=(5.6e4 if ds == 'locomo' else 8.5e4, 27 if ds == 'locomo' else 22),
-                    fontsize=6.5, color=INK2, ha='center', va='center', arrowprops=dict(arrowstyle='-|>', color=INK2, lw=0.7))
-        # Mnemon at the answer stage, the quantity reported for the other systems.
+            ax.annotate(name, (x, y), xytext=off, textcoords='offset points', ha=ha, va='center', **LABEL)
+        ax.annotate('better', xy=(1.5e4 if ds == 'locomo' else 2.2e4, 38 if ds == 'locomo' else 33),
+                    xytext=(5.6e4 if ds == 'locomo' else 8.5e4, 27 if ds == 'locomo' else 22),
+                    fontsize=7, color=INK2, ha='center', va='center', arrowprops=dict(arrowstyle='-|>', color=INK2, lw=0.7))
         fin = (R.get('final', {}).get('standard', {}).get(ds) or {})
         if fin.get('paired'):
             f = fin['final']
             a_ctx, acc = f['answer_input_tokens'], f['accuracy']['mini']
             ax.scatter([a_ctx], [acc], s=70, color=NAVY, marker='*', edgecolor='white', linewidth=0.5, zorder=6)
-            ax.annotate('Mnemon', (a_ctx, acc), xytext=(-5, 5), textcoords='offset points', fontsize=7.5, color=NAVY, ha='right', va='bottom', fontweight='bold')
-        ax.set_xscale('log'); ax.set_xlim(lo, hi); ax.set_ylim(15 if ds == 'lme' else 18, 100)
-        ax.set_xlabel('tokens per question (log scale)'); ax.set_title(title, loc='left', pad=13)
+            ax.annotate('Mnemon', (a_ctx, acc), xytext=(-5, 4), textcoords='offset points', fontsize=8, color=NAVY, ha='right',
+                        va='bottom', fontweight='bold', path_effects=HALO)
+        ax.set_xscale('log'); ax.set_xlim(lo, hi); ax.set_ylim(15, 100); ax.set_yticks([20, 40, 60, 80, 100])
+        ax.xaxis.set_major_formatter(ktok); ax.xaxis.set_minor_formatter(NullFormatter())
+        ax.set_xlabel('context per question (tokens, log scale)'); ax.set_title(title, pad=11)
     axes[0].set_ylabel('accuracy (%)')
-    handles = [Line2D([], [], marker='*', ls='', color=NAVY, markersize=8, label='Mnemon'),
-               Line2D([], [], marker='o', ls='', color=GRAY, markersize=4, label='systems re-evaluated by OmniMemEval'),
-               Line2D([], [], color=GRAY, lw=0.6, ls=(0, (3, 2)), label='equal effective cost index (value at top)')]
-    fig.legend(handles=handles, loc='upper center', ncol=3, bbox_to_anchor=(0.5, 0.06), handletextpad=0.3, columnspacing=1.6)
-    fig.subplots_adjust(bottom=0.24, wspace=0.18)
+    axes[1].tick_params(labelleft=False)
     save(fig, 'tradeoff')
 
 # ---------------------------------------------------------------------------------------------------------------
@@ -134,11 +158,13 @@ def ladder():
 # ---------------------------------------------------------------------------------------------------------------
 # Figure: System 1 comparison. ROC curves on the same judged items; latency per call.
 def system1():
+  with plt.rc_context(PAPER_STYLE):
     curves = R.get('system1_roc', {})
     summary = R['system1_summary']
-    fig, axes = plt.subplots(1, 2, figsize=(W, 2.0), gridspec_kw={"width_ratios": [1, 1.25]})
+    fig, axes = plt.subplots(1, 2, figsize=(W, 1.95), gridspec_kw={'width_ratios': [1, 1.25]})
     ax = axes[0]
-    colors = {'JEV': BLUE, 'DeepSeek': ORANGE, 'gpt-4.1-mini': AQUA}
+    # System 1 (Jev) in blue, the System 2 LLMs in the orange family, as in Figure 2.
+    colors = {'JEV': BLUE, 'DeepSeek': ORANGE, 'gpt-4.1-mini': ORANGE2}
     both = lambda name: summary.get('all', {}).get(name, {})
     for name in ('JEV', 'DeepSeek', 'gpt-4.1-mini'):
         if name not in curves: continue
@@ -147,17 +173,18 @@ def system1():
         ax.plot(xs, ys, color=colors[name], lw=1.2, label=('Jev' if name == 'JEV' else name) + (f' (AUC {auc:.3f})' if auc else ''))
     ax.plot([0, 1], [0, 1], color=GRAY, lw=0.6, ls=(0, (3, 2)))
     ax.set_xlim(0, 1); ax.set_ylim(0, 1.01); ax.set_xlabel('false positive rate'); ax.set_ylabel('true positive rate')
-    ax.set_title('(a) separating gold evidence', loc='left'); ax.legend(loc='lower right', handlelength=1.4, frameon=True, facecolor='white', edgecolor='none', framealpha=0.95, borderpad=0.3)
+    ax.set_title('(a) separating gold evidence')
+    ax.legend(loc='lower right', handlelength=1.4, borderaxespad=0.3, frameon=True, facecolor='white', edgecolor='none', framealpha=0.95)
     ax = axes[1]
     rows = [(n, both(n)) for n in ('JEV', 'DeepSeek', 'gpt-4.1-mini')]
     for i, (name, s) in enumerate(rows):
         ax.barh(i, s['latency_p50_s'], height=0.5, color=colors[name])
-        ax.annotate(f"{s['latency_p50_s']:.2f} s,  \\${s['cost_per_call'] * 1e3:.2f} per 1,000 calls",
-                    (s['latency_p50_s'], i), xytext=(4, 0), textcoords='offset points', va='center', fontsize=6.5, color=INK2)
-    ax.set_yticks(range(len(rows))); ax.set_yticklabels(['Jev' if n == 'JEV' else n for n, _ in rows]); ax.invert_yaxis()
-    ax.set_xlim(0, 6.2); ax.set_xlabel('median latency per call of 24 items (s)'); ax.grid(axis='y', visible=False)
-    ax.set_title('(b) latency and price of one call', loc='left')
-    fig.subplots_adjust(wspace=0.42)
+        ax.annotate(f"{s['latency_p50_s']:.2f} s, \\${s['cost_per_call'] * 1e3:.2f} per 1,000 calls", (s['latency_p50_s'], i),
+                    xytext=(4, 0), textcoords='offset points', va='center', fontsize=7, color=INK2)
+    ax.set_yticks(range(len(rows))); ax.set_yticklabels(['Jev' if n == 'JEV' else n for n, _ in rows], fontsize=8); ax.invert_yaxis()
+    ax.set_xlim(0, 6); ax.set_xlabel('median latency of one call on 24 records (s)'); ax.grid(axis='y', visible=False)
+    ax.tick_params(axis='y', length=0)
+    ax.set_title('(b) latency and price of one call')
     save(fig, 'system1')
 
 # ---------------------------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-\section{Setting}
+\section{Problem Setting}
 \label{sec:setting}
 
 We consider an assistant, the \emph{main agent}, that converses with one user over many sessions.
@@ -8,19 +8,19 @@ The main agent is otherwise unchanged, and the memory agent never edits its repl
 In the benchmarks we use, a question is asked in a fresh session after its history has been written, so the answer depends on the View alone.
 
 \paragraph{Two kinds of work.}
-Following dual-process accounts of thinking~\citep{kahneman2011thinking}, we call \emph{System~1 work} any decision about one item against an explicit criterion that can be made independently of the other items: does the reply need this record, is it no longer current, does it give what a need asks for.
-Such decisions come in bulk and lie on the path of every reply, so they suit a decision model that answers dozens of them at once in a fraction of a second.
-\emph{System~2 work} is open-ended: wording searches for records not yet seen, naming what a reply needs, and composing an answer that counts, compares dates or chains facts.
-It suits an LLM, which does it well but slowly, so a memory agent should ask for as little of it on the path of a reply as it can, and move the rest to the background.
+Following dual-process accounts of thinking~\citep{kahneman2011thinking}, we call \emph{System~1 work} any decision about one item against an explicit criterion that can be made independently of the other items: does the reply need this record, is it no longer current, does it satisfy a need.
+Such decisions come in bulk and lie on the read path, so they suit a decision model that answers dozens of them at once in a fraction of a second.
+\emph{System~2 work} is open-ended: writing queries for records not yet seen, naming what a reply needs and composing an answer that counts, compares dates or chains facts.
+It suits an LLM, which does it well but slowly, so a memory agent should keep as little of it on the read path as it can and move the rest to the background.
 
 \paragraph{Harness.}
 We build the memory agent in DeepSeek Harness (DSH), an open-source agent harness in which every capability is a plugin~\citep{dsh2026}.
-Its dsh-mnemon suite provides memory through \emph{Sources}, which expose stores such as a journal of records through read and search routes, and \emph{Strategies}, which decide what the host publishes into the agent's context as one View per turn~\citep{mnemon2026code}.
+Its dsh-mnemon suite provides memory through \emph{Sources}, which expose stores such as a journal of records through read and search routes, and \emph{Strategies}, which decide what the harness publishes into the agent's context as one View per turn~\citep{mnemon2026code}.
 \sys{} is agnostic to the structure of a store: it needs from a Source only a search route that returns dated records, so a store of documents, tasks or past sessions can feed the same View as the conversation journal.
 In this paper all memory lives in one Source, the journal.
 
 \paragraph{Cost measure.}
-A memory system spends at three points: when it processes the history (write time), when it decides what to show (retrieval time), and when the answering model reads what it was shown (the answer stage).
+A memory system incurs cost at three points: when it processes the history (write time), when it decides what to show (read time) and when the answering model reads what it was shown (answer time).
 Only the last is reported for every system in public re-evaluations, as the number of tokens of context sent to the answering model per question~\citep{omnimemeval2026}.
 Accuracy per unit of cost rewards systems that are cheap and often wrong, so we price errors instead.
 If a wrong answer is repaired by one full-context answer of cost $c_\text{full}$, a system with accuracy $a$ that sends $c$ tokens of context per question has the expected cost
@@ -30,4 +30,4 @@ If a wrong answer is repaired by one full-context answer of cost $c_\text{full}$
 \end{equation}
 in units of $c_\text{full}$, which we call its \emph{effective cost index}.
 Lower is better, and answering from the full history costs at least one.
-Because retrieval-time and write-time costs are not published for other systems, we compare costs across systems by this index alone and report our other costs separately.
+Because read-time and write-time costs are not published for other systems, we compare costs across systems by this index alone and report our other costs separately.

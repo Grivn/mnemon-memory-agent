@@ -1,8 +1,8 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-\sys{} divides the work of memory between a slow System~2, an LLM that words a few searches, names what a reply needs and composes the answer, and a fast System~1, a decision model that answers many small, explicit questions about the records those searches find; slow work that no reply can wait for, indexing each record once, runs in the background.
-Because nothing about a record is decided when it is written, the same memory can read any store that returns dated records, a general way to give agents a past beyond conversation.
-With a small answering model, \sys{} is the most accurate system under a common re-evaluation protocol on LoCoMo and second on \lme, from under 4k tokens of context per question and with the lowest effective cost index on LoCoMo; with a reasoning model as System~2 it is level with the best published results on \lme; and its cost per question stays nearly flat from a hundred thousand to ten million tokens of history.
-Most of the read-time work of memory is System~1 work, which a model built for it does better, faster and cheaper than a general LLM, and raw records leave room for better System~2 readers.
-Code, prompts and analysis scripts are released with dsh-mnemon~\citep{mnemon2026code}.
+\sys{} divides the work of memory between a slow System~2, an LLM that writes a few search queries, names what a reply needs and composes the answer, and a fast System~1, a decision model that makes many small, explicit judgments about the records those searches find; slow work that no reply can wait for, consolidating each record once, runs in the background.
+Because nothing about a record is decided when it is written, the same agent can read any store that returns dated records, a general way to give agents a past beyond conversation.
+With a small answering model, \sys{} is the most accurate of the systems in a public re-evaluation on LoCoMo and second on \lme, from under 4k tokens of context per question and with the lowest effective cost index on LoCoMo; with a reasoning model as System~2 it is on par with the best published results on \lme; and its cost per question stays nearly flat from 100K to 10M tokens of history.
+Most of the read-time work of memory is System~1 work, which a decision model does better, faster and more cheaply than a general LLM, and raw records leave room for stronger answering models.
+Code, prompts, analysis scripts and run records (HaluMem's excepted) are available in the Mnemon repository~\citep{mnemon2026artifact}.

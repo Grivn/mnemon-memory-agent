@@ -1,4 +1,4 @@
-% references.bib -- Mnemon technical report
+% references.bib -- Mnemon: Remembering Fast and Slow in LLM Agents
 % Verified 2026-09-26 against arXiv (export API / abs pages), ACL Anthology,
 % ICLR / NeurIPS / ICML proceedings pages, Crossref, publisher pages and the
 % projects' official repositories or sites (see paper_bib_notes.md).
@@ -427,7 +427,7 @@
   year          = {2026},
   howpublished  = {GitHub repository},
   url           = {https://github.com/mem9-ai/mem9},
-  note          = {{LoCoMo} baseline in \texttt{benchmark/BASELINE.md}; accessed 2026-09-26},
+  note          = {{LoCoMo} baseline in \nolinkurl{benchmark/BASELINE.md}; accessed 2026-09-26},
   xnote         = {website https://mem9.ai}
 }
 
@@ -437,7 +437,7 @@
   year          = {2025},
   howpublished  = {GitHub repository},
   url           = {https://github.com/memodb-io/memobase},
-  note          = {{LoCoMo} results in \texttt{docs/experiments/locomo-benchmark}; accessed 2026-09-26}
+  note          = {{LoCoMo} results in \nolinkurl{docs/experiments/locomo-benchmark}; accessed 2026-09-26}
 }
 
 @misc{cognee2025,
@@ -550,7 +550,7 @@
 }
 
 @inproceedings{sun2023rankgpt,
-  title         = {Is {ChatGPT} Good at Search? Investigating Large Language Models as Re-Ranking Agents},
+  title         = {Is {ChatGPT} Good at Search? {I}nvestigating Large Language Models as Re-Ranking Agents},
   author        = {Sun, Weiwei and Yan, Lingyong and Ma, Xinyu and Wang, Shuaiqiang and Ren, Pengjie and Chen, Zhumin and Yin, Dawei and Ren, Zhaochun},
   booktitle     = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
   pages         = {14918--14937},
@@ -772,10 +772,19 @@
 
 @misc{mnemon2026code,
   title         = {dsh-mnemon: Composable Memory for {DeepSeek Harness}},
-  author        = {Grivn},
+  author        = {Wang, Guangren},
   year          = {2026},
   howpublished  = {GitHub repository},
   url           = {https://github.com/omdsh-dev/dsh-mnemon},
   note          = {MIT license},
-  xnote         = {the code, prompts, pre-registration and analysis scripts of this paper are released there}
+  xnote         = {the project Mnemon's plugins were developed on; the paper's code and records are in mnemon2026artifact}
+}
+
+@misc{mnemon2026artifact,
+  title         = {mnemon-memory-agent: Code, Prompts, Run Records and Analysis Scripts of {Mnemon}},
+  author        = {Wang, Guangren},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/Grivn/mnemon-memory-agent},
+  note          = {Code under the MIT license; run records under each benchmark's license, HaluMem's withheld}
 }

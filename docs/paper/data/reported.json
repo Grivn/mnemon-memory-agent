@@ -5,11 +5,11 @@
   "locomo": 21613, "lme": 105134
  },
  "omnimemeval": {
-  "_source": "OmniMemEval (MemTensor) user-memory results: gpt-4.1-mini answering, gpt-4o-mini judging, LoCoMo 1,540 questions and LongMemEval-S cleaned 500; context = tokens sent to the answering model per question (docs/reports/phase03-gpt41mini-20260926.md sections 7.1 and 8)",
+  "_source": "OmniMemEval (MemTensor) user-memory results: gpt-4.1-mini answering, gpt-4o-mini judging, LoCoMo 1,540 questions and LongMemEval-S cleaned 500; context = tokens sent to the answering model per question; OmniMemEval labels EverMemOS as EverOS (docs/reports/phase03-gpt41mini-20260926.md sections 7.1 and 8)",
   "systems": {
    "MemOS":       {"locomo": 88.83, "lme": 89.20, "ctx_locomo": 5400,  "ctx_lme": 4151},
    "Cognee":      {"locomo": 83.48, "lme": 51.80, "ctx_locomo": 32532, "ctx_lme": 10305},
-   "EverOS":      {"locomo": 82.75, "lme": 80.40, "ctx_locomo": 8559,  "ctx_lme": 12379},
+   "EverMemOS":      {"locomo": 82.75, "lme": 80.40, "ctx_locomo": 8559,  "ctx_lme": 12379},
    "Hindsight":   {"locomo": 81.99, "lme": 72.20, "ctx_locomo": 24683, "ctx_lme": 29755},
    "Mem0":        {"locomo": 77.68, "lme": 56.00, "ctx_locomo": 17395, "ctx_lme": 856},
    "Letta":       {"locomo": 77.12, "lme": 77.67, "ctx_locomo": 14188, "ctx_lme": 49431},
@@ -25,13 +25,13 @@
   "locomo_categories": {
    "_order": ["single-hop", "multi-hop", "temporal", "open-domain", "overall"],
    "MemOS": [92.51, 88.65, 85.05, 69.79, 88.83],
-   "EverOS": [86.80, 77.78, 84.11, 57.29, 82.75],
+   "EverMemOS": [86.80, 77.78, 84.11, 57.29, 82.75],
    "Hindsight": [88.98, 78.84, 73.52, 58.33, 81.99]
   },
   "lme_categories": {
    "_order": ["single-session-user", "single-session-assistant", "single-session-preference", "temporal-reasoning", "multi-session", "knowledge-update", "overall"],
    "MemOS": [100, 100, 100, 89.47, 78.95, 84.62, 89.20],
-   "EverOS": [91.43, 89.29, 96.67, 81.95, 66.17, 79.49, 80.40],
+   "EverMemOS": [91.43, 89.29, 96.67, 81.95, 66.17, 79.49, 80.40],
    "Zep": [94.29, 100, 86.67, 74.44, 67.67, 79.49, 79.80]
   },
   "beam": {
@@ -39,12 +39,12 @@
    "_order": ["100K", "10M"],
    "MemOS": [66.87, 56.75], "Mem0": [70.41, 43.33], "Zep": [68.70, 56.11], "Supermemory": [65.98, 52.49],
    "Viking Memory": [70.76, 58.14], "Cognee": [59.30, 56.02], "Letta": [69.22, 52.30], "Hindsight": [70.22, 59.75],
-   "EverOS": [58.64, 47.73], "MemMachine": [64.80, 51.90], "mem9": [65.75, 57.30]
+   "EverMemOS": [58.64, 47.73], "MemMachine": [64.80, 51.90], "mem9": [65.75, 57.30]
   },
   "halumem": {
    "_source": "OmniMemEval HaluMem-Medium question answering, accuracy (correct share), gpt-4.1-mini answering",
    "Mem0": 73.64, "Zep": 81.71, "Supermemory": 52.61, "Viking Memory": 77.39, "Cognee": 72.60, "Letta": 85.43,
-   "Hindsight": 83.99, "Memori": 49.38, "EverOS": 88.66, "MemMachine": 47.02, "mem9": 72.80, "MemOS": 80.91
+   "Hindsight": 83.99, "Memori": 49.38, "EverMemOS": 88.66, "MemMachine": 47.02, "mem9": 72.80, "MemOS": 80.91
   }
  },
  "self_reported_gpt41mini": {
@@ -66,24 +66,24 @@
  },
  "best_reported": {
   "_source": "each project's own best published LoCoMo / LongMemEval-S accuracy, any answer model and judge (docs/reports/phase03-gpt41mini-20260926.md section 7.3, checked 2026-09-26)",
-  "_columns": ["locomo", "lme", "answer model / judge", "method"],
+  "_columns": ["locomo", "lme", "answering model / judge", "method"],
   "Zep / Graphiti": [94.7, 90.2, "gpt-5.4 (medium reasoning) / gpt-5.4", "temporal knowledge graph + reranking"],
   "EverMemOS": [93.05, 83.00, "gpt-4.1-mini / three judges averaged", "MemCell to MemScene"],
-  "Mem0": [92.5, 94.4, "GPT-5 / GPT-5", "LLM-extracted facts, top 200 (about 7k tokens)"],
-  "MemU": [92.09, null, "not stated (early version)", ""],
-  "Hindsight": [92.0, 94.6, "undisclosed (paper: Gemini-3 Pro 89.6 / 91.4)", "four memory networks, 36-44k context"],
-  "MemMachine": [91.69, 93.0, "gpt-4.1-mini; LME gpt-5-mini / gpt-4o-mini", "raw episodes indexed by sentence"],
+  "Mem0": [92.5, 94.4, "gpt-5 / gpt-5", "LLM-extracted facts, top 200 (about 7k tokens)"],
+  "memU": [92.09, null, "not stated (early version)", ""],
+  "Hindsight": [92.0, 94.6, "not stated (paper: gemini-3-pro 89.6 / 91.4)", "four memory networks, 36--44k tokens of context"],
+  "MemMachine": [91.69, 93.0, "gpt-4.1-mini; \\lme{} gpt-5-mini / gpt-4o-mini", "raw episodes indexed by sentence"],
   "MemOS": [88.83, 89.20, "gpt-4.1-mini / gpt-4o-mini (OmniMemEval)", "MemCube tree / graph memory"],
   "Memori": [87.0, null, "gpt-4.1-mini / gpt-4.1-mini", "LLM-extracted triples + summaries"],
-  "mem9": [86.85, null, "qwen3.6-plus / same", "keyword + vector retrieval"],
-  "MIRIX": [85.38, null, "gpt-4.1-mini / GPT-4.1", "multi-agent, six memory types"],
-  "Supermemory": [null, 85.2, "gemini-3-pro", ""],
-  "SimpleMem": [null, 84.4, "GPT-4.1 / gpt-4.1-mini", "atomic memory units"],
-  "Nemori": [83.05, 74.6, "gpt-4.1-mini", "episodic narratives + distilled facts"],
+  "mem9": [86.85, null, "qwen3.6-plus / qwen3.6-plus", "keyword + vector retrieval"],
+  "MIRIX": [85.38, null, "gpt-4.1-mini / gpt-4.1", "multi-agent, six memory types"],
+  "Supermemory": [null, 85.2, "gemini-3-pro / not stated", ""],
+  "SimpleMem": [null, 84.4, "gpt-4.1 / gpt-4.1-mini", "atomic memory units"],
+  "Nemori": [83.05, 74.6, "gpt-4.1-mini / not stated", "episodic narratives + distilled facts"],
   "OpenViking": [82.86, null, "Doubao 2.0 Pro / Doubao", "file-system context store, three tiers"],
   "Memobase": [75.78, null, "not stated", "user profile + event timeline"],
-  "Letta": [74.0, null, "GPT-4o mini / gpt-4.1", "agent searches raw conversation files"],
-  "LightMem": [72.99, 73.20, "gpt-4o-mini; LME GLM-4.6", "pre-compression + offline update"]
+  "Letta": [74.0, null, "gpt-4o-mini / gpt-4.1", "agent searches raw conversation files"],
+  "LightMem": [72.99, 73.20, "gpt-4o-mini; \\lme{} glm-4.6 / not stated", "pre-compression + offline update"]
  },
  "deepseek_vs_mini": {
   "_source": "docs/reports/phase03-gpt41mini-20260926.md section 6 (S6 configuration, DeepSeek judge)",

@@ -1,23 +1,23 @@
-\subsection{System~1 Against LLM Judges}
+\subsection{System~1 Against LLMs}
 \label{sec:system1}
 
 The division gives judging to System~1.
-To test it, we asked gpt-4.1-mini and DeepSeek the question \jev{} answers, with the same dialogue and records, for 599 LoCoMo and \lme{} questions (14,359 records, 1,004 of them gold evidence).
-\jev{} separates gold evidence best (\cref{fig:system1}): AUC 0.942 against 0.900 for DeepSeek and 0.853 for gpt-4.1-mini, and 0.939 against 0.872 and 0.798 on \lme, whose chat-turn records rarely repeat the question's words.
-A \jev{} call on 24 records takes 0.34\,s while answering two questions per record; the LLMs take 1.05--3.74\,s for one (\cref{fig:system1}b).
-System~1 work is thus done better, and 3--11 times faster, by a System~1 model: over the \workJevWaves{} waves of a question (\cref{tab:ours}), an LLM judge would add seconds and cost while separating evidence less well.
+To test it, we gave gpt-4.1-mini and DeepSeek the proposition \jev{} answers, with the same dialogue and records, for 599 LoCoMo and \lme{} questions (14,359 records, 1,004 of them gold evidence).
+\jev{} separates gold evidence best (\cref{fig:system1}): AUC 0.942 overall against 0.900 for DeepSeek and 0.853 for gpt-4.1-mini, and 0.939 against 0.872 and 0.798 on \lme, whose chat-turn records rarely repeat the question's words.
+A \jev{} call on 24 records takes 0.34\,s while answering two propositions per record; the LLMs take 1.05--3.74\,s for one (\cref{fig:system1}b).
+System~1 work is thus done better, and 3--11 times faster, by a decision model: over the \workJevWaves{} waves of a question (\cref{tab:ours}), judging with an LLM would add seconds and cost while separating evidence less well.
 
 \begin{figure}[!htb]
 \centering
 \includegraphics[width=\linewidth]{figures/system1.pdf}
-\caption{\jev{} and two LLM judges on the same 14,359 records: (a) ROC curves for separating gold evidence, pooled over records; (b) median latency and list price of one call on 24 records, in which \jev{} also answers whether each is no longer current.}
+\caption{\jev{} and two LLMs on the same 14,359 records: (a) ROC curves for separating gold evidence, pooled over records; (b) median latency and list price of one call on 24 records, in which \jev{} also answers whether each is no longer current.}
 \label{fig:system1}
 \end{figure}
 
 \subsection{What Consolidation Adds}
 \label{sec:consolidation}
 
-Consolidation is the System~2 work that \sys{} moves off the path of a reply, and answering the same questions with the index removed measures what it adds.
-With gpt-4.1-mini answering it adds \consLoCoMoAbs{} points on LoCoMo, \consLMEAbs{} on \lme, \consBeamAbs{} on BEAM-100K and \consBeamTenAbs{} on BEAM-10M, and \dsConsLoCoMoAbs{} on LoCoMo and \dsConsLMEAbs{} on \lme{} with the reasoning model as System~2, each with a 95\% interval above zero; on HaluMem the two judges disagree in sign.
-The gains fall where a question does not point to its evidence: instruction following, knowledge updates, summarization and abstention on BEAM; knowledge updates and multi-session questions on \lme; and temporal questions, for which the timelines supply dates.
+Consolidation is the System~2 work that \sys{} moves off the read path, and answering the same questions with the index removed measures what it adds.
+With gpt-4.1-mini answering it adds \consLoCoMoAbs{} points on LoCoMo, \consLMEAbs{} on \lme, \consBeamAbs{} on BEAM-100K and \consBeamTenAbs{} on BEAM-10M, and \dsConsLoCoMoAbs{} on LoCoMo and \dsConsLMEAbs{} on \lme{} with the reasoning model as System~2, each with a 95\% CI above zero; on HaluMem the two judges disagree in sign.
+The gains fall where a question does not point to its evidence: instruction following, knowledge updates, summarization and abstention on BEAM; knowledge updates and multi-session questions on \lme; and multi-hop and temporal questions on LoCoMo, whose facts the timelines connect and date.
 Consolidation multiplies the cost per question by \consCostRange, mostly for \jev{} to judge the index items.

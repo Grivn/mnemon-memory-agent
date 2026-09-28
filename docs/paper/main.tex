@@ -1,11 +1,19 @@
+\ifdefined\pdftexversion\pdfoutput=1\fi
 \documentclass[10pt]{article}
 
+% Compiles with pdfLaTeX (arXiv's default) and XeLaTeX (Tectonic, used by build.sh).
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+\fi
 \usepackage[letterpaper,margin=1in]{geometry}
 \usepackage{libertine}
 \usepackage[libertine]{newtxmath}
 \usepackage{microtype}
 \usepackage{graphicx}
 \usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{detect-weight=true, mode=match, table-align-text-after=false}
 \usepackage{tabularx}
 \usepackage{xltabular}
 \usepackage{multirow}
@@ -25,6 +33,7 @@
 \usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
 \usepackage[capitalise,noabbrev]{cleveref}
 \urlstyle{same}
+\hypersetup{pdftitle={Mnemon: Remembering Fast and Slow in LLM Agents}, pdfauthor={Guangren Wang}}
 
 \definecolor{ours}{HTML}{2a78d6}
 \definecolor{other}{HTML}{eb6834}
@@ -62,7 +71,7 @@
 \newenvironment{gentable}[1][t]{\begin{table}[#1]}{\end{table}}
 
 \title{\sys: Remembering Fast and Slow\\in LLM Agents}
-\author{Grivn}
+\author{Guangren Wang}
 \date{}
 
 \begin{document}

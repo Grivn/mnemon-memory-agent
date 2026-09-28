@@ -1,6 +1,6 @@
 # Mnemon: Remembering Fast and Slow in LLM Agents
 
-Sources of the technical report on Mnemon, the two-system memory agent built on DeepSeek Harness. The final version reads raw records with an LLM planner and the Jev decision model, and consolidates each record once into an index that links back to the records; its read-time core is the configuration fixed by the pre-registered steps.
+Sources of the paper on Mnemon, the two-system memory agent built on DeepSeek Harness, by Guangren Wang. The final version reads raw records with an LLM planner and the Jev decision model, and consolidates each record once into an index that links back to the records; its read-time core is the configuration fixed by the pre-registered steps.
 
 | Path | Contents |
 |---|---|
@@ -26,3 +26,13 @@ TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh
 `retrieval.ts` embeds every query with a local OpenAI-compatible embeddings server (`MNEMON_QUERY_EMBED_URL`, nomic-embed-text) and warms the index from an Ollama-compatible one (`MNEMON_EMBED_URL`); reads are timed one at a time on a warm index. The paper reports latency as this work rather than as the end-to-end time of the runs, which shared one laptop and public model APIs.
 
 `build.sh` regenerates the tables and figures (matplotlib) and compiles `main.pdf` with Tectonic; `--no-data` skips the regeneration. A number whose run has not finished prints as a red `??` (`\pending`). The pre-registration and the reports the paper cites are in `docs/reports/`.
+
+`main.tex` compiles with pdfLaTeX, which arXiv uses by default, as well as with XeLaTeX (Tectonic). To package the sources for arXiv:
+
+```sh
+python3 docs/paper/scripts/arxiv.py --out /tmp/mnemon-arxiv               # add --check texlive/texlive:TL2025-historic to compile it
+```
+
+The package holds `main.tex`, the sections, tables and figures it uses, the bibliography as `main.bbl`, and a `00README.json` that selects pdfLaTeX. The appendix, data, scripts and logs are left out.
+
+The manuscript (`main.tex`, `sections/`, `tables/`, `figures/`, `references.bib` and `main.pdf`) is © 2026 Guangren Wang, all rights reserved. It is not covered by the repository's MIT license. The scripts in `scripts/` are.

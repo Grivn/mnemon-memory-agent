@@ -13,9 +13,9 @@
 
 Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存为带日期的原始记录，等问题到来时才开始工作，并按"双系统"理论的方式分工：
 
-- **System 1**：一个快速的决策模型，对检索到的记录回答大量简单的是非判断。
-- **System 2**：一个 LLM，负责拟定少量检索、组织最终回答。
-- **后台整合**：把每条记录整合一次、建成索引，让涉及整段对话的问题也能找到检索本身找不到的证据。
+- **System 1**：一个快速的决策模型，对检索返回的记录做大量简单的是非判断。
+- **System 2**：一个 LLM，负责写少量检索查询、说明回复需要什么，并组织最终回答。
+- **后台整合**：把每条记录整合一次，建成链接回记录的索引，让涉及整段对话的问题也能找到检索本身找不到的证据。
 
 本研究的成果将逐步输送到官方项目 [mnemon](https://github.com/mnemon-dev/mnemon) 和 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon)（见[从研究到产品](#从研究到产品)）。
 
@@ -26,12 +26,12 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 ## 亮点
 
-- **LoCoMo 准确率第一，上下文不到 4k。** 在 OmniMemEval 的统一协议下（gpt-4.1-mini 作答）：
+- **LoCoMo 准确率第一，上下文不到 4k。** 与 OmniMemEval 重测的 14 个系统相比（都用 gpt-4.1-mini 作答）：
   - LoCoMo 得 **91.7%**，15 个系统中第一；LongMemEval-S 得 **83.8%**，13 个系统中第二。
   - 每题只给作答模型约 **3.8k token**。它是唯一一个在两个基准上都超过 80%、上下文又不到 4k 的系统。
 - **LoCoMo 上成本效益指数最低**：0.259，第二名为 0.337。
-- **达到公开最佳成绩的水平。** 用 DeepSeek-V4.1-Flash 作 System 2 时，LongMemEval-S 得 **94.4%**，LoCoMo 得 **92.2%**（修订标签下 95.3%）。
-- **千万 token 规模下成本有界。** 从 BEAM 的 100K 档到 10M 档，记录多了 80 倍，每题成本只变为原来的 **1.11** 倍，每题需要等待的工作量也保持不变。
+- **LongMemEval-S 上与公开最佳成绩相当。** 用 DeepSeek-V4.1-Flash 作 System 2 时，LongMemEval-S 得 **94.4%**，LoCoMo 得 **92.2%**（修订标签下 95.3%）。
+- **千万 token 规模下成本有界。** 从 BEAM-100K 到 BEAM-10M，记录多了 80 倍，每题成本只变为原来的 **1.11** 倍，每题关键路径上的工作量也基本不变。
 - **System 1 判断得更好。** 在同样的 14,359 条记录上区分关键证据：
   - Jev 的 AUC 为 **0.942**，DeepSeek 为 0.900，gpt-4.1-mini 为 0.853。
   - 两个 LLM 的延迟是 Jev 的 3–11 倍。
@@ -40,35 +40,35 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 ### 快慢两套系统
 
-记忆在读取阶段的工作，大部分属于 System 1：一个个彼此独立、标准明确的小问题。例如：
+记忆在读取阶段的工作，大部分属于 System 1：一个个彼此独立、标准明确的是非判断。例如：
 - 回复该不该用这条记录？
-- 后来的消息是否已经推翻了它？
+- 它是否已经不再成立？
 - 它是否给出了问题所需的第二个日期？
 
-像 [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) 这样的 System One 模型，三分之一秒就能回答几十个这样的问题。
+像 [Jev](https://typesafe.ai/blog/introducing-system-one-models-and-jev) 这样的决策模型，三分之一秒就能做出几十个这样的判断。
 
-只有一小部分属于 System 2：拟定检索、说清回复需要什么、计算出答案。这些 LLM 做得好，但慢。
+只有一小部分属于 System 2：写少量检索查询、说清回复需要什么、组织出答案。这些 LLM 做得好，但慢。
 
-正因为判断够快，Mnemon 才能在提问时直接读原始记录，而不必事先改写。两套系统之间的规则只读取 System 1 可靠给出的信息，即排序和"是/否"结果；只有当 System 1 发现某个需求没被满足时，才去调用 System 2。
+正因为判断够快，Mnemon 才能在问题到来时直接读原始记录，而不必事先改写。两套系统之间的规则只读取 System 1 可靠给出的信息，即排序和"是/否"判断；只有当没有任何已判断的记录满足某个需求时，才去调用 System 2。
 
 <p align="center">
   <img src="assets/architecture.png" width="920" alt="Mnemon 的一轮：规划（System 2）、检索、筛选与判断（System 1）、循环、组成 View；后台整合">
 </p>
 <p align="center"><sub>Mnemon 处理一轮用户消息的过程。它作为 <a href="https://github.com/deepseek-ai/deepseek-harness">DeepSeek Harness</a> 的第二个实例，运行在主 Agent 旁边，不改动主 Agent，每轮发布一个 View。</sub></p>
 
-### 与存储结构无关的记忆
+### 写入时不定结构的记忆
 
-在写入时做抽取的系统，必须事先规定什么算事实、什么算实体、什么算偏好，每换一种数据就要重新设计抽取。Mnemon 在写入时不对记录做任何判断，只要求存储能按检索返回带日期的记录。
+在写入时做抽取的系统，必须事先规定什么算事实、什么算实体、什么算偏好，每换一种数据就要重新设计抽取结构。Mnemon 在写入时不对记录做任何判断，只要求存储能按检索返回带日期的记录。
 
-整合出的索引（话题时间线、取值历史、长期指令）叠在原始记录之上，并链接回记录。它只是记录的一层视图，而不是记录的结构；有没有索引，Mnemon 都能读取原始记录。
+整合出的索引（话题时间线、取值历史、长期指令）叠在原始记录之上，并链接回记录。它只是叠加在记录上的一层，而不是记录的结构；有没有索引，Mnemon 都能读取原始记录。
 
 因此，只要记录能被检索，就能加上这种记忆。论文评测的是对话记忆，因为这是有公开基准的场景；其他类型的存储还没有测过。
 
 ## 结果
 
-所有数字都来自 `docs/paper/data/results.json`，由 `runs/` 中的运行记录计算得出。我们的运行由 gpt-4.1-mini 评分；OmniMemEval 用 gpt-4o-mini 评分，两者约有 1–2 分的差异。
+所有数字都来自 `docs/paper/data/results.json`，由 `runs/` 中的运行记录计算得出。我们的运行由 gpt-4.1-mini 和 DeepSeek-V4.1-Flash 评分；OmniMemEval 用 gpt-4o-mini 评分，评委不同约带来 1–2 分的差异。
 
-### 统一协议下的比较（gpt-4.1-mini 作答）
+### 同一协议下的比较（gpt-4.1-mini 作答）
 
 表中列出准确率（%）、每题送给作答模型的上下文，以及成本效益指数：
 - 定义：ECI = (1 − 准确率) + 上下文 / 全量上下文 token 数。
@@ -80,7 +80,7 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 | **Mnemon** | **91.7** | 3.8k | **0.259** | 83.8 | 3.8k | 0.198 |
 | MemOS | 88.83 | 5.4k | 0.362 | **89.2** | 4.2k | **0.147** |
 | Cognee | 83.48 | 32.5k | 1.670 | 51.8 | 10.3k | 0.580 |
-| EverOS | 82.75 | 8.6k | 0.569 | 80.4 | 12.4k | 0.314 |
+| EverMemOS | 82.75 | 8.6k | 0.569 | 80.4 | 12.4k | 0.314 |
 | Hindsight | 81.99 | 24.7k | 1.322 | 72.2 | 29.8k | 0.561 |
 | Mem0 | 77.68 | 17.4k | 1.028 | 56.0 | 0.9k | 0.448 |
 | Letta | 77.12 | 14.2k | 0.885 | 77.67 | 49.4k | 0.693 |
@@ -93,7 +93,7 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 | Memori | 41.34 | 8.1k | 0.963 | 20.8 | 2.8k | 0.818 |
 | Backboard.io | 22.4 | 1.2k | 0.831 | – | – | – |
 
-这里只比较作答阶段的上下文，因为这是所有系统都公开的唯一成本。Mnemon 的其他成本（规划、Jev、整合）单独列在下面，不计入这个指数。
+这里只比较送给作答模型的上下文，因为这是所有系统都公开的唯一成本。Mnemon 的其他成本（规划、Jev、整合）单独列在下面，不计入这个指数。
 
 ### 与各项目公开的最好成绩对比
 
@@ -101,35 +101,35 @@ Mnemon 是一个为 LLM 助手设计的长期记忆 Agent。它把对话保存�
 
 | 项目 | LoCoMo | LongMemEval-S | 作答模型 / 评委 |
 |---|---:|---:|---|
-| **Mnemon** | **95.3**† | 94.4 | DeepSeek-V4.1-Flash（带思考）/ DeepSeek |
+| **Mnemon** | 95.3† | 94.4 | DeepSeek-V4.1-Flash（带思考）/ DeepSeek |
 | Zep / Graphiti | 94.7 | 90.2 | gpt-5.4（中等推理）/ gpt-5.4 |
 | EverMemOS | 93.05 | 83.0 | gpt-4.1-mini / 三个评委取平均 |
-| Mem0 | 92.5 | 94.4 | GPT-5 / GPT-5 |
-| MemU | 92.09 | – | 未说明 |
-| Hindsight | 92.0 | **94.6** | 未公开 |
+| Mem0 | 92.5 | 94.4 | gpt-5 / gpt-5 |
+| memU | 92.09 | – | 未说明（早期版本） |
+| Hindsight | 92.0 | 94.6 | 未说明（论文中：gemini-3-pro 89.6 / 91.4） |
 | MemMachine | 91.69 | 93.0 | gpt-4.1-mini；LongMemEval-S 用 gpt-5-mini / gpt-4o-mini |
 | MemOS | 88.83 | 89.2 | gpt-4.1-mini / gpt-4o-mini（OmniMemEval） |
 
 † 使用修订后的 LoCoMo 标签（去掉 44 道无法使用的题、改正 25 个答案）；原始标签下为 92.2，其他各项都用原始标签。
 
-### 五个基准与完整成本
+### 各基准与各档位的完整成本
 
 表中设置如下：
 - 作答模型：gpt-4.1-mini。
-- 得分：依次为 gpt-4.1-mini / DeepSeek 评委给出的分数。
+- 得分：依次为 gpt-4.1-mini / DeepSeek 评委给出的分数（准确率；HaluMem 为答对比例；BEAM 为评分细则得分）。
 - 名次：在 OmniMemEval 重测过的系统中的排名。
-- 每题成本：包括作答、规划和 Jev，按标价计算。
-- 整合成本：每份记忆一次性的花费。
+- 每千题成本：包括作答、规划和 Jev，按标价计算；整合成本是每份历史一次性的花费。
+- Jev 调用（依次进行的波数）和检索次数取中位数题目；最后一列是最大一份历史上单次检索的热索引延迟。
 
-| 基准 | 得分 | 名次 | 上下文 | 每题成本 | 每份记忆的整合成本 |
-|---|---:|---:|---:|---:|---:|
-| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | $0.013 |
-| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | $0.017 |
-| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | $0.089 |
-| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | $0.012 |
-| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | $1.62 |
+| 基准 | 得分 | 名次 | 上下文 | 每千题<br>成本 | 每份历史的<br>整合成本 | Jev 调用<br>（波数） | 检索<br>次数 | 单次<br>检索 |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $3.27 | $0.013 | 5 (4) | 7 | 14&nbsp;ms |
+| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $3.33 | $0.017 | 5 (5) | 7 | 14&nbsp;ms |
+| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $3.60 | $0.089 | 7 (6) | 10 | 18&nbsp;ms |
+| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $4.80 | $0.012 | 9 (7) | 13 | 17&nbsp;ms |
+| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $5.32 | $1.62 | 10 (7) | 14 | 248&nbsp;ms |
 
-读取路径上，除了检索索引，没有任何东西随记忆增长：
+读取路径上，除了检索索引，没有任何东西随历史增长：
 - 规划只读最近的对话。
 - Jev 每轮最多筛选 48 条记录。
 - View 有固定预算。
@@ -138,35 +138,35 @@ System 1 负责广泛地读，System 2 只读一小部分：
 - 每题 Jev 读 3.5 万到 7.3 万 token 的记录，是作答模型所读的 9–19 倍。
 - Jev 每 token 的价格约为作答模型的十分之一。
 
-**每题的工作量。** 我们的实验在一台笔记本上调用公开的模型 API，所以用每题需要等待的工作量（中位数）而不是实测时间来表述延迟：
+**每题的工作量。** 我们的实验在一台笔记本上调用公开的模型 API，所以用关键路径上的工作量（中位数）而不是实测时间来表述延迟：
 - System 2：规划一次（两个调用并行），作答一次。
 - System 1：Jev 调用 5–10 次，分 4–7 波依次进行，每波约 0.34 秒，合计 1.4–2.4 秒。
-- 检索：journal 检索 7–14 次，热索引上每次 14–18 毫秒。
+- 检索：热索引上每次 14–18 毫秒，主要花在查询的向量化上；每题对 journal 的全部读取合计 0.1–0.2 秒。
 
-从 BEAM-100K 到 BEAM-10M，这些数量保持不变。只有检索会随记忆增长：它会给每条记录打分，在 108,810 条记录上每次需要 0.25 秒。
+从 BEAM-100K 到 BEAM-10M，这些数量基本不变。只有检索会随历史增长：它会给每条记录打分，在 BEAM-10M 最大的一份历史（108,810 条记录）上每次 248 毫秒，每题读取合计 3.5 秒；倒排索引和近似最近邻索引可以避免这一点。
 
-### System 1 与 LLM 判断的对比
+### System 1 与 LLM 的对比
 
 <p align="center">
   <img src="assets/system1.png" width="860" alt="Jev、DeepSeek、gpt-4.1-mini 判断同一批记录的 ROC 曲线与单次调用延迟">
 </p>
 
-我们让 Jev、DeepSeek 和 gpt-4.1-mini 对同样的 14,359 条记录回答同一个问题。Jev 区分关键证据的效果最好，而且每条记录能回答两个问题，所用时间只相当于 LLM 回答一个问题。
+我们让 Jev、DeepSeek 和 gpt-4.1-mini 对同样的 14,359 条记录判断同一个命题。Jev 区分关键证据的效果最好，而且每条记录能判断两个命题，所用时间只相当于 LLM 判断一个。
 
 ## 组件与版本
 
 Mnemon 是 [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) 的研究分支 `codex/jev-replica-practice`：
-- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 218 个提交，发展到本快照 `c461581c`。
+- 它从 dsh-mnemon 的 **v0.5.13** 发布版本分出（提交 `84d469ff`，2026-09-22），之后经过 221 个提交，发展到本快照 `65145f69`。
 - 它运行在 DeepSeek Harness **0.1.5-rc.1** 上，没有修改 DSH。
 - 除了对 dsh-mnemon 原有代码的 115 行改动，记忆 Agent 全部由新插件构成。
 
 | 组件 | 版本 | 在 Mnemon 中的角色 |
 |---|---|---|
-| dsh-mnemon | v0.5.13 + 218 个研究提交（`c461581c`） | 记忆插件、副本实例和评测工具 |
+| dsh-mnemon | v0.5.13 + 221 个研究提交（`65145f69`） | 记忆插件、副本实例和评测工具 |
 | DeepSeek Harness（DSH） | 0.1.5-rc.1 | Agent 框架；Mnemon 作为第二个实例运行在主 Agent 旁边 |
 | Jev（TypeSafe System One） | `jev-1.13.0`，通过 `@typesafe-ai/sdk` 0.6.0 调用 | System 1：筛选并判断记录和索引条目 |
-| gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；主评委 |
-| DeepSeek-V4.1-Flash | API 模型 `deepseek-flash` | 推理设置下的 System 2（作答带思考，规划不带）；整合（不带思考）；第二评委 |
+| gpt-4.1-mini | 2025-04-14 版本，temperature 0 | 标准设置下的 System 2（规划与作答）；评委，标准设置下为主评委 |
+| DeepSeek-V4.1-Flash | API 模型 `deepseek-flash` | 推理设置下的 System 2（作答带思考，规划不带）；整合（不带思考）；评委，推理设置下为主评委 |
 | nomic-embed-text | 本地部署 | 混合检索和索引条目的向量 |
 | Node.js / pnpm | v25.1.0 / 11 | 运行环境与包管理 |
 
@@ -184,6 +184,7 @@ python3 tools/restore_runs.py                     # 把 runs/ 展开到 runs-exp
 MNEMON_RUNS=$PWD/runs-expanded python3 docs/paper/scripts/collect.py   # 重写 docs/paper/data/results.json
 git diff --stat docs/paper/data/results.json      # 无变化：运行记录重现了论文里的数字
 TECTONIC=tectonic PYTHON=python3 bash docs/paper/build.sh   # 生成表格、图（matplotlib）和 main.pdf
+python3 docs/paper/scripts/arxiv.py --out out/arxiv         # arXiv 源码包（pdfLaTeX，TeX Live 2025）
 ```
 
 HaluMem 的运行记录不在仓库中（见 [DATA-LICENSES.md](DATA-LICENSES.md)）。缺少这些记录时，`collect.py` 保留已提交的 HaluMem 条目，所以这部分数字无法在本仓库重算，其余数字都可以。
@@ -216,7 +217,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ## 关于这份快照
 
-本仓库是研究分支在 `c461581c`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
+本仓库是研究分支在 `65145f69`（2026-09-28）时的冻结快照，不含 git 历史；每个文件都可以通过 `PROVENANCE.json` 追溯到源文件。
 
 <details>
 <summary><b>仓库结构</b></summary>
@@ -249,7 +250,7 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 - 两题冒烟运行两题都给出了回答。
 - `tools/audit.py` 扫描干净，工作区和全部提交（`--history`）都是如此。
 
-安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835` 和 `c461581c`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，以及 `collect.py`（缺少 HaluMem 记录时保留已提交的条目）。系统代码没有变。重算和扫描在 `c461581c` 上重新做过。
+安装、构建、测试和冒烟运行是在 `e5c7954a` 的快照上校验的。之后刷新到 `f97c5679`、`3bbf7835`、`c461581c`、`7649d8ff` 和 `65145f69`，只改了论文部分：正文、参考文献、表格与图的脚本、生成的表格、图和 PDF，统计每题工作量的两个脚本和它们的数据，`collect.py`（缺少 HaluMem 记录时保留已提交的条目），以及为 arXiv 打包源码的 `arxiv.py`。系统代码没有变。重算和扫描在 `65145f69` 上重新做过。
 
 快照保证什么、不保证什么：
 - `PROVENANCE.json` 列出的文件与源提交逐字节一致；`modified` 下的文件只替换了本机路径。
@@ -269,14 +270,17 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 ## 引用
 
 ```bibtex
-@techreport{grivn2026mnemon,
+@misc{wang2026mnemon,
   title  = {Mnemon: Remembering Fast and Slow in {LLM} Agents},
-  author = {Grivn},
+  author = {Wang, Guangren},
   year   = {2026},
-  note   = {Technical report}
+  note   = {Preprint},
+  url    = {https://github.com/Grivn/mnemon-memory-agent}
 }
 ```
 
 ## 许可与数据
 
 代码来自 dsh-mnemon，采用 MIT 许可（见 `LICENSE`）。这份许可不覆盖运行记录和报告素材中的基准文本，它们遵循各自的许可：LoCoMo 为 CC BY-NC 4.0，LongMemEval 为 MIT，BEAM 为 CC BY-SA 4.0。HaluMem 的运行记录不在仓库中：它的许可（CC BY-NC-ND 4.0）不允许分享改编内容。详见 [DATA-LICENSES.md](DATA-LICENSES.md)，其中也列出了各数据集的署名。
+
+论文本身（`docs/paper` 中的稿件：正文、图、表和 PDF）版权归 Guangren Wang 所有（© 2026，保留所有权利），不适用 MIT 许可；`docs/paper/scripts` 中的脚本适用 MIT 许可。

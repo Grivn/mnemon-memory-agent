@@ -1,4 +1,4 @@
-\section{Related work}
+\section{Related Work}
 \label{sec:related}
 
 \paragraph{Memory for LLM agents.}
@@ -8,7 +8,7 @@ MemMachine keeps raw episodes indexed by sentence~\citep{memmachine2026}, and Sm
 \sys{} keeps raw records as the only evidence, reasons at read time, and consolidates only into an index that points back to the records.
 
 \paragraph{Retrieval and judgment.}
-\sys{} retrieves with BM25~\citep{robertson2009bm25}, dense embeddings~\citep{nussbaum2024nomic}, reciprocal rank fusion~\citep{cormack2009rrf} and hypothetical-document queries~\citep{gao2023hyde}, as in retrieval-augmented generation~\citep{lewis2020rag}.
+\sys{} retrieves with BM25~\citep{robertson2009bm25} and dense embeddings~\citep{nussbaum2024nomic}, fused by reciprocal rank fusion (RRF)~\citep{cormack2009rrf}, and with hypothetical-document queries~\citep{gao2023hyde}, as in retrieval-augmented generation~\citep{lewis2020rag}.
 \jev{} acts as a reranker~\citep{nogueira2019passage,sun2023rankgpt} whose judgments answer explicit propositions and drive actions, as in ReAct and Self-RAG~\citep{yao2023react,asai2024selfrag}.
 
 \paragraph{Fast and slow thinking.}
@@ -17,6 +17,6 @@ LLM cascades route easy queries to cheap models and hard ones to expensive model
 \sys{} applies the division to memory: it splits the work of reading a memory into the judgments that suit a fast decision model and the planning and answering that need an LLM.
 
 \paragraph{Evaluating memory.}
-LoCoMo~\citep{maharana2024locomo} and \lme~\citep{wu2025longmemeval} are the standard benchmarks for long conversations; BEAM reaches ten million tokens~\citep{beam2026}, and HaluMem measures hallucination~\citep{halumem2025}.
-Protocols vary between papers~\citep{zheng2023judging}, and several self-reported scores fell by 10--40 points when OmniMemEval re-ran 14 systems under one protocol~\citep{omnimemeval2026}.
-We therefore compare systems under that protocol and list published claims separately.
+LoCoMo~\citep{maharana2024locomo} and \lme~\citep{wu2025longmemeval} are the standard benchmarks for long conversations; BEAM reaches 10M tokens~\citep{beam2026}, and HaluMem measures hallucination~\citep{halumem2025}.
+Protocols and LLM judges~\citep{zheng2023judging} vary between papers, and several self-reported scores fell by 10--40 points when OmniMemEval re-evaluated 14 systems under one protocol~\citep{omnimemeval2026}.
+We therefore follow that protocol and list published claims separately.

@@ -2,14 +2,14 @@
 \label{sec:limitations}
 
 \paragraph{Development and evaluation.}
-\sys{} was developed on LoCoMo and \lme, and its consolidation layer was designed after we had seen results on HaluMem and BEAM-100K, so none of the benchmarks is held out.
-Our runs are graded by gpt-4.1-mini and DeepSeek and OmniMemEval's by gpt-4o-mini; judges differ by one to two points, and on HaluMem by more.
+\sys{} was developed on LoCoMo and \lme, and consolidation was designed after we had seen results on HaluMem and BEAM-100K, so none of the benchmarks is held out.
+Our runs are graded by gpt-4.1-mini and DeepSeek and OmniMemEval's by gpt-4o-mini; judges differ by 1--2 points, and on HaluMem by more.
 Each configuration ran once per setting, and two identical runs of an earlier configuration differed by up to 2.6 points.
 We evaluate only conversational memory held in one Source; stores of documents, tasks or logs, which the design admits, are untested.
 
-\paragraph{Dependence on one System~1 model.}
-\sys{} relies on \jev, a hosted, proprietary model; LLMs can stand in with lower discrimination at several times the latency and price, but other judges are untested in the full system.
+\paragraph{Dependence on \jev.}
+\sys{} relies on \jev, a hosted, proprietary model; LLMs can stand in with lower discrimination at several times the latency and price, but no substitute was tested in the full system.
 
 \paragraph{Latency and privacy.}
 Our runs shared one laptop and public model APIs; a question took \workMeasured\,s end to end at the median, mostly in model calls.
-Raw records keep everything an extractor would discard, and the index repeats some of it, so deletion and retention must reach both.
+Raw records keep everything an extractor would discard, and the index repeats some of it, so deletion and retention policies must cover both.

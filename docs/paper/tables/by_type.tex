@@ -1,27 +1,28 @@
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
+\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverMemOS, the strongest systems OmniMemEval re-evaluated, as it reports them (gpt-4.1-mini answering, gpt-4o-mini grading). Bold: best of the three systems with gpt-4.1-mini answering.}
 \label{tab:by-type}
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{@{}l r cc cc@{}}
+\begin{tabular}{@{}l r S[table-format=2.1] S[table-format=3.2] S[table-format=2.2] S[table-format=3.1]@{}}
 \toprule
-& & \multicolumn{2}{c}{\sys} & & \\
-\cmidrule(lr){3-4}
-question type & questions & standard & reasoning & MemOS & EverOS \\
+& & \multicolumn{3}{c}{gpt-4.1-mini answering} & {reasoning} \\
+\cmidrule(lr){3-5}\cmidrule(l){6-6}
+question type & questions & {\sys} & {MemOS} & {EverMemOS} & {\sys} \\
 \midrule
 \multicolumn{6}{@{}l}{\textit{LoCoMo}} \\
-\quad single-hop & 841 & 94.6 & \best{96.1} & 92.51 & 86.8 \\
-\quad multi-hop & 282 & 91.8 & \best{92.2} & 88.65 & 77.78 \\
-\quad temporal & 321 & 91.3 & \best{92.2} & 85.05 & 84.11 \\
-\quad open-domain & 96 & 66.7 & 67.7 & \best{69.79} & 57.29 \\
+\quad single-hop & 841 & \bfseries 94.6 & 92.51 & 86.8 & 96.1 \\
+\quad multi-hop & 282 & \bfseries 91.8 & 88.65 & 77.78 & 92.2 \\
+\quad temporal & 321 & \bfseries 91.3 & 85.05 & 84.11 & 92.2 \\
+\quad open-domain & 96 & 66.7 & \bfseries 69.79 & 57.29 & 67.7 \\
+\addlinespace[2pt]
 \multicolumn{6}{@{}l}{\textit{\lme}} \\
-\quad single-session, user & 70 & 95.7 & 97.1 & \best{100.0} & 91.43 \\
-\quad single-session, assistant & 56 & 94.6 & \best{100.0} & \best{100.0} & 89.29 \\
-\quad single-session, preference & 30 & 76.7 & \best{100.0} & \best{100.0} & 96.67 \\
-\quad temporal reasoning & 133 & 76.7 & \best{92.5} & 89.47 & 81.95 \\
-\quad multi-session & 133 & 78.2 & \best{88.0} & 78.95 & 66.17 \\
-\quad knowledge update & 78 & 89.7 & \best{93.6} & 84.62 & 79.49 \\
+\quad single-session, user & 70 & 95.7 & \bfseries 100.0 & 91.43 & 97.1 \\
+\quad single-session, assistant & 56 & 94.6 & \bfseries 100.0 & 89.29 & 100.0 \\
+\quad single-session, preference & 30 & 76.7 & \bfseries 100.0 & 96.67 & 100.0 \\
+\quad temporal reasoning & 133 & 76.7 & \bfseries 89.47 & 81.95 & 92.5 \\
+\quad multi-session & 133 & 78.2 & \bfseries 78.95 & 66.17 & 88.0 \\
+\quad knowledge update & 78 & \bfseries 89.7 & 84.62 & 79.49 & 93.6 \\
 \bottomrule
 \end{tabular}
 \end{gentable}

@@ -4,28 +4,28 @@
 \caption{Each open-source project's best published result, with whatever answering model, judge and protocol it used (checked September 26, 2026). The settings differ widely, so the table ranks claims, not systems. $^\dagger$On the revised LoCoMo labels (\cref{sec:setup}); 92.2 on the original labels, which every other entry uses.}
 \label{tab:best-reported}
 \setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\linewidth}{@{}lcc>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\linewidth}{@{}l S[table-format=2.2] S[table-format=2.1] >{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}X@{}}
 \toprule
-Project & LoCoMo & \lme & answer model / judge & method \\
+project & {LoCoMo} & {\lme} & answering model / judge & method \\
 \midrule
-\textbf{\sys} & 95.3$^\dagger$ & 94.4 & DeepSeek-V4.1-Flash (thinking) / DeepSeek & raw records and a consolidated index, cue search, \jev{} judging \\
+\textbf{\sys} & 95.3{$^\dagger$} & 94.4 & DeepSeek-V4.1-Flash (thinking) / DeepSeek & raw records and a consolidated index, LLM-planned search, \jev{} judging \\
 Zep / Graphiti~\citep{zeprepo} & 94.7 & 90.2 & gpt-5.4 (medium reasoning) / gpt-5.4 & temporal knowledge graph + reranking \\
 EverMemOS~\citep{evermemos2026} & 93.05 & 83.0 & gpt-4.1-mini / three judges averaged & MemCell to MemScene \\
-Mem0~\citep{mem0repo} & 92.5 & 94.4 & GPT-5 / GPT-5 & LLM-extracted facts, top 200 (about 7k tokens) \\
-MemU~\citep{memu2026} & 92.09 & -- & not stated (early version) &  \\
-Hindsight~\citep{hindsightrepo,hindsight2025} & 92.0 & 94.6 & undisclosed (paper: Gemini-3 Pro 89.6 / 91.4) & four memory networks, 36-44k context \\
-MemMachine~\citep{memmachine2026} & 91.69 & 93.0 & gpt-4.1-mini; LME gpt-5-mini / gpt-4o-mini & raw episodes indexed by sentence \\
+Mem0~\citep{mem0repo} & 92.5 & 94.4 & gpt-5 / gpt-5 & LLM-extracted facts, top 200 (about 7k tokens) \\
+memU~\citep{memu2026} & 92.09 & {--} & not stated (early version) & -- \\
+Hindsight~\citep{hindsightrepo,hindsight2025} & 92.0 & 94.6 & not stated (paper: gemini-3-pro 89.6 / 91.4) & four memory networks, 36--44k tokens of context \\
+MemMachine~\citep{memmachine2026} & 91.69 & 93.0 & gpt-4.1-mini; \lme{} gpt-5-mini / gpt-4o-mini & raw episodes indexed by sentence \\
 MemOS~\citep{omnimemeval2026} & 88.83 & 89.2 & gpt-4.1-mini / gpt-4o-mini (OmniMemEval) & MemCube tree / graph memory \\
-Memori~\citep{memori2026} & 87.0 & -- & gpt-4.1-mini / gpt-4.1-mini & LLM-extracted triples + summaries \\
-mem9~\citep{mem9_2026} & 86.85 & -- & qwen3.6-plus / same & keyword + vector retrieval \\
-MIRIX~\citep{wang2025mirix} & 85.38 & -- & gpt-4.1-mini / GPT-4.1 & multi-agent, six memory types \\
-Nemori~\citep{nan2025nemori} & 83.05 & 74.6 & gpt-4.1-mini & episodic narratives + distilled facts \\
-OpenViking~\citep{openviking2026} & 82.86 & -- & Doubao 2.0 Pro / Doubao & file-system context store, three tiers \\
-Memobase~\citep{memobase2025} & 75.78 & -- & not stated & user profile + event timeline \\
-Letta~\citep{letta2024} & 74.0 & -- & GPT-4o mini / gpt-4.1 & agent searches raw conversation files \\
-LightMem~\citep{fang2025lightmem} & 72.99 & 73.2 & gpt-4o-mini; LME GLM-4.6 & pre-compression + offline update \\
-Supermemory~\citep{supermemory2026} & -- & 85.2 & gemini-3-pro &  \\
-SimpleMem~\citep{simplemem2026} & -- & 84.4 & GPT-4.1 / gpt-4.1-mini & atomic memory units \\
+Memori~\citep{memori2026} & 87.0 & {--} & gpt-4.1-mini / gpt-4.1-mini & LLM-extracted triples + summaries \\
+mem9~\citep{mem9_2026} & 86.85 & {--} & qwen3.6-plus / qwen3.6-plus & keyword + vector retrieval \\
+MIRIX~\citep{wang2025mirix} & 85.38 & {--} & gpt-4.1-mini / gpt-4.1 & multi-agent, six memory types \\
+Nemori~\citep{nan2025nemori} & 83.05 & 74.6 & gpt-4.1-mini / not stated & episodic narratives + distilled facts \\
+OpenViking~\citep{openviking2026} & 82.86 & {--} & Doubao 2.0 Pro / Doubao & file-system context store, three tiers \\
+Memobase~\citep{memobase2025} & 75.78 & {--} & not stated & user profile + event timeline \\
+Letta~\citep{letta2024} & 74.0 & {--} & gpt-4o-mini / gpt-4.1 & agent searches raw conversation files \\
+LightMem~\citep{fang2025lightmem} & 72.99 & 73.2 & gpt-4o-mini; \lme{} glm-4.6 / not stated & pre-compression + offline update \\
+Supermemory~\citep{supermemory2026} & {--} & 85.2 & gemini-3-pro / not stated & -- \\
+SimpleMem~\citep{simplemem2026} & {--} & 84.4 & gpt-4.1 / gpt-4.1-mini & atomic memory units \\
 \bottomrule
 \end{tabularx}
 \end{gentable}

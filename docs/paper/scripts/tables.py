@@ -51,6 +51,7 @@ MAIN_LABEL = {MAIN[0]: 'w/o consolidation', MAIN[1]: 'w/o consolidation, no plan
 # whose run has not finished.
 F = R.get('final', {})
 PENDING = '\\pending{}'
+num = lambda text: text if text[:1].isdigit() else '{' + text + '}'
 WORDS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth',
          'thirteenth', 'fourteenth', 'fifteenth']
 def done(setting, key):
@@ -226,28 +227,29 @@ def omnimemeval():
     top_eci = {d: min(v[2] for v in r.values()) for d, r in rows_of.items()}
     def cells(name, d, published=None):
         v = rows_of[d].get(name)
-        if v is None: return [PENDING] * 3 if name == '\\sys{}' else ['--'] * 3
+        if v is None: return ['{' + PENDING + '}'] * 3 if name == '\\sys{}' else ['{--}'] * 3
         a, c, e, ours = v
         acc = f'{100 * a:.1f}' if ours else given(published)
-        mark = lambda text, top: '\\best{' + text + '}' if top else text
-        return [mark(acc, a == top_acc[d]), f'{c / 1000:.1f}k', mark(f'{e:.3f}', e == top_eci[d])]
-    ours = '\\textbf{\\sys{}} & ' + ' & '.join(cells('\\sys{}', 'locomo') + cells('\\sys{}', 'lme')) + ' \\\\'
-    rows = [name + ' & ' + ' & '.join(cells(name, 'locomo', s['locomo']) + (cells(name, 'lme', s['lme']) if s['lme'] is not None else ['--'] * 3)) + ' \\\\'
+        mark = lambda text, top: '\\bfseries ' + text if top else text
+        return [mark(acc, a == top_acc[d]), f'{c / 1000:.1f}', mark(f'{e:.3f}', e == top_eci[d])]
+    ours = '\\sys{} & ' + ' & '.join(cells('\\sys{}', 'locomo') + cells('\\sys{}', 'lme')) + ' \\\\'
+    rows = [name + ' & ' + ' & '.join(cells(name, 'locomo', s['locomo']) + (cells(name, 'lme', s['lme']) if s['lme'] is not None else ['{--}'] * 3)) + ' \\\\'
             for name, s in sorted(sysd.items(), key=lambda kv: -kv[1]['locomo'])]
     ds = [get_acc('deepseek', d) for d in ('locomo', 'lme')]
-    judge = f' Under DeepSeek as judge, \\sys{{}} scores {ds[0]}\\% and {ds[1]}\\%.' if None not in ds else ''
+    judge = f'; under DeepSeek as judge, \\sys{{}} scores {ds[0]}\\% and {ds[1]}\\%' if None not in ds else ''
     write('omnimemeval', r'''
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{\sys{} and the 14 systems re-evaluated by OmniMemEval~\citep{omnimemeval2026}, all with gpt-4.1-mini answering: accuracy (\%), context sent to the answering model per question (tokens), and effective cost index (ECI, \cref{eq:eci}; lower is better). OmniMemEval grades with gpt-4o-mini and we with gpt-4.1-mini.''' + judge + r''' Best per column in bold.}
+\caption{\sys{} and the 14 systems re-evaluated by OmniMemEval~\citep{omnimemeval2026}, all with gpt-4.1-mini answering: accuracy, context sent to the answering model per question, and effective cost index (ECI, \cref{eq:eci}; lower is better). OmniMemEval grades with gpt-4o-mini and we with gpt-4.1-mini''' + judge + r'''. Best per column in bold.}
 \label{tab:omnimemeval}
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{@{}l ccc ccc@{}}
+\begin{tabular}{@{}l S[table-format=2.2] S[table-format=3.1] S[table-format=1.3] S[table-format=2.2] S[table-format=3.1] S[table-format=1.3]@{}}
 \toprule
 & \multicolumn{3}{c}{LoCoMo (1,540 questions)} & \multicolumn{3}{c}{\lme{} (500 questions)} \\
 \cmidrule(lr){2-4}\cmidrule(l){5-7}
-System & accuracy & context & ECI & accuracy & context & ECI \\
+& {accuracy} & {context} & {ECI} & {accuracy} & {context} & {ECI} \\
+system & {(\%)} & {(k tokens)} & & {(\%)} & {(k tokens)} & \\
 \midrule
 ''' + ours + '\n\\midrule\n' + '\n'.join(rows) + r'''
 \bottomrule
@@ -294,13 +296,13 @@ def best_reported():
         # The final version with the reasoning reader (amendment 31), DeepSeek judge.
         ours_l = loco
         br['\\textbf{\\sys}'] = [loco['revised'], lme_final['final']['accuracy']['deepseek'], 'DeepSeek-V4.1-Flash (thinking) / DeepSeek',
-                                 'raw records and a consolidated index, cue search, \\jev{} judging']
+                                 'raw records and a consolidated index, LLM-planned search, \\jev{} judging']
     else:
         ours_l = ds['locomo']['label_variants']['S5h']
         br['\\textbf{\\sys}'] = [ours_l['revised'], ds['lme']['runs']['S5h']['deepseek']['accuracy'], 'DeepSeek-V4.1-Flash (thinking) / DeepSeek',
-                                 'raw records, cue search, \\jev{} judging']
+                                 'raw records, LLM-planned search, \\jev{} judging']
     # Where each claim was published.
-    cites = {'Zep / Graphiti': 'zeprepo', 'EverMemOS': 'evermemos2026', 'Mem0': 'mem0repo', 'MemU': 'memu2026', 'Hindsight': 'hindsightrepo,hindsight2025',
+    cites = {'Zep / Graphiti': 'zeprepo', 'EverMemOS': 'evermemos2026', 'Mem0': 'mem0repo', 'memU': 'memu2026', 'Hindsight': 'hindsightrepo,hindsight2025',
              'MemMachine': 'memmachine2026', 'MemOS': 'omnimemeval2026', 'Memori': 'memori2026', 'mem9': 'mem9_2026', 'MIRIX': 'wang2025mirix',
              'Nemori': 'nan2025nemori', 'OpenViking': 'openviking2026', 'Memobase': 'memobase2025', 'Letta': 'letta2024', 'LightMem': 'fang2025lightmem',
              'Supermemory': 'supermemory2026', 'SimpleMem': 'simplemem2026'}
@@ -308,8 +310,8 @@ def best_reported():
     assert not missing, missing
     label = lambda name: name + (f'~\\citep{{{cites[name]}}}' if name in cites else '')
     # Our LoCoMo entry is on the revised labels and carries a dagger.
-    cell = lambda name, v: given(v) + ('$^\\dagger$' if name == '\\textbf{\\sys}' else '')
-    rows = [f"{label(name)} & {cell(name, v[0])} & {given(v[1])} & {v[2]} & {v[3]} \\\\" for name, v in sorted(br.items(), key=lambda kv: -(kv[1][0] or 0))]
+    cell = lambda name, v: num(given(v)) + ('{$^\\dagger$}' if name == '\\textbf{\\sys}' else '')
+    rows = [f"{label(name)} & {cell(name, v[0])} & {num(given(v[1]))} & {v[2]} & {v[3] or '--'} \\\\" for name, v in sorted(br.items(), key=lambda kv: -(kv[1][0] or 0))]
     write('best_reported', r'''
 \begin{gentable}[!htb]
 \centering
@@ -317,9 +319,9 @@ def best_reported():
 \caption{Each open-source project's best published result, with whatever answering model, judge and protocol it used (checked September 26, 2026). The settings differ widely, so the table ranks claims, not systems. $^\dagger$On the revised LoCoMo labels (\cref{sec:setup}); ''' + f"{ours_l['original']:.1f}" + r''' on the original labels, which every other entry uses.}
 \label{tab:best-reported}
 \setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\linewidth}{@{}lcc>{\raggedright\arraybackslash}p{4.6cm}>{\raggedright\arraybackslash}X@{}}
+\begin{tabularx}{\linewidth}{@{}l S[table-format=2.2] S[table-format=2.1] >{\raggedright\arraybackslash}p{4.7cm}>{\raggedright\arraybackslash}X@{}}
 \toprule
-Project & LoCoMo & \lme & answer model / judge & method \\
+project & {LoCoMo} & {\lme} & answering model / judge & method \\
 \midrule
 ''' + '\n'.join(rows) + r'''
 \bottomrule
@@ -1047,24 +1049,25 @@ def by_type_table():
         order = cats['_order']
         std, rsn = done('standard', d), done('reasoning', d)
         counts = R['gpt41mini_chain'][d]['runs'][MAIN[0]]['mini'].get('per_type_n') or {}
-        lines.append(f"\\multicolumn{{6}}{{@{{}}l}}{{\\textit{{{label}}}}} \\\\")
+        lines.append(("\\addlinespace[2pt]\n" if lines else "") + f"\\multicolumn{{6}}{{@{{}}l}}{{\\textit{{{label}}}}} \\\\")
         for t in types:
-            vals = [get_type(std, t), get_type(rsn, t), cats['MemOS'][order.index(t)], cats['EverOS'][order.index(t)]]
-            top = max(v for v in vals if v is not None)
-            cell = lambda v, pub=False: '--' if v is None else (lambda s: '\\best{' + s + '}' if v == top else s)(given(v) if pub else f'{v:.1f}')
-            lines.append(f"\\quad {TYPE_NAMES[t]} & {counts.get(t, 0):,} & {cell(vals[0])} & {cell(vals[1])} & {cell(vals[2], True)} & {cell(vals[3], True)} \\\\")
+            # The three systems with gpt-4.1-mini answering are compared; the reasoning column is not.
+            vals = [get_type(std, t), cats['MemOS'][order.index(t)], cats['EverMemOS'][order.index(t)], get_type(rsn, t)]
+            top = max(v for v in vals[:3] if v is not None)
+            cell = lambda v, pub=False, compared=True: '{--}' if v is None else (lambda s: '\\bfseries ' + s if compared and v == top else s)(given(v) if pub else f'{v:.1f}')
+            lines.append(f"\\quad {TYPE_NAMES[t]} & {counts.get(t, 0):,} & {cell(vals[0])} & {cell(vals[1], True)} & {cell(vals[2], True)} & {cell(vals[3], compared=False)} \\\\")
     write('by_type', r'''
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverOS, the strongest systems OmniMemEval re-evaluated, are its numbers with gpt-4.1-mini answering and gpt-4o-mini grading. Best per row in bold.}
+\caption{Accuracy (\%) by question type. \sys{} is graded by gpt-4.1-mini in the standard setting (gpt-4.1-mini as System~2) and the reasoning setting (DeepSeek-V4.1-Flash); MemOS and EverMemOS, the strongest systems OmniMemEval re-evaluated, as it reports them (gpt-4.1-mini answering, gpt-4o-mini grading). Bold: best of the three systems with gpt-4.1-mini answering.}
 \label{tab:by-type}
 \setlength{\tabcolsep}{5pt}
-\begin{tabular}{@{}l r cc cc@{}}
+\begin{tabular}{@{}l r S[table-format=2.1] S[table-format=3.2] S[table-format=2.2] S[table-format=3.1]@{}}
 \toprule
-& & \multicolumn{2}{c}{\sys} & & \\
-\cmidrule(lr){3-4}
-question type & questions & standard & reasoning & MemOS & EverOS \\
+& & \multicolumn{3}{c}{gpt-4.1-mini answering} & {reasoning} \\
+\cmidrule(lr){3-5}\cmidrule(l){6-6}
+question type & questions & {\sys} & {MemOS} & {EverMemOS} & {\sys} \\
 \midrule
 ''' + '\n'.join(lines) + r'''
 \bottomrule
@@ -1091,25 +1094,26 @@ def ours_table():
         # BEAM: every question answered; the paired comparisons keep only those both judges graded in both runs.
         run = S.get({'beam100k': '100k-final', 'beam10m': '10m-C'}[key]) if key.startswith('beam') else (x or {}).get('final')
         if not run or not run.get('accuracy'):
-            lines.append(f"{label} & \\multicolumn{{8}}{{c}}{{{PENDING}}} \\\\"); continue
+            lines.append(f"{label} & \\multicolumn{{9}}{{c}}{{{PENDING}}} \\\\"); continue
         acc, others = run['accuracy'], [v for v in published[key] if v is not None]
         w = (x or {}).get('write')
-        write_cell = '--' if not w else f"{w['per_memory']:.3f}" if w['per_memory'] < 1 else f"{w['per_memory']:.2f}"
+        write_cell = '{--}' if not w else f"{w['per_memory']:.3f}" if w['per_memory'] < 1 else f"{w['per_memory']:.2f}"
         work = f"{WORK[key]['jev_calls']['p50']:.0f} ({WORK[key]['jev_waves']['p50']:.0f}) & {WORK[key]['searches']['p50']:.0f} & {RETRIEVAL[key]['hybrid']['p50']:.0f}" \
             if key in WORK and key in RETRIEVAL else f'\\multicolumn{{3}}{{c}}{{{PENDING}}}'
-        lines.append(f"{label} & {acc['mini']:.1f} / {acc['deepseek']:.1f} & {1 + sum(v > acc['mini'] for v in others)}/{len(others) + 1} & "
-                     f"{run['answer_input_tokens'] / 1000:.1f}k & {1e3 * run['cost_per_question']:.2f} & {write_cell} & {work} \\\\")
+        lines.append(f"{label} & {acc['mini']:.1f} & {acc['deepseek']:.1f} & {1 + sum(v > acc['mini'] for v in others)}/{len(others) + 1} & "
+                     f"{run['answer_input_tokens'] / 1000:.1f} & {1e3 * run['cost_per_question']:.2f} & {write_cell} & {work} \\\\")
     write('ours', r'''
 \begin{gentable}[!htb]
 \centering
 \small
-\caption{\sys{} on five benchmarks with gpt-4.1-mini answering: score under the gpt-4.1-mini / DeepSeek judges (accuracy; HaluMem: share judged correct; BEAM: rubric score), rank among the systems OmniMemEval re-evaluated, context and cost per question, consolidation's one-time cost per memory, and the median question's \jev{} calls (in waves, one after another) and searches, with the warm time of one search in the largest memory.}
+\caption{\sys{} on each benchmark and tier with gpt-4.1-mini answering: score under each judge (accuracy; HaluMem: share correct; BEAM: rubric score), rank among the systems OmniMemEval re-evaluated, context and cost per question, one-time consolidation cost per history, and the median question's \jev{} calls (sequential waves) and searches, with the warm latency of one search on the largest history.}
 \label{tab:ours}
-\setlength{\tabcolsep}{4.5pt}
-\begin{tabular}{@{}l c c c c c c c r@{}}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l S[table-format=2.1] S[table-format=2.1] c S[table-format=1.1] S[table-format=1.2] S[table-format=1.3] c S[table-format=2.0] S[table-format=3.0]@{}}
 \toprule
-& & & & $10^{-3}$\,\$ & \$ & \jev{} calls & & search \\
-benchmark & score & rank & context & /question & /memory & (waves) & searches & (ms) \\
+& \multicolumn{2}{c}{score, judge} & & {context} & \multicolumn{2}{c}{cost (\$)} & \multicolumn{3}{c}{median question} \\
+\cmidrule(lr){2-3}\cmidrule(lr){6-7}\cmidrule(l){8-10}
+benchmark & {gpt-4.1-mini} & {DeepSeek} & rank & {(k tokens)} & {/1k q.} & {/history} & \jev{} calls (waves) & {searches} & {search (ms)} \\
 \midrule
 ''' + '\n'.join(lines) + r'''
 \bottomrule
@@ -1148,7 +1152,7 @@ def work_numbers(macros):
         workJevTime=span([modeled(k)[0] for k in keys], lambda v: f'{v:.1f}'),
         workSearchSmall=span([RETRIEVAL[k]['hybrid']['p50'] for k in small], lambda v: f'{v:.0f}'),
         workReadSmall=span([modeled(k)[1] for k in small], lambda v: f'{v:.1f}'),
-        workSearchTen=f"{RETRIEVAL['beam10m']['hybrid']['p50'] / 1000:.2f}",
+        workSearchTen=f"{RETRIEVAL['beam10m']['hybrid']['p50']:.0f}",
         workReadTen=f"{modeled('beam10m')[1]:.1f}",
         workTenRecords=f"{RETRIEVAL['beam10m']['records']:,}", workWave=f'{WAVE_S:.2f}')
     # The measured end-to-end median on the test machine, over the five benchmarks (Limitations).
@@ -1186,7 +1190,7 @@ def final_numbers(macros):
         macros[f'eciOther{D}'], macros[f'eciOtherName{D}'] = f'{e:.3f}', n
         # The reasoning reader: absolute consolidation gain (DeepSeek judge) and cost per question at off-peak prices.
         macros[f'dsCons{D}Abs'] = PENDING if q is None else f"{abs(q['diff']):.1f}"
-        c = get(y, 'final', 'cost_per_question'); macros[f'dsCost{D}'] = PENDING if c is None else f'{c:.4f}'
+        c = get(y, 'final', 'cost_per_question'); macros[f'dsCost{D}'] = PENDING if c is None else f'{1e3 * c:.2f}'
     macros['dsFinLoCoMoRev'] = one(get(done('reasoning', 'locomo'), 'final', 'labels', 'deepseek', 'revised'))
     # System 1 reads broadly, System 2 narrowly: Jev's input tokens per question (mean) against the answering model's
     # context, over the five benchmarks in the standard setting.
@@ -1205,7 +1209,7 @@ def final_numbers(macros):
     macros['consBeam'] = PENDING if not b else signed(b['paired']['mini']['diff']); macros['consBeamCI'] = ci(get(b, 'paired', 'mini'))
     macros['consBeamAbs'] = PENDING if not b else f"{abs(b['paired']['mini']['diff']):.1f}"
     macros['consBeamN'] = PENDING if not b else f"{b['paired']['mini']['n']:,}"
-    ratios = [x['cost_ratio'] for k, x in std.items() if k in ('locomo', 'lme', 'lme-180', 'halumem', 'beam100k') and x and x.get('paired')]
+    ratios = [x['cost_ratio'] for k, x in std.items() if k in ('locomo', 'lme', 'lme-180', 'halumem', 'beam100k', 'beam10m') and x and x.get('paired')]
     macros['consCostRange'] = f'{min(ratios):.2f}--{max(ratios):.2f}' if ratios else PENDING
     halu = [v for k, v in P['omnimemeval']['halumem'].items() if not k.startswith('_')]
     beam = {k: v for k, v in P['omnimemeval']['beam'].items() if not k.startswith('_')}
