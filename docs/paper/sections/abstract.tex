@@ -1,15 +1,15 @@
 \begin{abstract}
 Long-term memory lets an LLM assistant use a history it can no longer reread, and most memory systems build it by rewriting conversations into facts, graphs or typed memories at write time.
 We argue that the work of memory divides, as thinking does, into two systems.
-Most of it is fast System~1 work: many small, independent yes/no judgments about records, such as whether the reply should use a record or whether it is no longer current, which a decision model makes by the dozen in a third of a second.
+Most of it is fast System~1 work: many small, independent yes/no judgments about records, such as whether a record is needed or no longer current, which a decision model makes by the dozen in a third of a second.
 Only a little is slow System~2 work: writing a few search queries, naming what the reply needs and composing the answer, which an LLM does well but slowly.
 We present \sys, a memory agent built on this division.
-\sys{} keeps conversations as raw, dated records; an LLM planner (System~2) plans searches over them, a decision model, \jev{} (System~1), judges what the searches return, and rules with explicit budgets turn the judgments into a small View for an unchanged answering model.
-A slow background pass consolidates each record once into topic timelines, value histories and standing instructions that link back to the records, so that questions about a whole conversation reach evidence their own searches miss.
-Because nothing is decided about a record when it is written, the same agent can read any store that returns dated records; it runs as a second instance of an open-source agent harness and is built entirely from its plugins.
+It keeps conversations as raw, dated records; an LLM (System~2) plans searches over them, a decision model, \jev{} (System~1), judges what the searches return, and rules with explicit budgets turn the judgments into a small View for an unchanged answering model.
+A background pass consolidates each record once into topic timelines, value histories and standing instructions linked to the records, so that questions about a whole conversation reach evidence their own searches miss.
+Because nothing is decided about a record when it is written, the same agent can read any store that returns dated records.
 
-With gpt-4.1-mini answering, as in a public re-evaluation of 14 memory systems, \sys{} scores \finLoCoMo\% on LoCoMo, the highest among them, and \finLME\% on \lme, from under 4k tokens of context per question and with the lowest effective cost index on LoCoMo.
+With gpt-4.1-mini answering, as in a public re-evaluation of 14 systems, \sys{} scores \finLoCoMo\% on LoCoMo, the highest among them, and \finLME\% on \lme, from under 4k tokens of context per question, with the lowest effective cost index on LoCoMo.
 With a reasoning model answering, it reaches \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme, the latter on par with the best published results.
-From BEAM's 100K-token tier to its 10M-token tier, its cost per question grows by a factor of \beamTenCostRatioC.
+From 100K to 10M tokens of history on BEAM, its cost per question grows by a factor of \beamTenCostRatioC.
 On the same records, \jev{} separates gold evidence better than two LLMs and is 3--11 times faster.
 \end{abstract}

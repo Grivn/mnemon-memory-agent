@@ -1,8 +1,8 @@
 {
  "source": {
   "repository": "dsh-mnemon (research branch codex/jev-replica-practice)",
-  "commit": "65145f69050ae0fd310f72de5c076ccc9255eaef",
-  "date": "2026-09-28T21:07:54+08:00"
+  "commit": "aea19abcfcbe39eb0aaa6e87d60e2e4fff800f2e",
+  "date": "2026-09-28T21:17:33+08:00"
  },
  "plugins": [
   "dsh-mnemon-agent-loop-jev",
@@ -153,8 +153,8 @@
    "sha256": "ac66a4b3dc3b56c024f48221c2fb0ebb40c1f67afbc3b74af54f50679fc6075b"
   },
   "docs/paper/README.md": {
-   "blob": "0f49f0ab436518d8392a3c3f0bea5f88d6c89940",
-   "sha256": "23c934f8ed9f501f2ca55ffc90da6996068706a8ee6c90050375cdb867da6aff"
+   "blob": "16b8383ed10849de1583dd8be42ee530f49162e6",
+   "sha256": "2fcd9c6fea8d32e95d868788f09eaab5fcaae46d73b7e0b470fdb1dc9ef4fc6f"
   },
   "docs/paper/build.sh": {
    "blob": "9c4bf5da40406097b9f40e462f110d7702cf2ade",
@@ -225,8 +225,8 @@
    "sha256": "3daa3e6915fa08ff25489894fefc74ae300772dcbe099d1f7424a76edebfbc60"
   },
   "docs/paper/main.pdf": {
-   "blob": "08f8fc9f673bd8deeb5ad0f7dfa8c065a78a4565",
-   "sha256": "bdf9bee518bcfe2ef081741c7893587624d038904a768d5d79991e42ab6fec08"
+   "blob": "0a07a1756c2dd0165db59ac256942b4061e72c8c",
+   "sha256": "b514ada89d74d6dd6e77266c586be593d660f941238d3ff47447a29f70831084"
   },
   "docs/paper/main.tex": {
    "blob": "e75de6ce04a8fb82dde28b7801d31a76ab8c69fd",
@@ -237,8 +237,8 @@
    "sha256": "8216bb6e90d42adb260889c430b8eb3ed5e5c3cf8af5e40573b696f740ee90c0"
   },
   "docs/paper/scripts/arxiv.py": {
-   "blob": "97a4320423d58fd21e1840fe1a2593623d948da2",
-   "sha256": "f8d101828748d85086960c9dca790285a3ed68fee26a3fb74110002137b04c0e"
+   "blob": "cc6e9e7907bd4a4d794496f7671973c85de72878",
+   "sha256": "be0106503b341d3ad2f4f114417bc5b4af54e30a34efb5b0a15287e7c4dcda24"
   },
   "docs/paper/scripts/beam_evidence.py": {
    "blob": "32a94e5c3061109211079fbb54ee4de508ce8227",
@@ -265,8 +265,8 @@
    "sha256": "6327e27fe7c20272b15afec4be2735b6e8f28a1edb65a4c4c6e03fb051266eff"
   },
   "docs/paper/sections/abstract.tex": {
-   "blob": "f608f598e908f4ab98ca0e4c31fda01410e7de62",
-   "sha256": "fcaaff0004df0dc2bbc1288e185e68a5bb91ae7312255667144406151dd9397a"
+   "blob": "36d8ef7b73a680fb8a135750230c7a719ad725f2",
+   "sha256": "380a12478686219d95af4291bc33d5adafe8a62005bac39a40b4f186bb4d66fd"
   },
   "docs/paper/sections/analysis.tex": {
    "blob": "e1503e187af1ef97949933330c52d5793299a6a9",

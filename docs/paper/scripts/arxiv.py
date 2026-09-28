@@ -5,6 +5,8 @@ as main.bbl, and a 00README.json that names the top-level file and the compiler 
 
 main.bbl comes from one Tectonic run of the paper, as build.sh compiles it; arXiv uses a .bbl when one is present and
 then runs no BibTeX. Everything main.tex does not use (the appendix, data, scripts, logs) and hidden files are left out.
+Beside the package, abstract.txt holds the abstract as plain text for arXiv's form, within its 1,920 characters; a
+line that starts with spaces begins a new paragraph there.
 With --check, the package is compiled twice with pdflatex inside a TeX Live Docker image (for example
 texlive/texlive:TL2025-historic) and the log is searched for errors, undefined references and overfull lines.
 """
@@ -43,6 +45,25 @@ def bibliography(tectonic):
         subprocess.run([tectonic, '-X', 'compile', 'main.tex', '--keep-intermediates'], cwd=copy, check=True,
                        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         return (copy / 'main.bbl').read_text(encoding='utf-8')
+
+
+ABSTRACT_LIMIT = 1920   # characters arXiv's form accepts for the abstract
+
+
+def plain_abstract():
+    """sections/abstract.tex as plain text: macros of main.tex and tables/numbers.tex expanded, TeX markup removed."""
+    macros = {}
+    for source in ('main.tex', 'tables/numbers.tex'):
+        text = (PAPER / source).read_text(encoding='utf-8')
+        macros.update(re.findall(r'\\newcommand\{\\(\w+)\}\{([^{}]*(?:\{[^{}]*\}[^{}]*)*)\}', text))
+    text = (PAPER / 'sections/abstract.tex').read_text(encoding='utf-8')
+    text = uncommented(text.split('\\begin{abstract}')[1].split('\\end{abstract}')[0])
+    for _ in range(3):   # a macro may use another one
+        text = re.sub(r'\\(\w+)(?:\{\})?', lambda m: macros.get(m.group(1), m.group(0)), text)
+    text = text.replace('\\-', '').replace('\\%', '%').replace('\\,', ' ').replace('~', ' ').replace('--', '-')
+    if '\\' in text or '{' in text: sys.exit('the abstract keeps TeX markup that plain text cannot show')
+    # arXiv joins lines; a line that starts with whitespace begins a new paragraph.
+    return '\n  '.join(' '.join(paragraph.split()) for paragraph in text.strip().split('\n\n'))
 
 
 def check(package, image):
@@ -93,6 +114,10 @@ def main():
             if path.is_file(): tar.add(path, arcname=str(path.relative_to(package)))
     size = sum(p.stat().st_size for p in package.rglob('*') if p.is_file())
     print(f'{len(files) + 2} files, {size / 1e6:.1f} MB uncompressed -> {archive} ({archive.stat().st_size / 1e6:.1f} MB)')
+    abstract = plain_abstract()
+    (out / 'abstract.txt').write_text(abstract + '\n', encoding='utf-8')
+    print(f'abstract: {len(abstract)} characters, arXiv accepts {ABSTRACT_LIMIT} -> {out / "abstract.txt"}')
+    if len(abstract) > ABSTRACT_LIMIT: sys.exit('the abstract is too long for arXiv')
     if args.check:
         sys.exit(0 if check(package, args.check) else 1)
 
