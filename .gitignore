@@ -1,0 +1,23 @@
+# Dependencies and build output
+node_modules/
+/lib/
+plugins/*/lib/
+*.tsbuildinfo
+coverage/
+.cache/
+
+# Credentials: keep API keys in the environment or a local .env, never in the repository
+.env
+.env.*
+!.env.example
+
+# Expanded run records (tools/restore_runs.py) and local experiment output
+/runs-expanded/
+/out/
+
+# Paper build intermediates (main.pdf itself is kept)
+docs/paper/*.aux
+docs/paper/*.log
+docs/paper/*.out
+docs/paper/*.bbl
+docs/paper/*.blg

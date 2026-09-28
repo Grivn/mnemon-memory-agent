@@ -1,0 +1,825 @@
+{
+  "model": "jev-1.13.0",
+  "turns": 32,
+  "selectors": {
+    "random": {
+      "auroc": 0.49131252723459606,
+      "aurocUtility": 0.49131252723459606,
+      "aurocExplicit": 0.5844644557095453,
+      "aurocImplicit": 0.4331634888545457,
+      "aurocStale": 0.3,
+      "top8": {
+        "requiredRecall": 0.2916666666666667,
+        "obsolete": 5,
+        "irrelevantPerTurn": 6.25,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.2708333333333333,
+        "obsolete": 1,
+        "irrelevantPerTurn": 5.875,
+        "sizePerTurn": 6.875
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 4,
+      "tokensPerTurn": 0,
+      "msPerTurn": 0,
+      "callsPerTurn": 0,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "bm25": {
+      "auroc": 0.47209675630917947,
+      "aurocUtility": 0.47209675630917947,
+      "aurocExplicit": 0.6760763453416339,
+      "aurocImplicit": 0.2894963600248153,
+      "aurocStale": 0,
+      "top8": {
+        "requiredRecall": 0.6875,
+        "obsolete": 6,
+        "irrelevantPerTurn": 5.375,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.5833333333333334,
+        "obsolete": 6,
+        "irrelevantPerTurn": 3.5,
+        "sizePerTurn": 5.0625
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 7,
+      "tokensPerTurn": 0,
+      "msPerTurn": 0,
+      "callsPerTurn": 0,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "jev-compound": {
+      "auroc": 0.99028110404042,
+      "aurocUtility": 0.99028110404042,
+      "aurocExplicit": 0.985216014373027,
+      "aurocImplicit": 0.995483288166215,
+      "aurocStale": 1,
+      "top8": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 8,
+        "irrelevantPerTurn": 4,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 0,
+        "irrelevantPerTurn": 0.34375,
+        "sizePerTurn": 3.21875
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 0,
+      "tokensPerTurn": 6472.0625,
+      "msPerTurn": 397.875,
+      "callsPerTurn": 1,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "jev-inline-index": {
+      "auroc": 0.8574551748760733,
+      "aurocUtility": 0.8489251232904359,
+      "aurocExplicit": 0.9214193384171996,
+      "aurocImplicit": 0.7477777383773319,
+      "aurocStale": 0.8,
+      "top8": {
+        "requiredRecall": 0.7708333333333334,
+        "obsolete": 4,
+        "irrelevantPerTurn": 5,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.6875,
+        "obsolete": 0,
+        "irrelevantPerTurn": 1.5625,
+        "sizePerTurn": 3.3125
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 0,
+      "tokensPerTurn": 10070.9375,
+      "msPerTurn": 438.4375,
+      "callsPerTurn": 1,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "jev-inline": {
+      "auroc": 0.9807263525329754,
+      "aurocUtility": 0.994534786638608,
+      "aurocExplicit": 0.9930581120661307,
+      "aurocImplicit": 0.998193315266486,
+      "aurocStale": 0.8,
+      "top8": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 7,
+        "irrelevantPerTurn": 4,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.8958333333333334,
+        "obsolete": 0,
+        "irrelevantPerTurn": 0.09375,
+        "sizePerTurn": 2.21875
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 0,
+      "tokensPerTurn": 10890.84375,
+      "msPerTurn": 439.125,
+      "callsPerTurn": 1,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "jev-rubric": {
+      "auroc": 0.9707440748907302,
+      "aurocUtility": 0.9847651215399146,
+      "aurocExplicit": 0.9833495147769092,
+      "aurocImplicit": 0.9844274778217866,
+      "aurocStale": 0.8,
+      "top8": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 7,
+        "irrelevantPerTurn": 4.0625,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.9375,
+        "obsolete": 0,
+        "irrelevantPerTurn": 0.4375,
+        "sizePerTurn": 2.90625
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 0,
+      "tokensPerTurn": 6912,
+      "msPerTurn": 388.5625,
+      "callsPerTurn": 1,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "jev-single": {
+      "auroc": 0.9426103176531995,
+      "aurocUtility": 0.9652809083793458,
+      "aurocExplicit": 0.952907921369255,
+      "aurocImplicit": 0.9952066395663957,
+      "aurocStale": 0.6000000000000001,
+      "top8": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 9,
+        "irrelevantPerTurn": 4.09375,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.9791666666666666,
+        "obsolete": 3,
+        "irrelevantPerTurn": 0.5,
+        "sizePerTurn": 3.125
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 3,
+      "tokensPerTurn": 22316.28125,
+      "msPerTurn": 1033.875,
+      "callsPerTurn": 33.15625,
+      "turns": 32,
+      "scoredTurns": 27
+    },
+    "llm-judge": {
+      "auroc": 0.9501397326770176,
+      "aurocUtility": 0.9288012177653329,
+      "aurocExplicit": 0.9541831427502555,
+      "aurocImplicit": 0.9267806267806269,
+      "aurocStale": 1,
+      "top8": {
+        "requiredRecall": 0.9375,
+        "obsolete": 4,
+        "irrelevantPerTurn": 4.3125,
+        "sizePerTurn": 7.375
+      },
+      "threshold": {
+        "requiredRecall": 0.9166666666666666,
+        "obsolete": 0,
+        "irrelevantPerTurn": 0.6875,
+        "sizePerTurn": 3.5625
+      },
+      "obsoleteItems": 11,
+      "obsoleteLeaks": 0,
+      "tokensPerTurn": 1661.28125,
+      "msPerTurn": 1104.4375,
+      "callsPerTurn": 1,
+      "turns": 32,
+      "scoredTurns": 27
+    }
+  },
+  "recall": {
+    "all": {
+      "turns": 25,
+      "groups": 48,
+      "lexical10": 34,
+      "lexical20": 39,
+      "lexical40": 42,
+      "scan10": 44,
+      "scan20": 48,
+      "scan40": 48,
+      "hybrid40": 48
+    },
+    "explicit": {
+      "turns": 16,
+      "groups": 36,
+      "lexical10": 29,
+      "lexical20": 33,
+      "lexical40": 36,
+      "scan10": 32,
+      "scan20": 36,
+      "scan40": 36,
+      "hybrid40": 36
+    },
+    "implicit": {
+      "turns": 9,
+      "groups": 12,
+      "lexical10": 5,
+      "lexical20": 6,
+      "lexical40": 6,
+      "scan10": 12,
+      "scan20": 12,
+      "scan40": 12,
+      "hybrid40": 12
+    },
+    "lexicalAt20": 0.8125,
+    "scanAt20": 1,
+    "hybridAt40": 1,
+    "scanTokensPerTurn": 176039.12,
+    "scanMsPerTurn": 911.4101215599992
+  },
+  "perTurn": [
+    {
+      "dataset": "clean",
+      "turn": "outing",
+      "kind": "explicit",
+      "groups": 4,
+      "lexical20": 4,
+      "scan20": 4,
+      "auroc": {
+        "random": 0.4971590909090909,
+        "bm25": 0.6818181818181818,
+        "jev-compound": 0.9943181818181818,
+        "jev-inline-index": 0.8664772727272727,
+        "jev-inline": 0.9872159090909091,
+        "jev-rubric": 0.9829545454545454,
+        "jev-single": 0.8295454545454546,
+        "llm-judge": 0.9943181818181818
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "checkin-followup",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.44107744107744107,
+        "bm25": 0.6734006734006734,
+        "jev-compound": 0.9663299663299664,
+        "jev-inline-index": 0.8114478114478114,
+        "jev-inline": 0.9764309764309764,
+        "jev-rubric": 0.9646464646464646,
+        "jev-single": 0.8939393939393939,
+        "llm-judge": 0.9764309764309764
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "topic-train",
+      "kind": "explicit",
+      "groups": 3,
+      "lexical20": 3,
+      "scan20": 3,
+      "auroc": {
+        "random": 0.3918918918918919,
+        "bm25": 0.722972972972973,
+        "jev-compound": 0.972972972972973,
+        "jev-inline-index": 0.972972972972973,
+        "jev-inline": 1,
+        "jev-rubric": 0.9695945945945946,
+        "jev-single": 1,
+        "llm-judge": 0.9628378378378378
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "alias-promise",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.5618279569892473,
+        "bm25": 0.7338709677419355,
+        "jev-compound": 0.9919354838709677,
+        "jev-inline-index": 0.8481182795698925,
+        "jev-inline": 0.9919354838709677,
+        "jev-rubric": 0.9919354838709677,
+        "jev-single": 0.978494623655914,
+        "llm-judge": 0.9919354838709677
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "budget-status",
+      "kind": "explicit",
+      "groups": 4,
+      "lexical20": 3,
+      "scan20": 4,
+      "auroc": {
+        "random": 0.6218487394957983,
+        "bm25": 0.6386554621848739,
+        "jev-compound": 0.9453781512605042,
+        "jev-inline-index": 0.9369747899159664,
+        "jev-inline": 0.9873949579831933,
+        "jev-rubric": 0.9411764705882353,
+        "jev-single": 0.9495798319327731,
+        "llm-judge": 0.9747899159663865
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "coffee-change",
+      "kind": "stale",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": 0.6,
+        "bm25": 0,
+        "jev-compound": 1,
+        "jev-inline-index": 0.8,
+        "jev-inline": 0.8,
+        "jev-rubric": 0.8,
+        "jev-single": 0.4,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "coffee-followup",
+      "kind": "stale",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": 0,
+        "bm25": 0,
+        "jev-compound": 1,
+        "jev-inline-index": 0.8,
+        "jev-inline": 0.8,
+        "jev-rubric": 0.8,
+        "jev-single": 0.8,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "errands",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": null,
+        "bm25": null,
+        "jev-compound": null,
+        "jev-inline-index": null,
+        "jev-inline": null,
+        "jev-rubric": null,
+        "jev-single": null,
+        "llm-judge": null
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "canvas-body",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.9166666666666666,
+        "bm25": 0.5,
+        "jev-compound": 1,
+        "jev-inline-index": 1,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "long-document",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.4791666666666667,
+        "bm25": 0.5,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9791666666666666,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 0.75
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "cold-memory",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.41935483870967744,
+        "bm25": 0.9,
+        "jev-compound": 0.9967741935483871,
+        "jev-inline-index": 0.9741935483870968,
+        "jev-inline": 0.9967741935483871,
+        "jev-rubric": 0.9967741935483871,
+        "jev-single": 0.9967741935483871,
+        "llm-judge": 0.95
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "file-before",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.8148148148148148,
+        "bm25": 0.6481481481481481,
+        "jev-compound": 1,
+        "jev-inline-index": 1,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 0.9629629629629629,
+        "llm-judge": 0.9629629629629629
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "file-after",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.8421052631578947,
+        "bm25": 0.6491228070175439,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9956140350877193,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 0.8289473684210527
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "photo-procedure",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.7105263157894737,
+        "bm25": 0.5964912280701754,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9736842105263158,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 0.9649122807017544,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "notice-advert",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.5225225225225225,
+        "bm25": 0.6666666666666666,
+        "jev-compound": 0.9774774774774775,
+        "jev-inline-index": 0.9594594594594594,
+        "jev-inline": 0.990990990990991,
+        "jev-rubric": 0.9684684684684685,
+        "jev-single": 0.7972972972972973,
+        "llm-judge": 0.9954954954954955
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "many-source-day",
+      "kind": "explicit",
+      "groups": 7,
+      "lexical20": 5,
+      "scan20": 7,
+      "auroc": {
+        "random": 0.6401098901098901,
+        "bm25": 0.6291208791208791,
+        "jev-compound": 0.9725274725274725,
+        "jev-inline-index": 0.7005494505494505,
+        "jev-inline": 0.9739010989010989,
+        "jev-rubric": 0.9697802197802198,
+        "jev-single": 0.9464285714285714,
+        "llm-judge": 0.9381868131868132
+      }
+    },
+    {
+      "dataset": "clean",
+      "turn": "quiet-close",
+      "kind": "smalltalk",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": null,
+        "bm25": null,
+        "jev-compound": null,
+        "jev-inline-index": null,
+        "jev-inline": null,
+        "jev-rubric": null,
+        "jev-single": null,
+        "llm-judge": null
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "open",
+      "kind": "smalltalk",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": 0,
+        "bm25": 0,
+        "jev-compound": 1,
+        "jev-inline-index": 1,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "park-mother",
+      "kind": "implicit",
+      "groups": 2,
+      "lexical20": 1,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.329004329004329,
+        "bm25": 0.09090909090909091,
+        "jev-compound": 1,
+        "jev-inline-index": 0.5584415584415584,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "weather",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 0,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.4393939393939394,
+        "bm25": 0.1590909090909091,
+        "jev-compound": 1,
+        "jev-inline-index": 0.696969696969697,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "allergy",
+      "kind": "implicit",
+      "groups": 2,
+      "lexical20": 1,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.5337837837837838,
+        "bm25": 0.722972972972973,
+        "jev-compound": 1,
+        "jev-inline-index": 0.36486486486486486,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "novel",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 0,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.35,
+        "bm25": 0,
+        "jev-compound": 1,
+        "jev-inline-index": 0.7125,
+        "jev-inline": 1,
+        "jev-rubric": 0.975,
+        "jev-single": 1,
+        "llm-judge": 0.95
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "machine",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.5769230769230769,
+        "bm25": 0.5,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9038461538461539,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "movie",
+      "kind": "smalltalk",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": null,
+        "bm25": null,
+        "jev-compound": null,
+        "jev-inline-index": null,
+        "jev-inline": null,
+        "jev-rubric": null,
+        "jev-single": null,
+        "llm-judge": null
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "drinks",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 0,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.10569105691056911,
+        "bm25": 0.012195121951219513,
+        "jev-compound": 0.959349593495935,
+        "jev-inline-index": 0.7926829268292683,
+        "jev-inline": 0.983739837398374,
+        "jev-rubric": 0.9308943089430894,
+        "jev-single": 0.975609756097561,
+        "llm-judge": 0.6666666666666666
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "same-name",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.42735042735042733,
+        "bm25": 0.31196581196581197,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9529914529914529,
+        "jev-inline": 1,
+        "jev-rubric": 0.9914529914529915,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "promise",
+      "kind": "explicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.6052631578947368,
+        "bm25": 0.6666666666666666,
+        "jev-compound": 0.9736842105263158,
+        "jev-inline-index": 0.8026315789473685,
+        "jev-inline": 0.9912280701754386,
+        "jev-rubric": 0.9649122807017544,
+        "jev-single": 0.9736842105263158,
+        "llm-judge": 0.9868421052631579
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "budget",
+      "kind": "implicit",
+      "groups": 1,
+      "lexical20": 1,
+      "scan20": 1,
+      "auroc": {
+        "random": 0.35,
+        "bm25": 0.475,
+        "jev-compound": 1,
+        "jev-inline-index": 0.75625,
+        "jev-inline": 1,
+        "jev-rubric": 0.9625,
+        "jev-single": 0.98125,
+        "llm-judge": 0.75
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "cooling",
+      "kind": "smalltalk",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": null,
+        "bm25": null,
+        "jev-compound": null,
+        "jev-inline-index": null,
+        "jev-inline": null,
+        "jev-rubric": null,
+        "jev-single": null,
+        "llm-judge": null
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "photos",
+      "kind": "explicit",
+      "groups": 2,
+      "lexical20": 2,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.3026315789473684,
+        "bm25": 0.9342105263157895,
+        "jev-compound": 0.9868421052631579,
+        "jev-inline-index": 1,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 1
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "station",
+      "kind": "implicit",
+      "groups": 2,
+      "lexical20": 1,
+      "scan20": 2,
+      "auroc": {
+        "random": 0.7863247863247863,
+        "bm25": 0.3333333333333333,
+        "jev-compound": 1,
+        "jev-inline-index": 0.9914529914529915,
+        "jev-inline": 1,
+        "jev-rubric": 1,
+        "jev-single": 1,
+        "llm-judge": 0.9743589743589743
+      }
+    },
+    {
+      "dataset": "implicit",
+      "turn": "close",
+      "kind": "smalltalk",
+      "groups": 0,
+      "lexical20": 0,
+      "auroc": {
+        "random": null,
+        "bm25": null,
+        "jev-compound": null,
+        "jev-inline-index": null,
+        "jev-inline": null,
+        "jev-rubric": null,
+        "jev-single": null,
+        "llm-judge": null
+      }
+    }
+  ]
+}

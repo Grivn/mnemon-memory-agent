@@ -1,0 +1,24 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Why HaluMem answers were not judged correct} (registered answers to the first 970 questions answered, gpt-4.1-mini judge; 287 of 970 answers). One main cause per answer, assigned by DeepSeek from the question, the reference answer and its key memory points, the View, the answer and the judge's label. For 91\% of these answers the information needed was in the View, fully or in part.}
+\label{tab:halumem-causes}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+cause & answers & points of accuracy \\
+\multicolumn{3}{@{}l}{\textit{Memory side}} \\
+View did not arrive within the 30\,s wait & 0 & 0.0 \\
+needed information not in the View & 2 & 0.2 \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Reading side}} \\
+reference answer given, plus details beyond the key memory points & 214 & 22.1 \\
+reference is ``unknown'', a specific answer given & 31 & 3.2 \\
+required elements missing, although in the View & 14 & 1.4 \\
+an older or conflicting value used & 15 & 1.5 \\
+evidence in the View misread or wrongly inferred & 7 & 0.7 \\
+\midrule
+\multicolumn{3}{@{}l}{\textit{Grading}} \\
+answer equivalent to the reference & 4 & 0.4 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

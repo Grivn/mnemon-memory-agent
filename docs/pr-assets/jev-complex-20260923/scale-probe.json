@@ -1,0 +1,463 @@
+{
+  "kind": "offline-storage-and-route-window-probe",
+  "perSource": 500,
+  "root": "<tmp>/T/jev-complex-scale-PYuWex",
+  "startedAt": "2026-09-22T21:33:33.745Z",
+  "logs": [],
+  "probes": [
+    {
+      "elapsedMs": 148.24950000000536,
+      "projectionCharacters": 4464,
+      "routes": [
+        {
+          "sourceTypeId": "journal",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "J-RECALL",
+            "J-ENTITY",
+            "J-STYLE",
+            "J-COFFEE",
+            "J-FOOD",
+            "J-MOTHER",
+            "NOISE-journal-492"
+          ],
+          "characters": 626,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "tasks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "T-BACKUP",
+            "T-CAMERA",
+            "T-MEET",
+            "T-RETURN",
+            "T-TICKET",
+            "T-BOOK",
+            "NOISE-tasks-492"
+          ],
+          "characters": 876,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "documents",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "D-NOISE",
+            "D-COLD",
+            "D-LONG",
+            "D-TRAIN",
+            "D-FOOD",
+            "D-ACCESS",
+            "NOISE-documents-492"
+          ],
+          "characters": 2897
+        },
+        {
+          "sourceTypeId": "project-context",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "P-NOTE",
+            "P-CHANGE",
+            "P-COUNT",
+            "P-BUDGET",
+            "P-RAIN",
+            "NOISE-project-context-492",
+            "NOISE-project-context-491"
+          ],
+          "characters": 503,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "playbooks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "B-NOISE",
+            "B-PHOTO",
+            "B-READING",
+            "B-ALLERGY",
+            "B-CHECKIN",
+            "NOISE-playbooks-492",
+            "NOISE-playbooks-491"
+          ],
+          "characters": 808,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "canvas",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "OLD-canvas",
+            "NOISE-canvas-0",
+            "NOISE-canvas-1",
+            "NOISE-canvas-2",
+            "NOISE-canvas-3",
+            "NOISE-canvas-4",
+            "NOISE-canvas-5"
+          ],
+          "characters": 608
+        },
+        {
+          "sourceTypeId": "notifications",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "N-NOISE",
+            "N-INJECT",
+            "N-DELIVERY",
+            "N-READY",
+            "N-ROOM",
+            "N-CLOSED",
+            "NOISE-notifications-492"
+          ],
+          "characters": 1556,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "files",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "NOISE-files-440",
+            "NOISE-files-416",
+            "NOISE-files-320",
+            "NOISE-files-187",
+            "NOISE-files-252",
+            "NOISE-files-329",
+            "NOISE-files-449"
+          ],
+          "characters": 490
+        },
+        {
+          "sourceTypeId": "sessions",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "S-NOISE",
+            "S-COFFEE",
+            "S-OTHER",
+            "S-ARRIVE",
+            "S-PROMISE",
+            "S-ALIAS",
+            "NOISE-sessions-492"
+          ],
+          "characters": 294
+        }
+      ]
+    },
+    {
+      "elapsedMs": 111.65758300000016,
+      "projectionCharacters": 4464,
+      "routes": [
+        {
+          "sourceTypeId": "journal",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "J-RECALL",
+            "J-ENTITY",
+            "J-STYLE",
+            "J-COFFEE",
+            "J-FOOD",
+            "J-MOTHER",
+            "NOISE-journal-492"
+          ],
+          "characters": 626,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "tasks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "T-BACKUP",
+            "T-CAMERA",
+            "T-MEET",
+            "T-RETURN",
+            "T-TICKET",
+            "T-BOOK",
+            "NOISE-tasks-492"
+          ],
+          "characters": 876,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "documents",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "D-NOISE",
+            "D-COLD",
+            "D-LONG",
+            "D-TRAIN",
+            "D-FOOD",
+            "D-ACCESS",
+            "NOISE-documents-492"
+          ],
+          "characters": 2897
+        },
+        {
+          "sourceTypeId": "project-context",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "P-NOTE",
+            "P-CHANGE",
+            "P-COUNT",
+            "P-BUDGET",
+            "P-RAIN",
+            "NOISE-project-context-492",
+            "NOISE-project-context-491"
+          ],
+          "characters": 503,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "playbooks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "B-NOISE",
+            "B-PHOTO",
+            "B-READING",
+            "B-ALLERGY",
+            "B-CHECKIN",
+            "NOISE-playbooks-492",
+            "NOISE-playbooks-491"
+          ],
+          "characters": 808,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "canvas",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "OLD-canvas",
+            "NOISE-canvas-0",
+            "NOISE-canvas-1",
+            "NOISE-canvas-2",
+            "NOISE-canvas-3",
+            "NOISE-canvas-4",
+            "NOISE-canvas-5"
+          ],
+          "characters": 608
+        },
+        {
+          "sourceTypeId": "notifications",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "N-NOISE",
+            "N-INJECT",
+            "N-DELIVERY",
+            "N-READY",
+            "N-ROOM",
+            "N-CLOSED",
+            "NOISE-notifications-492"
+          ],
+          "characters": 1556,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "files",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "NOISE-files-390",
+            "NOISE-files-348",
+            "NOISE-files-341",
+            "NOISE-files-399",
+            "NOISE-files-374",
+            "NOISE-files-332",
+            "NOISE-files-389"
+          ],
+          "characters": 490
+        },
+        {
+          "sourceTypeId": "sessions",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "S-NOISE",
+            "S-COFFEE",
+            "S-OTHER",
+            "S-ARRIVE",
+            "S-PROMISE",
+            "S-ALIAS",
+            "NOISE-sessions-492"
+          ],
+          "characters": 294
+        }
+      ]
+    },
+    {
+      "elapsedMs": 109.14541599999939,
+      "projectionCharacters": 4464,
+      "routes": [
+        {
+          "sourceTypeId": "journal",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "J-RECALL",
+            "J-ENTITY",
+            "J-STYLE",
+            "J-COFFEE",
+            "J-FOOD",
+            "J-MOTHER",
+            "NOISE-journal-492"
+          ],
+          "characters": 626,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "tasks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "T-BACKUP",
+            "T-CAMERA",
+            "T-MEET",
+            "T-RETURN",
+            "T-TICKET",
+            "T-BOOK",
+            "NOISE-tasks-492"
+          ],
+          "characters": 876,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "documents",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "D-NOISE",
+            "D-COLD",
+            "D-LONG",
+            "D-TRAIN",
+            "D-FOOD",
+            "D-ACCESS",
+            "NOISE-documents-492"
+          ],
+          "characters": 2897
+        },
+        {
+          "sourceTypeId": "project-context",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "P-NOTE",
+            "P-CHANGE",
+            "P-COUNT",
+            "P-BUDGET",
+            "P-RAIN",
+            "NOISE-project-context-492",
+            "NOISE-project-context-491"
+          ],
+          "characters": 503,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "playbooks",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "B-NOISE",
+            "B-PHOTO",
+            "B-READING",
+            "B-ALLERGY",
+            "B-CHECKIN",
+            "NOISE-playbooks-492",
+            "NOISE-playbooks-491"
+          ],
+          "characters": 808,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "canvas",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "OLD-canvas",
+            "NOISE-canvas-0",
+            "NOISE-canvas-1",
+            "NOISE-canvas-2",
+            "NOISE-canvas-3",
+            "NOISE-canvas-4",
+            "NOISE-canvas-5"
+          ],
+          "characters": 608
+        },
+        {
+          "sourceTypeId": "notifications",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "N-NOISE",
+            "N-INJECT",
+            "N-DELIVERY",
+            "N-READY",
+            "N-ROOM",
+            "N-CLOSED",
+            "NOISE-notifications-492"
+          ],
+          "characters": 1556,
+          "hasContinuation": true
+        },
+        {
+          "sourceTypeId": "files",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "NOISE-files-390",
+            "NOISE-files-348",
+            "NOISE-files-341",
+            "NOISE-files-399",
+            "NOISE-files-374",
+            "NOISE-files-332",
+            "NOISE-files-389"
+          ],
+          "characters": 490
+        },
+        {
+          "sourceTypeId": "sessions",
+          "count": 7,
+          "truncated": true,
+          "keys": [
+            "S-NOISE",
+            "S-COFFEE",
+            "S-OTHER",
+            "S-ARRIVE",
+            "S-PROMISE",
+            "S-ALIAS",
+            "NOISE-sessions-492"
+          ],
+          "characters": 294
+        }
+      ]
+    }
+  ],
+  "seedMs": 43203.387459,
+  "records": 4500,
+  "sourceTypes": [
+    "journal",
+    "tasks",
+    "documents",
+    "project-context",
+    "playbooks",
+    "canvas",
+    "notifications",
+    "files",
+    "sessions"
+  ],
+  "passed": true,
+  "apiCalls": 0,
+  "completedAt": "2026-09-22T21:34:17.633Z"
+}

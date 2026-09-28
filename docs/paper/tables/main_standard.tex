@@ -1,0 +1,34 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Standard setting: gpt-4.1-mini answers and plans.} Accuracy (\%) overall under both judges, and by question type under the gpt-4.1-mini judge. Each row adds one design step (pre-registration codes in parentheses; with gpt-4.1-mini the loop and the unsure fill came in one step); the budgets give \sys{} w/o consolidation (amendment~15), and consolidation gives \sys{} (amendments 30 and 34, exploratory); ``no planner'' rows drop the planner. Best per column in bold.}
+\label{tab:main}
+\setlength{\tabcolsep}{4.2pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l cc cccccc@{}}
+\toprule
+& \multicolumn{2}{c}{Overall, judged by} & \multicolumn{6}{c}{By type (gpt-4.1-mini judge)} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-9}
+\midrule
+\multicolumn{9}{@{}l}{\textit{LoCoMo (1,540 questions)}} \\
+ & gpt-4.1-mini & DeepSeek & single-hop & multi-hop & temporal & open-domain &  &  \\
+Cue recall (S0) & 88.0 & 87.7 & 93.5 & 81.9 & 87.5 & 59.4 &  &  \\
++ hybrid retrieval (S4h) & 89.4 & 89.6 & 94.4 & 84.8 & 88.2 & 62.5 &  &  \\
++ unsure fill (S6) & 90.1 & 89.4 & 93.9 & 88.3 & 88.2 & \best{67.7} &  &  \\
++ unsure fill, no planner & 88.7 & 87.9 & 93.7 & 86.5 & 85.0 & 63.5 &  &  \\
++ budgets = \sys{} w/o consolidation & 89.2 & 88.8 & 94.5 & 85.5 & 85.4 & 65.6 &  &  \\
+w/o consolidation, no planner & 88.4 & 88.0 & 94.3 & 84.8 & 83.5 & 63.5 &  &  \\
++ consolidation = \sys{} & \best{91.7} & \best{91.4} & \best{94.6} & \best{91.8} & \best{91.3} & 66.7 &  &  \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{\lme{} (500 questions)}} \\
+ & gpt-4.1-mini & DeepSeek & SS-user & SS-asst. & SS-pref. & temporal & multi-sess. & know.\ upd. \\
+Cue recall (S0) & 77.2 & 79.0 & 95.7 & 92.9 & 73.3 & 69.2 & 69.2 & 78.2 \\
++ hybrid retrieval (S4h) & 78.2 & 80.2 & \best{98.6} & 96.4 & 53.3 & 70.7 & 67.7 & 87.2 \\
++ unsure fill (S6) & 80.6 & 81.2 & 97.1 & \best{98.2} & 50.0 & 72.9 & 75.9 & 85.9 \\
++ unsure fill, no planner & 79.0 & 80.8 & 94.3 & 94.6 & 66.7 & 72.9 & 73.7 & 78.2 \\
++ budgets = \sys{} w/o consolidation & 79.4 & 80.2 & 95.7 & 96.4 & 70.0 & 72.2 & 71.4 & 82.1 \\
+w/o consolidation, no planner & 73.6 & 75.4 & 91.4 & 94.6 & 56.7 & 64.7 & 66.9 & 75.6 \\
++ consolidation = \sys{} & \best{83.8} & \best{85.4} & 95.7 & 94.6 & \best{76.7} & \best{76.7} & \best{78.2} & \best{89.7} \\
+\bottomrule
+\end{tabular}}
+\end{gentable}

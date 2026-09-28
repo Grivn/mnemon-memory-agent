@@ -1,0 +1,204 @@
+{
+  "encoding": "Brotli quality 4, 16 MiB window",
+  "scope": "Byte-identical decompressed JSONL; only encoding and traceFile paths changed after completion.",
+  "entries": [
+    {
+      "run": "memory-r1-all-candidates",
+      "original": "memory-r1-all-candidates/trace.jsonl.gz",
+      "archived": "memory-r1-all-candidates/trace.jsonl.br",
+      "originalBytes": 45573066,
+      "archivedBytes": 477612,
+      "jsonlBytes": 217979284,
+      "jsonlSha256": "5a43298d281e1c224dad91c7eacac27f8ed5b4764d06bbfe89234424819b6007",
+      "originalGzipSha256": "3290aa3e5e110f427507f0fb4714a57f74289ef035581c17541d6514e904e8b2",
+      "brotliSha256": "09641d29e006bda6ea82c1f1db4f1db9141abc657ab9f5889b1b632c12761ad5"
+    },
+    {
+      "run": "project-r1-all-candidates",
+      "original": "project-r1-all-candidates/trace.jsonl.gz",
+      "archived": "project-r1-all-candidates/trace.jsonl.br",
+      "originalBytes": 39783515,
+      "archivedBytes": 499978,
+      "jsonlBytes": 201262728,
+      "jsonlSha256": "191c7554e1bf37c09e7318d8a4cb1e88b6edf00e7290e0cd4ad8bbb2d78270d2",
+      "originalGzipSha256": "76a2b0cc65a05878c8386c8ba55a2986cee26a40d469265fcf55b23d6b2fadde",
+      "brotliSha256": "4b255180ff2ac786ae40411eaf8fd25b307b6e7660d467571ddb8a55469ed6a0"
+    },
+    {
+      "run": "research-r1-all-candidates",
+      "original": "research-r1-all-candidates/trace.jsonl.gz",
+      "archived": "research-r1-all-candidates/trace.jsonl.br",
+      "originalBytes": 45461635,
+      "archivedBytes": 549396,
+      "jsonlBytes": 208965074,
+      "jsonlSha256": "63ca3875ae0cf83ccf76f5339223811a8a2fd0cbf833ecd8233556a75adb1dae",
+      "originalGzipSha256": "d4df03788a9baca4efcc64ff5e7144ef14a01a6773efc325dcfb3d3467c67da7",
+      "brotliSha256": "5c0dc9a4701e3c22da214e3404a92652e8509fd1afe1120b8faba0ff03364016"
+    },
+    {
+      "run": "project-r1-lexical-maintained",
+      "original": "project-r1-lexical-maintained/trace.jsonl.gz",
+      "archived": "project-r1-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 25909726,
+      "archivedBytes": 569931,
+      "jsonlBytes": 146086046,
+      "jsonlSha256": "dbcbcd6866552ea11c62cae436fe651afb68cf5637116d67609608ba55d08f38",
+      "originalGzipSha256": "897fc0470b7a01b45942eb2cd61e07e4941d1f358ea8ee46be6c57377ce2d51f",
+      "brotliSha256": "c982b3abfd1d6c863cf78363fdb955e0901e87ec2f27984c3106cf9d7458798f"
+    },
+    {
+      "run": "memory-r1-lexical-maintained",
+      "original": "memory-r1-lexical-maintained/trace.jsonl.gz",
+      "archived": "memory-r1-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 41161200,
+      "archivedBytes": 703645,
+      "jsonlBytes": 219203805,
+      "jsonlSha256": "e9d370ce3578cdf686d7747c67e91617f82dd27648b5b27497a2fe952ffcbd12",
+      "originalGzipSha256": "bc8c6caa75433586744505e5536866b51d7ae4721e44c8c67b86b055e60647b0",
+      "brotliSha256": "01a73cebb8d3f80baac88985d4996df53009ad5c6c77ddf592bca384f5c868a5"
+    },
+    {
+      "run": "research-r1-lexical-maintained",
+      "original": "research-r1-lexical-maintained/trace.jsonl.gz",
+      "archived": "research-r1-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 33553682,
+      "archivedBytes": 725902,
+      "jsonlBytes": 173169925,
+      "jsonlSha256": "2aad2345f5461c6f104cc3a6cda474ae7f82d7adc91a3a2dc354c3cc6f37f113",
+      "originalGzipSha256": "3f1d2708ef67246a0163897dad064241be4b6a8e1b30f34425d930bb0cf0268c",
+      "brotliSha256": "bd808831e643bc163ffb8586b8df17012cc6c7f8017002f31bdc684a82e2bf8e"
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "original": "research-r1-jev-maintained/trace.jsonl.gz",
+      "archived": "research-r1-jev-maintained/trace.jsonl.br",
+      "originalBytes": 34310972,
+      "archivedBytes": 873530,
+      "jsonlBytes": 179940242,
+      "jsonlSha256": "bd3167cd3271140a0e823e92ded533c8fa312c534f3f0f415c3b654105334ba3",
+      "originalGzipSha256": "4a2c4c890a774507f62be0bda8031f6eae3f97c3598523deaea8c1d432281750",
+      "brotliSha256": "8c85e2d92354ed5249d893880a487da1d89819b6322e13c9599075b4fa691b1a"
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "original": "project-r1-jev-maintained/trace.jsonl.gz",
+      "archived": "project-r1-jev-maintained/trace.jsonl.br",
+      "originalBytes": 34867688,
+      "archivedBytes": 717802,
+      "jsonlBytes": 183905994,
+      "jsonlSha256": "e9ffc751ba181664dbdec63c8e6c824b0542d729f2a5c472766c3ff3740f633a",
+      "originalGzipSha256": "befb7e0eaac6139b99ac11a701f92ff448433c2b4ce02f8aba0ba49ffa38f1ca",
+      "brotliSha256": "7650fd2ec210945acae363114cb5581159dbca4e90885d104272276962dbcc04"
+    },
+    {
+      "run": "memory-r1-jev-maintained",
+      "original": "memory-r1-jev-maintained/trace.jsonl.gz",
+      "archived": "memory-r1-jev-maintained/trace.jsonl.br",
+      "originalBytes": 31041586,
+      "archivedBytes": 664567,
+      "jsonlBytes": 169757092,
+      "jsonlSha256": "940c8de1b5ac944c3bcf2d2d1c87f3537a2156ef3abec024e27e333880eea647",
+      "originalGzipSha256": "8f7f60b148ab6ec4b3e2a1b98485f9bf5fd1cffb9ae2cd5d15fce70ebd6ad896",
+      "brotliSha256": "638345283d964299d8c4998bd02ce6ed90e726c6537260bc365387e95f16042c"
+    },
+    {
+      "run": "memory-r2-jev-maintained",
+      "original": "memory-r2-jev-maintained/trace.jsonl.gz",
+      "archived": "memory-r2-jev-maintained/trace.jsonl.br",
+      "originalBytes": 29577370,
+      "archivedBytes": 591539,
+      "jsonlBytes": 154961257,
+      "jsonlSha256": "4eb17e458d8e0edcd23f414f30b8afd74d39925a65bc1e409cd8fa6fabfdfd10",
+      "originalGzipSha256": "409cc711e6d8b8bb91d5f97de4349a2076ffefb8d445a8c9524d5be6492fa31f",
+      "brotliSha256": "4bfd0e6a9735f4731ced1c6140474717c307b590edcb28cb48b218a38178625d"
+    },
+    {
+      "run": "memory-r2-lexical-maintained",
+      "original": "memory-r2-lexical-maintained/trace.jsonl.gz",
+      "archived": "memory-r2-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 28051647,
+      "archivedBytes": 556948,
+      "jsonlBytes": 159151765,
+      "jsonlSha256": "11a4dcf825c9d99a9a56c184b271328f2450a3e78cdc61aec7a7cfbae4be6b7b",
+      "originalGzipSha256": "d210ab1cdea134163d0d7375845197c4ba761641ad38b90c4ce1ee6bd3d614c5",
+      "brotliSha256": "e39f2752e6fb96596a6a7cb6b3f1d6dd4eba66b6d9605dbd0b53e5896af56756"
+    },
+    {
+      "run": "memory-r2-all-candidates",
+      "original": "memory-r2-all-candidates/trace.jsonl.gz",
+      "archived": "memory-r2-all-candidates/trace.jsonl.br",
+      "originalBytes": 31328693,
+      "archivedBytes": 387295,
+      "jsonlBytes": 173396903,
+      "jsonlSha256": "36bbedf72cf4a416777cfe57efc6112775e71b93d64d3eb0976df7e5373fdf27",
+      "originalGzipSha256": "55c2adc18e231529ac8c7c15d174116e345313a15f59e8aa56ffc9ea4c4034e1",
+      "brotliSha256": "27162a3358c53fcfe1fa5b3b23ba2f354bb3ebd72e245e4a002d165b56172cfb"
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "original": "project-r2-jev-maintained/trace.jsonl.gz",
+      "archived": "project-r2-jev-maintained/trace.jsonl.br",
+      "originalBytes": 28156283,
+      "archivedBytes": 644539,
+      "jsonlBytes": 166257368,
+      "jsonlSha256": "9fb68fd8beebc23c3d58a1d4dff599202f972c3fd32ebaa40fbe88ecfd67d01e",
+      "originalGzipSha256": "274e121081a1c35b9d636db311479159269b7bbe593bcd4a70397c421200adf1",
+      "brotliSha256": "11fb105ea3886afdd573a0abc001c15e35fad5819b12ed50fc201dc7af66679c"
+    },
+    {
+      "run": "project-r2-lexical-maintained",
+      "original": "project-r2-lexical-maintained/trace.jsonl.gz",
+      "archived": "project-r2-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 38762412,
+      "archivedBytes": 688781,
+      "jsonlBytes": 200145679,
+      "jsonlSha256": "66970fb0ddf73f06c46dcd7663b56e0097c56a33e3699388c100e289178c6223",
+      "originalGzipSha256": "3784b31cfb43d14654f5909ad1f803d878c14fe37079d8c75446086de47c9127",
+      "brotliSha256": "284a1257e37fa2c2a71d4ccb4dbdef6989a90673b03792c07bff17719784243d"
+    },
+    {
+      "run": "project-r2-all-candidates",
+      "original": "project-r2-all-candidates/trace.jsonl.gz",
+      "archived": "project-r2-all-candidates/trace.jsonl.br",
+      "originalBytes": 62527837,
+      "archivedBytes": 766332,
+      "jsonlBytes": 292677584,
+      "jsonlSha256": "d692733e03e2fdeb57c232edde678a0abaf4b74475f7def23473a6f5095c8520",
+      "originalGzipSha256": "dccdcc9ed1641aba1165a34e9c7870a55e21779e5d35c7a2456d75880aad7dee",
+      "brotliSha256": "81dbab3571aa33096d973d103b239d77bb31e6c967bd868308339b8d90e811cb"
+    },
+    {
+      "run": "research-r2-jev-maintained",
+      "original": "research-r2-jev-maintained/trace.jsonl.gz",
+      "archived": "research-r2-jev-maintained/trace.jsonl.br",
+      "originalBytes": 30498540,
+      "archivedBytes": 720087,
+      "jsonlBytes": 158069630,
+      "jsonlSha256": "5b6f83b11f6409bd1276da48ff7c9b534fa1fc412db9cc737d57c0b3369bbd86",
+      "originalGzipSha256": "9e6d6cff40ec20306a94df669af989e1a61d810e9d96136bf6457dfddbf1ee8d",
+      "brotliSha256": "10caae39dd8bebf8df535b6f87c8767e6d0f2d7f0ac620de9a56798e7dc2f64b"
+    },
+    {
+      "run": "research-r2-lexical-maintained",
+      "original": "research-r2-lexical-maintained/trace.jsonl.gz",
+      "archived": "research-r2-lexical-maintained/trace.jsonl.br",
+      "originalBytes": 39381100,
+      "archivedBytes": 789097,
+      "jsonlBytes": 199314692,
+      "jsonlSha256": "0011938084caebe78ca2795e8f7fee642a643113338b230fdfd38f5d21b579ab",
+      "originalGzipSha256": "3e83269e24552e88e715a6b0722f4587dbe69d97a0d14461b8a052958b9c6147",
+      "brotliSha256": "3e3db262abcea1088d7db1704cd9b9570d6a248445c198d27511c17a41ab3fca"
+    },
+    {
+      "run": "research-r2-all-candidates",
+      "original": "research-r2-all-candidates/trace.jsonl.gz",
+      "archived": "research-r2-all-candidates/trace.jsonl.br",
+      "originalBytes": 57351582,
+      "archivedBytes": 707527,
+      "jsonlBytes": 263529875,
+      "jsonlSha256": "45db310017b6368a1fd67ab64d817cf546d16ef0083e97e5edb084265bfbe5f4",
+      "originalGzipSha256": "0a08edb8c6df341a4b9f56f4420d8e20b8045c7d065053fe6842176af0ddb6eb",
+      "brotliSha256": "49e6442a9c8c8e62ad201b69ead091264a5c51a167971a3972000edb7e2d6a15"
+    }
+  ]
+}

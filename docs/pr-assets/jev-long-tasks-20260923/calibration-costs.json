@@ -1,0 +1,72 @@
+{
+  "currency": "USD",
+  "knownUsd": 2.7570930540000007,
+  "rows": [
+    {
+      "name": "pilot",
+      "mainCallsWithUsage": 48,
+      "mainMissingUsage": 0,
+      "mainInput": 975266,
+      "mainCached": 885248,
+      "mainOutput": 12048,
+      "mainUsd": 0.04677448799999999,
+      "jevCallsWithUsage": 34,
+      "jevMissingUsage": 0,
+      "jevInput": 255934,
+      "jevOutput": 23497,
+      "jevUsd": 0.010749227999999998,
+      "knownUsd": 0.05752371599999999,
+      "interrupted": false
+    },
+    {
+      "name": "pilot-v2",
+      "mainCallsWithUsage": 148,
+      "mainMissingUsage": 0,
+      "mainInput": 3324395,
+      "mainCached": 2996096,
+      "mainOutput": 105554,
+      "mainUsd": 0.24313107600000006,
+      "jevCallsWithUsage": 110,
+      "jevMissingUsage": 0,
+      "jevInput": 788342,
+      "jevOutput": 72114,
+      "jevUsd": 0.033110364,
+      "knownUsd": 0.27624144000000006,
+      "interrupted": false
+    },
+    {
+      "name": "pilot-v3",
+      "mainCallsWithUsage": 24,
+      "mainMissingUsage": 0,
+      "mainInput": 463301,
+      "mainCached": 410240,
+      "mainOutput": 16762,
+      "mainUsd": 0.03849414000000001,
+      "jevCallsWithUsage": 30,
+      "jevMissingUsage": 0,
+      "jevInput": 243250,
+      "jevOutput": 22306,
+      "jevUsd": 0.0102165,
+      "knownUsd": 0.04871064000000001,
+      "interrupted": false
+    },
+    {
+      "name": "serial-prefix",
+      "mainCallsWithUsage": 583,
+      "mainMissingUsage": 0,
+      "mainInput": 88737385,
+      "mainCached": 86247296,
+      "mainOutput": 865716,
+      "mainUsd": 2.303369676000001,
+      "jevCallsWithUsage": 233,
+      "jevMissingUsage": 1,
+      "jevInput": 1696371,
+      "jevOutput": 134624,
+      "jevUsd": 0.07124758200000002,
+      "knownUsd": 2.3746172580000007,
+      "interrupted": true,
+      "scope": "Read the interrupted durable main/replica sessions, including completed requests from the final partially archived user turn. In-flight calls without a completed event may still be absent."
+    }
+  ],
+  "scope": "Development and scheduling calibration only; never mix with formal quality/latency comparisons. Public price estimates for reported usage, not invoices. Interrupted calls can have unknown charges. Local fixture tests have no API cost."
+}

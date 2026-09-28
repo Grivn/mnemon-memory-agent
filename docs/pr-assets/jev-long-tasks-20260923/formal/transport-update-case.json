@@ -1,0 +1,556 @@
+{
+  "method": "Read archived input 26 and 27 requests; presence is exact text matching, not proof of comprehension. The update lives in Files, not Notifications. Both maintained modes expose it; bounded all-candidates does not.",
+  "runs": [
+    {
+      "run": "memory-r1-all-candidates",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": false,
+          "transportUpdateSeenInAnyRecordedRequest": false,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "7132eecb912535f312c356e75b9ce6443314f3b05f2f251691b92e5388b4d77b",
+              "revision": "content-sha256:d1ab0e583429af3a49b96dec3857f40b8fd761ce9712fb949e96f4a29303472c",
+              "text": "outputs/equipment-checklist.md",
+              "digest": "07e9cc5c8920074ef0fa07b917c47c1e0e68f0c949ee9f388875380a87786a06"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "4589415112d671d0205d2bd9b23fd3584423fe2428fb3470201fbe29fb0f0864",
+              "revision": "content-sha256:caeed1b02246c1706cbae383d391bffc50ae199954f04ee5601b6c271668da14",
+              "text": "outputs/contacts-roles.md",
+              "digest": "9d91b954286f71e67cce8224395e480bd3cb6e0a77d27ba724931393027ca364"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "da8932188de3c3b51f62c36a38abfaf140036afaa3e2b3ab787a75c560c05f55",
+              "revision": "content-sha256:590ed6b2b45489c0500eb6633f1a5bc1cd8b98c88f9efa721e8357d2dc035107",
+              "text": "outputs/materials-checklist.md",
+              "digest": "4d07794c5f51a1c9502390451ae0120d81f6ea41b9e237f67eb4d277ea13d776"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "a66f39f88d06f9d4e141b1d930982218d9ad056f3508764c2b100162d0aa1f8f",
+              "revision": "content-sha256:3131d56aa0f470cc0b6ba726a53715c6d22fbcf89a994403798394e86a940891",
+              "text": "outputs/rain-plan.md",
+              "digest": "ba13535e23c0f8800c8810f94875f2b724dbe12dfca319436d46fbbbc55fbf20"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "b2562184d4251748ecd19f51c178c8549b5c5d349b9a8ff30c1585a00f4b1d40",
+              "revision": "content-sha256:188ff49c9f94ed60ffdcdf5b59934861ffb3d38d2c33083ba92342a6a2005760",
+              "text": "outputs/plan.md",
+              "digest": "e637cf548efa0f9c6d20a0eae5153c11617a08aea4698f20588038ba284e0ec6"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "e4114868f7573c53504b47d43d7fae12c6e21636b62c926ad8d173a0adfbce7c",
+              "revision": "content-sha256:80d0f25674bcc9af7c2b66c3453fb29a6824c197552dcfc4e6a5ea17c450a6b0",
+              "text": "outputs/day-schedule.md",
+              "digest": "37a0cc1db42963ce2c24d01473bdb5a44f8b75a8813e6c3c79db7b9f78a89912"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "0de2d5f497d0726b14c687a76e40bd3b1493806893c1718ce91772a149d9ca7f",
+              "revision": "content-sha256:2aafa4230bdba626f301f8796cf75257e0d0899865540883f9941d1abf1b72cf",
+              "text": "outputs/notice-draft.md",
+              "digest": "6032cabf961ac79f4659fbe158d4b1bef5e6a07f6f345e67f6edd6980d9b8168"
+            }
+          ],
+          "memoryLookups": [
+            {
+              "query": "交通公告",
+              "source": "notifications"
+            },
+            {
+              "query": "白鹭读书日交通",
+              "source": "notifications"
+            },
+            {
+              "source": "notifications",
+              "all": true,
+              "recent": true
+            },
+            {
+              "cursor": "eyJ2ZXJzaW9uIjoxLCJpZGVudGl0eSI6ImY3NzBjYWNmZGRlYWM3MjI4NGU5ZWRhMDE2M2Q3MjFhOWE0ZmZlZGNjNzZiYzhmNmY4YTU2OWIwN2M4NjViNWMiLCJvZmZzZXQiOjEwfQ",
+              "source": "notifications"
+            },
+            {
+              "query": "白鹭读书日交通草图",
+              "source": "canvas"
+            }
+          ],
+          "answerExcerpt": "**没有找到新的交通公告。** 我不改文件，先跟你确认。\n\n## 我查了什么\n\n| 来源 | 查询 | 结果 |\n|---|---|---|\n| notifications | \"交通公告\" | **空** |\n| notifications | \"白鹭读书日交通\" | **空** |\n| notifications | 全量列表（含翻页） | **仅 3 条白鹭相关**：场地更新 `fcd3ef5f`、印刷确认 `2d835f73`（旧）、送达回执 `0e3f0042`。**无交通条** |\n| canvas | 交通草图 | 仍是 `f735fbe7` **rev1**（原始版） |\n\n## 当前到达方案（仍是既有依据，未变）\n\n来源：canvas `f735fbe7`（rev1）——「松风馆北门有无台阶入口，南门要爬楼。公交28路到北门。」\n\n- 公交 **28 路 → 松风馆北门**\n- **走北门**（无台阶）；**南门要爬楼，勿走**\n- 带长辈/行动不便者一律北门，家人陪同\n- 北门同时是现场接待点（14:15–14:30 有人迎）\n\n## 可能的原因\n\n1. **更新还没落到我能读的来源**（比如只发在群里/口头，没进 notifications 或 canvas）；\n2. 更新在 **canvas 交通草图的 rev2**，但我这边读到的是 rev1——若如此，需要它被登记我才读得到；\n3. 你指的是**别的渠道**（短信/公告栏），那我看不到内容。\n\n## 请你给我一句\n\n**把更新内容贴给我即可**（比如\"28 路改走东门 / 北门封闭施工，改走南门电梯 / 新增停车点\"）。我拿到就会：\n\n- 重核 `plan.md` 第十二节、`day-schedule.md` 北门迎人、`notice-draft.md` 入口段落、`open-items.md` 交通项，**四处一起改**；\n- 检查是否与\"南门勿走\"\"北门无台阶\"冲突并标出矛盾。\n\n在拿到实际内容前，**我不会凭猜测改到达方案**，也不会把旧信息当成新公告。"
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": false,
+          "transportUpdateSeenInAnyRecordedRequest": false,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "7132eecb912535f312c356e75b9ce6443314f3b05f2f251691b92e5388b4d77b",
+              "revision": "content-sha256:d1ab0e583429af3a49b96dec3857f40b8fd761ce9712fb949e96f4a29303472c",
+              "text": "outputs/equipment-checklist.md",
+              "digest": "07e9cc5c8920074ef0fa07b917c47c1e0e68f0c949ee9f388875380a87786a06"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "4589415112d671d0205d2bd9b23fd3584423fe2428fb3470201fbe29fb0f0864",
+              "revision": "content-sha256:caeed1b02246c1706cbae383d391bffc50ae199954f04ee5601b6c271668da14",
+              "text": "outputs/contacts-roles.md",
+              "digest": "9d91b954286f71e67cce8224395e480bd3cb6e0a77d27ba724931393027ca364"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "da8932188de3c3b51f62c36a38abfaf140036afaa3e2b3ab787a75c560c05f55",
+              "revision": "content-sha256:590ed6b2b45489c0500eb6633f1a5bc1cd8b98c88f9efa721e8357d2dc035107",
+              "text": "outputs/materials-checklist.md",
+              "digest": "4d07794c5f51a1c9502390451ae0120d81f6ea41b9e237f67eb4d277ea13d776"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "a66f39f88d06f9d4e141b1d930982218d9ad056f3508764c2b100162d0aa1f8f",
+              "revision": "content-sha256:3131d56aa0f470cc0b6ba726a53715c6d22fbcf89a994403798394e86a940891",
+              "text": "outputs/rain-plan.md",
+              "digest": "ba13535e23c0f8800c8810f94875f2b724dbe12dfca319436d46fbbbc55fbf20"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "b2562184d4251748ecd19f51c178c8549b5c5d349b9a8ff30c1585a00f4b1d40",
+              "revision": "content-sha256:188ff49c9f94ed60ffdcdf5b59934861ffb3d38d2c33083ba92342a6a2005760",
+              "text": "outputs/plan.md",
+              "digest": "e637cf548efa0f9c6d20a0eae5153c11617a08aea4698f20588038ba284e0ec6"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "e4114868f7573c53504b47d43d7fae12c6e21636b62c926ad8d173a0adfbce7c",
+              "revision": "content-sha256:80d0f25674bcc9af7c2b66c3453fb29a6824c197552dcfc4e6a5ea17c450a6b0",
+              "text": "outputs/day-schedule.md",
+              "digest": "37a0cc1db42963ce2c24d01473bdb5a44f8b75a8813e6c3c79db7b9f78a89912"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "0de2d5f497d0726b14c687a76e40bd3b1493806893c1718ce91772a149d9ca7f",
+              "revision": "content-sha256:2aafa4230bdba626f301f8796cf75257e0d0899865540883f9941d1abf1b72cf",
+              "text": "outputs/notice-draft.md",
+              "digest": "6032cabf961ac79f4659fbe158d4b1bef5e6a07f6f345e67f6edd6980d9b8168"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": "检查完毕。**结论：方向不冲突，但有 4 处实际矛盾/空洞需修。**\n\n## ✅ 不冲突的核心\n\n雨天**只换厅**，入口**仍走北门** —— 两处一致（`rain-plan.md` 第 3.1、4F、7 节；`day-schedule.md` 第四节）。这是最关键的一点，没问题。\n\n## ❌ 发现的 4 处问题\n\n| # | 问题 | 位置 | 性质 |\n|---|---|---|---|\n| 1 | **\"室内阅览室\"入口未知** | `rain-plan.md` 全文只说走北门，但**未说阅览室从哪个门进、是否同楼** | **空洞**——若阅览室在北门外的另一处，雨天还让人走北门就错了 |\n| 2 | **讲义份数仍写 12 份** | `rain-plan.md` 第 7 节「讲义 \\| 12 份（份数待按 18 人确认）」 | **旧数据**——已改为 18 份并送达签收 |\n| 3 | **北门迎人时间两个版本** | `contacts-roles.md` 写 **14:15–14:45**；`day-schedule.md` 写 **14:15–14:30**，14:45 才是回厅检查 | **自相矛盾** |\n| 4 | **雨天北门迎人 15 分钟可能不够** | `day-schedule.md` 只留 14:15–14:30 | **风险**——雨天人到得更分散、更慢，需更长窗口 |\n\n## ⚠️ 一处待定（不是矛盾，是缺口）\n\n`rain-plan.md` 第 1 节写「**到场后 14:00 前**」判断，但当天工作人员 13:30 到场、参加者 14:15 才来。这个 **14:00 与时间表对不齐**，应改为 **13:30–14:00**。\n\n---\n\n## 建议的修法（请确认后我改）\n\n1. **问题 1**：加一句\"阅览室入口待核实（R3）；**未确认前不写进通知**，现场引导\"——已有 R3，但需明确\"入口另计\"。\n2. **问题 2**：`rain-plan.md` 第 7 节讲义改为 **18 份，已送达签收**。\n3. **问题 3**：统一为 **14:15–14:30 迎人，14:45 回厅检查**（与时间表一致），`contacts-roles.md` 一并改。\n4. **问题 4**：雨天把迎人窗口延到 **14:15–14:45**，并在 `rain-plan.md` 注明\"雨天迎人窗口延长\"。\n5. **14:00 → 13:30–14:00** 对齐。\n\n**要我现在按这 5 条改吗？** 其中问题 1（阅览室入口）我**不会猜测**——只写\"待核实、现场引导\"，等你或场地给信息再填。"
+        }
+      ]
+    },
+    {
+      "run": "memory-r1-jev-maintained",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r1-jev-maintained/workspace/reference-data/10025-f4bebce6.md:1",
+              "revision": "content-sha256:c149e7ca41c7c0319e3c727fcb87af9f8dc33c7cd8891251e414cd0ba58b4f2d",
+              "text": "1: # 白鹭读书日交通公告\n2: \n3: 活动当天公交28路停运，改乘公交36路到松风馆北门。\n4: ",
+              "digest": "e30a9536fb54835a8c21331e4928caea9827b82bd733b2acacef5d7b49c0e280"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r1-jev-maintained/workspace/outputs/plan.md:1",
+              "revision": "content-sha256:d27c2bbaaf12f98aaa38e6c14d4a73468d94c70a20e490c80a212f261c06c167",
+              "text": "1: # 白鹭读书日方案\n2: \n3: > 工作方式：不改动、不增加临时协调。一次写完、可自行阅读。\n4: >\n5: > **场地**：松风馆 **北厅 N-306**，**14:30 开始**；原南厅、14:00 取消。\n6: >\n7: > **人数与预算**：**18 人**，预算**上限 1560 元**（内部留应急余量，总上限不变）。\n8: >\n9: > **时间表已拆为两段**：上午准备（工作人员）｜下午参加（全体）。\n10: >\n11: > **交接截止已更新：周五 16:30**（林澈）；**原 17:00 取消**。\n12: >\n13: > **讲义：已送达** —— 18 份已送到 N-306、林澈签收（见第二节）。\n14: >\n15: > **通知状态：草稿已写好，尚未发送**（见第九节）。\n16: >\n17: > **雨天**：不改线上、不改期、不改场地，一切照常，只加“湿滑路线的取代动作”。见第十四节。\n18: \n19: ## 一、已定事项\n20: \n21: | 项 | 内容 | 来源 |\n22: | --- | --- | --- |\n23: | 日期 | 2026-10-17 | 场地合同（初定） |\n24: | 场地 | 松风馆 **北厅 N-306**（原南厅已取消） | 场地更新 |\n25: | 时间 | **14:30 开始**（原 14:00 取消） | 场地更新 |\n26: | 人数 | **18 人** | 人数预算确认 |\n27: | 预算 | **上限 1560 元**（含内部预留余量） | 人数预算确认 + 人类指示 |\n28: | 口味 | **清淡为主** | 人类指示 |\n29: | 饮食 | **统一素食（全素）**（不可破） | 饮食决定 |\n30: | 过敏 | **顾遥对芝麻过敏；素食≠无芝麻**（不可破） | 饮食决定 |\n31: | 交通 | 公交28路到北门；北门无台阶，南门要爬楼 | 交通草图 |\n32: | 负责人 | **林澈**（本次未变；亦为讲义签收人） | 交接更新 + 送达回执 |\n33: | **交接截止** | **周五 16:30**（原 17:00 已取消） | **交接更新（最新）** |\n34: | **讲义** | ✅ **18 份已送达 N-306，林澈签收** | **送达回执（最新）** |\n35: | 隐私 | 公开名单不放电话号码 | 沟通习惯 |\n36: | 设备 | 投影需USB-C转接头；备用HDMI线在灰色工具箱 | 设备清单 |\n37: | 主持顺序 | 短分享 → 自由讨论 → 交换书单 | 人类决定 |\n38: | 雨天 | **主场照旧**（N-306、14:30），不启用备选，只加湿滑对策 | 雨天决定 |\n39: \n40: ## 二、讲义送达（本轮最新）\n41: \n42: 变更原文：**“18份讲义已送到松风馆北厅N-306，林澈签收，不再是待送达。”**\n43: \n44: | 项 | 结果 |\n45: | --- | --- |\n46: | 数量 | **18 份**（= 18 人満量） |\n47: | 地点 | **松风馆北厅 N-306**（直送现场，与变更后地址一致） |\n48: | 签收 | **林澈** |\n49: | 状态 | **已完成，从待办中划掉** |\n50: \n51: ### 因回执而关掉的缺口\n52: \n53: 1. ~~补印 6 份的截止~~ —— 已全量到位，不再追。\n54: 2. ~~“16:30 交接时可能只有 12 份”~~ —— **风险不再成立**：18 份已直接到 N-306，没有“等补印”这一环。\n55: 3. ~~讲义能否补到 18 份~~ —— **已达成**，从通知发送前必核项中划掉。\n56: \n57: ### 回执**没有**说、因此仍未完成的\n58: \n59: - **补印 6 份的费用**：回执未提金额，仍标未知。\n60: - **送达日期与钟点**：未给，无法确认是否即周五 16:00 那个节点。\n61: - **18 份是否无缺页**：未提；上午 A1 翻一遍即可。\n62: \n63: > 验收而不重派：**回执已到即算完成**，不回单、不重派、不再对接。\n64: \n65: ### 交接截止调整（仍有效）\n66: \n67: 变更原文：**“当前截止为周五16:30，负责人仍是林澈。旧17:00取消。”**\n68: \n69: | 项 | 旧（已取消） | 新（生效） |\n70: | --- | --- | --- |\n71: | 讲义定稿交接 | ~~周五 17:00 前~~ | **周五 16:30** |\n72: | 负责人 | 林澈 | **林澈（未变）** |\n73: \n74: 1. **旧说法全作废**：任何写“17:00 前”的文档、通知、口头安排都不能再用。\n75: 2. **物料已到现场**：先前的“收货 16:00 → 交接 16:30 只剩 30 分钟”压力**已解除**。\n76: 3. **只动了时间，没动人**：林澈仍是负责人，不用再确认人选。\n77: \n78: ## 三、当日时间表（两段分开）\n79: \n80: > **重要**：A2–A6、B1–B4 的**具体钟点均无来源**，只写相对顺序，待填。\n81: \n82: ### A. 上午・准备（工作人员；参加者不用到）\n83: \n84: | 序 | 事项 | 具体时间 | 负责人 | 前置依赖 |\n85: | --- | --- | --- | --- | --- |\n86: | A1 | **清点已到的 18 份讲义**，确认无缺页（不再是“等收货”） | 未定 | 未指定 | 材料已在 N-306 |\n87: | A2 | **一次取齐设备线材**：投影 USB-C 转接头、备用 HDMI 线（灰色工具箱）及设备清单其余项 | 未定 | 未指定 | 设备清单 |\n88: | A3 | 确认 N-306 可入、桌椅可按 18 人摆 | 未定 | 未指定 | 场地开放 |\n89: | A4 | 桌牌/含芝麻标牌摆放、签到台就位 | 未定 | 未指定 | 签到用品 |\n90: | A5 | 茶点/饮水到位（清淡全素、无芝麻） | 未定 | 未指定 | 供餐方 |\n91: | A6 | 设备试投（三条全过）+ 备用线在手边 | 未定 | 未指定 | 设备 |\n92: | A7 | 北门口就位，准备接应 | 未定 | 现场人顺手 | 无 |\n93: | **A8（雨天）** | 雨具三件套到位（大号直柄伞 2、干抹布 2、吸水地垫 1）+“小心地滑”告示 | 未定 | 未指定 | 物料自备/就近采买 |\n94: \n95: > 目标：**上午把所有东西落到 N-306**，下午不再跑腿。\n96: > A8 只在雨天做；物料走预留余量，不超 1560 元总上限。\n97: \n98: ### B. 下午・参加（全体，14:30 起）\n99: \n100: | 序 | 时间 | 环节 | 内容 | 负责人 |",
+              "digest": "2d5a1c5b7d572663672e70b458228572acde85c8f4be848d2a7d86884551239b"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": "Now updating plan.md and checklist.md for the transit change."
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r1-jev-maintained/workspace/outputs/transit.md:1",
+              "revision": "content-sha256:3ed7912ebf4dcbde5f10e6c5f69fd6f2a927181749834ba93de2d4d4cda9b9d9",
+              "text": "1: # 白鹭读书日 — 到达方案（含交通公告更新）\n2: \n3: > 来源：reference-data「白鹭读书日交通公告」——**活动当天公交 28 路停运，改乘公交 36 路到松风馆北门。**\n4: > 本份只管“怎么到”。场地（N-306）与时间（14:30）**不变**。\n5: \n6: ## 一、一句话口径（直接用于通知）\n7: \n8: **活动当天 28 路停运，请改乘公交 36 路到北门。**\n9: \n10: ## 二、变更对照\n11: \n12: | 项 | 旧（作废） | 新（生效） |\n13: | --- | --- | --- |\n14: | 公交线路 | ~~28 路~~（**当天停运**） | **36 路** |\n15: | 下车点 | **北门（不变）** | **北门（不变）** |\n16: | 入口 | 北门无台阶（不变） | 北门无台阶（不变） |\n17: | 不走的门 | 南门要爬楼（不变） | 南门要爬楼（不变） |\n18: \n19: > **只换了线路，没换门**：集合点、入口、接应点仍是北门。\n20: \n21: ## 三、到达动线（照这个走）\n22: \n23: 1. **出门前**：确认当日 28 路停运，直接查/等 **36 路**。\n24: 2. **乘车**：乘 36 路到**松风馆北门**下车。\n25: 3. **到站**：在北门集合，**不进馆、不自找**；北门口有人接应（对应 A7）。\n26: 4. **进馆**：走北门无台阶入口；上车后到【待填：N-306 楼层/路线】。\n27: 5. **散场**：同样乘 36 路回；散场时提醒一句班次。\n28: \n29: ## 四、分类注意\n30: \n31: | 人群 | 要点 |\n32: | --- | --- |\n33: | 带长辈 / 行动不便 / 推婴儿车 | 仍走北门（无台阶）；**建议提前出门**，36 路班次可能不如 28 路密 |\n34: | 开车送人 | 停北门一侧，下车即到无台阶入口（停车位未知） |\n35: | 自己坐公交 | 认准 **36 路**；不要按旧习惯等 28 路 |\n36: \n37: ## 五、必须同步的地方（一处不改就有人走错）\n38: \n39: | # | 位置 | 改什么 |\n40: | --- | --- | --- |\n41: | 1 | **对外通知（尚未发送）** | “28路直达” →“28路当天停运，请乘36路到北门” |\n42: | 2 | 通知短版（短信/群） | 同上，一句话写清 |\n43: | 3 | 现场人员口径 | 口头不得再说“坐 28 路”，一律说 36 路 |\n44: | 4 | 接应人（A7） | 知道当天 28 路停运，遇人问路引导至 36 路下车点 |\n45: \n46: > 通知**仍未发送**，所以这是“发之前改”，而不是“发出后再更正”——成本最低的时机。\n47: \n48: ## 六、与雨天/预算的关系\n49: \n50: - **雨天不变**：当天 28 路本就停运，雨晴都乘 36 路；雨天只加防滑动作（见 plan.md 第十四节）。\n51: - **预算不变**：换线路**不产生额外预算**（公交票自理，不计入 1560 元）。\n52: \n53: ## 七、仍未知（不编造）\n54: \n55: - **36 路的班次间隔、首班/末班时间**——未知；**发通知前建议确认能否覆盖散场时间**。\n56: - 36 路站台到北门的**具体步行时长与路线**——未核实。\n57: - 下车后到北门**是否仍为无台阶**——公告未提，按此前提但未证实。\n58: - 北门具体位置、停车与网约车上落点——仍未知。\n59: \n60: ## 八、作废判据\n61: \n62: > 凡写“**乘 28 路**”“**28 路直达**”的文档、通知、口头安排**一律作废**；\n63: > 以本份与 plan.md 的“到达方案”为准。\n64: ",
+              "digest": "96c61cad88551f5a1dd5e0edcf287ed405e9817868585784b1ae2544f5317924"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r1-jev-maintained/workspace/outputs/plan.md:1",
+              "revision": "content-sha256:d27c2bbaaf12f98aaa38e6c14d4a73468d94c70a20e490c80a212f261c06c167",
+              "text": "1: # 白鹭读书日方案\n2: \n3: > 工作方式：不改动、不增加临时协调。一次写完、可自行阅读。\n4: >\n5: > **场地**：松风馆 **北厅 N-306**，**14:30 开始**；原南厅、14:00 取消。\n6: >\n7: > **人数与预算**：**18 人**，预算**上限 1560 元**（内部留应急余量，总上限不变）。\n8: >\n9: > **时间表已拆为两段**：上午准备（工作人员）｜下午参加（全体）。\n10: >\n11: > **交接截止已更新：周五 16:30**（林澈）；**原 17:00 取消**。\n12: >\n13: > **讲义：已送达** —— 18 份已送到 N-306、林澈签收（见第二节）。\n14: >\n15: > **通知状态：草稿已写好，尚未发送**（见第九节）。\n16: >\n17: > **雨天**：不改线上、不改期、不改场地，一切照常，只加“湿滑路线的取代动作”。见第十四节。\n18: \n19: ## 一、已定事项\n20: \n21: | 项 | 内容 | 来源 |\n22: | --- | --- | --- |\n23: | 日期 | 2026-10-17 | 场地合同（初定） |\n24: | 场地 | 松风馆 **北厅 N-306**（原南厅已取消） | 场地更新 |\n25: | 时间 | **14:30 开始**（原 14:00 取消） | 场地更新 |\n26: | 人数 | **18 人** | 人数预算确认 |\n27: | 预算 | **上限 1560 元**（含内部预留余量） | 人数预算确认 + 人类指示 |\n28: | 口味 | **清淡为主** | 人类指示 |\n29: | 饮食 | **统一素食（全素）**（不可破） | 饮食决定 |\n30: | 过敏 | **顾遥对芝麻过敏；素食≠无芝麻**（不可破） | 饮食决定 |\n31: | 交通 | 公交28路到北门；北门无台阶，南门要爬楼 | 交通草图 |\n32: | 负责人 | **林澈**（本次未变；亦为讲义签收人） | 交接更新 + 送达回执 |\n33: | **交接截止** | **周五 16:30**（原 17:00 已取消） | **交接更新（最新）** |\n34: | **讲义** | ✅ **18 份已送达 N-306，林澈签收** | **送达回执（最新）** |\n35: | 隐私 | 公开名单不放电话号码 | 沟通习惯 |\n36: | 设备 | 投影需USB-C转接头；备用HDMI线在灰色工具箱 | 设备清单 |\n37: | 主持顺序 | 短分享 → 自由讨论 → 交换书单 | 人类决定 |\n38: | 雨天 | **主场照旧**（N-306、14:30），不启用备选，只加湿滑对策 | 雨天决定 |\n39: \n40: ## 二、讲义送达（本轮最新）\n41: \n42: 变更原文：**“18份讲义已送到松风馆北厅N-306，林澈签收，不再是待送达。”**\n43: \n44: | 项 | 结果 |\n45: | --- | --- |\n46: | 数量 | **18 份**（= 18 人満量） |\n47: | 地点 | **松风馆北厅 N-306**（直送现场，与变更后地址一致） |\n48: | 签收 | **林澈** |\n49: | 状态 | **已完成，从待办中划掉** |\n50: \n51: ### 因回执而关掉的缺口\n52: \n53: 1. ~~补印 6 份的截止~~ —— 已全量到位，不再追。\n54: 2. ~~“16:30 交接时可能只有 12 份”~~ —— **风险不再成立**：18 份已直接到 N-306，没有“等补印”这一环。\n55: 3. ~~讲义能否补到 18 份~~ —— **已达成**，从通知发送前必核项中划掉。\n56: \n57: ### 回执**没有**说、因此仍未完成的\n58: \n59: - **补印 6 份的费用**：回执未提金额，仍标未知。\n60: - **送达日期与钟点**：未给，无法确认是否即周五 16:00 那个节点。\n61: - **18 份是否无缺页**：未提；上午 A1 翻一遍即可。\n62: \n63: > 验收而不重派：**回执已到即算完成**，不回单、不重派、不再对接。\n64: \n65: ### 交接截止调整（仍有效）\n66: \n67: 变更原文：**“当前截止为周五16:30，负责人仍是林澈。旧17:00取消。”**\n68: \n69: | 项 | 旧（已取消） | 新（生效） |\n70: | --- | --- | --- |\n71: | 讲义定稿交接 | ~~周五 17:00 前~~ | **周五 16:30** |\n72: | 负责人 | 林澈 | **林澈（未变）** |\n73: \n74: 1. **旧说法全作废**：任何写“17:00 前”的文档、通知、口头安排都不能再用。\n75: 2. **物料已到现场**：先前的“收货 16:00 → 交接 16:30 只剩 30 分钟”压力**已解除**。\n76: 3. **只动了时间，没动人**：林澈仍是负责人，不用再确认人选。\n77: \n78: ## 三、当日时间表（两段分开）\n79: \n80: > **重要**：A2–A6、B1–B4 的**具体钟点均无来源**，只写相对顺序，待填。\n81: \n82: ### A. 上午・准备（工作人员；参加者不用到）\n83: \n84: | 序 | 事项 | 具体时间 | 负责人 | 前置依赖 |\n85: | --- | --- | --- | --- | --- |\n86: | A1 | **清点已到的 18 份讲义**，确认无缺页（不再是“等收货”） | 未定 | 未指定 | 材料已在 N-306 |\n87: | A2 | **一次取齐设备线材**：投影 USB-C 转接头、备用 HDMI 线（灰色工具箱）及设备清单其余项 | 未定 | 未指定 | 设备清单 |\n88: | A3 | 确认 N-306 可入、桌椅可按 18 人摆 | 未定 | 未指定 | 场地开放 |\n89: | A4 | 桌牌/含芝麻标牌摆放、签到台就位 | 未定 | 未指定 | 签到用品 |\n90: | A5 | 茶点/饮水到位（清淡全素、无芝麻） | 未定 | 未指定 | 供餐方 |\n91: | A6 | 设备试投（三条全过）+ 备用线在手边 | 未定 | 未指定 | 设备 |\n92: | A7 | 北门口就位，准备接应 | 未定 | 现场人顺手 | 无 |\n93: | **A8（雨天）** | 雨具三件套到位（大号直柄伞 2、干抹布 2、吸水地垫 1）+“小心地滑”告示 | 未定 | 未指定 | 物料自备/就近采买 |\n94: \n95: > 目标：**上午把所有东西落到 N-306**，下午不再跑腿。\n96: > A8 只在雨天做；物料走预留余量，不超 1560 元总上限。\n97: \n98: ### B. 下午・参加（全体，14:30 起）\n99: \n100: | 序 | 时间 | 环节 | 内容 | 负责人 |",
+              "digest": "2d5a1c5b7d572663672e70b458228572acde85c8f4be848d2a7d86884551239b"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": "Now updating plan.md — adding the transit/rain/entrance consistency check section."
+        }
+      ]
+    },
+    {
+      "run": "memory-r1-lexical-maintained",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r1-lexical-maintained/workspace/reference-data/10025-f4bebce6.md:1",
+              "revision": "content-sha256:c149e7ca41c7c0319e3c727fcb87af9f8dc33c7cd8891251e414cd0ba58b4f2d",
+              "text": "1: # 白鹭读书日交通公告\n2: \n3: 活动当天公交28路停运，改乘公交36路到松风馆北门。\n4: ",
+              "digest": "2b97805e6e6a065d94897ba9dae9bea25d523fe35f3ab8685b7884729acfe3ef"
+            }
+          ],
+          "memoryLookups": [
+            {
+              "source": "files",
+              "path": "reference-data/10025-f4bebce6.md"
+            },
+            {
+              "all": true,
+              "query": "交通",
+              "source": "notifications"
+            },
+            {
+              "all": true,
+              "query": "交通",
+              "source": "documents"
+            }
+          ],
+          "answerExcerpt": "交通公告已核对，到达方案已全处更新（v24），校验通过。\n\n**新依据**（`reference-data/10025` 原文）：\n> 活动当天公交28路停运，改乘公交36路到松风馆北门。\n\n**核对结论**\n\n| 项 | 旧（已废） | 现行 |\n|---|---|---|\n| 线路 | **28 路** | **36 路** |\n| 下车站 | 松风馆北门 | **北门（未变）** |\n| 入口 | 走北门（无台阶） | **未变** |\n| 南门 | 不走 | **未变** |\n\n- **28 路不可再用**；下车点没变，所以「走北门、不走南门」**仍成立**。\n- 北门→N-306 是否全程无台阶，**仍待核实**（公告只讲到北门）。\n- **雨天不受影响**：改的是馆内房间，乘车仍按 36 路。\n- ⚠ **主要风险（推断）**：有人按旧习惯等 28 路 → 北门引导人须主动告知改线。\n\n**新增文件**\n- `outputs/arrival-plan.md` — 到达方案\n- `outputs/transport.md` — 交通专件\n\n**全处替换 28→36**：plan.md、plan.json、checklist.md、contacts.md（引导人加改线提醒职责）、schedule.md、notice-draft.md（正文改写 + 对照表加线路行 + 检查表「全文无 28 路」）、day-timeline.md。\n\n**待你定**：通知要不要写「28 路停运」（**建议写**，否则有人白等）。\n**待核实**：36 路发车频次与末班车、下车步行时间与标识、是否有备选线路。\n\n未发通知、未联系公交或场地、未改任务状态。"
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [],
+          "memoryLookups": [],
+          "answerExcerpt": "已逐条比对雨天预案与到达方案（v25）。\n\n## 结论：实质不冲突，但原文有两处会误导 —— 已修\n\n**不冲突的部分**（雨天本来就不动交通）\n\n| 项 | 雨天是否变 |\n|---|---|\n| 日期 / 14:30 开始 | **不变** |\n| 公交（36 路） | **不变** |\n| 下车站（北门） | **不变** |\n| 北门入口 / 不走南门 | **不变** |\n| **馆内房间** | **N-306 → 阅览室** |\n| 活动形式 | **不变**（不改户外徒步） |\n\n雨天改的只是**馆内房间**，不是交通与入口 —— 所以没有实质冲突，风险在**读法**。\n\n## 发现的两处真问题（已修）\n\n1. **`rain-plan.md` 写「12 份讲义」** —— 早被回执覆盖为 18 份。已改为 **18 份（已签收）**。\n2. **`rain-plan.md` 从未写明「乘车与入口不变」** —— 只写「改去阅览室」，读者很容易推成「换场地＝换入口」，从而与 `arrival-plan.md` 冲突；而「北门→N-306 是否全程无台阶」本就待核实。\n   → 已在开头加 **「〇、先说清：雨天到底改什么、不改什么」**对照表，并在第 2、5 步、话术、分工、待核实各节逐处写明「乘车/下车站/北门入口均不变；北门引导**位置不变，仅改指向**；只有**馆内**入口才需核实」。\n\n## 连带修正\n- `transport.md` 新增「雨天是否改乘车？（已核：不改）」\n- `notice-draft.md`（v25）草稿 C 重写，明确「时间/乘车/入口均不变」；检查表加「雨天稿未写成入口也改」\n- `plan.md` 新增第二节冲突核对表；`plan.json` 新增 `rainArrivalConflictCheck`\n\n校验通过 `valid JSON, missing: []`。未发通知、未联系供方、未改任务状态。"
+        }
+      ]
+    },
+    {
+      "run": "memory-r2-all-candidates",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": false,
+          "transportUpdateSeenInAnyRecordedRequest": false,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "d1c8e35441c0813aba4f27da441bb2731cf5a41b8caa9b8a00f47207516380ca",
+              "revision": "content-sha256:188ff49c9f94ed60ffdcdf5b59934861ffb3d38d2c33083ba92342a6a2005760",
+              "text": "outputs/plan.md",
+              "digest": "74bb7f96289a01867ccbb9b0b6c2601dcd67db652d5d5010401ed03c226d216a"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "0e383cd23110027ccfde6f81698ef78b5843061069716a4fbad4792ce3298c05",
+              "revision": "content-sha256:93b8390c20954a1f93788fd092937d3f3f24d8188f8bcf7c2d2ed4cb04ef5eb8",
+              "text": "outputs/timeline.md",
+              "digest": "e3feadfead2ed1e66e2460412f859db3cf83f5dede71171a5921179103ab2ae7"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "7d58e0772e41bee6ca15272150ebb83b25ac0d6d94a977075b6d7e0d6601357e",
+              "revision": "content-sha256:b0885f364df95a8674fec5713ca3150cf734f4d101f51fc3e5c0d8334de73f03",
+              "text": "reference-data/00375-eae23858.md",
+              "digest": "88e627a322fae97fcd363b748959063e961302ab34acd50a8b122e3f615d3816"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "bd28cfa6947b8b202090a8d278618c24917f3d15847d7b007873bb429557849f",
+              "revision": "content-sha256:f59477c4e9f0f633456f3b1aa00fdf4c232bf80c3fcb0eb2efa7979a0593bc70",
+              "text": "reference-data/00351-6e8bb9d9.md",
+              "digest": "a5c5011615234a211fb55fcf72a37b861c437a90a7bdae6fe288ed53db432ce7"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "25402b849a4f4360f892ab26f954dc2760795b668667b79dfd7ee9889118ed76",
+              "revision": "content-sha256:69012c75396d30b3c46c354f992a472311a36f6dfc9a6efad0a8db1d50fd50bc",
+              "text": "reference-data/00376-4c6a6cbd.md",
+              "digest": "35ae07f8e28d853835702ad87bfe50f874f3bf7667dfa8101a5cfbb07d4e82cc"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "25c055050868483318013dc6e643022996623322e4c32b8bcf4e5d865fd6eb8e",
+              "revision": "content-sha256:1583a7c6a3762a9d25574b31e7fb7c0fe9fa49fb0ccbd5d34a4b4d882b128d41",
+              "text": "reference-data/00391-24a376d4.md",
+              "digest": "07baaff471a81b1d69f78e42b1cf711376666384fa764149f37b4b366324b3dd"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "b561a6607749952f660c8cbd3707558a45f4864adcd48065a7bd2f1d528379e8",
+              "revision": "content-sha256:8f3b4671b4db79bb5f1f7ae4a1ac02169ec57bdecc057287c3d633dbd158e91e",
+              "text": "reference-data/00354-13aac559.md",
+              "digest": "32d09ee9d50be9545b6d4128b22bbb919513ffe9964baeeee8ff1885487c7714"
+            }
+          ],
+          "memoryLookups": [
+            {
+              "source": "notifications",
+              "query": "交通公告"
+            },
+            {
+              "source": "notifications",
+              "query": "白鹭读书日交通"
+            },
+            {
+              "source": "notifications",
+              "recent": true,
+              "limit": 30
+            },
+            {
+              "source": "journal",
+              "query": "交通公告"
+            },
+            {
+              "source": "notifications",
+              "query": "到达"
+            },
+            {
+              "source": "documents",
+              "query": "交通"
+            }
+          ],
+          "answerExcerpt": "I've searched all plausible routes; no transport notice update is reachable.\n\n**没找到你说的那条\"交通公告更新\"。**\n\n已查的路径（都为空或不含新内容）：\n- notifications 搜 `交通公告`、`白鹭读书日交通`、`到达` → **0 条**\n- notifications 最近列表（我拉到的是 02:53—03:02 这批）→ 只有《场地更新》《印刷确认》《送达回执》，**没有交通类更新**\n- journal 搜 `交通公告` → 0 条；documents 搜 `交通` → 只有去年无关旧记录\n\n现有交通信息仍来自旧记录 journal `ffbe4c07…`（北门无台阶、公交 28 路、南门爬楼不宜、长辈陪同），**方案里没变**。\n\n所以我现在**无法核对到达方案**——没有可核对的新来源，我不会凭猜测改。\n\n请给我其中任一项：\n1. 更新的**通知标题或 id**；\n2. 它出现的**那一边**（notifications / journal / 项目笔记）；\n3. 或者直接贴出内容，我按数据读入。\n\n另外提一句：如果你指的是**要发出去的交通公告文案**（而非收到的通知），那它属于草稿，我这边状态仍是**未发送**——说一声我也可以改。"
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": false,
+          "transportUpdateSeenInAnyRecordedRequest": false,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "d1c8e35441c0813aba4f27da441bb2731cf5a41b8caa9b8a00f47207516380ca",
+              "revision": "content-sha256:188ff49c9f94ed60ffdcdf5b59934861ffb3d38d2c33083ba92342a6a2005760",
+              "text": "outputs/plan.md",
+              "digest": "74bb7f96289a01867ccbb9b0b6c2601dcd67db652d5d5010401ed03c226d216a"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "0e383cd23110027ccfde6f81698ef78b5843061069716a4fbad4792ce3298c05",
+              "revision": "content-sha256:93b8390c20954a1f93788fd092937d3f3f24d8188f8bcf7c2d2ed4cb04ef5eb8",
+              "text": "outputs/timeline.md",
+              "digest": "e3feadfead2ed1e66e2460412f859db3cf83f5dede71171a5921179103ab2ae7"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "7d58e0772e41bee6ca15272150ebb83b25ac0d6d94a977075b6d7e0d6601357e",
+              "revision": "content-sha256:b0885f364df95a8674fec5713ca3150cf734f4d101f51fc3e5c0d8334de73f03",
+              "text": "reference-data/00375-eae23858.md",
+              "digest": "88e627a322fae97fcd363b748959063e961302ab34acd50a8b122e3f615d3816"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "bd28cfa6947b8b202090a8d278618c24917f3d15847d7b007873bb429557849f",
+              "revision": "content-sha256:f59477c4e9f0f633456f3b1aa00fdf4c232bf80c3fcb0eb2efa7979a0593bc70",
+              "text": "reference-data/00351-6e8bb9d9.md",
+              "digest": "a5c5011615234a211fb55fcf72a37b861c437a90a7bdae6fe288ed53db432ce7"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "25402b849a4f4360f892ab26f954dc2760795b668667b79dfd7ee9889118ed76",
+              "revision": "content-sha256:69012c75396d30b3c46c354f992a472311a36f6dfc9a6efad0a8db1d50fd50bc",
+              "text": "reference-data/00376-4c6a6cbd.md",
+              "digest": "35ae07f8e28d853835702ad87bfe50f874f3bf7667dfa8101a5cfbb07d4e82cc"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "25c055050868483318013dc6e643022996623322e4c32b8bcf4e5d865fd6eb8e",
+              "revision": "content-sha256:1583a7c6a3762a9d25574b31e7fb7c0fe9fa49fb0ccbd5d34a4b4d882b128d41",
+              "text": "reference-data/00391-24a376d4.md",
+              "digest": "07baaff471a81b1d69f78e42b1cf711376666384fa764149f37b4b366324b3dd"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "b561a6607749952f660c8cbd3707558a45f4864adcd48065a7bd2f1d528379e8",
+              "revision": "content-sha256:8f3b4671b4db79bb5f1f7ae4a1ac02169ec57bdecc057287c3d633dbd158e91e",
+              "text": "reference-data/00354-13aac559.md",
+              "digest": "32d09ee9d50be9545b6d4128b22bbb919513ffe9964baeeee8ff1885487c7714"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": "Now the same reconciliation in plan.json."
+        }
+      ]
+    },
+    {
+      "run": "memory-r2-jev-maintained",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-jev-maintained/workspace/reference-data/10025-f4bebce6.md:1",
+              "revision": "content-sha256:c149e7ca41c7c0319e3c727fcb87af9f8dc33c7cd8891251e414cd0ba58b4f2d",
+              "text": "1: # 白鹭读书日交通公告\n2: \n3: 活动当天公交28路停运，改乘公交36路到松风馆北门。\n4: ",
+              "digest": "2f255169e80fb677040074261343703187b820ab55a605ae3e4a626dc4967075"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-jev-maintained/workspace/outputs/plan.md:1",
+              "revision": "content-sha256:d49e501a544061a50ff560d913f4c0fb4b115fd80d255456dc14720697f8e0b8",
+              "text": "1: # 白鹭读书日筹备方案\n2: \n3: ## 公开名单规则（最新：只名字 + 分组）\n4: **最新人类决定：公开名单只需名字和分组，别扩散其他信息。** 完整规则见 `outputs/roster-policy.md`。\n5: - **公开名单只两列**：**名字** + **分组**。不加单位、头衔、电话、微信、住址。\n6: - **健康信息不入名单**：尤其顾遥的芝麻过敏，只在餐食环节由林澈单点处理。\n7: - **接送/是否带长辈/到场时间**不入名单；需要接送请来宾私下找林澈。\n8: - 三份分开：公开名单（名字+分组）｜签到表（名字+勾选）｜对接底稿（电话/接送等，**仅林澈**）。\n9: - 签到台：只勾名字、给讲义；**不收电话、不留额外信息**；访客要求补写单位/电话时回复“名单只记名字和分组”。\n10: - 散场后签到表收回林澈，不拍照发群、不带离场地。\n11: - 若确需扩大公开字段，**先经发起人确认**，不自行放宽。\n12: \n13: ## 负责人与现场联络（摘要）\n14: **完整版见 `outputs/contacts.md`。**\n15: - **总负责 / 单一对接人：林澈**（已确认；对外只此一人）。\n16: - 实名负责人只有一个：**林澈**（来源：任务 2e31bb52、回执 3fb559f1 签收人）。\n17: - 签到、控时、餐食标签核对、场馆对接的**具体人名记录里没有**，按角色保留待指派，不编造。\n18: - 原则：**不新增协调人**；需要人顶就提前说好、名单固定，当天不临时抓人。\n19: - 现场只两个固定接力点：**讲义清点**、**餐食标签核对**（均林澈在场）。\n20: - 异常三级上报：一级现场找林澈 → 二级 ≤150 元从机动现金出并留单据 → 三级超 1560 元或需改方案**先报告发起人、不擅自开支**。\n21: - 过敏安全线：任何“无法确认含不含芝麻”的菜**直接不上桌**，不请示、不赌。\n22: \n23: ## 讲义送达回执（已完成）\n24: 来源：通知「白鹭读书日送达回执」（3fb559f1）——**18 份讲义已送到松风馆北厅 N-306，林澈签收，不再是待送达**。\n25: - 已完成：讲义 **18 份**、**已送达并签收**、地点**北厅 N-306**（与现行场地一致，未送错）。\n26: - 已解除的风险：“16:30 晚于 14:30 开场、开场前能不能到”这一冲突**已消除**——讲义已到场，签到发放可用。\n27: - 份数对得上：回执是 **18 份**，与确认人数 18 一致；原“先印 16 份 + 2 份余量”的分批做法不再需要（余量已在 18 份内）。\n28: - 仍未证实：**实际送到的时间**（回执未写）、**印刷费实际金额**（仍按 100-200 元预估，以单据为准）。\n29: \n30: ### 完成 / 未完成对照\n31: | 项 | 状态 | 依据 |\n32: |---|---|---|\n33: | 讲义 18 份交付 | **已完成**（已签收） | 回执 3fb559f1 |\n34: | 讲义数量按 18 份 | **已完成** | 同上 |\n35: | 讲义送达地点 = N-306 | **已完成** | 同上 |\n36: | 讲义交接截止（周五16:30） | **已完成**（不再是待送达） | 同上 |\n37: | 讲义印刷费实际金额 | 未完成（待单据） | 回执未写金额 |\n38: | 讲义实际送达时间记录 | 未完成（回执未写） | 回执未写时间 |\n39: | 签到台/座位动线（按18人） | 未完成 | openQuestions 3 |\n40: | 餐食报价与配料表核对 | 未完成 | openQuestions 4 |\n41: | 设备（转接头/HDMI线/三段实测） | 未完成 | equipment.md |\n42: | 对外通知 | 未完成（草稿未发） | openQuestions 1/2 |\n43: | 公开名单（名字+分组） | 未完成（人名与分组未收集） | roster-policy.md |\n44: \n45: > 注：任务 2e31bb52（交接更新）在任务系统中仍为 `pending`；**本方案只记录回执事实，不代改任务状态**，如需标完成请自行确认。\n46: \n47: ## 交接时间变更（已由回执落实，保留历史）\n48: 来源：任务「白鹭读书日交接更新」——讲义交接截止曾改为 **周五 16:30 前**，负责人林澈；旧 17:00 作废。\n49: - 现已由回执 3fb559f1 结清：讲义已交付签收，**截止时间不再是风险点**。\n50: - 旧版作废：周五 **17:00 前**不得再引用（任务 e16875c4 里的 17:00 已被取代）。\n51: - 旧“首批周五 16:00 送达 12 份”（通知 f3d4b4e2）已彻底作废：实际为 **18 份、已送达**。\n52: \n53: ## 设备清单（补齐，不当天临时找）\n54: 依据：参考文件 `reference-data/00375-eae23858.md`（原文只有：“投影需USB-C转接头，备用HDMI线在灰色工具箱”）。\n55: 完整排查表与“会前一天检查动作”见 `outputs/equipment.md`。\n56: - **必需**：USB-C 转接头（优先借用）。\n57: - **已有**：备用 HDMI 线在**灰色工具箱**（不新买）；会前一天取出并实测。\n58: - **未记录**：投影机型号与接口、归属、谁带笔记本、插座数量、有无麦克风——均需问场馆，不得默认。\n59: - 硬要求：笔记本接口 × 转接头 × 投影接口**三段配对**，会前一天实测出画面一次。\n60: - 设备专项负责人：**林澈**（不另找人）。\n61: - 预算：计入“设备与杂项约 100-200 元”，超 300 元先确认，总额不越 1560 元。\n62: \n63: ## 待确认清单（只列未定；已确认的不重复追问）\n64: 共 **9** 项（原 10 项，第 2 项讲义已由回执 3fb559f1 结清，移出）。\n65: \n66: > 场地类未定项另见 `outputs/site-check.md`；设备类另见 `outputs/equipment.md`；负责人与联络另见 `outputs/contacts.md`；名单规则另见 `outputs/roster-policy.md`。\n67: \n68: **A. 关键（不定就办不下去）**\n69: 1. **日期** — 还是 2026-09-25 吗？地点与时间已定（北厅 N-306、14:30）。\n70: 2. **对外通知的收件范围与渠道** — 你定；正文草稿已写好（未发）。\n71: \n72: **B. 场地与餐食（涉及容量与过敏，风险高）**\n73: 3. **北厅 N-306 能否容纳 18 人（座数）** — 找场馆；含北门到 N-306 距离、电梯/坡道、洗手间位置、地面防滑（带长辈需要）。\n74: 4. **餐食报价与菜品明细** — 找供应方；按清淡素食、18 人（先备 16 人量）、无芝麻逐项核；总额必须 ≤1560 元。\n75: 5. **餐食采购方式与餐具** — 现场采购还是外卖；一次性餐具还是自带。要保证 14:30 前能取到。\n76: 6. **雨天室内方案的具体房间与当天告知方式** — 详见下方“雨天预案”；仍需场馆确认室内房间名、是否够 18 人、当天由谁发变更消息。\n77: \n78: **C. 活动细节（可晚定，但别拖到当天）**\n79: 7. **主讲人与三段的具体起止时间** — 你定；顺序已定：短分享 → 自由讨论 → 交换书单；延时只压缩讨论。\n80: 8. **书单提交形式** — 纸质纸卡还是口头；影响物料准备。\n81: 9. **开场等待规则** — 如果 14:30 有人迟到，是准时开还是等 10 分钟？现状写的是“到场后 20-30 分钟自由缓冲”。\n82: 10. **名单分组划法** — 分几组、每组几人；不影响“公开名单只名字+分组”的规则。\n83: \n84: > 设备类未定项（投影型号与接口、笔记本接口、转接头借用对象、插座数量）已并入 `outputs/equipment.md` 的 B/C 节，与第 3 项一并问场馆。\n85: > 负责人待指派项（签到台值守、控时、餐食标签核对现场执行、场馆对接）见 `outputs/contacts.md` 第一节——记录中无具体人名，不编造。\n86: \n87: ### 已确认，不用再问\n88: 场地：松风馆北厅 N-306（原南厅、14:00 作废）｜时间：14:30 开始｜人数：18 人｜预算：上限 1560 元且不上调（含应急余地）｜饮食：统一素食、口味清淡、顾遥芝麻过敏逐项核配料表｜主持顺序：短分享→自由讨论→交换书单｜交通：北门无台阶、28 路到北门、不走南门｜开场：不排满、不破冰｜隐私：**公开名单只写名字和分组**（电话/单位/过敏/接送等一律不进名单）｜协调：单一对接人林澈、当天不新增临时协调｜**讲义：18 份已送达 N-306 并签收（回执 3fb559f1）**｜**雨天：留在松风馆内改室内房间，不改成户外徒步**｜**设备：USB-C 转接头必需、备用 HDMI 线用灰色工具箱现有那条**。\n89: \n90: ## 雨天预案（可执行）\n91: 原则（沿用原决定）：**雨天改用室内方案，不改成户外徒步。先核实场地再通知。**\n92: 以下为把这句话落成动作的执行版；房间名与容量仍待场馆确认（openQuestions 6）。\n93: \n94: ### 触发条件（不用临时看天，按表走）\n95: | 时点 | 判断 | 动作 |\n96: |---|---|---|\n97: | 活动前 2 天 | 预报有雨（含阵雨） | 启动本预案：上午先问场馆室内房间，下午按室内版重排座位与餐食位置 |\n98: | 活动前 1 天 18:00 | 预报仍报雨 | 在通知群发一次“雨天版提醒”（措辞固定，见下） |\n99: | 当天 11:00 | 实际下雨 | 发第二条确认消息；如已停且地面干，可留在北厅 N-306 不切换 |\n100: | 当天 12:00 | 仍未定 | 直接按室内方案执行，不再等预报（**决策截止点**） |",
+              "digest": "994b475af3c7654238f3c85df15b98ff0777f18214c0ca6142b90035aea06dac"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": ""
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-jev-maintained/workspace/outputs/plan.json:1",
+              "revision": "content-sha256:707a6711f5b3fcaedebbcd3fe0e0c8877f002d8731e288cd3844642af9c8ad60",
+              "text": "1: {\n2:   \"eventName\": \"白鹭读书日\",\n3:   \"date\": \"2026-09-25（待确认；地点与时间已定）\",\n4:   \"time\": \"14:30\",\n5:   \"venue\": \"松风馆北厅 N-306（北门无台阶入口，公交28路到北门；南门要爬楼，不走南门）\",\n6:   \"room\": \"北厅 N-306（已定；原南厅方案取消。容量/座数待核实）\",\n7:   \"attendees\": 18,\n8:   \"budgetYuan\": 1560,\n9:   \"budgetNote\": \"预算上限1560元且不上调。餐食18人约900-1150元、讲义18份已交付（约100-200元预估，实际金额待单据）、设备与杂项约100-200元、机动预留约150元；单项超300元先确认；总额硬上限1560元\",\n10:   \"contingencyNote\": \"应急余地不靠加钱：机动约150元（差额从餐食弹性挤）；备用HDMI线用工具箱现有、投影先问能否借用、签到控时由已指派的固定同伴顶、书单纸卡用现成纸笔；留约100元现金不动；餐食先备16人量看实到再补；若需超1560元不擅自开支、先报告；报价超上限则降规格而非加预算。讲义已按18份一次性交付，不再有“先印16份+2份余量”的分批余量\",\n11:   \"attendeesNote\": \"18人（已确认）；旧值12人、12份讲义份数均已作废\",\n12:   \"handoffNote\": \"已结清：讲义18份已送到松风馆北厅N-306，林澈签收（回执 3fb559f1）。原冲突（交接截止周五16:30晚于14:30开场、开场前能否到）已消除；份数与18人一致；旧“先印16份”分批做法不再需要。仍未证实：实际送达时间（回执未写）、印刷费实际金额（待单据）。任务 2e31bb52 在任务系统中仍为 pending，本方案不代改任务状态\",\n13:   \"receipt\": {\n14:     \"source\": \"通知「白鹭读书日送达回执」3fb559f1\",\n15:     \"status\": \"completed\",\n16:     \"what\": \"18份讲义已送到松风馆北厅N-306，林澈签收，不再是待送达\",\n17:     \"closedRisk\": \"16:30晚于14:30开场、开场前能否到货的冲突已解除\",\n18:     \"resolvedOpenQuestion\": 2,\n19:     \"notConfirmed\": [\"实际送达时间（回执未写）\", \"印刷费实际金额（待单据）\"]\n20:   },\n21:   \"completedItems\": [\n22:     \"讲义18份交付（已送达并签收，回执3fb559f1）\",\n23:     \"讲义数量18份与确认人数一致\",\n24:     \"讲义送达地点=北厅N-306（与现行场地一致）\",\n25:     \"讲义交接截止（周五16:30）不再是待办\"\n26:   ],\n27:   \"outstandingItems\": [\n28:     \"讲义印刷费实际金额（待单据）\",\n29:     \"讲义实际送达时间（回执未写）\",\n30:     \"签到台台位与座位动线（按18人，openQuestions 3）\",\n31:     \"签到台值守与控时人员指派（contacts.md；记录中无具体人名）\",\n32:     \"餐食报价、菜品明细与配料表核对（openQuestions 4）\",\n33:     \"餐食采购方式与餐具（openQuestions 5）\",\n34:     \"设备：转接头借用、HDMI线取出实测、投影型号接口配对（equipment.md）\",\n35:     \"雨天室内房间名与容量（openQuestions 6）\",\n36:     \"对外通知（草稿未发，openQuestions 1/2）\",\n37:     \"公开名单：人名与分组未收集，分组划法未定（openQuestions 10，roster-policy.md）\",\n38:     \"主讲人与各段起止时间、书单形式、开场等待规则（openQuestions 7/8/9）\"\n39:   ],\n40:   \"rosterPolicy\": {\n41:     \"decision\": \"公开名单只需名字和分组，别扩散其他信息\",\n42:     \"detailFile\": \"outputs/roster-policy.md\",\n43:     \"publicFields\": [\"名字（只写姓名，不加单位/头衔）\", \"分组（组名或编号，用于就坐与讨论）\"],\n44:     \"forbiddenInPublicRoster\": [\n45:       \"电话号码\",\n46:       \"微信/邮箱/住址/身份证等联系方式\",\n47:       \"单位、职务、头衔\",\n48:       \"饮食限制与过敏信息（尤其顾遥的芝麻过敏，只在餐食环节由林澈单点处理）\",\n49:       \"是否带长辈、是否需接送、到场时间\",\n50:       \"费用/付款信息、分组外备注\"\n51:     ],\n52:     \"layers\": [\n53:       {\"layer\": \"公开名单\", \"content\": \"名字+分组，仅此\", \"who\": \"现场张贴/群内发出\"},\n54:       {\"layer\": \"签到表\", \"content\": \"名字+到场勾选\", \"who\": \"签到台值守人员，散场收回\"},\n55:       {\"layer\": \"对接底稿\", \"content\": \"电话、接送、饮食等\", \"who\": \"仅林澈一人掌握，不外发\"}\n56:     ],\n57:     \"rules\": [\n58:       \"三份分开存放，不用同一张表兼任；公开名单从签到表生成时只抽“名字+分组”两列\",\n59:       \"签到只勾名字、给讲义；不收电话、不留额外信息、不代填\",\n60:       \"来宾要求补写单位/电话时回复“名单只记名字和分组”\",\n61:       \"散场后签到表收回林澈，不拍照发群、不带离场地\",\n62:       \"需要接送或搬物请来宾私下找林澈，信息不入名单\",\n63:       \"分组调整由林澈改后再发一版，不现场涂改张贴版\",\n64:       \"如确需扩大公开字段，先经发起人确认，不自行放宽\"\n65:     ],\n66:     \"unknown\": [\"分组具体划法（几组、每组几人）\", \"名单具体人名（未收集，未编造）\"]\n67:   },\n68:   \"changeNote\": \"场地已定：北厅N-306、14:30（原南厅/14:00作废）；人数18、上限1560（已确认）；菜单清淡但素食与芝麻核对限制不变；雨天预案为可执行版（触发时点/场地切换/两条固定告知），不改成户外徒步；设备清单已补齐（USB-C转接头必需、HDMI线用灰色工具箱现有），不当天临时找；讲义18份已送达N-306并签收（回执3fb559f1），交付环节结束并解除原时间冲突；负责人与现场联络流程已写入（contacts.md，仅林澈为实名负责人，其余角色待指派）；公开名单收窄为只写名字和分组（roster-policy.md），过敏/电话/单位等一律不进名单\",\n69:   \"staffing\": {\n70:     \"detailFile\": \"outputs/contacts.md\",\n71:     \"confirmed\": [\n72:       {\"role\": \"总负责·单一对接人\", \"name\": \"林澈\"},\n73:       {\"role\": \"讲义接收与保管（18份已在N-306）\", \"name\": \"林澈\"},\n74:       {\"role\": \"设备专项（转接头/HDMI线/三段配对实测）\", \"name\": \"林澈\"},\n75:       {\"role\": \"过敏餐食核对（索配料表与标签）\", \"name\": \"林澈\"},\n76:       {\"role\": \"路线与接送确认\", \"name\": \"林澈\"},\n77:       {\"role\": \"通知发送（含雨天两条）\", \"name\": \"林澈\"},\n78:       {\"role\": \"应急现金保管（≤150元）\", \"name\": \"林澈\"},\n79:       {\"role\": \"雨天唯一决策人\", \"name\": \"林澈\"},\n80:       {\"role\": \"书单汇总与会后发出\", \"name\": \"林澈\"},\n81:       {\"role\": \"公开名单与签到表维护（对接底稿不外发）\", \"name\": \"林澈\"}\n82:     ],\n83:     \"toAssign\": [\n84:       \"签到台值守（记录只写“同伴顶”，无具体人名）\",\n85:       \"控时（三段流程计时）\",\n86:       \"餐食标签核对现场执行（林澈定标准）\",\n87:       \"场馆对接联系（建议仍由林澈单点联系以保持单一对接）\"\n88:     ],\n89:     \"rule\": \"不新增协调人；需要人顶就提前说好、名单固定，当天不临时抓人。记录中无具体人名的事项，未编造。\"\n90:   },\n91:   \"onsiteProcess\": {\n92:     \"detailFile\": \"outputs/contacts.md\",\n93:     \"preOpen\": [\n94:       \"开场前60分钟林澈到馆，走北门进入\",\n95:       \"确认三件事：N-306可用、18份讲义在位（清点一次）、餐食暂存位置与14:30前送达\",\n96:       \"发现问题当场处理，不拉群讨论\"\n97:     ],\n98:     \"buffer\": [\n99:       \"13:30-14:30缓冲：签到台由已指派的固定人员值守，林澈不站台\",\n100:       \"签到只做两件事：勾名字、给讲义；不收电话、不留额外信息\",",
+              "digest": "9383803ad5a79dbd90ad9c99463ec9876d7c077607d7407cb2e3baa6c8b7d723"
+            }
+          ],
+          "memoryLookups": [
+            {
+              "source": "files",
+              "path": "outputs/transport-update.md"
+            },
+            {
+              "source": "files",
+              "path": "reference-data/10025-f4bebce6.md"
+            },
+            {
+              "source": "files",
+              "path": "reference-data"
+            },
+            {
+              "source": "files",
+              "query": "交通 公告 停运",
+              "types": "all"
+            }
+          ],
+          "answerExcerpt": "核对完了。**雨天真案与入口在\"从北门进\"这条上不冲突**，但有一处真冲突、两处会误导。\n\n**不冲突的部分**（一致）\n- 集合点晴雨都是**松风馆北门**；室内房间也在馆内，雨天真案没改入口\n- 两条路线都写\"不走南门\"\n- 室内备选房间的换场路线也是北门→签到台→室内房间\n\n**真冲突 1 处**\n- 雨天预案里**没有承接 28 路停运**。预案的提醒版/确认版两条消息都只写\"集合点还是松风馆北门\"，没提\"28 路当天停运、改乘 36 路\"。雨天本来就更可能有人靠公交到场，漏掉这条最糟——人会等一班不来的车。\n\n**会误导 2 处（旧值未同步）**\n- `plan.json` 的 `venue`、`transport` 仍写\"公交28路到北门\"——已被交通公告取代\n- `plan.md`「已定事项」交通行与「交通与入口」首选行同样写 28 路\n- `rundown.md` 头部集合点只写北门，未提线路\n\n**另一处措辞风险（非冲突，但需注意）**\n- 雨天确认版 B（改室内）写\"按现场指引\"。如果当天雨大、人又多停在北门，**北门现场要有指引**；原方案只说\"门口放吸水材料\"，没写指引人。这属未指派项。\n\n我上一轮只写了 `transport-update.md` 的整改清单，**还没改 plan/rundown 里的 28 路**。要我现在把 28 路全部改成 36 路、并把停运信息补进雨天两条消息吗？"
+        }
+      ]
+    },
+    {
+      "run": "memory-r2-lexical-maintained",
+      "rows": [
+        {
+          "input": 26,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-lexical-maintained/workspace/reference-data/10025-f4bebce6.md:1",
+              "revision": "content-sha256:c149e7ca41c7c0319e3c727fcb87af9f8dc33c7cd8891251e414cd0ba58b4f2d",
+              "text": "1: # 白鹭读书日交通公告\n2: \n3: 活动当天公交28路停运，改乘公交36路到松风馆北门。\n4: ",
+              "digest": "304052a0a23523f8496f91abc305f68f8747a469b034300745cb1fda2891f0af"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-lexical-maintained/workspace/outputs/timeline.md:1",
+              "revision": "content-sha256:b86ed083c23c6d6fb35892fc84481f6c041f5cf362c71c8f82faa4b38f52eedc",
+              "text": "1: # 白鹭读书日 时间表（上午准备 / 下午参加 分开）\n2: \n3: 日期：2026-10-17（初定） 地点：松风馆 北厅 N-306、14:30\n4: \n5: > **当天单一主表（从早到晚一条线）：outputs/day-of-schedule.md** ← 活动当天看这份\n6: > **本文件按角色分两栏**：上午=筹备者、下午=到场者，用于分工。\n7: > **雨天预案：outputs/rain-plan.md**（08:00 与 12:00 判定，**12:00 为硬判定点**）。\n8: > **设备清单：outputs/equipment.md**（活动前 1 天做接口测试）。**公开名单：outputs/public-roster.md**（只放名字 + 分组）。\n9: \n10: ---\n11: \n12: ## 一、上午：准备（工作人员/筹备者）\n13: \n14: > 这一段时间是**筹备者的事**，到场者不需要参加。\n15: \n16: | 时段 | 事项 | 负责人 | 状态 |\n17: |---|---|---|---|\n18: | 上午（具体时间未定） | 讲义交付截止前的最后核对 | 林澈 | 待定 |\n19: | 上午（未定） | 设备：取出 USB-C 转接头与备用 HDMI 线（灰色工具箱）、打包、接口测试 | 待定 | 待定 |\n20: | 上午（未定） | 核实北厅 N-306（楼层、进出路线、18 人座位、电源位置） | 待定 | 待定 |\n21: | 上午（未定） | 菜单最终确认（素 + 无芝麻 + 清淡） | 待定 | 待定 |\n22: | 上午（未定） | **公开名单：只出姓名 + 分组两列，发出前逐行检查无多余信息** | 待定 | 待定 |\n23: | 上午（未定） | 雨天预备：核实室内阅览室、确认通知发送人、备好雨天通知草稿 | 待定 | 待定 |\n24: \n25: **关键截止（已更新）：**\n26: - 印刷送达：**周五 16:00**（预计）\n27: - 交付截止：**周五 16:30**（旧 17:00 取消）\n28: - → 两者**只差 30 分钟**，几乎无缓冲；若需补印，时间非常紧。\n29: \n30: **注意（时间归属）**：“周五”与活动日 2026-10-17 是否为同一天、以及上午具体钟点，**记忆中没有记录**，因此本表不填入具体钟点。\n31: \n32: ---\n33: \n34: ## 二、下午：参加（到场者 + 主持）\n35: \n36: | 时段 | 事项 | 负责人 |\n37: |---|---|---|\n38: | 14:30 开始前 | 到场、签到、领讲义、找座位（自由缓冲，不排紧凑环节） | 待定（接待/签到岗） |\n39: | 14:30 | 开始；简短开场（欢迎＋流程说明） | 待定（主持岗） |\n40: | 开场后 | 1) 短分享 | 待定 |\n41: | 之后 | 2) 自由讨论 | 待定 |\n42: | 最后 | 3) 交换书单 | 待定 |\n43: \n44: **各环节具体时长未定**（待办 9）。开场后的具体钟点需在时长确定后才能排。\n45: \n46: ### 雨天当天的时间点（仅雨天启用，详见 rain-plan.md）\n47: | 钟点 | 事项 |\n48: |---|---|\n49: | 08:00 | 第一次看天气 |\n50: | **12:00** | **硬判定点：定方案 A 或 B，并当场发通知** |\n51: | 13:00–14:00 | 布置入口指引、北门接应 |\n52: | 14:30 | 开场时口头再报一次场地信息 |\n53: \n54: > 若“周五”与 2026-10-17 不是同一天，这两个判定点该落在哪一天必须先定（未记录）。\n55: \n56: ---\n57: \n58: ## 三、两栏分开的目的\n59: - **上午**：涉及交付、设备、场地核实、名单、公开名单——全是筹备动作，需人干活。\n60: - **下午**：从 14:30 到场开始——到场者只需出现，不需要参与上午准备。\n61: - 带长辈的同行者只需参考下午场；建议走**北门**（无台阶），公交 28 路到北门。\n62: \n63: ---\n64: \n65: ## 四、待补的钟点\n66: - 周五与 2026-10-17 是否同日：未记录。\n67: - 上午各准备项的起止钟点：未记录。\n68: - 下午各环节时长与结束时间：未记录。\n69: ",
+              "digest": "d0d270802b4210eceb846095083341410e2cac33715c40416f1ed863be7d3bb0"
+            },
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-lexical-maintained/workspace/outputs/roles-contact.md:1",
+              "revision": "content-sha256:a1c23810cc59ea9271315fbf45cc1c37ae9c1be5295a90599adb46a15301dc0f",
+              "text": "1: # 白鹭读书日 负责人与现场联络流程\n2: \n3: > 口径：**除林澈外，所有负责人在现有记忆中均无记录**，本文件不编造人名。\n4: > 未知处统一写「**待指定**」并给出**指定要求**，确保活动当天可填。\n5: > 关联：plan.md、checklist.md、timeline.md、rain-plan.md、equipment.md、**public-roster.md**。\n6: \n7: ---\n8: \n9: ## 一、角色表（已知 vs 待指定）\n10: \n11: | 角色 | 负责人 | 依据 | 备注 |\n12: |---|---|---|---|\n13: | **统筹 / 总负责** | **待指定** | 无记录 | 所有升级走他 |\n14: | **讲义交付（物料交接）** | **林澈** | 任务 82ef75d1 / 7656bd80 | **周五 16:30**，旧 17:00 已取消 |\n15: | 印刷对接（催单/补印） | 待指定 | 印刷方名称未记录 | 唯一截止 16:00，硬点 |\n16: | 场地核实与物业沟通 | 待指定 | 无记录 | N-306 楼层/路线/电源均未知 |\n17: | 设备（打包+接口测试） | 待指定 | equipment.md | 活动前 1 天 |\n18: | 主持 / 计时 | 待指定 | 无记录 | 次序已定，人选未定 |\n19: | 签到 / 接待 / 入口接应 | 待指定 | 无记录 | 雨天必需（rain-plan） |\n20: | 饮食与芝麻核对 | 待指定 | 无记录 | 顾遥过敏，不可转授权 |\n21: | 费用与应急金 | 待指定 | 无记录 | 上限 1560，审批方式未定 |\n22: | **公开名单（名字+分组）** | 待指定 | public-roster.md | **两列制，不放其他信息** |\n23: | 对外通知发送人 | 待指定 | 无记录 | 渠道/时间也未定 |\n24: | 雨天判定（08:00 / 12:00） | 待指定 | rain-plan 第五节 | **12:00 为硬判定点** |\n25: \n26: > **林澈是唯一有记录的责任人**。若统筹无人担任，当天无人可定雨天方案与升级事务。\n27: \n28: ---\n29: \n30: ## 二、现场联络流程（分层，避免“有事没人定”）\n31: \n32: ### 2.1 三层结构\n33: 1. **执行层（现场）**：签到/接待、入口接应、设备、计时——各自只管本岗，不自行对外发言。\n34: 2. **协调层（现场统筹）**：由**统筹**担任，处理跨岗冲突（座位不够、讲义数量、菜品问题）。\n35: 3. **决定层（对外/钱/场地）**：涉及**对外通知、预算动用、场地变更**，只能由统筹确认后执行，不得由执行层自己发。\n36: \n37: ### 2.2 升级规则（什么情况找谁）\n38: | 情况 | 先找 | 时限 | 否则 |\n39: |---|---|---|---|\n40: | 讲义不到 / 份数不够 | 林澈 → 统筹 | 立即 | 启动补印或现场说明 |\n41: | 场地进不去 / 厅被占 | 统筹 → 物业 | 立即 | 转雨天方案 B（若阅览室已核实） |\n42: | 座位不够（18 人） | 统筹 | 10 分钟内 | 加椅或改布局 |\n43: | 菜品含芝麻或吃不确 | **当场停供该道** → 统筹 | 立即 | 不“先上再说” |\n44: | 雨天需改厅/改通知 | 统筹（**12:00 前定**） | 12:00 | 只走方案 A，不改厅 |\n45: | 预超出 1560 | 统筹 | 事前 | **不得先花再报** |\n46: | 名单被要求多加信息 | 统筹 | 立即 | 按 public-roster.md **拒加** |\n47: \n48: ### 2.3 联络簿（需现场填写）\n49: | 角色 | 姓名 | 联络方式 |\n50: |---|---|---|\n51: | 统筹 | | |\n52: | 林澈（讲义） | 林澈 | |\n53: | 接待/签到 | | |\n54: | 设备 | | |\n55: | 主持 | | |\n56: \n57: > **隐私规则**：**公开名单只放名字与分组**（详见 public-roster.md）。因此本联络簿仅限**内部现场使用**，**不得**随公开通知/公开名单分发，**也不得与公开名单合并**。\n58: \n59: ---\n60: \n61: ## 三、指定要求（在活动前 1 天完成）\n62: \n63: 1. **先定统筹**：没有统筹，其余角色无法升级。\n64: 2. 再定三个当天必需岗：**接待/签到**、**入口接应**、**设备**。\n65: 3. 把本表第二.3 联络簿填完，**发到内部群，不发外部**。\n66: 4. 每个人知道两件事：**自己的岗** + **往上找谁**。\n67: 5. 指定**公开名单负责人**，按 public-roster.md 只出两列。\n68: \n69: ---\n70: \n71: ## 四、未确认（保留在清单）\n72: - 统筹人选（无记录）。\n73: - 除林澈外全部角色的人选。\n74: - 对外通知的发送人/渠道/时间——直接决定通知能不能发出去。\n75: - 联络方式如何收集（受“公开名单只放名字+分组”约束）。\n76: - 升级时限的具体值（本表为建议，无记录）。\n77: - 公开名单的分组方式与发布渠道（未记录）。\n78: ",
+              "digest": "a869e1f73cba2120ac491faa23fcaa535751ceb550e2bb301886f3c914d623d7"
+            }
+          ],
+          "memoryLookups": [
+            {
+              "source": "files",
+              "query": "28路"
+            },
+            {
+              "source": "files",
+              "path": "reference-data/10025-f4bebce6.md"
+            },
+            {
+              "source": "files",
+              "query": "28路停运"
+            }
+          ],
+          "answerExcerpt": "交通公告已核对，到达方案已更新：**outputs/arrival-plan.md**\n\n**公告内容**（`reference-data/10025-f4bebce6.md`）：活动当天 **28 路停运，改乘 36 路**到松风馆北门。\n\n**旧→新**\n| 项 | 旧 | 现 |\n|---|---|---|\n| 线路 | 28 路 | **36 路**（28 路当天停运） |\n| 下车站 | 松风馆北门 | **不变** |\n| 入口 | 北门，无台阶 | **不变** |\n| 避免 | 南门（要爬楼） | **不变** |\n\n**一句话指引**：当天 **28 路停运**，改乘 **36 路**到松风馆北门；从**北门**进（无台阶、不用爬楼），别走南门。\n\n**对带长辈同行者**：到达口没变，\"走北门\"仍成立；但**换线可能改变站牌位置与班次间隔**（无记录）。建议**多留 10–15 分钟**——36 路班次间隔记忆里没有。\n\n**新增的一个联带风险**：08:00 看天气时**顺带确认 36 路是否正常运营**——28 路停运，可能不止一条。\n\n**连带更新**：plan.json `transport`、plan.md（新增第七节到达方案 + 通知模板改 36 路）、day-of-schedule.md（08:00 加确认 36 路、到达三句、要盯的事增为 4 件）、checklist.md、timeline.md、rain-plan.md（新增触发条件 T4 公交变更）、notice-draft.md（重写主件 + 新增\"交通单独提醒\"，清掉旧 28 路）、open-questions.md（**35 项**，新增 36 路班次/站牌、28 路停运原因等）。\n\n未发通知，未改任务状态。"
+        },
+        {
+          "input": 27,
+          "transportUpdateInSelectedView": true,
+          "transportUpdateSeenInAnyRecordedRequest": true,
+          "selectedFileItems": [
+            {
+              "sourceInstanceKey": "source:experiment-files",
+              "sourceTypeId": "files",
+              "resourceId": "<tmp>/T/jev-long-7kZAuM/memory-r2-lexical-maintained/workspace/outputs/timeline.md:1",
+              "revision": "content-sha256:da4ad1f89163b81e0b3e223c755fe72a386ca47687de2a60df6f6686db0011fd",
+              "text": "1: # 白鹭读书日 时间表（上午准备 / 下午参加 分开）\n2: \n3: 日期：2026-10-17（初定） 地点：松风馆 北厅 N-306、14:30\n4: \n5: > **当天单一主表（从早到晚一条线）：outputs/day-of-schedule.md** ← 活动当天看这份\n6: > **本文件按角色分两栏**：上午=筹备者、下午=到场者，用于分工。\n7: > **乘车（最新交通公告）：当天 28 路停运，改乘 36 路到北门。详见 outputs/arrival-plan.md**\n8: > **雨天：rain-plan.md（12:00 为硬判定点）｜设备：equipment.md｜公开名单：public-roster.md**\n9: \n10: ---\n11: \n12: ## 一、上午：准备（工作人员/筹备者）\n13: \n14: > 这一段时间是**筹备者的事**，到场者不需要参加。\n15: \n16: | 时段 | 事项 | 负责人 | 状态 |\n17: |---|---|---|---|\n18: | 上午（具体时间未定） | 讲义交付截止前的最后核对 | 林澈 | 待定 |\n19: | 上午（未定） | 设备：取出 USB-C 转接头与备用 HDMI 线（灰色工具箱）、打包、接口测试 | 待定 | 待定 |\n20: | 上午（未定） | 核实北厅 N-306（楼层、进出路线、18 人座位、电源位置） | 待定 | 待定 |\n21: | 上午（未定） | 菜单最终确认（素 + 无芝麻 + 清淡） | 待定 | 待定 |\n22: | 上午（未定） | **公开名单：只出姓名 + 分组两列，发出前逐行检查无多余信息** | 待定 | 待定 |\n23: | 上午（未定） | **核实 36 路站牌与班次**（当天 28 路停运） | 待定 | 待定 |\n24: | 上午（未定） | 雨天预备：核实室内阅览室、确认通知发送人、备好雨天通知草稿 | 待定 | 待定 |\n25: \n26: **关键截止（已更新）：**\n27: - 印刷送达：**周五 16:00**（预计）\n28: - 交付截止：**周五 16:30**（旧 17:00 取消）\n29: - → 两者**只差 30 分钟**，几乎无缓冲；若需补印，时间非常紧。\n30: \n31: **注意（时间归属）**：“周五”与活动日 2026-10-17 是否为同一天、以及上午具体钟点，**记忆中没有记录**，因此本表不填入具体钟点。\n32: \n33: ---\n34: \n35: ## 二、下午：参加（到场者 + 主持）\n36: \n37: | 时段 | 事项 | 负责人 |\n38: |---|---|---|\n39: | 14:30 开始前 | 到场、签到、领讲义、找座位（自由缓冲，不排紧凑环节）；**乘 36 路到北门** | 待定（接待/签到岗） |\n40: | 14:30 | 开始；简短开场（欢迎＋流程说明） | 待定（主持岗） |\n41: | 开场后 | 1) 短分享 | 待定 |\n42: | 之后 | 2) 自由讨论 | 待定 |\n43: | 最后 | 3) 交换书单 | 待定 |\n44: \n45: **各环节具体时长未定**（待办 9）。开场后的具体钟点需在时长确定后才能排。\n46: \n47: ### 当天新增的固定钟点\n48: | 钟点 | 事项 |\n49: |---|---|\n50: | 08:00 | 看天气；**顺带确认 36 路是否正常运营** |\n51: | **12:00** | **雨天硬判定点：定方案 A 或 B，并当场发通知** |\n52: | 13:00–14:00 | 布置入口指引、北门接应 |\n53: | 14:30 | 开场时口头再报一次场地信息 |\n54: \n55: > 若“周五”与 2026-10-17 不是同一天，判定点该落在哪一天必须先定（未记录）。\n56: \n57: ---\n58: \n59: ## 三、乘车与到达（最新）\n60: - **28 路当天停运** → 改乘 **36 路**。\n61: - 到**松风馆北门**，从**北门**进（无台阶、不爬楼）。\n62: - **别走南门**（要爬楼）。\n63: - 详见 **outputs/arrival-plan.md**。\n64: \n65: ---\n66: \n67: ## 四、两栏分开的目的\n68: - **上午**：涉及交付、设备、场地核实、菜单、公开名单——全是筹备动作，需人干活。\n69: - **下午**：从 14:30 到场开始——到场者只需出现，不需要参与上午准备。\n70: - 带长辈的同行者只需参考下午场；**乘 36 路到北门**（无台阶）。\n71: \n72: ---\n73: \n74: ## 五、待补的钟点\n75: - 周五与 2026-10-17 是否同日：未记录。\n76: - 上午各准备项的起止钟点：未记录。\n77: - 下午各环节时长与结束时间：未记录。\n78: - **36 路的班次间隔与乘车时长**：未记录。\n79: ",
+              "digest": "df5c697a4b5859e3e97d45a222a367ae083d3c1edd4375797ed36849316438d1"
+            }
+          ],
+          "memoryLookups": [],
+          "answerExcerpt": "查完了。**有冲突，3 处真的**，已写成 **outputs/conflict-check.md** 并修掉。\n\n## 真冲突\n\n**C1【严重】方案 B 换厅后，入口没重算**\n- \"走北门\"成立的前提是**会场在北门侧**（N-306）。\n- 雨天改**室内阅览室**——换厅了，这个前提**不必然成立**。\n- 旧稿只写\"到北门后按指引前往阅览室\"，**没说阅览室入口在哪**。若阅览室靠南侧，人从北门进会被带错，带长辈的走完才发现要爬楼。\n- 已修：方案 B 增加**前置硬条件\"入口必须先重新确定\"**，按门侧分三种情况处理。\n\n**C2【中】北门接应岗在方案 B 下失效**\n接应人守在一个到场者不经过的门。已改为**接应点跟着实际入口走**。\n\n**C3【中】\"避免南门\"与\"去阅览室\"可能打架**\n若阅览室只能从南门侧进，\"避免南门\"就自相矛盾。已定优先级：**无障碍优先于\"避免南门\"惯例**——不得简单叫人走北门，须另定路线或安排协助。\n\n## 口径收口\n- **C4**：旧稿把\"36 路\"和阅览室写在同一句，易误读成 36 路直达。已改为\"**36 路只到北门（下车站）**，从北门起再前往\"。\n- **C5**：我上轮把\"公交变更\"设成了雨天触发条件 T4——**性质错了**，28 路停运是已知且已生效的固定事实，不该触发雨天预案。已从触发线移除。\n\n## 不冲突的\n方案 A（厅不变）与 arrival-plan 一致；36 路→北门与\"走北门\"一致；北门无台阶/南门爬楼两文件一致；08:00 看天气+确认 36 路可并行；12:00 早于 14:30，来得及。\n\n**新增硬约束**：**入口未定之前，不发方案 B 通知**（与\"阅览室未核实不发 B 通知\"并列）。\n\n待确认增至 **38 项**，新增 3 项正是关键：阅览室入口门侧、北门到阅览室路线、方案 B 接应点——**均无记录，没编造**。\n\n未发通知，未改任务状态。"
+        }
+      ]
+    }
+  ]
+}

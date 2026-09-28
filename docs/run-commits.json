@@ -1,0 +1,1400 @@
+{
+ "phase03-20260925/full/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790315584343.json",
+   "startedAt": "2026-09-25T05:53:04.343Z",
+   "commit": "26d77470f359944fe749f65caa0404e8309d42ff",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790318659154.json",
+   "startedAt": "2026-09-25T06:44:19.154Z",
+   "commit": "1dd2f83b25ba8ab109d6c82c04469dbd46befb7c",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/full/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790315580920.json",
+   "startedAt": "2026-09-25T05:53:00.920Z",
+   "commit": "26d77470f359944fe749f65caa0404e8309d42ff",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790318687681.json",
+   "startedAt": "2026-09-25T06:44:47.681Z",
+   "commit": "1dd2f83b25ba8ab109d6c82c04469dbd46befb7c",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam10m-bm25-a32": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790524370256.json",
+   "startedAt": "2026-09-27T15:52:50.256Z",
+   "commit": "426b7cbafd9bf53eacf3a3ea0b425f74d964bca6",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790530051054.json",
+   "startedAt": "2026-09-27T17:27:31.054Z",
+   "commit": "426b7cbafd9bf53eacf3a3ea0b425f74d964bca6",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam10m-full-a33": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790560630785.json",
+   "startedAt": "2026-09-28T01:57:10.785Z",
+   "commit": "e9957139adf7063cfb433149d21440f486556047",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam10m-hybrid-a32": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790558042224.json",
+   "startedAt": "2026-09-28T01:14:02.224Z",
+   "commit": "e9957139adf7063cfb433149d21440f486556047",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790560116140.json",
+   "startedAt": "2026-09-28T01:48:36.140Z",
+   "commit": "e9957139adf7063cfb433149d21440f486556047",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam128k": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790449017679.json",
+   "startedAt": "2026-09-26T18:56:57.679Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790452934162.json",
+   "startedAt": "2026-09-26T20:02:14.162Z",
+   "commit": "755c122bdcc62775869d61a773fa2c8729bdc649",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam128k-bm25": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790449620262.json",
+   "startedAt": "2026-09-26T19:07:00.262Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790451551961.json",
+   "startedAt": "2026-09-26T19:39:11.961Z",
+   "commit": "0e24e5c3b522e669f9ea47bde10d015314608e3e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/beam128k-consolidated": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790487079152.json",
+   "startedAt": "2026-09-27T05:31:19.152Z",
+   "commit": "a1c8c48ebe79848427fb93b8d1ff1d1e8aa6586f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/halumem": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790431812334.json",
+   "startedAt": "2026-09-26T14:10:12.334Z",
+   "commit": "2c15248c254ee4fd0202406bef1d716b752e39c8",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790446911182.json",
+   "startedAt": "2026-09-26T18:21:51.182Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790454006380.json",
+   "startedAt": "2026-09-26T20:20:06.380Z",
+   "commit": "755c122bdcc62775869d61a773fa2c8729bdc649",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/halumem-consolidated": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790492542607.json",
+   "startedAt": "2026-09-27T07:02:22.607Z",
+   "commit": "4d9363a9a0c5e491ae0a038f57a5a3dcb55c07de",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790508107299.json",
+   "startedAt": "2026-09-27T11:21:47.299Z",
+   "commit": "8fa2cdc8624871bb06bec70eb7a8f8f5b8343c22",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/heldout/halumem-short": [],
+ "phase03-20260925/heldout/halumem-short-registered": [],
+ "phase03-20260925/steps/fast/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790416021022.json",
+   "startedAt": "2026-09-26T09:47:01.022Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790417132438.json",
+   "startedAt": "2026-09-26T10:05:32.438Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/fast/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790414191533.json",
+   "startedAt": "2026-09-26T09:16:31.533Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple-consolidated-full/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790538092863.json",
+   "startedAt": "2026-09-27T19:41:32.863Z",
+   "commit": "f95f2f43a4a49f2fce7e1b20d6223cb72276a34d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple-consolidated/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790509202954.json",
+   "startedAt": "2026-09-27T11:40:02.954Z",
+   "commit": "8fa2cdc8624871bb06bec70eb7a8f8f5b8343c22",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790517072224.json",
+   "startedAt": "2026-09-27T13:51:12.224Z",
+   "commit": "8fa2cdc8624871bb06bec70eb7a8f8f5b8343c22",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790517971174.json",
+   "startedAt": "2026-09-27T14:06:11.174Z",
+   "commit": "8fa2cdc8624871bb06bec70eb7a8f8f5b8343c22",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790519534719.json",
+   "startedAt": "2026-09-27T14:32:14.719Z",
+   "commit": "6ce7fd4eb7f5dc4155cd51daa3a39691329e79dc",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple-consolidated/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790492539229.json",
+   "startedAt": "2026-09-27T07:02:19.229Z",
+   "commit": "4d9363a9a0c5e491ae0a038f57a5a3dcb55c07de",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790499721983.json",
+   "startedAt": "2026-09-27T09:02:01.983Z",
+   "commit": "c0ec5377292ccd41b166ddc0a846f408e6a5e4cf",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple-fast/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790451903199.json",
+   "startedAt": "2026-09-26T19:45:03.199Z",
+   "commit": "0e24e5c3b522e669f9ea47bde10d015314608e3e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790453689834.json",
+   "startedAt": "2026-09-26T20:14:49.834Z",
+   "commit": "755c122bdcc62775869d61a773fa2c8729bdc649",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple-fast/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790448732521.json",
+   "startedAt": "2026-09-26T18:52:12.521Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790445383049.json",
+   "startedAt": "2026-09-26T17:56:23.049Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790448061128.json",
+   "startedAt": "2026-09-26T18:41:01.128Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790448451096.json",
+   "startedAt": "2026-09-26T18:47:31.096Z",
+   "commit": "228b1424a7dabab0ffd94f4f03fa841457e54c1f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/mini-simple/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790439125986.json",
+   "startedAt": "2026-09-26T16:12:05.986Z",
+   "commit": "d69a1e6af9220402ec291e9966943fef0f08eb99",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790443046201.json",
+   "startedAt": "2026-09-26T17:17:26.201Z",
+   "commit": "495221c18b93f9d04e13a09a9a64b69d32733657",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s0-ds/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790351409954.json",
+   "startedAt": "2026-09-25T15:50:09.954Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790351829250.json",
+   "startedAt": "2026-09-25T15:57:09.250Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790355677241.json",
+   "startedAt": "2026-09-25T17:01:17.241Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790356664200.json",
+   "startedAt": "2026-09-25T17:17:44.200Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s0-ds/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790357683566.json",
+   "startedAt": "2026-09-25T17:34:43.566Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790360115955.json",
+   "startedAt": "2026-09-25T18:15:15.955Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s4h-ds/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790351409956.json",
+   "startedAt": "2026-09-25T15:50:09.956Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790351884110.json",
+   "startedAt": "2026-09-25T15:58:04.110Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790365008554.json",
+   "startedAt": "2026-09-25T19:36:48.554Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790365588860.json",
+   "startedAt": "2026-09-25T19:46:28.860Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s4h-ds/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790353917776.json",
+   "startedAt": "2026-09-25T16:31:57.776Z",
+   "commit": "1ab48d15129e66d1bec1005d9c496512fd3914b3",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790354577714.json",
+   "startedAt": "2026-09-25T16:42:57.714Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790356881965.json",
+   "startedAt": "2026-09-25T17:21:21.965Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s4h/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790350300496.json",
+   "startedAt": "2026-09-25T15:31:40.496Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790412727824.json",
+   "startedAt": "2026-09-26T08:52:07.824Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s4h/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790339752007.json",
+   "startedAt": "2026-09-25T12:35:52.007Z",
+   "commit": "cbeeef20154284f4b49079e983dd18e9986669e8",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790343306607.json",
+   "startedAt": "2026-09-25T13:35:06.607Z",
+   "commit": "26dc4a0627e247e788e73ef24627693498285272",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s5h-ds/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790354579947.json",
+   "startedAt": "2026-09-25T16:42:59.947Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790355038082.json",
+   "startedAt": "2026-09-25T16:50:38.082Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790365008554.json",
+   "startedAt": "2026-09-25T19:36:48.554Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790365626331.json",
+   "startedAt": "2026-09-25T19:47:06.331Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s5h-ds/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790354577713.json",
+   "startedAt": "2026-09-25T16:42:57.713Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790357402888.json",
+   "startedAt": "2026-09-25T17:30:02.888Z",
+   "commit": "e0ac3151135610144aaa40d4b3caac7c90efcf6e",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s6-ds/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790394568826.json",
+   "startedAt": "2026-09-26T03:49:28.826Z",
+   "commit": "5e44d27bc97a123f594b08d128849ec1a5c42d42",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790395451092.json",
+   "startedAt": "2026-09-26T04:04:11.092Z",
+   "commit": "ee3e31f55e0bb666f45aabd7c9f64a69ce7564c5",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s6-ds/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790394567034.json",
+   "startedAt": "2026-09-26T03:49:27.034Z",
+   "commit": "5e44d27bc97a123f594b08d128849ec1a5c42d42",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790396697111.json",
+   "startedAt": "2026-09-26T04:24:57.111Z",
+   "commit": "ee3e31f55e0bb666f45aabd7c9f64a69ce7564c5",
+   "dirty": true,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s6/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790409919823.json",
+   "startedAt": "2026-09-26T08:05:19.823Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790412513366.json",
+   "startedAt": "2026-09-26T08:48:33.366Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/s6/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790403769172.json",
+   "startedAt": "2026-09-26T06:22:49.172Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790404755313.json",
+   "startedAt": "2026-09-26T06:39:15.313Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790404918828.json",
+   "startedAt": "2026-09-26T06:41:58.828Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790409215757.json",
+   "startedAt": "2026-09-26T07:53:35.757Z",
+   "commit": "4f26f582218f5bc6f1bfc11700e8bfae1033f95a",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "fullContext": "gpt-4.1-mini (OpenAI API), temperature 0",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-cmp/s6/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790418389114.json",
+   "startedAt": "2026-09-26T10:26:29.114Z",
+   "commit": "06d6f4e09e4b4455443addbce2ae051279137f3d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790420327870.json",
+   "startedAt": "2026-09-26T10:58:47.870Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-cmp/s6/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790418385901.json",
+   "startedAt": "2026-09-26T10:26:25.901Z",
+   "commit": "06d6f4e09e4b4455443addbce2ae051279137f3d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790421717499.json",
+   "startedAt": "2026-09-26T11:21:57.499Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790422116349.json",
+   "startedAt": "2026-09-26T11:28:36.349Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-cmp/simple/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790418389087.json",
+   "startedAt": "2026-09-26T10:26:29.087Z",
+   "commit": "06d6f4e09e4b4455443addbce2ae051279137f3d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790420380054.json",
+   "startedAt": "2026-09-26T10:59:40.054Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-cmp/simple/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790418385901.json",
+   "startedAt": "2026-09-26T10:26:25.901Z",
+   "commit": "06d6f4e09e4b4455443addbce2ae051279137f3d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790422180305.json",
+   "startedAt": "2026-09-26T11:29:40.305Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790422600420.json",
+   "startedAt": "2026-09-26T11:36:40.420Z",
+   "commit": "dc0d3c73e511d4dd46c1662ab09c58f0859d053f",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-consolidated-ds/lme": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790524343453.json",
+   "startedAt": "2026-09-27T15:52:23.453Z",
+   "commit": "426b7cbafd9bf53eacf3a3ea0b425f74d964bca6",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790537785298.json",
+   "startedAt": "2026-09-27T19:36:25.298Z",
+   "commit": "f95f2f43a4a49f2fce7e1b20d6223cb72276a34d",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ],
+ "phase03-20260925/steps/simple-consolidated-ds/locomo": [
+  {
+   "config": "config-replica-cuefill-raw-records-1790519364671.json",
+   "startedAt": "2026-09-27T14:29:24.671Z",
+   "commit": "6ce7fd4eb7f5dc4155cd51daa3a39691329e79dc",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790523094285.json",
+   "startedAt": "2026-09-27T15:31:34.285Z",
+   "commit": "426b7cbafd9bf53eacf3a3ea0b425f74d964bca6",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  },
+  {
+   "config": "config-replica-cuefill-raw-records-1790523425860.json",
+   "startedAt": "2026-09-27T15:37:05.860Z",
+   "commit": "426b7cbafd9bf53eacf3a3ea0b425f74d964bca6",
+   "dirty": false,
+   "arms": [
+    "replica-cuefill:raw-records"
+   ],
+   "models": {
+    "main": "deepseek-flash, thinking enabled, reasoning effort high",
+    "notes": "deepseek-flash, thinking disabled, temperature 0",
+    "recall": "deepseek-flash, thinking disabled",
+    "jev": "jev-1.13.0"
+   }
+  }
+ ]
+}

@@ -1,0 +1,37 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Reasoning setting: DeepSeek-V4.1-Flash answers and plans, DeepSeek judges.} Top: accuracy (\%) and process measures, LoCoMo / \lme, on the 1,534 LoCoMo and 500 \lme{} questions every run answered. The second S6 run and the budgets (\sys{} w/o consolidation) were run side by side (\cref{sec:simple}); consolidation gives \sys{} (amendment~31, exploratory). Bottom: paired comparisons.}
+\label{tab:deepseek}
+\setlength{\tabcolsep}{3.4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l cc cccccc@{}}
+\toprule
+& LoCoMo & \lme & View records & answer input tok. & evidence all shown & \jev{} k tok. & cost ($10^{-3}$\,\$) & p50 (s) \\
+\midrule
+Cue recall (S0) & 87.3 & 86.0 & 5.2 / 4.5 & 1,233 / 1,103 & 80.0 / 69.8 & 20.7 / 20.1 & 1.32 / 1.22 & 4.3 / 6.1 \\
++ hybrid retrieval (S4h) & 89.0 & 88.8 & 5.2 / 4.7 & 1,240 / 1,146 & 82.0 / 71.7 & 19.3 / 18.8 & 1.27 / 1.16 & 5.1 / 6.1 \\
++ judge--act loop (S5h) & 89.7 & 91.8 & 5.3 / 5.3 & 1,256 / 1,242 & 83.0 / 75.1 & 21.8 / 26.5 & 1.40 / 1.53 & 5.3 / 6.6 \\
++ unsure fill (S6) & 89.6 & 90.0 & 7.3 / 6.6 & 1,614 / 1,463 & 84.5 / 76.6 & 21.8 / 26.4 & 1.47 / 1.59 & 3.5 / 5.0 \\
+\addlinespace[2pt]
++ unsure fill, second run & 90.4 & 91.0 & 7.2 / 6.7 & 1,593 / 1,478 & 84.7 / 77.0 & 21.7 / 26.5 & 1.45 / 1.59 & 3.9 / 6.2 \\
++ budgets = \sys{} w/o consolidation & 90.4 & 90.4 & 15.9 / 15.7 & 3,138 / 3,011 & 87.4 / 81.3 & 23.2 / 28.8 & 1.79 / 1.94 & 4.5 / 6.6 \\
++ consolidation = \sys{} & \best{92.2} & \best{94.4} & 14.2 / 18.4 & 3,901 / 3,853 & 86.2 / 88.9 & 36.6 / 40.6 & 2.37 / 2.53 & 4.3 / 5.7 \\
+\bottomrule
+\end{tabular}}
+
+\vspace{4pt}
+\begin{tabular}{@{}lll@{}}
+\toprule
+Paired (DeepSeek judge) & LoCoMo & \lme \\
+\midrule
+S4h vs S0 & +1.8 (+68/$-$41, $p$\,=\,0.012) & +2.8 (+26/$-$12, $p$\,=\,0.034) \\
+S5h vs S4h & +0.7 (+46/$-$36, $p$\,=\,0.32) & +3.0 (+23/$-$8, $p$\,=\,0.011) \\
+S6 vs S5h & $-$0.1 (+38/$-$39, $p$\,=\,1.00) & $-$1.8 (+10/$-$19, $p$\,=\,0.14) \\
+S5h vs S0 & +2.4 (+72/$-$35, $p$\,$<$\,0.001) & +5.8 (+39/$-$10, $p$\,$<$\,0.001) \\
+S6, second run vs first & +0.7 (+42/$-$31, $p$\,=\,0.24) & +1.0 (+16/$-$11, $p$\,=\,0.44) \\
+Consolidation (\sys{} vs w/o consolidation) & +1.8 (+58/$-$30, $p$\,=\,0.004) & +4.0 (+31/$-$11, $p$\,=\,0.003) \\
+\sys{} vs cue recall (all steps) & +5.0 (+97/$-$21, $p$\,$<$\,0.001) & +8.4 (+51/$-$9, $p$\,$<$\,0.001) \\
+\bottomrule
+\end{tabular}
+\end{gentable}

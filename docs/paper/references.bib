@@ -1,0 +1,758 @@
+% references.bib -- Mnemon technical report
+% Verified 2026-09-26 against arXiv (export API / abs pages), ACL Anthology,
+% ICLR / NeurIPS / ICML proceedings pages, Crossref, publisher pages and the
+% projects' official repositories or sites (see paper_bib_notes.md).
+%
+% Conventions
+%  * Published venue preferred; the arXiv id is kept in eprint/archivePrefix.
+%  * arXiv-only papers: misc entries with howpublished = arXiv preprint id.
+%  * Software, blogs, leaderboards: misc entries with a url in howpublished
+%    and an access date. The paper must load url or hyperref.
+%  * Comment lines in this file must not contain the at-sign (BibTeX would
+%    try to parse it as an entry).
+%  * url and doi fields are verbatim (not escaped); titles protect proper
+%    nouns and acronyms with braces.
+
+%% ===========================================================================
+%% Benchmarks and datasets
+%% ===========================================================================
+
+@inproceedings{maharana2024locomo,
+  title         = {Evaluating Very Long-Term Conversational Memory of {LLM} Agents},
+  author        = {Maharana, Adyasha and Lee, Dong-Ho and Tulyakov, Sergey and Bansal, Mohit and Barbieri, Francesco and Fang, Yuwei},
+  booktitle     = {Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages         = {13851--13870},
+  year          = {2024},
+  month         = aug,
+  address       = {Bangkok, Thailand},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2024.acl-long.747},
+  xurl           = {https://aclanthology.org/2024.acl-long.747/},
+  eprint        = {2402.17753},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{wu2025longmemeval,
+  title         = {{LongMemEval}: Benchmarking Chat Assistants on Long-Term Interactive Memory},
+  author        = {Wu, Di and Wang, Hongwei and Yu, Wenhao and Zhang, Yuwei and Chang, Kai-Wei and Yu, Dong},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {86809--86836},
+  year          = {2025},
+  xurl           = {https://proceedings.iclr.cc/paper_files/paper/2025/hash/d813d324dbf0598bbdc9c8e79740ed01-Abstract-Conference.html},
+  eprint        = {2410.10813},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{beam2026,
+  title         = {Beyond a Million Tokens: Benchmarking and Enhancing Long-Term Memory in {LLMs}},
+  author        = {Tavakoli, Mohammad and Salemi, Alireza and Ye, Carrie and Abdalla, Mohamed and Zamani, Hamed and Mitchell, J. Ross},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {133343--133429},
+  year          = {2026},
+  xurl           = {https://proceedings.iclr.cc/paper_files/paper/2026/file/d7f0cfa0fe759b033d5262e1bb7d4065-Paper-Conference.pdf},
+  eprint        = {2510.27246},
+  archivePrefix = {arXiv}
+}
+
+@misc{halumem2025,
+  title         = {{HaluMem}: Evaluating Hallucinations in Memory Systems of Agents},
+  author        = {Chen, Ding and Niu, Simin and Li, Kehang and Liu, Peng and Zheng, Xiangping and Tang, Bo and Li, Xinchi and Xiong, Feiyu and Li, Zhiyu},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2511.03506},
+  eprint        = {2511.03506},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{memoryagentbench2025,
+  title         = {Evaluating Memory in {LLM} Agents via Incremental Multi-Turn Interactions},
+  author        = {Hu, Yuanzhe and Wang, Yu and McAuley, Julian},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2026},
+  xurl           = {https://openreview.net/forum?id=DT7JyQC3MR},
+  eprint        = {2507.05257},
+  archivePrefix = {arXiv}
+}
+
+@misc{longmemeval_cleaned,
+  title         = {{LongMemEval} Cleaned Release},
+  author        = {Wu, Di and Wang, Hongwei and Yu, Wenhao and Zhang, Yuwei and Chang, Kai-Wei and Yu, Dong},
+  year          = {2025},
+  month         = sep,
+  howpublished  = {Hugging Face dataset},
+  url           = {https://huggingface.co/datasets/xiaowu0162/longmemeval-cleaned},
+  note          = {Accessed 2026-09-26},
+  xnote         = {longmemeval_s_cleaned and longmemeval_m_cleaned; noisy history sessions that interfered with answer correctness were removed. Announced in https://github.com/xiaowu0162/LongMemEval}
+}
+
+%% ===========================================================================
+%% Memory systems (papers)
+%% ===========================================================================
+
+@inproceedings{chhikara2025mem0,
+  title         = {{Mem0}: Building Production-Ready {AI} Agents with Scalable Long-Term Memory},
+  author        = {Chhikara, Prateek and Khant, Dev and Aryan, Saket and Singh, Taranjeet and Yadav, Deshraj},
+  booktitle     = {{ECAI} 2025: 28th European Conference on Artificial Intelligence},
+  series        = {Frontiers in Artificial Intelligence and Applications},
+  volume        = {413},
+  pages         = {2993--3000},
+  publisher     = {IOS Press},
+  year          = {2025},
+  xdoi           = {10.3233/FAIA251160},
+  eprint        = {2504.19413},
+  archivePrefix = {arXiv}
+}
+
+@misc{rasmussen2025zep,
+  title         = {{Zep}: A Temporal Knowledge Graph Architecture for Agent Memory},
+  author        = {Rasmussen, Preston and Paliychuk, Pavlo and Beauvais, Travis and Ryan, Jack and Chalef, Daniel},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2501.13956},
+  eprint        = {2501.13956},
+  archivePrefix = {arXiv}
+}
+
+@misc{li2025memos,
+  title         = {{MemOS}: A Memory {OS} for {AI} System},
+  author        = {Li, Zhiyu and Xi, Chenyang and Li, Chunyu and Chen, Ding and Chen, Boyu and Song, Shichao and Niu, Simin and Wang, Hanyu and Yang, Jiawei and Tang, Chen and others},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2507.03724},
+  eprint        = {2507.03724},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{xu2025amem,
+  title         = {{A-Mem}: Agentic Memory for {LLM} Agents},
+  author        = {Xu, Wujiang and Liang, Zujie and Mei, Kai and Gao, Hang and Tan, Juntao and Zhang, Yongfeng},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  volume        = {38},
+  pages         = {17577--17604},
+  year          = {2025},
+  xdoi           = {10.52202/085713-0593},
+  xurl           = {https://proceedings.neurips.cc/paper_files/paper/2025/hash/19909c36f51abc4856b4560aff3d36d6-Abstract-Conference.html},
+  eprint        = {2502.12110},
+  archivePrefix = {arXiv}
+}
+
+@misc{packer2023memgpt,
+  title         = {{MemGPT}: Towards {LLMs} as Operating Systems},
+  author        = {Packer, Charles and Wooders, Sarah and Lin, Kevin and Fang, Vivian and Patil, Shishir G. and Stoica, Ion and Gonzalez, Joseph E.},
+  year          = {2023},
+  howpublished  = {arXiv preprint arXiv:2310.08560},
+  eprint        = {2310.08560},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{kang2025memoryos,
+  title         = {Memory {OS} of {AI} Agent},
+  author        = {Kang, Jiazheng and Ji, Mingming and Zhao, Zhe and Bai, Ting},
+  booktitle     = {Proceedings of the 2025 Conference on Empirical Methods in Natural Language Processing},
+  pages         = {25961--25970},
+  year          = {2025},
+  month         = nov,
+  address       = {Suzhou, China},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2025.emnlp-main.1318},
+  xurl           = {https://aclanthology.org/2025.emnlp-main.1318/},
+  eprint        = {2506.06326},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{fang2025lightmem,
+  title         = {{LightMem}: Lightweight and Efficient Memory-Augmented Generation},
+  author        = {Fang, Jizhan and Deng, Xinle and Xu, Haoming and Jiang, Ziyan and Tang, Yuqi and Xu, Ziwen and Deng, Shumin and Yao, Yunzhi and Wang, Mengru and Qiao, Shuofei and Chen, Huajun and Zhang, Ningyu},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {98706--98729},
+  year          = {2026},
+  xurl           = {https://proceedings.iclr.cc/paper_files/paper/2026/hash/a05b72653ec5b473732129829ae04195-Abstract-Conference.html},
+  eprint        = {2510.18866},
+  archivePrefix = {arXiv}
+}
+
+% Pinned to v3 (the "Nemori" title). v4 (2026-04-16) is retitled and reorders
+% the first two authors; its abstract still names the system NEMORI and its
+% full-context baselines are unchanged.
+@misc{nan2025nemori,
+  title         = {{Nemori}: Self-Organizing Agent Memory Inspired by Cognitive Science},
+  author        = {Nan, Jiayan and Ma, Wenquan and Wu, Wenlong and Chen, Yize},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2508.03341v3},
+  xnote         = {Version~4 (2026) is retitled ``What Deserves Memory: Adaptive Memory Distillation for {LLM} Agents'' (Ma, Nan, Wu, Chen)},
+  eprint        = {2508.03341v3},
+  archivePrefix = {arXiv}
+}
+
+@misc{wang2025mirix,
+  title         = {{MIRIX}: Multi-Agent Memory System for {LLM}-Based Agents},
+  author        = {Wang, Yu and Chen, Xi},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2507.07957},
+  eprint        = {2507.07957},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{evermemos2026,
+  title         = {{EverMemOS}: A Self-Organizing Memory Operating System for Structured Long-Horizon Reasoning},
+  author        = {Hu, Chuanrui and Gao, Xingze and Zhou, Zuyi and Xu, Dannong and Bai, Yi and Li, Xintong and Zhang, Hui and Li, Tong and Zhang, Chong and Bing, Lidong and Deng, Yafeng},
+  booktitle     = {Proceedings of the 64th Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages         = {45836--45853},
+  year          = {2026},
+  month         = jul,
+  address       = {San Diego, California, United States},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2026.acl-long.2125},
+  xurl           = {https://aclanthology.org/2026.acl-long.2125/},
+  eprint        = {2601.02163},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{simplemem2026,
+  title         = {{SimpleMem}: Efficient Lifelong Memory for {LLM} Agents},
+  author        = {Liu, Jiaqi and Su, Yaofeng and Xia, Peng and Han, Siwei and Zheng, Zeyu and Xie, Cihang and Ding, Mingyu and Yao, Huaxiu},
+  booktitle     = {Proceedings of the 43rd International Conference on Machine Learning (ICML)},
+  year          = {2026},
+  xurl           = {https://icml.cc/virtual/2026/poster/61640},
+  eprint        = {2601.02553},
+  archivePrefix = {arXiv}
+}
+
+@misc{swiftmem2026,
+  title         = {{SwiftMem}: Fast Agentic Memory via Query-aware Indexing},
+  author        = {Tian, Anxin and Li, Yiming and Li, Xing and Zhen, Hui-Ling and Chen, Lei and Yu, Xianzhi and Dong, Zhenhua and Yuan, Mingxuan},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2601.08160},
+  eprint        = {2601.08160},
+  archivePrefix = {arXiv}
+}
+
+@misc{hymem2026,
+  title         = {{HyMem}: Hybrid Memory Architecture with Dynamic Retrieval Scheduling},
+  author        = {Zhao, Xiaochen and Wang, Kaikai and Zhang, Xiaowen and Yao, Chen and Wang, Aili},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2602.13933},
+  eprint        = {2602.13933},
+  archivePrefix = {arXiv}
+}
+
+@misc{memori2026,
+  title         = {{Memori}: A Persistent Memory Layer for Efficient, Context-Aware {LLM} Agents},
+  author        = {Borro, Luiz C. and Macarini, Luiz A. B. and Tindall, Gordon and Montero, Michael and Struck, Adam B.},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2603.19935},
+  xnote         = {White paper},
+  eprint        = {2603.19935},
+  archivePrefix = {arXiv}
+}
+
+@misc{memmachine2026,
+  title         = {{MemMachine}: A Ground-Truth-Preserving Memory System for Personalized {AI} Agents},
+  author        = {Wang, Shu and Yu, Edwin and Love, Oscar and Zhang, Tom and Wong, Tom and Scargall, Steve and Fan, Charles},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2604.04853},
+  eprint        = {2604.04853},
+  archivePrefix = {arXiv}
+}
+
+@misc{hmem2026,
+  title         = {{H-Mem}: A Novel Memory Mechanism for Evolving and Retrieving Agent Memory via a Hybrid Structure},
+  author        = {Yu, Jiawei and Fang, Yixiang and Liu, Xilin and Ma, Yuchi},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2605.15701},
+  eprint        = {2605.15701},
+  archivePrefix = {arXiv}
+}
+
+@misc{leanmem2026,
+  title         = {{LeanMem}: Simple and Efficient Long-Term Memory for {LLM} Agents},
+  author        = {Liao, Yuxin and Wu, Le and Hou, Min and Liu, Hao and Wu, Han and Wang, Zishu},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2608.03463},
+  eprint        = {2608.03463},
+  archivePrefix = {arXiv}
+}
+
+@misc{lychee2026,
+  title         = {{LycheeMemory V2}: Efficient Long-Term Memory for {LLM} Agents via Semantic Segment-Level Consolidation},
+  author        = {Li, Dongfang and Liu, Zixuan and Wang, Junmai and Huang, Jiahe and Li, Fuhao and Jia, Bonian and Hu, Baotian and Zhang, Min},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2608.12990},
+  eprint        = {2608.12990},
+  archivePrefix = {arXiv}
+}
+
+@misc{memr32025,
+  title         = {{MemR$^3$}: Memory Retrieval via Reflective Reasoning for {LLM} Agents},
+  author        = {Du, Xingbo and Li, Loka and Zhang, Duzhen and Song, Le},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2512.20237},
+  eprint        = {2512.20237},
+  archivePrefix = {arXiv}
+}
+
+@misc{emem2025,
+  title         = {A Simple Yet Strong Baseline for Long-Term Conversational Memory of {LLM} Agents},
+  author        = {Zhou, Sizhe and Han, Jiawei},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2511.17208},
+  eprint        = {2511.17208},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{premem2025,
+  title         = {Pre-Storage Reasoning for Episodic Memory: Shifting Inference Burden to Memory for Personalized Dialogue},
+  author        = {Kim, Sangyeop and Lee, Yohan and Kim, Sanghwa and Kim, Hyunjong and Cho, Sungzoon},
+  booktitle     = {Findings of the Association for Computational Linguistics: EMNLP 2025},
+  pages         = {22096--22113},
+  year          = {2025},
+  month         = nov,
+  address       = {Suzhou, China},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2025.findings-emnlp.1204},
+  xurl           = {https://aclanthology.org/2025.findings-emnlp.1204/},
+  eprint        = {2509.10852},
+  archivePrefix = {arXiv}
+}
+
+@misc{hindsight2025,
+  title         = {Hindsight is 20/20: Building Agent Memory that Retains, Recalls, and Reflects},
+  author        = {Latimer, Chris and Boschi, Nicol{\`o} and Neeser, Andrew and Bartholomew, Chris and Srivastava, Gaurav and Wang, Xuan and Ramakrishnan, Naren},
+  year          = {2025},
+  howpublished  = {arXiv preprint arXiv:2512.12818},
+  eprint        = {2512.12818},
+  archivePrefix = {arXiv}
+}
+
+@misc{smartsearch2026,
+  title         = {{SmartSearch}: How Ranking Beats Structure for Conversational Memory Retrieval},
+  author        = {Derehag, Jesper and Calva, Carlos and Ghiurau, Timmy},
+  year          = {2026},
+  howpublished  = {arXiv preprint arXiv:2603.15599},
+  eprint        = {2603.15599},
+  archivePrefix = {arXiv}
+}
+
+%% ===========================================================================
+%% Memory systems (software, sites, leaderboards)
+%% ===========================================================================
+
+@misc{omnimemeval2026,
+  title         = {{OmniMemEval}: Evaluation Framework for Benchmarking Memory Systems},
+  author        = {{MemTensor}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/MemTensor/OmniMemEval},
+  note          = {User-memory results for 14 systems at \url{https://github.com/MemTensor/OmniMemEval/blob/main/docs/user_memory/results.md}; accessed 2026-09-26},
+  xnote         = {answer model gpt-4.1-mini-2025-04-14, judge gpt-4o-mini-2024-07-18}
+}
+
+@misc{openviking2026,
+  title         = {{OpenViking}: Self-Evolving Context Database for {AI} Agents},
+  author        = {{Volcengine}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/volcengine/OpenViking},
+  note          = {Benchmark results at \url{https://blog.openviking.ai/post/openviking-benchmark-results/}; accessed 2026-09-26},
+  xnote         = {website https://www.openviking.ai; benchmark update 2026-05-29}
+}
+
+@misc{letta2024,
+  title         = {{Letta} (formerly {MemGPT}): Platform for Stateful Agents},
+  author        = {{Letta}},
+  year          = {2024},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/letta-ai/letta},
+  note          = {{LoCoMo} results at \url{https://www.letta.com/blog/benchmarking-ai-agent-memory/}; accessed 2026-09-26},
+  xnote         = {website https://www.letta.com}
+}
+
+@misc{mem0repo,
+  title         = {{Mem0}: The Memory Layer for {AI} Agents},
+  author        = {{Mem0}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/mem0ai/mem0},
+  note          = {Results at \url{https://mem0.ai/research}; accessed 2026-09-26}
+}
+
+@misc{zeprepo,
+  title         = {{Graphiti}: A Framework for Building Temporal Knowledge Graphs},
+  author        = {{Zep}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/getzep/graphiti},
+  note          = {Results at \url{https://www.getzep.com/research/}; accessed 2026-09-26},
+  xnote         = {earlier report https://blog.getzep.com/state-of-the-art-agent-memory/}
+}
+
+@misc{memosrepo,
+  title         = {{MemOS}: Self-Evolving Memory {OS} for {LLM} and {AI} Agents},
+  author        = {{MemTensor}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/MemTensor/MemOS},
+  note          = {Accessed 2026-09-26},
+  xnote         = {website https://memos.openmem.net}
+}
+
+@misc{hindsightrepo,
+  title         = {{Hindsight}: Agent Memory that Learns over Time},
+  author        = {{Vectorize}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/vectorize-io/hindsight},
+  note          = {Results at \url{https://benchmarks.hindsight.vectorize.io/}; accessed 2026-09-26},
+  xnote         = {also https://hindsight.vectorize.io/blog/2026/03/23/agent-memory-benchmark}
+}
+
+@misc{supermemory2026,
+  title         = {{Supermemory}: Memory and Context Engine for {AI} Agents},
+  author        = {{Supermemory}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/supermemoryai/supermemory},
+  note          = {Results at \url{https://supermemory.ai/research}; accessed 2026-09-26}
+}
+
+@misc{memu2026,
+  title         = {{memU}: Memory for Proactive {AI} Agents},
+  author        = {{NevaMind AI}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/NevaMind-AI/memU},
+  note          = {{LoCoMo} result at \url{https://memu.pro/benchmark}; accessed 2026-09-26}
+}
+
+@misc{mem9_2026,
+  title         = {{mem9}: Persistent Memory for {AI} Agents},
+  author        = {{mem9.ai}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/mem9-ai/mem9},
+  note          = {{LoCoMo} baseline in \texttt{benchmark/BASELINE.md}; accessed 2026-09-26},
+  xnote         = {website https://mem9.ai}
+}
+
+@misc{memobase2025,
+  title         = {{Memobase}: User Profile-Based Long-Term Memory for {AI} Chatbot Applications},
+  author        = {{Memobase}},
+  year          = {2025},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/memodb-io/memobase},
+  note          = {{LoCoMo} results in \texttt{docs/experiments/locomo-benchmark}; accessed 2026-09-26}
+}
+
+@misc{cognee2025,
+  title         = {{Cognee}: Open-Source {AI} Memory Platform for Agents},
+  author        = {{Cognee}},
+  year          = {2025},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/topoteretes/cognee},
+  note          = {Accessed 2026-09-26},
+  xnote         = {website https://www.cognee.ai}
+}
+
+@misc{backboard2026,
+  title         = {Backboard Memory Results on {LongMemEval} and {LoCoMo}},
+  author        = {{Backboard.io}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/Backboard-io/Backboard-longmemEval-results},
+  note          = {Accessed 2026-09-26},
+  xnote         = {LoCoMo announcement 2025-11-03 https://backboard.io/blog/best-ai-memory-score-in-the-world; code https://github.com/Backboard-io/Backboard-Locomo-Benchmark}
+}
+
+@misc{memorylake2026,
+  title         = {{MemoryLake} {LoCoMo} Benchmark},
+  author        = {{MemoryLake}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/memorylake-ai/memorylake-locomo-benchmark},
+  note          = {Accessed 2026-09-26},
+  xnote         = {blog https://www.memorylake.ai/en/blogs/locomo-benchmark}
+}
+
+%% ===========================================================================
+%% Retrieval, ranking and RAG
+%% ===========================================================================
+
+@article{robertson2009bm25,
+  title         = {The Probabilistic Relevance Framework: {BM25} and Beyond},
+  author        = {Robertson, Stephen and Zaragoza, Hugo},
+  journal       = {Foundations and Trends in Information Retrieval},
+  volume        = {3},
+  number        = {4},
+  pages         = {333--389},
+  year          = {2009},
+  xdoi           = {10.1561/1500000019}
+}
+
+@inproceedings{cormack2009rrf,
+  title         = {Reciprocal Rank Fusion Outperforms {Condorcet} and Individual Rank Learning Methods},
+  author        = {Cormack, Gordon V. and Clarke, Charles L. A. and Buettcher, Stefan},
+  booktitle     = {Proceedings of the 32nd International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages         = {758--759},
+  year          = {2009},
+  address       = {Boston, MA, USA},
+  publisher     = {ACM},
+  xdoi           = {10.1145/1571941.1572114}
+}
+
+@article{nussbaum2024nomic,
+  title         = {{Nomic Embed}: Training a Reproducible Long Context Text Embedder},
+  author        = {Nussbaum, Zach and Morris, John X. and Duderstadt, Brandon and Mulyar, Andriy},
+  journal       = {Transactions on Machine Learning Research},
+  year          = {2025},
+  xurl           = {https://openreview.net/forum?id=IPmzyQSiQE},
+  eprint        = {2402.01613},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{lewis2020rag,
+  title         = {Retrieval-Augmented Generation for Knowledge-Intensive {NLP} Tasks},
+  author        = {Lewis, Patrick and Perez, Ethan and Piktus, Aleksandra and Petroni, Fabio and Karpukhin, Vladimir and Goyal, Naman and K{\"u}ttler, Heinrich and Lewis, Mike and Yih, Wen-tau and Rockt{\"a}schel, Tim and Riedel, Sebastian and Kiela, Douwe},
+  booktitle     = {Advances in Neural Information Processing Systems},
+  volume        = {33},
+  pages         = {9459--9474},
+  year          = {2020},
+  eprint        = {2005.11401},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{asai2024selfrag,
+  title         = {{Self-RAG}: Learning to Retrieve, Generate, and Critique through Self-Reflection},
+  author        = {Asai, Akari and Wu, Zeqiu and Wang, Yizhong and Sil, Avirup and Hajishirzi, Hannaneh},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  pages         = {9112--9141},
+  year          = {2024},
+  xurl           = {https://proceedings.iclr.cc/paper_files/paper/2024/hash/25f7be9694d7b32d5cc670927b8091e1-Abstract-Conference.html},
+  eprint        = {2310.11511},
+  archivePrefix = {arXiv}
+}
+
+@article{liu2024lost,
+  title         = {Lost in the Middle: How Language Models Use Long Contexts},
+  author        = {Liu, Nelson F. and Lin, Kevin and Hewitt, John and Paranjape, Ashwin and Bevilacqua, Michele and Petroni, Fabio and Liang, Percy},
+  journal       = {Transactions of the Association for Computational Linguistics},
+  volume        = {12},
+  pages         = {157--173},
+  year          = {2024},
+  xdoi           = {10.1162/tacl_a_00638},
+  eprint        = {2307.03172},
+  archivePrefix = {arXiv}
+}
+
+@misc{nogueira2019passage,
+  title         = {Passage Re-ranking with {BERT}},
+  author        = {Nogueira, Rodrigo and Cho, Kyunghyun},
+  year          = {2019},
+  howpublished  = {arXiv preprint arXiv:1901.04085},
+  eprint        = {1901.04085},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{sun2023rankgpt,
+  title         = {Is {ChatGPT} Good at Search? Investigating Large Language Models as Re-Ranking Agents},
+  author        = {Sun, Weiwei and Yan, Lingyong and Ma, Xinyu and Wang, Shuaiqiang and Ren, Pengjie and Chen, Zhumin and Yin, Dawei and Ren, Zhaochun},
+  booktitle     = {Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing},
+  pages         = {14918--14937},
+  year          = {2023},
+  month         = dec,
+  address       = {Singapore},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2023.emnlp-main.923},
+  xurl           = {https://aclanthology.org/2023.emnlp-main.923/},
+  eprint        = {2304.09542},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{gao2023hyde,
+  title         = {Precise Zero-Shot Dense Retrieval without Relevance Labels},
+  author        = {Gao, Luyu and Ma, Xueguang and Lin, Jimmy and Callan, Jamie},
+  booktitle     = {Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)},
+  pages         = {1762--1777},
+  year          = {2023},
+  month         = jul,
+  address       = {Toronto, Canada},
+  publisher     = {Association for Computational Linguistics},
+  xdoi           = {10.18653/v1/2023.acl-long.99},
+  xurl           = {https://aclanthology.org/2023.acl-long.99/},
+  eprint        = {2212.10496},
+  archivePrefix = {arXiv}
+}
+
+@inproceedings{lavrenko2001relevance,
+  title         = {Relevance-Based Language Models},
+  author        = {Lavrenko, Victor and Croft, W. Bruce},
+  booktitle     = {Proceedings of the 24th Annual International ACM SIGIR Conference on Research and Development in Information Retrieval},
+  pages         = {120--127},
+  year          = {2001},
+  address       = {New Orleans, LA, USA},
+  publisher     = {ACM},
+  xdoi           = {10.1145/383952.383972}
+}
+
+@incollection{rocchio1971relevance,
+  title         = {Relevance Feedback in Information Retrieval},
+  author        = {Rocchio, Jr., J. J.},
+  booktitle     = {The {SMART} Retrieval System: Experiments in Automatic Document Processing},
+  editor        = {Salton, Gerard},
+  publisher     = {Prentice-Hall},
+  address       = {Englewood Cliffs, NJ},
+  pages         = {313--323},
+  year          = {1971}
+}
+
+%% ===========================================================================
+%% Agents, reasoning, cost, evaluation methodology
+%% ===========================================================================
+
+@book{kahneman2011thinking,
+  title         = {Thinking, Fast and Slow},
+  author        = {Kahneman, Daniel},
+  publisher     = {Farrar, Straus and Giroux},
+  address       = {New York},
+  year          = {2011},
+  xisbn         = {978-0-374-27563-1}
+}
+
+@inproceedings{yao2023react,
+  title         = {{ReAct}: Synergizing Reasoning and Acting in Language Models},
+  author        = {Yao, Shunyu and Zhao, Jeffrey and Yu, Dian and Du, Nan and Shafran, Izhak and Narasimhan, Karthik and Cao, Yuan},
+  booktitle     = {International Conference on Learning Representations (ICLR)},
+  year          = {2023},
+  xurl           = {https://openreview.net/forum?id=WE_vluYUL-X},
+  eprint        = {2210.03629},
+  archivePrefix = {arXiv}
+}
+
+@article{chen2023frugalgpt,
+  title         = {{FrugalGPT}: How to Use Large Language Models While Reducing Cost and Improving Performance},
+  author        = {Chen, Lingjiao and Zaharia, Matei and Zou, James},
+  journal       = {Transactions on Machine Learning Research},
+  year          = {2024},
+  xurl           = {https://openreview.net/forum?id=cSimKw5p6R},
+  eprint        = {2305.05176},
+  archivePrefix = {arXiv}
+}
+
+@article{mcnemar1947,
+  title         = {Note on the Sampling Error of the Difference between Correlated Proportions or Percentages},
+  author        = {McNemar, Quinn},
+  journal       = {Psychometrika},
+  volume        = {12},
+  number        = {2},
+  pages         = {153--157},
+  year          = {1947},
+  xdoi           = {10.1007/BF02295996}
+}
+
+@article{nosek2018preregistration,
+  title         = {The Preregistration Revolution},
+  author        = {Nosek, Brian A. and Ebersole, Charles R. and DeHaven, Alexander C. and Mellor, David T.},
+  journal       = {Proceedings of the National Academy of Sciences},
+  volume        = {115},
+  number        = {11},
+  pages         = {2600--2606},
+  year          = {2018},
+  xdoi           = {10.1073/pnas.1708274114}
+}
+
+@inproceedings{zheng2023judging,
+  title         = {Judging {LLM}-as-a-Judge with {MT-Bench} and {Chatbot Arena}},
+  author        = {Zheng, Lianmin and Chiang, Wei-Lin and Sheng, Ying and Zhuang, Siyuan and Wu, Zhanghao and Zhuang, Yonghao and Lin, Zi and Li, Zhuohan and Li, Dacheng and Xing, Eric P. and Zhang, Hao and Gonzalez, Joseph E. and Stoica, Ion},
+  booktitle     = {Advances in Neural Information Processing Systems (Datasets and Benchmarks Track)},
+  volume        = {36},
+  pages         = {46595--46623},
+  year          = {2023},
+  xdoi           = {10.52202/075280-2020},
+  eprint        = {2306.05685},
+  archivePrefix = {arXiv}
+}
+
+%% ===========================================================================
+%% Models, APIs and runtimes
+%% ===========================================================================
+
+@misc{deepseek2024v3,
+  title         = {{DeepSeek-V3} Technical Report},
+  author        = {{DeepSeek-AI}},
+  year          = {2024},
+  howpublished  = {arXiv preprint arXiv:2412.19437},
+  eprint        = {2412.19437},
+  archivePrefix = {arXiv}
+}
+
+@article{deepseek2025r1,
+  title         = {{DeepSeek-R1} Incentivizes Reasoning in {LLMs} through Reinforcement Learning},
+  author        = {Guo, Daya and Yang, Dejian and Zhang, Haowei and Song, Junxiao and Wang, Peiyi and Zhu, Qihao and Xu, Runxin and Zhang, Ruoyu and Ma, Shirong and Bi, Xiao and others},
+  journal       = {Nature},
+  volume        = {645},
+  number        = {8081},
+  pages         = {633--638},
+  year          = {2025},
+  xdoi           = {10.1038/s41586-025-09422-z},
+  xnote         = {arXiv version: ``{DeepSeek-R1}: Incentivizing Reasoning Capability in {LLMs} via Reinforcement Learning''},
+  eprint        = {2501.12948},
+  archivePrefix = {arXiv}
+}
+
+@misc{openai2025gpt41,
+  title         = {Introducing {GPT-4.1} in the {API}},
+  author        = {{OpenAI}},
+  year          = {2025},
+  month         = apr,
+  howpublished  = {OpenAI blog},
+  url           = {https://openai.com/index/gpt-4-1/},
+  note          = {Model page and prices at \url{https://developers.openai.com/api/docs/models/gpt-4.1-mini}; accessed 2026-09-26},
+  xnote         = {published 2025-04-14}
+}
+
+@misc{deepseekflash2026,
+  title         = {{DeepSeek-V4.1-Flash}: Smarter, Faster, More Efficient},
+  author        = {{DeepSeek-AI}},
+  year          = {2026},
+  month         = sep,
+  howpublished  = {DeepSeek API news},
+  url           = {https://api-docs.deepseek.com/news/news260910},
+  note          = {Prices at \url{https://api-docs.deepseek.com/quick_start/pricing/}; accessed 2026-09-26},
+  xnote         = {release note of 2026-09-10 for the API model deepseek-flash}
+}
+
+@misc{jev2026,
+  title         = {Introducing {System One} Models and {Jev}},
+  author        = {Almeida, Diogo},
+  year          = {2026},
+  month         = sep,
+  howpublished  = {TypeSafe AI blog},
+  url           = {https://typesafe.ai/blog/introducing-system-one-models-and-jev},
+  note          = {Model documentation and prices at \url{https://docs.typesafe.ai/models}; accessed 2026-09-26},
+  xnote         = {published 2026-09-15}
+}
+
+@misc{dsh2026,
+  title         = {{DeepSeek Harness}: Everything is a Plugin},
+  author        = {{DeepSeek-AI}},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/deepseek-ai/deepseek-harness},
+  note          = {Accessed 2026-09-26}
+}
+
+@misc{jevdocs2026,
+  title         = {Model Jaggedness: {Jev} 1.13},
+  author        = {{TypeSafe AI}},
+  year          = {2026},
+  howpublished  = {Model documentation},
+  url           = {https://docs.typesafe.ai/model-jaggedness/jev-1.13},
+  note          = {Accessed 2026-09-26},
+  xnote         = {known limitations of Jev 1.13}
+}
+
+@misc{mnemon2026code,
+  title         = {dsh-mnemon: Composable Memory for {DeepSeek Harness}},
+  author        = {Grivn},
+  year          = {2026},
+  howpublished  = {GitHub repository},
+  url           = {https://github.com/omdsh-dev/dsh-mnemon},
+  note          = {MIT license},
+  xnote         = {the code, prompts, pre-registration and analysis scripts of this paper are released there}
+}

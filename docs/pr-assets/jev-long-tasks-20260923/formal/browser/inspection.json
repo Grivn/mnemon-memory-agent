@@ -1,0 +1,1818 @@
+{
+  "results": [
+    {
+      "run": "project-r1-all-candidates",
+      "consoleErrors": [],
+      "consoleErrorStacks": [],
+      "dialogs": [
+        "确定取消「验收访客1」的报名吗？名额会让给候补第 1 位「验收访客5」。",
+        "确定清空名单吗？名额会回到 4 人、每位 1800 分。"
+      ],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": true
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": false
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": true
+        },
+        {
+          "id": "cancel-promotes-waiter",
+          "passed": true
+        },
+        {
+          "id": "csv-export-has-names-no-emails",
+          "passed": true
+        },
+        {
+          "id": "backup-browser-version-two",
+          "passed": true
+        },
+        {
+          "id": "reset-clears-registrations",
+          "passed": true
+        },
+        {
+          "id": "backup-ui-restores-core-state",
+          "passed": true
+        },
+        {
+          "id": "broken-import-preserves-data",
+          "passed": true
+        },
+        {
+          "id": "broken-import-shows-feedback",
+          "passed": true
+        },
+        {
+          "id": "mobile-page-no-horizontal-overflow",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "project-r1-all-candidates-desktop.png",
+        "project-r1-all-candidates-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 19747,
+          "sha256": "cc65b03be6ccc39656496e8233fc3ba733373ac77c3b3a878455b2a6ae035a28"
+        },
+        {
+          "path": "app.js",
+          "bytes": 24937,
+          "sha256": "a3827f65273719871c8765bdfcd798b774f19915298d32274cee9fef47a6425f"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 26722,
+          "sha256": "8079ccf1a158e5f1286e0062b2054063867e46aa12d5e8805b01f50ec0d775b0"
+        },
+        {
+          "path": "domain.js.tmpdoc",
+          "bytes": 155,
+          "sha256": "1098c736d77af7b3e85c27d72274884a81cb80c1048e717b801abdc15431e652"
+        },
+        {
+          "path": "index.html",
+          "bytes": 7844,
+          "sha256": "34c26a7a3b771128795d5cc5add341d5a4393bbd73beef4fd64ebeb2f5ae0d83"
+        },
+        {
+          "path": "style.css",
+          "bytes": 7957,
+          "sha256": "9c71742db649684613128b8025fde6590275d5b74584090d853256a4ff189a2a"
+        },
+        {
+          "path": "verify-cancel-waiting.mjs",
+          "bytes": 13248,
+          "sha256": "6757fb0ea9893ad3451118eef41893252606b0527f7b21e1118c6f24c717342b"
+        },
+        {
+          "path": "verify-csv.mjs",
+          "bytes": 10982,
+          "sha256": "4eb4574eb9d9511fbd6f820d81e4143135860cdec1fbd1526583ffd510383300"
+        },
+        {
+          "path": "verify-launch-checklist.mjs",
+          "bytes": 9255,
+          "sha256": "ff6c610e4b45ab11cdb3bd902ed71d84a98a5eabc9db00b9516f60db268ff54e"
+        },
+        {
+          "path": "verify-public-roster.mjs",
+          "bytes": 6632,
+          "sha256": "a677abb67cf087b64410a10b8ff76309c8cc8e5f2bdcc4ebd5f66d5a353d6ee1"
+        },
+        {
+          "path": "verify-readd.mjs",
+          "bytes": 7813,
+          "sha256": "b6afb99749c0dbdb557abafe27dbbb9d5bcb057ad0c132328b41fbcab0acfdba"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n名额 4 人，每位 1800 分。\n\n改动会自动保存在本机。\n\n报名情况\n已确认\n0\n名额 4\n候补\n0\n已取消\n0\n收入（分）\n0\n￥0.00\n\n还剩 4 个名额。\n\n报名\n姓名\n邮箱\n我同意主办方为本次报名使用我的姓名和邮箱。\n提交报名\n现场名单\n\n给现场人员用。默认不包含邮箱，只导出姓名与状态。\n\n导出名单（不含邮箱）\n需要邮箱？\n全部报名\n\n还没有人报名。\n\n已确认名单（邮箱已打码）\n\n暂无已确认报名。\n\n备份与导入\n导出备份\n导出完整表格\n清空名单\n\n导出备份与导出完整表格含完整邮箱，仅在需要保管或交接数据时使用。\n\n导入已有数据\n\n内容已自动保存在本机；换设备请用导出文件。\n\n名额与费用\n名额（人）\n每位费用（分）\n保存设置\n恢复默认\n使用说明与隐私说明",
+      "inputs": [
+        {
+          "id": "f-id",
+          "name": "id",
+          "type": "hidden",
+          "placeholder": "",
+          "labels": []
+        },
+        {
+          "id": "f-name",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名"
+          ]
+        },
+        {
+          "id": "f-email",
+          "name": "email",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "邮箱"
+          ]
+        },
+        {
+          "id": "f-consent",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "\n          \n          我同意主办方为本次报名使用我的姓名和邮箱。\n        "
+          ]
+        },
+        {
+          "id": "f-ack-privacy",
+          "name": "",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "\n        \n        我确认现场需要邮箱，并会在使用后删除含邮箱的文件。\n      "
+          ]
+        },
+        {
+          "id": "f-capacity",
+          "name": "",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "名额（人）"
+          ]
+        },
+        {
+          "id": "f-fee",
+          "name": "",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "每位费用（分）"
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "导出名单（不含邮箱）",
+        "导出备份",
+        "导出完整表格",
+        "清空名单",
+        "保存设置",
+        "恢复默认"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "e807508d-79f2-4327-93e3-06662c70f705",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "c10fd835-1e20-4e5d-86b1-e812ec2bf172",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "5de65e62-7000-4e59-8b50-fd8a6276ef93",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "e06519fe-e566-4620-91d7-45d6a400ca7d",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          },
+          {
+            "id": "3fb604e3-f04d-4835-860b-7313d150ec35",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 5,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "已确认名单（邮箱已打码）\n验收访客1a**********@example.test已确认\n验收访客2a**********@example.test已确认\n验收访客3a**********@example.test已确认\n验收访客4a**********@example.test已确认",
+      "administrativePageHasEmail": true,
+      "afterCancellation": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "e807508d-79f2-4327-93e3-06662c70f705",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "cancelled"
+          },
+          {
+            "id": "c10fd835-1e20-4e5d-86b1-e812ec2bf172",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "5de65e62-7000-4e59-8b50-fd8a6276ef93",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "e06519fe-e566-4620-91d7-45d6a400ca7d",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          },
+          {
+            "id": "3fb604e3-f04d-4835-860b-7313d150ec35",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 5,
+            "status": "confirmed"
+          }
+        ]
+      },
+      "csvControl": "导出名单（不含邮箱）",
+      "csvDelivery": "download",
+      "backupControl": "导出备份",
+      "finalText": "蒲公英报名台\n\n名额 4 人，每位 1800 分。\n\n已自动保存在本机（11:54），刷新不会丢。\n\n导入失败\n\n导入内容不是合法 JSON\n\n报名情况\n已确认\n4\n名额 4\n候补\n0\n已取消\n1\n收入（分）\n7200\n￥72.00\n\n名额已满（4/4），现在报名会进入候补。\n\n报名\n姓名\n邮箱\n我同意主办方为本次报名使用我的姓名和邮箱。\n提交报名\n现场名单\n\n给现场人员用。默认不包含邮箱，只导出姓名与状态。\n\n导出名单（不含邮箱）\n需要邮箱？\n\n邮箱是报名者个人信息。仅在确实需要通知本人时导出，并在使用后删除文件。\n\n我确认现场需要邮箱，并会在使用后删除含邮箱的文件。\n导出名单（含邮箱）\n全部报名\n验收访客1\n已取消\na**********@example.test\n验收访客2\n已确认\na**********@example.test\n取消报名\n验收访客3\n已确认\na**********@example.test\n取消报名\n验收访客4\n已确认\na**********@example.test\n取消报名\n验收访客5\n已确认\na**********@example.test\n取消报名\n已确认名单（邮箱已打码）\n验收访客2a**********@example.test已确认\n验收访客3a**********@example.test已确认\n验收访客4a**********@example.test已确认\n验收访客5a**********@example.test已确认\n备份与导入\n导出备份\n导出完整表格\n清空名单\n\n导出备份与导出完整表格含完整邮箱，仅在需要保管或交接数据时使用。\n\n导入已有数据\n粘贴导出内容\n\n导入内容不是合法 JSON\n\n导入数据\n复制当前数据\n\n内容已自动保存在本机；换设备请用导出文件。\n\n名额与费用\n名额（人）\n每位费用（分）\n保存设置\n恢复默认\n使用说明与隐私说明\n名额未满时报名即为已确认；名额已满时进入候补。\n有人取消时，候补按报名先后自动补位。\n同一个邮箱在未取消的报名中只能占一个名额（候补也占用）。\n人数和收入只统计已确认报名；候补不计收入。\n内容保存在这台设备的浏览器里，刷新或关掉重开都不丢；换设备请用导出文件。\n隐私：只收集姓名与邮箱；同意需本人勾选。现场名单默认不含邮箱；页面公示的已确认名单邮箱已打码。\n提醒：含邮箱的导出文件属于个人信息，请只给必要的人，用完及时删除。\n离线：页面不联网、不加载任何外部脚本或字体，断网可用。",
+      "finalStorage": {
+        "dandelion-registration-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"e807508d-79f2-4327-93e3-06662c70f705\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"cancelled\"\n      },\n      {\n        \"id\": \"c10fd835-1e20-4e5d-86b1-e812ec2bf172\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"5de65e62-7000-4e59-8b50-fd8a6276ef93\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"e06519fe-e566-4620-91d7-45d6a400ca7d\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"3fb604e3-f04d-4835-860b-7313d150ec35\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 5,\n        \"status\": \"confirmed\"\n      }\n    ]\n  }\n}"
+      }
+    },
+    {
+      "run": "project-r1-lexical-maintained",
+      "consoleErrors": [],
+      "consoleErrorStacks": [],
+      "dialogs": [
+        "确定清空全部报名数据吗？无法撤销。",
+        "导入会覆盖当前内容，确定继续吗？",
+        "导入会覆盖当前内容，确定继续吗？"
+      ],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": true
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": true
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": true
+        },
+        {
+          "id": "cancel-promotes-waiter",
+          "passed": true
+        },
+        {
+          "id": "csv-export-has-names-no-emails",
+          "passed": true
+        },
+        {
+          "id": "backup-browser-version-two",
+          "passed": true
+        },
+        {
+          "id": "reset-clears-registrations",
+          "passed": true
+        },
+        {
+          "id": "backup-ui-restores-core-state",
+          "passed": true
+        },
+        {
+          "id": "broken-import-preserves-data",
+          "passed": true
+        },
+        {
+          "id": "broken-import-shows-feedback",
+          "passed": true
+        },
+        {
+          "id": "mobile-page-no-horizontal-overflow",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "project-r1-lexical-maintained-desktop.png",
+        "project-r1-lexical-maintained-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 9805,
+          "sha256": "ed8cdc8747b2b3bf613952b4d928f9176a0525535a7ad2a8c16b1747d6185593"
+        },
+        {
+          "path": "_onsite-bindings-guarded.js",
+          "bytes": 382,
+          "sha256": "daabcad0619d01863e6b093ebdc321a26f1141ba8bd187dd838110b07a2c2c74"
+        },
+        {
+          "path": "_public-roster-render.js",
+          "bytes": 619,
+          "sha256": "3c306a314ed8318518d4eea4bd64d508ca278846d020e8ab35158aeed493af8f"
+        },
+        {
+          "path": "_tmp-note.js",
+          "bytes": 275,
+          "sha256": "d4fdde15906829010d7cda7b657194c0d979b632d43f05126544172a824c409e"
+        },
+        {
+          "path": "app.js",
+          "bytes": 26286,
+          "sha256": "7ad8f89faa84425d5180e1d6ddc610eefb0087693ee7b9c279a50c596cd09fa0"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 27160,
+          "sha256": "5a7bb202ebe34013d26d4bb78eb685a7cd6122821f4feed6895a239170668f8c"
+        },
+        {
+          "path": "domain.patch-notes.js",
+          "bytes": 1681,
+          "sha256": "6bec442fc393e668b0c9c23fa92a60e8b9a43569b7f7bbefd3083563bdb713e3"
+        },
+        {
+          "path": "import-hints.js",
+          "bytes": 3262,
+          "sha256": "7a92ca6c80c16aea9119b39f5a254bbcac5d14022e9907973acb892086f71440"
+        },
+        {
+          "path": "index.html",
+          "bytes": 9056,
+          "sha256": "2460218425f20b786b67d9e6cb86e57f7023545b5507947a211f5429c5f42a6b"
+        },
+        {
+          "path": "onsite-export.js",
+          "bytes": 1362,
+          "sha256": "9a7e480d1aa6bf4b1434a7eb6956a9c801f48b6862d15b44d10dc05c9610e0a8"
+        },
+        {
+          "path": "onsite-snippet.js",
+          "bytes": 379,
+          "sha256": "a14147cdb273add1a8f4406721a20f0de759945df8af2a2798cb048a7a151c8f"
+        },
+        {
+          "path": "patch-submit.js",
+          "bytes": 375,
+          "sha256": "d3d64bf56eaed286fbeed7e73fdd15972b397b9f5b2107326907df062a4b4e17"
+        },
+        {
+          "path": "persistence-test.mjs",
+          "bytes": 12098,
+          "sha256": "2f04d69b6ee7008b5241235be80d432bfa478b8a2937a0210920aa892de54297"
+        },
+        {
+          "path": "run-tests.js",
+          "bytes": 1309,
+          "sha256": "7535299d3b46ea0b692b2223d846915c008caa3bb4bbff9bd425d068180454aa"
+        },
+        {
+          "path": "self-test.mjs",
+          "bytes": 23462,
+          "sha256": "4dafb6e38d59a413038022cda470947acb9062c981eaa22391134e52d13febf2"
+        },
+        {
+          "path": "style.css",
+          "bytes": 8974,
+          "sha256": "941ddad3bfdfd3b09661fc61bb99dc68bcc721ad72254c9d3204a7f0bc0cc3cc"
+        },
+        {
+          "path": "verify-cancel-keeps-confirmed.mjs",
+          "bytes": 14791,
+          "sha256": "ff19d19493cef9196b84dd2e0445c855edfcd16018f58f1b27af4e3b5d25d391"
+        },
+        {
+          "path": "verify-csv-fields.mjs",
+          "bytes": 8984,
+          "sha256": "8b53bfdc6b56f7441e44d3e7dcb623a09f2d84b6a2382871579cbda3d6d18896"
+        },
+        {
+          "path": "verify-offline.mjs",
+          "bytes": 7836,
+          "sha256": "eb63260153072a1bac08b42a22f9a1c3ef571918272d058d9d88b2aeaa3cab04"
+        },
+        {
+          "path": "verify-summary-fees.mjs",
+          "bytes": 9712,
+          "sha256": "32577b718b0cfb26d1e9f599df03fa096ac0362e8f952f6b8fb9339e76bbbf22"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n离线可用，数据只保存在本机。\n\n报名\n姓名 *\n\n会显示在公开名单上。\n\n邮箱\n\n选填，不会公开。\n\n我同意在名单中使用我的姓名。\n\n需要你亲自勾选。\n\n提交报名\n清空\n汇总\n已确认\n0 / 4\n候补\n0\n已取消\n0\n收入（元）\n0.00\n\n收入只算已确认的人。\n\n还有 4 个名额。\n\n名额（人）\n每位（分）\n\n单位：分。100 分 = 1 元。\n\n应用\n报名名单\n已取消的记录会保留。\n姓名\t邮箱\t状态\t排队位置\t报名序号\t操作\n\n还没有人报名。\n\n公开名单\n\n还没有已确认的人。\n\n候补还没拿到名额，不会出现在这里。\n\n保存与导入导出\n\n换电脑或清理浏览器前，请先导出备份。\n\n导出备份文本\n下载备份文件\n下载名单表格\n备份内容\n\n备份格式：{ \"version\": 2, \"state\": { capacity, feeCents, registrations } }。旧版或损坏的备份会被拒绝，且不会改动现有数据。\n\n把备份内容粘贴到这里再导入。\n\n导入（覆盖）\n导入（保留现有）\n清空全部\n现场名单（不含邮箱）\n\n给现场人员用：只有序号、姓名、状态、候补位置，没有邮箱。已取消的人不会出现在这里。\n\n名单范围\n仅已确认\n仅候补（含位次）\n已确认 + 候补\n\n候补也列出来，现场好按顺序叫号。\n\n生成现场名单文本\n下载现场名单 CSV\n现场名单内容\n\n生成后可直接复制或打印；本内容不含邮箱。\n\n自检\n运行检查\n\n对应 README 第六节；也可以在命令行运行 self-test.mjs 与 persistence-test.mjs。\n\n蒲公英报名台",
+      "inputs": [
+        {
+          "id": "field-name",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名 *"
+          ]
+        },
+        {
+          "id": "field-email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "",
+          "labels": [
+            "邮箱"
+          ]
+        },
+        {
+          "id": "field-consent",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "我同意在名单中使用我的姓名。"
+          ]
+        },
+        {
+          "id": "field-capacity",
+          "name": "",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "名额（人）"
+          ]
+        },
+        {
+          "id": "field-fee",
+          "name": "",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "每位（分）"
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "清空",
+        "应用",
+        "导出备份文本",
+        "下载备份文件",
+        "下载名单表格",
+        "导入（覆盖）",
+        "导入（保留现有）",
+        "清空全部",
+        "生成现场名单文本",
+        "下载现场名单 CSV",
+        "运行检查"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "r1790135673463-验收访客1",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1790135673463,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673544-验收访客2",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1790135673544,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673612-验收访客3",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 1790135673612,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673679-验收访客4",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 1790135673679,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673746-验收访客5",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 1790135673746,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "公开名单\n验收访客1\n验收访客2\n验收访客3\n验收访客4\n\n候补还没拿到名额，不会出现在这里。",
+      "administrativePageHasEmail": true,
+      "afterCancellation": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "r1790135673463-验收访客1",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1790135673463,
+            "status": "cancelled"
+          },
+          {
+            "id": "r1790135673544-验收访客2",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1790135673544,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673612-验收访客3",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 1790135673612,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673679-验收访客4",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 1790135673679,
+            "status": "confirmed"
+          },
+          {
+            "id": "r1790135673746-验收访客5",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 1790135673746,
+            "status": "confirmed"
+          }
+        ]
+      },
+      "csvControl": "下载现场名单 CSV",
+      "csvDelivery": "download",
+      "backupControl": "下载备份文件",
+      "finalText": "蒲公英报名台\n\n离线可用，数据只保存在本机。\n\n导入没有成功，原有内容未变动\n\n导入内容不是合法的 JSON\n请确认复制的是完整内容（以 { 开头、以 } 结尾），中间的引号和逗号不要被聊天工具改掉。\n报名\n姓名 *\n\n会显示在公开名单上。\n\n邮箱\n\n选填，不会公开。\n\n我同意在名单中使用我的姓名。\n\n需要你亲自勾选。\n\n提交报名\n清空\n汇总\n已确认\n4 / 4\n候补\n0\n已取消\n1\n收入（元）\n72.00\n\n收入只算已确认的人。\n\n名额已满（4/4），新报名进入候补。\n\n名额（人）\n每位（分）\n\n单位：分。100 分 = 1 元。\n\n应用\n报名名单\n已取消的记录会保留。\n验收访客1\nacceptance1@example.test\n已取消\n—\n1790135673463\n已取消\n验收访客2\nacceptance2@example.test\n已确认\n已入名额\n1790135673544\n取消\n验收访客3\nacceptance3@example.test\n已确认\n已入名额\n1790135673612\n取消\n验收访客4\nacceptance4@example.test\n已确认\n已入名额\n1790135673679\n取消\n验收访客5\nacceptance5@example.test\n已确认\n已入名额\n1790135673746\n取消\n公开名单\n验收访客2\n验收访客3\n验收访客4\n验收访客5\n\n候补还没拿到名额，不会出现在这里。\n\n保存与导入导出\n\n换电脑或清理浏览器前，请先导出备份。\n\n导出备份文本\n下载备份文件\n下载名单表格\n备份内容\n\n备份格式：{ \"version\": 2, \"state\": { capacity, feeCents, registrations } }。旧版或损坏的备份会被拒绝，且不会改动现有数据。\n\n把备份内容粘贴到这里再导入。\n\n导入（覆盖）\n导入（保留现有）\n清空全部\n\n导入没有成功，原有内容未变动。\n\n原因：导入内容不是合法的 JSON\n请确认复制的是完整内容（以 { 开头、以 } 结尾），中间的引号和逗号不要被聊天工具改掉。\n现场名单（不含邮箱）\n\n给现场人员用：只有序号、姓名、状态、候补位置，没有邮箱。已取消的人不会出现在这里。\n\n名单范围\n仅已确认\n仅候补（含位次）\n已确认 + 候补\n\n候补也列出来，现场好按顺序叫号。\n\n生成现场名单文本\n下载现场名单 CSV\n现场名单内容\n\n生成后可直接复制或打印；本内容不含邮箱。\n\n自检\n运行检查\n\n对应 README 第六节；也可以在命令行运行 self-test.mjs 与 persistence-test.mjs。\n\n蒲公英报名台",
+      "finalStorage": {
+        "dandelion-signup-state-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"r1790135673463-验收访客1\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1790135673463,\n        \"status\": \"cancelled\"\n      },\n      {\n        \"id\": \"r1790135673544-验收访客2\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1790135673544,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"r1790135673612-验收访客3\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1790135673612,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"r1790135673679-验收访客4\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1790135673679,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"r1790135673746-验收访客5\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1790135673746,\n        \"status\": \"confirmed\"\n      }\n    ]\n  }\n}"
+      }
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "consoleErrors": [],
+      "consoleErrorStacks": [],
+      "dialogs": [],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": true
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": true
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": true
+        },
+        {
+          "id": "cancel-promotes-waiter",
+          "passed": true
+        },
+        {
+          "id": "csv-export-has-names-no-emails",
+          "passed": true
+        },
+        {
+          "id": "backup-browser-version-two",
+          "passed": true
+        },
+        {
+          "id": "reset-clears-registrations",
+          "passed": true
+        },
+        {
+          "id": "backup-ui-restores-core-state",
+          "passed": true
+        },
+        {
+          "id": "broken-import-preserves-data",
+          "passed": true
+        },
+        {
+          "id": "broken-import-shows-feedback",
+          "passed": true
+        },
+        {
+          "id": "mobile-page-no-horizontal-overflow",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "project-r1-jev-maintained-desktop.png",
+        "project-r1-jev-maintained-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 15335,
+          "sha256": "4111febb1f9af8d07cb493d80bae1ebf44b7fb6557df4ba3bedb5fa35cd0216f"
+        },
+        {
+          "path": "app.js",
+          "bytes": 26396,
+          "sha256": "22b567deafc8615b9518f3b1dcf1c43d27e6c25fa881f65c9f5c35d95e222c61"
+        },
+        {
+          "path": "check-boundaries.mjs",
+          "bytes": 10533,
+          "sha256": "8eea1e057d7dd3d079faae0cc04c149f56c08460adef139d467c7870e409ee7d"
+        },
+        {
+          "path": "check-csv.mjs",
+          "bytes": 5451,
+          "sha256": "ff5fc938eb52b4d8e96d7b438b1e96ec3f0f5adca5c5a61f286eb736c18a32dc"
+        },
+        {
+          "path": "check-fee-stats.mjs",
+          "bytes": 8179,
+          "sha256": "04e792237602b6ded3407b4001f08a3c27c822c0bea00275227e9f7e907ecb97"
+        },
+        {
+          "path": "check-import-fail-snippet.txt",
+          "bytes": 413,
+          "sha256": "2ea13445e9aaadbe7e64a41fc443a8f27b7c1578a1615ac39b2b4f1dc9d87d61"
+        },
+        {
+          "path": "check-import-fail.mjs",
+          "bytes": 6006,
+          "sha256": "27c606b85019f02cab500d97e21d78e53ad7dda6dc35d2e5f8b526efd549d3f3"
+        },
+        {
+          "path": "check-reregister.mjs",
+          "bytes": 5026,
+          "sha256": "24235ff8fa4dfd53482b4c501ca47cfb3d9a5fa785a8c4b3ff79a805071ee37b"
+        },
+        {
+          "path": "check-waitlist-cancel.mjs",
+          "bytes": 6282,
+          "sha256": "0352cc7b3afa1e97df2f20268df2667a195237bfb549a07c53225d7ae9bdfd27"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 24534,
+          "sha256": "cc4dccab7c610a98595194963302c47f3fd219e0542b393151b8d8445704b1d4"
+        },
+        {
+          "path": "index.html",
+          "bytes": 4605,
+          "sha256": "c4678f2622bea3dd356227a46f9b495470fb59d06f1866ae9b00901c24be8484"
+        },
+        {
+          "path": "style.css",
+          "bytes": 5917,
+          "sha256": "20f48b75e041d436672ad8313449fb305602021e789ce98ff75b81f9a5dd6726"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n名额 4 人，每人 1800 分。\n\n报名\n姓名\n邮箱（不会公开）\n我同意隐私条款\n提交报名\n\n名额满时报名不会失败，会自动进入候补。\n\n汇总\n已确认\n0\n候补\n0\n已取消\n0\n收入\n0 分\n还可报名\n4 人\n名额 / 每人\n4 人 / 1800 分\n\n还可报名 4 人。\n\n改动会自动保存到本机。\n\n已确认名单\n还没有已确认的报名者。\n候补队列\n当前没有候补。\n\n还可报名 4 人。\n\n全部记录\n还没有报名记录。\n变更记录\n本次还没有操作记录。\n交给现场（不含邮箱）\n\n以下名单不含邮箱，可直接交给现场人员。\n\n生成现场签到名单\n导出名单 CSV\n\n现场签到名单只含已确认者的姓名与留空的“签到”列，末尾附汇总；CSV 则包含候补与已取消记录。\n\n自己存档（含邮箱，勿外发）\n\n以下内容含邮箱，仅供自己备份与日后回导，请勿外发。\n\n完整备份\n导入名单\n数据文本框（导出结果 / 要导入的内容）\n清空名单\n\n导入失败不会改动当前名单；清空会删掉全部记录。",
+      "inputs": [
+        {
+          "id": "name",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名"
+          ]
+        },
+        {
+          "id": "email",
+          "name": "email",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "邮箱（不会公开）"
+          ]
+        },
+        {
+          "id": "consent",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "\n          \n          我同意隐私条款\n        "
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "生成现场签到名单",
+        "导出名单 CSV",
+        "完整备份",
+        "导入名单",
+        "清空名单"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "acceptance1@example.test",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 0,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance2@example.test",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance3@example.test",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance4@example.test",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance5@example.test",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "已确认名单\n验收访客1\n验收访客2\n验收访客3\n验收访客4",
+      "administrativePageHasEmail": true,
+      "afterCancellation": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "acceptance1@example.test",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 0,
+            "status": "cancelled"
+          },
+          {
+            "id": "acceptance2@example.test",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance3@example.test",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance4@example.test",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance5@example.test",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          }
+        ]
+      },
+      "csvControl": "导出名单 CSV",
+      "csvDelivery": "download",
+      "backupControl": "完整备份",
+      "finalText": "蒲公英报名台\n\n名额 4 人，每人 1800 分。\n\n导入失败：备份内容不是合法的 JSON。当前名单没有被改动，仍是导入前那份（已确认 4 人、候补 0 人、已取消 1 人）；数据文本框里的内容也原样保留，可以修正后重新导入。\n\n报名\n姓名\n邮箱（不会公开）\n我同意隐私条款\n提交报名\n\n名额满时报名不会失败，会自动进入候补。\n\n汇总\n已确认\n4\n候补\n0\n已取消\n1\n收入\n7200 分\n还可报名\n已满\n名额 / 每人\n4 人 / 1800 分\n\n名额已满，新报名将进入候补。\n\n已保存到本机（11:54），刷新后仍在。\n\n已确认名单\n验收访客2\n验收访客3\n验收访客4\n验收访客5\n候补队列\n当前没有候补。\n\n名额已满，但暂无人排队。\n\n全部记录\n姓名\n验收访客1\n状态\n已取消\n编号\nacceptance1@example.test\n报名顺序\n0\n隐私同意\n已同意\n已取消。\n姓名\n验收访客2\n状态\n已确认\n编号\nacceptance2@example.test\n报名顺序\n1\n隐私同意\n已同意\n取消报名\n姓名\n验收访客3\n状态\n已确认\n编号\nacceptance3@example.test\n报名顺序\n2\n隐私同意\n已同意\n取消报名\n姓名\n验收访客4\n状态\n已确认\n编号\nacceptance4@example.test\n报名顺序\n3\n隐私同意\n已同意\n取消报名\n姓名\n验收访客5\n状态\n已确认\n编号\nacceptance5@example.test\n报名顺序\n4\n隐私同意\n已同意\n取消报名\n变更记录\n[11:54:37] 导入失败（名单未改动）：备份内容不是合法的 JSON。\n[11:54:37] 导入名单：已确认 0→4、候补 0→0、已取消 0→1\n[11:54:37] 清空名单：清除了 5 条记录\n[11:54:36] 自动补位：验收访客5：候补 → 已确认\n[11:54:36] 取消已确认：验收访客1：已确认 → 已取消\n交给现场（不含邮箱）\n\n以下名单不含邮箱，可直接交给现场人员。\n\n生成现场签到名单\n导出名单 CSV\n\n现场签到名单只含已确认者的姓名与留空的“签到”列，末尾附汇总；CSV 则包含候补与已取消记录。\n\n自己存档（含邮箱，勿外发）\n\n以下内容含邮箱，仅供自己备份与日后回导，请勿外发。\n\n完整备份\n导入名单\n数据文本框（导出结果 / 要导入的内容）\n导入失败：备份内容不是合法的 JSON。当前名单没有被改动，仍是导入前那份（已确认 4 人、候补 0 人、已取消 1 人）；数据文本框里的内容也原样保留，可以修正后重新导入。\n清空名单\n\n导入失败不会改动当前名单；清空会删掉全部记录。",
+      "finalStorage": {
+        "pgy-signup-state-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"acceptance1@example.test\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 0,\n        \"status\": \"cancelled\"\n      },\n      {\n        \"id\": \"acceptance2@example.test\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance3@example.test\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance4@example.test\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance5@example.test\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      }\n    ]\n  }\n}"
+      }
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "consoleErrors": [],
+      "consoleErrorStacks": [],
+      "dialogs": [],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": true
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": true
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": true
+        },
+        {
+          "id": "cancel-promotes-waiter",
+          "passed": false
+        },
+        {
+          "id": "csv-export-has-names-no-emails",
+          "passed": true
+        },
+        {
+          "id": "backup-browser-version-two",
+          "passed": true
+        },
+        {
+          "id": "reset-clears-registrations",
+          "passed": true
+        },
+        {
+          "id": "backup-ui-restores-core-state",
+          "passed": true
+        },
+        {
+          "id": "broken-import-preserves-data",
+          "passed": true
+        },
+        {
+          "id": "broken-import-shows-feedback",
+          "passed": true
+        },
+        {
+          "id": "mobile-page-no-horizontal-overflow",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "project-r2-jev-maintained-desktop.png",
+        "project-r2-jev-maintained-cancellation.png",
+        "project-r2-jev-maintained-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 9983,
+          "sha256": "021d159bc51da3b4d1cf99ec2795443bf9bd61cdc7e88d1fef5866d4079b1558"
+        },
+        {
+          "path": "_patch-import.txt",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        },
+        {
+          "path": "_patch-msg.txt",
+          "bytes": 113,
+          "sha256": "7f82ebf4513460ef813cbdca32336d24bb40ee2da01666483643d6be9a732c4f"
+        },
+        {
+          "path": "app.js",
+          "bytes": 25710,
+          "sha256": "82354ac4b61adad508b12df4bb70db77dbc6fd5e808658efce19e966d7730b59"
+        },
+        {
+          "path": "diag.js",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 26584,
+          "sha256": "779a1745a7cb64e954b9068f76b3299aff56641a41a6846cbc3f21f972a60e50"
+        },
+        {
+          "path": "index.html",
+          "bytes": 7103,
+          "sha256": "622b33f3d887d712a29f85bfccaf80507c0c1df3d31b3d5a903b3a1d2ed94be7"
+        },
+        {
+          "path": "probe.html",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        },
+        {
+          "path": "probe.js",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        },
+        {
+          "path": "probe2.js",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        },
+        {
+          "path": "style.css",
+          "bytes": 9344,
+          "sha256": "241b2350d8ec15c1296fb4f1806c3b0834eb9ad5b9b35884ef03aa3c999c1f5d"
+        },
+        {
+          "path": "verify-billing-summary.mjs",
+          "bytes": 8678,
+          "sha256": "5e929ebe39a2d8b1f50dbe71e1af12ef5e0b9bb5bd0f7dead0cc3cc86462488a"
+        },
+        {
+          "path": "verify-cancel-confirm-twice.html",
+          "bytes": 10834,
+          "sha256": "ea6a2cbe56a80de9cb0d153735ec9e7178194cee8d6cac3465d12165411595ad"
+        },
+        {
+          "path": "verify-cancel-confirm-twice.mjs",
+          "bytes": 13441,
+          "sha256": "13405a594c8324a1a935631a4da14d1e6b21bc779d6944141cc356a21bb82c10"
+        },
+        {
+          "path": "verify-csv-escaping.mjs",
+          "bytes": 6886,
+          "sha256": "01e6d5ee97594934b8cccc922abb062027b335d1b6bb8453d9615a4eaa4a9007"
+        },
+        {
+          "path": "verify-waitlist-cancel.html",
+          "bytes": 5949,
+          "sha256": "3816ae0de58ac7fb969cbafbd30b3b6a2d5dca8a8249bb5f584fbf5eca44d41a"
+        },
+        {
+          "path": "verify-waitlist-cancel.mjs",
+          "bytes": 9467,
+          "sha256": "e565bfdb92585e5cbde14e06b2a7acd9c93d5d8392f9ea45648dcf3d7ba9435f"
+        },
+        {
+          "path": "waitlist.css",
+          "bytes": 43,
+          "sha256": "5cf2545971b8db1707160587e9aa5c1798f637ac1167d62a000b9364b735f0af"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n填姓名即可报名，名额满后自动排队候补。\n\n暂无存档，已用默认设置。\n\n报名\n\n还剩 4 个名额，报名后直接确认。\n\n姓名\n\n邮箱（选填，不会公开）\n\n我同意隐私条款：公开名单不含邮箱。\n\n提交报名\n\n汇总\n已确认\n0\n候补\n0\n已取消\n0\n收入（元）\n0.00\n\n收入只算已确认。\n\n候补队列\n\n暂无候补。\n\n名单\n\n报名名单（不含邮箱）\n姓名\t状态\t序号\t操作\n\n暂无报名。\n\n导出名单\n\n给现场人员用的名单，只有姓名、状态、序号 — 不含邮箱，也不含任何其他联系信息。\n\n包含哪些人\n\n已确认\n\n候补\n\n已取消\n\n下载名单 CSV\n复制表格\n导出完整存档\n\n导出内容预览\n导入存档\n\n换设备时用：先导出“完整存档”，在新设备上粘贴到这里导入。存档含邮箱，请当内部文件保管。\n\n粘贴存档内容\n\n导入\n清空名单\n\n设置\n\n数据存在本机浏览器，不会上传。",
+      "inputs": [
+        {
+          "id": "name-input",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名"
+          ]
+        },
+        {
+          "id": "email-input",
+          "name": "email",
+          "type": "email",
+          "placeholder": "",
+          "labels": [
+            "邮箱（选填，不会公开）"
+          ]
+        },
+        {
+          "id": "consent-input",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "我同意隐私条款：公开名单不含邮箱。"
+          ]
+        },
+        {
+          "id": "scope-confirmed",
+          "name": "",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "已确认"
+          ]
+        },
+        {
+          "id": "scope-waiting",
+          "name": "",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "候补"
+          ]
+        },
+        {
+          "id": "scope-cancelled",
+          "name": "",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "已取消"
+          ]
+        },
+        {
+          "id": "capacity-input",
+          "name": "capacity",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "名额"
+          ]
+        },
+        {
+          "id": "fee-input",
+          "name": "feeYuan",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "每位（元）"
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "下载名单 CSV",
+        "复制表格",
+        "导出完整存档",
+        "导入",
+        "清空名单"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "pp2tuxheumudkk9ak",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "phchgh0skmudkk9ct",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "plm0erpw3mudkk9eo",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "pfw9feluvmudkk9gj",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          },
+          {
+            "id": "pxv0bqaqrmudkk9ie",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 5,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "名单\n\n报名名单（不含邮箱）\n姓名\t状态\t序号\t操作\n验收访客1\t已确认\t1\t取消\n验收访客2\t已确认\t2\t取消\n验收访客3\t已确认\t3\t取消\n验收访客4\t已确认\t4\t取消\n验收访客5\t候补\t5\t取消候补",
+      "administrativePageHasEmail": false,
+      "afterCancellation": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "pp2tuxheumudkk9ak",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "phchgh0skmudkk9ct",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "plm0erpw3mudkk9eo",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "pfw9feluvmudkk9gj",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          },
+          {
+            "id": "pxv0bqaqrmudkk9ie",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 5,
+            "status": "waiting"
+          }
+        ]
+      },
+      "csvControl": "下载名单 CSV",
+      "csvDelivery": "download",
+      "backupControl": "导出完整存档",
+      "finalText": "蒲公英报名台\n\n填姓名即可报名，名额满后自动排队候补。\n\n已保存 11:54:39\n\n请修正：\n\n内容格式不对。\n报名\n\n名额已满，报名后进入候补。\n\n姓名\n\n邮箱（选填，不会公开）\n\n我同意隐私条款：公开名单不含邮箱。\n\n提交报名\n\n找不到这条报名。\n\n汇总\n已确认\n4\n候补\n1\n已取消\n0\n收入（元）\n72.00\n\n收入只算已确认。\n\n候补队列\n第 1 位\n验收访客5\n下一位补位\n取消候补\n\n名单\n\n报名名单（不含邮箱）\n验收访客1\n已确认\n1\n取消\n验收访客2\n已确认\n2\n取消\n验收访客3\n已确认\n3\n取消\n验收访客4\n已确认\n4\n取消\n验收访客5\n候补\n5\n取消候补\n导出名单\n\n给现场人员用的名单，只有姓名、状态、序号 — 不含邮箱，也不含任何其他联系信息。\n\n包含哪些人\n\n已确认\n\n候补\n\n已取消\n\n下载名单 CSV\n复制表格\n导出完整存档\n\n导出内容预览\n{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"pp2tuxheumudkk9ak\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"phchgh0skmudkk9ct\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"plm0erpw3mudkk9eo\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"pfw9feluvmudkk9gj\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"pxv0bqaqrmudkk9ie\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 5,\n        \"status\": \"waiting\"\n      }\n    ]\n  }\n}\n导入存档\n\n换设备时用：先导出“完整存档”，在新设备上粘贴到这里导入。存档含邮箱，请当内部文件保管。\n\n粘贴存档内容\n内容格式不对。\n\n导入\n清空名单\n\n导入失败，名单未变。\n\n设置\n\n名额\n\n每位（元）\n\n保存设置\n\n数据存在本机浏览器，不会上传。",
+      "finalStorage": {
+        "dandelion-signup-state-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"pp2tuxheumudkk9ak\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"phchgh0skmudkk9ct\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"plm0erpw3mudkk9eo\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"pfw9feluvmudkk9gj\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"pxv0bqaqrmudkk9ie\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 5,\n        \"status\": \"waiting\"\n      }\n    ]\n  }\n}"
+      }
+    },
+    {
+      "run": "project-r2-lexical-maintained",
+      "consoleErrors": [
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')",
+        "TypeError: Cannot set properties of null (setting 'textContent')"
+      ],
+      "consoleErrorStacks": [
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at start (http://127.0.0.1:64059/app.js:793:3)\n    at http://127.0.0.1:64059/app.js:805:1",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at applyChange (http://127.0.0.1:64059/app.js:487:3)\n    at submitSignup (http://127.0.0.1:64059/app.js:574:3)\n    at HTMLFormElement.handleSubmit (http://127.0.0.1:64059/app.js:505:5)",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at applyChange (http://127.0.0.1:64059/app.js:487:3)\n    at submitSignup (http://127.0.0.1:64059/app.js:574:3)\n    at HTMLFormElement.handleSubmit (http://127.0.0.1:64059/app.js:505:5)",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at applyChange (http://127.0.0.1:64059/app.js:487:3)\n    at submitSignup (http://127.0.0.1:64059/app.js:574:3)\n    at HTMLFormElement.handleSubmit (http://127.0.0.1:64059/app.js:505:5)",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at applyChange (http://127.0.0.1:64059/app.js:487:3)\n    at submitSignup (http://127.0.0.1:64059/app.js:574:3)\n    at HTMLFormElement.handleSubmit (http://127.0.0.1:64059/app.js:505:5)",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at applyChange (http://127.0.0.1:64059/app.js:487:3)\n    at submitSignup (http://127.0.0.1:64059/app.js:574:3)\n    at HTMLFormElement.handleSubmit (http://127.0.0.1:64059/app.js:505:5)",
+        "TypeError: Cannot set properties of null (setting 'textContent')\n    at renderRoster (http://127.0.0.1:64059/app.js:352:35)\n    at renderAll (http://127.0.0.1:64059/app.js:459:3)\n    at start (http://127.0.0.1:64059/app.js:793:3)\n    at http://127.0.0.1:64059/app.js:805:1"
+      ],
+      "dialogs": [],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": false,
+          "detail": [
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')",
+            "TypeError: Cannot set properties of null (setting 'textContent')"
+          ]
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": false
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": true
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": false
+        }
+      ],
+      "screenshots": [
+        "project-r2-lexical-maintained-desktop.png",
+        "project-r2-lexical-maintained-failure.png",
+        "project-r2-lexical-maintained-failure-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 20475,
+          "sha256": "46384d71d09efb92bc05d9ed66fc2d5e4ce12bc20eaf2f32d356e766209fb236"
+        },
+        {
+          "path": "app.js",
+          "bytes": 27371,
+          "sha256": "1f24a50388bef82a5f8e69ba985449c198023dacc0162447cfa1491094d26252"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 20447,
+          "sha256": "ba47ff4a2daa4a29f177a5cad4280a8536243720eb91d5b5d24a57661f348d88"
+        },
+        {
+          "path": "index.html",
+          "bytes": 7271,
+          "sha256": "812b99acebac73efeb80712fe0cff19d1b31761a875d8e4844dc41031d063967"
+        },
+        {
+          "path": "style-extra.css",
+          "bytes": 234,
+          "sha256": "c4546e7f63205f11cd48ba296ae28959ed05879a6f871b02bc6d49cd88d78ed3"
+        },
+        {
+          "path": "style.css",
+          "bytes": 7057,
+          "sha256": "a289a4166815e6c79edccfe152326cdfabfb29e5f268e148c9727343402f5021"
+        },
+        {
+          "path": "verify-boundaries.mjs",
+          "bytes": 16228,
+          "sha256": "b56ed335ef741cef2eca3ab069aa2947cad0db7a6d4f398a960085a305ace5a8"
+        },
+        {
+          "path": "verify-brief.mjs",
+          "bytes": 9027,
+          "sha256": "b7757c4e2db7f49258f03464605eb172c21f290d27c70abe413ee673d365e3d4"
+        },
+        {
+          "path": "verify-cancel-confirmed-then-again.mjs",
+          "bytes": 8501,
+          "sha256": "d25f2a6e11e8a04444b2fb6fb7c5754646176f99077f3093ff9ff377b1fdb22b"
+        },
+        {
+          "path": "verify-csv.mjs",
+          "bytes": 6716,
+          "sha256": "3b2a6225ee2f9b635a4a716b847a60c788d3a5664fa81539d7f893ee80291030"
+        },
+        {
+          "path": "verify-fees-stats.mjs",
+          "bytes": 9292,
+          "sha256": "a604536c4afde7e02eac3fb9d8c6def2d5abcf8b8a697ee945069e54c569fd41"
+        },
+        {
+          "path": "verify-import-protection.mjs",
+          "bytes": 9138,
+          "sha256": "6ec011af7146b8649f02bf88742abeadd4f043239b19806fdb870fff6f7663c6"
+        },
+        {
+          "path": "verify-waitlist-cancel.mjs",
+          "bytes": 9065,
+          "sha256": "b745ce27e2d8678843b81110e95ffef8616eab011fdd4b45ab2bb749c99617aa"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n共 4 个名额，每位 1800 分。名额满后报名进入候补，有人取消时按报名先后递补。\n\n已自动保存在本机\n\n页面出现意外错误\n\nCannot set properties of null (setting 'textContent')\n报名\n\n还剩 4 个名额　共 4 个名额　每位 1800 分；现在报名可直接确认。\n\n编号 ID\n\n姓名\n\n邮箱\n\n我同意：姓名会出现在名单上，邮箱不会公开。\n\n提交报名\n\n页面出现意外错误：Cannot set properties of null (setting 'textContent')\n\n名单（可对外发布）\n\n以下只包含已确认者的序号与姓名，不含邮箱、编号 ID 或其他内部信息，可以直接张贴或发到群里。\n\n公示名单（已确认者；不含邮箱）\n序号\t姓名\n\n还没有已确认的报名。\n\n复制名单\n导出名单表格\n打印名单\n\n候补\n\n候补（从上到下就是递补顺序）\n位次\t姓名\t操作\n\n暂时没有候补。\n\n取消候补不会空出正式名额。\n\n已取消\n\n这些报名已取消，不计入人数和收入。\n\n已取消的报名\n姓名\n\n没有已取消的报名。\n\n汇总\n已确认\n0 / 4 人\n剩余名额\n4 个\n候补\n0 人\n已取消\n0 人\n每位费用\n1800 分\n合计收入\n0 分\n\n还没有已确认的报名，因此还没有收入。\n\n本机管理名单\n\n这一张含编号 ID 与报名序号，仅供本机管理员核对和取消，不要对外发布；对外发布请用上面的「名单」。\n\n管理名单（已确认与候补均列出，按报名先后；不含邮箱）\n序号\t姓名\t状态\t编号 ID\t报名序号\t操作\n\n当前没有可管理的名单。\n\n导出管理表格\n\n备份与恢复\n\n名单会自动保存在这台设备的浏览器里，刷新或重新打开都不会丢。下面用于备份到别处、或从备份恢复。\n\n「导出备份」包含邮箱，只能自己保管（用于将来恢复数据），不要发给现场人员。\n\n导出备份\n导出完整表格\n立即保存\n读取本机\n清空数据\n\n从备份恢复（粘贴之前导出的内容）\n\n导入并替换\n\n导出结果\n\n操作记录\n\n最近 8 次操作结果。\n\n页面出现意外错误：Cannot set properties of null (setting 'textContent')\n\n蒲公英报名台 · 离线网页，数据只保存在本机",
+      "inputs": [
+        {
+          "id": "field-id",
+          "name": "id",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "编号 ID"
+          ]
+        },
+        {
+          "id": "field-name",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名"
+          ]
+        },
+        {
+          "id": "field-email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "",
+          "labels": [
+            "邮箱"
+          ]
+        },
+        {
+          "id": "field-consent",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "我同意：姓名会出现在名单上，邮箱不会公开。"
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "复制名单",
+        "导出名单表格",
+        "打印名单",
+        "导出管理表格",
+        "导出备份",
+        "导出完整表格",
+        "立即保存",
+        "读取本机",
+        "清空数据",
+        "导入并替换"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "acceptance-1",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-2",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-3",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-4",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-5",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 5,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "名单（可对外发布）\n\n以下只包含已确认者的序号与姓名，不含邮箱、编号 ID 或其他内部信息，可以直接张贴或发到群里。\n\n公示名单（已确认者；不含邮箱）\n序号\t姓名\n\n还没有已确认的报名。\n\n复制名单\n导出名单表格\n打印名单",
+      "administrativePageHasEmail": false,
+      "automationError": "TimeoutError: locator.click: Timeout 4000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('#roster-list').locator(':scope > *').filter({ hasText: '验收访客1' }).getByRole('button', { name: /取消/ })\u001b[22m\n",
+      "finalText": "蒲公英报名台\n\n共 4 个名额，每位 1800 分。名额满后报名进入候补，有人取消时按报名先后递补。\n\n已自动保存在本机\n\n页面出现意外错误\n\nCannot set properties of null (setting 'textContent')\n报名\n\n名额已满　共 4 个名额　每位 1800 分；现在报名将进入候补。\n\n编号 ID\n\n姓名\n\n邮箱\n\n我同意：姓名会出现在名单上，邮箱不会公开。\n\n提交报名\n\n页面出现意外错误：Cannot set properties of null (setting 'textContent')\n\n名单（可对外发布）\n\n以下只包含已确认者的序号与姓名，不含邮箱、编号 ID 或其他内部信息，可以直接张贴或发到群里。\n\n公示名单（已确认者；不含邮箱）\n序号\n姓名\n\n还没有已确认的报名。\n\n复制名单\n导出名单表格\n打印名单\n\n候补\n\n候补（从上到下就是递补顺序）\n位次\n姓名\n操作\n\n暂时没有候补。\n\n取消候补不会空出正式名额。\n\n已取消\n\n这些报名已取消，不计入人数和收入。\n\n已取消的报名\n姓名\n\n没有已取消的报名。\n\n汇总\n已确认\n4 / 4 人\n剩余名额\n0 个\n候补\n1 人\n已取消\n0 人\n每位费用\n1800 分\n合计收入\n7200 分\n\n已确认 4 人 × 每位 1800 分 = 7200 分。候补和已取消不计入。\n\n本机管理名单\n\n这一张含编号 ID 与报名序号，仅供本机管理员核对和取消，不要对外发布；对外发布请用上面的「名单」。\n\n管理名单（已确认与候补均列出，按报名先后；不含邮箱）\n序号\n姓名\n状态\n编号 ID\n报名序号\n操作\n\n当前没有可管理的名单。\n\n导出管理表格\n\n备份与恢复\n\n名单会自动保存在这台设备的浏览器里，刷新或重新打开都不会丢。下面用于备份到别处、或从备份恢复。\n\n「导出备份」包含邮箱，只能自己保管（用于将来恢复数据），不要发给现场人员。\n\n导出备份\n导出完整表格\n立即保存\n读取本机\n清空数据\n\n从备份恢复（粘贴之前导出的内容）\n\n导入并替换\n\n导出结果\n\n操作记录\n\n最近 8 次操作结果。\n\n页面出现意外错误：Cannot set properties of null (setting 'textContent')\n\n蒲公英报名台 · 离线网页，数据只保存在本机",
+      "finalStorage": {
+        "pugongying-signup-state-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"acceptance-1\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-2\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-3\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-4\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-5\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 5,\n        \"status\": \"waiting\"\n      }\n    ]\n  }\n}"
+      }
+    },
+    {
+      "run": "project-r2-all-candidates",
+      "consoleErrors": [],
+      "consoleErrorStacks": [],
+      "dialogs": [
+        "确定清空全部报名数据？此操作也会清除本机存档。"
+      ],
+      "externalRequests": [],
+      "checks": [
+        {
+          "id": "page-loads-without-js-error",
+          "passed": true,
+          "detail": []
+        },
+        {
+          "id": "five-ui-submissions-persist",
+          "passed": true
+        },
+        {
+          "id": "current-capacity-and-fee",
+          "passed": true
+        },
+        {
+          "id": "four-confirmed-one-waiting",
+          "passed": true
+        },
+        {
+          "id": "registered-names-rendered",
+          "passed": true
+        },
+        {
+          "id": "emails-not-in-public-list",
+          "passed": true
+        },
+        {
+          "id": "reload-retains-and-renders",
+          "passed": true
+        },
+        {
+          "id": "cancel-promotes-waiter",
+          "passed": true
+        },
+        {
+          "id": "csv-export-has-names-no-emails",
+          "passed": true
+        },
+        {
+          "id": "backup-browser-version-two",
+          "passed": true
+        },
+        {
+          "id": "reset-clears-registrations",
+          "passed": true
+        },
+        {
+          "id": "backup-ui-restores-core-state",
+          "passed": true
+        },
+        {
+          "id": "broken-import-preserves-data",
+          "passed": true
+        },
+        {
+          "id": "broken-import-shows-feedback",
+          "passed": true
+        },
+        {
+          "id": "mobile-page-no-horizontal-overflow",
+          "passed": true
+        }
+      ],
+      "screenshots": [
+        "project-r2-all-candidates-desktop.png",
+        "project-r2-all-candidates-mobile.png"
+      ],
+      "artifactsSha256": [
+        {
+          "path": "README.md",
+          "bytes": 25803,
+          "sha256": "6ff45ef3c471bba163108d65981712fc6b5ac2d79f09b3c0fcb4d5882f104eec"
+        },
+        {
+          "path": "app.js",
+          "bytes": 21777,
+          "sha256": "016629ca0f5871606778145e0b3924543a07c4697ddcd547e5b3bc62ff6b0620"
+        },
+        {
+          "path": "boundary-check.mjs",
+          "bytes": 15371,
+          "sha256": "14bc79210b4ea5772285a176f4748842a6476cdaa38a5f69071a6b14f399f756"
+        },
+        {
+          "path": "domain.js",
+          "bytes": 21864,
+          "sha256": "13e9faa43dab6ce182903881c8eb6bd12076e2dc603fe2e4567d12d36100b70a"
+        },
+        {
+          "path": "import-check.mjs",
+          "bytes": 7126,
+          "sha256": "aada4b7fdda9584051b16adbcc6c593476937f932d2d680434da63d06f2f3f86"
+        },
+        {
+          "path": "index.html",
+          "bytes": 4583,
+          "sha256": "59406fa71a87e1eccb7f1ac8948fbcf28f0d4c5101ff8d899fd3d3f212f97669"
+        },
+        {
+          "path": "launch-check.mjs",
+          "bytes": 7790,
+          "sha256": "27b8686b5cebfc073271cd84e987648747f6b4809cd8ca7f4d27d87351b829e3"
+        },
+        {
+          "path": "offline-check.mjs",
+          "bytes": 5713,
+          "sha256": "c3608e317b304ecbe2553279d7b359a244369d8ef2b0e09d614ca1f1917b6ac2"
+        },
+        {
+          "path": "selfcheck.mjs",
+          "bytes": 18184,
+          "sha256": "07bbcf412a8ced783567b0efbae64ffc0ddce6829d82404fdc07dcb7a4bebfc0"
+        },
+        {
+          "path": "style.css",
+          "bytes": 5555,
+          "sha256": "61a8d2f5f9390a0d153c9f58434e5807ff43fe0435d7ae03cf53434b535b57fa"
+        }
+      ],
+      "initialText": "蒲公英报名台\n\n已自动保存在本机（已确认 0 人）。关闭或刷新页面后仍会保留。\n\n报名情况\n\n已确认 0 人。\n\n还可报名 4 人。\n\n报名\n报名编号\n姓名\n邮箱\n我同意处理我的报名信息（姓名、邮箱仅用于本次活动联系）\n提交报名\n已确认名单\n\n已确认 0 / 4 人\n\n暂无已确认的报名。\n\n候补名单\n\n候补 0 人\n\n当前没有候补。\n\n现场名单\n\n可直接交给现场人员。只有编号、姓名、状态、候补次序， 不含邮箱、不含同意标记、不含已取消记录。\n\n暂无已确认或候补人员。\n\n导出现场名单\n全部报名记录\n#\t编号\t姓名\t邮箱\t同意\t序号\t状态\t候补次序\t操作\n\n暂无报名记录。\n\n数据备份\n\n报名与取消会自动保存在本机，刷新或关闭页面都不会丢。 下面导出的内容含邮箱与已取消记录，仅用于自己备份或换机，不要交给现场人员。\n\n备份格式带版号（当前 version 2）。导入时会逐项校验， 版号不符、缺人数上限或费用、缺记录列表、状态不合法等都会拒绝导入， 并保持现有数据不变。\n\n导出备份\n导入备份\n导出完整表格\n保存到本机\n读取本机存档\n清空数据\n备份内容（导出后复制，或粘贴后导入）\n设置\n人数上限\n费用（分）\n应用设置\n\n当前：最多 4 人，每位 18.00 元。",
+      "inputs": [
+        {
+          "id": "f-id",
+          "name": "id",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "报名编号"
+          ]
+        },
+        {
+          "id": "f-name",
+          "name": "name",
+          "type": "text",
+          "placeholder": "",
+          "labels": [
+            "姓名"
+          ]
+        },
+        {
+          "id": "f-email",
+          "name": "email",
+          "type": "email",
+          "placeholder": "",
+          "labels": [
+            "邮箱"
+          ]
+        },
+        {
+          "id": "f-consent",
+          "name": "consent",
+          "type": "checkbox",
+          "placeholder": "",
+          "labels": [
+            "\n      \n      我同意处理我的报名信息（姓名、邮箱仅用于本次活动联系）\n    "
+          ]
+        },
+        {
+          "id": "f-capacity",
+          "name": "",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "人数上限"
+          ]
+        },
+        {
+          "id": "f-fee",
+          "name": "",
+          "type": "number",
+          "placeholder": "",
+          "labels": [
+            "费用（分）"
+          ]
+        }
+      ],
+      "buttons": [
+        "提交报名",
+        "导出现场名单",
+        "导出备份",
+        "导入备份",
+        "导出完整表格",
+        "保存到本机",
+        "读取本机存档",
+        "清空数据",
+        "应用设置"
+      ],
+      "afterRegistration": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "acceptance-1",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 0,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-2",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-3",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-4",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-5",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "waiting"
+          }
+        ]
+      },
+      "publicSectionText": "已确认名单\n\n已确认 4 / 4 人\n\n验收访客1（acceptance-1）\n验收访客2（acceptance-2）\n验收访客3（acceptance-3）\n验收访客4（acceptance-4）",
+      "administrativePageHasEmail": true,
+      "afterCancellation": {
+        "capacity": 4,
+        "feeCents": 1800,
+        "registrations": [
+          {
+            "id": "acceptance-1",
+            "name": "验收访客1",
+            "email": "acceptance1@example.test",
+            "consent": true,
+            "createdAt": 0,
+            "status": "cancelled"
+          },
+          {
+            "id": "acceptance-2",
+            "name": "验收访客2",
+            "email": "acceptance2@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-3",
+            "name": "验收访客3",
+            "email": "acceptance3@example.test",
+            "consent": true,
+            "createdAt": 2,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-4",
+            "name": "验收访客4",
+            "email": "acceptance4@example.test",
+            "consent": true,
+            "createdAt": 3,
+            "status": "confirmed"
+          },
+          {
+            "id": "acceptance-5",
+            "name": "验收访客5",
+            "email": "acceptance5@example.test",
+            "consent": true,
+            "createdAt": 4,
+            "status": "confirmed"
+          }
+        ]
+      },
+      "csvControl": "导出现场名单",
+      "csvDelivery": "text",
+      "backupControl": "导出备份",
+      "finalText": "蒲公英报名台\n\n已自动保存在本机（已确认 4 人）。关闭或刷新页面后仍会保留。\n\n报名情况\n\n已确认 4 人，已取消 1 人。\n\n还可报名 0 人。\n\n报名\n报名编号\n姓名\n邮箱\n我同意处理我的报名信息（姓名、邮箱仅用于本次活动联系）\n提交报名\n已确认名单\n\n已确认 4 / 4 人\n\n验收访客2（acceptance-2）\n验收访客3（acceptance-3）\n验收访客4（acceptance-4）\n验收访客5（acceptance-5）\n候补名单\n\n候补 0 人\n\n当前没有候补。\n\n现场名单\n\n可直接交给现场人员。只有编号、姓名、状态、候补次序， 不含邮箱、不含同意标记、不含已取消记录。\n\n共 4 人（已确认在前，候补在后）；不含邮箱与已取消记录。\n\n验收访客2（acceptance-2）· 已确认\n验收访客3（acceptance-3）· 已确认\n验收访客4（acceptance-4）· 已确认\n验收访客5（acceptance-5）· 已确认\n导出现场名单\n全部报名记录\n1\nacceptance-1\n验收访客1\nacceptance1@example.test\n是\n0\n已取消\n—\n已取消\n2\nacceptance-2\n验收访客2\nacceptance2@example.test\n是\n1\n已确认\n—\n取消报名\n3\nacceptance-3\n验收访客3\nacceptance3@example.test\n是\n2\n已确认\n—\n取消报名\n4\nacceptance-4\n验收访客4\nacceptance4@example.test\n是\n3\n已确认\n—\n取消报名\n5\nacceptance-5\n验收访客5\nacceptance5@example.test\n是\n4\n已确认\n—\n取消报名\n数据备份\n\n报名与取消会自动保存在本机，刷新或关闭页面都不会丢。 下面导出的内容含邮箱与已取消记录，仅用于自己备份或换机，不要交给现场人员。\n\n备份格式带版号（当前 version 2）。导入时会逐项校验， 版号不符、缺人数上限或费用、缺记录列表、状态不合法等都会拒绝导入， 并保持现有数据不变。\n\n导出备份\n导入备份\n导出完整表格\n保存到本机\n读取本机存档\n清空数据\n备份内容（导出后复制，或粘贴后导入）\n\n请检查：\n\n导入失败：备份内容不是合法 JSON，可能复制不完整或文件损坏。\n现有数据没有被改动，仍是：已确认 4 人、已取消 1 人。\n设置\n人数上限\n费用（分）\n应用设置\n\n当前：最多 4 人，每位 18.00 元。",
+      "finalStorage": {
+        "dandelion-signup-state-v1": "{\n  \"version\": 2,\n  \"state\": {\n    \"capacity\": 4,\n    \"feeCents\": 1800,\n    \"registrations\": [\n      {\n        \"id\": \"acceptance-1\",\n        \"name\": \"验收访客1\",\n        \"email\": \"acceptance1@example.test\",\n        \"consent\": true,\n        \"createdAt\": 0,\n        \"status\": \"cancelled\"\n      },\n      {\n        \"id\": \"acceptance-2\",\n        \"name\": \"验收访客2\",\n        \"email\": \"acceptance2@example.test\",\n        \"consent\": true,\n        \"createdAt\": 1,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-3\",\n        \"name\": \"验收访客3\",\n        \"email\": \"acceptance3@example.test\",\n        \"consent\": true,\n        \"createdAt\": 2,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-4\",\n        \"name\": \"验收访客4\",\n        \"email\": \"acceptance4@example.test\",\n        \"consent\": true,\n        \"createdAt\": 3,\n        \"status\": \"confirmed\"\n      },\n      {\n        \"id\": \"acceptance-5\",\n        \"name\": \"验收访客5\",\n        \"email\": \"acceptance5@example.test\",\n        \"consent\": true,\n        \"createdAt\": 4,\n        \"status\": \"confirmed\"\n      }\n    ]\n  }\n}"
+      }
+    }
+  ],
+  "note": "DOM-driven browser smoke tests with real form actions. Locator failures require manual inspection; no generated output is modified."
+}

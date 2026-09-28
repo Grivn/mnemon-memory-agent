@@ -1,0 +1,19 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{\jev{} against LLM judges on the same records} (599 questions, 14,359 records, 1,004 of them gold evidence). AUC for separating gold evidence, pooled over records (overall, LoCoMo, \lme); precision and recall at 0.5; share of gold evidence within each question's top 4 / 8 / 16; median latency and price per call of 24 records; Spearman correlation with the recorded \jev{} scores.}
+\label{tab:system1}
+\setlength{\tabcolsep}{3.3pt}
+\begin{tabular}{@{}l ccc c c cc c@{}}
+\toprule
+& \multicolumn{3}{c}{AUC} & P / R & recall in top & p50 & $10^{-3}$\,\$ & \\
+\cmidrule(lr){2-4}
+judge & all & LoCoMo & \lme & at 0.5 & 4 / 8 / 16 & (s) & per call & $\rho$ \\
+\midrule
+\jev, recorded in the run & 0.943 & 0.951 & 0.941 & 0.76 / 0.59 & 0.88 / 0.95 / 0.99 & -- & -- & -- \\
+\jev, called again & 0.942 & 0.950 & 0.939 & 0.76 / 0.60 & 0.88 / 0.95 / 0.99 & 0.34 & 0.44 & 0.89 \\
+DeepSeek (no thinking) & 0.900 & 0.934 & 0.872 & 0.42 / 0.79 & 0.89 / 0.95 / 0.99 & 1.05 & 0.66 & 0.50 \\
+gpt-4.1-mini & 0.853 & 0.919 & 0.798 & 0.45 / 0.68 & 0.88 / 0.94 / 0.98 & 3.74 & 1.70 & 0.48 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

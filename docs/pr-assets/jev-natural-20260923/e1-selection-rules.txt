@@ -1,0 +1,8 @@
+rule                             recall  obsolete  irrelevant/turn  size/turn  obsolete-flagged
+utility>=0.5                     0.896   0         0.09             2.19       8
+gate n>=0.5 s<0.6                0.938   0         0.19             2.56       8
+gate n>=0.4 s<0.6                0.958   0         0.19             2.94       8
+rubric gate n>=0.5 s<0.6         0.958   0         0.69             3.44       9
+compound>=0.45                   0.938   3         0.66             3.66       0
+compound>=0.5                    0.938   2         0.50             3.38       0
+compound>=0.45 + inline s<0.6    0.938   2         0.63             3.63       3

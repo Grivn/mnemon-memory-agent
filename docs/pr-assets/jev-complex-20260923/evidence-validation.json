@@ -1,0 +1,59 @@
+{
+  "checkedAt": "2026-09-22T21:43:16.405Z",
+  "mainCalls": 109,
+  "decisionEvents": 165,
+  "unmeteredDecisionEvents": 2,
+  "runs": [
+    {
+      "records": 90,
+      "mode": "none",
+      "mainCalls": 17,
+      "decisionEvents": 0
+    },
+    {
+      "records": 90,
+      "mode": "all-candidates",
+      "mainCalls": 17,
+      "decisionEvents": 0
+    },
+    {
+      "records": 90,
+      "mode": "jev",
+      "mainCalls": 17,
+      "decisionEvents": 69
+    },
+    {
+      "records": 900,
+      "mode": "none",
+      "mainCalls": 17,
+      "decisionEvents": 0
+    },
+    {
+      "records": 900,
+      "mode": "all-candidates",
+      "mainCalls": 17,
+      "decisionEvents": 0
+    },
+    {
+      "records": 900,
+      "mode": "jev",
+      "mainCalls": 17,
+      "decisionEvents": 68
+    },
+    {
+      "records": 900,
+      "mode": "jev-wide",
+      "mainCalls": 7,
+      "decisionEvents": 28
+    }
+  ],
+  "checks": [
+    "Answers and main input usage match raw traces",
+    "Main token counts include disjoint cache buckets",
+    "Every selected text was present in the actual main input",
+    "Decision event identities are unique per session",
+    "Final metering includes late retries",
+    "Injected scope markers and answer canaries remain absent"
+  ],
+  "passed": true
+}

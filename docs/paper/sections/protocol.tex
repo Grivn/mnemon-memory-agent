@@ -1,0 +1,26 @@
+\subsection{Setup}
+\label{sec:setup}
+
+\paragraph{Benchmarks.}
+LoCoMo~\citep{maharana2024locomo} has 10 conversations of 13--25k tokens and 1,540 non-adversarial questions.
+\lme~\citep{wu2025longmemeval,longmemeval_cleaned} has 500 questions, each with its own history of about 106k tokens.
+HaluMem-Medium~\citep{halumem2025} has 20 users and 3,467 questions.
+BEAM~\citep{beam2026} has a 100K tier of 20 conversations and 400 questions over ten abilities, and a 10M tier of 10 conversations of about 90,000 records each and 200 questions.
+LoCoMo is reported with its original labels; for comparison with published claims we also give our score under revised labels, which drop 44 unusable questions and correct 25 gold answers.
+
+\paragraph{Models.}
+In the \emph{standard setting}, gpt-4.1-mini~\citep{openai2025gpt41} (snapshot 2025-04-14, temperature 0) answers and plans, as in OmniMemEval~\citep{omnimemeval2026}.
+In the \emph{reasoning setting}, DeepSeek-V4.1-Flash~\citep{deepseekflash2026} answers with thinking and plans without.
+
+\paragraph{Grading.}
+LoCoMo answers are graded with the lenient prompt of Mem0 and later work, \lme{} answers with its per-type prompts, and HaluMem and BEAM answers with their official prompts and rubrics.
+The primary judge is gpt-4.1-mini, and DeepSeek grades every answer as well; on LoCoMo and \lme{} the two agree on 96--97\% of answers (Cohen's $\kappa$ 0.85--0.89).
+OmniMemEval grades with gpt-4o-mini, so comparisons with it carry a judge difference of one to two points.
+Differences between two configurations are measured on the same questions and reported with 95\% intervals.
+
+\paragraph{Baselines.}
+We compare \sys{} with the 14 systems that OmniMemEval re-evaluated with gpt-4.1-mini answering, using its published numbers, and, separately, with the best result each open-source project has published, whatever its model and protocol.
+
+\paragraph{Cost accounting.}
+Costs follow the token counts the APIs return, at list prices per million tokens (gpt-4.1-mini \$0.40 input, \$0.10 cached, \$1.60 output; DeepSeek-V4.1-Flash off-peak \$0.15, \$0.003, \$0.60; \jev{} \$0.042 input), and cover the answer, the planner and \jev; consolidation is a one-time cost per memory.
+Questions that failed on a transient error or received an empty View were answered once more.

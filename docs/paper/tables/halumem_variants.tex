@@ -1,0 +1,22 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{HaluMem answered in other ways from the same Views} (968 questions), graded by both judges under HaluMem's official rules: \% correct, hallucinated and omitted, and the paired change against the registered answers. Last column: correct under a lenient judge that accepts details beyond the reference unless they contradict it (DeepSeek as judge).}
+\label{tab:halumem-variants}
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l cccl cccl c@{}}
+\toprule
+& \multicolumn{4}{c}{gpt-4.1-mini judge (primary)} & \multicolumn{4}{c}{DeepSeek judge} & lenient \\
+\cmidrule(lr){2-5}\cmidrule(lr){6-9}
+reader, answer prompt & correct & halluc. & omitted & vs registered & correct & halluc. & omitted & vs registered & correct \\
+\midrule
+gpt-4.1-mini, our answer prompt & 70.4 & 28.4 & 1.2 & registered & 65.5 & 31.8 & 2.7 & registered & 90.1 \\
+gpt-4.1-mini, HaluMem's short-answer prompt & 64.7 & 24.1 & 11.3 & $-$5.7 (+113/$-$168, $p$\,=\,0.001) & 62.8 & 24.4 & 12.7 & $-$2.7 (+129/$-$155, $p$\,=\,0.14) & 75.1 \\
+gpt-4.1-mini, combined prompt & 69.7 & 27.4 & 2.9 & $-$0.6 (+63/$-$69, $p$\,=\,0.66) & 67.4 & 26.8 & 5.8 & +1.9 (+86/$-$68, $p$\,=\,0.17) & -- \\
+DeepSeek, our answer prompt & 85.2 & 11.8 & 3.0 & +14.9 (+184/$-$40, $p$\,$<$\,0.001) & 68.7 & 27.8 & 3.4 & +3.2 (+120/$-$89, $p$\,=\,0.038) & 92.9 \\
+DeepSeek, HaluMem's short-answer prompt & 70.4 & 17.7 & 12.0 & 0.0 (+129/$-$129, $p$\,=\,1.00) & 68.7 & 18.0 & 13.3 & +3.2 (+140/$-$109, $p$\,=\,0.057) & 79.4 \\
+DeepSeek, combined prompt & 75.8 & 19.4 & 4.8 & +5.5 (+126/$-$73, $p$\,$<$\,0.001) & 73.2 & 21.3 & 5.5 & +7.7 (+144/$-$70, $p$\,$<$\,0.001) & 89.6 \\
+\bottomrule
+\end{tabular}}
+\end{gentable}

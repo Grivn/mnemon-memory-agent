@@ -1,0 +1,32 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{All five benchmarks}, for the systems OmniMemEval re-evaluated with gpt-4.1-mini answering (its numbers, gpt-4o-mini judge) and for \sys{} with and without consolidation (our runs, gpt-4.1-mini answering and judging; in parentheses, the rank among the systems with a score). LoCoMo and \lme{} were used in our design; \sys{} w/o consolidation was run once on HaluMem and BEAM with its configuration frozen, and \sys{}, whose consolidation was designed after those runs, is exploratory there. HaluMem: share of answers judged correct; BEAM: rubric score. Best per column in bold.}
+\label{tab:cross}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}l ccccc@{}}
+\toprule
+& \multicolumn{2}{c}{design benchmarks} & \multicolumn{3}{c}{held-out benchmarks} \\
+\cmidrule(lr){2-3}\cmidrule(l){4-6}
+System & LoCoMo & \lme & HaluMem & BEAM-100K & BEAM-10M \\
+\midrule
+\sys{} & \best{91.7} (1/15) & 83.8 (2/13) & 73.3 (8/13) & 64.5 (10/12) & 51.2 (10/12) \\
+\quad w/o consolidation & 89.2 (1/15) & 79.4 (4/13) & 71.5 (10/13) & 58.2 (12/12) & 45.2 (11/12) \\
+\midrule
+MemOS & 88.8 & \best{89.2} & 80.9 & 66.9 & 56.8 \\
+Cognee & 83.5 & 51.8 & 72.6 & 59.3 & 56.0 \\
+EverOS & 82.8 & 80.4 & \best{88.7} & 58.6 & 47.7 \\
+Hindsight & 82.0 & 72.2 & 84.0 & 70.2 & \best{59.8} \\
+Mem0 & 77.7 & 56.0 & 73.6 & 70.4 & 43.3 \\
+Letta & 77.1 & 77.7 & 85.4 & 69.2 & 52.3 \\
+MemMachine & 73.9 & 63.6 & 47.0 & 64.8 & 51.9 \\
+mem9 & 73.6 & 78.0 & 72.8 & 65.8 & 57.3 \\
+Supermemory & 73.5 & 66.1 & 52.6 & 66.0 & 52.5 \\
+MemoryLake & 72.5 & -- & -- & -- & -- \\
+Viking Memory & 69.3 & 61.1 & 77.4 & \best{70.8} & 58.1 \\
+Zep & 63.8 & 79.8 & 81.7 & 68.7 & 56.1 \\
+Memori & 41.3 & 20.8 & 49.4 & -- & -- \\
+Backboard.io & 22.4 & -- & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{gentable}

@@ -1,0 +1,1430 @@
+$ pnpm run verify:docs && pnpm run verify:build && pnpm run build:plugins && pnpm run typecheck && pnpm -r typecheck && pnpm -r test && pnpm run test:root && pnpm run verify:headless && pnpm run verify:package
+$ node scripts/verify-docs.mjs
+Documentation verified: 2002 local links, 63 Markdown anchors, bilingual paths and official plugin coverage.
+$ node scripts/verify-deterministic-build.mjs
+$ tsdown && tsc -p tsconfig.types.json && node scripts/link-bundle-declarations.mjs
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/tsdown.config.ts
+ℹ [dsh-mnemon/client] entry: src/client/index.ts
+ℹ [dsh-mnemon/client] target: es2022
+ℹ [dsh-mnemon/client] tsconfig: tsconfig.json
+ℹ [dsh-mnemon] entry: src/index.ts, src/core/plugin.ts, src/core/contracts/index.ts, src/sdk/index.ts, src/sdk/source/index.ts, src/sdk/testing.ts
+ℹ [dsh-mnemon] target: es2024
+ℹ [dsh-mnemon] tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 76 files
+ℹ [dsh-mnemon/client] [CJS] lib/client.js  767.90 kB │ gzip: 158.40 kB
+ℹ [dsh-mnemon/client] [CJS] 1 files, total: 767.90 kB
+✔ [dsh-mnemon/client] Build complete in 172ms
+ℹ [dsh-mnemon] [ESM] lib/index.js                            443.41 kB │ gzip: 107.26 kB
+ℹ [dsh-mnemon] [ESM] lib/source-sdk.js                        62.87 kB │ gzip:  16.82 kB
+ℹ [dsh-mnemon] [ESM] lib/testing.js                            8.24 kB │ gzip:   2.77 kB
+ℹ [dsh-mnemon] [ESM] lib/contracts.js                          2.40 kB │ gzip:   1.07 kB
+ℹ [dsh-mnemon] [ESM] lib/extension-sdk.js                      1.27 kB │ gzip:   0.45 kB
+ℹ [dsh-mnemon] [ESM] lib/core.js                               0.38 kB │ gzip:   0.27 kB
+ℹ [dsh-mnemon] [ESM] lib/runtime-P_V__yT7.js                  72.37 kB │ gzip:  16.04 kB
+ℹ [dsh-mnemon] [ESM] lib/decision-contracts-CZgbt6rp.js       28.11 kB │ gzip:   6.40 kB
+ℹ [dsh-mnemon] [ESM] lib/sdk-Dw0J2pO4.js                       8.89 kB │ gzip:   2.90 kB
+ℹ [dsh-mnemon] [ESM] lib/strategy-configuration-DBsdU7HD.js    8.83 kB │ gzip:   2.96 kB
+ℹ [dsh-mnemon] [ESM] 10 files, total: 636.79 kB
+✔ [dsh-mnemon] Build complete in 175ms
+Linked public declarations; retained 56/158 public type dependencies.
+$ tsdown && tsc -p tsconfig.types.json && node scripts/link-bundle-declarations.mjs
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/tsdown.config.ts
+ℹ [dsh-mnemon] entry: src/index.ts, src/core/plugin.ts, src/core/contracts/index.ts, src/sdk/index.ts, src/sdk/source/index.ts, src/sdk/testing.ts
+ℹ [dsh-mnemon] target: es2024
+ℹ [dsh-mnemon] tsconfig: tsconfig.json
+ℹ [dsh-mnemon/client] entry: src/client/index.ts
+ℹ [dsh-mnemon/client] target: es2022
+ℹ [dsh-mnemon/client] tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 76 files
+ℹ [dsh-mnemon] [ESM] lib/index.js                            443.41 kB │ gzip: 107.26 kB
+ℹ [dsh-mnemon] [ESM] lib/source-sdk.js                        62.87 kB │ gzip:  16.82 kB
+ℹ [dsh-mnemon] [ESM] lib/testing.js                            8.24 kB │ gzip:   2.77 kB
+ℹ [dsh-mnemon] [ESM] lib/contracts.js                          2.40 kB │ gzip:   1.07 kB
+ℹ [dsh-mnemon] [ESM] lib/extension-sdk.js                      1.27 kB │ gzip:   0.45 kB
+ℹ [dsh-mnemon] [ESM] lib/core.js                               0.38 kB │ gzip:   0.27 kB
+ℹ [dsh-mnemon] [ESM] lib/runtime-P_V__yT7.js                  72.37 kB │ gzip:  16.04 kB
+ℹ [dsh-mnemon] [ESM] lib/decision-contracts-CZgbt6rp.js       28.11 kB │ gzip:   6.40 kB
+ℹ [dsh-mnemon] [ESM] lib/sdk-Dw0J2pO4.js                       8.89 kB │ gzip:   2.90 kB
+ℹ [dsh-mnemon] [ESM] lib/strategy-configuration-DBsdU7HD.js    8.83 kB │ gzip:   2.96 kB
+ℹ [dsh-mnemon] [ESM] 10 files, total: 636.79 kB
+✔ [dsh-mnemon] Build complete in 84ms
+ℹ [dsh-mnemon/client] [CJS] lib/client.js  767.90 kB │ gzip: 158.40 kB
+ℹ [dsh-mnemon/client] [CJS] 1 files, total: 767.90 kB
+✔ [dsh-mnemon/client] Build complete in 85ms
+Linked public declarations; retained 56/158 public type dependencies.
+Verified deterministic output for 67 files.
+$ node scripts/build-plugin-packages.mjs
+$ tsdown && tsc -p tsconfig.client-types.json
+$ tsdown && tsc -p tsconfig.client-types.json
+$ tsdown
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-agent-loop-jev/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-replica/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts
+ℹ Build start
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ config file: <repo>/plugins/dsh-mnemon-source-memory-spaces/tsdown.config.ts
+ℹ Cleaning 2 files
+ℹ config file: <repo>/plugins/dsh-mnemon-source-documents/tsdown.config.ts
+ℹ entry: src/native-cli.ts, src/contracts.ts, src/index.ts, src/provider-sdk.ts, src/testing.ts
+ℹ entry: src/contracts.ts, src/index.ts
+ℹ target: es2024
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.ts
+ℹ target: es2022
+ℹ entry: src/client.ts
+ℹ tsconfig: tsconfig.json
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Build start
+ℹ Cleaning 25 files
+ℹ Cleaning 13 files
+ℹ [CJS] lib/client.js  79.87 kB │ gzip: 19.33 kB
+ℹ [CJS] 1 files, total: 79.87 kB
+✔ Build complete in 843ms
+ℹ [ESM] lib/index.js        44.11 kB │ gzip: 11.08 kB
+ℹ [ESM] lib/contracts.js     0.18 kB │ gzip:  0.13 kB
+ℹ [ESM] lib/contracts.d.ts   2.14 kB │ gzip:  0.70 kB
+ℹ [ESM] lib/index.d.ts       1.32 kB │ gzip:  0.54 kB
+ℹ [ESM] 4 files, total: 47.75 kB
+✔ Build complete in 849ms
+ℹ lib/index.js    23.59 kB │ gzip: 6.78 kB
+ℹ lib/index.d.ts   3.79 kB │ gzip: 1.38 kB
+ℹ 2 files, total: 27.38 kB
+✔ Build complete in 892ms
+ℹ lib/index.js    23.41 kB │ gzip: 6.91 kB
+ℹ lib/index.d.ts   4.26 kB │ gzip: 1.46 kB
+ℹ 2 files, total: 27.67 kB
+✔ Build complete in 897ms
+Built dsh-mnemon-agent-loop-jev
+Built dsh-mnemon-replica
+ℹ [CJS] lib/client.js  269.23 kB │ gzip: 53.01 kB
+ℹ [CJS] 1 files, total: 269.23 kB
+✔ Build complete in 946ms
+ℹ [ESM] lib/index.js                   161.85 kB │ gzip: 36.61 kB
+ℹ [ESM] lib/native-cli.js                5.29 kB │ gzip:  1.80 kB
+ℹ [ESM] lib/provider-sdk.js              4.63 kB │ gzip:  1.70 kB
+ℹ [ESM] lib/testing.js                   3.78 kB │ gzip:  1.46 kB
+ℹ [ESM] lib/contracts.js                 1.17 kB │ gzip:  0.52 kB
+ℹ [ESM] lib/plugin-DlsNeZbQ.js          18.38 kB │ gzip:  4.48 kB
+ℹ [ESM] lib/definitions-DfmOqJjR.js     12.74 kB │ gzip:  3.18 kB
+ℹ [ESM] lib/process-BvrgxPNP.js          2.86 kB │ gzip:  1.17 kB
+ℹ [ESM] lib/contracts.d.ts              20.12 kB │ gzip:  5.51 kB
+ℹ [ESM] lib/index.d.ts                   7.22 kB │ gzip:  1.93 kB
+ℹ [ESM] lib/provider-sdk.d.ts            5.18 kB │ gzip:  1.49 kB
+ℹ [ESM] lib/testing.d.ts                 1.42 kB │ gzip:  0.56 kB
+ℹ [ESM] lib/native-cli.d.ts              0.86 kB │ gzip:  0.40 kB
+ℹ [ESM] lib/definitions-C5y84OE6.d.ts    7.36 kB │ gzip:  2.39 kB
+ℹ [ESM] 14 files, total: 252.87 kB
+✔ Build complete in 985ms
+$ tsdown
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-default-three-tier/tsdown.config.ts
+ℹ entry: src/index.ts, src/extension-sdk.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 4 files
+ℹ config file: <repo>/plugins/dsh-mnemon-source-runtime/tsdown.config.ts
+ℹ entry: src/contracts.ts, src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.ts
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 15 files
+Built dsh-mnemon-source-documents
+$ tsdown
+ℹ lib/index.js            37.31 kB │ gzip: 10.67 kB
+ℹ lib/extension-sdk.js     3.80 kB │ gzip:  1.38 kB
+ℹ lib/extension-sdk.d.ts   1.57 kB │ gzip:  0.62 kB
+ℹ lib/index.d.ts           1.46 kB │ gzip:  0.64 kB
+ℹ 4 files, total: 44.14 kB
+✔ Build complete in 767ms
+ℹ [CJS] lib/client.js  45.19 kB │ gzip: 9.89 kB
+ℹ [CJS] 1 files, total: 45.19 kB
+✔ Build complete in 771ms
+Built dsh-mnemon-strategy-default-three-tier
+ℹ [ESM] lib/index.js               40.62 kB │ gzip: 10.30 kB
+ℹ [ESM] lib/contracts.js            0.21 kB │ gzip:  0.13 kB
+ℹ [ESM] lib/contracts-BqaPCrGD.js   0.64 kB │ gzip:  0.26 kB
+ℹ [ESM] lib/contracts.d.ts          2.83 kB │ gzip:  0.91 kB
+ℹ [ESM] lib/index.d.ts              1.71 kB │ gzip:  0.58 kB
+ℹ [ESM] 5 files, total: 46.01 kB
+✔ Build complete in 790ms
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-workspace/tsdown.config.ts
+ℹ entry: src/index.ts, src/extension-sdk.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 4 files
+$ tsdown
+Built dsh-mnemon-source-memory-spaces
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-workspace-kit/tsdown.config.ts
+ℹ entry: src/index.ts, src/client.tsx, src/dsh.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 6 files
+ℹ lib/index.js            2.79 kB │ gzip: 1.35 kB
+ℹ lib/extension-sdk.js    0.47 kB │ gzip: 0.25 kB
+ℹ lib/index.d.ts          1.40 kB │ gzip: 0.61 kB
+ℹ lib/extension-sdk.d.ts  0.73 kB │ gzip: 0.36 kB
+ℹ 4 files, total: 5.39 kB
+✔ Build complete in 671ms
+Built dsh-mnemon-source-runtime
+Built dsh-mnemon-strategy-workspace
+ℹ lib/dsh.js       15.72 kB │ gzip: 4.33 kB
+ℹ lib/index.js      0.67 kB │ gzip: 0.24 kB
+ℹ lib/client.js     0.09 kB │ gzip: 0.08 kB
+ℹ lib/dsh.d.ts      5.07 kB │ gzip: 1.47 kB
+ℹ lib/index.d.ts    2.80 kB │ gzip: 1.07 kB
+ℹ lib/client.d.ts   0.21 kB │ gzip: 0.12 kB
+ℹ 6 files, total: 24.55 kB
+✔ Build complete in 603ms
+Built dsh-mnemon-workspace-kit
+$ tsdown
+$ tsdown
+$ tsdown
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-holographic/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-honcho/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-byterover/tsdown.config.ts
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ tsconfig: tsconfig.json
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Build start
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ Cleaning 5 files
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-hindsight/tsdown.config.ts
+ℹ Cleaning 5 files
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ lib/index.js                6.04 kB │ gzip: 1.92 kB
+ℹ lib/descriptor.js           0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-zBlkrGd-.js  6.52 kB │ gzip: 3.10 kB
+ℹ lib/index.d.ts              1.55 kB │ gzip: 0.57 kB
+ℹ lib/descriptor.d.ts         0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 14.46 kB
+✔ Build complete in 634ms
+ℹ lib/index.js                10.51 kB │ gzip: 3.25 kB
+ℹ lib/descriptor.js            0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-BxGaZkfv.js  12.00 kB │ gzip: 8.52 kB
+ℹ lib/index.d.ts               1.88 kB │ gzip: 0.64 kB
+ℹ lib/descriptor.d.ts          0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 24.73 kB
+✔ Build complete in 639ms
+ℹ lib/index.js                6.50 kB │ gzip: 2.29 kB
+ℹ lib/descriptor.js           0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-BCPFZAYz.js  3.16 kB │ gzip: 1.58 kB
+ℹ lib/index.d.ts              1.98 kB │ gzip: 0.68 kB
+ℹ lib/descriptor.d.ts         0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 11.98 kB
+✔ Build complete in 651ms
+ℹ lib/index.js                10.84 kB │ gzip: 3.57 kB
+ℹ lib/descriptor.js            0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-J7AAezet.js   1.91 kB │ gzip: 0.96 kB
+ℹ lib/index.d.ts               1.67 kB │ gzip: 0.59 kB
+ℹ lib/descriptor.d.ts          0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 14.76 kB
+✔ Build complete in 654ms
+Built dsh-mnemon-provider-honcho
+Built dsh-mnemon-provider-hindsight
+Built dsh-mnemon-provider-byterover
+Built dsh-mnemon-provider-holographic
+$ tsdown
+$ tsdown
+$ tsdown
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-retaindb/tsdown.config.ts
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-openviking/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-mem0/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-mnemon-native/tsdown.config.ts
+ℹ Cleaning 5 files
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Build start
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ Cleaning 5 files
+ℹ Cleaning 4 files
+ℹ lib/index.js         14.42 kB │ gzip: 4.34 kB
+ℹ lib/descriptor.js     0.66 kB │ gzip: 0.35 kB
+ℹ lib/index.d.ts        2.41 kB │ gzip: 0.82 kB
+ℹ lib/descriptor.d.ts   0.21 kB │ gzip: 0.15 kB
+ℹ 4 files, total: 17.69 kB
+✔ Build complete in 618ms
+ℹ lib/index.js                13.71 kB │ gzip: 4.46 kB
+ℹ lib/descriptor.js            0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-BGwdKZKn.js   9.56 kB │ gzip: 6.58 kB
+ℹ lib/index.d.ts               1.98 kB │ gzip: 0.65 kB
+ℹ lib/descriptor.d.ts          0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 25.59 kB
+✔ Build complete in 632ms
+ℹ lib/index.js                6.85 kB │ gzip: 2.13 kB
+ℹ lib/descriptor.js           0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-PFXbOWpo.js  2.10 kB │ gzip: 0.97 kB
+ℹ lib/index.d.ts              1.63 kB │ gzip: 0.58 kB
+ℹ lib/descriptor.d.ts         0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 10.93 kB
+✔ Build complete in 636ms
+ℹ lib/index.js                7.68 kB │ gzip: 2.36 kB
+ℹ lib/descriptor.js           0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-BXhekbd6.js  8.88 kB │ gzip: 3.35 kB
+ℹ lib/index.d.ts              1.64 kB │ gzip: 0.58 kB
+ℹ lib/descriptor.d.ts         0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 18.53 kB
+✔ Build complete in 642ms
+Built dsh-mnemon-provider-mnemon-native
+Built dsh-mnemon-provider-retaindb
+Built dsh-mnemon-provider-openviking
+Built dsh-mnemon-provider-mem0
+$ tsdown
+$ tsdown && tsc -p tsconfig.client-types.json
+$ tsdown && tsc -p tsconfig.client-types.json
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-canvas/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-source-agent-jobs/tsdown.config.ts
+ℹ config file: <repo>/plugins/dsh-mnemon-provider-supermemory/tsdown.config.ts
+ℹ entry: src/client.tsx
+ℹ config file: <repo>/plugins/dsh-mnemon-source-collaboration/tsdown.config.ts
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ entry: src/index.ts
+ℹ tsconfig: tsconfig.json
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts, src/descriptor.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Build start
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ Build start
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 7 files
+ℹ Cleaning 5 files
+ℹ Cleaning 9 files
+ℹ Cleaning 7 files
+ℹ lib/index.js                6.80 kB │ gzip: 2.09 kB
+ℹ lib/descriptor.js           0.08 kB │ gzip: 0.08 kB
+ℹ lib/descriptor-C8c57i4i.js  2.60 kB │ gzip: 1.20 kB
+ℹ lib/index.d.ts              1.64 kB │ gzip: 0.58 kB
+ℹ lib/descriptor.d.ts         0.26 kB │ gzip: 0.18 kB
+ℹ 5 files, total: 11.39 kB
+✔ Build complete in 589ms
+ℹ [CJS] lib/client.js  43.06 kB │ gzip: 10.60 kB
+ℹ [CJS] 1 files, total: 43.06 kB
+✔ Build complete in 600ms
+Built dsh-mnemon-provider-supermemory
+ℹ [ESM] lib/index.js    19.08 kB │ gzip: 5.92 kB
+ℹ [ESM] lib/index.d.ts   1.02 kB │ gzip: 0.47 kB
+ℹ [ESM] 2 files, total: 20.10 kB
+✔ Build complete in 665ms
+ℹ [CJS] lib/client.js  31.45 kB │ gzip: 7.80 kB
+ℹ [CJS] 1 files, total: 31.45 kB
+✔ Build complete in 762ms
+ℹ [CJS] lib/client.js  33.08 kB │ gzip: 7.43 kB
+ℹ [CJS] 1 files, total: 33.08 kB
+✔ Build complete in 793ms
+ℹ [ESM] lib/index.js    43.58 kB │ gzip: 10.72 kB
+ℹ [ESM] lib/index.d.ts   2.50 kB │ gzip:  0.85 kB
+ℹ [ESM] 2 files, total: 46.08 kB
+✔ Build complete in 818ms
+ℹ [ESM] lib/index.js    40.55 kB │ gzip: 10.87 kB
+ℹ [ESM] lib/index.d.ts   2.90 kB │ gzip:  1.02 kB
+ℹ [ESM] 2 files, total: 43.44 kB
+✔ Build complete in 819ms
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-files/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ [CJS] lib/client.js  3.55 kB │ gzip: 1.40 kB
+ℹ [CJS] 1 files, total: 3.55 kB
+Built dsh-mnemon-source-canvas
+Built dsh-mnemon-source-collaboration
+✔ Build complete in 592ms
+ℹ [ESM] lib/index.js    7.86 kB │ gzip: 2.93 kB
+ℹ [ESM] lib/index.d.ts  0.73 kB │ gzip: 0.35 kB
+ℹ [ESM] 2 files, total: 8.59 kB
+✔ Build complete in 609ms
+Built dsh-mnemon-source-agent-jobs
+$ tsdown && tsc -p tsconfig.client-types.json
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-journal/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 6 files
+ℹ config file: <repo>/plugins/dsh-mnemon-source-learning/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-notifications/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 7 files
+Built dsh-mnemon-source-files
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-playbooks/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 12 files
+ℹ [CJS] lib/client.js  10.49 kB │ gzip: 3.11 kB
+ℹ [CJS] 1 files, total: 10.49 kB
+✔ Build complete in 712ms
+ℹ [ESM] lib/index.js    10.93 kB │ gzip: 3.68 kB
+ℹ [ESM] lib/index.d.ts   0.99 kB │ gzip: 0.44 kB
+ℹ [ESM] 2 files, total: 11.92 kB
+✔ Build complete in 732ms
+ℹ [CJS] lib/client.js  35.96 kB │ gzip: 8.40 kB
+ℹ [CJS] 1 files, total: 35.96 kB
+✔ Build complete in 733ms
+ℹ [ESM] lib/index.js    55.14 kB │ gzip: 14.35 kB
+ℹ [ESM] lib/index.d.ts   1.44 kB │ gzip:  0.60 kB
+ℹ [ESM] 2 files, total: 56.58 kB
+✔ Build complete in 785ms
+ℹ [CJS] lib/client.js  36.53 kB │ gzip: 8.96 kB
+ℹ [CJS] 1 files, total: 36.53 kB
+✔ Build complete in 757ms
+ℹ [ESM] lib/index.js    27.98 kB │ gzip: 8.01 kB
+ℹ [ESM] lib/index.d.ts   2.50 kB │ gzip: 0.95 kB
+ℹ [ESM] 2 files, total: 30.48 kB
+✔ Build complete in 843ms
+Built dsh-mnemon-source-journal
+ℹ [CJS] lib/client.js  71.63 kB │ gzip: 15.98 kB
+ℹ [CJS] 1 files, total: 71.63 kB
+✔ Build complete in 815ms
+ℹ [ESM] lib/index.js    111.63 kB │ gzip: 27.16 kB
+ℹ [ESM] lib/index.d.ts    6.52 kB │ gzip:  1.68 kB
+ℹ [ESM] 2 files, total: 118.16 kB
+✔ Build complete in 914ms
+Built dsh-mnemon-source-learning
+$ tsdown && tsc -p tsconfig.client-types.json
+Built dsh-mnemon-source-notifications
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ config file: <repo>/plugins/dsh-mnemon-source-project-context/tsdown.config.ts
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 5 files
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-review/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 7 files
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-sessions/tsdown.config.ts
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 6 files
+ℹ [CJS] lib/client.js  1.81 kB │ gzip: 0.88 kB
+ℹ [CJS] 1 files, total: 1.81 kB
+✔ Build complete in 552ms
+ℹ [ESM] lib/index.js    2.68 kB │ gzip: 1.23 kB
+ℹ [ESM] lib/index.d.ts  0.66 kB │ gzip: 0.32 kB
+ℹ [ESM] 2 files, total: 3.34 kB
+✔ Build complete in 591ms
+Built dsh-mnemon-source-playbooks
+ℹ [CJS] lib/client.js  13.47 kB │ gzip: 4.02 kB
+ℹ [CJS] 1 files, total: 13.47 kB
+✔ Build complete in 761ms
+ℹ [ESM] lib/index.js    23.91 kB │ gzip: 7.10 kB
+ℹ [ESM] lib/index.d.ts   1.90 kB │ gzip: 0.75 kB
+ℹ [ESM] 2 files, total: 25.81 kB
+✔ Build complete in 783ms
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ [CJS] lib/client.js  22.17 kB │ gzip: 5.73 kB
+ℹ [CJS] 1 files, total: 22.17 kB
+✔ Build complete in 729ms
+ℹ [ESM] lib/index.js    28.48 kB │ gzip: 8.03 kB
+ℹ [ESM] lib/index.d.ts   0.92 kB │ gzip: 0.42 kB
+ℹ [ESM] 2 files, total: 29.39 kB
+✔ Build complete in 752ms
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+Built dsh-mnemon-source-project-context
+ℹ config file: <repo>/plugins/dsh-mnemon-source-sync/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 7 files
+ℹ [CJS] lib/client.js  30.67 kB │ gzip: 7.65 kB
+ℹ [CJS] 1 files, total: 30.67 kB
+$ tsdown && tsc -p tsconfig.client-types.json
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-source-tasks/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ entry: src/client.tsx
+ℹ target: es2022
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 6 files
+Built dsh-mnemon-source-review
+✔ Build complete in 602ms
+ℹ [ESM] lib/index.js    30.40 kB │ gzip: 8.79 kB
+ℹ [ESM] lib/index.d.ts   0.77 kB │ gzip: 0.38 kB
+ℹ [ESM] 2 files, total: 31.17 kB
+✔ Build complete in 689ms
+Built dsh-mnemon-source-sessions
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ [CJS] lib/client.js  13.56 kB │ gzip: 3.85 kB
+ℹ [CJS] 1 files, total: 13.56 kB
+✔ Build complete in 586ms
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-auto-capture/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ [ESM] lib/index.js    6.85 kB │ gzip: 2.54 kB
+ℹ [ESM] lib/index.d.ts  0.65 kB │ gzip: 0.32 kB
+ℹ [ESM] 2 files, total: 7.50 kB
+✔ Build complete in 595ms
+ℹ Cleaning 2 files
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-focus/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+Built dsh-mnemon-source-sync
+ℹ lib/index.js    3.44 kB │ gzip: 1.47 kB
+ℹ lib/index.d.ts  0.77 kB │ gzip: 0.35 kB
+ℹ 2 files, total: 4.21 kB
+✔ Build complete in 610ms
+Built dsh-mnemon-strategy-auto-capture
+Built dsh-mnemon-source-tasks
+ℹ lib/index.js    3.40 kB │ gzip: 1.33 kB
+ℹ lib/index.d.ts  0.77 kB │ gzip: 0.35 kB
+ℹ 2 files, total: 4.17 kB
+✔ Build complete in 553ms
+Built dsh-mnemon-strategy-focus
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+$ tsdown
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-jev-context/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+$ tsdown
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-journal-capture/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-learning-cycle/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-light-context/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ lib/index.js    9.31 kB │ gzip: 3.14 kB
+ℹ lib/index.d.ts  1.29 kB │ gzip: 0.56 kB
+ℹ 2 files, total: 10.60 kB
+✔ Build complete in 690ms
+ℹ lib/index.js    3.37 kB │ gzip: 1.48 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 3.96 kB
+✔ Build complete in 584ms
+Built dsh-mnemon-strategy-journal-capture
+Built dsh-mnemon-strategy-jev-context
+ℹ lib/index.js    4.39 kB │ gzip: 1.83 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 4.97 kB
+✔ Build complete in 599ms
+Built dsh-mnemon-strategy-learning-cycle
+ℹ lib/index.js    2.29 kB │ gzip: 0.97 kB
+ℹ lib/index.d.ts  0.73 kB │ gzip: 0.34 kB
+ℹ 2 files, total: 3.02 kB
+✔ Build complete in 602ms
+Built dsh-mnemon-strategy-light-context
+$ tsdown
+$ tsdown
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-prompt-schedule/tsdown.config.ts
+$ tsdown
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-review-cycle/tsdown.config.ts
+ℹ Cleaning 2 files
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ Cleaning 2 files
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-scoped/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-skill-refinement/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ lib/index.js    2.42 kB │ gzip: 1.15 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 3.01 kB
+✔ Build complete in 575ms
+ℹ lib/index.js    3.45 kB │ gzip: 1.61 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 4.03 kB
+✔ Build complete in 572ms
+Built dsh-mnemon-strategy-prompt-schedule
+Built dsh-mnemon-strategy-review-cycle
+ℹ lib/index.js    3.25 kB │ gzip: 1.29 kB
+ℹ lib/index.d.ts  0.73 kB │ gzip: 0.33 kB
+ℹ 2 files, total: 3.98 kB
+✔ Build complete in 589ms
+Built dsh-mnemon-strategy-scoped
+ℹ lib/index.js    4.70 kB │ gzip: 2.08 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 5.29 kB
+✔ Build complete in 581ms
+Built dsh-mnemon-strategy-skill-refinement
+$ tsdown
+ℹ tsdown v0.22.14 powered by rolldown v1.2.4
+ℹ config file: <repo>/plugins/dsh-mnemon-strategy-team-coordination/tsdown.config.ts
+ℹ entry: src/index.ts
+ℹ target: es2024
+ℹ tsconfig: tsconfig.json
+ℹ Build start
+ℹ Cleaning 2 files
+ℹ lib/index.js    2.45 kB │ gzip: 1.17 kB
+ℹ lib/index.d.ts  0.58 kB │ gzip: 0.30 kB
+ℹ 2 files, total: 3.03 kB
+✔ Build complete in 326ms
+Built dsh-mnemon-strategy-team-coordination
+Built 41 independent packages in dependency order.
+$ tsc -p tsconfig.json --noEmit
+Scope: 41 of 42 workspace projects
+[WARN] The tasks form a dependency cycle and run in an arbitrary order relative to each other because ignoreWorkspaceCycles is set: plugins/dsh-mnemon-provider-byterover#typecheck → plugins/dsh-mnemon-source-memory-spaces#typecheck → plugins/dsh-mnemon-strategy-skill-refinement#typecheck → plugins/dsh-mnemon-provider-byterover#typecheck; plugins/dsh-mnemon-replica#typecheck → plugins/dsh-mnemon-strategy-workspace#typecheck → plugins/dsh-mnemon-replica#typecheck; plugins/dsh-mnemon-source-agent-jobs#typecheck → plugins/dsh-mnemon-workspace-kit#typecheck → plugins/dsh-mnemon-source-agent-jobs#typecheck; plugins/dsh-mnemon-source-canvas#typecheck → plugins/dsh-mnemon-strategy-default-three-tier#typecheck → plugins/dsh-mnemon-source-canvas#typecheck; plugins/dsh-mnemon-source-collaboration#typecheck → plugins/dsh-mnemon-strategy-learning-cycle#typecheck → plugins/dsh-mnemon-source-collaboration#typecheck; plugins/dsh-mnemon-source-documents#typecheck → plugins/dsh-mnemon-source-learning#typecheck → plugins/dsh-mnemon-source-documents#typecheck; plugins/dsh-mnemon-source-files#typecheck → plugins/dsh-mnemon-source-sync#typecheck → plugins/dsh-mnemon-source-files#typecheck; plugins/dsh-mnemon-source-journal#typecheck → plugins/dsh-mnemon-strategy-focus#typecheck → plugins/dsh-mnemon-source-journal#typecheck; plugins/dsh-mnemon-source-notifications#typecheck → plugins/dsh-mnemon-source-review#typecheck → plugins/dsh-mnemon-source-notifications#typecheck; plugins/dsh-mnemon-source-playbooks#typecheck → plugins/dsh-mnemon-source-sessions#typecheck → plugins/dsh-mnemon-source-playbooks#typecheck; plugins/dsh-mnemon-source-project-context#typecheck → plugins/dsh-mnemon-strategy-team-coordination#typecheck → plugins/dsh-mnemon-source-project-context#typecheck; plugins/dsh-mnemon-source-runtime#typecheck → plugins/dsh-mnemon-strategy-scoped#typecheck → plugins/dsh-mnemon-source-runtime#typecheck; plugins/dsh-mnemon-source-tasks#typecheck → plugins/dsh-mnemon-strategy-review-cycle#typecheck → plugins/dsh-mnemon-source-tasks#typecheck; plugins/dsh-mnemon-strategy-auto-capture#typecheck → plugins/dsh-mnemon-strategy-prompt-schedule#typecheck → plugins/dsh-mnemon-strategy-auto-capture#typecheck; plugins/dsh-mnemon-strategy-jev-context#typecheck → plugins/dsh-mnemon-strategy-light-context#typecheck → plugins/dsh-mnemon-strategy-jev-context#typecheck
+plugins/dsh-mnemon-agent-loop-jev typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-byterover typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-byterover typecheck: Done
+plugins/dsh-mnemon-agent-loop-jev typecheck: Done
+plugins/dsh-mnemon-source-memory-spaces typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-memory-spaces typecheck: Done
+plugins/dsh-mnemon-provider-holographic typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-hindsight typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-honcho typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-mem0 typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-holographic typecheck: Done
+.../dsh-mnemon-provider-mnemon-native typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-hindsight typecheck: Done
+plugins/dsh-mnemon-provider-openviking typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-honcho typecheck: Done
+plugins/dsh-mnemon-provider-retaindb typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-mem0 typecheck: Done
+plugins/dsh-mnemon-provider-supermemory typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-retaindb typecheck: Done
+.../dsh-mnemon-strategy-skill-refinement typecheck$ tsc --noEmit
+plugins/dsh-mnemon-provider-supermemory typecheck: Done
+.../dsh-mnemon-provider-mnemon-native typecheck: Done
+plugins/dsh-mnemon-provider-openviking typecheck: Done
+.../dsh-mnemon-strategy-skill-refinement typecheck: Done
+plugins/dsh-mnemon-replica typecheck$ tsc --noEmit
+plugins/dsh-mnemon-replica typecheck: Done
+plugins/dsh-mnemon-strategy-workspace typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-workspace typecheck: Done
+plugins/dsh-mnemon-source-agent-jobs typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-agent-jobs typecheck: Done
+plugins/dsh-mnemon-workspace-kit typecheck$ tsc --noEmit
+plugins/dsh-mnemon-workspace-kit typecheck: Done
+plugins/dsh-mnemon-source-canvas typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-canvas typecheck: Done
+...sh-mnemon-strategy-default-three-tier typecheck$ tsc --noEmit
+...sh-mnemon-strategy-default-three-tier typecheck: Done
+plugins/dsh-mnemon-source-collaboration typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-collaboration typecheck: Done
+.../dsh-mnemon-strategy-learning-cycle typecheck$ tsc --noEmit
+.../dsh-mnemon-strategy-learning-cycle typecheck: Done
+plugins/dsh-mnemon-source-documents typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-documents typecheck: Done
+plugins/dsh-mnemon-source-learning typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-learning typecheck: Done
+plugins/dsh-mnemon-source-files typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-files typecheck: Done
+plugins/dsh-mnemon-source-sync typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-sync typecheck: Done
+plugins/dsh-mnemon-source-journal typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-journal typecheck: Done
+plugins/dsh-mnemon-strategy-focus typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-focus typecheck: Done
+plugins/dsh-mnemon-source-notifications typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-notifications typecheck: Done
+plugins/dsh-mnemon-source-review typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-review typecheck: Done
+plugins/dsh-mnemon-source-playbooks typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-playbooks typecheck: Done
+plugins/dsh-mnemon-source-sessions typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-sessions typecheck: Done
+.../dsh-mnemon-source-project-context typecheck$ tsc --noEmit
+.../dsh-mnemon-source-project-context typecheck: Done
+...dsh-mnemon-strategy-team-coordination typecheck$ tsc --noEmit
+...dsh-mnemon-strategy-team-coordination typecheck: Done
+plugins/dsh-mnemon-source-runtime typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-runtime typecheck: Done
+plugins/dsh-mnemon-strategy-scoped typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-scoped typecheck: Done
+plugins/dsh-mnemon-source-tasks typecheck$ tsc --noEmit
+plugins/dsh-mnemon-source-tasks typecheck: Done
+plugins/dsh-mnemon-strategy-review-cycle typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-review-cycle typecheck: Done
+plugins/dsh-mnemon-strategy-auto-capture typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-auto-capture typecheck: Done
+.../dsh-mnemon-strategy-prompt-schedule typecheck$ tsc --noEmit
+.../dsh-mnemon-strategy-prompt-schedule typecheck: Done
+plugins/dsh-mnemon-strategy-jev-context typecheck$ tsc --noEmit
+plugins/dsh-mnemon-strategy-jev-context typecheck: Done
+.../dsh-mnemon-strategy-light-context typecheck$ tsc --noEmit
+.../dsh-mnemon-strategy-light-context typecheck: Done
+.../dsh-mnemon-strategy-journal-capture typecheck$ tsc --noEmit
+.../dsh-mnemon-strategy-journal-capture typecheck: Done
+Scope: 41 of 42 workspace projects
+[WARN] The tasks form a dependency cycle and run in an arbitrary order relative to each other because ignoreWorkspaceCycles is set: plugins/dsh-mnemon-provider-byterover#test → plugins/dsh-mnemon-source-memory-spaces#test → plugins/dsh-mnemon-strategy-skill-refinement#test → plugins/dsh-mnemon-provider-byterover#test; plugins/dsh-mnemon-replica#test → plugins/dsh-mnemon-strategy-workspace#test → plugins/dsh-mnemon-replica#test; plugins/dsh-mnemon-source-agent-jobs#test → plugins/dsh-mnemon-workspace-kit#test → plugins/dsh-mnemon-source-agent-jobs#test; plugins/dsh-mnemon-source-canvas#test → plugins/dsh-mnemon-strategy-default-three-tier#test → plugins/dsh-mnemon-source-canvas#test; plugins/dsh-mnemon-source-collaboration#test → plugins/dsh-mnemon-strategy-learning-cycle#test → plugins/dsh-mnemon-source-collaboration#test; plugins/dsh-mnemon-source-documents#test → plugins/dsh-mnemon-source-learning#test → plugins/dsh-mnemon-source-documents#test; plugins/dsh-mnemon-source-files#test → plugins/dsh-mnemon-source-sync#test → plugins/dsh-mnemon-source-files#test; plugins/dsh-mnemon-source-journal#test → plugins/dsh-mnemon-strategy-focus#test → plugins/dsh-mnemon-source-journal#test; plugins/dsh-mnemon-source-notifications#test → plugins/dsh-mnemon-source-review#test → plugins/dsh-mnemon-source-notifications#test; plugins/dsh-mnemon-source-playbooks#test → plugins/dsh-mnemon-source-sessions#test → plugins/dsh-mnemon-source-playbooks#test; plugins/dsh-mnemon-source-project-context#test → plugins/dsh-mnemon-strategy-team-coordination#test → plugins/dsh-mnemon-source-project-context#test; plugins/dsh-mnemon-source-runtime#test → plugins/dsh-mnemon-strategy-scoped#test → plugins/dsh-mnemon-source-runtime#test; plugins/dsh-mnemon-source-tasks#test → plugins/dsh-mnemon-strategy-review-cycle#test → plugins/dsh-mnemon-source-tasks#test; plugins/dsh-mnemon-strategy-auto-capture#test → plugins/dsh-mnemon-strategy-prompt-schedule#test → plugins/dsh-mnemon-strategy-auto-capture#test; plugins/dsh-mnemon-strategy-jev-context#test → plugins/dsh-mnemon-strategy-light-context#test → plugins/dsh-mnemon-strategy-jev-context#test
+plugins/dsh-mnemon-agent-loop-jev test$ vitest run
+plugins/dsh-mnemon-provider-byterover test$ vitest run
+plugins/dsh-mnemon-provider-byterover test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-byterover
+plugins/dsh-mnemon-agent-loop-jev test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-agent-loop-jev
+plugins/dsh-mnemon-provider-byterover test:  ✓ tests/provider.spec.ts (2 tests) 4ms
+plugins/dsh-mnemon-provider-byterover test:  ✓ tests/driver.spec.ts (1 test) 4ms
+plugins/dsh-mnemon-provider-byterover test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-byterover test:       Tests  3 passed (3)
+plugins/dsh-mnemon-provider-byterover test:    Start at  01:47:57
+plugins/dsh-mnemon-provider-byterover test:    Duration  393ms (transform 66ms, setup 0ms, collect 117ms, tests 8ms, environment 0ms, prepare 159ms)
+plugins/dsh-mnemon-provider-byterover test: Done
+plugins/dsh-mnemon-agent-loop-jev test:  ✓ tests/agent.spec.ts (9 tests) 336ms
+plugins/dsh-mnemon-agent-loop-jev test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-agent-loop-jev test:       Tests  9 passed (9)
+plugins/dsh-mnemon-agent-loop-jev test:    Start at  01:47:57
+plugins/dsh-mnemon-agent-loop-jev test:    Duration  827ms (transform 46ms, setup 0ms, collect 121ms, tests 336ms, environment 0ms, prepare 94ms)
+plugins/dsh-mnemon-agent-loop-jev test: Done
+plugins/dsh-mnemon-source-memory-spaces test$ vitest run
+plugins/dsh-mnemon-source-memory-spaces test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-memory-spaces
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/runner-config.spec.ts (9 tests) 10ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/runner.spec.ts (22 tests) 111ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-sdk.spec.ts (7 tests) 48ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/source.spec.ts (4 tests) 62ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/memory-spaces.spec.ts (24 tests) 60ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/source-io.spec.ts (1 test) 57ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/recall-quality.spec.ts (5 tests) 7ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-conformance.spec.ts (9 tests) 70ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/service.spec.ts (62 tests) 177ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-placement.spec.ts (5 tests) 5ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/process.spec.ts (3 tests) 3ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/config.spec.ts (3 tests) 3ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/native-integration.spec.ts (1 test) 351ms
+plugins/dsh-mnemon-source-memory-spaces test:    ✓ real Native Provider through Source composition > creates a space, writes via a View, recalls and forgets through the real CLI  350ms
+plugins/dsh-mnemon-source-memory-spaces test:  ↓ tests/windows-smoke.spec.ts (1 test | 1 skipped)
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-catalog.spec.ts (5 tests) 7ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-fiber.spec.ts (2 tests) 6ms
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/provider-registry.spec.ts (3 tests) 3ms
+plugins/dsh-mnemon-source-memory-spaces test: 1:47:59 AM [vite] (client) Failed to load source map for <repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.
+plugins/dsh-mnemon-source-memory-spaces test: Error: An error occurred while trying to read the map file at index.js.map
+plugins/dsh-mnemon-source-memory-spaces test: Error: ENOENT: no such file or directory, open '<repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.map'
+plugins/dsh-mnemon-source-memory-spaces test:     at async open (node:internal/fs/promises:641:25)
+plugins/dsh-mnemon-source-memory-spaces test:     at async Object.readFile (node:internal/fs/promises:1279:14)
+plugins/dsh-mnemon-source-memory-spaces test:     at async extractSourcemapFromFile (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:8066:65)
+plugins/dsh-mnemon-source-memory-spaces test:     at async loadAndTransform (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:22717:22)
+plugins/dsh-mnemon-source-memory-spaces test:  ✓ tests/client.spec.tsx (4 tests) 160ms
+plugins/dsh-mnemon-source-memory-spaces test:  Test Files  17 passed | 1 skipped (18)
+plugins/dsh-mnemon-source-memory-spaces test:       Tests  169 passed | 1 skipped (170)
+plugins/dsh-mnemon-source-memory-spaces test:    Start at  01:47:58
+plugins/dsh-mnemon-source-memory-spaces test:    Duration  2.02s (transform 854ms, setup 0ms, collect 3.31s, tests 1.14s, environment 308ms, prepare 1.15s)
+plugins/dsh-mnemon-source-memory-spaces test: Done
+plugins/dsh-mnemon-provider-hindsight test$ vitest run
+plugins/dsh-mnemon-provider-holographic test$ vitest run
+plugins/dsh-mnemon-provider-honcho test$ vitest run
+plugins/dsh-mnemon-provider-mem0 test$ vitest run
+plugins/dsh-mnemon-provider-hindsight test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-hindsight
+plugins/dsh-mnemon-provider-honcho test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-honcho
+plugins/dsh-mnemon-provider-holographic test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-holographic
+plugins/dsh-mnemon-provider-mem0 test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-mem0
+plugins/dsh-mnemon-provider-honcho test:  ✓ tests/provider.spec.ts (2 tests) 4ms
+plugins/dsh-mnemon-provider-hindsight test:  ✓ tests/provider.spec.ts (2 tests) 4ms
+plugins/dsh-mnemon-provider-honcho test:  ✓ tests/driver.spec.ts (4 tests) 9ms
+plugins/dsh-mnemon-provider-hindsight test:  ✓ tests/driver.spec.ts (2 tests) 11ms
+plugins/dsh-mnemon-provider-honcho test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-honcho test:       Tests  6 passed (6)
+plugins/dsh-mnemon-provider-honcho test:    Start at  01:48:00
+plugins/dsh-mnemon-provider-honcho test:    Duration  822ms (transform 122ms, setup 0ms, collect 272ms, tests 13ms, environment 0ms, prepare 444ms)
+plugins/dsh-mnemon-provider-hindsight test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-hindsight test:       Tests  4 passed (4)
+plugins/dsh-mnemon-provider-hindsight test:    Start at  01:48:00
+plugins/dsh-mnemon-provider-hindsight test:    Duration  826ms (transform 105ms, setup 0ms, collect 385ms, tests 15ms, environment 0ms, prepare 306ms)
+plugins/dsh-mnemon-provider-mem0 test:  ✓ tests/driver.spec.ts (4 tests) 9ms
+plugins/dsh-mnemon-provider-mem0 test:  ✓ tests/provider.spec.ts (2 tests) 5ms
+plugins/dsh-mnemon-provider-holographic test:  ✓ tests/provider.spec.ts (2 tests) 7ms
+plugins/dsh-mnemon-provider-holographic test:  ✓ tests/driver.spec.ts (1 test) 8ms
+plugins/dsh-mnemon-provider-holographic test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-holographic test:       Tests  3 passed (3)
+plugins/dsh-mnemon-provider-holographic test:    Start at  01:48:00
+plugins/dsh-mnemon-provider-mem0 test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-mem0 test:       Tests  6 passed (6)
+plugins/dsh-mnemon-provider-mem0 test:    Start at  01:48:00
+plugins/dsh-mnemon-provider-mem0 test:    Duration  893ms (transform 108ms, setup 0ms, collect 287ms, tests 14ms, environment 0ms, prepare 183ms)
+plugins/dsh-mnemon-provider-holographic test:    Duration  915ms (transform 95ms, setup 0ms, collect 292ms, tests 15ms, environment 0ms, prepare 422ms)
+plugins/dsh-mnemon-provider-honcho test: Done
+.../dsh-mnemon-provider-mnemon-native test$ vitest run
+plugins/dsh-mnemon-provider-hindsight test: Done
+plugins/dsh-mnemon-provider-openviking test$ vitest run
+plugins/dsh-mnemon-provider-holographic test: Done
+plugins/dsh-mnemon-provider-retaindb test$ vitest run
+plugins/dsh-mnemon-provider-mem0 test: Done
+plugins/dsh-mnemon-provider-supermemory test$ vitest run
+.../dsh-mnemon-provider-mnemon-native test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-mnemon-native
+plugins/dsh-mnemon-provider-openviking test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-openviking
+plugins/dsh-mnemon-provider-retaindb test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-retaindb
+plugins/dsh-mnemon-provider-supermemory test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-provider-supermemory
+plugins/dsh-mnemon-provider-retaindb test:  ✓ tests/provider.spec.ts (2 tests) 6ms
+plugins/dsh-mnemon-provider-retaindb test:  ✓ tests/driver.spec.ts (2 tests) 10ms
+plugins/dsh-mnemon-provider-openviking test:  ↓ tests/integration.spec.ts (1 test | 1 skipped)
+.../dsh-mnemon-provider-mnemon-native test:  ✓ tests/provider.spec.ts (8 tests) 15ms
+plugins/dsh-mnemon-provider-openviking test:  ✓ tests/provider.spec.ts (2 tests) 7ms
+plugins/dsh-mnemon-provider-supermemory test:  ✓ tests/provider.spec.ts (2 tests) 4ms
+plugins/dsh-mnemon-provider-retaindb test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-retaindb test:       Tests  4 passed (4)
+plugins/dsh-mnemon-provider-retaindb test:    Start at  01:48:02
+plugins/dsh-mnemon-provider-retaindb test:    Duration  820ms (transform 89ms, setup 0ms, collect 242ms, tests 15ms, environment 0ms, prepare 186ms)
+.../dsh-mnemon-provider-mnemon-native test:  Test Files  1 passed (1)
+.../dsh-mnemon-provider-mnemon-native test:       Tests  8 passed (8)
+.../dsh-mnemon-provider-mnemon-native test:    Start at  01:48:02
+.../dsh-mnemon-provider-mnemon-native test:    Duration  872ms (transform 84ms, setup 0ms, collect 133ms, tests 15ms, environment 0ms, prepare 155ms)
+plugins/dsh-mnemon-provider-supermemory test:  ✓ tests/driver.spec.ts (4 tests) 9ms
+plugins/dsh-mnemon-provider-supermemory test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-provider-supermemory test:       Tests  6 passed (6)
+plugins/dsh-mnemon-provider-supermemory test:    Start at  01:48:02
+plugins/dsh-mnemon-provider-supermemory test:    Duration  869ms (transform 97ms, setup 0ms, collect 227ms, tests 13ms, environment 0ms, prepare 153ms)
+.../dsh-mnemon-provider-mnemon-native test: Done
+.../dsh-mnemon-strategy-skill-refinement test$ vitest run
+plugins/dsh-mnemon-provider-openviking test:  ✓ tests/driver.spec.ts (7 tests) 163ms
+plugins/dsh-mnemon-provider-retaindb test: Done
+plugins/dsh-mnemon-provider-openviking test:  ✓ tests/write-regression.spec.ts (40 tests) 196ms
+plugins/dsh-mnemon-provider-openviking test:  Test Files  3 passed | 1 skipped (4)
+plugins/dsh-mnemon-provider-openviking test:       Tests  49 passed | 1 skipped (50)
+plugins/dsh-mnemon-provider-openviking test:    Start at  01:48:02
+plugins/dsh-mnemon-provider-openviking test:    Duration  1.03s (transform 116ms, setup 0ms, collect 416ms, tests 366ms, environment 2ms, prepare 664ms)
+plugins/dsh-mnemon-provider-supermemory test: Done
+plugins/dsh-mnemon-provider-openviking test: Done
+.../dsh-mnemon-strategy-skill-refinement test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-skill-refinement
+.../dsh-mnemon-strategy-skill-refinement test:  ✓ tests/strategy.spec.ts (2 tests) 3ms
+.../dsh-mnemon-strategy-skill-refinement test:  Test Files  1 passed (1)
+.../dsh-mnemon-strategy-skill-refinement test:       Tests  2 passed (2)
+.../dsh-mnemon-strategy-skill-refinement test:    Start at  01:48:03
+.../dsh-mnemon-strategy-skill-refinement test:    Duration  219ms (transform 34ms, setup 0ms, collect 44ms, tests 3ms, environment 0ms, prepare 40ms)
+.../dsh-mnemon-strategy-skill-refinement test: Done
+plugins/dsh-mnemon-replica test$ vitest run
+plugins/dsh-mnemon-replica test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-replica
+plugins/dsh-mnemon-replica test:  ✓ tests/store.spec.ts (7 tests) 192ms
+plugins/dsh-mnemon-replica test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-replica test:       Tests  7 passed (7)
+plugins/dsh-mnemon-replica test:    Start at  01:48:03
+plugins/dsh-mnemon-replica test:    Duration  454ms (transform 56ms, setup 0ms, collect 79ms, tests 192ms, environment 0ms, prepare 47ms)
+plugins/dsh-mnemon-replica test: Done
+plugins/dsh-mnemon-strategy-workspace test$ vitest run
+plugins/dsh-mnemon-strategy-workspace test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-workspace
+plugins/dsh-mnemon-strategy-workspace test:  ✓ tests/strategy.spec.ts (7 tests) 4ms
+plugins/dsh-mnemon-strategy-workspace test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-workspace test:       Tests  7 passed (7)
+plugins/dsh-mnemon-strategy-workspace test:    Start at  01:48:04
+plugins/dsh-mnemon-strategy-workspace test:    Duration  229ms (transform 32ms, setup 0ms, collect 42ms, tests 4ms, environment 0ms, prepare 44ms)
+plugins/dsh-mnemon-strategy-workspace test: Done
+plugins/dsh-mnemon-source-agent-jobs test$ vitest run
+plugins/dsh-mnemon-source-agent-jobs test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-agent-jobs
+plugins/dsh-mnemon-source-agent-jobs test:  ✓ tests/source.spec.ts (1 test) 54ms
+plugins/dsh-mnemon-source-agent-jobs test:  ✓ tests/engine.spec.ts (6 tests) 1485ms
+plugins/dsh-mnemon-source-agent-jobs test:    ✓ durable CLI jobs > reports process failure and timeout as failure outcomes, never successful completion  1119ms
+plugins/dsh-mnemon-source-agent-jobs test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-source-agent-jobs test:       Tests  7 passed (7)
+plugins/dsh-mnemon-source-agent-jobs test:    Start at  01:48:05
+plugins/dsh-mnemon-source-agent-jobs test:    Duration  1.76s (transform 99ms, setup 0ms, collect 176ms, tests 1.54s, environment 0ms, prepare 92ms)
+plugins/dsh-mnemon-source-agent-jobs test: Done
+plugins/dsh-mnemon-workspace-kit test$ vitest run
+plugins/dsh-mnemon-workspace-kit test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-workspace-kit
+plugins/dsh-mnemon-workspace-kit test:  ✓ tests/dsh.spec.ts (8 tests) 6ms
+plugins/dsh-mnemon-workspace-kit test:  ✓ tests/assets.spec.ts (4 tests) 49ms
+plugins/dsh-mnemon-workspace-kit test:  ✓ tests/filesystem.spec.ts (3 tests) 122ms
+plugins/dsh-mnemon-workspace-kit test:  ✓ tests/records.spec.ts (12 tests) 218ms
+plugins/dsh-mnemon-workspace-kit test:  Test Files  4 passed (4)
+plugins/dsh-mnemon-workspace-kit test:       Tests  27 passed (27)
+plugins/dsh-mnemon-workspace-kit test:    Start at  01:48:07
+plugins/dsh-mnemon-workspace-kit test:    Duration  511ms (transform 132ms, setup 0ms, collect 316ms, tests 395ms, environment 0ms, prepare 175ms)
+plugins/dsh-mnemon-workspace-kit test: Done
+plugins/dsh-mnemon-source-canvas test$ vitest run
+plugins/dsh-mnemon-source-canvas test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-canvas
+plugins/dsh-mnemon-source-canvas test:  ✓ tests/canvas.spec.ts (4 tests) 69ms
+plugins/dsh-mnemon-source-canvas test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-source-canvas test:       Tests  4 passed (4)
+plugins/dsh-mnemon-source-canvas test:    Start at  01:48:07
+plugins/dsh-mnemon-source-canvas test:    Duration  347ms (transform 64ms, setup 0ms, collect 97ms, tests 69ms, environment 0ms, prepare 40ms)
+plugins/dsh-mnemon-source-canvas test: Done
+...sh-mnemon-strategy-default-three-tier test$ vitest run
+...sh-mnemon-strategy-default-three-tier test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-default-three-tier
+...sh-mnemon-strategy-default-three-tier test:  ✓ tests/guidance.spec.ts (1 test) 1ms
+...sh-mnemon-strategy-default-three-tier test:  ✓ tests/extensions.spec.ts (7 tests) 6ms
+...sh-mnemon-strategy-default-three-tier test:  ✓ tests/strategy.spec.ts (3 tests) 9ms
+...sh-mnemon-strategy-default-three-tier test:  ✓ tests/retrieval.spec.ts (6 tests) 35ms
+...sh-mnemon-strategy-default-three-tier test:  Test Files  4 passed (4)
+...sh-mnemon-strategy-default-three-tier test:       Tests  17 passed (17)
+...sh-mnemon-strategy-default-three-tier test:    Start at  01:48:08
+...sh-mnemon-strategy-default-three-tier test:    Duration  305ms (transform 118ms, setup 0ms, collect 271ms, tests 51ms, environment 0ms, prepare 187ms)
+...sh-mnemon-strategy-default-three-tier test: Done
+plugins/dsh-mnemon-source-collaboration test$ vitest run
+plugins/dsh-mnemon-source-collaboration test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-collaboration
+plugins/dsh-mnemon-source-collaboration test:  ✓ tests/rooms.spec.ts (3 tests) 3ms
+plugins/dsh-mnemon-source-collaboration test:  ✓ tests/coordination.spec.ts (5 tests) 49ms
+plugins/dsh-mnemon-source-collaboration test:  ✓ tests/source.spec.ts (1 test) 253ms
+plugins/dsh-mnemon-source-collaboration test:  Test Files  3 passed (3)
+plugins/dsh-mnemon-source-collaboration test:       Tests  9 passed (9)
+plugins/dsh-mnemon-source-collaboration test:    Start at  01:48:09
+plugins/dsh-mnemon-source-collaboration test:    Duration  548ms (transform 106ms, setup 0ms, collect 275ms, tests 305ms, environment 0ms, prepare 134ms)
+plugins/dsh-mnemon-source-collaboration test: Done
+.../dsh-mnemon-strategy-learning-cycle test$ vitest run
+.../dsh-mnemon-strategy-learning-cycle test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-learning-cycle
+.../dsh-mnemon-strategy-learning-cycle test:  ✓ tests/policy.spec.ts (2 tests) 2ms
+.../dsh-mnemon-strategy-learning-cycle test:  Test Files  1 passed (1)
+.../dsh-mnemon-strategy-learning-cycle test:       Tests  2 passed (2)
+.../dsh-mnemon-strategy-learning-cycle test:    Start at  01:48:09
+.../dsh-mnemon-strategy-learning-cycle test:    Duration  227ms (transform 31ms, setup 0ms, collect 44ms, tests 2ms, environment 0ms, prepare 39ms)
+.../dsh-mnemon-strategy-learning-cycle test: Done
+plugins/dsh-mnemon-source-documents test$ vitest run
+plugins/dsh-mnemon-source-documents test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-documents
+plugins/dsh-mnemon-source-documents test:  ✓ tests/evidence.spec.ts (2 tests) 7ms
+plugins/dsh-mnemon-source-documents test:  ✓ tests/controller.spec.ts (12 tests) 103ms
+plugins/dsh-mnemon-source-documents test:  ✓ tests/source.spec.ts (3 tests) 62ms
+plugins/dsh-mnemon-source-documents test:  ✓ tests/io-freshness.spec.ts (5 tests) 65ms
+plugins/dsh-mnemon-source-documents test:  ✓ tests/create-action.spec.ts (8 tests) 75ms
+plugins/dsh-mnemon-source-documents test: 1:48:10 AM [vite] (client) Failed to load source map for <repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.
+plugins/dsh-mnemon-source-documents test: Error: An error occurred while trying to read the map file at index.js.map
+plugins/dsh-mnemon-source-documents test: Error: ENOENT: no such file or directory, open '<repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.map'
+plugins/dsh-mnemon-source-documents test:     at async open (node:internal/fs/promises:641:25)
+plugins/dsh-mnemon-source-documents test:     at async Object.readFile (node:internal/fs/promises:1279:14)
+plugins/dsh-mnemon-source-documents test:     at async extractSourcemapFromFile (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:8066:65)
+plugins/dsh-mnemon-source-documents test:     at async loadAndTransform (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:22717:22)
+plugins/dsh-mnemon-source-documents test:  ✓ tests/client.spec.tsx (3 tests) 315ms
+plugins/dsh-mnemon-source-documents test:  ✓ tests/excerpt-cache.spec.ts (6 tests) 2567ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > does not cycle the whole cache at 2048 documents  413ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > does not cycle the whole cache at 2049 documents  317ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > does not cycle the whole cache at 4096 documents  793ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > changes admission on archive, renamed paths and removed index members without keeping orphan cache entries  375ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > keeps external rewrite, replacement, deletion and permissions live for record 0  334ms
+plugins/dsh-mnemon-source-documents test:    ✓ Bounded snapshot excerpt admission through public Cordis management > keeps external rewrite, replacement, deletion and permissions live for record 2048  334ms
+plugins/dsh-mnemon-source-documents test:  Test Files  7 passed (7)
+plugins/dsh-mnemon-source-documents test:       Tests  39 passed (39)
+plugins/dsh-mnemon-source-documents test:    Start at  01:48:10
+plugins/dsh-mnemon-source-documents test:    Duration  2.90s (transform 392ms, setup 0ms, collect 1.20s, tests 3.19s, environment 214ms, prepare 386ms)
+plugins/dsh-mnemon-source-documents test: Done
+plugins/dsh-mnemon-source-learning test$ vitest run
+plugins/dsh-mnemon-source-learning test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-learning
+plugins/dsh-mnemon-source-learning test:  ✓ tests/source.spec.ts (1 test) 67ms
+plugins/dsh-mnemon-source-learning test:  ✓ tests/learning.spec.ts (15 tests) 549ms
+plugins/dsh-mnemon-source-learning test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-source-learning test:       Tests  16 passed (16)
+plugins/dsh-mnemon-source-learning test:    Start at  01:48:13
+plugins/dsh-mnemon-source-learning test:    Duration  808ms (transform 89ms, setup 0ms, collect 172ms, tests 617ms, environment 0ms, prepare 82ms)
+plugins/dsh-mnemon-source-learning test: Done
+plugins/dsh-mnemon-source-files test$ vitest run
+plugins/dsh-mnemon-source-files test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-files
+plugins/dsh-mnemon-source-files test:  ✓ tests/source.spec.ts (2 tests) 50ms
+plugins/dsh-mnemon-source-files test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-source-files test:       Tests  2 passed (2)
+plugins/dsh-mnemon-source-files test:    Start at  01:48:14
+plugins/dsh-mnemon-source-files test:    Duration  306ms (transform 58ms, setup 0ms, collect 78ms, tests 50ms, environment 0ms, prepare 43ms)
+plugins/dsh-mnemon-source-files test: Done
+plugins/dsh-mnemon-source-sync test$ vitest run
+plugins/dsh-mnemon-source-sync test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-sync
+plugins/dsh-mnemon-source-sync test:  ✓ tests/sync.spec.ts (7 tests) 2463ms
+plugins/dsh-mnemon-source-sync test:    ✓ independent reviewed snapshots > merges real divergent Git histories and resolves local, remote and both without checking out code  1149ms
+plugins/dsh-mnemon-source-sync test:    ✓ independent reviewed snapshots > recovers the same Git commit after an interrupted local receipt write  371ms
+plugins/dsh-mnemon-source-sync test:    ✓ rejects a fetched bundle for a different project identity  433ms
+plugins/dsh-mnemon-source-sync test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-source-sync test:       Tests  7 passed (7)
+plugins/dsh-mnemon-source-sync test:    Start at  01:48:15
+plugins/dsh-mnemon-source-sync test:    Duration  2.75s (transform 72ms, setup 0ms, collect 108ms, tests 2.46s, environment 0ms, prepare 45ms)
+plugins/dsh-mnemon-source-sync test: Done
+plugins/dsh-mnemon-source-journal test$ vitest run
+plugins/dsh-mnemon-source-journal test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-journal
+plugins/dsh-mnemon-source-journal test:  ✓ tests/source.spec.ts (2 tests) 15ms
+plugins/dsh-mnemon-source-journal test:  ✓ tests/progress.spec.ts (1 test) 33ms
+plugins/dsh-mnemon-source-journal test:  ✓ tests/lifecycle.spec.ts (3 tests) 148ms
+plugins/dsh-mnemon-source-journal test:  Test Files  3 passed (3)
+plugins/dsh-mnemon-source-journal test:       Tests  6 passed (6)
+plugins/dsh-mnemon-source-journal test:    Start at  01:48:18
+plugins/dsh-mnemon-source-journal test:    Duration  406ms (transform 82ms, setup 0ms, collect 170ms, tests 196ms, environment 0ms, prepare 131ms)
+plugins/dsh-mnemon-source-journal test: Done
+plugins/dsh-mnemon-strategy-focus test$ vitest run
+plugins/dsh-mnemon-strategy-focus test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-focus
+plugins/dsh-mnemon-strategy-focus test:  ✓ tests/focus.spec.ts (2 tests) 3ms
+plugins/dsh-mnemon-strategy-focus test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-focus test:       Tests  2 passed (2)
+plugins/dsh-mnemon-strategy-focus test:    Start at  01:48:18
+plugins/dsh-mnemon-strategy-focus test:    Duration  225ms (transform 33ms, setup 0ms, collect 42ms, tests 3ms, environment 0ms, prepare 33ms)
+plugins/dsh-mnemon-strategy-focus test: Done
+plugins/dsh-mnemon-source-notifications test$ vitest run
+plugins/dsh-mnemon-source-notifications test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-notifications
+plugins/dsh-mnemon-source-notifications test:  ✓ tests/delivery.spec.ts (6 tests) 180ms
+plugins/dsh-mnemon-source-notifications test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-source-notifications test:       Tests  6 passed (6)
+plugins/dsh-mnemon-source-notifications test:    Start at  01:48:19
+plugins/dsh-mnemon-source-notifications test:    Duration  449ms (transform 66ms, setup 0ms, collect 88ms, tests 180ms, environment 0ms, prepare 51ms)
+plugins/dsh-mnemon-source-notifications test: Done
+plugins/dsh-mnemon-source-review test$ vitest run
+plugins/dsh-mnemon-source-review test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-review
+plugins/dsh-mnemon-source-review test:  ✓ tests/review.spec.ts (4 tests) 104ms
+plugins/dsh-mnemon-source-review test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-source-review test:       Tests  4 passed (4)
+plugins/dsh-mnemon-source-review test:    Start at  01:48:19
+plugins/dsh-mnemon-source-review test:    Duration  349ms (transform 42ms, setup 0ms, collect 56ms, tests 104ms, environment 0ms, prepare 30ms)
+plugins/dsh-mnemon-source-review test: Done
+plugins/dsh-mnemon-source-playbooks test$ vitest run
+plugins/dsh-mnemon-source-playbooks test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-playbooks
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/source.spec.ts (3 tests) 3ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/skill-dsh.spec.ts (2 tests) 4ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/files.spec.ts (4 tests) 124ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/schedule.spec.ts (4 tests) 144ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/skill-catalog.spec.ts (4 tests) 160ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/actions.spec.ts (1 test) 126ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/skill-source.spec.ts (1 test) 266ms
+plugins/dsh-mnemon-source-playbooks test:  ✓ tests/skills.spec.ts (8 tests) 411ms
+plugins/dsh-mnemon-source-playbooks test:  Test Files  8 passed (8)
+plugins/dsh-mnemon-source-playbooks test:       Tests  27 passed (27)
+plugins/dsh-mnemon-source-playbooks test:    Start at  01:48:20
+plugins/dsh-mnemon-source-playbooks test:    Duration  772ms (transform 354ms, setup 0ms, collect 1.29s, tests 1.24s, environment 1ms, prepare 448ms)
+plugins/dsh-mnemon-source-playbooks test: Done
+plugins/dsh-mnemon-source-sessions test$ vitest run
+plugins/dsh-mnemon-source-sessions test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-sessions
+plugins/dsh-mnemon-source-sessions test:  ✓ tests/capacity.spec.ts (1 test) 1ms
+plugins/dsh-mnemon-source-sessions test:  ✓ tests/source.spec.ts (2 tests) 52ms
+plugins/dsh-mnemon-source-sessions test:  ✓ tests/operations.spec.ts (4 tests) 68ms
+plugins/dsh-mnemon-source-sessions test:  Test Files  3 passed (3)
+plugins/dsh-mnemon-source-sessions test:       Tests  7 passed (7)
+plugins/dsh-mnemon-source-sessions test:    Start at  01:48:21
+plugins/dsh-mnemon-source-sessions test:    Duration  370ms (transform 109ms, setup 0ms, collect 283ms, tests 121ms, environment 0ms, prepare 110ms)
+plugins/dsh-mnemon-source-sessions test: Done
+.../dsh-mnemon-source-project-context test$ vitest run
+.../dsh-mnemon-source-project-context test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-project-context
+.../dsh-mnemon-source-project-context test:  ✓ tests/source.spec.ts (2 tests) 13ms
+.../dsh-mnemon-source-project-context test:  Test Files  1 passed (1)
+.../dsh-mnemon-source-project-context test:       Tests  2 passed (2)
+.../dsh-mnemon-source-project-context test:    Start at  01:48:22
+.../dsh-mnemon-source-project-context test:    Duration  202ms (transform 17ms, setup 0ms, collect 13ms, tests 13ms, environment 0ms, prepare 37ms)
+.../dsh-mnemon-source-project-context test: Done
+...dsh-mnemon-strategy-team-coordination test$ vitest run
+...dsh-mnemon-strategy-team-coordination test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-team-coordination
+...dsh-mnemon-strategy-team-coordination test:  ✓ tests/policy.spec.ts (1 test) 1ms
+...dsh-mnemon-strategy-team-coordination test:  Test Files  1 passed (1)
+...dsh-mnemon-strategy-team-coordination test:       Tests  1 passed (1)
+...dsh-mnemon-strategy-team-coordination test:    Start at  01:48:22
+...dsh-mnemon-strategy-team-coordination test:    Duration  215ms (transform 30ms, setup 0ms, collect 38ms, tests 1ms, environment 0ms, prepare 44ms)
+...dsh-mnemon-strategy-team-coordination test: Done
+plugins/dsh-mnemon-source-runtime test$ vitest run
+plugins/dsh-mnemon-source-runtime test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-runtime
+plugins/dsh-mnemon-source-runtime test:  ✓ tests/git-branch-process.spec.ts (8 tests) 3ms
+plugins/dsh-mnemon-source-runtime test:  ✓ tests/controller.spec.ts (38 tests) 144ms
+plugins/dsh-mnemon-source-runtime test:  ✓ tests/source.spec.ts (5 tests) 95ms
+plugins/dsh-mnemon-source-runtime test: 1:48:23 AM [vite] (client) Failed to load source map for <repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.
+plugins/dsh-mnemon-source-runtime test: Error: An error occurred while trying to read the map file at index.js.map
+plugins/dsh-mnemon-source-runtime test: Error: ENOENT: no such file or directory, open '<repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.map'
+plugins/dsh-mnemon-source-runtime test:     at async open (node:internal/fs/promises:641:25)
+plugins/dsh-mnemon-source-runtime test:     at async Object.readFile (node:internal/fs/promises:1279:14)
+plugins/dsh-mnemon-source-runtime test:     at async extractSourcemapFromFile (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:8066:65)
+plugins/dsh-mnemon-source-runtime test:     at async loadAndTransform (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:22717:22)
+plugins/dsh-mnemon-source-runtime test:  ✓ tests/git-branch.spec.ts (4 tests) 362ms
+plugins/dsh-mnemon-source-runtime test:  ✓ tests/client.spec.tsx (5 tests) 395ms
+plugins/dsh-mnemon-source-runtime test:  Test Files  5 passed (5)
+plugins/dsh-mnemon-source-runtime test:       Tests  60 passed (60)
+plugins/dsh-mnemon-source-runtime test:    Start at  01:48:23
+plugins/dsh-mnemon-source-runtime test:    Duration  1.32s (transform 312ms, setup 0ms, collect 838ms, tests 999ms, environment 186ms, prepare 267ms)
+plugins/dsh-mnemon-source-runtime test: Done
+plugins/dsh-mnemon-strategy-scoped test$ vitest run
+plugins/dsh-mnemon-strategy-scoped test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-scoped
+plugins/dsh-mnemon-strategy-scoped test:  ✓ tests/plugin.spec.ts (3 tests) 11ms
+plugins/dsh-mnemon-strategy-scoped test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-scoped test:       Tests  3 passed (3)
+plugins/dsh-mnemon-strategy-scoped test:    Start at  01:48:24
+plugins/dsh-mnemon-strategy-scoped test:    Duration  265ms (transform 52ms, setup 0ms, collect 73ms, tests 11ms, environment 0ms, prepare 35ms)
+plugins/dsh-mnemon-strategy-scoped test: Done
+plugins/dsh-mnemon-source-tasks test$ vitest run
+plugins/dsh-mnemon-source-tasks test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-source-tasks
+plugins/dsh-mnemon-source-tasks test:  ✓ tests/views.spec.ts (2 tests) 8ms
+plugins/dsh-mnemon-source-tasks test:  ✓ tests/source.spec.ts (2 tests) 3ms
+plugins/dsh-mnemon-source-tasks test:  Test Files  2 passed (2)
+plugins/dsh-mnemon-source-tasks test:       Tests  4 passed (4)
+plugins/dsh-mnemon-source-tasks test:    Start at  01:48:25
+plugins/dsh-mnemon-source-tasks test:    Duration  244ms (transform 60ms, setup 0ms, collect 91ms, tests 10ms, environment 0ms, prepare 87ms)
+plugins/dsh-mnemon-source-tasks test: Done
+plugins/dsh-mnemon-strategy-review-cycle test$ vitest run
+plugins/dsh-mnemon-strategy-review-cycle test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-review-cycle
+plugins/dsh-mnemon-strategy-review-cycle test:  ✓ tests/policy.spec.ts (1 test) 1ms
+plugins/dsh-mnemon-strategy-review-cycle test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-review-cycle test:       Tests  1 passed (1)
+plugins/dsh-mnemon-strategy-review-cycle test:    Start at  01:48:25
+plugins/dsh-mnemon-strategy-review-cycle test:    Duration  215ms (transform 31ms, setup 0ms, collect 41ms, tests 1ms, environment 0ms, prepare 41ms)
+plugins/dsh-mnemon-strategy-review-cycle test: Done
+plugins/dsh-mnemon-strategy-auto-capture test$ vitest run
+plugins/dsh-mnemon-strategy-auto-capture test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-auto-capture
+plugins/dsh-mnemon-strategy-auto-capture test:  ✓ tests/plugin.spec.ts (3 tests) 11ms
+plugins/dsh-mnemon-strategy-auto-capture test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-auto-capture test:       Tests  3 passed (3)
+plugins/dsh-mnemon-strategy-auto-capture test:    Start at  01:48:26
+plugins/dsh-mnemon-strategy-auto-capture test:    Duration  270ms (transform 48ms, setup 0ms, collect 73ms, tests 11ms, environment 0ms, prepare 35ms)
+plugins/dsh-mnemon-strategy-auto-capture test: Done
+.../dsh-mnemon-strategy-prompt-schedule test$ vitest run
+.../dsh-mnemon-strategy-prompt-schedule test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-prompt-schedule
+.../dsh-mnemon-strategy-prompt-schedule test:  ✓ tests/policy.spec.ts (1 test) 1ms
+.../dsh-mnemon-strategy-prompt-schedule test:  Test Files  1 passed (1)
+.../dsh-mnemon-strategy-prompt-schedule test:       Tests  1 passed (1)
+.../dsh-mnemon-strategy-prompt-schedule test:    Start at  01:48:26
+.../dsh-mnemon-strategy-prompt-schedule test:    Duration  220ms (transform 33ms, setup 0ms, collect 39ms, tests 1ms, environment 0ms, prepare 42ms)
+.../dsh-mnemon-strategy-prompt-schedule test: Done
+plugins/dsh-mnemon-strategy-jev-context test$ vitest run
+plugins/dsh-mnemon-strategy-jev-context test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-jev-context
+plugins/dsh-mnemon-strategy-jev-context test:  ✓ tests/policy.spec.ts (6 tests) 5ms
+plugins/dsh-mnemon-strategy-jev-context test:  Test Files  1 passed (1)
+plugins/dsh-mnemon-strategy-jev-context test:       Tests  6 passed (6)
+plugins/dsh-mnemon-strategy-jev-context test:    Start at  01:48:27
+plugins/dsh-mnemon-strategy-jev-context test:    Duration  249ms (transform 38ms, setup 0ms, collect 63ms, tests 5ms, environment 0ms, prepare 39ms)
+plugins/dsh-mnemon-strategy-jev-context test: Done
+.../dsh-mnemon-strategy-light-context test$ vitest run
+.../dsh-mnemon-strategy-light-context test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-light-context
+.../dsh-mnemon-strategy-light-context test:  ✓ tests/plugin.spec.ts (3 tests) 8ms
+.../dsh-mnemon-strategy-light-context test:  Test Files  1 passed (1)
+.../dsh-mnemon-strategy-light-context test:       Tests  3 passed (3)
+.../dsh-mnemon-strategy-light-context test:    Start at  01:48:27
+.../dsh-mnemon-strategy-light-context test:    Duration  269ms (transform 56ms, setup 0ms, collect 83ms, tests 8ms, environment 0ms, prepare 37ms)
+.../dsh-mnemon-strategy-light-context test: Done
+.../dsh-mnemon-strategy-journal-capture test$ vitest run
+.../dsh-mnemon-strategy-journal-capture test:  RUN  v3.2.7 <repo>/plugins/dsh-mnemon-strategy-journal-capture
+.../dsh-mnemon-strategy-journal-capture test:  ✓ tests/policy.spec.ts (2 tests) 2ms
+.../dsh-mnemon-strategy-journal-capture test:  Test Files  1 passed (1)
+.../dsh-mnemon-strategy-journal-capture test:       Tests  2 passed (2)
+.../dsh-mnemon-strategy-journal-capture test:    Start at  01:48:28
+.../dsh-mnemon-strategy-journal-capture test:    Duration  267ms (transform 30ms, setup 0ms, collect 40ms, tests 2ms, environment 0ms, prepare 33ms)
+.../dsh-mnemon-strategy-journal-capture test: Done
+$ vitest run --dir tests
+
+ RUN  v3.2.7 <repo>
+
+(node:46431) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/review-evidence-host.spec.ts (4 tests) 955ms
+ ✓ tests/live-runtime.spec.ts (21 tests) 950ms
+   ✓ default Host scope over the Composable Runtime > keeps all eight existing Source enable/disable combinations without adding another topology engine  311ms
+ ✓ tests/view-management-profile.spec.ts (10 tests) 1086ms
+ ✓ tests/subagent.spec.ts (123 tests) 1317ms
+1:48:31 AM [vite] (ssr) Failed to load source map for <repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.
+Error: An error occurred while trying to read the map file at index.js.map
+Error: ENOENT: no such file or directory, open '<repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.map'
+    at async open (node:internal/fs/promises:641:25)
+    at async Object.readFile (node:internal/fs/promises:1279:14)
+    at async extractSourcemapFromFile (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:8066:65)
+    at async loadAndTransform (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:22717:22)
+ ✓ tests/view-management.spec.ts (22 tests) 1880ms
+   ✓ View configuration with the real pinned DSH Cordis Loader > selects another complete Strategy and can return without uninstalling the previous composition  316ms
+ ✓ tests/pack.spec.ts (17 tests) 546ms
+ ✓ tests/plugin-repository-boundary.spec.ts (47 tests) 741ms
+ ✓ tests/async-subagent-host.spec.ts (2 tests) 446ms
+ ✓ tests/profile-settings-import.spec.ts (24 tests) 259ms
+ ✓ tests/openviking-host.spec.mjs (3 tests) 232ms
+ ✓ tests/runtime-capacity-workflow.spec.ts (43 tests) 2643ms
+ ✓ tests/changesets.spec.mjs (3 tests) 331ms
+   ✓ independent package versioning > bumps one changed plugin and the exact aggregate without republishing compatible peers  319ms
+ ✓ tests/composable-turns.spec.ts (8 tests) 295ms
+ ✓ tests/client-settings-scope.spec.ts (5 tests) 286ms
+ ✓ tests/default-three-tier-host.spec.ts (6 tests) 316ms
+ ✓ tests/strategy-extensions-host.spec.ts (4 tests) 325ms
+ ✓ tests/client-platform-boundary.spec.ts (3 tests) 175ms
+ ✓ tests/client-apply.spec.ts (9 tests) 501ms
+ ✓ tests/async-subagent-memory.spec.ts (22 tests) 247ms
+ ✓ tests/composable-builtins.spec.ts (4 tests) 269ms
+ ✓ tests/rpc.spec.ts (28 tests) 173ms
+ ✓ tests/memory-view-projection.spec.ts (2 tests) 170ms
+ ✓ tests/upgrade.spec.ts (1 test) 137ms
+ ✓ tests/plugin.spec.ts (19 tests) 261ms
+ ✓ tests/document-protection.spec.ts (6 tests) 152ms
+ ✓ tests/context-contracts.spec.ts (14 tests) 54ms
+stdout | tests/release.spec.mjs > release metadata synchronization > updates exact aggregate/fixture pins and generated provider versions without narrowing workspace ranges
+Synchronized release metadata in 3 file(s).
+
+ ✓ tests/release.spec.mjs (18 tests) 114ms
+ ✓ tests/memory-executions.spec.ts (8 tests) 134ms
+ ✓ tests/version-updates.spec.ts (32 tests) 161ms
+ ✓ tests/plugin-installation.spec.ts (7 tests) 117ms
+ ✓ tests/source-sdk.spec.ts (4 tests) 74ms
+ ✓ tests/testing-sdk.spec.ts (11 tests) 56ms
+ ✓ tests/lifecycle.spec.ts (56 tests | 1 skipped) 132ms
+ ✓ tests/profile-settings-revisions.spec.ts (34 tests) 165ms
+ ✓ tests/source-local-execution.spec.ts (1 test) 72ms
+ ✓ tests/source-failures.spec.ts (10 tests) 57ms
+ ✓ tests/composable-memory.spec.ts (22 tests) 47ms
+ ✓ tests/strategy-extensions.spec.ts (13 tests) 64ms
+ ✓ tests/plugin-graph.spec.ts (3 tests) 19ms
+ ✓ tests/core-entry.spec.ts (2 tests) 20ms
+ ✓ tests/profile-settings.spec.ts (19 tests) 46ms
+ ✓ tests/subagent-token-usage-host.spec.ts (12 tests) 64ms
+ ✓ tests/lifecycle-host-order.spec.ts (1 test) 10ms
+ ✓ tests/client-presentation.spec.ts (5 tests) 88ms
+ ✓ tests/issue-template-enforcer.spec.mjs (31 tests) 18ms
+ ✓ tests/docs.spec.mjs (13 tests) 29ms
+ ✓ tests/composable-extension-sdk.spec.ts (7 tests) 32ms
+ ✓ tests/composable-performance.spec.ts (2 tests) 5454ms
+   ✓ Composable View performance fences > composes repeated three-Source Views within a bounded local control-plane budget (default)  2598ms
+   ✓ Composable View performance fences > composes repeated three-Source Views within a bounded local control-plane budget (additive)  2854ms
+ ✓ tests/commands.spec.ts (9 tests) 9ms
+ ✓ tests/composable-plugin-bundle.spec.ts (3 tests) 38ms
+ ✓ tests/storage-scope.spec.ts (4 tests) 12ms
+ ✓ tests/source-configuration.spec.ts (1 test) 22ms
+ ✓ tests/config.spec.ts (29 tests) 14ms
+ ✓ tests/core-json.spec.ts (18 tests) 32ms
+ ✓ tests/live-config.spec.ts (7 tests) 17ms
+ ✓ tests/workspace-storage.spec.ts (6 tests) 8ms
+ ✓ tests/composable-generation.spec.ts (9 tests) 18ms
+ ✓ tests/strategy-configuration.spec.ts (24 tests) 7ms
+ ✓ tests/legacy-settings-import.spec.ts (52 tests) 21ms
+ ✓ tests/review-tools.spec.ts (11 tests) 7ms
+ ✓ tests/display-mode-migration.spec.ts (17 tests) 10ms
+ ✓ tests/legacy-session-replay-fixture.spec.mjs (10 tests) 11ms
+ ✓ tests/openviking-write-fixture.spec.mjs (3 tests) 9ms
+ ✓ tests/dsh-connection-compat.spec.ts (2 tests) 16ms
+ ✓ tests/settings.spec.ts (9 tests) 8ms
+ ✓ tests/runtime-routing-fixture.spec.mjs (6 tests) 8ms
+ ✓ tests/client-api.spec.ts (13 tests) 10ms
+ ✓ tests/jev-replica-integration.spec.ts (4 tests) 6211ms
+   ✓ updates the actual main DSH context through an independent replica AgentFactory and shared plugin writes  976ms
+   ✓ bounds concurrent replica jobs and serves every session with backgroundMs=0  1316ms
+   ✓ bounds concurrent replica jobs and serves every session with backgroundMs=1  3052ms
+   ✓ cancels an obsolete replica decision and publishes only the newer main input  867ms
+ ✓ tests/remote-rpc.spec.ts (2 tests) 6ms
+ ✓ tests/review-checkpoint.spec.ts (2 tests) 1ms
+ ✓ tests/host-receipts.spec.ts (26 tests) 4ms
+ ✓ tests/action-authority.spec.ts (2 tests) 5ms
+ ✓ tests/client-subagent-token-usage.spec.tsx (4 tests) 11ms
+ ✓ tests/runtime-write-scope-fixture.spec.mjs (4 tests) 6ms
+ ✓ tests/client-page-client.spec.ts (2 tests) 3ms
+ ✓ tests/plugin-build-order.spec.mjs (2 tests) 3ms
+ ✓ tests/host-process.spec.ts (3 tests) 6ms
+ ✓ tests/subagent-token-usage.spec.ts (8 tests) 9ms
+ ✓ tests/guidance.spec.ts (3 tests) 3ms
+ ✓ tests/plugin-plan.spec.ts (3 tests) 4ms
+ ✓ tests/session-events-compat.spec.ts (4 tests) 3ms
+ ✓ tests/client-modal-css.spec.ts (11 tests) 7ms
+ ✓ tests/review-activity.spec.ts (3 tests) 4ms
+ ✓ tests/activity.spec.ts (4 tests) 4ms
+ ✓ tests/client-sidebar-css.spec.ts (8 tests) 11ms
+ ✓ tests/client-settings-css.spec.ts (2 tests) 2ms
+ ✓ tests/sdk-public-api.spec.ts (2 tests) 3ms
+ ✓ tests/build-config.spec.ts (2 tests) 3ms
+1:48:37 AM [vite] (client) Failed to load source map for <repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.
+Error: An error occurred while trying to read the map file at index.js.map
+Error: ENOENT: no such file or directory, open '<repo>/node_modules/.pnpm/@deepseek-ai+dsh-client-ui-primitives@0.1.5-rc.1_@deepseek-ai+cordis@4.0.2/node_modules/@deepseek-ai/dsh-client-ui-primitives/lib/index.js.map'
+    at async open (node:internal/fs/promises:641:25)
+    at async Object.readFile (node:internal/fs/promises:1279:14)
+    at async extractSourcemapFromFile (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:8066:65)
+    at async loadAndTransform (file://<repo>/node_modules/.pnpm/vite@7.3.6_@types+node@22.20.1_lightningcss@1.33.0_yaml@2.9.0/node_modules/vite/dist/node/chunks/config.js:22717:22)
+ ✓ tests/jev-replica-usage.spec.ts (1 test) 1ms
+ ↓ tests/runtime-capacity-flash-stress.spec.ts (3 tests | 3 skipped)
+ ↓ tests/runtime-memory-flash-quality.spec.ts (2 tests | 2 skipped)
+ ↓ tests/learning-flash.spec.ts (1 test | 1 skipped)
+ ✓ tests/client-version-maintenance.spec.tsx (7 tests) 282ms
+ ✓ tests/client-collections.spec.tsx (4 tests) 230ms
+ ✓ tests/client-primitives-compat.spec.tsx (3 tests) 1739ms
+   ✓ host UI icon compatibility > renders the overlay and save action with size-named DSH icons  1265ms
+ ✓ tests/client-memory-enhancements.spec.tsx (6 tests) 353ms
+ ✓ tests/client-interaction.spec.tsx (10 tests) 478ms
+(node:52235) Warning: `--localstorage-file` was provided without a valid path
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ tests/client-plugin-editor.spec.tsx (6 tests) 515ms
+ ✓ tests/client-sidebar.spec.tsx (24 tests) 306ms
+ ✓ tests/client-interaction-surfaces.spec.tsx (20 tests) 294ms
+ ✓ tests/client-builtin-width-handles.spec.ts (6 tests) 201ms
+ ✓ tests/client-plugin-manager.spec.tsx (3 tests) 286ms
+ ✓ tests/client-source-pages.spec.tsx (10 tests) 310ms
+ ✓ tests/client-composition-editor.spec.tsx (4 tests) 408ms
+ ✓ tests/client-context-access.spec.tsx (3 tests) 79ms
+ ✓ tests/client-dialog.spec.tsx (8 tests) 201ms
+ ✓ tests/client-plugin-files.spec.tsx (2 tests) 201ms
+ ✓ tests/client-settings.spec.tsx (35 tests) 2315ms
+ ✓ tests/client-source-overlays.spec.tsx (2 tests) 74ms
+ ✓ tests/client-better-sidebar.spec.tsx (2 tests) 36ms
+ ✓ tests/client-settings-surface.spec.tsx (2 tests) 64ms
+ ✓ tests/client-settings-this-binding.spec.tsx (2 tests) 23ms
+ ✓ tests/client-session-scope.spec.tsx (8 tests) 29ms
+ ✓ tests/client.spec.tsx (55 tests) 4189ms
+   ✓ MnemonWorkbench > renders all eight Source switch combinations as reversible sidebar states  395ms
+   ✓ MnemonWorkbench > shows the live graph, sidebar pages, and memory write dialog by default  447ms
+   ✓ MnemonWorkbench > shares Source navigation, dialogs, filters, and the same skin in sidebar placement  444ms
+   ✓ MnemonWorkbench > shares Source navigation, dialogs, filters, and the same skin in builtin placement  335ms
+ ✓ tests/legacy-session-repair.spec.ts (132 tests) 16618ms
+   ✓ legacy Session copy repair > leaves raw empty-string placeholders and valid tool chains byte-identical  431ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (0)  438ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (1)  423ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (2)  354ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (3)  435ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (4)  502ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (5)  357ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (6)  388ms
+   ✓ legacy Session copy repair > normalizes null delta names without changing assembly or first-token timing (7)  455ms
+   ✓ legacy Session copy repair > refuses unknown raw null-name shapes and invalid coordinates instead of publishing a partial repair  1062ms
+   ✓ legacy Session copy repair > rejects duplicate packed fields and bounds expanded output before publication  495ms
+
+ Test Files  112 passed | 3 skipped (115)
+      Tests  1449 passed | 7 skipped (1456)
+   Start at  01:48:28
+   Duration  17.01s (transform 4.41s, setup 0ms, collect 31.00s, tests 57.54s, environment 6.88s, prepare 6.03s)
+
+$ node scripts/verify-headless-profile.mjs
+Verified Headless profile activation with 40 total tools and 8 representative Mnemon tools.
+Verified buildin-to-builtin persistence, preservation of unrelated settings/comments, and an idempotent Headless restart.
+Verified that disabling the legacy mnemon Entry disables the complete Starter without blocking DSH startup.
+$ node scripts/verify-package-contents.mjs && node scripts/verify-public-entries.mjs && pnpm run lint:package
+Verified package contents: 75 files, 379114 packed bytes, 1691331 unpacked bytes.
+Imported 13 Node-compatible entries; verified 44 public type dependencies and 1 executable help entry on v25.1.0.
+$ publint --strict && attw --pack . --profile esm-only --quiet
+Running publint v0.3.23 for dsh-mnemon...
+Packing files with `pnpm pack`...
+Linting...
+All good!

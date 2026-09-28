@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-09-22T21:45:39.333177+00:00",
+  "targetedTests": {
+    "passed": 29,
+    "failed": 0,
+    "files": [
+      "tests/jev-replica-complex.spec.ts",
+      "tests/jev-replica-integration.spec.ts",
+      "tests/jev-replica-usage.spec.ts",
+      "plugins/dsh-mnemon-strategy-jev-context/tests/policy.spec.ts",
+      "plugins/dsh-mnemon-replica/tests/store.spec.ts",
+      "plugins/dsh-mnemon-agent-loop-jev/tests/agent.spec.ts"
+    ]
+  },
+  "typechecks": {
+    "root": true,
+    "replicaPackage": true,
+    "contextStrategyPackage": true,
+    "rootPlusWorkerViaTemporaryConfig": true
+  },
+  "builds": [
+    "dsh-mnemon-strategy-jev-context",
+    "dsh-mnemon-replica"
+  ],
+  "docsCheck": {
+    "passed": true,
+    "localLinks": 2026,
+    "anchors": 64
+  },
+  "fixtureProcessCheck": {
+    "cases": "reading-club",
+    "turnsPerArm": 2,
+    "arms": 3,
+    "executionPassed": true,
+    "apiCalls": 0
+  },
+  "credentialPatternScan": {
+    "stagedFiles": 27,
+    "findings": 0,
+    "temporaryCredentialFileRemoved": true
+  },
+  "plot": {
+    "renderer": "matplotlib",
+    "visualInspection": "PNG inspected after rendering; labels and plotted values readable"
+  },
+  "sourceSha256": {
+    "scripts/evaluate-jev-complex.mjs": "88259d9942f1b1a173a7cc16acd9d474408a0539ea20ee5d50ebc5812a0ba17c",
+    "scripts/lib/jev-runtime.ts": "87f870e9852d8bd0d1960aabe88d256c51f8eb7d4d18b33d3ca7375a6069b41a",
+    "scripts/lib/jev-complex.ts": "2ba7911c6eaf5dd0d8797fb31336d0960699d96d5c762eca57433e993dc6282a",
+    "scripts/lib/jev-worker.mjs": "c3aca3c61fc1644dfd680553492dab36a756aa83073643a2b80f1400a28c6482",
+    "scripts/jev-replica-worker.ts": "087cb73d0ddc42ebfdc6a521ddb5901d48bf4bcb1a334e338f84ded4927fc2d0",
+    "plugins/dsh-mnemon-strategy-jev-context/src/index.ts": "a95c2c0736af175a8cb8d099f030a9eb5656b579923dab3d1a1243187e4dc7cd",
+    "plugins/dsh-mnemon-replica/src/source.ts": "8305e832afeb0184a3ed38fcf649884b27acdd8ae35825c38122d5c7841281a2",
+    "tests/fixtures/jev-replica/complex-conversations.json": "02c35df4c5e34106362c54f5e4d1529a47d0be19b9ce311d91c2c417db5916db"
+  },
+  "scope": "Targeted regressions and live experiment only. Prior full verify and package consumer run were not repeated."
+}

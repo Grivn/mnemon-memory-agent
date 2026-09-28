@@ -1,0 +1,199 @@
+{
+  "note": "Logical adapter/decision calls without returned usage; SDK internal retries, if any, are not a separately observable bill. No inferred provider validation reason.",
+  "failures": [
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "main",
+      "input": 20,
+      "at": 1790131788882,
+      "error": "LlmError: DeepSeek request aborted by caller",
+      "elapsedMs": 11959.16470799991
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "replica",
+      "input": 20,
+      "priming": false,
+      "phase": "nap",
+      "error": "InternalServerError",
+      "requestBytes": 7912,
+      "candidates": 12
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "replica",
+      "input": 25,
+      "priming": false,
+      "phase": "leaves",
+      "error": "BadRequestError",
+      "requestBytes": 100305,
+      "candidates": 39
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "replica",
+      "input": 26,
+      "priming": false,
+      "phase": "leaves",
+      "error": "BadRequestError",
+      "requestBytes": 101629,
+      "candidates": 40
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "main",
+      "input": 31,
+      "at": 1790132571819,
+      "error": "LlmError: DeepSeek request aborted by caller",
+      "elapsedMs": 4761.361625000136
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "replica",
+      "input": 31,
+      "priming": false,
+      "phase": "leaves",
+      "error": "BadRequestError",
+      "requestBytes": 103645,
+      "candidates": 41
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "role": "replica",
+      "input": 32,
+      "priming": false,
+      "phase": "leaves",
+      "error": "BadRequestError",
+      "requestBytes": 104156,
+      "candidates": 42
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": 14,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 1449,
+      "candidates": 2
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": null,
+      "priming": true,
+      "phase": "nap",
+      "error": "APITimeoutError",
+      "requestBytes": 31173,
+      "candidates": 48
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": null,
+      "priming": true,
+      "phase": "nap",
+      "error": "InternalServerError",
+      "requestBytes": 31164,
+      "candidates": 48
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": 19,
+      "priming": false,
+      "phase": "terms",
+      "error": "APITimeoutError",
+      "requestBytes": 8232,
+      "candidates": 14
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": 21,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2790,
+      "candidates": 4
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "role": "replica",
+      "input": 27,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2061,
+      "candidates": 3
+    },
+    {
+      "run": "memory-r1-jev-maintained",
+      "role": "replica",
+      "input": 16,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2559,
+      "candidates": 4
+    },
+    {
+      "run": "memory-r1-jev-maintained",
+      "role": "replica",
+      "input": 22,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2155,
+      "candidates": 3
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "role": "replica",
+      "input": 8,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2571,
+      "candidates": 4
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "role": "replica",
+      "input": 14,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 1449,
+      "candidates": 2
+    },
+    {
+      "run": "project-r2-all-candidates",
+      "role": "main",
+      "input": 14,
+      "at": 1790133624097,
+      "error": "LlmError: DeepSeek request aborted by caller",
+      "elapsedMs": 2838.1307079999824
+    },
+    {
+      "run": "research-r2-jev-maintained",
+      "role": "replica",
+      "input": 13,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 2017,
+      "candidates": 3
+    },
+    {
+      "run": "research-r2-jev-maintained",
+      "role": "replica",
+      "input": 26,
+      "priming": false,
+      "phase": "nap",
+      "error": "aborted",
+      "requestBytes": 848,
+      "candidates": 1
+    }
+  ]
+}

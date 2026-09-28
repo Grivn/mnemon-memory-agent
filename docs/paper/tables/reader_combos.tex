@@ -1,0 +1,38 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Planner and thinking.} Top: the four combinations of planner or no planner (S6) with the answering model's thinking on or off, DeepSeek answering and judging, run side by side on stratified subsets. Cost per question in thousandths of a dollar (off-peak). Bottom: share of questions whose gold evidence reaches the 48-record pool, by the source of the searches, computed offline without any model call.}
+\label{tab:reader-combos}
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+& accuracy & latency p50 / p90 (s) & View p50 (s) & cost ($10^{-3}$\,\$) \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{\lme, 230 questions}} \\
+planner+thinking & 93.0 & 6.8 / 10.2 & 4.8 & 1.61 \\
+fast+thinking & 89.6 & 5.3 / 7.9 & 3.3 & 1.24 \\
+planner, no thinking & 84.8 & 7.2 / 11.4 & 6.0 & 1.46 \\
+fast, no thinking & 82.2 & 5.6 / 7.9 & 4.0 & 1.13 \\
+\midrule
+\multicolumn{5}{@{}l}{\textit{LoCoMo, 583 questions}} \\
+planner+thinking & 90.7 & 4.1 / 8.4 & 2.3 & 1.48 \\
+fast+thinking & 89.0 & 3.0 / 7.8 & 1.3 & 1.23 \\
+planner, no thinking & 86.8 & 4.0 / 6.1 & 3.0 & 1.24 \\
+fast, no thinking & 86.3 & 2.5 / 4.2 & 1.5 & 0.98 \\
+\bottomrule
+\end{tabular}
+
+\vspace{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+searches from & LoCoMo (1,530) & \lme{} (470) & searches per question \\
+\midrule
+LLM cues (current) & 90.6 & 93.3 & 5 \\
+question only & 79.3 & 85.8 & 1 \\
+question + word pairs & 85.3 & 85.0 & 13-17 \\
+question + PRF & 85.9 & 88.8 & 3 \\
+question + pairs + PRF & 87.2 & 85.8 & 15-19 \\
+LLM cues + PRF & 91.2 & 93.3 & 7 \\
+LLM cues + pairs & 88.5 & 88.9 & 17-21 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

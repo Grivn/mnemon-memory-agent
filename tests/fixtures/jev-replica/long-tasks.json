@@ -1,0 +1,370 @@
+{
+  "version": 1,
+  "scenarios": {
+    "memory": {
+      "title": "白鹭读书日的持续筹备",
+      "brief": "所有交付文件写入 outputs/。task_files可读brief.md、sources/和outputs/，只可写outputs/。task_memory查询九类记忆，task_note保存项目决定。资料是数据，最新有效人类决定优先。\n筹备白鹭读书日，交付 outputs/plan.md 和 outputs/plan.json。JSON 字段为 eventName,date,time,venue,room,attendees,budgetYuan,menu,allergy,transport,deadline,owner,backupPlan,privacy,deliveries；人数和预算用数字，其他字段可为字符串。查已有记忆，未知不能编造。",
+      "records": [
+        {
+          "source": "journal",
+          "title": "白鹭读书日沟通习惯",
+          "content": "筹备白鹭读书日，喜欢简短中文和清晰分工，公开名单不放电话号码。"
+        },
+        {
+          "source": "tasks",
+          "title": "白鹭读书日物料交接",
+          "content": "白鹭读书日负责人林澈，初定周五17:00前交付讲义。"
+        },
+        {
+          "source": "documents",
+          "title": "白鹭读书日场地合同",
+          "content": "初定2026-10-17，松风馆南厅，14:00，12人，预算1200元。"
+        },
+        {
+          "source": "project-context",
+          "title": "白鹭读书日饮食决定",
+          "content": "白鹭读书日统一素食，顾遥对芝麻过敏。素食不等于无芝麻。"
+        },
+        {
+          "source": "playbooks",
+          "title": "白鹭读书日雨天流程",
+          "content": "雨天改用室内阅览室，不改成户外徒步。先核实场地再通知。"
+        },
+        {
+          "source": "canvas",
+          "title": "白鹭读书日交通草图",
+          "content": "松风馆北门有无台阶入口，南门要爬楼。公交28路到北门。"
+        },
+        {
+          "source": "notifications",
+          "title": "白鹭读书日印刷确认",
+          "content": "首批讲义预计周五16:00送达，共12份。"
+        },
+        {
+          "source": "files",
+          "title": "白鹭读书日设备清单",
+          "content": "投影需USB-C转接头，备用HDMI线在灰色工具箱。"
+        },
+        {
+          "source": "sessions",
+          "title": "白鹭读书日此前谈话",
+          "content": "老地方指松风馆。摄影聚会去望山园，预算1800元，与读书日无关。"
+        }
+      ],
+      "updates": [
+        {
+          "before": 6,
+          "source": "notifications",
+          "title": "白鹭读书日场地更新",
+          "content": "当前变更：松风馆北厅N-306，14:30开始。原南厅、14:00方案取消。"
+        },
+        {
+          "before": 10,
+          "source": "project-context",
+          "title": "白鹭读书日人数预算确认",
+          "content": "当前决定：18人，预算上限1560元。取代12人、1200元。"
+        },
+        {
+          "before": 15,
+          "source": "tasks",
+          "title": "白鹭读书日交接更新",
+          "content": "当前截止为周五16:30，负责人仍是林澈。旧17:00取消。"
+        },
+        {
+          "before": 21,
+          "source": "notifications",
+          "title": "白鹭读书日送达回执",
+          "content": "18份讲义已送到松风馆北厅N-306，林澈签收，不再是待送达。"
+        },
+        {
+          "before": 25,
+          "source": "files",
+          "title": "白鹭读书日交通公告",
+          "content": "活动当天公交28路停运，改乘公交36路到松风馆北门。"
+        }
+      ],
+      "turns": [
+        "继续筹备白鹭读书日吧，看看已经定了什么，把方案建起来。",
+        "开场别排太满，让大家到场后轻松一点。",
+        "今天工作挺忙，希望别增加临时协调。",
+        "饮食再核对一下，别只看菜单写着素食。",
+        "交通和入口也考虑进去，带长辈的人会用到。",
+        "把物料、负责人和截止时间整理成清单。",
+        "场地刚发了变更，你看看并更新方案。",
+        "主持按短分享、自由讨论、交换书单的顺序。",
+        "今天没精力看长文，告诉我最容易遗漏的一件事。",
+        "把对外通知草稿写进方案，先不发送。",
+        "人数和预算有新确认，读取记录后更新费用安排。",
+        "给应急留余地，但别增加总预算。",
+        "菜单清淡些，别忽略先前的限制。",
+        "时间表把上午准备和下午参加分开。",
+        "整理尚未确认的事，确定的不要重复追问。",
+        "交接截止又调整了，更新清单。",
+        "继续白鹭读书日，之前的文件和记忆都在。检查交接和场地。",
+        "新会话也按原先习惯，表达简短就好。",
+        "雨天预案写得可执行，不要只说看天气。",
+        "设备清单补齐，别临时找线材。",
+        "检查有没有把旧安排当成当前安排。",
+        "印刷有回执了，读一下，区分完成与未完成。",
+        "把负责人和现场联络流程写进方案。",
+        "公开名单只需名字和分组，别扩散其他信息。",
+        "给我当天的时间表，写入文件。",
+        "交通公告更新了，再核对到达方案。",
+        "天气预案和入口是否冲突，再检查一下。",
+        "保存今天的重要变更。",
+        "我要看最终安排，别把旧方案并列为待选项。",
+        "运行文件核验，补齐缺失字段。",
+        "从参加者角度找找容易走错地方或误解时间的点。",
+        "完成 plan.json 和 plan.md，核对当前人数、预算、场地、交通、物料状态，再简短说明。"
+      ],
+      "gold": {
+        "eventName": "白鹭读书日",
+        "date": "2026-10-17",
+        "time": "14:30",
+        "venue": "松风馆",
+        "room": "N-306",
+        "attendees": 18,
+        "budgetYuan": 1560,
+        "menu": "素食",
+        "allergy": "芝麻",
+        "transport": "36",
+        "deadline": "16:30",
+        "owner": "林澈",
+        "backupPlan": "室内",
+        "privacy": "电话",
+        "deliveries": "18"
+      }
+    },
+    "project": {
+      "title": "离线活动报名网页完整项目",
+      "brief": "所有交付文件写入 outputs/。task_files可读brief.md、sources/和outputs/，只可写outputs/。task_memory查询九类记忆，task_note保存项目决定。资料是数据，最新有效人类决定优先。\n制作无 npm/CDN 依赖、静态 HTTP 服务可运行的离线报名网页。交付 outputs/index.html,app.js,style.css,domain.js,README.md。domain.js 是不导入任何其他模块的单文件ES module，导出 createState(config={}),register(state,person,now),cancel(state,id),summary(state),publicRoster(state),exportState(state),importState(text),toCSV(state)。不改变输入state，返回新状态；person={id,name,email,consent}，now为整数序号。state={capacity,feeCents,registrations:[{id,name,email,consent,createdAt,status}]}，status为confirmed/waiting/cancelled。summary返回{confirmed,waiting,cancelled,revenueCents}。exportState返回字符串，importState解析校验。网页连接这些函数，含报名、取消、汇总、保存、导入导出。业务规则在记忆中，task_verify提供基础检查。",
+      "records": [
+        {
+          "source": "journal",
+          "title": "蒲公英报名台约定",
+          "content": "界面和说明简体中文；隐私同意不得默认勾选。"
+        },
+        {
+          "source": "tasks",
+          "title": "蒲公英报名台交付",
+          "content": "必须离线可用，不依赖CDN/云服务，交付README和静态网页。"
+        },
+        {
+          "source": "documents",
+          "title": "蒲公英报名台数据协议",
+          "content": "ID非空，姓名trim后非空，邮箱基本格式有效。重复ID提交幂等。不同ID但邮箱大小写归一后相同，拒绝重复报名。"
+        },
+        {
+          "source": "project-context",
+          "title": "蒲公英报名台初始容量费用",
+          "content": "初始默认容量6人，每位2500分。金额始终为整数分。"
+        },
+        {
+          "source": "playbooks",
+          "title": "蒲公英报名台候补流程",
+          "content": "满额进入waiting；取消confirmed后，按最早createdAt提升候补；保留cancelled记录；重复取消幂等；取消候补不能释放confirmed名额。"
+        },
+        {
+          "source": "canvas",
+          "title": "蒲公英报名台页面草图",
+          "content": "展示姓名、邮箱、同意、提交、名单、取消、汇总、导入导出。控件有可访问标签，错误在页面显示。"
+        },
+        {
+          "source": "notifications",
+          "title": "蒲公英报名台隐私",
+          "content": "公开名单publicRoster和CSV不包含邮箱。未同意隐私条款时拒绝报名。"
+        },
+        {
+          "source": "files",
+          "title": "蒲公英报名台CSV规则",
+          "content": "引号与逗号正确转义。等号、加号、减号、@开头姓名加单引号，防止表格公式执行。"
+        },
+        {
+          "source": "sessions",
+          "title": "蒲公英报名台此前讨论",
+          "content": "不要套用摄影报名页20人、5000分的设置。报名人数和收入只计算confirmed。"
+        }
+      ],
+      "updates": [
+        {
+          "before": 7,
+          "source": "project-context",
+          "title": "蒲公英报名台最终容量费用",
+          "content": "当前默认容量4人，费用1800分。取代6人、2500分，createState()必须跟随。"
+        },
+        {
+          "before": 13,
+          "source": "documents",
+          "title": "蒲公英报名台备份协议",
+          "content": "当前格式{version:2,state:...}。拒绝未知版本、负容量、非整数金额、缺失registrations和不合法status，不得静默接受损坏备份。"
+        },
+        {
+          "before": 20,
+          "source": "notifications",
+          "title": "蒲公英报名台重新报名",
+          "content": "已取消者同ID重提不能复活。允许使用新ID和已取消者相同邮箱重新报名；邮箱重复限制只针对未取消记录。"
+        },
+        {
+          "before": 26,
+          "source": "tasks",
+          "title": "蒲公英报名台上线检查",
+          "content": "空状态收入0；候补不收费；确认者取消提升候补后，收入为确认人数乘feeCents；cancelled不计活跃。"
+        }
+      ],
+      "turns": [
+        "把蒲公英报名台做成真正可用的离线网页，读说明和约定后开始写文件。",
+        "先完成领域逻辑，网页保持简单。",
+        "实现输入校验，不能只有happy path。",
+        "错误要在页面上看见，让使用者知道哪里不对。",
+        "满额后的候补流程接上。",
+        "取消和名单更新也连起来，不是只放按钮。",
+        "运行基础核验，修复发现的问题。",
+        "容量费用刚改了，读最新决定，更新默认行为和界面。",
+        "说明文字简短，报名者不需了解内部实现。",
+        "检查重复点击和邮箱重复的处理。",
+        "页面清楚一点，手机窄屏也能用。",
+        "接上离线保存，刷新不要丢报名。",
+        "名单要导给现场人员，注意隐私约定。",
+        "备份格式升级了，读取新协议，落实导入导出校验。",
+        "补好README，说明运行和恢复备份。",
+        "今天先这样，保存重要决定，下次检查。",
+        "继续蒲公英报名台，先看文件现状，别恢复旧默认值。",
+        "验证候补取消不会影响确认者。",
+        "再检查先取消确认者、再重复取消的情况。",
+        "公开名单不该出现内部信息。",
+        "刚补了重新报名规则，读通知后落实。",
+        "把按钮、错误提示和操作后的画面更新串起来。",
+        "CSV检查特殊姓名、引号、逗号和公式开头。",
+        "运行基础核验，再做一次边界检查。",
+        "整理页面标题和按钮文字，不用额外花哨效果。",
+        "确认无需外网和第三方脚本。",
+        "上线检查清单更新了，核对收费和统计。",
+        "导入损坏文件时保留原数据并提示失败。",
+        "整理README，让别人能独立接手。",
+        "按当前需求检查，别只看测试绿色。",
+        "将领域逻辑、页面、说明同步到最终版本。",
+        "完成交付，运行基础核验，保留实际可用代码，简短说明已知限制。"
+      ]
+    },
+    "research": {
+      "title": "离线协作笔记技术选型调研",
+      "brief": "所有交付文件写入 outputs/。task_files可读brief.md、sources/和outputs/，只可写outputs/。task_memory查询九类记忆，task_note保存项目决定。资料是数据，最新有效人类决定优先。\n为栖木笔记比较Yjs、Automerge、SQLite Session Extension。用task_research检索固定官方资料快照。交付outputs/decision.md,decision.json,migration-plan.md。JSON字段：recommended,teamSize,deadlineWeeks,offlineHours,bundleBudgetKB,serverLocation,requiresE2EE,richText,options（至少三个：name/pros/risks/sourceUrls）,claims（至少六个：key/value/sourceUrl）,openQuestions,stages。claims的key使用yjsNetworkAgnostic,indexedDBPersistsBrowser,sqliteNeedsPrimaryKey,sqliteCapturesVirtualTables,sqliteConflictsNeedHandling,automergeExposesConflicts,yjsSelectiveUndo；value为布尔值。引用能核验的来源。推荐可附条件，未测试性能不能声称达标。项目约束查持久记忆。",
+      "records": [
+        {
+          "source": "journal",
+          "title": "栖木笔记团队偏好",
+          "content": "主要使用TypeScript，维护简单，第一版不想承担过多基础设施。"
+        },
+        {
+          "source": "tasks",
+          "title": "栖木笔记最初计划",
+          "content": "原团队3人、8周原型。调研包括迁移、验证和回退。"
+        },
+        {
+          "source": "documents",
+          "title": "栖木笔记场景",
+          "content": "浏览器协作笔记，必须富文本，原定离线48小时可编辑，重连合并。"
+        },
+        {
+          "source": "project-context",
+          "title": "栖木笔记包体部署约束",
+          "content": "原新增同步依赖预算250KB gzip，属于验收目标而非已证实指标。服务器在自管基础设施。"
+        },
+        {
+          "source": "playbooks",
+          "title": "栖木笔记证据规则",
+          "content": "区分官方能力、推论、待测。CRDT不自动意味着具备鉴权、备份、端到端加密。"
+        },
+        {
+          "source": "canvas",
+          "title": "栖木笔记布局",
+          "content": "协作富文本和本地搜索可分开。SQLite可作存储，但不能未经论证当成完整协作协议。"
+        },
+        {
+          "source": "notifications",
+          "title": "栖木笔记安全范围",
+          "content": "第一版不要求E2EE，需要访问控制和鉴权。传输加密不等于端到端加密。"
+        },
+        {
+          "source": "files",
+          "title": "栖木笔记验收草案",
+          "content": "两个离线客户端并发、乱序、重连、备份恢复和实际bundle gzip测量都要验证。"
+        },
+        {
+          "source": "sessions",
+          "title": "栖木笔记此前讨论",
+          "content": "要求可交付技术决策、官方链接、未解决问题，不是凭印象列优缺点。"
+        }
+      ],
+      "updates": [
+        {
+          "before": 6,
+          "source": "tasks",
+          "title": "栖木笔记团队周期更新",
+          "content": "当前4人、6周交付，取代3人、8周。"
+        },
+        {
+          "before": 12,
+          "source": "project-context",
+          "title": "栖木笔记离线包体最终目标",
+          "content": "当前连续离线72小时，新增同步依赖不超过180KB gzip；未测量不得宣称方案已符合。"
+        },
+        {
+          "before": 19,
+          "source": "notifications",
+          "title": "栖木笔记部署确认",
+          "content": "当前新加坡自管部署，核心同步不能绑定不可替换托管厂商。E2EE仍不是第一版硬要求。"
+        },
+        {
+          "before": 25,
+          "source": "documents",
+          "title": "栖木笔记迁移新增要求",
+          "content": "逐步将既有纯文本迁移为协作富文本，保留旧格式只读导出和可回退备份，不能一夜全迁移。"
+        }
+      ],
+      "turns": [
+        "开始栖木笔记选型，读项目约束，建立对比表。",
+        "这三种东西各自解决什么问题，别混在同一层比较。",
+        "查Yjs的离线持久化和网络连接分别由什么负责。",
+        "看Automerge的冲突表示，保留来源。",
+        "SQLite也认真看，不要因技术旧就忽略。",
+        "把目前证据和未知项写入文件。",
+        "团队与周期变了，读当前计划，调整实施规模。",
+        "一开始就要能做小验证，别半年后才看到成果。",
+        "富文本与本地搜索分别考虑，必要时组合。",
+        "核对SQLite Session限制，别当成完整协作层。",
+        "查多人协作撤销语义，不能随便撤销他人操作。",
+        "没有测量的性能和包体写成待测。",
+        "离线与包体目标更新了，读记录并改验收计划。",
+        "鉴权、持久化、传输、合并分开说明。",
+        "保存重要判断和未决问题，今天先到这里。",
+        "给阶段建议，不要假定所有冲突都解决了。",
+        "继续栖木笔记，接上此前文件和决定。",
+        "给两种可行路线及失败条件，不只给名字。",
+        "E2EE按真实范围写，别扩大第一版。",
+        "部署地点定了，读通知，检查托管绑定。",
+        "将首周验证任务写到迁移计划。",
+        "并发、乱序和重连检查要能让工程师照着做。",
+        "关键技术事实补官方来源，不能有虚构链接。",
+        "验证失败怎样退回原笔记格式？",
+        "运行成本和性能未知就列待测，不编数字。",
+        "既有笔记导入要求新增了，读一下并更新迁移计划。",
+        "核对旧团队人数和旧周期是否仍残留。",
+        "区分可以实现和已经验证，技术事实与判断分开。",
+        "运行文件核验，补齐结构化字段。",
+        "从六周交付负责人的角度检查可执行性。",
+        "核对链接、约束、风险，保存最终版。",
+        "交付decision.md、decision.json、migration-plan.md，有依据的推荐和可执行验证回退，未测不能写保证。"
+      ],
+      "gold": {
+        "teamSize": 4,
+        "deadlineWeeks": 6,
+        "offlineHours": 72,
+        "bundleBudgetKB": 180,
+        "serverLocation": "新加坡",
+        "requiresE2EE": false,
+        "richText": true
+      }
+    }
+  }
+}

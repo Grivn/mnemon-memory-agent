@@ -1,0 +1,124 @@
+\section{Design}
+\label{sec:design}
+
+\begin{figure}[t]
+\centering
+\begin{tikzpicture}[
+  font=\footnotesize,
+  box/.style={draw=ink2, rounded corners=2pt, line width=0.5pt, align=center, inner sep=3pt, text width=2.55cm, minimum height=1.2cm, fill=white},
+  llm/.style={box, fill=fillB},
+  sone/.style={box, fill=fillA},
+  store/.style={box, fill=fillC},
+  flow/.style={-{Stealth[length=4.5pt]}, line width=0.6pt, draw=ink2},
+  lab/.style={font=\scriptsize, text=ink2},
+]
+% main instance (left)
+\node[box, text width=2.0cm, minimum height=0.8cm] (user) at (0,0) {user message};
+\node[box, text width=2.0cm, minimum height=1.0cm] (main) at (0,-2.7) {main agent\\(answering model)};
+\node[box, text width=2.0cm, minimum height=0.8cm] (reply) at (0,-4.8) {reply};
+\draw[flow] (user) -- (main);
+\draw[flow] (main) -- (reply);
+% replica: reading
+\node[llm] (plan) at (3.7,0) {\textbf{plan} (System 2)\\3 searches + a note;\\$\le$3 needs};
+\node[store] (retrieve) at (7.0,0) {\textbf{retrieve}\\BM25 and vectors\\(RRF); pool of 48};
+\node[sone] (screen) at (10.3,0) {\textbf{screen} (System 1)\\``should the reply\\use this record?''};
+\node[sone] (judge) at (10.3,-2.7) {\textbf{judge} (System 1)\\needed? no longer\\current? needs? items?};
+\node[box] (loop) at (7.0,-2.7) {\textbf{loop} ($\le$3 rounds)\\open needs: page,\\rewrite, or stop};
+\node[box] (compose) at (3.7,-2.7) {\textbf{compose View}\\index items, then\\$\le$16 records / 12k};
+% replica: memory
+\node[store] (journal) at (7.0,2.2) {\textbf{journal Source}\\raw dated records};
+\node[llm] (consolidate) at (10.3,2.2) {\textbf{consolidate}\\background, once\\per record};
+\node[store] (index) at (13.3,2.2) {\textbf{index}\\timelines, values,\\instructions};
+\draw[flow] (user) -- (plan);
+\draw[flow] (plan) -- (retrieve);
+\draw[flow] (retrieve) -- (screen);
+\draw[flow] (screen) -- (judge);
+\draw[flow] (judge) -- (loop);
+\draw[flow] ([xshift=-4pt]loop.north) -- node[lab, left, align=right] {page /\\rewrite} ([xshift=-4pt]retrieve.south);
+\draw[flow] (loop) -- node[lab, above] {stop} (compose);
+\draw[flow, dashed] (journal) -- (retrieve);
+\draw[flow, dashed] (journal) -- (consolidate);
+\draw[flow, dashed] (consolidate) -- (index);
+\draw[flow, dashed] (index.south) |- node[lab, pos=0.25, right, align=left] {items linked\\to the records} (judge.east);
+\draw[flow] (compose) -- node[lab, above] {View} (main);
+% frames
+\begin{scope}[on background layer]
+\node[draw=rule, dashed, rounded corners=4pt, fit=(user)(main)(reply), inner sep=6pt, label={[lab, font=\scriptsize\bfseries]above:{main DSH instance}}] {};
+\node[draw=rule, dashed, rounded corners=4pt, fit=(plan)(retrieve)(screen)(judge)(loop)(compose)(journal)(consolidate)(index), inner sep=6pt, label={[lab, font=\scriptsize\bfseries]above:{replica DSH instance: \sys}}] {};
+\end{scope}
+% legend
+\node[lab, anchor=north west, align=left] at (2.4,-3.75) {\fcolorbox{ink2}{fillB}{\rule{0pt}{4pt}\rule{4pt}{0pt}} LLM \quad \fcolorbox{ink2}{fillA}{\rule{0pt}{4pt}\rule{4pt}{0pt}} \jev{} decision model \quad \fcolorbox{ink2}{fillC}{\rule{0pt}{4pt}\rule{4pt}{0pt}} storage and search \quad \fcolorbox{ink2}{white}{\rule{0pt}{4pt}\rule{4pt}{0pt}} rules \quad dashed: off the answer path};
+\end{tikzpicture}
+\caption{\sys{} at one user turn. The replica plans with an LLM (System~2), retrieves raw records, has \jev{} (System~1) screen and judge them and the index items they link to, loops on needs that are still open, and publishes a View into the main instance. A background pass consolidates each record once into an index that points back to the records.}
+\label{fig:architecture}
+\end{figure}
+
+At every user turn \sys{} decides what the main agent should see before it replies (\cref{fig:architecture}).
+It keeps conversations as raw records indexed once in the background (\cref{sec:memory}), reads them with two systems (\cref{sec:read}), and connects the two with ordinal rules under explicit budgets (\cref{sec:rules}); \cref{alg:turn} summarizes one turn.
+
+\subsection{Memory: Raw Records and a Consolidated Index}
+\label{sec:memory}
+
+\paragraph{Records.}
+Each session is written as it happened, as short \texttt{speaker: text} chunks, each headed by the session's number and date.
+No LLM is on the write path of a record; the only computation is one embedding.
+
+\paragraph{Consolidation.}
+Questions about a whole conversation, such as every mention of a topic, the current value of something that changed or an instruction given once, need evidence that the question's own searches rarely find.
+A background job therefore reads the journal once, in order, and a small LLM folds it, batch by batch, into an \emph{index} of three kinds of items, each linked to the records it came from: events on topic timelines; dated histories of values that can change, marked where a value contradicts an earlier one; and standing instructions and preferences.
+Items point to records and never replace them.
+
+\subsection{Reading with Two Systems}
+\label{sec:read}
+
+\paragraph{Plan (System~2).}
+Two LLM calls read the last six messages in parallel.
+The \emph{cue plan} writes three searches worded as a stored record would word them, plus one invented record that would answer the message~\citep{gao2023hyde}; with the message itself, a turn starts with five searches.
+The \emph{need plan} lists at most three facts the reply needs, marked \texttt{NEED}, or \texttt{ALL} when the reply needs every instance of something (a count, a total, a list).
+Neither call reads the memory, so their cost does not grow with it.
+
+\paragraph{Retrieve.}
+Each search ranks the journal's records by BM25 and by embedding similarity, fuses the two rankings by reciprocal rank~\citep{cormack2009rrf}, and returns a page of records.
+The pages merge into a \emph{pool}: each search first gets an equal share of its own best results, and the rest go to the highest summed reciprocal rank.
+
+\paragraph{Judge (System~1).}
+\jev{} answers typed yes/no propositions with explicit criteria and returns the probability of yes~\citep{jev2026}.
+It \emph{screens} each pooled record (should the assistant's next reply use this item?), then \emph{judges} the records that could enter the View, beside each other and the last six messages, as \emph{needed} or \emph{no longer current} (a later message or record explicitly changes, cancels or completes it), and fills a \emph{need table}: does this record give what this need asks for?
+The judged records light up the index items linked to them, and \jev{} judges which of these topics and values, and of the dozen nearest to the question, the reply needs.
+Counting, arithmetic, comparing dates and multi-hop indirection, which \jev{} handles poorly~\citep{jevdocs2026}, are left to the planner and the answering model.
+
+\subsection{Rules and Budgets}
+\label{sec:rules}
+
+The rules use only \jev's yes/no line at 0.5, \jev's order, and events observed in the previous step.
+Every other number is a budget with a meaning: three needs per turn, pages of 20 records or 12,000 characters, a pool of 48 records, three rounds, and a View of 16 records and 12,000 characters.
+
+\paragraph{The loop.}
+Each open need gets one action per round.
+A single need is met once a record gives it.
+A need for every instance, labelled \texttt{ALL} or observed because two records give it, pages each search that found a new yes until none appears.
+A need that no record gives yet follows its \emph{lead}, the record the need table ranks highest: the loop pages the search that ranked the lead highest, then asks the planner for one new search, then gives the need up.
+
+\paragraph{The View.}
+The View leads with the index, each block within a fixed budget: standing instructions, a one-line directory of topics, and the timelines and value histories \jev{} judged needed.
+Records follow: those judged needed, then, when the planner named a need, the rest in \jev's order up to the View's budget, trimmed from the end to make room for the index.
+Records judged no longer current are left out.
+
+\begin{algorithm}[t]
+\caption{One user turn of \sys.}
+\label{alg:turn}
+\small
+\begin{algorithmic}[1]
+\Require the last six messages $M$, the journal $J$ and its index $X$
+\State $(Q, N) \gets \textsc{Plan}(M)$ \Comment{System~2: five searches, at most three needs}
+\State $P \gets \textsc{Pool}(\{\textsc{Search}(J, q) : q \in Q\})$ \Comment{BM25 and vectors, fused; at most 48 records}
+\For{round $= 1, 2, 3$}
+  \State $\textsc{Screen}(P)$;\; $\textsc{Judge}(P, M, N)$ \Comment{System~1: use it? needed? no longer current? which need?}
+  \State $A \gets$ one action per open need: page a search, ask the planner for one, or give the need up
+  \If{$A = \emptyset$} \State \textbf{break} \EndIf
+  \State $P \gets P \cup \textsc{Run}(A)$
+\EndFor
+\State $I \gets \textsc{JudgeItems}(X, P, M)$ \Comment{index items linked to judged records, and the nearest}
+\State \Return $\textsc{Compose}(I, P)$ \Comment{index first, then records, within the View's budgets}
+\end{algorithmic}
+\end{algorithm}

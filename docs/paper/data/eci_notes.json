@@ -1,0 +1,30 @@
+{
+ "locomo A": {
+  "dominated": 10,
+  "of": 14,
+  "dominating": [],
+  "breakeven_vs_cheaper": {
+   "MemMachine": 0.133,
+   "mem9": 0.423,
+   "Zep": 0.211,
+   "Backboard.io": 0.126
+  },
+  "breakeven_vs_dearer": {}
+ },
+ "lme A": {
+  "dominated": 5,
+  "of": 12,
+  "dominating": [],
+  "breakeven_vs_cheaper": {
+   "Mem0": 0.083,
+   "MemMachine": 0.006,
+   "Viking Memory": 0.032,
+   "Memori": 0.002
+  },
+  "breakeven_vs_dearer": {
+   "MemOS": 0.121,
+   "EverOS": 9.012,
+   "Zep": 271.563
+  }
+ }
+}

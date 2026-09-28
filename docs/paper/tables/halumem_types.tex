@@ -1,0 +1,20 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{HaluMem by question type}: the registered run and the same Views answered with HaluMem's own answer prompt (gpt-4.1-mini judge; \% correct, hallucinated, omitted).}
+\label{tab:halumem-types}
+\begin{tabular}{@{}l ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{registered run} & \multicolumn{3}{c}{HaluMem's answer prompt} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+type & correct & halluc. & omitted & correct & halluc. & omitted \\
+\midrule
+Basic Fact Recall & 70.0 & 26.7 & 3.4 & 72.8 & 18.7 & 8.5 \\
+Dynamic Update & 61.7 & 32.8 & 5.6 & 57.8 & 25.0 & 17.2 \\
+Generalization & Application & 52.9 & 45.4 & 1.6 & 46.2 & 33.1 & 20.7 \\
+Memory Boundary & 81.6 & 18.4 & 0.0 & 65.8 & 34.0 & 0.2 \\
+Memory Conflict & 87.3 & 11.6 & 1.2 & 83.5 & 6.2 & 10.3 \\
+Multi-hop Inference & 52.5 & 43.9 & 3.5 & 57.1 & 26.3 & 16.7 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

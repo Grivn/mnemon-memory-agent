@@ -1,0 +1,19 @@
+{
+  "node": "v25.1.0",
+  "platform": "darwin",
+  "architecture": "arm64",
+  "osRelease": "24.6.0",
+  "cpu": "Apple M4",
+  "logicalCPUs": 10,
+  "memoryGiB": 24,
+  "dsh": "0.1.5-rc.1",
+  "browser": "Installed Chrome 153.0.8010.53 via Playwright",
+  "hashes": {
+    "pnpm-lock.yaml": "d358ac624ade526b992fd0e62618c44ef9aa7382da56b0633a49b40358d3f7a5",
+    "tests/fixtures/jev-replica/long-tasks.json": "d25d11338d9cb8aef53eda03c040d85a93edc82f26927fd0a7c02484e1b752f5",
+    "scripts/evaluate-jev-long-tasks.mjs": "56ef6bb15dcda171d8c2d7dd04858f20b05e1342d933ff633415b32697919c29",
+    "scripts/lib/jev-runtime.ts": "6b76a25c43494f473b66448688555d76944440d7a7e50b672ecb28bab2580bf4",
+    "scripts/lib/jev-study.ts": "bea381c1939723676b662ab9f9615b602465df419f2fd0ab26f6d18a71331083",
+    "scripts/grade-study-project.mjs": "c6d979ecbf7d870d42f2d92fc1836c5312574c0a259f6515fd265e92483171e2"
+  }
+}

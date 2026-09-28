@@ -1,0 +1,89 @@
+\documentclass[10pt]{article}
+
+\usepackage[letterpaper,margin=1in]{geometry}
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{xltabular}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds,calc,shapes.geometric}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[labelfont=bf,font=small]{caption}
+\usepackage[numbers,square,sort&compress]{natbib}
+\usepackage[colorlinks=true,linkcolor=blue!55!black,citecolor=blue!55!black,urlcolor=blue!55!black]{hyperref}
+\usepackage[capitalise,noabbrev]{cleveref}
+\urlstyle{same}
+
+\definecolor{ours}{HTML}{2a78d6}
+\definecolor{other}{HTML}{eb6834}
+\definecolor{ink2}{HTML}{52514e}
+\definecolor{rule}{HTML}{c3c2b7}
+\definecolor{fillA}{HTML}{e9f1fb}
+\definecolor{fillB}{HTML}{fdeee7}
+\definecolor{fillC}{HTML}{e6f6ef}
+
+\newcommand{\sys}{Mnemon}
+% Mnemon without its consolidation layer (used by the tables of the earlier appendix).
+\newcommand{\sysnc}{\sys{} without consolidation}
+% A number whose run has not finished yet; the build lists every one left (see build.sh).
+\newcommand{\pending}{\textcolor{red}{\textbf{??}}}
+\newcommand{\jev}{Jev}
+\newcommand{\lme}{Long\-Mem\-Eval-S}
+\newcommand{\pp}{\,pp}
+\newcommand{\best}[1]{\textbf{#1}}
+\setlist{itemsep=1pt,topsep=3pt}
+\hyphenation{Omni-Mem-Eval Long-Mem-Eval Mem-Machine}
+\algrenewcommand\algorithmicrequire{\textbf{Input:}}
+\crefname{algorithm}{Algorithm}{Algorithms}
+\crefname{equation}{Equation}{Equations}
+\crefformat{equation}{Equation~#2#1#3}
+% Let text pages carry more and larger floats, so that figures and tables stay near their text.
+\renewcommand{\topfraction}{0.9}\renewcommand{\bottomfraction}{0.8}\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.85}\setcounter{topnumber}{3}\setcounter{bottomnumber}{2}\setcounter{totalnumber}{5}
+\renewcommand{\arraystretch}{1.08}
+\lstset{basicstyle=\ttfamily\scriptsize, breaklines=true, breakatwhitespace=true, columns=fullflexible, keepspaces=true,
+  frame=single, framerule=0.3pt, rulecolor=\color{rule}, xleftmargin=3pt, xrightmargin=3pt, aboveskip=4pt, belowskip=6pt,
+  upquote=true, showstringspaces=false}
+
+\input{tables/numbers}
+% Generated tables float to the top of a page unless they name another placement.
+\newenvironment{gentable}[1][t]{\begin{table}[#1]}{\end{table}}
+
+\title{\sys: Remembering Fast and Slow\\in LLM Agents}
+\author{Grivn}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{sections/abstract}
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/setting}
+\input{sections/system}
+\input{sections/implementation}
+\input{sections/evaluation}
+\input{sections/protocol}
+\input{sections/results}
+\input{sections/analysis}
+\input{sections/limitations}
+\input{sections/conclusion}
+
+\bibliographystyle{plainnat}
+\bibliography{references}
+
+% The appendix (sections/appendix.tex) is left out of this version.
+
+\end{document}

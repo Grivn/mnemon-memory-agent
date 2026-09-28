@@ -1,0 +1,311 @@
+{
+ "beam128k": {
+  "contradiction_resolution": {
+   "questions": 40,
+   "all_shown": 15.0,
+   "score_all_shown": 20.8,
+   "score_otherwise": 22.8,
+   "traced_messages": 87,
+   "shown": 41.4,
+   "judged": 42.5,
+   "missed": 16.1
+  },
+  "all": {
+   "questions": 354,
+   "all_shown": 24.6,
+   "score_all_shown": 75.2,
+   "score_otherwise": 56.2,
+   "traced_messages": 938,
+   "shown": 34.8,
+   "judged": 22.1,
+   "missed": 43.2
+  },
+  "event_ordering": {
+   "questions": 40,
+   "all_shown": 0.0,
+   "score_all_shown": null,
+   "score_otherwise": 58.2,
+   "traced_messages": 205,
+   "shown": 23.4,
+   "judged": 12.7,
+   "missed": 63.9
+  },
+  "information_extraction": {
+   "questions": 40,
+   "all_shown": 57.5,
+   "score_all_shown": 91.3,
+   "score_otherwise": 77.7,
+   "traced_messages": 60,
+   "shown": 71.7,
+   "judged": 10.0,
+   "missed": 18.3
+  },
+  "instruction_following": {
+   "questions": 40,
+   "all_shown": 15.0,
+   "score_all_shown": 91.7,
+   "score_otherwise": 70.6,
+   "traced_messages": 40,
+   "shown": 17.5,
+   "judged": 5.0,
+   "missed": 77.5
+  },
+  "knowledge_update": {
+   "questions": 40,
+   "all_shown": 27.5,
+   "score_all_shown": 63.6,
+   "score_otherwise": 53.4,
+   "traced_messages": 77,
+   "shown": 44.2,
+   "judged": 33.8,
+   "missed": 22.1
+  },
+  "multi_session_reasoning": {
+   "questions": 40,
+   "all_shown": 25.0,
+   "score_all_shown": 76.7,
+   "score_otherwise": 70.6,
+   "traced_messages": 142,
+   "shown": 38.7,
+   "judged": 19.7,
+   "missed": 41.5
+  },
+  "preference_following": {
+   "questions": 39,
+   "all_shown": 23.1,
+   "score_all_shown": 88.9,
+   "score_otherwise": 88.3,
+   "traced_messages": 40,
+   "shown": 20.0,
+   "judged": 22.5,
+   "missed": 57.5
+  },
+  "summarization": {
+   "questions": 35,
+   "all_shown": 0.0,
+   "score_all_shown": null,
+   "score_otherwise": 41.7,
+   "traced_messages": 219,
+   "shown": 20.1,
+   "judged": 27.9,
+   "missed": 52.1
+  },
+  "temporal_reasoning": {
+   "questions": 40,
+   "all_shown": 55.0,
+   "score_all_shown": 68.2,
+   "score_otherwise": 22.2,
+   "traced_messages": 68,
+   "shown": 75.0,
+   "judged": 17.6,
+   "missed": 7.4
+  },
+  "_traced_questions": 309
+ },
+ "beam128k-bm25": {
+  "contradiction_resolution": {
+   "questions": 40,
+   "all_shown": 15.0,
+   "score_all_shown": 37.5,
+   "score_otherwise": 21.3,
+   "traced_messages": 87,
+   "shown": 41.4,
+   "judged": 39.1,
+   "missed": 19.5
+  },
+  "all": {
+   "questions": 354,
+   "all_shown": 25.4,
+   "score_all_shown": 78.1,
+   "score_otherwise": 57.8,
+   "traced_messages": 1045,
+   "shown": 34.6,
+   "judged": 22.5,
+   "missed": 42.9
+  },
+  "event_ordering": {
+   "questions": 40,
+   "all_shown": 2.5,
+   "score_all_shown": 33.3,
+   "score_otherwise": 61.5,
+   "traced_messages": 213,
+   "shown": 22.5,
+   "judged": 12.7,
+   "missed": 64.8
+  },
+  "information_extraction": {
+   "questions": 40,
+   "all_shown": 67.5,
+   "score_all_shown": 89.8,
+   "score_otherwise": 68.6,
+   "traced_messages": 65,
+   "shown": 73.8,
+   "judged": 10.8,
+   "missed": 15.4
+  },
+  "instruction_following": {
+   "questions": 40,
+   "all_shown": 12.5,
+   "score_all_shown": 80.0,
+   "score_otherwise": 77.1,
+   "traced_messages": 50,
+   "shown": 18.0,
+   "judged": 0.0,
+   "missed": 82.0
+  },
+  "knowledge_update": {
+   "questions": 40,
+   "all_shown": 25.0,
+   "score_all_shown": 80.0,
+   "score_otherwise": 65.0,
+   "traced_messages": 87,
+   "shown": 47.1,
+   "judged": 35.6,
+   "missed": 17.2
+  },
+  "multi_session_reasoning": {
+   "questions": 40,
+   "all_shown": 17.5,
+   "score_all_shown": 92.9,
+   "score_otherwise": 77.1,
+   "traced_messages": 155,
+   "shown": 39.4,
+   "judged": 16.8,
+   "missed": 43.9
+  },
+  "preference_following": {
+   "questions": 39,
+   "all_shown": 33.3,
+   "score_all_shown": 96.2,
+   "score_otherwise": 83.7,
+   "traced_messages": 45,
+   "shown": 33.3,
+   "judged": 20.0,
+   "missed": 46.7
+  },
+  "summarization": {
+   "questions": 35,
+   "all_shown": 0.0,
+   "score_all_shown": null,
+   "score_otherwise": 37.9,
+   "traced_messages": 267,
+   "shown": 18.4,
+   "judged": 31.8,
+   "missed": 49.8
+  },
+  "temporal_reasoning": {
+   "questions": 40,
+   "all_shown": 52.5,
+   "score_all_shown": 59.5,
+   "score_otherwise": 28.9,
+   "traced_messages": 76,
+   "shown": 72.4,
+   "judged": 21.1,
+   "missed": 6.6
+  },
+  "_traced_questions": 335
+ },
+ "beam128k-auto": {
+  "contradiction_resolution": {
+   "questions": 40,
+   "all_shown": 52.5,
+   "score_all_shown": 32.1,
+   "score_otherwise": 19.7,
+   "traced_messages": 80,
+   "shown": 73.8,
+   "judged": 12.5,
+   "missed": 13.8
+  },
+  "all": {
+   "questions": 354,
+   "all_shown": 36.7,
+   "score_all_shown": 64.6,
+   "score_otherwise": 57.0,
+   "traced_messages": 979,
+   "shown": 44.7,
+   "judged": 16.9,
+   "missed": 38.4
+  },
+  "event_ordering": {
+   "questions": 40,
+   "all_shown": 0.0,
+   "score_all_shown": null,
+   "score_otherwise": 57.3,
+   "traced_messages": 191,
+   "shown": 27.7,
+   "judged": 20.4,
+   "missed": 51.8
+  },
+  "information_extraction": {
+   "questions": 39,
+   "all_shown": 71.8,
+   "score_all_shown": 84.1,
+   "score_otherwise": 80.3,
+   "traced_messages": 63,
+   "shown": 74.6,
+   "judged": 7.9,
+   "missed": 17.5
+  },
+  "instruction_following": {
+   "questions": 40,
+   "all_shown": 17.5,
+   "score_all_shown": 78.6,
+   "score_otherwise": 67.4,
+   "traced_messages": 41,
+   "shown": 19.5,
+   "judged": 0.0,
+   "missed": 80.5
+  },
+  "knowledge_update": {
+   "questions": 40,
+   "all_shown": 55.0,
+   "score_all_shown": 59.1,
+   "score_otherwise": 33.3,
+   "traced_messages": 79,
+   "shown": 69.6,
+   "judged": 11.4,
+   "missed": 19.0
+  },
+  "multi_session_reasoning": {
+   "questions": 40,
+   "all_shown": 25.0,
+   "score_all_shown": 71.7,
+   "score_otherwise": 70.7,
+   "traced_messages": 155,
+   "shown": 43.9,
+   "judged": 19.4,
+   "missed": 36.8
+  },
+  "preference_following": {
+   "questions": 39,
+   "all_shown": 25.6,
+   "score_all_shown": 90.0,
+   "score_otherwise": 87.9,
+   "traced_messages": 43,
+   "shown": 23.3,
+   "judged": 16.3,
+   "missed": 60.5
+  },
+  "summarization": {
+   "questions": 36,
+   "all_shown": 0.0,
+   "score_all_shown": null,
+   "score_otherwise": 45.5,
+   "traced_messages": 253,
+   "shown": 28.9,
+   "judged": 24.9,
+   "missed": 46.2
+  },
+  "temporal_reasoning": {
+   "questions": 40,
+   "all_shown": 80.0,
+   "score_all_shown": 59.4,
+   "score_otherwise": 9.4,
+   "traced_messages": 74,
+   "shown": 87.8,
+   "judged": 2.7,
+   "missed": 9.5
+  },
+  "_traced_questions": 318
+ }
+}

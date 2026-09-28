@@ -1,0 +1,24 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Paired comparisons in the standard setting} (gpt-4.1-mini judge): net change in points, questions gained and lost, exact McNemar $p$.}
+\label{tab:paired-standard}
+\begin{tabular}{@{}lll@{}}
+\toprule
+& LoCoMo (1,540) & \lme{} (500) \\
+\midrule
+S4h vs S0 (hybrid retrieval) & +1.4 (+70/$-$49, $p$\,=\,0.066) & +1.0 (+32/$-$27, $p$\,=\,0.60) \\
+S6 vs S4h (loop, unsure fill) & +0.7 (+53/$-$42, $p$\,=\,0.30) & +2.4 (+35/$-$23, $p$\,=\,0.15) \\
+S6 vs S0 (all changes) & +2.1 (+77/$-$45, $p$\,=\,0.005) & +3.4 (+40/$-$23, $p$\,=\,0.043) \\
+Fast vs S6 (no planner) & $-$1.4 (+45/$-$66, $p$\,=\,0.057) & $-$1.6 (+30/$-$38, $p$\,=\,0.40) \\
+\midrule
+Budgets for rules (w/o consolidation vs S6) & $-$0.9 (+44/$-$58, $p$\,=\,0.20) & $-$1.2 (+31/$-$37, $p$\,=\,0.54) \\
+w/o consolidation vs cue recall & +1.2 (+69/$-$51, $p$\,=\,0.12) & +2.2 (+40/$-$29, $p$\,=\,0.23) \\
+No planner (w/o consolidation) & $-$0.8 (+48/$-$60, $p$\,=\,0.29) & $-$5.8 (+24/$-$53, $p$\,=\,0.001) \\
+No planner: budgets vs S6 rules & $-$0.3 (+50/$-$55, $p$\,=\,0.70) & $-$5.4 (+19/$-$46, $p$\,=\,0.001) \\
+\midrule
+Consolidation (\sys{} vs w/o consolidation) & +2.5 (+81/$-$42, $p$\,$<$\,0.001) & +4.4 (+55/$-$33, $p$\,=\,0.025) \\
+\sys{} vs cue recall (all steps) & +3.7 (+95/$-$38, $p$\,$<$\,0.001) & +6.6 (+65/$-$32, $p$\,=\,0.001) \\
+\bottomrule
+\end{tabular}
+\end{gentable}

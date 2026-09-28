@@ -1,0 +1,26 @@
+\section{Setting}
+\label{sec:setting}
+
+We consider an assistant, the \emph{main agent}, that converses with one user over many sessions.
+Its \emph{history} is a sequence of sessions, each a dated sequence of messages.
+At each user turn a \emph{memory agent} may read the history, and it publishes a \emph{View}: a bounded block of context that the main agent receives with the message before it replies.
+The main agent is otherwise unchanged, and the memory agent never edits its reply.
+In the benchmarks we use, a question is asked in a fresh session after its history has been written, so the answer depends on the View alone.
+
+\paragraph{Harness.}
+We build the memory agent in DeepSeek Harness (DSH), an open-source agent harness in which every capability is a plugin~\citep{dsh2026}.
+Its dsh-mnemon suite provides memory through \emph{Sources}, which expose stores such as a journal of records through read and search routes, and \emph{Strategies}, which decide what the host publishes into the agent's context as one View per turn~\citep{mnemon2026code}.
+Any plugin that exposes records can feed the same View; in this paper all memory lives in one Source, the journal.
+
+\paragraph{Cost measure.}
+A memory system spends at three points: when it processes the history (write time), when it decides what to show (retrieval time), and when the answering model reads what it was shown (the answer stage).
+Only the last is reported for every system in public re-evaluations, as the number of tokens of context sent to the answering model per question~\citep{omnimemeval2026}.
+Accuracy per unit of cost rewards systems that are cheap and often wrong, so we price errors instead.
+If a wrong answer is repaired by one full-context answer of cost $c_\text{full}$, a system with accuracy $a$ that sends $c$ tokens of context per question has the expected cost
+\begin{equation}
+\label{eq:eci}
+\mathrm{ECI} = (1-a) + \frac{c}{c_\text{full}}
+\end{equation}
+in units of $c_\text{full}$, which we call its \emph{effective cost index}.
+Lower is better, and answering from the full history costs at least one.
+Because retrieval-time and write-time costs are not published for other systems, we compare costs across systems by this index alone and report our other costs separately.

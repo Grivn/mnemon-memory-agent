@@ -1,0 +1,6498 @@
+{
+  "model": "jev-1.13.0",
+  "selectors": [
+    "random",
+    "bm25",
+    "jev-compound",
+    "jev-inline-index",
+    "jev-inline",
+    "jev-rubric",
+    "jev-single",
+    "llm-judge"
+  ],
+  "generatedAt": "2026-09-23T11:34:38.242Z",
+  "rows": [
+    {
+      "dataset": "clean",
+      "session": "family-outing",
+      "turn": "outing",
+      "kind": "explicit",
+      "poolSize": 43,
+      "positives": 11,
+      "requiredGroups": 4,
+      "recall": {
+        "groups": 4,
+        "lexical": {
+          "at10": 3,
+          "at20": 4,
+          "at40": 4
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 4,
+          "at40": 4,
+          "ms": 1359.526417,
+          "tokens": 175604
+        },
+        "hybrid": {
+          "at40": 4
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.4971590909090909,
+          "aurocUtility": 0.4971590909090909,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6818181818181818,
+          "aurocUtility": 0.6818181818181818,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 376,
+          "tokens": 6726,
+          "calls": 1,
+          "auroc": 0.9943181818181818,
+          "aurocUtility": 0.9943181818181818,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 528,
+          "tokens": 12523,
+          "calls": 1,
+          "auroc": 0.8664772727272727,
+          "aurocUtility": 0.8664772727272727,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 555,
+          "tokens": 13588,
+          "calls": 1,
+          "auroc": 0.9872159090909091,
+          "aurocUtility": 0.9857954545454546,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 510,
+          "tokens": 8359,
+          "calls": 1,
+          "auroc": 0.9829545454545454,
+          "aurocUtility": 0.9829545454545454,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1356,
+          "tokens": 24738,
+          "calls": 43,
+          "auroc": 0.8295454545454546,
+          "aurocUtility": 0.8352272727272727,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1769,
+          "tokens": 1806,
+          "calls": 1,
+          "auroc": 0.9943181818181818,
+          "aurocUtility": 0.9943181818181818,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "family-outing",
+      "turn": "checkin-followup",
+      "kind": "explicit",
+      "poolSize": 42,
+      "positives": 9,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 696.5769999999993,
+          "tokens": 175892
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.44107744107744107,
+          "aurocUtility": 0.44107744107744107,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6734006734006734,
+          "aurocUtility": 0.6734006734006734,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 383,
+          "tokens": 10542,
+          "calls": 1,
+          "auroc": 0.9663299663299664,
+          "aurocUtility": 0.9663299663299664,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 469,
+          "tokens": 12804,
+          "calls": 1,
+          "auroc": 0.8114478114478114,
+          "aurocUtility": 0.8619528619528619,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 523,
+          "tokens": 13844,
+          "calls": 1,
+          "auroc": 0.9764309764309764,
+          "aurocUtility": 0.9764309764309764,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 368,
+          "tokens": 8742,
+          "calls": 1,
+          "auroc": 0.9646464646464646,
+          "aurocUtility": 0.9629629629629629,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1349,
+          "tokens": 26696,
+          "calls": 42,
+          "auroc": 0.8939393939393939,
+          "aurocUtility": 0.898989898989899,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1091,
+          "tokens": 2112,
+          "calls": 1,
+          "auroc": 0.9764309764309764,
+          "aurocUtility": 0.9764309764309764,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "family-outing",
+      "turn": "topic-train",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 4,
+      "requiredGroups": 3,
+      "recall": {
+        "groups": 3,
+        "lexical": {
+          "at10": 3,
+          "at20": 3,
+          "at40": 3
+        },
+        "scan": {
+          "at10": 3,
+          "at20": 3,
+          "at40": 3,
+          "ms": 879.9514999999992,
+          "tokens": 176144
+        },
+        "hybrid": {
+          "at40": 3
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.3918918918918919,
+          "aurocUtility": 0.3918918918918919,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.722972972972973,
+          "aurocUtility": 0.722972972972973,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 491,
+          "tokens": 10397,
+          "calls": 1,
+          "auroc": 0.972972972972973,
+          "aurocUtility": 0.972972972972973,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 526,
+          "tokens": 12524,
+          "calls": 1,
+          "auroc": 0.972972972972973,
+          "aurocUtility": 0.8986486486486487,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 520,
+          "tokens": 13539,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 528,
+          "tokens": 8564,
+          "calls": 1,
+          "auroc": 0.9695945945945946,
+          "aurocUtility": 0.972972972972973,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1338,
+          "tokens": 27757,
+          "calls": 41,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1356,
+          "tokens": 2074,
+          "calls": 1,
+          "auroc": 0.9628378378378378,
+          "aurocUtility": 0.7635135135135135,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "reading-club",
+      "turn": "alias-promise",
+      "kind": "explicit",
+      "poolSize": 43,
+      "positives": 12,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 625.8741669999981,
+          "tokens": 175610
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5618279569892473,
+          "aurocUtility": 0.5618279569892473,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.7338709677419355,
+          "aurocUtility": 0.7338709677419355,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 361,
+          "tokens": 6880,
+          "calls": 1,
+          "auroc": 0.9919354838709677,
+          "aurocUtility": 0.9919354838709677,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 506,
+          "tokens": 12677,
+          "calls": 1,
+          "auroc": 0.8481182795698925,
+          "aurocUtility": 0.803763440860215,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 365,
+          "tokens": 13742,
+          "calls": 1,
+          "auroc": 0.9919354838709677,
+          "aurocUtility": 0.9838709677419355,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 483,
+          "tokens": 8513,
+          "calls": 1,
+          "auroc": 0.9919354838709677,
+          "aurocUtility": 0.9865591397849462,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1089,
+          "tokens": 24934,
+          "calls": 43,
+          "auroc": 0.978494623655914,
+          "aurocUtility": 0.978494623655914,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1207,
+          "tokens": 1930,
+          "calls": 1,
+          "auroc": 0.9919354838709677,
+          "aurocUtility": 0.9475806451612904,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "reading-club",
+      "turn": "budget-status",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 7,
+      "requiredGroups": 4,
+      "recall": {
+        "groups": 4,
+        "lexical": {
+          "at10": 2,
+          "at20": 3,
+          "at40": 4
+        },
+        "scan": {
+          "at10": 3,
+          "at20": 4,
+          "at40": 4,
+          "ms": 765.372707999999,
+          "tokens": 175880
+        },
+        "hybrid": {
+          "at40": 4
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6218487394957983,
+          "aurocUtility": 0.6218487394957983,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.7413549532045971,
+              "superseded": 0
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.4063805833939418,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6386554621848739,
+          "aurocUtility": 0.6386554621848739,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 7
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.4046475122658217,
+              "superseded": 0
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.3598712173198207,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 328,
+          "tokens": 6460,
+          "calls": 1,
+          "auroc": 0.9453781512605042,
+          "aurocUtility": 0.9453781512605042,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.26,
+              "superseded": 0
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.18,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 470,
+          "tokens": 11987,
+          "calls": 1,
+          "auroc": 0.9369747899159664,
+          "aurocUtility": 0.6092436974789915,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.17,
+              "superseded": 0.22
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.29,
+              "superseded": 0.91
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 357,
+          "tokens": 13002,
+          "calls": 1,
+          "auroc": 0.9873949579831933,
+          "aurocUtility": 0.9495798319327731,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 5
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.17,
+              "superseded": 0.18
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.19,
+              "superseded": 0.91
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 528,
+          "tokens": 8027,
+          "calls": 1,
+          "auroc": 0.9411764705882353,
+          "aurocUtility": 0.9201680672268907,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 7
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.3,
+              "superseded": 0.4
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.54,
+              "superseded": 0.89
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 1214,
+          "tokens": 25460,
+          "calls": 41,
+          "auroc": 0.9495798319327731,
+          "aurocUtility": 0.9495798319327731,
+          "top8": {
+            "required": 4,
+            "obsolete": 1,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 1,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.62,
+              "superseded": 0.07
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.52,
+              "superseded": 0.07
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1041,
+          "tokens": 1761,
+          "calls": 1,
+          "auroc": 0.9747899159663865,
+          "aurocUtility": 0.8886554621848739,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 7
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.2,
+              "superseded": 0
+            },
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.2,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "preference-change",
+      "turn": "coffee-change",
+      "kind": "stale",
+      "poolSize": 6,
+      "positives": 1,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6,
+          "aurocUtility": 0.6,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.20623528775904218,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.05451989780518224,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 2,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 1,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.9604078169749369,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 518,
+          "tokens": 1145,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.48,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.26,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 345,
+          "tokens": 1947,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.58,
+              "superseded": 0.92
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.24,
+              "superseded": 0.89
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 337,
+          "tokens": 2091,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.65,
+              "superseded": 0.91
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.45,
+              "superseded": 0.87
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 368,
+          "tokens": 1561,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.62,
+              "superseded": 0.92
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.35,
+              "superseded": 0.91
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 526,
+          "tokens": 3382,
+          "calls": 6,
+          "auroc": 0.4,
+          "aurocUtility": 0.8,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.75,
+              "superseded": 0.93
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.56,
+              "superseded": 0.92
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 629,
+          "tokens": 348,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.2,
+              "superseded": 1
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.2,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "preference-change",
+      "turn": "coffee-followup",
+      "kind": "stale",
+      "poolSize": 6,
+      "positives": 1,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.4121530822972192,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.32336398058649246,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 2,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 1,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.9604078169749368,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 413,
+          "tokens": 1176,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.49,
+              "superseded": 0
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.3,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 324,
+          "tokens": 1978,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.55,
+              "superseded": 0.92
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.28,
+              "superseded": 0.89
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 367,
+          "tokens": 2122,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.64,
+              "superseded": 0.92
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.45,
+              "superseded": 0.87
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 355,
+          "tokens": 1592,
+          "calls": 1,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.58,
+              "superseded": 0.94
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.29,
+              "superseded": 0.91
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 321,
+          "tokens": 3568,
+          "calls": 6,
+          "auroc": 0.8,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.75,
+              "superseded": 0.91
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.45,
+              "superseded": 0.88
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 752,
+          "tokens": 365,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 2,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "J-COFFEE",
+              "needed": 0.2,
+              "superseded": 1
+            },
+            {
+              "key": "S-COFFEE",
+              "needed": 0.2,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "errands",
+      "turn": "errands",
+      "kind": "explicit",
+      "poolSize": 4,
+      "positives": 4,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 656.5751249999994,
+          "tokens": 175610
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 359,
+          "tokens": 884,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 273,
+          "tokens": 1416,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 279,
+          "tokens": 1512,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 265,
+          "tokens": 1236,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 321,
+          "tokens": 2273,
+          "calls": 4,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 684,
+          "tokens": 301,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "canvas-body",
+      "turn": "canvas-body",
+      "kind": "explicit",
+      "poolSize": 8,
+      "positives": 2,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 801.0409999999974,
+          "tokens": 175580
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.9166666666666666,
+          "aurocUtility": 0.9166666666666666,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5,
+          "aurocUtility": 0.5,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 325,
+          "tokens": 1454,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 307,
+          "tokens": 2526,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 414,
+          "tokens": 2718,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 308,
+          "tokens": 1934,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 793,
+          "tokens": 4524,
+          "calls": 8,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 760,
+          "tokens": 432,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "long-document",
+      "turn": "long-document",
+      "kind": "explicit",
+      "poolSize": 26,
+      "positives": 2,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 757.8615829999981,
+          "tokens": 175616
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.4791666666666667,
+          "aurocUtility": 0.4791666666666667,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5,
+          "aurocUtility": 0.5,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 317,
+          "tokens": 8080,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 327,
+          "tokens": 8182,
+          "calls": 1,
+          "auroc": 0.9791666666666666,
+          "aurocUtility": 0.8958333333333334,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 396,
+          "tokens": 8822,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 312,
+          "tokens": 5752,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 827,
+          "tokens": 15500,
+          "calls": 26,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 960,
+          "tokens": 1464,
+          "calls": 1,
+          "auroc": 0.75,
+          "aurocUtility": 0.75,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "cold-memory",
+      "turn": "cold-memory",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 10,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 610.6303750000006,
+          "tokens": 175682
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.41935483870967744,
+          "aurocUtility": 0.41935483870967744,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.7426114575338111,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.9,
+          "aurocUtility": 0.9,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.9221638942415198,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 425,
+          "tokens": 6651,
+          "calls": 1,
+          "auroc": 0.9967741935483871,
+          "aurocUtility": 0.9967741935483871,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 7
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.33,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 359,
+          "tokens": 12178,
+          "calls": 1,
+          "auroc": 0.9741935483870968,
+          "aurocUtility": 0.9854838709677419,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 6
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.15,
+              "superseded": 0.68
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 349,
+          "tokens": 13193,
+          "calls": 1,
+          "auroc": 0.9967741935483871,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 7
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.16,
+              "superseded": 0.52
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 346,
+          "tokens": 8218,
+          "calls": 1,
+          "auroc": 0.9967741935483871,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.48,
+              "superseded": 0.67
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 1045,
+          "tokens": 24331,
+          "calls": 41,
+          "auroc": 0.9967741935483871,
+          "aurocUtility": 0.9967741935483871,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0.56,
+              "superseded": 0.4
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1048,
+          "tokens": 1869,
+          "calls": 1,
+          "auroc": 0.95,
+          "aurocUtility": 0.95,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "D-COLD",
+              "needed": 0,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "live-file",
+      "turn": "file-before",
+      "kind": "explicit",
+      "poolSize": 21,
+      "positives": 3,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 609.1628329999949,
+          "tokens": 175616
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.8148148148148148,
+          "aurocUtility": 0.8148148148148148,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.3923974655085237,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6481481481481481,
+          "aurocUtility": 0.6481481481481481,
+          "top8": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.7048545679882547,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 430,
+          "tokens": 3435,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.14,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 304,
+          "tokens": 6262,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.06,
+              "superseded": 0.72
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 342,
+          "tokens": 6777,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.07,
+              "superseded": 0.65
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 409,
+          "tokens": 4342,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.27,
+              "superseded": 0.77
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 604,
+          "tokens": 12115,
+          "calls": 21,
+          "auroc": 0.9629629629629629,
+          "aurocUtility": 0.9629629629629629,
+          "top8": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 1,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.66,
+              "superseded": 0.06
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1294,
+          "tokens": 941,
+          "calls": 1,
+          "auroc": 0.9629629629629629,
+          "aurocUtility": 0.9814814814814815,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.3,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "live-file",
+      "turn": "file-after",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 3,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 717.0801250000004,
+          "tokens": 175916
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.8421052631578947,
+          "aurocUtility": 0.8421052631578947,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.795579974957644,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6491228070175439,
+          "aurocUtility": 0.6491228070175439,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.9038283427619956,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 510,
+          "tokens": 6622,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.16,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 524,
+          "tokens": 12149,
+          "calls": 1,
+          "auroc": 0.9956140350877193,
+          "aurocUtility": 0.9912280701754386,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.07,
+              "superseded": 0.89
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 524,
+          "tokens": 13164,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.06,
+              "superseded": 0.88
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 329,
+          "tokens": 8189,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.26,
+              "superseded": 0.91
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 1243,
+          "tokens": 25862,
+          "calls": 41,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.19,
+              "superseded": 0.46
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1065,
+          "tokens": 1840,
+          "calls": 1,
+          "auroc": 0.8289473684210527,
+          "aurocUtility": 0.8333333333333334,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "F-LIVE-OLD",
+              "needed": 0.8,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "photo-procedure",
+      "turn": "photo-procedure",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 3,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 3953.5921669999952,
+          "tokens": 175634
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.7105263157894737,
+          "aurocUtility": 0.7105263157894737,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5964912280701754,
+          "aurocUtility": 0.5964912280701754,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 369,
+          "tokens": 6761,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 398,
+          "tokens": 12288,
+          "calls": 1,
+          "auroc": 0.9736842105263158,
+          "aurocUtility": 0.9736842105263158,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 502,
+          "tokens": 13303,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 522,
+          "tokens": 8328,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1571,
+          "tokens": 24121,
+          "calls": 41,
+          "auroc": 0.9649122807017544,
+          "aurocUtility": 0.9649122807017544,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1048,
+          "tokens": 1971,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "notice-advert",
+      "turn": "notice-advert",
+      "kind": "explicit",
+      "poolSize": 40,
+      "positives": 3,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 0,
+          "at20": 1,
+          "at40": 1,
+          "ms": 795.7701250000027,
+          "tokens": 175604
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5225225225225225,
+          "aurocUtility": 0.5225225225225225,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6666666666666666,
+          "aurocUtility": 0.6666666666666666,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 357,
+          "tokens": 10255,
+          "calls": 1,
+          "auroc": 0.9774774774774775,
+          "aurocUtility": 0.9774774774774775,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 441,
+          "tokens": 12247,
+          "calls": 1,
+          "auroc": 0.9594594594594594,
+          "aurocUtility": 0.8738738738738738,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 495,
+          "tokens": 13237,
+          "calls": 1,
+          "auroc": 0.990990990990991,
+          "aurocUtility": 0.990990990990991,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 331,
+          "tokens": 8389,
+          "calls": 1,
+          "auroc": 0.9684684684684685,
+          "aurocUtility": 0.9819819819819819,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1018,
+          "tokens": 23589,
+          "calls": 40,
+          "auroc": 0.7972972972972973,
+          "aurocUtility": 0.7972972972972973,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1439,
+          "tokens": 2074,
+          "calls": 1,
+          "auroc": 0.9954954954954955,
+          "aurocUtility": 0.9954954954954955,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "many-source-day",
+      "turn": "many-source-day",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 13,
+      "requiredGroups": 7,
+      "recall": {
+        "groups": 7,
+        "lexical": {
+          "at10": 3,
+          "at20": 5,
+          "at40": 7
+        },
+        "scan": {
+          "at10": 7,
+          "at20": 7,
+          "at40": 7,
+          "ms": 715.6335830000025,
+          "tokens": 175802
+        },
+        "hybrid": {
+          "at40": 7
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6401098901098901,
+          "aurocUtility": 0.6401098901098901,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6291208791208791,
+          "aurocUtility": 0.6291208791208791,
+          "top8": {
+            "required": 3,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 514,
+          "tokens": 10211,
+          "calls": 1,
+          "auroc": 0.9725274725274725,
+          "aurocUtility": 0.9725274725274725,
+          "top8": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 517,
+          "tokens": 12338,
+          "calls": 1,
+          "auroc": 0.7005494505494505,
+          "aurocUtility": 0.7115384615384616,
+          "top8": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 8
+          },
+          "threshold": {
+            "required": 4,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 516,
+          "tokens": 13353,
+          "calls": 1,
+          "auroc": 0.9739010989010989,
+          "aurocUtility": 0.9739010989010989,
+          "top8": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 368,
+          "tokens": 8378,
+          "calls": 1,
+          "auroc": 0.9697802197802198,
+          "aurocUtility": 0.9807692307692307,
+          "top8": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1383,
+          "tokens": 25291,
+          "calls": 41,
+          "auroc": 0.9464285714285714,
+          "aurocUtility": 0.9478021978021978,
+          "top8": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "threshold": {
+            "required": 6,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1383,
+          "tokens": 1936,
+          "calls": 1,
+          "auroc": 0.9381868131868132,
+          "aurocUtility": 0.9381868131868132,
+          "top8": {
+            "required": 5,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 5,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "clean",
+      "session": "quiet-close",
+      "turn": "quiet-close",
+      "kind": "smalltalk",
+      "poolSize": 1,
+      "positives": 1,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 291,
+          "tokens": 450,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 414,
+          "tokens": 577,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 268,
+          "tokens": 601,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 313,
+          "tokens": 706,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 297,
+          "tokens": 552,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 445,
+          "tokens": 199,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "open",
+      "kind": "smalltalk",
+      "poolSize": 3,
+      "positives": 1,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 296,
+          "tokens": 735,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 298,
+          "tokens": 1132,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 285,
+          "tokens": 1204,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 416,
+          "tokens": 1055,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 628,
+          "tokens": 1663,
+          "calls": 3,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 726,
+          "tokens": 263,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "park-mother",
+      "kind": "implicit",
+      "poolSize": 40,
+      "positives": 7,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 0,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 1398.0629999999946,
+          "tokens": 175796
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.329004329004329,
+          "aurocUtility": 0.329004329004329,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.09090909090909091,
+          "aurocUtility": 0.09090909090909091,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 413,
+          "tokens": 6646,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 656,
+          "tokens": 12038,
+          "calls": 1,
+          "auroc": 0.5584415584415584,
+          "aurocUtility": 0.7207792207792207,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 390,
+          "tokens": 13028,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 322,
+          "tokens": 8180,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1298,
+          "tokens": 24628,
+          "calls": 40,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 999,
+          "tokens": 1995,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "weather",
+      "kind": "implicit",
+      "poolSize": 37,
+      "positives": 4,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 636.8208330000052,
+          "tokens": 175952
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.4393939393939394,
+          "aurocUtility": 0.4393939393939394,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.1590909090909091,
+          "aurocUtility": 0.1590909090909091,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 509,
+          "tokens": 6244,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 405,
+          "tokens": 11231,
+          "calls": 1,
+          "auroc": 0.696969696969697,
+          "aurocUtility": 0.75,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 510,
+          "tokens": 12146,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 327,
+          "tokens": 7679,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1014,
+          "tokens": 23788,
+          "calls": 37,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 773,
+          "tokens": 1909,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "allergy",
+      "kind": "implicit",
+      "poolSize": 41,
+      "positives": 4,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 586.4006660000014,
+          "tokens": 176216
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5337837837837838,
+          "aurocUtility": 0.5337837837837838,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.722972972972973,
+          "aurocUtility": 0.722972972972973,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 427,
+          "tokens": 10832,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 523,
+          "tokens": 12959,
+          "calls": 1,
+          "auroc": 0.36486486486486486,
+          "aurocUtility": 0.3716216216216216,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 521,
+          "tokens": 13974,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 522,
+          "tokens": 8999,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1056,
+          "tokens": 28672,
+          "calls": 41,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1174,
+          "tokens": 2413,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 4,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "novel",
+      "kind": "implicit",
+      "poolSize": 42,
+      "positives": 2,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 631.1261250000098,
+          "tokens": 176450
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.35,
+          "aurocUtility": 0.35,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0,
+          "aurocUtility": 0,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 376,
+          "tokens": 10985,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 420,
+          "tokens": 13247,
+          "calls": 1,
+          "auroc": 0.7125,
+          "aurocUtility": 0.70625,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 520,
+          "tokens": 14287,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 343,
+          "tokens": 9185,
+          "calls": 1,
+          "auroc": 0.975,
+          "aurocUtility": 0.9625,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1060,
+          "tokens": 30952,
+          "calls": 42,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1302,
+          "tokens": 2446,
+          "calls": 1,
+          "auroc": 0.95,
+          "aurocUtility": 0.95,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "machine",
+      "kind": "implicit",
+      "poolSize": 41,
+      "positives": 2,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 777.1288329999952,
+          "tokens": 176684
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5769230769230769,
+          "aurocUtility": 0.5769230769230769,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.5,
+          "aurocUtility": 0.5,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 360,
+          "tokens": 10841,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 382,
+          "tokens": 12968,
+          "calls": 1,
+          "auroc": 0.9038461538461539,
+          "aurocUtility": 0.967948717948718,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 479,
+          "tokens": 13983,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 357,
+          "tokens": 9008,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1300,
+          "tokens": 31801,
+          "calls": 41,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 967,
+          "tokens": 2373,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 0.7307692307692307,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "movie",
+      "kind": "smalltalk",
+      "poolSize": 40,
+      "positives": 0,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 509,
+          "tokens": 6847,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 525,
+          "tokens": 12209,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 524,
+          "tokens": 13199,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 327,
+          "tokens": 8351,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1069,
+          "tokens": 30649,
+          "calls": 40,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1747,
+          "tokens": 2051,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "drinks",
+      "kind": "implicit",
+      "poolSize": 44,
+      "positives": 3,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 1040.2952910000022,
+          "tokens": 176600
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.10569105691056911,
+          "aurocUtility": 0.10569105691056911,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.4885978217908642,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.012195121951219513,
+          "aurocUtility": 0.012195121951219513,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 361,
+          "tokens": 7418,
+          "calls": 1,
+          "auroc": 0.959349593495935,
+          "aurocUtility": 0.959349593495935,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.43,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 683,
+          "tokens": 13273,
+          "calls": 1,
+          "auroc": 0.7926829268292683,
+          "aurocUtility": 0.4634146341463415,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.66,
+              "superseded": 0.87
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 521,
+          "tokens": 14363,
+          "calls": 1,
+          "auroc": 0.983739837398374,
+          "aurocUtility": 0.991869918699187,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.71,
+              "superseded": 0.89
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 525,
+          "tokens": 9007,
+          "calls": 1,
+          "auroc": 0.9308943089430894,
+          "aurocUtility": 0.9186991869918699,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.77,
+              "superseded": 0.84
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 1374,
+          "tokens": 32917,
+          "calls": 44,
+          "auroc": 0.975609756097561,
+          "aurocUtility": 0.975609756097561,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 1,
+            "size": 2
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0.9,
+              "superseded": 0.06
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1561,
+          "tokens": 2197,
+          "calls": 1,
+          "auroc": 0.6666666666666666,
+          "aurocUtility": 0.6666666666666666,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-WINE-OLD",
+              "needed": 0,
+              "superseded": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "same-name",
+      "kind": "implicit",
+      "poolSize": 42,
+      "positives": 3,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 819.8665419999888,
+          "tokens": 176678
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.42735042735042733,
+          "aurocUtility": 0.42735042735042733,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.31196581196581197,
+          "aurocUtility": 0.31196581196581197,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 425,
+          "tokens": 7099,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 521,
+          "tokens": 12688,
+          "calls": 1,
+          "auroc": 0.9529914529914529,
+          "aurocUtility": 0.9401709401709402,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 528,
+          "tokens": 13728,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 336,
+          "tokens": 8626,
+          "calls": 1,
+          "auroc": 0.9914529914529915,
+          "aurocUtility": 0.9829059829059829,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1308,
+          "tokens": 31951,
+          "calls": 42,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1504,
+          "tokens": 2095,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "promise",
+      "kind": "explicit",
+      "poolSize": 41,
+      "positives": 3,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 1021.1546670000098,
+          "tokens": 176648
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6052631578947368,
+          "aurocUtility": 0.6052631578947368,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.6666666666666666,
+          "aurocUtility": 0.6666666666666666,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 3,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 347,
+          "tokens": 6923,
+          "calls": 1,
+          "auroc": 0.9736842105263158,
+          "aurocUtility": 0.9736842105263158,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 389,
+          "tokens": 12380,
+          "calls": 1,
+          "auroc": 0.8026315789473685,
+          "aurocUtility": 0.7543859649122807,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 456,
+          "tokens": 13395,
+          "calls": 1,
+          "auroc": 0.9912280701754386,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 376,
+          "tokens": 8420,
+          "calls": 1,
+          "auroc": 0.9649122807017544,
+          "aurocUtility": 0.9736842105263158,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1327,
+          "tokens": 30973,
+          "calls": 41,
+          "auroc": 0.9736842105263158,
+          "aurocUtility": 0.9736842105263158,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 922,
+          "tokens": 2017,
+          "calls": 1,
+          "auroc": 0.9868421052631579,
+          "aurocUtility": 0.9868421052631579,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "budget",
+      "kind": "implicit",
+      "poolSize": 42,
+      "positives": 2,
+      "requiredGroups": 1,
+      "recall": {
+        "groups": 1,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1,
+          "ms": 654.1295830000017,
+          "tokens": 176600
+        },
+        "hybrid": {
+          "at40": 1
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.35,
+          "aurocUtility": 0.35,
+          "top8": {
+            "required": 0,
+            "obsolete": 1,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 1,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.8414737030029003,
+              "superseded": 0
+            }
+          ]
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.475,
+          "aurocUtility": 0.475,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.15650367029638707,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-compound": {
+          "ms": 373,
+          "tokens": 7075,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.36,
+              "superseded": 0
+            }
+          ]
+        },
+        "jev-inline-index": {
+          "ms": 438,
+          "tokens": 12654,
+          "calls": 1,
+          "auroc": 0.75625,
+          "aurocUtility": 0.7875,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.35,
+              "superseded": 0.27
+            }
+          ]
+        },
+        "jev-inline": {
+          "ms": 471,
+          "tokens": 13694,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.11,
+              "superseded": 0.1
+            }
+          ]
+        },
+        "jev-rubric": {
+          "ms": 336,
+          "tokens": 8592,
+          "calls": 1,
+          "auroc": 0.9625,
+          "aurocUtility": 0.9625,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.18,
+              "superseded": 0.15
+            }
+          ]
+        },
+        "jev-single": {
+          "ms": 1235,
+          "tokens": 31384,
+          "calls": 42,
+          "auroc": 0.98125,
+          "aurocUtility": 0.98125,
+          "top8": {
+            "required": 1,
+            "obsolete": 1,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0.46,
+              "superseded": 0.09
+            }
+          ]
+        },
+        "llm-judge": {
+          "ms": 1569,
+          "tokens": 2043,
+          "calls": 1,
+          "auroc": 0.75,
+          "aurocUtility": 0.75,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": [
+            {
+              "key": "P-BUDGET-OLD",
+              "needed": 0,
+              "superseded": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "cooling",
+      "kind": "smalltalk",
+      "poolSize": 40,
+      "positives": 0,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 509,
+          "tokens": 6752,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 348,
+          "tokens": 12066,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 402,
+          "tokens": 13056,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 378,
+          "tokens": 8208,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1056,
+          "tokens": 29414,
+          "calls": 40,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1033,
+          "tokens": 1952,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "photos",
+      "kind": "explicit",
+      "poolSize": 40,
+      "positives": 2,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 581.039832999988,
+          "tokens": 176570
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.3026315789473684,
+          "aurocUtility": 0.3026315789473684,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.9342105263157895,
+          "aurocUtility": 0.9342105263157895,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 6
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 384,
+          "tokens": 6747,
+          "calls": 1,
+          "auroc": 0.9868421052631579,
+          "aurocUtility": 0.9868421052631579,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 1,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 525,
+          "tokens": 12068,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 1
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 525,
+          "tokens": 13058,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 331,
+          "tokens": 8210,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 4
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1067,
+          "tokens": 29689,
+          "calls": 40,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 867,
+          "tokens": 1964,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 2
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "station",
+      "kind": "implicit",
+      "poolSize": 42,
+      "positives": 3,
+      "requiredGroups": 2,
+      "recall": {
+        "groups": 2,
+        "lexical": {
+          "at10": 1,
+          "at20": 1,
+          "at40": 1
+        },
+        "scan": {
+          "at10": 2,
+          "at20": 2,
+          "at40": 2,
+          "ms": 694.5789579999982,
+          "tokens": 176594
+        },
+        "hybrid": {
+          "at40": 2
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.7863247863247863,
+          "aurocUtility": 0.7863247863247863,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": 0.3333333333333333,
+          "aurocUtility": 0.3333333333333333,
+          "top8": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 7,
+            "size": 8
+          },
+          "threshold": {
+            "required": 1,
+            "obsolete": 0,
+            "irrelevant": 6,
+            "size": 7
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 360,
+          "tokens": 7051,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 402,
+          "tokens": 12650,
+          "calls": 1,
+          "auroc": 0.9914529914529915,
+          "aurocUtility": 0.9871794871794872,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 452,
+          "tokens": 13690,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 527,
+          "tokens": 8588,
+          "calls": 1,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 1053,
+          "tokens": 31339,
+          "calls": 42,
+          "auroc": 1,
+          "aurocUtility": 1,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 3
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 1278,
+          "tokens": 2047,
+          "calls": 1,
+          "auroc": 0.9743589743589743,
+          "aurocUtility": 0.9743589743589743,
+          "top8": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 5,
+            "size": 8
+          },
+          "threshold": {
+            "required": 2,
+            "obsolete": 0,
+            "irrelevant": 2,
+            "size": 5
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    },
+    {
+      "dataset": "implicit",
+      "session": "daily-chat",
+      "turn": "close",
+      "kind": "smalltalk",
+      "poolSize": 40,
+      "positives": 0,
+      "requiredGroups": 0,
+      "recall": {
+        "groups": 0,
+        "lexical": {
+          "at10": 0,
+          "at20": 0,
+          "at40": 0
+        }
+      },
+      "selectors": {
+        "random": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "bm25": {
+          "ms": 0,
+          "tokens": 0,
+          "calls": 0,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-compound": {
+          "ms": 316,
+          "tokens": 6782,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline-index": {
+          "ms": 483,
+          "tokens": 12104,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-inline": {
+          "ms": 359,
+          "tokens": 13094,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-rubric": {
+          "ms": 368,
+          "tokens": 8246,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "jev-single": {
+          "ms": 944,
+          "tokens": 29608,
+          "calls": 40,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        },
+        "llm-judge": {
+          "ms": 949,
+          "tokens": 1973,
+          "calls": 1,
+          "auroc": null,
+          "aurocUtility": null,
+          "top8": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 8,
+            "size": 8
+          },
+          "threshold": {
+            "required": 0,
+            "obsolete": 0,
+            "irrelevant": 0,
+            "size": 0
+          },
+          "obsoleteNeeded": []
+        }
+      }
+    }
+  ]
+}

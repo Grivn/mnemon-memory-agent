@@ -1,0 +1,26 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{What consolidation adds}, paired on the same questions: accuracy (\%; BEAM: rubric score) of \sys{} without and with consolidation under the gpt-4.1-mini / DeepSeek judges, the paired difference with its 95\% interval under each judge, cost per question relative to the version without consolidation, and consolidation's one-time cost per memory in dollars (a conversation, a \lme{} history, a HaluMem user). The runs without consolidation are the registered ones. }
+\label{tab:consolidation}
+\setlength{\tabcolsep}{3.4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l r cc cc cc@{}}
+\toprule
+& & \multicolumn{2}{c}{accuracy (mini / DeepSeek)} & \multicolumn{2}{c}{paired difference [95\% interval]} & cost & write \\
+\cmidrule(lr){3-4}\cmidrule(lr){5-6}
+benchmark & $n$ & w/o cons. & \sys{} & gpt-4.1-mini judge & DeepSeek judge & $\times$ & \$/memory \\
+\midrule
+\multicolumn{8}{@{}l}{\textit{Standard setting: gpt-4.1-mini answers and plans}} \\
+LoCoMo & 1,540 & 89.2 / 88.8 & 91.7 / 91.4 & +2.5 [+1.1, +3.9] & +2.6 [+1.2, +4.0] & 1.37 & 0.013 \\
+\lme & 500 & 79.4 / 80.2 & 83.8 / 85.4 & +4.4 [+0.7, +8.1] & +5.2 [+1.5, +8.9] & 1.34 & 0.017 \\
+HaluMem & 3,467 & 71.5 / 67.1 & 73.3 / 65.8 & +1.8 [+0.4, +3.3] & $-$1.3 [$-$2.8, +0.2] & 1.34 & 0.089 \\
+BEAM-100K & 398 & 58.1 / 52.8 & 64.3 / 60.3 & +6.2 [+2.7, +9.8] & +7.6 [+4.5, +10.6] & 1.20 & 0.012 \\
+BEAM-10M & 200 & 45.2 / 42.9 & 51.2 / 48.8 & +5.9 [+1.3, +10.6] & +5.9 [+1.6, +10.2] & 1.17 & 1.619 \\
+\midrule
+\multicolumn{8}{@{}l}{\textit{Reasoning setting: DeepSeek-V4.1-Flash answers with thinking}} \\
+LoCoMo & 1,539 & 91.0 / 90.3 & 92.8 / 92.2 & +1.8 [+0.6, +3.0] & +1.9 [+0.7, +3.1] & 1.32 & 0.013 \\
+\lme & 500 & 88.4 / 90.4 & 93.4 / 94.4 & +5.0 [+2.3, +7.7] & +4.0 [+1.5, +6.5] & 1.31 & 0.017 \\
+\bottomrule
+\end{tabular}}
+\end{gentable}

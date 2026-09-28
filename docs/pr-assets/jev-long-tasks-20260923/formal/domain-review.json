@@ -1,0 +1,572 @@
+{
+  "method": "Post-hoc bounded VM probes; original frozen grades unchanged. Core backup comparison excludes added top-level metadata and object-key order.",
+  "reviews": [
+    {
+      "run": "project-r1-all-candidates",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "capacity",
+            "feeCents",
+            "registrations"
+          ],
+          "publicRoster": [
+            {
+              "name": "甲",
+              "emailMasked": "a*@example.test",
+              "statusText": "已确认"
+            }
+          ],
+          "csv": "id,name,email,consent,createdAt,status\na,甲,a@example.test,true,1,confirmed\n",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "error": "TypeError: 隐私同意必须是布尔值 true（不得默认勾选）"
+      },
+      "repeatedSameId": {
+        "error": "TypeError: 报名编号已存在：a"
+      },
+      "publicRoster": {
+        "result": [
+          {
+            "name": "甲",
+            "emailMasked": "a*@example.test",
+            "statusText": "已确认"
+          }
+        ]
+      },
+      "csv": {
+        "result": "id,name,email,consent,createdAt,status\na,甲,a@example.test,true,1,confirmed\n"
+      },
+      "quotedName": {
+        "result": "id,name,email,consent,createdAt,status\na,\"甲,\"\"乙\"\"\",a@example.test,true,1,confirmed\n"
+      },
+      "backup": {
+        "result": {
+          "before": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "after": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "rawEquality": true,
+          "coreEquality": true
+        }
+      }
+    },
+    {
+      "run": "project-r1-lexical-maintained",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "capacity",
+            "feeCents",
+            "registrations"
+          ],
+          "publicRoster": [
+            {
+              "name": "甲"
+            }
+          ],
+          "csv": "编号,姓名,状态,候补位置,报名序号,费用分\r\na,甲,已确认,,2,1800",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "error": "Error: 未同意隐私条款，无法报名"
+      },
+      "repeatedSameId": {
+        "result": {
+          "capacity": 1,
+          "feeCents": 1800,
+          "registrations": [
+            {
+              "id": "a",
+              "name": "甲",
+              "email": "a@example.test",
+              "consent": true,
+              "createdAt": 2,
+              "status": "confirmed"
+            }
+          ]
+        }
+      },
+      "publicRoster": {
+        "result": [
+          {
+            "name": "甲"
+          }
+        ]
+      },
+      "csv": {
+        "result": "编号,姓名,状态,候补位置,报名序号,费用分\r\na,甲,已确认,,2,1800"
+      },
+      "quotedName": {
+        "result": "编号,姓名,状态,候补位置,报名序号,费用分\r\na,\"甲,\"\"乙\"\"\",已确认,,2,1800"
+      },
+      "backup": {
+        "result": {
+          "before": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 2,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "after": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 2,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "rawEquality": true,
+          "coreEquality": true
+        }
+      }
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "capacity",
+            "feeCents",
+            "registrations"
+          ],
+          "publicRoster": [
+            {
+              "position": 1,
+              "name": "甲"
+            }
+          ],
+          "csv": "序号,姓名,状态\r\n1,甲,已确认\r\n",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "error": "RegistrationError: 未同意隐私条款，无法报名。"
+      },
+      "repeatedSameId": {
+        "result": {
+          "capacity": 1,
+          "feeCents": 1800,
+          "registrations": [
+            {
+              "id": "a",
+              "name": "甲",
+              "email": "a@example.test",
+              "consent": true,
+              "createdAt": 1,
+              "status": "confirmed"
+            }
+          ]
+        }
+      },
+      "publicRoster": {
+        "result": [
+          {
+            "position": 1,
+            "name": "甲"
+          }
+        ]
+      },
+      "csv": {
+        "result": "序号,姓名,状态\r\n1,甲,已确认\r\n"
+      },
+      "quotedName": {
+        "error": "RegistrationError: 姓名必须是最多 80 个字符的文本，且不能只包含空白。"
+      },
+      "backup": {
+        "result": {
+          "before": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "after": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ],
+            "fromVersion": 2,
+            "migrated": false
+          },
+          "rawEquality": false,
+          "coreEquality": true
+        }
+      }
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "ok",
+            "error",
+            "duplicate",
+            "registration",
+            "waitlistPosition",
+            "waitlistSize",
+            "state"
+          ],
+          "publicRoster": [
+            {
+              "name": "甲",
+              "status": "confirmed",
+              "createdAt": 1
+            }
+          ],
+          "csv": "姓名,状态,报名序号\r\n甲,confirmed,1\r\n",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "result": {
+          "before": {
+            "capacity": 4,
+            "feeCents": 1800,
+            "registrations": []
+          },
+          "result": {
+            "ok": false,
+            "error": "未同意隐私条款，不能报名。",
+            "state": {
+              "capacity": 4,
+              "feeCents": 1800,
+              "registrations": []
+            },
+            "registration": null,
+            "promoted": []
+          }
+        }
+      },
+      "repeatedSameId": {
+        "result": {
+          "ok": false,
+          "error": "状态不合法：状态缺少 capacity。",
+          "state": {
+            "capacity": 4,
+            "feeCents": 1800,
+            "registrations": []
+          },
+          "registration": null,
+          "promoted": []
+        }
+      },
+      "publicRoster": {
+        "result": []
+      },
+      "csv": {
+        "error": "TypeError: toCSV：状态缺少 capacity。"
+      },
+      "quotedName": {
+        "error": "TypeError: toCSV：状态缺少 capacity。"
+      },
+      "backup": {
+        "error": "TypeError: exportState：状态缺少 capacity。"
+      }
+    },
+    {
+      "run": "project-r2-lexical-maintained",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "capacity",
+            "feeCents",
+            "registrations"
+          ],
+          "publicRoster": [
+            {
+              "id": "a",
+              "name": "甲",
+              "status": "confirmed",
+              "createdAt": 1
+            }
+          ],
+          "csv": "id,name,email,status,createdAt\r\na,甲,a@example.test,confirmed,1\r\n",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "error": "ValidationError: 未同意隐私条款，无法报名"
+      },
+      "repeatedSameId": {
+        "result": {
+          "capacity": 1,
+          "feeCents": 1800,
+          "registrations": [
+            {
+              "id": "a",
+              "name": "甲",
+              "email": "a@example.test",
+              "consent": true,
+              "createdAt": 1,
+              "status": "confirmed"
+            }
+          ]
+        }
+      },
+      "publicRoster": {
+        "result": [
+          {
+            "id": "a",
+            "name": "甲",
+            "status": "confirmed",
+            "createdAt": 1
+          }
+        ]
+      },
+      "csv": {
+        "result": "id,name,email,status,createdAt\r\na,甲,a@example.test,confirmed,1\r\n"
+      },
+      "quotedName": {
+        "result": "id,name,email,status,createdAt\r\na,\"甲,\"\"乙\"\"\",a@example.test,confirmed,1\r\n"
+      },
+      "backup": {
+        "result": {
+          "before": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "after": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "rawEquality": true,
+          "coreEquality": true
+        }
+      }
+    },
+    {
+      "run": "project-r2-all-candidates",
+      "returnShapeAndCore": {
+        "result": {
+          "registrationReturnKeys": [
+            "capacity",
+            "feeCents",
+            "registrations",
+            "ok",
+            "errors",
+            "registration",
+            "changed",
+            "promoted",
+            "promotedIds",
+            "promotedId",
+            "cancelledStatus",
+            "duplicate"
+          ],
+          "publicRoster": [
+            {
+              "id": "a",
+              "name": "甲"
+            }
+          ],
+          "csv": "序号,ID,姓名,邮箱,隐私同意,创建序号,状态\r\n1,a,甲,a@example.test,是,1,已确认\r\n",
+          "repeatedCancelPreservesCore": true,
+          "backupPreservesCoreAfterExplicitUnwrap": true
+        }
+      },
+      "invalidConsentResult": {
+        "result": {
+          "before": {
+            "capacity": 4,
+            "feeCents": 1800,
+            "registrations": []
+          },
+          "result": {
+            "capacity": 4,
+            "feeCents": 1800,
+            "registrations": [],
+            "ok": false,
+            "errors": [
+              "需先同意隐私条款"
+            ],
+            "registration": null,
+            "changed": false,
+            "promoted": false,
+            "promotedIds": [],
+            "promotedId": null,
+            "cancelledStatus": null,
+            "duplicate": null
+          }
+        }
+      },
+      "repeatedSameId": {
+        "result": {
+          "capacity": 1,
+          "feeCents": 1800,
+          "registrations": [
+            {
+              "id": "a",
+              "name": "甲",
+              "email": "a@example.test",
+              "consent": true,
+              "createdAt": 1,
+              "status": "confirmed"
+            }
+          ],
+          "ok": true,
+          "errors": [],
+          "registration": {
+            "id": "a",
+            "name": "甲",
+            "email": "a@example.test",
+            "consent": true,
+            "createdAt": 1,
+            "status": "confirmed"
+          },
+          "changed": false,
+          "promoted": false,
+          "promotedIds": [],
+          "promotedId": null,
+          "cancelledStatus": null,
+          "duplicate": "id"
+        }
+      },
+      "publicRoster": {
+        "result": [
+          {
+            "id": "a",
+            "name": "甲"
+          }
+        ]
+      },
+      "csv": {
+        "result": "序号,ID,姓名,邮箱,隐私同意,创建序号,状态\r\n1,a,甲,a@example.test,是,1,已确认\r\n"
+      },
+      "quotedName": {
+        "result": "序号,ID,姓名,邮箱,隐私同意,创建序号,状态\r\n1,a,\"甲,\"\"乙\"\"\",a@example.test,是,1,已确认\r\n"
+      },
+      "backup": {
+        "result": {
+          "before": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ],
+            "ok": true,
+            "errors": [],
+            "registration": {
+              "id": "a",
+              "name": "甲",
+              "email": "a@example.test",
+              "consent": true,
+              "createdAt": 1,
+              "status": "confirmed"
+            },
+            "changed": true,
+            "promoted": false,
+            "promotedIds": [],
+            "promotedId": null,
+            "cancelledStatus": null,
+            "duplicate": null
+          },
+          "after": {
+            "capacity": 1,
+            "feeCents": 1800,
+            "registrations": [
+              {
+                "id": "a",
+                "name": "甲",
+                "email": "a@example.test",
+                "consent": true,
+                "createdAt": 1,
+                "status": "confirmed"
+              }
+            ]
+          },
+          "rawEquality": false,
+          "coreEquality": true
+        }
+      }
+    }
+  ]
+}

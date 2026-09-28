@@ -1,0 +1,16 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Budgets for rules: \sys{} w/o consolidation against S6}, both with DeepSeek answering, planning and judging, run side by side. Pooled over both benchmarks (2,037 questions) the paired difference is 0.00 points, 95\% interval [$-$1.04, +1.04], above the pre-registered margin of $-2$.}
+\label{tab:simple}
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}lccl cccc@{}}
+\toprule
+& S6 & simple & paired difference & cost ($10^{-3}$\,\$) & p50 (s) & View records & evidence all shown (\%) \\
+\midrule
+LoCoMo (1,537) & 90.2 & 90.4 & +0.2 (+45/$-$42, $p$\,=\,0.83) & 1.46 $\to$ 1.79 & 3.9 $\to$ 4.5 & 7.2 $\to$ 15.9 & 84.6 $\to$ 87.3 \\
+\lme{} (500) & 91.0 & 90.4 & $-$0.6 (+13/$-$16, $p$\,=\,0.71) & 1.59 $\to$ 1.94 & 6.2 $\to$ 6.6 & 6.7 $\to$ 15.7 & 77.0 $\to$ 81.3 \\
+\bottomrule
+\end{tabular}}
+\end{gentable}

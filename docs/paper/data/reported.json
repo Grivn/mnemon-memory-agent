@@ -1,0 +1,191 @@
+{
+ "_about": "Numbers the paper takes from our earlier reports (docs/reports/*.md, computed there from the run records) and from published sources. Numbers computed from run records by scripts/collect.py are in results.json.",
+ "full_context_tokens": {
+  "_source": "docs/reports/phase03-gpt41mini-20260926.md section 8 (measured full-context prompts)",
+  "locomo": 21613, "lme": 105134
+ },
+ "omnimemeval": {
+  "_source": "OmniMemEval (MemTensor) user-memory results: gpt-4.1-mini answering, gpt-4o-mini judging, LoCoMo 1,540 questions and LongMemEval-S cleaned 500; context = tokens sent to the answering model per question (docs/reports/phase03-gpt41mini-20260926.md sections 7.1 and 8)",
+  "systems": {
+   "MemOS":       {"locomo": 88.83, "lme": 89.20, "ctx_locomo": 5400,  "ctx_lme": 4151},
+   "Cognee":      {"locomo": 83.48, "lme": 51.80, "ctx_locomo": 32532, "ctx_lme": 10305},
+   "EverOS":      {"locomo": 82.75, "lme": 80.40, "ctx_locomo": 8559,  "ctx_lme": 12379},
+   "Hindsight":   {"locomo": 81.99, "lme": 72.20, "ctx_locomo": 24683, "ctx_lme": 29755},
+   "Mem0":        {"locomo": 77.68, "lme": 56.00, "ctx_locomo": 17395, "ctx_lme": 856},
+   "Letta":       {"locomo": 77.12, "lme": 77.67, "ctx_locomo": 14188, "ctx_lme": 49431},
+   "MemMachine":  {"locomo": 73.90, "lme": 63.60, "ctx_locomo": 2577,  "ctx_lme": 2803},
+   "mem9":        {"locomo": 73.64, "lme": 78.00, "ctx_locomo": 1597,  "ctx_lme": 3805},
+   "Supermemory": {"locomo": 73.53, "lme": 66.07, "ctx_locomo": 15238, "ctx_lme": 6635},
+   "MemoryLake":  {"locomo": 72.49, "lme": null,  "ctx_locomo": 5202,  "ctx_lme": null},
+   "Viking Memory": {"locomo": 69.33, "lme": 61.07, "ctx_locomo": 5964, "ctx_lme": 2291},
+   "Zep":         {"locomo": 63.83, "lme": 79.80, "ctx_locomo": 1862,  "ctx_lme": 117106},
+   "Memori":      {"locomo": 41.34, "lme": 20.80, "ctx_locomo": 8139,  "ctx_lme": 2779},
+   "Backboard.io": {"locomo": 22.40, "lme": null, "ctx_locomo": 1198,  "ctx_lme": null}
+  },
+  "locomo_categories": {
+   "_order": ["single-hop", "multi-hop", "temporal", "open-domain", "overall"],
+   "MemOS": [92.51, 88.65, 85.05, 69.79, 88.83],
+   "EverOS": [86.80, 77.78, 84.11, 57.29, 82.75],
+   "Hindsight": [88.98, 78.84, 73.52, 58.33, 81.99]
+  },
+  "lme_categories": {
+   "_order": ["single-session-user", "single-session-assistant", "single-session-preference", "temporal-reasoning", "multi-session", "knowledge-update", "overall"],
+   "MemOS": [100, 100, 100, 89.47, 78.95, 84.62, 89.20],
+   "EverOS": [91.43, 89.29, 96.67, 81.95, 66.17, 79.49, 80.40],
+   "Zep": [94.29, 100, 86.67, 74.44, 67.67, 79.49, 79.80]
+  },
+  "beam": {
+   "_source": "OmniMemEval BEAM results (100K and 10M tiers), nugget score, gpt-4.1-mini answering",
+   "_order": ["100K", "10M"],
+   "MemOS": [66.87, 56.75], "Mem0": [70.41, 43.33], "Zep": [68.70, 56.11], "Supermemory": [65.98, 52.49],
+   "Viking Memory": [70.76, 58.14], "Cognee": [59.30, 56.02], "Letta": [69.22, 52.30], "Hindsight": [70.22, 59.75],
+   "EverOS": [58.64, 47.73], "MemMachine": [64.80, 51.90], "mem9": [65.75, 57.30]
+  },
+  "halumem": {
+   "_source": "OmniMemEval HaluMem-Medium question answering, accuracy (correct share), gpt-4.1-mini answering",
+   "Mem0": 73.64, "Zep": 81.71, "Supermemory": 52.61, "Viking Memory": 77.39, "Cognee": 72.60, "Letta": 85.43,
+   "Hindsight": 83.99, "Memori": 49.38, "EverOS": 88.66, "MemMachine": 47.02, "mem9": 72.80, "MemOS": 80.91
+  }
+ },
+ "self_reported_gpt41mini": {
+  "_source": "papers' own evaluations with gpt-4.1-mini answering (docs/reports/phase03-gpt41mini-20260926.md section 7.2)",
+  "_columns": ["locomo", "lme", "judge", "note"],
+  "EverMemOS": [93.05, 83.00, "gpt-4o-mini + two auxiliary judges", "OmniMemEval rerun 82.75 / 80.40"],
+  "H-Mem": [92.01, 89.20, "not stated", "LME answer model inferred from the table"],
+  "MemMachine": [91.69, null, "gpt-4o-mini", "OmniMemEval rerun 73.90 / 63.60"],
+  "HyMem": [89.55, 78.80, "gpt-4.1-mini", ""],
+  "LycheeMemory V2": [89.22, 92.20, "gpt-4o-mini", ""],
+  "MemR3": [86.75, null, "GPT-4.1", ""],
+  "MIRIX": [85.38, null, "GPT-4.1", ""],
+  "EMem-G": [85.3, 84.9, "gpt-4o-mini", "LME on 470 questions"],
+  "LeanMem": [84.87, 91.80, "gpt-4.1-mini", ""],
+  "Memori": [81.95, null, "gpt-4.1-mini", "OmniMemEval rerun 41.34 / 20.80"],
+  "Nemori": [80.8, 74.6, "gpt-4o-mini", ""],
+  "SimpleMem": [null, 75.8, "gpt-4.1-mini", "question-weighted; the paper prints the unweighted mean"],
+  "SwiftMem": [72.5, 66.7, "not stated", ""]
+ },
+ "best_reported": {
+  "_source": "each project's own best published LoCoMo / LongMemEval-S accuracy, any answer model and judge (docs/reports/phase03-gpt41mini-20260926.md section 7.3, checked 2026-09-26)",
+  "_columns": ["locomo", "lme", "answer model / judge", "method"],
+  "Zep / Graphiti": [94.7, 90.2, "gpt-5.4 (medium reasoning) / gpt-5.4", "temporal knowledge graph + reranking"],
+  "EverMemOS": [93.05, 83.00, "gpt-4.1-mini / three judges averaged", "MemCell to MemScene"],
+  "Mem0": [92.5, 94.4, "GPT-5 / GPT-5", "LLM-extracted facts, top 200 (about 7k tokens)"],
+  "MemU": [92.09, null, "not stated (early version)", ""],
+  "Hindsight": [92.0, 94.6, "undisclosed (paper: Gemini-3 Pro 89.6 / 91.4)", "four memory networks, 36-44k context"],
+  "MemMachine": [91.69, 93.0, "gpt-4.1-mini; LME gpt-5-mini / gpt-4o-mini", "raw episodes indexed by sentence"],
+  "MemOS": [88.83, 89.20, "gpt-4.1-mini / gpt-4o-mini (OmniMemEval)", "MemCube tree / graph memory"],
+  "Memori": [87.0, null, "gpt-4.1-mini / gpt-4.1-mini", "LLM-extracted triples + summaries"],
+  "mem9": [86.85, null, "qwen3.6-plus / same", "keyword + vector retrieval"],
+  "MIRIX": [85.38, null, "gpt-4.1-mini / GPT-4.1", "multi-agent, six memory types"],
+  "Supermemory": [null, 85.2, "gemini-3-pro", ""],
+  "SimpleMem": [null, 84.4, "GPT-4.1 / gpt-4.1-mini", "atomic memory units"],
+  "Nemori": [83.05, 74.6, "gpt-4.1-mini", "episodic narratives + distilled facts"],
+  "OpenViking": [82.86, null, "Doubao 2.0 Pro / Doubao", "file-system context store, three tiers"],
+  "Memobase": [75.78, null, "not stated", "user profile + event timeline"],
+  "Letta": [74.0, null, "GPT-4o mini / gpt-4.1", "agent searches raw conversation files"],
+  "LightMem": [72.99, 73.20, "gpt-4o-mini; LME GLM-4.6", "pre-compression + offline update"]
+ },
+ "deepseek_vs_mini": {
+  "_source": "docs/reports/phase03-gpt41mini-20260926.md section 6 (S6 configuration, DeepSeek judge)",
+  "same_config_accuracy": {"locomo": {"deepseek": 89.5, "mini": 89.5, "only_deepseek": 66, "only_mini": 66},
+                           "lme": {"deepseek": 90.0, "mini": 81.2, "only_deepseek": 60, "only_mini": 16}},
+  "evidence_in_view": {"lme": {"deepseek": 85.9, "mini": 85.3}, "locomo": {"deepseek": 90.6, "mini": 90.8}},
+  "lme_all_evidence_shown": {"questions": 340, "deepseek": 94.1, "mini": 88.2},
+  "thinking_subset_lme230": {"deepseek_thinking": 93.0, "deepseek_no_thinking": 84.8, "mini": 80.9},
+  "locomo583_no_thinking": {"mini": 92.3, "deepseek_no_thinking": 86.8},
+  "error_decomposition_pct_of_all": {
+   "_columns": ["all evidence shown, still wrong", "evidence partly missing", "no evidence annotated"],
+   "lme_mini": [9.0, 7.4, 2.4], "lme_deepseek": [4.4, 5.2, 0.4], "locomo_mini": [6.2, 4.2, 0.1], "locomo_deepseek": [5.7, 4.8, 0.1]
+  },
+  "coverage_by_view_size": {"_k": [4, 8, 16, 24], "lme": [68.9, 78.1, 83.6, 85.3], "locomo": [79.8, 83.5, 86.8, 88.0]},
+  "preference_lme30": {"S0": 22, "S4h": 16, "S6": 15, "S6_all_evidence_shown": 18, "S6_correct_given_shown": 10, "deepseek_correct_given_shown": 17}
+ },
+ "reader_combinations": {
+  "_source": "docs/reports/phase03-view-rules-20260926.md appendix (planner / fast x thinking on / off, DeepSeek answering and judging; LME 230 stratified, LoCoMo 583 = four whole conversations)",
+  "_columns": ["accuracy", "p50 s", "p90 s", "View p50 s", "$ per 1k questions (off-peak)"],
+  "lme": {"planner+thinking": [93.0, 6.8, 10.2, 4.8, 1.612], "fast+thinking": [89.6, 5.3, 7.9, 3.3, 1.237],
+          "planner, no thinking": [84.8, 7.2, 11.4, 6.0, 1.457], "fast, no thinking": [82.2, 5.6, 7.9, 4.0, 1.129]},
+  "locomo": {"planner+thinking": [90.7, 4.1, 8.4, 2.3, 1.482], "fast+thinking": [89.0, 3.0, 7.8, 1.3, 1.233],
+             "planner, no thinking": [86.8, 4.0, 6.1, 3.0, 1.244], "fast, no thinking": [86.3, 2.5, 4.2, 1.5, 0.978]},
+  "jev_share_of_cost": [57, 70]
+ },
+ "view_rules": {
+  "_source": "docs/reports/phase03-view-rules-20260926.md and preregistration amendments 5-8 (DeepSeek S5h run, replays)",
+  "diagnosis_locomo": {"wrong": 160, "all_evidence_shown": 79, "evidence_missing": 80,
+                       "missing_stage": {"never pooled": 80, "judged not shown": 67, "pooled not judged": 13},
+                       "sure": {"questions": 1221, "accuracy": 93.9, "all_evidence": 89.5},
+                       "unsure": {"questions": 313, "accuracy": 72.5, "all_evidence": 56.2}},
+  "gold_share_by_rank_locomo": {"_ranks": ["1", "2", "3", "9-16 each"], "sure": [87, 15, 6, 0.4], "unsure": [51, 32, 17, "2-6"]},
+  "replays": {
+   "unsure fill (adopted)": {"locomo": "+21/-7, p=0.013", "lme": "+5/-2"},
+   "unsure fill with 0.1 floor": {"locomo": "+6/-5"},
+   "widen sure questions": {"locomo": "+18/-24"},
+   "utility rule, raw scores, lambda 0.01": {"locomo": "+26/-30, p=0.69", "lme": "+10/-8", "vs unsure fill locomo": "+20/-38, p=0.025"},
+   "utility rule, calibrated": {"locomo": "+20/-25, p=0.55", "lme": "+7/-19, p=0.029", "vs unsure fill": "locomo +20/-36 p=0.044; lme +6/-20 p=0.009"}
+  },
+  "calibration_logloss": {"fit lme -> locomo": [0.138, 0.094], "fit locomo -> lme": [0.153, 0.133]},
+  "s6_vs_s5h_real": {"locomo": "89.4 vs 89.5, +39/-41, p=0.91", "lme": "90.0 vs 91.8, +10/-19, p=0.14",
+                     "untouched questions (run noise)": {"locomo": "+16/-24", "lme": "+7/-14"}},
+  "loop_costs": {"jev_tokens_per_extra_round": [5000, 7000], "rewrite_success": [12, 13], "page_success": [20, 25]}
+ },
+ "negative_results_phase3": {
+  "_source": "preregistration amendments 1-4 (gpt-4.1-mini answering; LME 500, LoCoMo dev 150 unless noted)",
+  "S1 pool cap + neighbours": {"lme": "77.2 -> 77.8 (p=0.77)", "locomo_dev": "84.0 -> 78.7 (temporal -14.5, p=0.01)"},
+  "S2' conditional gather": {"lme_245_deepseek_judge": "80.0 -> 72.7, stopped"},
+  "S2'' one-sentence plan": {"lme": "77.8 vs 77.2 / 74.6 (rerun)", "locomo_dev": "80.7 vs 84.0 / 85.3"},
+  "S3' dates first": {"lme": "75.2 vs 77.2 / 74.6", "locomo_dev": "85.3 vs 84.0 / 85.3"},
+  "relative dates annotation (replay)": {"lme": "+1.4 overall, temporal +5 (+17/-3, p=0.003)", "locomo": "-0.5 (+15/-23, p=0.26)"},
+  "word-level keyword groups (offline)": {"pool evidence": "at most +0.8 points for each of 7 variants"},
+  "hybrid retrieval (offline, S0 cues)": {"locomo pool evidence": "83.6 -> 89.4"},
+  "run_to_run_noise_S0_vs_S0r": {"lme": [77.2, 74.6], "locomo_dev": [84.0, 85.3]}
+ },
+ "no_llm_cues": {
+  "_source": "docs/reports/phase03-view-rules-20260926.md appendix (offline first-round hybrid retrieval; share of questions whose evidence reaches the 48-item pool)",
+  "_columns": ["locomo (1,530)", "lme (470)", "searches per question"],
+  "LLM cues (current)": [90.6, 93.3, "5"], "question only": [79.3, 85.8, "1"], "question + word pairs": [85.3, 85.0, "13-17"],
+  "question + PRF": [85.9, 88.8, "3"], "question + pairs + PRF": [87.2, 85.8, "15-19"], "LLM cues + PRF": [91.2, 93.3, "7"], "LLM cues + pairs": [88.5, 88.9, "17-21"]
+ },
+ "fast_vs_planner_deepseek": {
+  "_source": "docs/reports/phase03-view-rules-20260926.md appendix (same subsets as reader_combinations)",
+  "lme": {"planner": 93.0, "fast": 89.6, "flips": "+3/-11, p=0.057", "view_p50": [4.8, 3.3], "jev_tokens": [26700, 20700], "evidence_in_view": [82.2, 79.5]},
+  "locomo": {"planner": 90.7, "fast": 89.0, "flips": "+15/-25, p=0.15", "view_p50": [2.3, 1.3], "jev_tokens": [22000, 17400], "evidence_in_view": [89.2, 85.5]}
+ },
+ "phase1_raw_vs_notes": {
+  "_source": "docs/reports/phase01-20260925.md (DeepSeek answering; notes written by DeepSeek at write time; same journal Source, ~600-character chunks)",
+  "accuracy": {"locomo": {"raw": 78.0, "notes": 84.7, "diff_ci": [-6.8, -8.7, -4.8]}, "lme": {"raw": 76.8, "notes": 82.0, "diff_ci": [-5.2, -9.0, -1.4]}},
+  "evidence_in_pool": {"locomo": {"raw": 97.5, "notes": 96.5}, "lme": {"raw": 98, "notes": 98}},
+  "judged_needed": {"locomo": {"raw": 70.8, "notes": 81.5}, "lme": {"raw": 63.0, "notes": 68.8}},
+  "shown_then_correct_raw": 96,
+  "view_budget_used_pct": [5, 9],
+  "cost_per_question": {"lme": {"raw": 0.0012, "notes": 0.035}, "locomo": {"raw": 0.00117, "notes": 0.00113}},
+  "notes_never_shown_pct_lme": 99.4,
+  "breakeven_questions_per_memory": {"locomo": 90, "lme": 670}
+ },
+ "phase2_fill": {
+  "_source": "docs/reports/phase02-20260925.md (DeepSeek answering; full sets without the development questions)",
+  "accuracy": {"locomo": {"raw": [78.3, 88.2], "notes": [84.6, 86.8]}, "lme": {"raw": [77.0, 84.1], "notes": [82.3, 87.3]}},
+  "h1_raw_minus_notes_with_fill": {"locomo": [1.4, -0.2, 3.0], "lme": [-3.2, -6.8, 0.5]},
+  "raw_fill_vs_phase1_notes": {"locomo": [3.6, 1.6, 5.9], "lme": [1.8, -2.0, 5.7], "cost_ratio": 29},
+  "evidence_shown": {"locomo": [70, 87], "lme": [61, 81]},
+  "not_adopted_dev": {"intent-aware planning and judging": -3.8, "focused judging": -2.9, "read-time notes": 0.0}
+ },
+ "bench_full": {
+  "_source": "docs/reports/bench-full-20260924.md (notes memory, DeepSeek flash thinking answering, DeepSeek judge)",
+  "code_changes": {"dsh_kernel_lines": 9, "dsh_kernel_files": 1, "host_lines": 106, "host_files": 5, "source_plugins_changed": 0, "product_lines": 3000},
+  "bm25_replica_gap": {"locomo": -9.3, "lme": -23.2},
+  "main_model_tokens": {"jev": 650, "full_context_locomo": 22000, "full_context_lme": 105000, "main_only_locomo": 76000, "main_only_lme": 53000},
+  "full_context_accuracy": {"locomo": 92.5, "locomo_revised": 95.7, "lme": 95.2},
+  "full_context_8x": {"accuracy": [95, 85], "p50_s": [2.7, 18.7], "cost": [0.007, 0.12], "tokens_8x": 820000},
+  "judge_agreement": {"locomo": [99.1, 0.96], "lme": [99.5, 0.99]}
+ },
+ "cue_recall": {
+  "_source": "docs/reports/cue-recall-20260924.md (notes memory, DeepSeek answering)",
+  "jev_input_per_question": {"cue": {"locomo single": 19000, "lme": 20000, "locomo ten merged": 19000, "lme 8x": 21000},
+                             "full scan": {"locomo single": 32000, "lme": 79000, "locomo ten merged": 179000}},
+  "history_scaling_lme60": {"_x": [1, 2, 4], "cue": [81.7, 78.3, 75.0], "full_context": [95.0, 90.0, 90.0],
+                            "pool_evidence": [100.0, 99.2, 96.4], "full_context_tokens": [106000, 208000, 416000]},
+  "cost_per_question": {"locomo": {"cue": 0.0011, "main_only": 0.0038, "full_scan": 0.0016}, "lme": {"cue": 0.0012, "full_scan": 0.0037, "full_context": 0.0150}},
+  "pool_coverage_top48_bm25": {"_memory": ["LoCoMo single (83)", "LoCoMo ten merged (805)", "LME 1x (300)", "LME 2x (597)", "LME 4x (1,193)", "LME 8x (2,384)", "LME 32x (9,509)"],
+                               "top48": [99.3, 97.4, 96.3, 94.7, 91.2, 86.7, 78.9]}
+ }
+}

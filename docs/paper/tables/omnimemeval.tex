@@ -1,0 +1,31 @@
+\begin{gentable}[!htb]
+\centering
+\small
+\caption{\sys{} and the 14 systems re-evaluated by OmniMemEval~\citep{omnimemeval2026}, all with gpt-4.1-mini answering: accuracy (\%), context sent to the answering model per question (tokens), and effective cost index (ECI, \cref{eq:eci}; lower is better). OmniMemEval grades with gpt-4o-mini and we with gpt-4.1-mini. Under DeepSeek as judge, \sys{} scores 91.4\% and 85.4\%. Best per column in bold.}
+\label{tab:omnimemeval}
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}l ccc ccc@{}}
+\toprule
+& \multicolumn{3}{c}{LoCoMo (1,540 questions)} & \multicolumn{3}{c}{\lme{} (500 questions)} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+System & accuracy & context & ECI & accuracy & context & ECI \\
+\midrule
+\textbf{\sys{}} & \best{91.7} & 3.8k & \best{0.259} & 83.8 & 3.8k & 0.198 \\
+\midrule
+MemOS & 88.83 & 5.4k & 0.362 & \best{89.2} & 4.2k & \best{0.147} \\
+Cognee & 83.48 & 32.5k & 1.670 & 51.8 & 10.3k & 0.580 \\
+EverOS & 82.75 & 8.6k & 0.569 & 80.4 & 12.4k & 0.314 \\
+Hindsight & 81.99 & 24.7k & 1.322 & 72.2 & 29.8k & 0.561 \\
+Mem0 & 77.68 & 17.4k & 1.028 & 56.0 & 0.9k & 0.448 \\
+Letta & 77.12 & 14.2k & 0.885 & 77.67 & 49.4k & 0.693 \\
+MemMachine & 73.9 & 2.6k & 0.380 & 63.6 & 2.8k & 0.391 \\
+mem9 & 73.64 & 1.6k & 0.337 & 78.0 & 3.8k & 0.256 \\
+Supermemory & 73.53 & 15.2k & 0.970 & 66.07 & 6.6k & 0.402 \\
+MemoryLake & 72.49 & 5.2k & 0.516 & -- & -- & -- \\
+Viking Memory & 69.33 & 6.0k & 0.583 & 61.07 & 2.3k & 0.411 \\
+Zep & 63.83 & 1.9k & 0.448 & 79.8 & 117.1k & 1.316 \\
+Memori & 41.34 & 8.1k & 0.963 & 20.8 & 2.8k & 0.818 \\
+Backboard.io & 22.4 & 1.2k & 0.831 & -- & -- & -- \\
+\bottomrule
+\end{tabular}
+\end{gentable}

@@ -1,0 +1,4211 @@
+{
+  "verified": true,
+  "prices": {
+    "checkedOn": "2026-09-23",
+    "currency": "USD",
+    "unit": "per million tokens",
+    "deepseek": {
+      "model": "deepseek-flash",
+      "currentVersion": "DeepSeek-V4.1-Flash",
+      "offPeak": {
+        "cacheMiss": 0.15,
+        "cacheHit": 0.003,
+        "output": 0.6
+      },
+      "peak": {
+        "cacheMiss": 0.3,
+        "cacheHit": 0.006,
+        "output": 1.2
+      },
+      "source": "https://api-docs.deepseek.com/quick_start/pricing/?push_animated=1&show_loading=0&theme=light&webview_progress_bar=1",
+      "peakHours": "Weekdays 01:00–04:00 and 06:00–10:00 UTC, excluding Chinese public holidays. Archive requests are all outside those hours."
+    },
+    "jev": {
+      "observedVersion": "jev-1.13.0",
+      "input": 0.042,
+      "output": 0,
+      "source": "https://typesafe.ai/blog/introducing-system-one-models-and-jev"
+    }
+  },
+  "scope": "153 replies in nine final-v5 arms only. Uses provider-reported usage and archived DSH timestamps, including reply maintenance and initial priming. List-price estimates, not account invoices. Excludes prior development runs, UI runs, infrastructure, storage, credits, tax, and unmeasured future idle maintenance. Peak and repeated-mix projections hold token/cache usage fixed; not long-session forecasts.",
+  "mainAccounting": "DSH inputTokens is the cache-miss bucket; cacheReadTokens is disjoint. No separate cache-write usage. Thinking disabled; no extra reasoning charge is added. JEV reports input/output only and public pricing makes output free.",
+  "total": {
+    "replies": 153,
+    "mainOffPeakUsd": 0.06130027199999998,
+    "jevUsd": 0.290625342,
+    "usd": 0.351925614
+  },
+  "comparisons": [
+    {
+      "layout": "original-v5",
+      "maintainedToAllCostRatio": 2.7981793256801457,
+      "maintainedToAllPeakCostRatio": 1.4716823773801813,
+      "mainInputReduction": 0.8410771856628105,
+      "mainCostReduction": 0.8548145709197836,
+      "totalCostReductionVsOld": 0.15018608518901289,
+      "mainUsdSaved": 0.018194045999999995,
+      "jevInputBreakEvenAtMeasuredMainUsage": 433191.5714285713,
+      "jevInputReductionNeededToBreakEven": 0.6777924849298327,
+      "counterfactualWithoutBackgroundRatio": 1.5206782946337385
+    },
+    {
+      "layout": "scattered-v5",
+      "maintainedToAllCostRatio": 3.142203858906213,
+      "maintainedToAllPeakCostRatio": 1.6325841295034016,
+      "mainInputReduction": 0.86073537816727,
+      "mainCostReduction": 0.8770355998994102,
+      "totalCostReductionVsOld": 0.1806149198972855,
+      "mainUsdSaved": 0.015861479999999997,
+      "jevInputBreakEvenAtMeasuredMainUsage": 377654.2857142856,
+      "jevInputReductionNeededToBreakEven": 0.7095177074009374,
+      "counterfactualWithoutBackgroundRatio": 1.649585863284125
+    }
+  ],
+  "arms": [
+    {
+      "layout": "original-v5",
+      "mode": "all-candidates",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 136171,
+        "cacheHitTokens": 48384,
+        "inputTokens": 184555,
+        "outputTokens": 1189
+      },
+      "mainCacheHitRate": 0.26216575004741133,
+      "jev": {
+        "calls": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "stages": {
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {}
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.020425649999999997,
+          "cacheHit": 0.000145152,
+          "output": 0.0007134,
+          "total": 0.021284201999999995
+        },
+        "mainPeak": {
+          "cacheMiss": 0.04085129999999999,
+          "cacheHit": 0.000290304,
+          "output": 0.0014268,
+          "total": 0.04256840399999999
+        },
+        "jevByStage": {
+          "foreground": 0,
+          "afterReply": 0,
+          "priming": 0
+        },
+        "jevTotal": 0,
+        "totalOffPeak": 0.021284201999999995,
+        "totalPeak": 0.04256840399999999,
+        "perTurnIncludingPriming": 0.0012520118823529409,
+        "per1000TurnsRepeatingMeasuredMix": 1.252011882352941,
+        "excludingPriming": 0.021284201999999995,
+        "perTurnExcludingPriming": 0.0012520118823529409,
+        "jevShare": 0,
+        "backgroundShareOfJev": null
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:05:42.808Z",
+          "main": {
+            "cacheMissTokens": 8059,
+            "cacheHitTokens": 0,
+            "inputTokens": 8059,
+            "outputTokens": 120
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012808499999999998
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:06:16.277Z",
+          "main": {
+            "cacheMissTokens": 7970,
+            "cacheHitTokens": 8064,
+            "inputTokens": 16034,
+            "outputTokens": 63
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012574919999999998
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:06:20.965Z",
+          "main": {
+            "cacheMissTokens": 7950,
+            "cacheHitTokens": 16000,
+            "inputTokens": 23950,
+            "outputTokens": 63
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012783
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:06:30.862Z",
+          "main": {
+            "cacheMissTokens": 8059,
+            "cacheHitTokens": 0,
+            "inputTokens": 8059,
+            "outputTokens": 60
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012448499999999998
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:06:57.742Z",
+          "main": {
+            "cacheMissTokens": 7907,
+            "cacheHitTokens": 8064,
+            "inputTokens": 15971,
+            "outputTokens": 34
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012306419999999999
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:07:05.191Z",
+          "main": {
+            "cacheMissTokens": 8055,
+            "cacheHitTokens": 0,
+            "inputTokens": 8055,
+            "outputTokens": 20
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00122025
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:07:13.505Z",
+          "main": {
+            "cacheMissTokens": 7857,
+            "cacheHitTokens": 8064,
+            "inputTokens": 15921,
+            "outputTokens": 34
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.001223142
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:07:40.161Z",
+          "main": {
+            "cacheMissTokens": 8057,
+            "cacheHitTokens": 0,
+            "inputTokens": 8057,
+            "outputTokens": 63
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012463499999999998
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:07:48.339Z",
+          "main": {
+            "cacheMissTokens": 8056,
+            "cacheHitTokens": 0,
+            "inputTokens": 8056,
+            "outputTokens": 64
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012468
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:07:57.684Z",
+          "main": {
+            "cacheMissTokens": 8062,
+            "cacheHitTokens": 0,
+            "inputTokens": 8062,
+            "outputTokens": 51
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012399
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:08:26.477Z",
+          "main": {
+            "cacheMissTokens": 8065,
+            "cacheHitTokens": 0,
+            "inputTokens": 8065,
+            "outputTokens": 100
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00126975
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:08:34.587Z",
+          "main": {
+            "cacheMissTokens": 8062,
+            "cacheHitTokens": 0,
+            "inputTokens": 8062,
+            "outputTokens": 40
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012332999999999999
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:08:44.376Z",
+          "main": {
+            "cacheMissTokens": 7894,
+            "cacheHitTokens": 8064,
+            "inputTokens": 15958,
+            "outputTokens": 51
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.001238892
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:09:08.773Z",
+          "main": {
+            "cacheMissTokens": 8060,
+            "cacheHitTokens": 0,
+            "inputTokens": 8060,
+            "outputTokens": 62
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012462
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:09:16.569Z",
+          "main": {
+            "cacheMissTokens": 8060,
+            "cacheHitTokens": 0,
+            "inputTokens": 8060,
+            "outputTokens": 94
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012654
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:09:24.483Z",
+          "main": {
+            "cacheMissTokens": 7954,
+            "cacheHitTokens": 128,
+            "inputTokens": 8082,
+            "outputTokens": 262
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0013506839999999998
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:09:48.224Z",
+          "main": {
+            "cacheMissTokens": 8044,
+            "cacheHitTokens": 0,
+            "inputTokens": 8044,
+            "outputTokens": 8
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0012113999999999998
+        }
+      ]
+    },
+    {
+      "layout": "original-v5",
+      "mode": "jev-optmem",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 19326,
+        "cacheHitTokens": 10624,
+        "inputTokens": 29950,
+        "outputTokens": 1105
+      },
+      "mainCacheHitRate": 0.3547245409015025,
+      "jev": {
+        "calls": 177,
+        "inputTokens": 1583063,
+        "outputTokens": 105257,
+        "stages": {
+          "foreground": {
+            "calls": 98,
+            "inputTokens": 891465,
+            "outputTokens": 57184
+          },
+          "afterReply": {
+            "calls": 79,
+            "inputTokens": 691598,
+            "outputTokens": 48073
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 34,
+            "inputTokens": 96443,
+            "outputTokens": 15100
+          },
+          "explore": {
+            "calls": 74,
+            "inputTokens": 1002062,
+            "outputTokens": 56544
+          },
+          "cover": {
+            "calls": 34,
+            "inputTokens": 228814,
+            "outputTokens": 14484
+          },
+          "leaves": {
+            "calls": 35,
+            "inputTokens": 255744,
+            "outputTokens": 19129
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.0028989000000000003,
+          "cacheHit": 0.000031872,
+          "output": 0.000663,
+          "total": 0.0035937720000000003
+        },
+        "mainPeak": {
+          "cacheMiss": 0.0057978000000000005,
+          "cacheHit": 0.000063744,
+          "output": 0.001326,
+          "total": 0.007187544000000001
+        },
+        "jevByStage": {
+          "foreground": 0.03744153,
+          "afterReply": 0.029047116,
+          "priming": 0
+        },
+        "jevTotal": 0.06648864600000001,
+        "totalOffPeak": 0.07008241800000001,
+        "totalPeak": 0.07367619000000002,
+        "perTurnIncludingPriming": 0.0041224951764705885,
+        "per1000TurnsRepeatingMeasuredMix": 4.122495176470588,
+        "excludingPriming": 0.07008241800000001,
+        "perTurnExcludingPriming": 0.0041224951764705885,
+        "jevShare": 0.9487207761581514,
+        "backgroundShareOfJev": 0.4368733272143938
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:05:50.437Z",
+          "main": {
+            "cacheMissTokens": 1386,
+            "cacheHitTokens": 0,
+            "inputTokens": 1386,
+            "outputTokens": 122
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 56719,
+            "outputTokens": 3528
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 35031,
+            "outputTokens": 2532
+          },
+          "estimatedUsd": 0.0041346
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:06:07.338Z",
+          "main": {
+            "cacheMissTokens": 1312,
+            "cacheHitTokens": 1408,
+            "inputTokens": 2720,
+            "outputTokens": 107
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 50765,
+            "outputTokens": 3606
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 36623,
+            "outputTokens": 2694
+          },
+          "estimatedUsd": 0.0039355200000000005
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:06:27.317Z",
+          "main": {
+            "cacheMissTokens": 948,
+            "cacheHitTokens": 2816,
+            "inputTokens": 3764,
+            "outputTokens": 109
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 54080,
+            "outputTokens": 3456
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 34279,
+            "outputTokens": 2676
+          },
+          "estimatedUsd": 0.003927126
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:06:35.721Z",
+          "main": {
+            "cacheMissTokens": 1596,
+            "cacheHitTokens": 0,
+            "inputTokens": 1596,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 56418,
+            "outputTokens": 3600
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 35472,
+            "outputTokens": 2622
+          },
+          "estimatedUsd": 0.00412458
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:06:49.006Z",
+          "main": {
+            "cacheMissTokens": 1383,
+            "cacheHitTokens": 1536,
+            "inputTokens": 2919,
+            "outputTokens": 65
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 56671,
+            "outputTokens": 3924
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 36397,
+            "outputTokens": 2748
+          },
+          "estimatedUsd": 0.004159914000000001
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:07:09.301Z",
+          "main": {
+            "cacheMissTokens": 241,
+            "cacheHitTokens": 640,
+            "inputTokens": 881,
+            "outputTokens": 16
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 52339,
+            "outputTokens": 3402
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 53512,
+            "outputTokens": 3564
+          },
+          "estimatedUsd": 0.004493412
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:07:17.940Z",
+          "main": {
+            "cacheMissTokens": 673,
+            "cacheHitTokens": 896,
+            "inputTokens": 1569,
+            "outputTokens": 41
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 46354,
+            "outputTokens": 3480
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 27697,
+            "outputTokens": 2172
+          },
+          "estimatedUsd": 0.0032383800000000003
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:07:30.106Z",
+          "main": {
+            "cacheMissTokens": 1473,
+            "cacheHitTokens": 0,
+            "inputTokens": 1473,
+            "outputTokens": 74
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 53436,
+            "outputTokens": 3312
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 35383,
+            "outputTokens": 2550
+          },
+          "estimatedUsd": 0.003995748
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:07:53.123Z",
+          "main": {
+            "cacheMissTokens": 200,
+            "cacheHitTokens": 640,
+            "inputTokens": 840,
+            "outputTokens": 30
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 48105,
+            "outputTokens": 2988
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 49022,
+            "outputTokens": 3133
+          },
+          "estimatedUsd": 0.004129254000000001
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:08:02.241Z",
+          "main": {
+            "cacheMissTokens": 3923,
+            "cacheHitTokens": 0,
+            "inputTokens": 3923,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 57965,
+            "outputTokens": 3420
+          },
+          "afterReply": {
+            "calls": 5,
+            "inputTokens": 47101,
+            "outputTokens": 3066
+          },
+          "estimatedUsd": 0.005027022
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:08:16.516Z",
+          "main": {
+            "cacheMissTokens": 1097,
+            "cacheHitTokens": 0,
+            "inputTokens": 1097,
+            "outputTokens": 35
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 51132,
+            "outputTokens": 3060
+          },
+          "afterReply": {
+            "calls": 5,
+            "inputTokens": 44253,
+            "outputTokens": 2940
+          },
+          "estimatedUsd": 0.0041917199999999995
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:08:39.984Z",
+          "main": {
+            "cacheMissTokens": 227,
+            "cacheHitTokens": 768,
+            "inputTokens": 995,
+            "outputTokens": 31
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 61851,
+            "outputTokens": 3510
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 60077,
+            "outputTokens": 3510
+          },
+          "estimatedUsd": 0.0051759300000000005
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:08:48.840Z",
+          "main": {
+            "cacheMissTokens": 791,
+            "cacheHitTokens": 1024,
+            "inputTokens": 1815,
+            "outputTokens": 41
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 52104,
+            "outputTokens": 3456
+          },
+          "afterReply": {
+            "calls": 5,
+            "inputTokens": 44550,
+            "outputTokens": 3264
+          },
+          "estimatedUsd": 0.00420579
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:08:59.398Z",
+          "main": {
+            "cacheMissTokens": 962,
+            "cacheHitTokens": 0,
+            "inputTokens": 962,
+            "outputTokens": 25
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 48354,
+            "outputTokens": 3042
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 50464,
+            "outputTokens": 3312
+          },
+          "estimatedUsd": 0.004309656000000001
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:09:21.365Z",
+          "main": {
+            "cacheMissTokens": 747,
+            "cacheHitTokens": 768,
+            "inputTokens": 1515,
+            "outputTokens": 90
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 67535,
+            "outputTokens": 4014
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 35841,
+            "outputTokens": 2586
+          },
+          "estimatedUsd": 0.0045101460000000005
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:09:29.294Z",
+          "main": {
+            "cacheMissTokens": 1320,
+            "cacheHitTokens": 128,
+            "inputTokens": 1448,
+            "outputTokens": 223
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 50979,
+            "outputTokens": 3750
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 37838,
+            "outputTokens": 2856
+          },
+          "estimatedUsd": 0.004062498
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:09:40.942Z",
+          "main": {
+            "cacheMissTokens": 1047,
+            "cacheHitTokens": 0,
+            "inputTokens": 1047,
+            "outputTokens": 10
+          },
+          "foreground": {
+            "calls": 4,
+            "inputTokens": 26658,
+            "outputTokens": 1636
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 28058,
+            "outputTokens": 1848
+          },
+          "estimatedUsd": 0.002461122
+        }
+      ]
+    },
+    {
+      "layout": "original-v5",
+      "mode": "jev-optmem-maintained",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 15378,
+        "cacheHitTokens": 13952,
+        "inputTokens": 29330,
+        "outputTokens": 1236
+      },
+      "mainCacheHitRate": 0.475690419365837,
+      "jev": {
+        "calls": 147,
+        "inputTokens": 1344449,
+        "outputTokens": 101328,
+        "stages": {
+          "foreground": {
+            "calls": 81,
+            "inputTokens": 697054,
+            "outputTokens": 45452
+          },
+          "afterReply": {
+            "calls": 66,
+            "inputTokens": 647395,
+            "outputTokens": 55876
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 17,
+            "inputTokens": 32531,
+            "outputTokens": 5338
+          },
+          "explore": {
+            "calls": 32,
+            "inputTokens": 431041,
+            "outputTokens": 23514
+          },
+          "cover": {
+            "calls": 12,
+            "inputTokens": 83506,
+            "outputTokens": 5112
+          },
+          "leaves": {
+            "calls": 20,
+            "inputTokens": 149976,
+            "outputTokens": 11488
+          },
+          "nap": {
+            "calls": 66,
+            "inputTokens": 647395,
+            "outputTokens": 55876
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.0023066999999999996,
+          "cacheHit": 0.000041856,
+          "output": 0.0007416,
+          "total": 0.0030901559999999993
+        },
+        "mainPeak": {
+          "cacheMiss": 0.004613399999999999,
+          "cacheHit": 0.000083712,
+          "output": 0.0014832,
+          "total": 0.006180311999999999
+        },
+        "jevByStage": {
+          "foreground": 0.029276268,
+          "afterReply": 0.02719059,
+          "priming": 0
+        },
+        "jevTotal": 0.056466858,
+        "totalOffPeak": 0.059557014,
+        "totalPeak": 0.06264717,
+        "perTurnIncludingPriming": 0.0035033537647058822,
+        "per1000TurnsRepeatingMeasuredMix": 3.5033537647058823,
+        "excludingPriming": 0.059557014,
+        "perTurnExcludingPriming": 0.0035033537647058822,
+        "jevShare": 0.9481143228570862,
+        "backgroundShareOfJev": 0.48153183943756883
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:06:00.171Z",
+          "main": {
+            "cacheMissTokens": 1386,
+            "cacheHitTokens": 0,
+            "inputTokens": 1386,
+            "outputTokens": 163
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 57017,
+            "outputTokens": 3656
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004362984
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:06:12.561Z",
+          "main": {
+            "cacheMissTokens": 1225,
+            "cacheHitTokens": 1536,
+            "inputTokens": 2761,
+            "outputTokens": 188
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 14871,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40292,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.002618004
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:06:18.564Z",
+          "main": {
+            "cacheMissTokens": 830,
+            "cacheHitTokens": 2944,
+            "inputTokens": 3774,
+            "outputTokens": 79
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11941,
+            "outputTokens": 1158
+          },
+          "afterReply": {
+            "calls": 2,
+            "inputTokens": 11207,
+            "outputTokens": 964
+          },
+          "estimatedUsd": 0.001152948
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:06:42.191Z",
+          "main": {
+            "cacheMissTokens": 1212,
+            "cacheHitTokens": 384,
+            "inputTokens": 1596,
+            "outputTokens": 84
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 47803,
+            "outputTokens": 3318
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0039036480000000004
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:06:53.613Z",
+          "main": {
+            "cacheMissTokens": 1229,
+            "cacheHitTokens": 1664,
+            "inputTokens": 2893,
+            "outputTokens": 78
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11118,
+            "outputTokens": 1194
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40292,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0023953620000000003
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:07:01.990Z",
+          "main": {
+            "cacheMissTokens": 881,
+            "cacheHitTokens": 0,
+            "inputTokens": 881,
+            "outputTokens": 15
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 54870,
+            "outputTokens": 3402
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00410826
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:07:23.400Z",
+          "main": {
+            "cacheMissTokens": 532,
+            "cacheHitTokens": 896,
+            "inputTokens": 1428,
+            "outputTokens": 23
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 10743,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40292,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.002239758
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:07:36.795Z",
+          "main": {
+            "cacheMissTokens": 1250,
+            "cacheHitTokens": 128,
+            "inputTokens": 1378,
+            "outputTokens": 109
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 57414,
+            "outputTokens": 3312
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004327242
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:07:44.619Z",
+          "main": {
+            "cacheMissTokens": 840,
+            "cacheHitTokens": 0,
+            "inputTokens": 840,
+            "outputTokens": 30
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 48860,
+            "outputTokens": 3060
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00385869
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:08:09.896Z",
+          "main": {
+            "cacheMissTokens": 211,
+            "cacheHitTokens": 3712,
+            "inputTokens": 3923,
+            "outputTokens": 24
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 60558,
+            "outputTokens": 3564
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004263192
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:08:23.392Z",
+          "main": {
+            "cacheMissTokens": 201,
+            "cacheHitTokens": 896,
+            "inputTokens": 1097,
+            "outputTokens": 41
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 51225,
+            "outputTokens": 3060
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0038714580000000004
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:08:31.263Z",
+          "main": {
+            "cacheMissTokens": 995,
+            "cacheHitTokens": 0,
+            "inputTokens": 995,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 64106,
+            "outputTokens": 3492
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0045300720000000004
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:08:53.746Z",
+          "main": {
+            "cacheMissTokens": 688,
+            "cacheHitTokens": 1024,
+            "inputTokens": 1712,
+            "outputTokens": 50
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11265,
+            "outputTokens": 1230
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40292,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.002301666
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:09:05.722Z",
+          "main": {
+            "cacheMissTokens": 638,
+            "cacheHitTokens": 256,
+            "inputTokens": 894,
+            "outputTokens": 69
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 47982,
+            "outputTokens": 3006
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0038156820000000004
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:09:13.483Z",
+          "main": {
+            "cacheMissTokens": 1521,
+            "cacheHitTokens": 0,
+            "inputTokens": 1521,
+            "outputTokens": 84
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 69644,
+            "outputTokens": 4154
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004866168000000001
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:09:35.554Z",
+          "main": {
+            "cacheMissTokens": 1064,
+            "cacheHitTokens": 384,
+            "inputTokens": 1448,
+            "outputTokens": 144
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 50979,
+            "outputTokens": 3750
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00405084
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:09:45.291Z",
+          "main": {
+            "cacheMissTokens": 675,
+            "cacheHitTokens": 128,
+            "inputTokens": 803,
+            "outputTokens": 12
+          },
+          "foreground": {
+            "calls": 4,
+            "inputTokens": 26658,
+            "outputTokens": 1636
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39585,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00289104
+        }
+      ]
+    },
+    {
+      "layout": "scattered-v5",
+      "mode": "all-candidates",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 116126,
+        "cacheHitTokens": 41344,
+        "inputTokens": 157470,
+        "outputTokens": 904
+      },
+      "mainCacheHitRate": 0.262551597129612,
+      "jev": {
+        "calls": 0,
+        "inputTokens": 0,
+        "outputTokens": 0,
+        "stages": {
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {}
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.017418899999999998,
+          "cacheHit": 0.000124032,
+          "output": 0.0005424,
+          "total": 0.018085331999999996
+        },
+        "mainPeak": {
+          "cacheMiss": 0.034837799999999995,
+          "cacheHit": 0.000248064,
+          "output": 0.0010848,
+          "total": 0.03617066399999999
+        },
+        "jevByStage": {
+          "foreground": 0,
+          "afterReply": 0,
+          "priming": 0
+        },
+        "jevTotal": 0,
+        "totalOffPeak": 0.018085331999999996,
+        "totalPeak": 0.03617066399999999,
+        "perTurnIncludingPriming": 0.0010638430588235292,
+        "per1000TurnsRepeatingMeasuredMix": 1.0638430588235293,
+        "excludingPriming": 0.018085331999999996,
+        "perTurnExcludingPriming": 0.0010638430588235292,
+        "jevShare": 0,
+        "backgroundShareOfJev": null
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:10:12.369Z",
+          "main": {
+            "cacheMissTokens": 6885,
+            "cacheHitTokens": 0,
+            "inputTokens": 6885,
+            "outputTokens": 65
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00107175
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:10:39.998Z",
+          "main": {
+            "cacheMissTokens": 6719,
+            "cacheHitTokens": 6912,
+            "inputTokens": 13631,
+            "outputTokens": 78
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010753859999999998
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:10:44.334Z",
+          "main": {
+            "cacheMissTokens": 6692,
+            "cacheHitTokens": 13696,
+            "inputTokens": 20388,
+            "outputTokens": 108
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0011096880000000002
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:10:53.735Z",
+          "main": {
+            "cacheMissTokens": 6885,
+            "cacheHitTokens": 0,
+            "inputTokens": 6885,
+            "outputTokens": 42
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00105795
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:11:19.221Z",
+          "main": {
+            "cacheMissTokens": 6693,
+            "cacheHitTokens": 6912,
+            "inputTokens": 13605,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.001050486
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:11:25.881Z",
+          "main": {
+            "cacheMissTokens": 6881,
+            "cacheHitTokens": 0,
+            "inputTokens": 6881,
+            "outputTokens": 24
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010465499999999998
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:11:32.225Z",
+          "main": {
+            "cacheMissTokens": 6793,
+            "cacheHitTokens": 6784,
+            "inputTokens": 13577,
+            "outputTokens": 22
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.001052502
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:11:54.691Z",
+          "main": {
+            "cacheMissTokens": 6883,
+            "cacheHitTokens": 0,
+            "inputTokens": 6883,
+            "outputTokens": 53
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00106425
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:12:02.104Z",
+          "main": {
+            "cacheMissTokens": 6882,
+            "cacheHitTokens": 0,
+            "inputTokens": 6882,
+            "outputTokens": 59
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010677
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:12:10.058Z",
+          "main": {
+            "cacheMissTokens": 6885,
+            "cacheHitTokens": 0,
+            "inputTokens": 6885,
+            "outputTokens": 67
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00107295
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:12:35.590Z",
+          "main": {
+            "cacheMissTokens": 6891,
+            "cacheHitTokens": 0,
+            "inputTokens": 6891,
+            "outputTokens": 38
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010564499999999998
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:12:42.189Z",
+          "main": {
+            "cacheMissTokens": 6888,
+            "cacheHitTokens": 0,
+            "inputTokens": 6888,
+            "outputTokens": 50
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010632
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:12:48.993Z",
+          "main": {
+            "cacheMissTokens": 6708,
+            "cacheHitTokens": 6912,
+            "inputTokens": 13620,
+            "outputTokens": 54
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010593359999999997
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:13:13.590Z",
+          "main": {
+            "cacheMissTokens": 6886,
+            "cacheHitTokens": 0,
+            "inputTokens": 6886,
+            "outputTokens": 61
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010694999999999997
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:13:21.130Z",
+          "main": {
+            "cacheMissTokens": 6886,
+            "cacheHitTokens": 0,
+            "inputTokens": 6886,
+            "outputTokens": 49
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010622999999999997
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:13:30.030Z",
+          "main": {
+            "cacheMissTokens": 6780,
+            "cacheHitTokens": 128,
+            "inputTokens": 6908,
+            "outputTokens": 79
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0010647839999999998
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:13:51.365Z",
+          "main": {
+            "cacheMissTokens": 6889,
+            "cacheHitTokens": 0,
+            "inputTokens": 6889,
+            "outputTokens": 12
+          },
+          "foreground": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00104055
+        }
+      ]
+    },
+    {
+      "layout": "scattered-v5",
+      "mode": "jev-optmem",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 15966,
+        "cacheHitTokens": 8576,
+        "inputTokens": 24542,
+        "outputTokens": 758
+      },
+      "mainCacheHitRate": 0.3494417732866107,
+      "jev": {
+        "calls": 181,
+        "inputTokens": 1582828,
+        "outputTokens": 97184,
+        "stages": {
+          "foreground": {
+            "calls": 95,
+            "inputTokens": 838115,
+            "outputTokens": 50623
+          },
+          "afterReply": {
+            "calls": 86,
+            "inputTokens": 744713,
+            "outputTokens": 46561
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 34,
+            "inputTokens": 84706,
+            "outputTokens": 14258
+          },
+          "explore": {
+            "calls": 83,
+            "inputTokens": 1151476,
+            "outputTokens": 60936
+          },
+          "cover": {
+            "calls": 34,
+            "inputTokens": 245511,
+            "outputTokens": 14484
+          },
+          "leaves": {
+            "calls": 30,
+            "inputTokens": 101135,
+            "outputTokens": 7506
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.0023949,
+          "cacheHit": 0.000025728,
+          "output": 0.0004548,
+          "total": 0.002875428
+        },
+        "mainPeak": {
+          "cacheMiss": 0.0047898,
+          "cacheHit": 0.000051456,
+          "output": 0.0009096,
+          "total": 0.005750856
+        },
+        "jevByStage": {
+          "foreground": 0.03520083,
+          "afterReply": 0.031277946,
+          "priming": 0
+        },
+        "jevTotal": 0.066478776,
+        "totalOffPeak": 0.069354204,
+        "totalPeak": 0.072229632,
+        "perTurnIncludingPriming": 0.00407965905882353,
+        "per1000TurnsRepeatingMeasuredMix": 4.0796590588235295,
+        "excludingPriming": 0.069354204,
+        "perTurnExcludingPriming": 0.00407965905882353,
+        "jevShare": 0.9585399610382667,
+        "backgroundShareOfJev": 0.4704952148938482
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:10:17.024Z",
+          "main": {
+            "cacheMissTokens": 1232,
+            "cacheHitTokens": 0,
+            "inputTokens": 1232,
+            "outputTokens": 48
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 59163,
+            "outputTokens": 3636
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 54090,
+            "outputTokens": 3312
+          },
+          "estimatedUsd": 0.0049702259999999995
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:10:31.119Z",
+          "main": {
+            "cacheMissTokens": 702,
+            "cacheHitTokens": 1280,
+            "inputTokens": 1982,
+            "outputTokens": 62
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 54366,
+            "outputTokens": 3422
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 53170,
+            "outputTokens": 3283
+          },
+          "estimatedUsd": 0.004662852
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:10:49.655Z",
+          "main": {
+            "cacheMissTokens": 908,
+            "cacheHitTokens": 1920,
+            "inputTokens": 2828,
+            "outputTokens": 63
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 54756,
+            "outputTokens": 3420
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 29530,
+            "outputTokens": 2213
+          },
+          "estimatedUsd": 0.0037197720000000005
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:10:57.837Z",
+          "main": {
+            "cacheMissTokens": 1086,
+            "cacheHitTokens": 0,
+            "inputTokens": 1086,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 52838,
+            "outputTokens": 3132
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 53973,
+            "outputTokens": 3294
+          },
+          "estimatedUsd": 0.004681962
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:11:10.738Z",
+          "main": {
+            "cacheMissTokens": 887,
+            "cacheHitTokens": 1024,
+            "inputTokens": 1911,
+            "outputTokens": 37
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 56788,
+            "outputTokens": 3510
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 56786,
+            "outputTokens": 3474
+          },
+          "estimatedUsd": 0.00492843
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:11:29.937Z",
+          "main": {
+            "cacheMissTokens": 229,
+            "cacheHitTokens": 512,
+            "inputTokens": 741,
+            "outputTokens": 18
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 48954,
+            "outputTokens": 2779
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 24127,
+            "outputTokens": 1602
+          },
+          "estimatedUsd": 0.0031160880000000004
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:11:34.688Z",
+          "main": {
+            "cacheMissTokens": 651,
+            "cacheHitTokens": 640,
+            "inputTokens": 1291,
+            "outputTokens": 34
+          },
+          "foreground": {
+            "calls": 3,
+            "inputTokens": 24906,
+            "outputTokens": 1746
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 25089,
+            "outputTokens": 1746
+          },
+          "estimatedUsd": 0.00221976
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:11:44.354Z",
+          "main": {
+            "cacheMissTokens": 840,
+            "cacheHitTokens": 0,
+            "inputTokens": 840,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 56728,
+            "outputTokens": 3312
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 58014,
+            "outputTokens": 3510
+          },
+          "estimatedUsd": 0.004978164000000001
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:12:06.452Z",
+          "main": {
+            "cacheMissTokens": 198,
+            "cacheHitTokens": 640,
+            "inputTokens": 838,
+            "outputTokens": 30
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 49194,
+            "outputTokens": 2833
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 50720,
+            "outputTokens": 3031
+          },
+          "estimatedUsd": 0.004246008
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:12:14.115Z",
+          "main": {
+            "cacheMissTokens": 3924,
+            "cacheHitTokens": 0,
+            "inputTokens": 3924,
+            "outputTokens": 37
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 56972,
+            "outputTokens": 3042
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 59885,
+            "outputTokens": 3222
+          },
+          "estimatedUsd": 0.0055187940000000005
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:12:26.318Z",
+          "main": {
+            "cacheMissTokens": 1064,
+            "cacheHitTokens": 0,
+            "inputTokens": 1064,
+            "outputTokens": 28
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 50741,
+            "outputTokens": 2992
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 52451,
+            "outputTokens": 3190
+          },
+          "estimatedUsd": 0.0045104640000000005
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:12:46.107Z",
+          "main": {
+            "cacheMissTokens": 191,
+            "cacheHitTokens": 896,
+            "inputTokens": 1087,
+            "outputTokens": 28
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 41309,
+            "outputTokens": 2602
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 26069,
+            "outputTokens": 1801
+          },
+          "estimatedUsd": 0.0028780140000000004
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:12:53.167Z",
+          "main": {
+            "cacheMissTokens": 877,
+            "cacheHitTokens": 1024,
+            "inputTokens": 1901,
+            "outputTokens": 37
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 53006,
+            "outputTokens": 3297
+          },
+          "afterReply": {
+            "calls": 5,
+            "inputTokens": 44589,
+            "outputTokens": 3106
+          },
+          "estimatedUsd": 0.004255812
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:13:03.923Z",
+          "main": {
+            "cacheMissTokens": 824,
+            "cacheHitTokens": 0,
+            "inputTokens": 824,
+            "outputTokens": 47
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 55058,
+            "outputTokens": 3366
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 54878,
+            "outputTokens": 3384
+          },
+          "estimatedUsd": 0.004769112
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:13:25.526Z",
+          "main": {
+            "cacheMissTokens": 1249,
+            "cacheHitTokens": 0,
+            "inputTokens": 1249,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 61107,
+            "outputTokens": 3492
+          },
+          "afterReply": {
+            "calls": 6,
+            "inputTokens": 55050,
+            "outputTokens": 3312
+          },
+          "estimatedUsd": 0.005098944
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:13:33.661Z",
+          "main": {
+            "cacheMissTokens": 881,
+            "cacheHitTokens": 128,
+            "inputTokens": 1009,
+            "outputTokens": 109
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 44922,
+            "outputTokens": 3174
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 28862,
+            "outputTokens": 2213
+          },
+          "estimatedUsd": 0.0032968620000000002
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:13:44.743Z",
+          "main": {
+            "cacheMissTokens": 223,
+            "cacheHitTokens": 512,
+            "inputTokens": 735,
+            "outputTokens": 15
+          },
+          "foreground": {
+            "calls": 3,
+            "inputTokens": 17307,
+            "outputTokens": 868
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 17430,
+            "outputTokens": 868
+          },
+          "estimatedUsd": 0.0015029400000000001
+        }
+      ]
+    },
+    {
+      "layout": "scattered-v5",
+      "mode": "jev-optmem-maintained",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 11946,
+        "cacheHitTokens": 9984,
+        "inputTokens": 21930,
+        "outputTokens": 670
+      },
+      "mainCacheHitRate": 0.45526675786593707,
+      "jev": {
+        "calls": 144,
+        "inputTokens": 1300094,
+        "outputTokens": 97552,
+        "stages": {
+          "foreground": {
+            "calls": 78,
+            "inputTokens": 657368,
+            "outputTokens": 41676
+          },
+          "afterReply": {
+            "calls": 66,
+            "inputTokens": 642726,
+            "outputTokens": 55876
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 17,
+            "inputTokens": 31846,
+            "outputTokens": 5338
+          },
+          "explore": {
+            "calls": 32,
+            "inputTokens": 437706,
+            "outputTokens": 22992
+          },
+          "cover": {
+            "calls": 12,
+            "inputTokens": 86564,
+            "outputTokens": 5112
+          },
+          "leaves": {
+            "calls": 17,
+            "inputTokens": 101252,
+            "outputTokens": 8234
+          },
+          "nap": {
+            "calls": 66,
+            "inputTokens": 642726,
+            "outputTokens": 55876
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.0017919,
+          "cacheHit": 0.000029952,
+          "output": 0.000402,
+          "total": 0.002223852
+        },
+        "mainPeak": {
+          "cacheMiss": 0.0035838,
+          "cacheHit": 0.000059904,
+          "output": 0.000804,
+          "total": 0.004447704
+        },
+        "jevByStage": {
+          "foreground": 0.027609456,
+          "afterReply": 0.026994492000000002,
+          "priming": 0
+        },
+        "jevTotal": 0.054603948000000006,
+        "totalOffPeak": 0.056827800000000005,
+        "totalPeak": 0.05905165200000001,
+        "perTurnIncludingPriming": 0.0033428117647058826,
+        "per1000TurnsRepeatingMeasuredMix": 3.342811764705883,
+        "excludingPriming": 0.056827800000000005,
+        "perTurnExcludingPriming": 0.0033428117647058826,
+        "jevShare": 0.9608668292631424,
+        "backgroundShareOfJev": 0.49436886871256996
+      },
+      "perTurn": [
+        {
+          "caseId": "family-outing",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:10:24.545Z",
+          "main": {
+            "cacheMissTokens": 1232,
+            "cacheHitTokens": 0,
+            "inputTokens": 1232,
+            "outputTokens": 39
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 58354,
+            "outputTokens": 3582
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0043065180000000005
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:10:36.541Z",
+          "main": {
+            "cacheMissTokens": 1084,
+            "cacheHitTokens": 1152,
+            "inputTokens": 2236,
+            "outputTokens": 51
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12491,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40183,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.002408964
+        },
+        {
+          "caseId": "family-outing",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:10:42.311Z",
+          "main": {
+            "cacheMissTokens": 884,
+            "cacheHitTokens": 2176,
+            "inputTokens": 3060,
+            "outputTokens": 66
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11887,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 2,
+            "inputTokens": 11294,
+            "outputTokens": 964
+          },
+          "estimatedUsd": 0.00115233
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:11:04.801Z",
+          "main": {
+            "cacheMissTokens": 1052,
+            "cacheHitTokens": 128,
+            "inputTokens": 1180,
+            "outputTokens": 41
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 54584,
+            "outputTokens": 3276
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004122762
+        },
+        {
+          "caseId": "reading-club",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:11:16.142Z",
+          "main": {
+            "cacheMissTokens": 737,
+            "cacheHitTokens": 1152,
+            "inputTokens": 1889,
+            "outputTokens": 33
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11813,
+            "outputTokens": 1230
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40183,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0023176380000000003
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:11:23.025Z",
+          "main": {
+            "cacheMissTokens": 229,
+            "cacheHitTokens": 512,
+            "inputTokens": 741,
+            "outputTokens": 15
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 49244,
+            "outputTokens": 2815
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0037605840000000004
+        },
+        {
+          "caseId": "preference-change",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:11:38.296Z",
+          "main": {
+            "cacheMissTokens": 720,
+            "cacheHitTokens": 640,
+            "inputTokens": 1360,
+            "outputTokens": 20
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11280,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40183,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.002283366
+        },
+        {
+          "caseId": "errands",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:11:51.644Z",
+          "main": {
+            "cacheMissTokens": 200,
+            "cacheHitTokens": 640,
+            "inputTokens": 840,
+            "outputTokens": 47
+          },
+          "foreground": {
+            "calls": 7,
+            "inputTokens": 57896,
+            "outputTokens": 3414
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004139202000000001
+        },
+        {
+          "caseId": "canvas-body",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:11:59.043Z",
+          "main": {
+            "cacheMissTokens": 838,
+            "cacheHitTokens": 0,
+            "inputTokens": 838,
+            "outputTokens": 17
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 49154,
+            "outputTokens": 2833
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0038478180000000002
+        },
+        {
+          "caseId": "long-document",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:12:20.470Z",
+          "main": {
+            "cacheMissTokens": 233,
+            "cacheHitTokens": 512,
+            "inputTokens": 745,
+            "outputTokens": 40
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 55864,
+            "outputTokens": 2972
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004054224
+        },
+        {
+          "caseId": "cold-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:12:32.614Z",
+          "main": {
+            "cacheMissTokens": 994,
+            "cacheHitTokens": 128,
+            "inputTokens": 1122,
+            "outputTokens": 35
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 51778,
+            "outputTokens": 3060
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.003992610000000001
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:12:39.331Z",
+          "main": {
+            "cacheMissTokens": 1087,
+            "cacheHitTokens": 0,
+            "inputTokens": 1087,
+            "outputTokens": 22
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 41309,
+            "outputTokens": 2602
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.003558678
+        },
+        {
+          "caseId": "live-file",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:12:57.853Z",
+          "main": {
+            "cacheMissTokens": 759,
+            "cacheHitTokens": 1024,
+            "inputTokens": 1783,
+            "outputTokens": 25
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12046,
+            "outputTokens": 1266
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 40183,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00232554
+        },
+        {
+          "caseId": "photo-procedure",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:13:10.710Z",
+          "main": {
+            "cacheMissTokens": 184,
+            "cacheHitTokens": 640,
+            "inputTokens": 824,
+            "outputTokens": 39
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 55822,
+            "outputTokens": 3438
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004044894
+        },
+        {
+          "caseId": "notice-advert",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:13:18.008Z",
+          "main": {
+            "cacheMissTokens": 1249,
+            "cacheHitTokens": 0,
+            "inputTokens": 1249,
+            "outputTokens": 66
+          },
+          "foreground": {
+            "calls": 6,
+            "inputTokens": 61452,
+            "outputTokens": 3492
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.004455384000000001
+        },
+        {
+          "caseId": "many-source-day",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:13:39.527Z",
+          "main": {
+            "cacheMissTokens": 241,
+            "cacheHitTokens": 768,
+            "inputTokens": 1009,
+            "outputTokens": 102
+          },
+          "foreground": {
+            "calls": 5,
+            "inputTokens": 45087,
+            "outputTokens": 3192
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.003640758
+        },
+        {
+          "caseId": "quiet-close",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:13:48.640Z",
+          "main": {
+            "cacheMissTokens": 223,
+            "cacheHitTokens": 512,
+            "inputTokens": 735,
+            "outputTokens": 12
+          },
+          "foreground": {
+            "calls": 3,
+            "inputTokens": 17307,
+            "outputTokens": 868
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39225,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.00241653
+        }
+      ]
+    },
+    {
+      "layout": "continuous-v5",
+      "mode": "jev-optmem-maintained",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 16213,
+        "cacheHitTokens": 134912,
+        "inputTokens": 151125,
+        "outputTokens": 1106
+      },
+      "mainCacheHitRate": 0.8927179487179487,
+      "jev": {
+        "calls": 87,
+        "inputTokens": 663110,
+        "outputTokens": 58774,
+        "stages": {
+          "foreground": {
+            "calls": 34,
+            "inputTokens": 225015,
+            "outputTokens": 21990
+          },
+          "afterReply": {
+            "calls": 28,
+            "inputTokens": 208662,
+            "outputTokens": 17418
+          },
+          "priming": {
+            "calls": 25,
+            "inputTokens": 229433,
+            "outputTokens": 19366
+          }
+        },
+        "phases": {
+          "nap": {
+            "calls": 53,
+            "inputTokens": 438095,
+            "outputTokens": 36784
+          },
+          "terms": {
+            "calls": 17,
+            "inputTokens": 52317,
+            "outputTokens": 7908
+          },
+          "leaves": {
+            "calls": 17,
+            "inputTokens": 172698,
+            "outputTokens": 14082
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.00243195,
+          "cacheHit": 0.000404736,
+          "output": 0.0006636,
+          "total": 0.003500286
+        },
+        "mainPeak": {
+          "cacheMiss": 0.0048639,
+          "cacheHit": 0.000809472,
+          "output": 0.0013272,
+          "total": 0.007000572
+        },
+        "jevByStage": {
+          "foreground": 0.009450630000000002,
+          "afterReply": 0.008763804,
+          "priming": 0.009636186
+        },
+        "jevTotal": 0.027850620000000003,
+        "totalOffPeak": 0.031350906000000005,
+        "totalPeak": 0.034851192,
+        "perTurnIncludingPriming": 0.001844170941176471,
+        "per1000TurnsRepeatingMeasuredMix": 1.844170941176471,
+        "excludingPriming": 0.021714720000000007,
+        "perTurnExcludingPriming": 0.0012773364705882357,
+        "jevShare": 0.8883513605635511,
+        "backgroundShareOfJev": 0.6606671592948378
+      },
+      "perTurn": [
+        {
+          "caseId": "continuous-memory",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:14:34.500Z",
+          "main": {
+            "cacheMissTokens": 1196,
+            "cacheHitTokens": 128,
+            "inputTokens": 1324,
+            "outputTokens": 112
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11306,
+            "outputTokens": 1122
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 23055,
+            "outputTokens": 1998
+          },
+          "estimatedUsd": 0.001690146
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:14:49.689Z",
+          "main": {
+            "cacheMissTokens": 1084,
+            "cacheHitTokens": 1408,
+            "inputTokens": 2492,
+            "outputTokens": 77
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12807,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 29144,
+            "outputTokens": 2502
+          },
+          "estimatedUsd": 0.001974966
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:14:56.180Z",
+          "main": {
+            "cacheMissTokens": 780,
+            "cacheHitTokens": 2560,
+            "inputTokens": 3340,
+            "outputTokens": 74
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12204,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000681648
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:15:01.674Z",
+          "main": {
+            "cacheMissTokens": 1082,
+            "cacheHitTokens": 3328,
+            "inputTokens": 4410,
+            "outputTokens": 99
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13637,
+            "outputTokens": 1338
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 3882,
+            "outputTokens": 282
+          },
+          "estimatedUsd": 0.000967482
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:15:15.449Z",
+          "main": {
+            "cacheMissTokens": 896,
+            "cacheHitTokens": 4480,
+            "inputTokens": 5376,
+            "outputTokens": 64
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13465,
+            "outputTokens": 1266
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 4118,
+            "outputTokens": 354
+          },
+          "estimatedUsd": 0.0009247260000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:15:21.598Z",
+          "main": {
+            "cacheMissTokens": 801,
+            "cacheHitTokens": 5248,
+            "inputTokens": 6049,
+            "outputTokens": 70
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12710,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 26148,
+            "outputTokens": 2250
+          },
+          "estimatedUsd": 0.0018099300000000002
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:15:28.926Z",
+          "main": {
+            "cacheMissTokens": 706,
+            "cacheHitTokens": 6016,
+            "inputTokens": 6722,
+            "outputTokens": 57
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12429,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 3,
+            "inputTokens": 26878,
+            "outputTokens": 2106
+          },
+          "estimatedUsd": 0.0018090419999999999
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:15:44.980Z",
+          "main": {
+            "cacheMissTokens": 743,
+            "cacheHitTokens": 6656,
+            "inputTokens": 7399,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12661,
+            "outputTokens": 1158
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 5236,
+            "outputTokens": 390
+          },
+          "estimatedUsd": 0.0009088920000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:15:51.437Z",
+          "main": {
+            "cacheMissTokens": 653,
+            "cacheHitTokens": 7424,
+            "inputTokens": 8077,
+            "outputTokens": 26
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12994,
+            "outputTokens": 1266
+          },
+          "afterReply": {
+            "calls": 4,
+            "inputTokens": 39984,
+            "outputTokens": 3432
+          },
+          "estimatedUsd": 0.0023608979999999997
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:15:58.356Z",
+          "main": {
+            "cacheMissTokens": 2182,
+            "cacheHitTokens": 8064,
+            "inputTokens": 10246,
+            "outputTokens": 18
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 16072,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 5040,
+            "outputTokens": 426
+          },
+          "estimatedUsd": 0.001248996
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:16:13.350Z",
+          "main": {
+            "cacheMissTokens": 893,
+            "cacheHitTokens": 10240,
+            "inputTokens": 11133,
+            "outputTokens": 18
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13886,
+            "outputTokens": 1428
+          },
+          "afterReply": {
+            "calls": 2,
+            "inputTokens": 15247,
+            "outputTokens": 1284
+          },
+          "estimatedUsd": 0.001399056
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:16:19.959Z",
+          "main": {
+            "cacheMissTokens": 827,
+            "cacheHitTokens": 11136,
+            "inputTokens": 11963,
+            "outputTokens": 51
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13333,
+            "outputTokens": 1374
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 2824,
+            "outputTokens": 228
+          },
+          "estimatedUsd": 0.0008666520000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:16:26.530Z",
+          "main": {
+            "cacheMissTokens": 785,
+            "cacheHitTokens": 11904,
+            "inputTokens": 12689,
+            "outputTokens": 51
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12954,
+            "outputTokens": 1302
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 3882,
+            "outputTokens": 282
+          },
+          "estimatedUsd": 0.0008911740000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:16:42.755Z",
+          "main": {
+            "cacheMissTokens": 753,
+            "cacheHitTokens": 12672,
+            "inputTokens": 13425,
+            "outputTokens": 43
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13594,
+            "outputTokens": 1410
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 4920,
+            "outputTokens": 426
+          },
+          "estimatedUsd": 0.000954354
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:16:49.341Z",
+          "main": {
+            "cacheMissTokens": 1013,
+            "cacheHitTokens": 13440,
+            "inputTokens": 14453,
+            "outputTokens": 87
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13624,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 7522,
+            "outputTokens": 642
+          },
+          "estimatedUsd": 0.001132602
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:16:56.435Z",
+          "main": {
+            "cacheMissTokens": 1186,
+            "cacheHitTokens": 14464,
+            "inputTokens": 15650,
+            "outputTokens": 195
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13941,
+            "outputTokens": 1410
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 5756,
+            "outputTokens": 444
+          },
+          "estimatedUsd": 0.001165566
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:17:14.099Z",
+          "main": {
+            "cacheMissTokens": 633,
+            "cacheHitTokens": 15744,
+            "inputTokens": 16377,
+            "outputTokens": 21
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13398,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 1,
+            "inputTokens": 5026,
+            "outputTokens": 372
+          },
+          "estimatedUsd": 0.00092859
+        }
+      ]
+    },
+    {
+      "layout": "continuous-v5",
+      "mode": "jev-optmem-maintained-local-nap",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 14451,
+        "cacheHitTokens": 122240,
+        "inputTokens": 136691,
+        "outputTokens": 1210
+      },
+      "mainCacheHitRate": 0.8942797989626238,
+      "jev": {
+        "calls": 34,
+        "inputTokens": 222765,
+        "outputTokens": 21900,
+        "stages": {
+          "foreground": {
+            "calls": 34,
+            "inputTokens": 222765,
+            "outputTokens": 21900
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 17,
+            "inputTokens": 52830,
+            "outputTokens": 7908
+          },
+          "leaves": {
+            "calls": 17,
+            "inputTokens": 169935,
+            "outputTokens": 13992
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.00216765,
+          "cacheHit": 0.00036672,
+          "output": 0.000726,
+          "total": 0.0032603700000000003
+        },
+        "mainPeak": {
+          "cacheMiss": 0.0043353,
+          "cacheHit": 0.00073344,
+          "output": 0.001452,
+          "total": 0.0065207400000000006
+        },
+        "jevByStage": {
+          "foreground": 0.00935613,
+          "afterReply": 0,
+          "priming": 0
+        },
+        "jevTotal": 0.00935613,
+        "totalOffPeak": 0.012616500000000001,
+        "totalPeak": 0.01587687,
+        "perTurnIncludingPriming": 0.0007421470588235295,
+        "per1000TurnsRepeatingMeasuredMix": 0.7421470588235295,
+        "excludingPriming": 0.012616500000000001,
+        "perTurnExcludingPriming": 0.0007421470588235295,
+        "jevShare": 0.7415788847937225,
+        "backgroundShareOfJev": 0
+      },
+      "perTurn": [
+        {
+          "caseId": "continuous-memory",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:14:38.439Z",
+          "main": {
+            "cacheMissTokens": 782,
+            "cacheHitTokens": 384,
+            "inputTokens": 1166,
+            "outputTokens": 110
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11345,
+            "outputTokens": 1122
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000660942
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:14:43.723Z",
+          "main": {
+            "cacheMissTokens": 1180,
+            "cacheHitTokens": 1152,
+            "inputTokens": 2332,
+            "outputTokens": 92
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12785,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000772626
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:14:58.887Z",
+          "main": {
+            "cacheMissTokens": 891,
+            "cacheHitTokens": 2304,
+            "inputTokens": 3195,
+            "outputTokens": 57
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12224,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00068817
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:15:04.946Z",
+          "main": {
+            "cacheMissTokens": 979,
+            "cacheHitTokens": 3200,
+            "inputTokens": 4179,
+            "outputTokens": 74
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13599,
+            "outputTokens": 1338
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000772008
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:15:10.200Z",
+          "main": {
+            "cacheMissTokens": 896,
+            "cacheHitTokens": 4224,
+            "inputTokens": 5120,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13351,
+            "outputTokens": 1266
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000740814
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:15:26.324Z",
+          "main": {
+            "cacheMissTokens": 792,
+            "cacheHitTokens": 4992,
+            "inputTokens": 5784,
+            "outputTokens": 58
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12600,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0006977760000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:15:33.043Z",
+          "main": {
+            "cacheMissTokens": 685,
+            "cacheHitTokens": 5760,
+            "inputTokens": 6445,
+            "outputTokens": 41
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12237,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000658584
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:15:38.863Z",
+          "main": {
+            "cacheMissTokens": 852,
+            "cacheHitTokens": 6400,
+            "inputTokens": 7252,
+            "outputTokens": 77
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12303,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000709926
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:15:55.659Z",
+          "main": {
+            "cacheMissTokens": 668,
+            "cacheHitTokens": 7296,
+            "inputTokens": 7964,
+            "outputTokens": 20
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12968,
+            "outputTokens": 1266
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000678744
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:16:01.520Z",
+          "main": {
+            "cacheMissTokens": 590,
+            "cacheHitTokens": 7936,
+            "inputTokens": 8526,
+            "outputTokens": 57
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13554,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000715776
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:16:07.268Z",
+          "main": {
+            "cacheMissTokens": 1010,
+            "cacheHitTokens": 8576,
+            "inputTokens": 9586,
+            "outputTokens": 84
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 14020,
+            "outputTokens": 1428
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000816468
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:16:23.338Z",
+          "main": {
+            "cacheMissTokens": 853,
+            "cacheHitTokens": 9600,
+            "inputTokens": 10453,
+            "outputTokens": 70
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13595,
+            "outputTokens": 1356
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0007697400000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:16:30.135Z",
+          "main": {
+            "cacheMissTokens": 569,
+            "cacheHitTokens": 10496,
+            "inputTokens": 11065,
+            "outputTokens": 40
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12844,
+            "outputTokens": 1248
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000680286
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:16:36.277Z",
+          "main": {
+            "cacheMissTokens": 782,
+            "cacheHitTokens": 11008,
+            "inputTokens": 11790,
+            "outputTokens": 39
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13984,
+            "outputTokens": 1410
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0007610520000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:16:53.115Z",
+          "main": {
+            "cacheMissTokens": 1111,
+            "cacheHitTokens": 11776,
+            "inputTokens": 12887,
+            "outputTokens": 101
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13863,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0008448240000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:17:00.660Z",
+          "main": {
+            "cacheMissTokens": 1170,
+            "cacheHitTokens": 12928,
+            "inputTokens": 14098,
+            "outputTokens": 219
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 14011,
+            "outputTokens": 1410
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0009341460000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:17:08.136Z",
+          "main": {
+            "cacheMissTokens": 641,
+            "cacheHitTokens": 14208,
+            "inputTokens": 14849,
+            "outputTokens": 16
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13482,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000714618
+        }
+      ]
+    },
+    {
+      "layout": "continuous-v5",
+      "mode": "jev-optmem-maintained-no-nap",
+      "turns": 17,
+      "main": {
+        "cacheMissTokens": 15823,
+        "cacheHitTokens": 126208,
+        "inputTokens": 142031,
+        "outputTokens": 1058
+      },
+      "mainCacheHitRate": 0.8885947434010885,
+      "jev": {
+        "calls": 34,
+        "inputTokens": 223342,
+        "outputTokens": 21846,
+        "stages": {
+          "foreground": {
+            "calls": 34,
+            "inputTokens": 223342,
+            "outputTokens": 21846
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "priming": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          }
+        },
+        "phases": {
+          "terms": {
+            "calls": 17,
+            "inputTokens": 52068,
+            "outputTokens": 7908
+          },
+          "leaves": {
+            "calls": 17,
+            "inputTokens": 171274,
+            "outputTokens": 13938
+          }
+        }
+      },
+      "cost": {
+        "mainOffPeak": {
+          "cacheMiss": 0.0023734499999999996,
+          "cacheHit": 0.00037862400000000004,
+          "output": 0.0006347999999999999,
+          "total": 0.003386874
+        },
+        "mainPeak": {
+          "cacheMiss": 0.004746899999999999,
+          "cacheHit": 0.0007572480000000001,
+          "output": 0.0012695999999999999,
+          "total": 0.006773748
+        },
+        "jevByStage": {
+          "foreground": 0.009380364000000002,
+          "afterReply": 0,
+          "priming": 0
+        },
+        "jevTotal": 0.009380364000000002,
+        "totalOffPeak": 0.012767238000000002,
+        "totalPeak": 0.016154112,
+        "perTurnIncludingPriming": 0.0007510140000000002,
+        "per1000TurnsRepeatingMeasuredMix": 0.7510140000000002,
+        "excludingPriming": 0.012767238000000002,
+        "perTurnExcludingPriming": 0.0007510140000000002,
+        "jevShare": 0.7347214800883324,
+        "backgroundShareOfJev": 0
+      },
+      "perTurn": [
+        {
+          "caseId": "continuous-memory",
+          "turnId": "outing",
+          "requestAt": "2026-09-23T00:14:41.289Z",
+          "main": {
+            "cacheMissTokens": 896,
+            "cacheHitTokens": 128,
+            "inputTokens": 1024,
+            "outputTokens": 66
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 11039,
+            "outputTokens": 1086
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000638022
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "checkin-followup",
+          "requestAt": "2026-09-23T00:14:46.714Z",
+          "main": {
+            "cacheMissTokens": 1177,
+            "cacheHitTokens": 896,
+            "inputTokens": 2073,
+            "outputTokens": 81
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12620,
+            "outputTokens": 1302
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000757878
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "topic-train",
+          "requestAt": "2026-09-23T00:14:53.610Z",
+          "main": {
+            "cacheMissTokens": 877,
+            "cacheHitTokens": 2048,
+            "inputTokens": 2925,
+            "outputTokens": 65
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12066,
+            "outputTokens": 1176
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000683466
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "alias-promise",
+          "requestAt": "2026-09-23T00:15:07.818Z",
+          "main": {
+            "cacheMissTokens": 850,
+            "cacheHitTokens": 2944,
+            "inputTokens": 3794,
+            "outputTokens": 73
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13404,
+            "outputTokens": 1338
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0007431
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "budget-status",
+          "requestAt": "2026-09-23T00:15:12.502Z",
+          "main": {
+            "cacheMissTokens": 756,
+            "cacheHitTokens": 3840,
+            "inputTokens": 4596,
+            "outputTokens": 53
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12895,
+            "outputTokens": 1230
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00069831
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-change",
+          "requestAt": "2026-09-23T00:15:19.178Z",
+          "main": {
+            "cacheMissTokens": 650,
+            "cacheHitTokens": 4608,
+            "inputTokens": 5258,
+            "outputTokens": 49
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12438,
+            "outputTokens": 1158
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0006631200000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "coffee-followup",
+          "requestAt": "2026-09-23T00:15:35.767Z",
+          "main": {
+            "cacheMissTokens": 662,
+            "cacheHitTokens": 5248,
+            "inputTokens": 5910,
+            "outputTokens": 45
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12245,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0006563340000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "errands",
+          "requestAt": "2026-09-23T00:15:42.105Z",
+          "main": {
+            "cacheMissTokens": 833,
+            "cacheHitTokens": 5888,
+            "inputTokens": 6721,
+            "outputTokens": 75
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12295,
+            "outputTokens": 1140
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000704004
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "canvas-body",
+          "requestAt": "2026-09-23T00:15:48.871Z",
+          "main": {
+            "cacheMissTokens": 647,
+            "cacheHitTokens": 6784,
+            "inputTokens": 7431,
+            "outputTokens": 45
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 12793,
+            "outputTokens": 1248
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000681708
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "long-document",
+          "requestAt": "2026-09-23T00:16:04.694Z",
+          "main": {
+            "cacheMissTokens": 2195,
+            "cacheHitTokens": 7424,
+            "inputTokens": 9619,
+            "outputTokens": 18
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 16213,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.001043268
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "cold-memory",
+          "requestAt": "2026-09-23T00:16:10.482Z",
+          "main": {
+            "cacheMissTokens": 1016,
+            "cacheHitTokens": 9600,
+            "inputTokens": 10616,
+            "outputTokens": 29
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13873,
+            "outputTokens": 1428
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0007812660000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-before",
+          "requestAt": "2026-09-23T00:16:17.212Z",
+          "main": {
+            "cacheMissTokens": 935,
+            "cacheHitTokens": 10624,
+            "inputTokens": 11559,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13501,
+            "outputTokens": 1374
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0007721640000000001
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "file-after",
+          "requestAt": "2026-09-23T00:16:33.302Z",
+          "main": {
+            "cacheMissTokens": 769,
+            "cacheHitTokens": 11520,
+            "inputTokens": 12289,
+            "outputTokens": 55
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13290,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00074109
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "photo-procedure",
+          "requestAt": "2026-09-23T00:16:39.304Z",
+          "main": {
+            "cacheMissTokens": 671,
+            "cacheHitTokens": 12288,
+            "inputTokens": 12959,
+            "outputTokens": 61
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13318,
+            "outputTokens": 1374
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00073347
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "notice-advert",
+          "requestAt": "2026-09-23T00:16:45.949Z",
+          "main": {
+            "cacheMissTokens": 1077,
+            "cacheHitTokens": 12928,
+            "inputTokens": 14005,
+            "outputTokens": 77
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13728,
+            "outputTokens": 1392
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.0008231099999999999
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "many-source-day",
+          "requestAt": "2026-09-23T00:17:04.404Z",
+          "main": {
+            "cacheMissTokens": 1184,
+            "cacheHitTokens": 14080,
+            "inputTokens": 15264,
+            "outputTokens": 192
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 14184,
+            "outputTokens": 1428
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.000930768
+        },
+        {
+          "caseId": "continuous-memory",
+          "turnId": "quiet-close",
+          "requestAt": "2026-09-23T00:17:11.356Z",
+          "main": {
+            "cacheMissTokens": 628,
+            "cacheHitTokens": 15360,
+            "inputTokens": 15988,
+            "outputTokens": 19
+          },
+          "foreground": {
+            "calls": 2,
+            "inputTokens": 13440,
+            "outputTokens": 1320
+          },
+          "afterReply": {
+            "calls": 0,
+            "inputTokens": 0,
+            "outputTokens": 0
+          },
+          "estimatedUsd": 0.00071616
+        }
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "original-v5/evaluation.json",
+      "sha256": "75395498f18bdaa1ce1d3d771ee2d043ac3e1874c0690edb05a789a9245e0698"
+    },
+    {
+      "path": "original-v5/latency.json",
+      "sha256": "9f97abb7070d80eefddbc5dd3e42a3eb199c81f18e85ca924f8eeff786731799"
+    },
+    {
+      "path": "original-v5/trace-900-all-candidates.jsonl.gz",
+      "sha256": "e5f35b003caf353618192a3a04f945ee4500e6442f628f19c4d7059f5f69c760"
+    },
+    {
+      "path": "original-v5/trace-900-jev-optmem.jsonl.gz",
+      "sha256": "65cfd2474face66d432e70c6e23ee2e6ca788527da3775944b99fef16a808878"
+    },
+    {
+      "path": "original-v5/trace-900-jev-optmem-maintained.jsonl.gz",
+      "sha256": "5e47a916edef78b140d63eec13fc0c6991cdce22f998e5d4d7f1e8805b589438"
+    },
+    {
+      "path": "scattered-v5/evaluation.json",
+      "sha256": "1968f67be7dc43a74074a96166ef656d97724b052ff25a8a5c67ca7a45dcb845"
+    },
+    {
+      "path": "scattered-v5/latency.json",
+      "sha256": "b8c313b2f28cafb3949a73098ebf4543ba2227c7fc774f3296141fae44127dc5"
+    },
+    {
+      "path": "scattered-v5/trace-900-all-candidates.jsonl.gz",
+      "sha256": "017867f6ed131dcbabdf1d525f376a2e6e066e47c01102c899042aa89cbd068b"
+    },
+    {
+      "path": "scattered-v5/trace-900-jev-optmem.jsonl.gz",
+      "sha256": "c2fda1cf75be488e16cad61193594909b0e58bd96fb29f36006a0bd3994a58e8"
+    },
+    {
+      "path": "scattered-v5/trace-900-jev-optmem-maintained.jsonl.gz",
+      "sha256": "6b8b11b5c9039145a2a1519cd5f4b818fe8102a3a3f564323165dcc1529922c1"
+    },
+    {
+      "path": "continuous-v5/evaluation.json",
+      "sha256": "c1f7b02b357a117dcc1c539a0b3c0433256033da0bf48f7cef678084b2890c55"
+    },
+    {
+      "path": "continuous-v5/latency.json",
+      "sha256": "6069efcc7220ff83ad64ecbd70b45927c41285a1698393c2beadaa83624e9056"
+    },
+    {
+      "path": "continuous-v5/trace-900-jev-optmem-maintained.jsonl.gz",
+      "sha256": "b528f1cd51af5cfe71bfa9f44a382e4d406f7b721069e0ebe0eb8d5daeccd65a"
+    },
+    {
+      "path": "continuous-v5/trace-900-jev-optmem-maintained-local-nap.jsonl.gz",
+      "sha256": "8ca2ea5644ef7ea61f807591d397d4081e6fc5b71923b1ee176ef8747099ab9c"
+    },
+    {
+      "path": "continuous-v5/trace-900-jev-optmem-maintained-no-nap.jsonl.gz",
+      "sha256": "7cbd0cd71d418f417db7cee7d23bcce4c8aee78fb2742c24c348d5c498a6aecf"
+    }
+  ]
+}

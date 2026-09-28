@@ -1,0 +1,15 @@
+\begin{abstract}
+Long-term memory lets an LLM assistant use a history it can no longer reread, and most memory systems build it by rewriting conversations with an LLM when they are stored.
+We argue that the work of memory divides, as thinking does, into two systems.
+Most of it is fast System~1 work: many small, independent yes/no questions about records, such as whether the reply should use a record or whether a later message has made it obsolete, which a decision model answers by the dozen in a third of a second.
+Only a little is slow System~2 work: wording a few searches, naming what the reply needs, and composing the answer, which an LLM does well but slowly.
+We present \sys, a memory agent built on this division.
+\sys{} keeps conversations as raw, dated records; an LLM planner (System~2) searches them, a decision model, \jev{} (System~1), judges what the searches return, and rules with explicit budgets turn the judgments into a small View for an unchanged answering model.
+A slow background pass consolidates each record once into topic timelines, value histories and standing instructions that link back to the records, so that questions about a whole conversation reach evidence their own searches miss.
+\sys{} runs as a second instance of an open-source agent harness and is built entirely from its plugins.
+
+With gpt-4.1-mini answering, as in a public re-evaluation of 14 memory systems, \sys{} scores \finLoCoMo\% on LoCoMo, the highest under that protocol, and \finLME\% on \lme, from under 4k tokens of context per question and with the lowest effective cost index on LoCoMo.
+With a reasoning model answering, it reaches \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme, the latter level with the best published results.
+From BEAM's 100K tier to its ten-million-token tier, its cost per question grows by a factor of \beamTenCostRatioC.
+On the same records, \jev{} separates gold evidence better than two LLM judges at 3--11 times lower latency.
+\end{abstract}

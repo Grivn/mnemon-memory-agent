@@ -1,0 +1,34 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Published results with gpt-4.1-mini answering, each from its own evaluation.} Top: memory systems as reported by their authors. Bottom: the full-context baseline (whole history in the prompt, gpt-4.1-mini answering) as reported in the same papers. Judges and question sets differ, so only overall scores are comparable, and only roughly.}
+\label{tab:self-reported}
+\begin{tabular}{@{}lccl@{}}
+\toprule
+& LoCoMo & \lme & judge \\
+\midrule
+SmartSearch & 93.5 & 88.4 & gpt-4o-mini \\
+EverMemOS & 93.05 & 83.0 & gpt-4o-mini + two auxiliary judges \\
+H-Mem & 92.01 & 89.2 & not stated \\
+MemMachine & 91.69 & -- & gpt-4o-mini \\
+HyMem & 89.55 & 78.8 & gpt-4.1-mini \\
+LycheeMemory V2 & 89.22 & 92.2 & gpt-4o-mini \\
+MemR3 & 86.75 & -- & GPT-4.1 \\
+MIRIX & 85.38 & -- & GPT-4.1 \\
+EMem-G & 85.3 & 84.9 & gpt-4o-mini \\
+LeanMem & 84.87 & 91.8 & gpt-4.1-mini \\
+Memori & 81.95 & -- & gpt-4.1-mini \\
+Nemori & 80.8 & 74.6 & gpt-4o-mini \\
+SimpleMem & -- & 75.8 & gpt-4.1-mini \\
+SwiftMem & 72.5 & 66.7 & not stated \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Full context, gpt-4.1-mini answering}} \\
+MIRIX & 87.52 & -- & GPT-4.1, mean of 3 runs \\
+MemR3 & 89.0 & -- & GPT-4.1, 1,529 questions \\
+LycheeMemory V2 & 84.8 & 66.2 & gpt-4o-mini \\
+Nemori & 80.6 & 65.6 & gpt-4o-mini \\
+SwiftMem (v2) & 84.87 & 63.4 & not stated \\
+LeanMem & 56.92 & 77.4 & gpt-4.1-mini \\
+\bottomrule
+\end{tabular}
+\end{gentable}

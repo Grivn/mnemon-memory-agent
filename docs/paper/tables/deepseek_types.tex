@@ -1,0 +1,22 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{Accuracy by question type in the reasoning setting} (DeepSeek answers, plans and judges; same questions as \cref{tab:deepseek}).}
+\label{tab:deepseek-types}
+\setlength{\tabcolsep}{3.4pt}
+\begin{tabular}{@{}l cccc cccccc@{}}
+\toprule
+& \multicolumn{4}{c}{LoCoMo} & \multicolumn{6}{c}{\lme} \\
+\cmidrule(lr){2-5}\cmidrule(l){6-11}
+& single & multi & temp. & open & SS-user & SS-asst. & SS-pref. & temp. & multi-s. & KU \\
+\midrule
+Cue recall (S0) & 91.9 & 83.9 & 86.5 & 59.4 & 98.6 & 98.2 & 83.3 & 85.0 & 73.7 & 89.7 \\
++ hybrid retrieval (S4h) & 93.6 & 86.0 & 88.4 & 60.4 & 97.1 & 96.4 & 83.3 & 86.5 & 82.0 & 93.6 \\
++ judge--act loop (S5h) & 94.4 & 87.1 & 89.7 & 56.2 & 98.6 & 100.0 & 90.0 & 89.5 & 86.5 & 93.6 \\
++ unsure fill (S6) & 93.9 & 87.5 & 89.3 & 59.4 & 98.6 & 100.0 & 86.7 & 88.0 & 83.5 & 91.0 \\
++ unsure fill, second run & 94.8 & 88.5 & 89.0 & 61.5 & 98.6 & 100.0 & 96.7 & 88.0 & 85.0 & 91.0 \\
++ budgets = \sys{} w/o consolidation & 94.5 & 89.6 & 87.8 & 65.6 & 98.6 & 100.0 & 93.3 & 85.7 & 87.2 & 88.5 \\
++ consolidation = \sys{} & 96.1 & 93.9 & 90.3 & 60.4 & 97.1 & 100.0 & 96.7 & 94.7 & 89.5 & 94.9 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

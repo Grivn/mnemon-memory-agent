@@ -1,0 +1,31 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{LoCoMo under the original and revised labels, with and without open-domain questions}, for each judge. The revised labels drop 44 questions whose gold answer is unusable and correct 25 gold answers (the corrected questions are regraded by each judge). Configurations without revised-label grades are omitted.}
+\label{tab:label-variants}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l cccc cccc@{}}
+\toprule
+& \multicolumn{4}{c}{gpt-4.1-mini judge} & \multicolumn{4}{c}{DeepSeek judge} \\
+\cmidrule(lr){2-5}\cmidrule(l){6-9}
+& original & revised & orig.\ no OD & rev.\ no OD & original & revised & orig.\ no OD & rev.\ no OD \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Standard setting (gpt-4.1-mini answers), 1,540 questions; revised labels keep 1,496}} \\
+Cue recall (S0) & 88.0 & 90.2 & 89.9 & 91.6 & 87.7 & 90.2 & 89.6 & 91.6 \\
++ hybrid retrieval (S4h) & 89.4 & 91.7 & 91.1 & 93.1 & 89.6 & 92.0 & 91.5 & 93.3 \\
++ unsure fill (S6) & 90.1 & 92.7 & 91.6 & 93.7 & 89.4 & 92.2 & 90.9 & 93.2 \\
++ unsure fill, no planner & 88.7 & 91.0 & 90.4 & 92.2 & 87.9 & 90.3 & 89.3 & 91.3 \\
++ budgets = \sys{} w/o consolidation & 89.2 & 91.4 & 90.7 & 92.6 & 88.8 & 91.1 & 90.6 & 92.4 \\
+w/o consolidation, no planner & 88.4 & 90.5 & 90.0 & 91.7 & 88.0 & 90.2 & 89.8 & 91.4 \\
++ consolidation = \sys{} & 91.7 & 94.2 & 93.4 & 95.3 & 91.4 & 93.9 & 93.1 & 95.0 \\
+\midrule
+\multicolumn{9}{@{}l}{\textit{Reasoning setting (DeepSeek answers), 1,534 questions; revised labels keep 1,492}} \\
+Cue recall (S0) & -- & -- & -- & -- & 87.3 & 90.3 & 89.2 & 91.6 \\
++ hybrid retrieval (S4h) & -- & -- & -- & -- & 89.0 & 92.0 & 91.0 & 93.3 \\
++ judge--act loop (S5h) & -- & -- & -- & -- & 89.7 & 92.8 & 91.9 & 94.5 \\
++ unsure fill (S6) & -- & -- & -- & -- & 89.6 & 92.9 & 91.7 & 94.3 \\
++ budgets = \sys{} w/o consolidation & -- & -- & -- & -- & 90.4 & 93.2 & 92.1 & 94.3 \\
++ consolidation = \sys{} & -- & -- & -- & -- & 92.2 & 95.3 & 94.4 & 96.8 \\
+\bottomrule
+\end{tabular}
+\end{gentable}

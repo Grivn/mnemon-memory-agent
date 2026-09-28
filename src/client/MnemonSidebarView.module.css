@@ -1,0 +1,491 @@
+/*
+ * Sidebar is a DSH-native utility panel: plain title, compact tabs and semantic
+ * host tokens. These classes compose with the shared view and dialog styles.
+ */
+.shell.shell {
+  background: var(--mn-surface);
+  font-family: var(--dsw-font-family);
+}
+
+.shell .masthead {
+  display: flex;
+  min-height: 50px;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px 6px;
+  border-bottom: 0;
+  background: var(--mn-surface);
+}
+
+.shell .brand { flex: 1 1 auto; flex-wrap: wrap; gap: 4px 8px; }
+.shell .brand h1 {
+  flex: 0 0 auto;
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  letter-spacing: 0;
+}
+
+.shell [class*='storageMode'] {
+  min-height: 32px;
+  min-width: 96px;
+  gap: 5px;
+  padding: 0 9px;
+  border-color: var(--dsw-alias-border-l1);
+  background: var(--dsw-alias-bg-layer-1);
+}
+.shell [class*='storageMode'] > span { color: var(--dsw-alias-label-tertiary); font-size: 11px; }
+.shell [class*='storageMode'] > strong { color: var(--dsw-alias-label-primary); font-size: 12px; }
+
+.shell .headerActions { flex: 0 1 auto; gap: 6px; }
+.shell .workspacePicker {
+  min-height: 32px;
+  flex: 0 0 auto;
+  gap: 7px;
+  padding-left: 9px;
+  border: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 8px;
+  background: var(--dsw-alias-bg-layer-1);
+}
+.shell .workspacePicker > span { display: block; color: var(--dsw-alias-label-tertiary); font-size: 11px; }
+.shell .workspacePicker select {
+  width: min(190px, 20vw);
+  height: 30px;
+  border: 0;
+  border-left: 1px solid var(--dsw-alias-border-l1);
+  border-radius: 0 7px 7px 0;
+  padding: 0 28px 0 10px;
+  background: var(--dsw-specific-input-major);
+  font-size: 13px;
+}
+
+.shell .statusCluster {
+  min-height: 30px;
+  gap: 7px;
+  padding: 0 2px 0 8px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  font-size: 12px;
+}
+.shell .statusCluster > span:not([class*='statusDot']) { min-width: 56px; }
+
+.shell .workspaceMismatch {
+  min-height: 32px;
+  flex: 0 0 auto;
+  justify-content: flex-start;
+  gap: 6px;
+  margin: 0;
+  padding: 0 3px 0 9px;
+  border-color: color-mix(in srgb, var(--dsw-alias-state-business-primary) 34%, var(--dsw-alias-border-l1));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--dsw-alias-state-business-primary) 6%, var(--dsw-alias-bg-layer-1));
+  white-space: nowrap;
+}
+.shell .workspaceMismatch > span { color: var(--dsw-alias-label-secondary); font-size: 11px; }
+.shell .workspaceMismatch > button {
+  min-height: 26px;
+  border: 1px solid color-mix(in srgb, var(--dsw-alias-state-business-primary) 55%, var(--dsw-alias-border-l2));
+  border-radius: 6px;
+  padding: 0 8px;
+  color: var(--dsw-alias-state-business-primary);
+  background: var(--mn-surface);
+  font-size: 11px;
+  cursor: pointer;
+}
+.shell .workspaceMismatch > button:hover { background: var(--dsw-alias-interactive-bg-hover); }
+
+.shell .topNavigation {
+  min-height: 0;
+  gap: 0;
+  padding: 0 16px;
+  border-bottom: 0;
+  background: var(--mn-surface);
+}
+
+.shell .topNavigation::after { display: none; }
+.shell .nav {
+  flex: 1;
+  gap: 2px;
+  padding-right: 0;
+  border-bottom: 1px solid var(--dsw-alias-border-l1);
+}
+.shell .nav button {
+  min-height: 0;
+  gap: 0;
+  padding: 7px 14px;
+  border-bottom: 2px solid transparent;
+  border-radius: 6px 6px 0 0;
+  font-size: 13px;
+  font-weight: 400;
+}
+.shell .nav button:hover { background: var(--dsw-alias-interactive-bg-hover); }
+.shell .nav button[data-active] {
+  color: var(--dsw-alias-label-primary);
+  border-bottom-color: var(--dsw-alias-state-business-primary);
+  font-weight: 600;
+}
+
+.shell .modalBackdrop {
+  position: fixed;
+  z-index: 1300;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overscroll-behavior: contain;
+  padding: 24px;
+  background: var(--dsw-alias-bg-mask-1);
+}
+
+.shell .modal {
+  display: flex;
+  width: min(680px, calc(100vw - 48px));
+  min-height: 0;
+  max-height: calc(100vh - 48px);
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 14px;
+  box-shadow: var(--dsw-shadow-lv3);
+}
+.shell .modal.modalWide { width: min(780px, calc(100vw - 48px)); }
+.shell .modal > header {
+  display: flex;
+  flex: none;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 15px 18px;
+  border-bottom: 1px solid var(--dsw-alias-border-l1);
+}
+.shell .modal > header h2 { margin: 0; font-size: 15px; line-height: 22px; }
+.shell .modal > header p {
+  max-width: 64ch;
+  margin: 3px 0 0;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 12px;
+  line-height: 1.5;
+}
+.shell .modal > [class*='modalBody'] { min-height: 0; overflow-x: hidden; overflow-y: auto; overscroll-behavior: contain; padding: 18px; scrollbar-gutter: stable; touch-action: pan-y; -webkit-overflow-scrolling: touch; }
+.shell .modal > [class*='modalFooter'] { border-top-color: var(--dsw-alias-border-l1); }
+@supports (height: 100dvh) { .shell .modal { max-height: calc(100dvh - 48px); } }
+.shell .modal [class*='formActions'] { justify-content: flex-end; }
+
+/*
+ * DSH action hierarchy, shared by the installed SSH and task-board panels.
+ * Stable source-class suffixes apply the sidebar skin to shared controls.
+ */
+.shell [class*='primaryButton'] {
+  min-height: 32px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 8px;
+  color: var(--dsw-alias-label-primary-foreground);
+  background: var(--dsw-alias-button-info-fill);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.shell [class*='primaryButton']:hover:not(:disabled) {
+  filter: none;
+  background: var(--dsw-alias-button-info-hover);
+}
+
+.shell [class*='secondaryButton'], .shell [class*='ghostButton'] {
+  min-height: 32px;
+  padding: 5px 12px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 8px;
+  color: var(--dsw-alias-label-primary);
+  background: transparent;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.shell [class*='secondaryButton']:hover:not(:disabled), .shell [class*='ghostButton']:hover:not(:disabled) {
+  filter: none;
+  background: var(--dsw-alias-interactive-bg-hover);
+}
+
+.shell [class*='dangerButton'] {
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: var(--dsw-alias-state-error-primary);
+  background: none;
+  font-size: 12px;
+  font-weight: 400;
+  white-space: nowrap;
+}
+.shell [class*='dangerButton']:hover:not(:disabled) {
+  filter: none;
+  background: none;
+  text-decoration: underline;
+}
+
+.shell [class*='dangerSolidButton'] {
+  min-height: 32px;
+  padding: 6px 14px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--dsw-alias-state-error-primary);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.shell [class*='dangerSolidButton']:hover:not(:disabled) { filter: brightness(1.08); }
+
+.shell [class*='iconButton'],
+.shell [class*='bodyEditButton'], .shell [class*='sectionHeading'] button {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  min-height: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  color: var(--dsw-alias-label-secondary);
+  background: transparent;
+  font-size: 13px;
+}
+.shell [class*='iconButton']:hover:not(:disabled),
+.shell [class*='bodyEditButton']:hover:not(:disabled), .shell [class*='sectionHeading'] button:hover:not(:disabled) {
+  border: 0;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-alias-interactive-bg-hover);
+}
+
+.shell [class*='primaryButton'],
+.shell [class*='secondaryButton'],
+.shell [class*='ghostButton'],
+.shell [class*='dangerButton'],
+.shell [class*='dangerSolidButton'],
+.shell [class*='iconButton'],
+.shell [class*='bodyEditButton'], .shell [class*='sectionHeading'] button {
+  cursor: pointer;
+  transition: background-color 120ms ease, color 120ms ease, border-color 120ms ease, outline-color 120ms ease, box-shadow 120ms ease, transform 120ms ease;
+}
+.shell [class*='primaryButton']:active:not(:disabled),
+.shell [class*='secondaryButton']:active:not(:disabled),
+.shell [class*='ghostButton']:active:not(:disabled),
+.shell [class*='dangerButton']:active:not(:disabled),
+.shell [class*='dangerSolidButton']:active:not(:disabled),
+.shell [class*='iconButton']:active:not(:disabled),
+.shell [class*='bodyEditButton']:active:not(:disabled), .shell [class*='sectionHeading'] button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+.shell [class*='primaryButton']:disabled,
+.shell [class*='secondaryButton']:disabled,
+.shell [class*='ghostButton']:disabled,
+.shell [class*='dangerButton']:disabled,
+.shell [class*='dangerSolidButton']:disabled,
+.shell [class*='iconButton']:disabled, .shell [class*='bodyEditButton']:disabled {
+  cursor: default;
+  opacity: .45;
+}
+
+.shell .canvas { background: var(--mn-surface); }
+.shell button,
+.shell input,
+.shell select, .shell textarea { font-family: var(--dsw-font-family); }
+.shell button:focus-visible,
+.shell input:focus-visible,
+.shell select:focus-visible,
+.shell textarea:focus-visible, .shell summary:focus-visible {
+  outline: 2px solid var(--dsw-alias-state-business-primary);
+  outline-offset: 2px;
+}
+.shell .canvas > div {
+  width: 100%;
+  padding: 14px 16px clamp(96px, 14vh, 150px);
+}
+
+.shell .pageHeader { margin-bottom: 12px; }
+.shell .pageHeader h2 {
+  margin-top: 0;
+  font-size: 16px;
+  line-height: 1.35;
+  letter-spacing: 0;
+}
+.shell .pageHeader p { font-size: 13px; line-height: 1.55; }
+.shell .canvas[data-lock-page-header] [class*='pageHeader'] {
+  position: sticky;
+  z-index: 12;
+  top: 0;
+  margin: -14px -16px 12px;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--dsw-alias-border-l1);
+  background: var(--mn-surface);
+}
+
+/*
+ * Readability scale borrowed from the official Task Board and SSH panels:
+ * 13px content/controls, 12px labels and hints, 11px compact metadata.
+ * Shared component rules continue to provide layout and dialog behavior.
+ */
+.shell input,
+.shell select, .shell textarea { font-family: var(--dsw-font-family); font-size: 13px; font-weight: 400; }
+
+.shell [class*='bodyEdit'] label, .shell [class*='formGrid'] label {
+  gap: 5px;
+  color: var(--dsw-alias-label-secondary);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.shell [class*='bodyEdit'] input,
+.shell [class*='bodyEdit'] select,
+.shell [class*='bodyEdit'] textarea,
+.shell [class*='formGrid'] select,
+.shell [class*='formGrid'] input, .shell [class*='bodyCreate'] input {
+  min-height: 34px;
+  border: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 8px;
+  padding: 7px 10px;
+  color: var(--dsw-alias-label-primary);
+  background: var(--dsw-specific-input-major);
+  font-size: 13px;
+  font-weight: 400;
+}
+.shell select { cursor: pointer; font-weight: 400; }
+.shell textarea { font-weight: 400; line-height: 1.55; }
+
+.shell [class*='cardKicker'], .shell [class*='sectionHeading'] > div > span {
+  font-size: 11px;
+  letter-spacing: .06em;
+}
+
+.shell [class*='healthStrip'] p,
+.shell [class*='storageAreaGrid'] article > p,
+.shell [class*='statusSectionHeader'] p,
+.shell [class*='writeGuide'] li span, .shell [class*='writeGuide'] > p { font-size: 12px; }
+
+.shell [class*='runtimeFootnote'],
+.shell [class*='storageRoot'] span,
+.shell [class*='storageRoot'] small,
+.shell [class*='storageAreaMetric'] span,
+.shell [class*='storageAreaMetric'] code,
+.shell [class*='storagePath'],
+.shell [class*='storageAreaGrid'] article > small, .shell [class*='storageFootnote'] { font-size: 11px; }
+.shell [class*='listProgress'], .shell [class*='compactListProgress'] { color: var(--dsw-alias-label-tertiary); font-size: 12px; }
+.shell .itemActionButton {
+  min-height: 28px;
+  padding: 4px 9px;
+  border: 1px solid;
+  border-radius: 7px;
+  font-size: 12px;
+  line-height: 18px;
+}
+.shell .itemEditAction {
+  color: var(--dsw-alias-state-business-primary);
+  border-color: color-mix(in srgb, var(--dsw-alias-state-business-primary) 38%, var(--dsw-alias-border-l2));
+  background: transparent;
+}
+.shell .itemEditAction:hover:not(:disabled) {
+  color: var(--dsw-alias-state-business-primary);
+  border-color: color-mix(in srgb, var(--dsw-alias-state-business-primary) 58%, var(--dsw-alias-border-l2));
+  background: color-mix(in srgb, var(--dsw-alias-state-business-primary) 8%, transparent);
+}
+.shell .itemDangerAction {
+  padding: 4px 9px;
+  color: var(--dsw-alias-state-error-primary);
+  border-color: color-mix(in srgb, var(--dsw-alias-state-error-primary) 34%, var(--dsw-alias-border-l2));
+  background: transparent;
+}
+.shell .itemDangerAction:hover:not(:disabled) {
+  border-color: color-mix(in srgb, var(--dsw-alias-state-error-primary) 54%, var(--dsw-alias-border-l2));
+  background: color-mix(in srgb, var(--dsw-alias-state-error-primary) 8%, transparent);
+  text-decoration: none;
+}
+.shell [class*='bodyDeleteConfirm'] > p { font-size: 13px; }
+
+.shell [class*='pageHeaderMeta'] > code {
+  min-width: 72px;
+  text-align: center;
+  font-size: 11px;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px) {
+  .shell .masthead { min-height: 48px; padding: 8px 12px 4px; }
+  .shell .headerActions { max-width: none; }
+  .shell .statusCluster > span:not([class*='statusDot']) { display: inline; }
+  .shell [class*='storageMode'] { min-width: 0; }
+  .shell [class*='storageMode'] > span,
+.shell .workspacePicker > span, .shell .workspaceMismatch > span { display: none; }
+  .shell .workspacePicker { gap: 0; padding-left: 0; }
+  .shell .workspacePicker select { width: min(160px, 31vw); border-left: 0; }
+  .shell .topNavigation { padding: 0 12px; }
+  .shell .nav button {
+    min-width: max-content;
+    flex-direction: row;
+    padding: 7px 12px;
+    text-align: left;
+  }
+  .shell .canvas > div { padding: 14px 12px calc(170px + env(safe-area-inset-bottom, 0px)); }
+  .shell .canvas[data-lock-page-header] [class*='pageHeader'] { margin-inline: -12px; padding-inline: 12px; }
+  .shell .modalBackdrop { align-items: flex-end; padding: max(10px, env(safe-area-inset-top, 0px)) 0 0; }
+  .shell .modal, .shell .modal.modalWide { width: 100vw; max-height: calc(100vh - max(10px, env(safe-area-inset-top, 0px))); border-radius: 18px 18px 0 0; border-bottom: 0; }
+  .shell .modalDragHandle span { background: var(--dsw-alias-border-l2); }
+  .shell .modal > header { gap: 12px; padding: 10px max(14px, env(safe-area-inset-right, 0px)) 12px max(14px, env(safe-area-inset-left, 0px)); }
+  .shell .modal > header p { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 2; }
+  .shell .modal > header [class*='iconButton'] { width: 44px; min-width: 44px; height: 44px; min-height: 44px; }
+  .shell .modal > [class*='modalBody'] { padding: 14px max(14px, env(safe-area-inset-right, 0px)) 18px max(14px, env(safe-area-inset-left, 0px)); scrollbar-gutter: auto; }
+  .shell .modal > [class*='modalBody'] button { min-height: 44px; }
+  .shell .modal > [class*='modalFooter'] { padding: 10px max(14px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px)); }
+  .shell .modal > [class*='modalFooter'] [class*='modalFooterActions'] button { min-height: 44px; padding-block: 8px; }
+}
+
+@media (min-width: 761px) and (max-height: 560px) {
+  .shell .modalBackdrop { padding: 8px; }
+  .shell .modal { max-height: calc(100vh - 16px); }
+}
+
+@supports (height: 100dvh) {
+  @media (max-width: 760px) {
+    .shell .modal, .shell .modal.modalWide { max-height: calc(100dvh - max(10px, env(safe-area-inset-top, 0px))); }
+  }
+  @media (min-width: 761px) and (max-height: 560px) {
+    .shell .modal { max-height: calc(100dvh - 16px); }
+  }
+}
+
+@media (max-width: 520px) {
+  .shell .masthead { min-height: 46px; }
+  .shell .brand { flex-wrap: wrap; gap: 4px 8px; }
+  .shell .brand h1 { font-size: 16px; }
+  .shell .nav button { padding-inline: 8px; font-size: 12px; }
+  .shell .headerActions { max-width: none; flex: 0 0 auto; }
+  .shell [class*='backButton'] > span { display: none; }
+  .shell [class*='storageMode'] { padding-inline: 7px; }
+  .shell .workspacePicker select { width: min(118px, 30vw); padding-left: 8px; }
+  .shell .workspaceMismatch > button { padding-inline: 6px; }
+  .shell .statusCluster [class*='iconButton'] { display: none; }
+}
+
+@media (max-height: 420px) {
+  .shell .modal > header p { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+}
+
+@media (pointer: coarse) {
+  .shell .modal > header [class*='iconButton'] { width: 44px; min-width: 44px; height: 44px; min-height: 44px; }
+  .shell .modal > [class*='modalBody'] button, .shell .modal > [class*='modalFooter'] button { min-height: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shell [class*='primaryButton'],
+.shell [class*='secondaryButton'],
+.shell [class*='ghostButton'],
+.shell [class*='dangerButton'],
+.shell [class*='dangerSolidButton'],
+.shell [class*='iconButton'],
+.shell [class*='bodyEditButton'], .shell [class*='sectionHeading'] button {
+    transition: none;
+  }
+}

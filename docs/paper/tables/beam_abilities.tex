@@ -1,0 +1,30 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{BEAM-100K by ability, and where the gold evidence went} (gpt-4.1-mini judge; 40 questions per ability). Scores of \sys{} (exploratory), \sys{} w/o consolidation (registered) and the same with BM25 only (registered control); then, for the registered run w/o consolidation, the share of questions whose evidence messages all appear in the View, what became of each evidence message (in the View; judged by \jev{} but left out; never retrieved), and the score of the questions whose evidence is all in the View. Evidence is the dataset's \texttt{source\_chat\_ids}; abstention questions have none. Message shares use the 309 questions whose replica traces were kept.}
+\label{tab:beam-abilities}
+\setlength{\tabcolsep}{4pt}
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{@{}l ccc c ccc c@{}}
+\toprule
+& \multicolumn{3}{c}{score} & \multicolumn{5}{c}{w/o consolidation (registered run)} \\
+\cmidrule(lr){2-4}\cmidrule(l){5-9}
+& & w/o & w/o cons., & questions with & \multicolumn{3}{c}{evidence messages (\%)} & score with \\
+\cmidrule(lr){6-8}
+ability & \sys{} & cons. & BM25 only & all evidence (\%) & in View & judged, left out & not retrieved & all evidence \\
+\midrule
+preference following & 85.6 & 88.8 & 88.1 & 23 & 20 & 22 & 58 & 88.9 \\
+information extraction & 80.4 & 85.5 & 82.9 & 58 & 72 & 10 & 18 & 91.3 \\
+instruction following & 86.2 & 73.8 & 77.5 & 15 & 18 & 5 & 78 & 91.7 \\
+multi-session reasoning & 76.5 & 72.1 & 79.9 & 25 & 39 & 20 & 42 & 76.7 \\
+event ordering & 64.3 & 58.2 & 60.8 & 0 & 23 & 13 & 64 & -- \\
+knowledge update & 70.0 & 56.2 & 68.8 & 28 & 44 & 34 & 22 & 63.6 \\
+temporal reasoning & 53.8 & 47.5 & 45.0 & 55 & 75 & 18 & 7 & 68.2 \\
+summarization & 52.9 & 40.6 & 38.9 & 0 & 20 & 28 & 52 & -- \\
+abstention & 50.0 & 36.2 & 37.5 & -- & -- & -- & -- & -- \\
+contradiction resolution & 25.3 & 22.5 & 23.8 & 15 & 41 & 42 & 16 & 20.8 \\
+\midrule
+all & 64.5 & 58.2 & 60.4 & 25 & 35 & 22 & 43 & 75.2 \\
+\bottomrule
+\end{tabular}}
+\end{gentable}

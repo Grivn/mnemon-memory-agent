@@ -1,0 +1,71 @@
+{
+  "format": "jev-replica-acceptance/v1",
+  "recordedAt": "2026-09-22T17:53:08.556Z",
+  "branch": "codex/jev-replica-agent-loop",
+  "implementationCommit": "ca3d6f2850bcdcc84d20c4bca765b620e3f8f6c6",
+  "main": "84d469ffa838a36fa579295d94029fcac8ac058e",
+  "draft": "21df9c228ed4453ff28136ce231f084724ef7a82",
+  "mnemonMaster": "b0661c0bcdb8e7c08e9239b6942118e18dd288ad",
+  "node": "v25.1.0",
+  "dsh": "0.1.5-rc.1",
+  "cordis": "4.0.2",
+  "tests": {
+    "root": {
+      "passed": 1449,
+      "skipped": 7
+    },
+    "plugins": {
+      "packages": 41,
+      "passed": 551,
+      "skipped": 2
+    },
+    "packedArtifacts": {
+      "passed": true,
+      "packages": 41,
+      "artifacts": 42,
+      "hostVersionConstraint": "reviewed DSH 0.1.5-rc.1 and Cordis 4.0.2 registry cohort"
+    },
+    "twoProcesses": {
+      "passed": true,
+      "checks": 5
+    },
+    "liveRead": {
+      "passed": true,
+      "checks": 5
+    },
+    "liveWrite": {
+      "passed": true,
+      "checks": 5
+    },
+    "officialProfiles": {
+      "passed": true,
+      "checks": 9
+    },
+    "concurrentMainSessions": 8,
+    "maxObservedDecisionConcurrency": 2,
+    "continuousBackgroundSessions": 8
+  },
+  "evaluationExecutionPassed": true,
+  "evaluationQualityGate": {
+    "passed": false,
+    "criteria": "Retrieve every predeclared required item and exclude every predeclared obsolete item",
+    "requiredHits": 5,
+    "requiredCount": 5,
+    "obsoleteSelected": 1
+  },
+  "credentialScan": {
+    "files": 1846,
+    "matches": 0,
+    "temporaryCredentialFileRemoved": true
+  },
+  "delivery": {
+    "push": false,
+    "prCreated": false,
+    "experimentalWebProcessesStopped": true
+  },
+  "archivedLogs": {
+    "files": 6,
+    "credentialPatternMatches": 0,
+    "trailingWhitespaceNormalized": true
+  }
+}

@@ -1,0 +1,38 @@
+\subsection{Accuracy at Small Context}
+\label{sec:main}
+
+\Cref{tab:omnimemeval} places \sys{} among the 14 systems that OmniMemEval re-evaluated with the same answering model.
+On LoCoMo it scores \finLoCoMo\%, against 88.83\% for MemOS and at most 83.48\% for the rest, a margin beyond the one to two points that separate judges; on \lme{} it scores \finLME\%, second to MemOS (89.2\%) and ahead of EverOS (80.4\%) and Zep (79.8\%).
+It sends the answering model about \finCtxLoCoMo{} tokens per question, less than any other system above 80\% on either benchmark (MemOS 4.2--5.4k, EverOS 8.6--12.4k, Hindsight 24.7k, Cognee 32.5k).
+With $c_\text{full}$ set to 21,613 gpt-4.1-mini input tokens on LoCoMo and 105,134 on \lme, \sys{} has the lowest effective cost index (\cref{eq:eci}) of the 15 systems on LoCoMo, \finEciLoCoMo{} against \eciOtherLoCoMo{} for \eciOtherNameLoCoMo, and the second lowest on \lme, \finEciLME{} after \eciOtherNameLME{} at \eciOtherLME{} (\cref{fig:tradeoff}).
+
+\input{tables/omnimemeval}
+
+By question type (\cref{tab:by-type}), \sys{} leads on every LoCoMo type except open-domain, whose questions ask for inferences the conversation does not state, with the largest margins on temporal and multi-hop questions.
+On \lme{} it leads on knowledge updates, matches MemOS on multi-session questions and trails it mainly on temporal-reasoning and preference questions, which require computing or inferring at answer time.
+
+\input{tables/by_type}
+
+\subsection{A Stronger Reader}
+\label{sec:reasoning}
+
+With DeepSeek-V4.1-Flash answering with thinking, \sys{} scores \dsFinLoCoMo\% on LoCoMo and \dsFinLME\% on \lme{} under the DeepSeek judge (\dsFinLoCoMoMini\% and \dsFinLMEMini\% under gpt-4.1-mini), at \$\dsCostLoCoMo{} and \$\dsCostLME{} per question.
+On \lme{} the reasoning reader adds \readerGainLME{} points to the same memory (95\% interval \readerGainLMECI), most on temporal-reasoning and multi-session questions; with it, \sys{} reaches or passes MemOS on five of the six \lme{} question types (\cref{tab:by-type}). Raw records leave computing and counting to the reader, and a better reader does them.
+\Cref{tab:best-reported} lists each open-source project's best published result, whatever its answering model and protocol.
+On \lme{} \sys{} is level with the best claims (Hindsight 94.6\%, Mem0 94.4\% with GPT-5); on LoCoMo, where claims reach 94.7\% (Zep with gpt-5.4), it scores \dsFinLoCoMo\% on the original labels and \dsFinLoCoMoRev\% on the revised ones.
+
+\input{tables/best_reported}
+
+\subsection{Other Benchmarks and Scale}
+\label{sec:scale}
+
+\Cref{tab:ours} reports \sys{} on all five benchmarks with its full cost per question.
+HaluMem and BEAM test what the design targeted least: HaluMem's judge counts an answer that adds details beyond the reference as a hallucination, and BEAM asks for instructions to be followed, contradictions to be reported and whole conversations to be summarized.
+There \sys{} ranks \finHaluRankWord{} of \haluSystems{} systems on HaluMem and \finBeamRankWord{} of \beamSystems{} on BEAM-100K.
+
+\input{tables/ours}
+
+Nothing on the read path of \sys{} grows with the memory except the search index: the planner reads the recent dialogue, \jev{} screens at most 48 records a round, and the View has fixed budgets.
+BEAM-10M tests this with conversations of about 90,000 records, 80 times as many as BEAM-100K's.
+From the 100K tier to the 10M tier the cost per question grows by a factor of \beamTenCostRatioC{} and the median latency by \beamTenLatC\,s.
+On the 10M tier \sys{} scores \beamTenC, where OmniMemEval reports 43.3--59.8 for eleven systems, and consolidating its ten conversations took \beamTenBatches{} folds without a failure.

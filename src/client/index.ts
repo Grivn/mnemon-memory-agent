@@ -1,0 +1,290 @@
+import { SourceOverlaysHost, MNEMON_CLOSE_WORKSPACE_EVENT } from './source-overlays.tsx'
+import {
+  MNEMON_SETTINGS_NAMESPACE,
+  MNEMON_UI_SETTINGS_NAMESPACE,
+  normalizeDisplayMode,
+  type ClientConnectionHandle,
+  type Config,
+  type InteractionConfig,
+  type MnemonDisplayMode,
+} from "../host/protocol.ts"
+import { MnemonSettingsHost } from './MnemonSettingsHost.tsx'
+import { MnemonTurnTail, selectMnemonTurnTail } from './MnemonTurnTail.tsx'
+import { MnemonSaveAction } from './MnemonSaveAction.tsx'
+import { en, zh, type MnemonKey } from './locales.ts'
+import { MnemonSettingsScope } from './settings.ts'
+import type { MnemonClientContext } from "./dsh-context.ts"
+import {
+  createMemorySourcePageDirectory, createMemorySourceOverlayDirectory,
+} from './source-pages.tsx'
+import { MnemonBetterSidebarSeat } from './better-sidebar-seat.ts'
+import {
+  MnemonSidebarWorkspaceHost,
+  MnemonBuiltinWorkspaceHost,
+  mountMnemonSidebarLauncher,
+} from './workspace-mount.tsx'
+import { mountBetterSidebarTab } from './better-sidebar.tsx'
+import { MnemonWorkspaceController } from './workspace-controller.ts'
+import { MNEMON_ANCHOR_EVENT, type MnemonAnchor } from './anchor.ts'
+import { mountSubagentTokenUsageOverride } from './subagent-token-usage.tsx'
+
+export * from './extension-sdk.ts'
+
+export const inject = ['slots', 'sessions', 'workspaces', 'uiSession', 'connection', 'locale']
+
+/** Interaction surfaces: slot name, settings toggle, and the registrations it owns. */
+type MnemonNamespace = 'mnemon'
+type InteractionSlot = 'conversation.chat.turnTail' | 'conversation.chat.assistant-actions'
+type InteractionRegister = (ctx: MnemonClientContext, namespace: MnemonNamespace, translate: (key: MnemonKey, params?: Record<string, unknown>) => string, settings: MnemonSettingsScope<Config>) => () => void
+
+interface InteractionUnit {
+  slot: InteractionSlot
+  enabled: (value: unknown) => boolean
+  register: InteractionRegister
+}
+
+const INTERACTION_UNITS: Record<'turnBar' | 'saveAction', InteractionUnit> = {
+  turnBar: {
+    slot: 'conversation.chat.turnTail',
+    enabled: (value: unknown): boolean => enabledOf(value, 'turnBar'),
+    register(ctx: MnemonClientContext, namespace: MnemonNamespace, translate: (key: MnemonKey, params?: Record<string, unknown>) => string): () => void {
+      // RC hosts use a chain; alpha hosts use a list. A named options value
+      // satisfies both public contracts while retaining each runtime's field.
+      const options = {
+        name: 'conversation.chat.turnTail' as const,
+        id: 'dsh-mnemon/turn-tail',
+        locale: namespace,
+        select: selectMnemonTurnTail,
+        inject: (sessionId: unknown): { sessionId?: string; connection: ClientConnectionHandle; localeRuntime: MnemonClientContext['locale']; t: (key: MnemonKey, params?: Record<string, unknown>) => string } => ({
+          ...(typeof sessionId === 'string' && sessionId !== '' ? { sessionId } : {}),
+          connection: ctx.connection,
+          localeRuntime: ctx.locale,
+          t: translate as (key: MnemonKey, params?: Record<string, unknown>) => string,
+        }),
+      }
+      return ctx.slots.register(options, MnemonTurnTail)
+    },
+  },
+  saveAction: {
+    slot: 'conversation.chat.assistant-actions',
+    enabled: (value: unknown): boolean => enabledOf(value, 'saveAction'),
+    register(ctx: MnemonClientContext, namespace: MnemonNamespace, translate: (key: MnemonKey, params?: Record<string, unknown>) => string, settings: MnemonSettingsScope<Config>): () => void {
+      return ctx.slots.register({
+        name: 'conversation.chat.assistant-actions',
+        id: 'mnemon-save',
+        order: 90,
+        locale: namespace,
+        inject: (sessionId: unknown): { sessionId?: string; connection: ClientConnectionHandle; settingsScope: MnemonSettingsScope<Config>; localeRuntime: MnemonClientContext['locale']; t: (key: MnemonKey, params?: Record<string, unknown>) => string } => ({
+          ...(typeof sessionId === 'string' && sessionId !== '' ? { sessionId } : {}),
+          connection: ctx.connection,
+          settingsScope: settings,
+          localeRuntime: ctx.locale,
+          t: translate as (key: MnemonKey, params?: Record<string, unknown>) => string,
+        }),
+      }, MnemonSaveAction)
+    },
+  },
+}
+
+type InteractionUnitKey = keyof typeof INTERACTION_UNITS
+
+/** Ready snapshots default each interaction on; loading has no value and mounts nothing. */
+function enabledOf(value: unknown, key: 'turnBar' | 'saveAction'): boolean {
+  if (typeof value !== 'object' || value === null || Array.isArray(value)) return false
+  return (value as Partial<Record<typeof key, boolean>>)[key] !== false
+}
+
+function mountSidebarMemoryView(ctx: MnemonClientContext, settings: MnemonSettingsScope<Config>, namespace: MnemonNamespace, translate: (key: MnemonKey, params?: Record<string, unknown>) => string): () => void {
+  const controller = new MnemonWorkspaceController()
+  const navigation = { open: () => controller.open(), close: () => controller.close() }
+  const sourcePageDirectory = createMemorySourcePageDirectory(ctx)
+  const betterSidebarSeat = new MnemonBetterSidebarSeat()
+  const slotName = 'shell.overlay'
+  const disposeView = ctx.slots.inject(slotName, () => ctx.slots.register({
+    name: slotName,
+    id: 'mnemon',
+    order: 30,
+    label: () => translate('tab.label'),
+    locale: namespace,
+    children: {
+      'mnemon.source.page': { kind: 'list', scope: 'root' },
+    },
+    inject: () => ({
+      connection: ctx.connection,
+      settingsScope: settings,
+      sessions: ctx.sessions,
+      workspaces: ctx.workspaces,
+      currentSession: ctx.uiSession.adapter.current,
+      localeRuntime: ctx.locale,
+      sourcePageDirectory,
+      navigation,
+      controller,
+      betterSidebarSeat,
+      t: translate,
+    }),
+  }, MnemonSidebarWorkspaceHost))
+  let disposeBetterSidebar: (() => void) | undefined
+  let disposeLauncher: (() => void) | undefined
+  let listening = false
+  let disposed = false
+  const openMemoryView = (): void => { navigation.open() }
+  const closeMemoryView = (): void => { navigation.close() }
+  const dispose = (): void => {
+    if (disposed) return
+    disposed = true
+    try {
+      disposeLauncher?.()
+    } finally {
+      if (listening) { window.removeEventListener(MNEMON_ANCHOR_EVENT, openMemoryView); window.removeEventListener(MNEMON_CLOSE_WORKSPACE_EVENT, closeMemoryView) }
+      try {
+        disposeBetterSidebar?.()
+      } finally {
+        disposeView()
+      }
+    }
+  }
+  try {
+    disposeBetterSidebar = mountBetterSidebarTab(ctx, translate, betterSidebarSeat)
+    if (typeof window !== 'undefined' && typeof document !== 'undefined') {
+      window.addEventListener(MNEMON_ANCHOR_EVENT, openMemoryView)
+      window.addEventListener(MNEMON_CLOSE_WORKSPACE_EVENT, closeMemoryView)
+      listening = true
+      disposeLauncher = mountMnemonSidebarLauncher(ctx, translate, controller)
+    }
+    return dispose
+  } catch (error) {
+    dispose()
+    throw error
+  }
+}
+
+/** DSH supplies the owning session; Source pages retain the same render contract. */
+function mountBuiltinMemoryView(ctx: MnemonClientContext, settings: MnemonSettingsScope<Config>, namespace: MnemonNamespace, translate: (key: MnemonKey, params?: Record<string, unknown>) => string): () => void {
+  const sourcePageDirectory = createMemorySourcePageDirectory(ctx)
+  const disposeView = ctx.slots.inject('conversation.view', () => ctx.slots.register({
+    name: 'conversation.view',
+    id: 'mnemon',
+    order: 30,
+    label: () => translate('tab.label'),
+    locale: namespace,
+    children: {
+      'mnemon.source.page': { kind: 'list', scope: 'root' },
+    },
+    inject: sessionId => ({
+      connection: ctx.connection,
+      settingsScope: settings,
+      sessionId,
+      localeRuntime: ctx.locale,
+      sourcePageDirectory,
+      t: translate,
+    }),
+  }, MnemonBuiltinWorkspaceHost))
+  if (typeof window === 'undefined' || typeof document === 'undefined') return disposeView
+  const openView = (event: Event): void => {
+    const sessionId = (event as CustomEvent<MnemonAnchor>).detail?.sessionId
+    const mainSessionId = ctx.uiSession.adapter.current.getSnapshot().key
+    if (mainSessionId === undefined || (sessionId !== undefined && sessionId !== mainSessionId)) return
+    const label = translate('tab.label').trim()
+    const eligible = (candidate: HTMLElement): boolean => !candidate.hasAttribute('disabled')
+      && candidate.getAttribute('aria-disabled') !== 'true' && candidate.closest('[hidden], [aria-hidden="true"]') === null
+    const conversations = [...document.querySelectorAll<HTMLElement>('[data-slot="main.conversation"]')].filter(eligible)
+    if (conversations.length !== 1) return
+    const tabs = [...conversations[0]!.querySelectorAll<HTMLElement>('[role="tab"]')]
+      .filter(candidate => candidate.textContent?.trim() === label && eligible(candidate))
+    // Split panes can expose identically labelled tabs without a public
+    // session marker. Keep the anchor pending instead of choosing a pane.
+    if (tabs.length === 1) tabs[0]!.click()
+  }
+  window.addEventListener(MNEMON_ANCHOR_EVENT, openView)
+  return () => {
+    window.removeEventListener(MNEMON_ANCHOR_EVENT, openView)
+    disposeView()
+  }
+}
+
+/** Mount the memory workspace plus the optional in-conversation interaction surfaces. */
+export function apply(rawContext: unknown): void {
+  const ctx = rawContext as MnemonClientContext
+  const settings = new MnemonSettingsScope<Config>(ctx.connection, MNEMON_SETTINGS_NAMESPACE)
+  const interactionSettings = new MnemonSettingsScope<InteractionConfig>(ctx.connection, MNEMON_UI_SETTINGS_NAMESPACE)
+  const namespace: MnemonNamespace = 'mnemon'
+  ctx.effect(() => ctx.locale.register(namespace, { zh, en }), 'dsh-mnemon: locale dictionaries')
+  const translate = ctx.locale.bind(namespace)
+  ctx.slots.inject(
+    'conversation.session.header.lineage',
+    () => mountSubagentTokenUsageOverride(ctx),
+  )
+  let activeMemoryWorkspace: { mode: MnemonDisplayMode; dispose: () => void } | undefined
+  const reconcileMemoryWorkspace = (): void => {
+    const snapshot = settings.getSnapshot()
+    const mode = snapshot.status === 'loading' || snapshot.value?.tabEnabled === false
+      ? undefined
+      : normalizeDisplayMode(snapshot.value?.displayMode)
+    if (activeMemoryWorkspace?.mode === mode) return
+    activeMemoryWorkspace?.dispose()
+    activeMemoryWorkspace = mode === undefined ? undefined : {
+      mode,
+      dispose: mode === 'builtin'
+        ? mountBuiltinMemoryView(ctx, settings, namespace, translate)
+        : mountSidebarMemoryView(ctx, settings, namespace, translate),
+    }
+  }
+  ctx.effect(() => {
+    const unsubscribe = settings.subscribe(reconcileMemoryWorkspace)
+    reconcileMemoryWorkspace()
+    return () => {
+      unsubscribe()
+      activeMemoryWorkspace?.dispose()
+      activeMemoryWorkspace = undefined
+    }
+  }, 'dsh-mnemon: memory workspace entry')
+  const overlayDirectory = createMemorySourceOverlayDirectory(ctx)
+  ctx.slots.inject('shell.overlay', () => ctx.slots.register({
+    name: 'shell.overlay', id: 'mnemon-source-overlays', order: 40,
+    children: { 'mnemon.source.overlay': { kind: 'list', scope: 'root' } },
+    inject: () => ({ connection: ctx.connection, sessions: ctx.sessions, localeRuntime: ctx.locale, settingsScope: settings, directory: overlayDirectory }),
+  }, SourceOverlaysHost))
+  ctx.slots.inject('settings.section', () => ctx.slots.register({
+    name: 'settings.section',
+    id: 'mnemon',
+    order: 20,
+    label: () => translate('tab.label'),
+    locale: namespace,
+    inject: () => ({
+      scope: settings,
+      interactionScope: interactionSettings,
+      connection: ctx.connection,
+      sessions: ctx.sessions,
+      workspaces: ctx.workspaces,
+      currentSession: ctx.uiSession.adapter.current,
+      t: translate,
+    }),
+  }, MnemonSettingsHost))
+
+  // In-conversation interaction surfaces default on and are bound live: each
+  // settings change registers or disposes the slot contributions without a
+  // reload. Until the snapshot loads, nothing registers (conservative default).
+  const active = new Map<InteractionUnitKey, () => void>()
+  const reconcile = (): void => {
+    const value = interactionSettings.getSnapshot().value
+    for (const key of Object.keys(INTERACTION_UNITS) as InteractionUnitKey[]) {
+      const unit = INTERACTION_UNITS[key]
+      const enabled = unit.enabled(value)
+      if (enabled && !active.has(key)) {
+        active.set(key, ctx.slots.inject(unit.slot, () => unit.register(ctx, namespace, translate, settings)))
+      } else if (!enabled && active.has(key)) {
+        active.get(key)!()
+        active.delete(key)
+      }
+    }
+  }
+  ctx.effect(() => {
+    const unsubscribe = interactionSettings.subscribe(reconcile)
+    reconcile()
+    return () => {
+      unsubscribe()
+      for (const dispose of [...active.values()].reverse()) dispose()
+      active.clear()
+    }
+  }, 'dsh-mnemon: interaction surfaces')
+}

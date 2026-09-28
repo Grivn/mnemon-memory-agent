@@ -1,0 +1,396 @@
+{
+  "status": "complete",
+  "method": "Read final immutable artifacts against the original fixture and explicit later updates. Automated grades remain unchanged; semantic contradictions are recorded separately. This is an assistant audit, not a blinded independent human panel.",
+  "reviews": [
+    {
+      "run": "memory-r1-all-candidates",
+      "findings": [
+        {
+          "criterion": "latest transport notice",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "transport",
+          "expected": "The notice before input 26 suspends bus 28 and changes the route to bus 36.",
+          "observed": "公交28路到松风馆北门",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "memory-r1-lexical-maintained",
+      "findings": [],
+      "scope": "Checked final transport, rain contingency, venue/time, headcount/budget, deadline, owner, delivery completion and public-list privacy. Planning additions are not treated as externally confirmed facts; this does not certify every discretionary operational detail.",
+      "reviewedDeliveryAccepted": true
+    },
+    {
+      "run": "memory-r1-jev-maintained",
+      "findings": [
+        {
+          "criterion": "retain the unrevoked rain contingency",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "backupPlan",
+          "expected": "The Playbooks record requires moving to the indoor reading room in rain, confirming the venue before notifying attendees. The later venue notice does not revoke this contingency.",
+          "observed": "不启用“室内阅览室”旧备选（那属南厅时期口径）",
+          "alreadyCaughtAutomatically": false,
+          "reason": "The frozen grader only looks for the substring 室内 and misses negation and the specific required rain venue. Literal 19/19 is therefore a false positive for semantic completion.",
+          "evidenceTrace": "memory-feedback-case.json",
+          "traceSummary": "The main model wrote the unsupported old-plan interpretation at input 7. At input 19 the original Playbooks rule was present in the selected context alongside derived notes, but the main model still wrote the cancellation as settled. The replica selected that new Journal note again at inputs 20 and 27. This does not establish that JEV caused the initial inference."
+        }
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "memory-r2-all-candidates",
+      "findings": [
+        {
+          "criterion": "latest transport notice",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "transport",
+          "expected": "36, after suspension of bus 28",
+          "observed": "公交28路到北门",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "unrevoked rain contingency",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "backupPlan",
+          "expected": "Rain triggers indoor reading room after venue verification.",
+          "observed": "地点仍为北厅N-306；北厅不可用才启用室内阅览室",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "memory-r2-lexical-maintained",
+      "findings": [
+        {
+          "criterion": "latest delivery receipt",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "deadline",
+          "expected": "18 handouts delivered and signed for in N-306.",
+          "observed": "首批12份预计周五16:00送达（排产确认，非到货）；18人是否补印待定",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "unconfirmed rain threshold",
+          "severity": "major",
+          "path": "outputs/plan.json",
+          "field": "backupPlan",
+          "expected": "Preserve the given rain contingency, marking proposed exceptions as proposals.",
+          "observed": "小雨=场所与入口均不变；大雨=改用室内阅览室",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "memory-r2-jev-maintained",
+      "findings": [
+        {
+          "criterion": "event date",
+          "severity": "critical",
+          "path": "outputs/plan.json",
+          "field": "date",
+          "expected": "2026-10-17 remains the recorded date, though originally provisional.",
+          "observed": "2026-09-25（待确认；占位值）",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "structured handoff deadline",
+          "severity": "contract",
+          "path": "outputs/plan.json",
+          "field": "deadline",
+          "expected": "Preserve Friday 16:30, while separately recording completed delivery.",
+          "observed": "16:30 absent; delivery marked complete. This is a lost historical constraint, not an outstanding unfulfilled delivery.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "specific rain venue",
+          "severity": "major",
+          "path": "outputs/plan.json",
+          "field": "backupPlan",
+          "expected": "室内阅览室 is the given contingency.",
+          "observed": "Only generic indoor room, with A留N-306/B改室内; room name treated as unknown.",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "project-r1-all-candidates",
+      "findings": [
+        {
+          "criterion": "idempotent registration",
+          "severity": "functional",
+          "path": "outputs/domain.js",
+          "observed": "Repeated active id throws instead of returning the existing state.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "public roster and CSV privacy",
+          "severity": "critical",
+          "path": "outputs/domain.js",
+          "observed": "publicRoster retains emailMasked including domain; toCSV exports full email. Separate public onsite CSV omits email and passes UI check.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "project-r1-lexical-maintained",
+      "findings": [],
+      "scope": "Frozen 42 functional/static checks and 15 browser smoke checks; not a comprehensive security/accessibility review.",
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": true
+    },
+    {
+      "run": "project-r1-jev-maintained",
+      "findings": [
+        {
+          "criterion": "quoted names",
+          "severity": "functional",
+          "path": "outputs/domain.js",
+          "observed": "Registration rejects quotation marks before the otherwise correct CSV quoting function can run.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "backup round trip",
+          "severity": "grader-limitation",
+          "path": "outputs/domain.js",
+          "observed": "Added fromVersion/migrated metadata breaks exact JSON equality. Canonical core data and actual browser export/reset/import round trip pass.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r1-all-candidates",
+      "findings": [
+        {
+          "criterion": "structured contract",
+          "severity": "contract",
+          "path": "outputs/decision.json",
+          "observed": "requiresE2EE is null despite explicit first-version scope; required options array is absent. Prose distinguishes first-version scope.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "unlisted citation",
+          "severity": "grader-limitation",
+          "path": "outputs/decision.md",
+          "observed": "Frozen URL parser captures trailing Chinese closing parenthesis. Stripped URL matches an allowed official source. This is not evidence of a fabricated link.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "known constraints treated as unknown",
+          "severity": "major",
+          "path": "outputs/decision.json",
+          "observed": "The migration update explicitly says existing plain text; openQuestions nevertheless says old format was unspecified. Access control is mandatory in the supplied notice, but the file asks whether authorization is a first-version requirement.",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "scope": "Checked required fields, seven grounded boolean claims, linked official sources, migration/rollback plan and unmeasured targets.",
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r1-lexical-maintained",
+      "findings": [
+        {
+          "criterion": "notification authority",
+          "severity": "critical",
+          "path": "outputs/decision.json",
+          "field": "requiresE2EEStatus",
+          "observed": "Disregards explicit scope because notification has level=info/read=false; serverLocation remains self-hosted without Singapore and requiresE2EE remains null. Read state is incorrectly interpreted as decision validity.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "scope": "Checked required fields, seven grounded boolean claims, three-library comparison, official citations, migration/rollback and unmeasured targets.",
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r1-jev-maintained",
+      "findings": [
+        {
+          "criterion": "three-library comparison",
+          "severity": "contract",
+          "path": "outputs/decision.json",
+          "field": "options",
+          "observed": "Final options replaced library comparison with architecture components and omitted Automerge.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "citations and validation location",
+          "severity": "grader-limitation",
+          "path": "outputs/decision.md",
+          "observed": "Official URLs and executable concurrency/out-of-order tests are supplied in linked evidence/acceptance documents and JSON, rather than directly in the two files checked by the frozen grader. Do not describe these as wholly absent.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "decision provenance",
+          "severity": "major",
+          "path": "outputs/p0-decisions.md",
+          "observed": "Model-selected policies are labeled 项目内定（人类未反对）; later migration plan calls scheduling risks 人类决定. Scripted user inputs contain no such approval. Routine proposed design choices are allowed, but their human-confirmed status is unsupported.",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "scope": "Checked required fields, seven grounded boolean claims, linked evidence and acceptance plan, current constraints, migration/rollback and unmeasured targets.",
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "project-r2-all-candidates",
+      "findings": [
+        {
+          "criterion": "CSV privacy",
+          "severity": "critical",
+          "path": "outputs/domain.js",
+          "observed": "toCSV includes full email. The distinct onsite export is private and its browser test passes.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "validation and equality grading",
+          "severity": "grader-limitation",
+          "path": "outputs/domain.js",
+          "observed": "Invalid registration returns unchanged core state with ok=false/errors instead of throwing. Repeated cancellation and backup preserve core data but alter metadata. Several frozen failures therefore concern error-return conventions/exact equality, not missing rejection or lost data. The brief did not explicitly require throwing on every invalid input.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "project-r2-lexical-maintained",
+      "findings": [
+        {
+          "criterion": "page renders after load and submit",
+          "severity": "critical",
+          "path": "outputs/app.js",
+          "observed": "App references roster-body, roster-count and roster-empty, which do not exist in final index.html. Browser throws TypeError on load and after submissions; records persist but the expected list does not render. Later smoke steps cannot complete.",
+          "alreadyCaughtAutomatically": false
+        },
+        {
+          "criterion": "CSV privacy",
+          "severity": "critical",
+          "path": "outputs/domain.js",
+          "observed": "toCSV includes full email, contrary to required private CSV contract.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "project-r2-jev-maintained",
+      "findings": [
+        {
+          "criterion": "declared domain API contract",
+          "severity": "contract",
+          "path": "outputs/domain.js",
+          "observed": "register/cancel return a wrapper with state rather than the directly usable state specified by brief.md. This causes cascading failures in frozen API tests; it is not 23 independent algorithmic defects. Explicitly unwrapping results preserves core data and validation.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "cancel registration in delivered UI",
+          "severity": "critical",
+          "path": "outputs/app.js",
+          "observed": "renderRoster uses publicRoster rows and passes person.id to handleCancel, but publicRoster strips id. Clicking the confirmed participant’s button displays 找不到这条报名 and leaves all five records unchanged.",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "evidence": [
+        "domain-review.json",
+        "browser/inspection.json"
+      ],
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r2-all-candidates",
+      "findings": [
+        {
+          "criterion": "structured richText field",
+          "severity": "contract",
+          "path": "outputs/decision.json",
+          "observed": "richText is a descriptive string instead of the required boolean. The prose keeps rich-text collaboration in scope; do not label this as proof that the requirement was forgotten.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "scope": "Checked current constraints in JSON and prose, seven grounded boolean claims, three alternatives, official links, unmeasured targets, staged migration and rollback.",
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r2-lexical-maintained",
+      "findings": [
+        {
+          "criterion": "cross-file constraint consistency",
+          "severity": "contract",
+          "path": "outputs/decision.json",
+          "field": "serverLocation",
+          "observed": "JSON stays 自管基础设施 while decision/migration/hosting documents correctly specify Singapore. The hosting audit even says the JSON was updated.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "validation plan location",
+          "severity": "grader-limitation",
+          "path": "outputs/migration-plan.md",
+          "observed": "Out-of-order/concurrency cases are supplied in consistency-runbook.md, which is referenced by the plan, rather than containing all frozen keywords in the main plan.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "unsupported negative capability claim",
+          "severity": "major",
+          "path": "outputs/decision.md",
+          "observed": "Claims Automerge has no rich-text CRDT. The provided summary is silent on that question and does not justify absence. Post-experiment primary-source verification confirms official rich-text APIs (marks/block markers).",
+          "sourceUrl": "https://automerge.org/docs/reference/documents/rich-text/",
+          "alreadyCaughtAutomatically": false
+        }
+      ],
+      "scope": "Checked current constraints in JSON and prose, seven grounded boolean claims, alternatives/citations, migration/rollback and unmeasured targets. External verification happened after the experiment and did not alter model input or scores.",
+      "reviewedDeliveryAccepted": false
+    },
+    {
+      "run": "research-r2-jev-maintained",
+      "findings": [
+        {
+          "criterion": "cross-file constraint consistency",
+          "severity": "contract",
+          "path": "outputs/decision.json",
+          "field": "serverLocation",
+          "observed": "JSON says 自管基础设施; decision.md and migration-plan.md do contain the newer Singapore requirement.",
+          "alreadyCaughtAutomatically": true
+        },
+        {
+          "criterion": "citations location",
+          "severity": "grader-limitation",
+          "path": "outputs/decision.md",
+          "observed": "Main decision document points to evidence/source-register files and JSON, which contain the official URLs. Frozen citation check scans only decision.md.",
+          "alreadyCaughtAutomatically": true
+        }
+      ],
+      "scope": "Checked current constraints in JSON and prose, seven grounded boolean claims, three alternatives, linked official-source ledger, staged migration/rollback and unmeasured targets.",
+      "reviewedDeliveryAccepted": false
+    }
+  ],
+  "rainReviewBoundary": "Operational additions are distinguished from revocation of an explicit rule. R1 lexical marks thresholds as inference and preserves the stated primary contingency; this limited audit does not endorse all discretionary additions.",
+  "scopeBoundary": "Post-hoc assistant review covers material requirements and interface consistency, not an exhaustive proof of every technical assertion or application path. Acceptance means no material defect identified within the stated scope; it is not a new pre-registered aggregate score."
+}

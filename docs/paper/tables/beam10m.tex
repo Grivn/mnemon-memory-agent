@@ -1,0 +1,20 @@
+\begin{gentable}
+\centering
+\small
+\caption{\textbf{From a hundred thousand to ten million tokens.} BEAM-100K (20 conversations, 400 questions) and BEAM-10M (10 conversations of about 90,000 records each, 200 questions): rubric score under the gpt-4.1-mini / DeepSeek judges, cost per question (answer, planner and \jev, thousandths of a dollar at the reader's list prices), median latency, and median \jev{} input tokens per question. gpt-4.1-mini answers and plans in every row. Scores cover every question each run answered; \cref{tab:consolidation} pairs the questions both judges graded in both runs.}
+\label{tab:beam10m}
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}l l c c c c@{}}
+\toprule
+& configuration & score & $10^{-3}$\,\$/q & p50 (s) & \jev{} tok. \\
+\midrule
+BEAM-100K & w/o consolidation, BM25 only & 60.4 / 54.6 & 4.14 & 10.6 & 54k \\
+BEAM-100K & w/o consolidation & 58.2 / 52.8 & 4.00 & 10.4 & 51k \\
+BEAM-100K & \sys{} & 64.5 / 60.5 & 4.80 & 12.1 & 61k \\
+\midrule
+BEAM-10M & w/o consolidation, BM25 only & 46.0 / 39.8 & 4.61 & 13.9 & 66k \\
+BEAM-10M & w/o consolidation & 45.2 / 42.9 & 4.53 & 14.3 & 65k \\
+BEAM-10M & \sys{} & 51.2 / 48.8 & 5.32 & 15.3 & 75k \\
+\bottomrule
+\end{tabular}
+\end{gentable}

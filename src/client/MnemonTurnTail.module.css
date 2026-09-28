@@ -1,0 +1,129 @@
+/* Turn-tail memory activity bar, rendered under the DSH turn actions row. */
+
+.root {
+  min-width: 0;
+  margin: 2px 0;
+}
+
+.bar {
+  display: flex;
+  min-width: 0;
+  max-width: 100%;
+  height: 22px;
+  align-items: center;
+  gap: 6px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0 8px 0 6px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--dsw-alias-label-tertiary);
+  font-size: 11px;
+  line-height: 22px;
+}
+.bar:hover {
+  border-color: var(--dsw-alias-border-l2);
+  background: var(--dsw-alias-interactive-bg-hover);
+  color: var(--dsw-alias-label-secondary);
+}
+.bar:focus-visible {
+  outline: 1.5px solid var(--dsw-alias-state-business-primary);
+  outline-offset: 2px;
+}
+
+.mark {
+  flex: none;
+  font-size: 10px;
+  opacity: .8;
+}
+
+.label {
+  flex: none;
+  font-weight: 600;
+}
+
+.metrics {
+  display: inline-flex;
+  min-width: 0;
+  align-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+.metrics span {
+  white-space: nowrap;
+}
+
+.failureMetric {
+  color: var(--dsw-alias-state-error-primary, #d44);
+}
+
+.chevron {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-left: auto;
+  opacity: .7;
+}
+.chevron::before {
+  content: "";
+  display: block;
+  width: 5px;
+  height: 5px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translate(-1px, -1px);
+  transition: transform .12s;
+}
+.chevronOpen::before {
+  transform: rotate(-135deg) translate(0, 0);
+}
+
+.details {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 10px;
+  margin: 2px 0 4px;
+  padding: 6px 8px;
+  border-left: 1px solid var(--dsw-alias-border-l2);
+  border-radius: 0 8px 8px 0;
+  background: var(--dsw-alias-markdown-code-block);
+}
+
+.detailLabel {
+  flex: none;
+  color: var(--dsw-alias-label-caption);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.tools {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.toolChip {
+  border: none;
+  border-radius: 4px;
+  padding: 0 6px;
+  cursor: pointer;
+  background: var(--dsw-alias-interactive-bg-hover);
+  color: var(--dsw-alias-label-secondary);
+  font-family: var(--ds-font-family-code, Consolas, monospace);
+  font-size: 10px;
+  line-height: 18px;
+  white-space: nowrap;
+}
+.toolChip:hover {
+  background: var(--dsw-alias-interactive-bg-active);
+  color: var(--dsw-alias-state-business-primary);
+}
+.toolChip:focus-visible {
+  outline: 1.5px solid var(--dsw-alias-state-business-primary);
+  outline-offset: 1px;
+}

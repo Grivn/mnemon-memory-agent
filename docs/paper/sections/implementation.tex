@@ -1,0 +1,20 @@
+\section{Implementation}
+\label{sec:impl}
+
+\sys{} runs as a \emph{replica}: a second DSH instance with the same Sources, its own Strategy and a control loop that calls \jev.
+At each user message the replica runs one job and publishes its View into the main instance.
+Upstream DSH is unmodified, and apart from 115 changed lines of dsh-mnemon the replica consists of new plugins~\citep{mnemon2026code}.
+
+\paragraph{Journal.}
+Records are chunks of at most about 600 characters, embedded locally with nomic-embed-text~\citep{nussbaum2024nomic}; a \lme{} history of about 106k tokens becomes roughly 1,000 records, written in under a second.
+For BEAM's ten-million-token tier, the journal holds up to 200,000 records per conversation and keeps its search index between searches.
+
+\paragraph{Consolidation.}
+Background jobs read the journal from a watermark, in batches of about 10,000 characters that hold user messages whole and the first 240 characters of each assistant message, about 15\% of a chat's text.
+DeepSeek-V4.1-Flash without thinking~\citep{deepseekflash2026} folds each batch into the index.
+For very long memories a fold sees at most 120 topics, 240 values and 60 instructions, half chosen by the words they share with the batch and half by recency.
+Index items are embedded as they are written, so that no View waits for them.
+
+\paragraph{Models.}
+The planner and the answering model are the same LLM, gpt-4.1-mini or DeepSeek-V4.1-Flash (\cref{sec:setup}).
+\jev{} 1.13 judges up to 40 records per call and answers every question about them in that call; 24 records with two questions each take about 0.34\,s and cost \$0.00044.

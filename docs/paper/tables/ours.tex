@@ -1,0 +1,18 @@
+\begin{gentable}[!htb]
+\centering
+\small
+\caption{\sys{} on five benchmarks with gpt-4.1-mini answering: score under the gpt-4.1-mini / DeepSeek judges (accuracy; HaluMem: share of answers judged correct; BEAM: rubric score), rank among the systems OmniMemEval re-evaluated, context per question, cost per question in thousandths of a dollar (answer, planner and \jev{} at list prices), median latency, and consolidation's one-time cost in dollars per memory (a conversation, a \lme{} history, a HaluMem user).}
+\label{tab:ours}
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{@{}l r c c c c c c@{}}
+\toprule
+benchmark & questions & score & rank & context & $10^{-3}$\,\$/question & p50 (s) & \$/memory \\
+\midrule
+LoCoMo & 1,540 & 91.7 / 91.4 & 1/15 & 3.8k & 3.27 & 9.6 & 0.013 \\
+\lme & 500 & 83.8 / 85.4 & 2/13 & 3.8k & 3.33 & 13.1 & 0.017 \\
+HaluMem & 3,467 & 73.3 / 65.8 & 8/13 & 3.4k & 3.60 & 12.3 & 0.089 \\
+BEAM-100K & 400 & 64.5 / 60.5 & 10/12 & 3.8k & 4.80 & 12.1 & 0.012 \\
+BEAM-10M & 200 & 51.2 / 48.8 & 10/12 & 3.8k & 5.32 & 15.3 & 1.62 \\
+\bottomrule
+\end{tabular}
+\end{gentable}
