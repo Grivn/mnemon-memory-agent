@@ -1,27 +1,22 @@
-# Mnemon: Remembering Fast and Slow in LLM Agents
+<h1 align="center">Mnemon</h1>
 
-<p>
-  <a href="#under-a-common-protocol-gpt-41-mini-answering"><img src="https://img.shields.io/badge/LoCoMo%20%28gpt--4.1--mini%29-91.7%25%20%C2%B7%20%231%20of%2015-2ea44f" alt="LoCoMo (gpt-4.1-mini): 91.7%, first of 15"></a>
-  <a href="#under-a-common-protocol-gpt-41-mini-answering"><img src="https://img.shields.io/badge/LongMemEval--S%20%28gpt--4.1--mini%29-83.8%25%20%C2%B7%20%232%20of%2013-1f6feb" alt="LongMemEval-S (gpt-4.1-mini): 83.8%, second of 13"></a>
-  <a href="#against-each-projects-best-published-result"><img src="https://img.shields.io/badge/reasoning%20model-LoCoMo%2092.2%25%20%C2%B7%20LongMemEval--S%2094.4%25-8250df" alt="with a reasoning model: LoCoMo 92.2%, LongMemEval-S 94.4%"></a>
-  <a href="#highlights"><img src="https://img.shields.io/badge/context-3.8k%20tokens%20per%20question-57606a" alt="context: 3.8k tokens per question"></a>
-  <a href="docs/paper/main.pdf"><img src="https://img.shields.io/badge/paper-PDF-b31b1b" alt="paper: PDF"></a>
-  <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-d4a72c" alt="license: MIT"></a>
-</p>
-<p>
-  <a href="#components-and-versions"><img src="https://img.shields.io/badge/forked%20from-dsh--mnemon%20v0.5.13-0969da" alt="forked from: dsh-mnemon v0.5.13"></a>
-  <a href="#components-and-versions"><img src="https://img.shields.io/badge/DSH-0.1.5--rc.1-57606a" alt="DSH: 0.1.5-rc.1"></a>
-  <a href="#components-and-versions"><img src="https://img.shields.io/badge/Jev-1.13-57606a" alt="Jev: 1.13"></a>
-  <a href="#components-and-versions"><img src="https://img.shields.io/badge/Node.js-25.1.0-57606a" alt="Node.js: 25.1.0"></a>
-</p>
+<h3 align="center">Remembering Fast and Slow in LLM Agents</h3>
 
-[中文](README.zh-CN.md) · [Paper (PDF)](docs/paper/main.pdf) · [Reproduce the numbers](#reproduce-the-numbers) · [Run the system](#run-the-system)
+<p align="center">
+  <a href="docs/paper/main.pdf"><b>Paper</b></a> ·
+  <a href="#results"><b>Results</b></a> ·
+  <a href="#reproduce-the-numbers"><b>Reproduce</b></a> ·
+  <a href="#run-the-system"><b>Run</b></a> ·
+  <a href="README.zh-CN.md"><b>中文</b></a>
+</p>
 
 Mnemon is a long-term memory agent for LLM assistants. It keeps conversations as raw, dated records and does its
 work when a question arrives, dividing that work the way dual-process accounts divide thinking. A fast decision
 model (**System 1**) answers many small yes/no questions about the records a search returns. An LLM (**System 2**)
 words a few searches and composes the answer. A background pass indexes each record once, so that questions about a
 whole conversation reach evidence their own searches miss.
+The results of this research will be brought step by step into the official projects [mnemon](https://github.com/mnemon-dev/mnemon) and
+[dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon) (see [From research to product](#from-research-to-product)).
 
 <p align="center">
   <img src="assets/tradeoff.png" width="920" alt="Accuracy against context per question on LoCoMo and LongMemEval-S: Mnemon and the 14 systems re-evaluated by OmniMemEval">
@@ -29,11 +24,6 @@ whole conversation reach evidence their own searches miss.
 <p align="center"><sub>Accuracy against the context sent to the answering model per question. Mnemon (star) and the 14 systems
 re-evaluated by OmniMemEval all use gpt-4.1-mini to answer. Dashed lines join points of equal effective cost index;
 up and to the left is better.</sub></p>
-
-> [!NOTE]
-> The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon)
-> and [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience. This repository stays a frozen
-> research snapshot of the system the paper evaluates.
 
 ## Highlights
 
@@ -85,26 +75,6 @@ points back to them. It is a view over the records, not their schema. Mnemon rea
 
 Memory of this kind can be added wherever records can be searched. The paper evaluates conversational memory, the
 setting with public benchmarks; other stores are untested.
-
-## Components and versions
-
-Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
-It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 215 commits
-up to this snapshot, `f97c5679`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
-changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
-
-| Component | Version | Role in Mnemon |
-|---|---|---|
-| dsh-mnemon | v0.5.13 + 215 research commits (`f97c5679`) | memory plugins, the replica and the benchmark harness |
-| DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
-| Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
-| gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); primary judge |
-| DeepSeek-V4.1-Flash | API model `deepseek-flash` | System 2 in the reasoning setting (answers with thinking, plans without); consolidation, without thinking; second judge |
-| nomic-embed-text | served locally | embeddings for hybrid search and index items |
-| Node.js / pnpm | v25.1.0 / 11 | runtime and package manager |
-
-Each run directory records the commit and the models it ran with (`docs/run-commits.json`); [VERSIONS.md](VERSIONS.md)
-lists every version, including the build tools and the datasets.
 
 ## Results
 
@@ -163,13 +133,13 @@ gpt-4.1-mini answering. Score under the gpt-4.1-mini / DeepSeek judges. The rank
 re-evaluated. Cost per question covers the answer, the planner and Jev at list prices. Consolidation is a one-time
 cost per memory.
 
-| Benchmark | Questions | Score | Rank | Context | Cost / question | Median latency | Consolidation / memory |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| LoCoMo | 1,540 | 91.7 / 91.4 | 1/15 | 3.8k | $0.0033 | 9.6 s | $0.013 |
-| LongMemEval-S | 500 | 83.8 / 85.4 | 2/13 | 3.8k | $0.0033 | 13.1 s | $0.017 |
-| HaluMem | 3,467 | 73.3 / 65.8 | 8/13 | 3.4k | $0.0036 | 12.3 s | $0.089 |
-| BEAM-100K | 400 | 64.5 / 60.5 | 10/12 | 3.8k | $0.0048 | 12.1 s | $0.012 |
-| BEAM-10M | 200 | 51.2 / 48.8 | 10/12 | 3.8k | $0.0053 | 15.3 s | $1.62 |
+| Benchmark | Score | Rank | Context | Cost / question | Median latency | Consolidation / memory |
+|---|---:|---:|---:|---:|---:|---:|
+| LoCoMo | 91.7&nbsp;/&nbsp;91.4 | 1/15 | 3.8k | $0.0033 | 9.6&nbsp;s | $0.013 |
+| LongMemEval&#8209;S | 83.8&nbsp;/&nbsp;85.4 | 2/13 | 3.8k | $0.0033 | 13.1&nbsp;s | $0.017 |
+| HaluMem | 73.3&nbsp;/&nbsp;65.8 | 8/13 | 3.4k | $0.0036 | 12.3&nbsp;s | $0.089 |
+| BEAM&#8209;100K | 64.5&nbsp;/&nbsp;60.5 | 10/12 | 3.8k | $0.0048 | 12.1&nbsp;s | $0.012 |
+| BEAM&#8209;10M | 51.2&nbsp;/&nbsp;48.8 | 10/12 | 3.8k | $0.0053 | 15.3&nbsp;s | $1.62 |
 
 Nothing on the read path grows with the memory except the search index. The planner reads the recent dialogue, Jev
 screens at most 48 records a round, and the View has fixed budgets. System 1 does the broad reading: per question,
@@ -184,6 +154,26 @@ token.
 
 Jev, DeepSeek and gpt-4.1-mini were asked the same question about the same 14,359 records. Jev separates the gold
 evidence best and answers two questions per record in the time an LLM takes for one.
+
+## Components and versions
+
+Mnemon is the research branch `codex/jev-replica-practice` of [dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon).
+It was forked from the dsh-mnemon release **v0.5.13** (commit `84d469ff`, 2026-09-22) and developed over 215 commits
+up to this snapshot, `f97c5679`. It runs on DeepSeek Harness **0.1.5-rc.1**, which it does not modify. Apart from 115
+changed lines in dsh-mnemon's existing code, the memory agent consists of new plugins.
+
+| Component | Version | Role in Mnemon |
+|---|---|---|
+| dsh-mnemon | v0.5.13 + 215 research commits (`f97c5679`) | memory plugins, the replica and the benchmark harness |
+| DeepSeek Harness (DSH) | 0.1.5-rc.1 | agent harness; Mnemon runs as a second instance beside the main agent |
+| Jev (TypeSafe System One) | `jev-1.13.0`, through `@typesafe-ai/sdk` 0.6.0 | System 1: screens and judges records and index items |
+| gpt-4.1-mini | 2025-04-14 snapshot, temperature 0 | System 2 in the standard setting (planner and answering model); primary judge |
+| DeepSeek-V4.1-Flash | API model `deepseek-flash` | System 2 in the reasoning setting (answers with thinking, plans without); consolidation, without thinking; second judge |
+| nomic-embed-text | served locally | embeddings for hybrid search and index items |
+| Node.js / pnpm | v25.1.0 / 11 | runtime and package manager |
+
+Each run directory records the commit and the models it ran with (`docs/run-commits.json`); [VERSIONS.md](VERSIONS.md)
+lists every version, including the build tools and the datasets.
 
 ## Reproduce the numbers
 
@@ -233,7 +223,13 @@ node --env-file=.env --experimental-transform-types scripts/bench/run.ts --datas
 The full system adds `--simple`, hybrid search with `--embed-url <local nomic-embed-text server>`, and
 `--consolidate deepseek-flash`. The header of `scripts/bench/run.ts` documents every option.
 
-## Repository layout
+## About this snapshot
+
+This repository is a frozen, history-free snapshot of the research branch at `f97c5679` (2026-09-28). Every file can
+be traced to its source through `PROVENANCE.json`.
+
+<details>
+<summary><b>Repository layout</b></summary>
 
 | Path | What |
 |---|---|
@@ -251,9 +247,10 @@ The full system adds `--simple`, hybrid search with `--embed-url <local nomic-em
 | `VERSIONS.md` | DSH, dsh-mnemon, model and dataset versions |
 | `PROVENANCE.json` | Source commit, and each file's git blob id and SHA-256 |
 
-## How this snapshot is made and checked
+</details>
 
-This repository is a frozen, history-free snapshot of the research branch at `f97c5679` (2026-09-28).
+<details>
+<summary><b>How the snapshot is made and checked</b></summary>
 
 | Tool | Does |
 |---|---|
@@ -284,6 +281,17 @@ What the snapshot does and does not claim:
   They ship without their tests, which exercise product components outside this snapshot.
 - Git history is not included.
 
+</details>
+
+## From research to product
+
+The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon) and
+[dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience.
+
+This repository itself stays a frozen research snapshot:
+- It is not the `mnemon` CLI and not Mnemon Agency, and the evaluated system does not use the `mnemon` binary.
+- It is not a release of the `dsh-mnemon` package.
+
 ## Citation
 
 ```bibtex
@@ -294,15 +302,6 @@ What the snapshot does and does not claim:
   note   = {Technical report}
 }
 ```
-
-## Relation to mnemon and dsh-mnemon
-
-The results of this research will be brought step by step into the two official projects, [mnemon](https://github.com/mnemon-dev/mnemon) and
-[dsh-mnemon](https://github.com/omdsh-dev/dsh-mnemon), to give their users the best product experience.
-
-This repository itself stays a frozen research snapshot:
-- It is not the `mnemon` CLI and not Mnemon Agency, and the evaluated system does not use the `mnemon` binary.
-- It is not a release of the `dsh-mnemon` package.
 
 ## Licenses and data
 
