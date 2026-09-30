@@ -3,7 +3,12 @@
 <h3 align="center">Raw Records, Fast Judgments, Slow Thoughts</h3>
 
 <p align="center">
-  <a href="docs/paper/main.pdf"><b>Paper</b></a> ·
+  <a href="https://arxiv.org/abs/2609.36059"><img src="https://img.shields.io/badge/arXiv-2609.36059-b31b1b.svg?logo=arxiv" alt="arXiv 2609.36059"></a>
+  <a href="https://huggingface.co/papers/2609.36059"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Paper-FFD21E" alt="Hugging Face Paper"></a>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.36059"><b>Paper</b></a> ·
   <a href="#results"><b>Results</b></a> ·
   <a href="#reproduce-the-numbers"><b>Reproduce</b></a> ·
   <a href="#run-the-system"><b>Run</b></a> ·
@@ -350,11 +355,13 @@ This repository itself stays a frozen research snapshot:
 
 ```bibtex
 @misc{wang2026mnemon,
-  title  = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
-  author = {Wang, Guangren},
-  year   = {2026},
-  note   = {Preprint},
-  url    = {https://github.com/Grivn/mnemon-memory-agent}
+  title         = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
+  author        = {Wang, Guangren},
+  year          = {2026},
+  eprint        = {2609.36059},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2609.36059}
 }
 ```
 

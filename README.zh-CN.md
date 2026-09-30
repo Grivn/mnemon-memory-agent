@@ -4,7 +4,12 @@
 <p align="center"><sub>Raw Records, Fast Judgments, Slow Thoughts</sub></p>
 
 <p align="center">
-  <a href="docs/paper/main.pdf"><b>论文</b></a> ·
+  <a href="https://arxiv.org/abs/2609.36059"><img src="https://img.shields.io/badge/arXiv-2609.36059-b31b1b.svg?logo=arxiv" alt="arXiv 2609.36059"></a>
+  <a href="https://huggingface.co/papers/2609.36059"><img src="https://img.shields.io/badge/%F0%9F%A4%97-Hugging%20Face%20Paper-FFD21E" alt="Hugging Face Paper"></a>
+</p>
+
+<p align="center">
+  <a href="https://arxiv.org/abs/2609.36059"><b>论文</b></a> ·
   <a href="#结果"><b>结果</b></a> ·
   <a href="#复现论文数字"><b>复现</b></a> ·
   <a href="#运行系统"><b>运行</b></a> ·
@@ -288,11 +293,13 @@ pnpm -r --filter 'dsh-mnemon-*' test --passWithNoTests
 
 ```bibtex
 @misc{wang2026mnemon,
-  title  = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
-  author = {Wang, Guangren},
-  year   = {2026},
-  note   = {Preprint},
-  url    = {https://github.com/Grivn/mnemon-memory-agent}
+  title         = {Mnemon: Raw Records, Fast Judgments, Slow Thoughts},
+  author        = {Wang, Guangren},
+  year          = {2026},
+  eprint        = {2609.36059},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CL},
+  url           = {https://arxiv.org/abs/2609.36059}
 }
 ```
 
