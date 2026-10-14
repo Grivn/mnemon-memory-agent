@@ -15,9 +15,10 @@ import { appendFile, readFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { parseArgs } from 'node:util'
 import { deepseek } from './notes.ts'
-import { checkIdentity, isOpenAIModel, modelSpec, openaiChat } from '../lib/openai.ts'
 
 const { values, positionals } = parseArgs({ allowPositionals: true, options: { pass: { type: 'string', default: '1' }, concurrency: { type: 'string', default: '8' }, refine: { type: 'string' }, judge: { type: 'string' } } })
+// The OpenAI helpers import DSH packages; the default DeepSeek judge runs without them (no install needed).
+const { checkIdentity, isOpenAIModel, modelSpec, openaiChat } = values.judge ? await import('../lib/openai.ts') : {} as typeof import('../lib/openai.ts')
 const judge = values.judge && isOpenAIModel(values.judge) ? values.judge : undefined
 if (values.judge && !judge) throw new Error('--judge takes an OpenAI model; DeepSeek is the default')
 const suffix = judge ? '-' + modelSpec(judge).label : ''

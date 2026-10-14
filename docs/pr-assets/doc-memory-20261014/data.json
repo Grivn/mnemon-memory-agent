@@ -1,0 +1,682 @@
+{
+  "locomo": {
+    "dataset": "locomo",
+    "memories": 10,
+    "questions": 1540,
+    "types": [
+      "temporal",
+      "open-domain",
+      "multi-hop",
+      "single-hop"
+    ],
+    "fullContext": {
+      "arm": "full-context",
+      "n": 1540,
+      "accuracy": 0.924025974025974,
+      "low": 0.907305095150399,
+      "high": 0.9397278029812054,
+      "byType": {
+        "temporal": {
+          "n": 321,
+          "accuracy": 0.9158878504672897,
+          "low": 0.890625,
+          "high": 0.9405940594059405
+        },
+        "open-domain": {
+          "n": 96,
+          "accuracy": 0.6458333333333334,
+          "low": 0.51,
+          "high": 0.77
+        },
+        "multi-hop": {
+          "n": 282,
+          "accuracy": 0.9361702127659575,
+          "low": 0.9014598540145985,
+          "high": 0.9624060150375939
+        },
+        "single-hop": {
+          "n": 841,
+          "accuracy": 0.9548156956004756,
+          "low": 0.9336349924585219,
+          "high": 0.9766233766233766
+        }
+      },
+      "answerInputTokens": 21613.27857142857,
+      "answerCostUsd": 0.0004026485961038965
+    },
+    "levels": {
+      "4": {
+        "arm": "doc:4",
+        "n": 1540,
+        "accuracy": 0.5201298701298701,
+        "low": 0.4907241172950329,
+        "high": 0.5547445255474452,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.46417445482866043,
+            "low": 0.40425531914893614,
+            "high": 0.5472972972972973
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.4583333333333333,
+            "low": 0.313953488372093,
+            "high": 0.6074766355140186
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.776595744680851,
+            "low": 0.7357859531772575,
+            "high": 0.819327731092437
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.4625445897740785,
+            "low": 0.4274193548387097,
+            "high": 0.4981729598051157
+          }
+        },
+        "answerInputTokens": 982.0279220779221,
+        "answerCostUsd": 0.0002574717779220781,
+        "budgetBytes": 4096,
+        "documentBytes": 3412.5,
+        "fill": 0.8331298828125,
+        "rewritten": 1,
+        "truncated": 0,
+        "documents": 10
+      },
+      "8": {
+        "arm": "doc:8",
+        "n": 1540,
+        "accuracy": 0.5974025974025974,
+        "low": 0.5602968460111317,
+        "high": 0.6408959537572254,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.5607476635514018,
+            "low": 0.48265895953757226,
+            "high": 0.6430868167202572
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.4583333333333333,
+            "low": 0.34,
+            "high": 0.5934065934065934
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.7978723404255319,
+            "low": 0.7609427609427609,
+            "high": 0.8338983050847457
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.5600475624256838,
+            "low": 0.5269662921348315,
+            "high": 0.5938931297709924
+          }
+        },
+        "answerInputTokens": 1791.7363636363636,
+        "answerCostUsd": 0.0002776560097402594,
+        "budgetBytes": 8192,
+        "documentBytes": 6932.6,
+        "fill": 0.8462646484375,
+        "rewritten": 0,
+        "truncated": 0,
+        "documents": 10
+      },
+      "16": {
+        "arm": "doc:16",
+        "n": 1540,
+        "accuracy": 0.7331168831168832,
+        "low": 0.7019374068554396,
+        "high": 0.7598684210526315,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.7165109034267912,
+            "low": 0.6215384615384615,
+            "high": 0.796969696969697
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.5520833333333334,
+            "low": 0.42,
+            "high": 0.6727272727272727
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.8617021276595744,
+            "low": 0.8323170731707317,
+            "high": 0.8976109215017065
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.7170035671819263,
+            "low": 0.6675639300134589,
+            "high": 0.7648936170212766
+          }
+        },
+        "answerInputTokens": 2606.0376623376624,
+        "answerCostUsd": 0.00020903081298701307,
+        "budgetBytes": 16384,
+        "documentBytes": 10191.7,
+        "fill": 0.622052001953125,
+        "rewritten": 1,
+        "truncated": 0,
+        "documents": 10
+      },
+      "32": {
+        "arm": "doc:32",
+        "n": 1540,
+        "accuracy": 0.8305194805194805,
+        "low": 0.800125313283208,
+        "high": 0.8575146389069617,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.7663551401869159,
+            "low": 0.6656151419558359,
+            "high": 0.8517241379310345
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.5625,
+            "low": 0.4157303370786517,
+            "high": 0.6966292134831461
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.9113475177304965,
+            "low": 0.8896797153024911,
+            "high": 0.9342560553633218
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.8585017835909632,
+            "low": 0.8231631382316313,
+            "high": 0.8898876404494382
+          }
+        },
+        "answerInputTokens": 5739.771428571428,
+        "answerCostUsd": 0.00022027212467532465,
+        "budgetBytes": 32768,
+        "documentBytes": 23946,
+        "fill": 0.73077392578125,
+        "rewritten": 0,
+        "truncated": 0,
+        "documents": 10
+      }
+    },
+    "alternate": {
+      "doc:32": {
+        "arm": "doc:32",
+        "n": 1540,
+        "accuracy": 0.8305194805194805,
+        "low": 0.800125313283208,
+        "high": 0.8575146389069617,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.7663551401869159,
+            "low": 0.6656151419558359,
+            "high": 0.8517241379310345
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.5625,
+            "low": 0.4157303370786517,
+            "high": 0.6966292134831461
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.9113475177304965,
+            "low": 0.8896797153024911,
+            "high": 0.9342560553633218
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.8585017835909632,
+            "low": 0.8231631382316313,
+            "high": 0.8898876404494382
+          }
+        },
+        "answerInputTokens": 5739.771428571428,
+        "answerCostUsd": 0.00022027212467532465,
+        "budgetBytes": 32768,
+        "documentBytes": 23946,
+        "fill": 0.73077392578125,
+        "rewritten": 0,
+        "truncated": 0,
+        "documents": 10
+      },
+      "doc:64": {
+        "arm": "doc:64",
+        "n": 1540,
+        "accuracy": 0.8246753246753247,
+        "low": 0.7653668208856577,
+        "high": 0.8730456535334584,
+        "byType": {
+          "temporal": {
+            "n": 321,
+            "accuracy": 0.7663551401869159,
+            "low": 0.6956521739130435,
+            "high": 0.8412162162162162
+          },
+          "open-domain": {
+            "n": 96,
+            "accuracy": 0.5833333333333334,
+            "low": 0.40217391304347827,
+            "high": 0.7614678899082569
+          },
+          "multi-hop": {
+            "n": 282,
+            "accuracy": 0.8829787234042553,
+            "low": 0.8248175182481752,
+            "high": 0.9219330855018587
+          },
+          "single-hop": {
+            "n": 841,
+            "accuracy": 0.8549346016646849,
+            "low": 0.7850574712643679,
+            "high": 0.9130925507900677
+          }
+        },
+        "answerInputTokens": 8079.3948051948055,
+        "answerCostUsd": 0.0002801709662337662,
+        "budgetBytes": 65536,
+        "documentBytes": 35311.2,
+        "fill": 0.53880615234375,
+        "rewritten": 0,
+        "truncated": 0,
+        "documents": 10
+      }
+    },
+    "writeCostPerMemoryUsdAsRun": 0.0668678628
+  },
+  "longmemeval": {
+    "dataset": "longmemeval",
+    "memories": 60,
+    "questions": 60,
+    "types": [
+      "knowledge-update",
+      "temporal-reasoning",
+      "single-session-user",
+      "multi-session",
+      "single-session-preference",
+      "single-session-assistant"
+    ],
+    "fullContext": {
+      "arm": "full-context",
+      "n": 60,
+      "accuracy": 0.9333333333333333,
+      "low": 0.8666666666666667,
+      "high": 0.9833333333333333,
+      "byType": {
+        "knowledge-update": {
+          "n": 10,
+          "accuracy": 0.8,
+          "low": 0.5,
+          "high": 1
+        },
+        "temporal-reasoning": {
+          "n": 10,
+          "accuracy": 1,
+          "low": 1,
+          "high": 1
+        },
+        "single-session-user": {
+          "n": 10,
+          "accuracy": 0.9,
+          "low": 0.7,
+          "high": 1
+        },
+        "multi-session": {
+          "n": 10,
+          "accuracy": 0.9,
+          "low": 0.7,
+          "high": 1
+        },
+        "single-session-preference": {
+          "n": 10,
+          "accuracy": 1,
+          "low": 1,
+          "high": 1
+        },
+        "single-session-assistant": {
+          "n": 10,
+          "accuracy": 1,
+          "low": 1,
+          "high": 1
+        }
+      },
+      "answerInputTokens": 105228.4,
+      "answerCostUsd": 0.016079799999999998
+    },
+    "levels": {
+      "4": {
+        "arm": "doc:4",
+        "n": 60,
+        "accuracy": 0.6166666666666667,
+        "low": 0.48333333333333334,
+        "high": 0.7333333333333333,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.6,
+            "low": 0.3,
+            "high": 0.9
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.4,
+            "low": 0.1,
+            "high": 0.7
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 1,
+            "low": 1,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 0.7,
+            "low": 0.4,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.2,
+            "low": 0,
+            "high": 0.5
+          }
+        },
+        "answerInputTokens": 1123.1833333333334,
+        "answerCostUsd": 0.0003477674999999998,
+        "budgetBytes": 4096,
+        "documentBytes": 3685.5833333333335,
+        "fill": 0.8998006184895834,
+        "rewritten": 27,
+        "truncated": 0,
+        "documents": 60
+      },
+      "8": {
+        "arm": "doc:8",
+        "n": 60,
+        "accuracy": 0.6166666666666667,
+        "low": 0.5,
+        "high": 0.7333333333333333,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.4,
+            "low": 0.1,
+            "high": 0.7
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.6,
+            "low": 0.3,
+            "high": 0.9
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 0.7,
+            "low": 0.4,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.3,
+            "low": 0,
+            "high": 0.6
+          }
+        },
+        "answerInputTokens": 1836.9666666666667,
+        "answerCostUsd": 0.00042524500000000015,
+        "budgetBytes": 8192,
+        "documentBytes": 6792.466666666666,
+        "fill": 0.8291585286458333,
+        "rewritten": 15,
+        "truncated": 1,
+        "documents": 60
+      },
+      "16": {
+        "arm": "doc:16",
+        "n": 60,
+        "accuracy": 0.6833333333333333,
+        "low": 0.5666666666666667,
+        "high": 0.8,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.4,
+            "low": 0.1,
+            "high": 0.7
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.6,
+            "low": 0.3,
+            "high": 0.9
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.6,
+            "low": 0.3,
+            "high": 0.9
+          }
+        },
+        "answerInputTokens": 2975.6,
+        "answerCostUsd": 0.00064139,
+        "budgetBytes": 16384,
+        "documentBytes": 11582.366666666667,
+        "fill": 0.7069315592447917,
+        "rewritten": 4,
+        "truncated": 1,
+        "documents": 60
+      },
+      "32": {
+        "arm": "doc:64",
+        "n": 60,
+        "accuracy": 0.8666666666666667,
+        "low": 0.7833333333333333,
+        "high": 0.95,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 1,
+            "low": 1,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 1,
+            "low": 1,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.7,
+            "low": 0.4,
+            "high": 1
+          }
+        },
+        "answerInputTokens": 7109.433333333333,
+        "answerCostUsd": 0.0012104049999999993,
+        "budgetBytes": 65536,
+        "documentBytes": 28961.95,
+        "fill": 0.4419242858886719,
+        "rewritten": 1,
+        "truncated": 0,
+        "documents": 60
+      }
+    },
+    "alternate": {
+      "doc:32": {
+        "arm": "doc:32",
+        "n": 60,
+        "accuracy": 0.8166666666666667,
+        "low": 0.7166666666666667,
+        "high": 0.9166666666666666,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.7,
+            "low": 0.4,
+            "high": 1
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          }
+        },
+        "answerInputTokens": 4814.683333333333,
+        "answerCostUsd": 0.0008969825000000001,
+        "budgetBytes": 32768,
+        "documentBytes": 19421.483333333334,
+        "fill": 0.5926966349283854,
+        "rewritten": 4,
+        "truncated": 0,
+        "documents": 60
+      },
+      "doc:64": {
+        "arm": "doc:64",
+        "n": 60,
+        "accuracy": 0.8666666666666667,
+        "low": 0.7833333333333333,
+        "high": 0.95,
+        "byType": {
+          "knowledge-update": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "temporal-reasoning": {
+            "n": 10,
+            "accuracy": 0.8,
+            "low": 0.5,
+            "high": 1
+          },
+          "single-session-user": {
+            "n": 10,
+            "accuracy": 0.9,
+            "low": 0.7,
+            "high": 1
+          },
+          "multi-session": {
+            "n": 10,
+            "accuracy": 1,
+            "low": 1,
+            "high": 1
+          },
+          "single-session-preference": {
+            "n": 10,
+            "accuracy": 1,
+            "low": 1,
+            "high": 1
+          },
+          "single-session-assistant": {
+            "n": 10,
+            "accuracy": 0.7,
+            "low": 0.4,
+            "high": 1
+          }
+        },
+        "answerInputTokens": 7109.433333333333,
+        "answerCostUsd": 0.0012104049999999993,
+        "budgetBytes": 65536,
+        "documentBytes": 28961.95,
+        "fill": 0.4419242858886719,
+        "rewritten": 1,
+        "truncated": 0,
+        "documents": 60
+      }
+    },
+    "writeCostPerMemoryUsdAsRun": 0.0835463562
+  }
+}
